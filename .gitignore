@@ -1,0 +1,20 @@
+# Configuração local do Claude Code (permissões por máquina, não compartilhar)
+.claude/settings.local.json
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Temporários de escritório
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Ambiente
+.env
+.env.local
