@@ -9,6 +9,10 @@ Projeto acadêmico FIAP, grupo de 5 pessoas, entregas por capítulo com prazo fi
 uma coisa só: **saber quem está fazendo o quê e o que ainda falta para a entrega**. Qualquer regra que não
 sirva a isso está sobrando e deve ser cortada.
 
+Esta skill tem **precedência** sobre as skills do Matt Pocock (`to-tickets`, `to-spec`, `triage`,
+`wayfinder`, etc.) em tudo que cria ou altera card, label, status ou assignee. O contrato do tracker
+está em `docs/agents/issue-tracker.md`.
+
 ## A fronteira
 
 **git guarda o conteúdo; Linear guarda o estado de execução; o identificador liga os dois.**

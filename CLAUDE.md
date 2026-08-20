@@ -102,13 +102,35 @@ Nada disso existe ainda, e cada pasta só deve ser criada quando tiver conteúdo
 
 ```
 docs/          documentação das partes 1 a 5, decisões, dados e gráficos
+docs/agents/   config das skills do Matt Pocock (tracker, triage, domínio)
 slides/        apresentação
 src/           protótipo, quando existir
 entrega/       o ZIP montado, com tudo dentro de uma pasta só
 ```
 
+## Agent skills
+
+Skills do Matt Pocock estão instaladas em `.agents/skills/` e espelhadas em `.claude/skills/`
+(via `skills.sh`, lock em `skills-lock.json`). A skill local `linear-workflow` continua ao lado delas
+e **não foi substituída**.
+
+### Issue tracker
+
+Linear (workspace FIAP Dream Team, time Dream Team, prefixo DT). Ver `docs/agents/issue-tracker.md`.
+Qualquer skill que publique ticket passa pela regra de aprovação do `linear-workflow`.
+
+### Triage labels
+
+Vocabulário canônico do Matt mapeado; labels ainda **não** existem no Linear e não devem ser
+criadas automaticamente. Ver `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Layout single-context (`CONTEXT.md` + `docs/adr/` quando existirem). Ver `docs/agents/domain.md`.
+
 ## O que não fazer
 
 Não escolher o serviço público sozinho. Não inventar RM, nome ou dado de pesquisa. Não criar card no Linear
 antes do dono aprovar a lista, porque identificador criado já entra em circulação. Não afirmar que existe
-automação de status pelo GitHub, porque ela não está configurada neste repositório.
+automação de status pelo GitHub, porque ela não está configurada neste repositório. Não deixar skill do
+Matt criar label ou card no Linear sem passar pelo `linear-workflow`.

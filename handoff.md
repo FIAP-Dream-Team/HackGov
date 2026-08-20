@@ -7,7 +7,7 @@ A seção 1 é a parte viva e é o que se atualiza ao fechar uma sessão. As se�
 Toda afirmação de estado aqui foi verificada por comando, e os comandos estão na seção 8. Se algo neste
 arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 
-Última atualização: **11/08/2026**.
+Última atualização: **20/08/2026**.
 
 ---
 
@@ -15,9 +15,9 @@ arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 
 ### Repositório
 
-Branch `main`, rastreando `origin/main` em `https://github.com/FIAP-Dream-Team/HackGov.git`. Um único commit
-no histórico, `095ad89 first commit`. **Nada do trabalho desta sessão foi commitado ainda**: `README.md` está
-modificado e `.claude/`, `.gitignore`, `CLAUDE.md`, `persona.md`, `handoff.md` e `specs/` estão sem rastreio.
+Branch `main`, rastreando `origin/main` em `https://github.com/FIAP-Dream-Team/HackGov.git`. Skills do Matt
+Pocock e o setup Linear subordinado a `linear-workflow` entram neste commit; o restante do Cap 1 continua
+aberto (serviço público, RMs, `docs/decisoes.md`).
 
 O remote importa porque o enunciado aceita entregar o link do repositório no lugar de anexar o código, desde
 que o acesso esteja liberado para o professor.
@@ -26,11 +26,14 @@ que o acesso esteja liberado para o professor.
 
 | Arquivo | O que é |
 | --- | --- |
-| `CLAUDE.md` | Contrato de trabalho para o agente: contexto, bloqueio ativo, regras, o que não fazer |
+| `CLAUDE.md` | Contrato de trabalho para o agente: contexto, bloqueio ativo, regras, Agent skills |
 | `README.md` | Documentação de entrada para humanos: projeto, enunciado inteiro, grupo, prazos, como o quadro funciona |
 | `persona.md` | Perfis reais dos cinco integrantes, matriz de capacidade e alocação proposta do Cap 1 |
 | `handoff.md` | Este arquivo |
-| `.claude/skills/linear-workflow/SKILL.md` | Regras de uso do Linear: fronteira git-Linear, estrutura, quando criar card, isolamento do MCP |
+| `.claude/skills/linear-workflow/SKILL.md` | Regras do Linear (precedência sobre skills do Matt) |
+| `.agents/skills/` + `.claude/skills/` | 35 skills do Matt Pocock (`mattpocock/skills` via skills.sh) |
+| `skills-lock.json` | Lock das skills instaladas |
+| `docs/agents/` | Config do setup Matt: tracker Linear, triage, domínio |
 | `.claude/settings.local.json` | Allowlist das ferramentas `mcp__linear__*`, fora do versionamento |
 | `.gitignore` | Ignora `settings.local.json`, temporários de SO, editor e escritório |
 | `specs/persona.md` | **Cópia velha** do primeiro rascunho de `persona.md`, com a matriz ainda em interrogação |
@@ -41,6 +44,12 @@ Decidir qual caminho fica e apagar o outro. `CLAUDE.md` e `README.md` apontam pa
 
 **Referência pendurada:** `docs/decisoes.md` é citado no `CLAUDE.md`, no `README.md`, na skill e no corpo dos
 três cards, e **ainda não existe**. Criar no momento em que a primeira decisão for registrada, não antes.
+
+### Skills do Matt (20/08/2026)
+
+Instaladas com `npx skills@latest add mattpocock/skills --agent cursor --agent claude-code --skill '*' -y --copy`.
+Setup feito à mão: tracker = Linear subordinado a `linear-workflow`; labels de triage **não** criadas no
+Linear. Plugin Claude Code do Matt **não** foi instalado (evita duplicata com skills.sh).
 
 ### Linear
 
