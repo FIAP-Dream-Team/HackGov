@@ -125,9 +125,7 @@ export default function LandingHome() {
                   {feature.eyebrow}
                 </span>
                 <h3 className="mb-2.5 text-2xl">{feature.title}</h3>
-                <p className="mb-3.5 text-neutral-700">
-                  {feature.description}
-                </p>
+                <p className="mb-3.5 text-neutral-700">{feature.description}</p>
                 <Link
                   className="font-semibold text-blue-500 no-underline"
                   to={feature.to}
@@ -138,27 +136,6 @@ export default function LandingHome() {
               <div className="flex min-w-[280px] flex-1 justify-center">
                 <feature.Preview />
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-12">
-        <h2 className="mb-6 text-2xl font-bold">Três cores, três funções</h2>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
-          {colorSystem.map((color) => (
-            <div
-              className="rounded-xl border border-neutral-200 bg-neutral-50 p-5"
-              key={color.name}
-            >
-              <span className={`mb-3 block h-10 w-full rounded-lg ${color.swatchClass}`} />
-              <h3 className="mb-2">{color.name}</h3>
-              <p className="mb-2 text-xs tracking-wide text-neutral-500 uppercase">
-                {color.role}
-              </p>
-              <p className="text-neutral-700">
-                {color.description}
-              </p>
             </div>
           ))}
         </div>
