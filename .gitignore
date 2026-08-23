@@ -18,3 +18,10 @@ Thumbs.db
 # Ambiente
 .env
 .env.local
+
+# Backend (Java)
+src/backend/target/
+
+# Frontend (Node)
+src/frontend/node_modules/
+src/frontend/dist/
