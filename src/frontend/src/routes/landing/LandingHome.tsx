@@ -11,20 +11,20 @@ const colorSystem = [
   {
     name: "Verde saúde",
     role: "Paciente",
-    cssVar: "--color-green-500",
+    swatchClass: "bg-green-500",
     description:
       "Cor principal da marca. Saúde sem imitar o azul institucional do SUS.",
   },
   {
     name: "Azul gestão",
     role: "Equipe",
-    cssVar: "--color-blue-500",
+    swatchClass: "bg-blue-500",
     description: "Canal web da equipe da UBS e do gestor. Tom institucional.",
   },
   {
     name: "Amarelo senha",
     role: "Chamada",
-    cssVar: "--color-yellow-500",
+    swatchClass: "bg-yellow-500",
     description:
       "Exclusivo da senha e da chamada no painel. Só aparece quando é a vez de alguém.",
   },
@@ -79,7 +79,7 @@ export default function LandingHome() {
         </div>
         <Link
           to="/acompanhar"
-          className="font-semibold text-[var(--color-green-500)] no-underline"
+          className="font-semibold text-green-500 no-underline"
         >
           Acompanhar solicitação
         </Link>
@@ -90,20 +90,20 @@ export default function LandingHome() {
           Marque, acompanhe e receba seu atendimento com todas as etapas
           visíveis, do primeiro passo ao resultado.
         </h1>
-        <p className="mx-auto max-w-[560px] text-[var(--color-neutral-700)]">
+        <p className="mx-auto max-w-[560px] text-neutral-700">
           Escolha a especialidade, veja os horários disponíveis e acompanhe cada
           etapa do encaminhamento até o resultado do exame.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
             to="/acompanhar"
-            className="rounded-lg border border-[var(--color-green-500)] bg-[var(--color-green-500)] px-5 py-3 font-semibold text-[var(--color-neutral-50)] no-underline"
+            className="rounded-lg border border-green-500 bg-green-500 px-5 py-3 font-semibold text-neutral-50 no-underline"
           >
             Acompanhar uma solicitação
           </Link>
           <Link
             to="/totem"
-            className="rounded-lg border border-[var(--color-neutral-300)] px-5 py-3 font-semibold text-[var(--color-neutral-950)] no-underline"
+            className="rounded-lg border border-neutral-300 px-5 py-3 font-semibold text-neutral-950 no-underline"
           >
             Ver o totem da UBS
           </Link>
@@ -121,15 +121,15 @@ export default function LandingHome() {
               key={feature.eyebrow}
             >
               <div className="min-w-[260px] flex-1">
-                <span className="mb-2 inline-block text-xs font-bold uppercase tracking-wide text-[var(--color-green-500)]">
+                <span className="mb-2 inline-block text-xs font-bold uppercase tracking-wide text-green-500">
                   {feature.eyebrow}
                 </span>
                 <h3 className="mb-2.5 text-2xl">{feature.title}</h3>
-                <p className="mb-3.5 text-[var(--color-neutral-700)]">
+                <p className="mb-3.5 text-neutral-700">
                   {feature.description}
                 </p>
                 <Link
-                  className="font-semibold text-[var(--color-blue-500)] no-underline"
+                  className="font-semibold text-blue-500 no-underline"
                   to={feature.to}
                 >
                   {feature.linkLabel} →
@@ -148,18 +148,15 @@ export default function LandingHome() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
           {colorSystem.map((color) => (
             <div
-              className="rounded-xl border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)] p-5"
+              className="rounded-xl border border-neutral-200 bg-neutral-50 p-5"
               key={color.name}
             >
-              <span
-                className="mb-3 block h-10 w-full rounded-lg"
-                style={{ background: `var(${color.cssVar})` }}
-              />
+              <span className={`mb-3 block h-10 w-full rounded-lg ${color.swatchClass}`} />
               <h3 className="mb-2">{color.name}</h3>
-              <p className="mb-2 text-xs tracking-wide text-[var(--color-neutral-500)] uppercase">
+              <p className="mb-2 text-xs tracking-wide text-neutral-500 uppercase">
                 {color.role}
               </p>
-              <p className="text-[var(--color-neutral-700)]">
+              <p className="text-neutral-700">
                 {color.description}
               </p>
             </div>

@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "generate:theme": "node scripts/generate-theme-css.mjs",
+    "predev": "npm run generate:theme",
     "dev": "vite",
+    "prebuild": "npm run generate:theme",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

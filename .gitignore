@@ -25,3 +25,4 @@ src/backend/target/
 # Frontend (Node)
 src/frontend/node_modules/
 src/frontend/dist/
+src/frontend/src/theme/tokens.generated.css
