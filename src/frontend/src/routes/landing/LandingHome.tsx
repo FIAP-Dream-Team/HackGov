@@ -1,26 +1,24 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../components/Logo'
 import { PanelPreview, StaffPreview, TotemPreview, TrackingPreview } from './previews'
-import './landing.css'
-import './previews.css'
 
 const colorSystem = [
   {
     name: 'Verde saúde',
     role: 'Paciente',
-    hex: '#1E8E63',
+    cssVar: '--color-green-500',
     description: 'Cor principal da marca. Saúde sem imitar o azul institucional do SUS.',
   },
   {
     name: 'Azul gestão',
     role: 'Equipe',
-    hex: '#1D5FA8',
+    cssVar: '--color-blue-500',
     description: 'Canal web da equipe da UBS e do gestor. Tom institucional.',
   },
   {
     name: 'Amarelo senha',
     role: 'Chamada',
-    hex: '#F5B700',
+    cssVar: '--color-yellow-500',
     description: 'Exclusivo da senha e da chamada no painel. Só aparece quando é a vez de alguém.',
   },
 ]
@@ -66,50 +64,65 @@ const features = [
 
 export default function LandingHome() {
   return (
-    <main className="landing">
-      <header className="landing-nav">
-        <div className="landing-brand">
+    <main className="mx-auto max-w-[1080px] p-6">
+      <header className="flex items-center justify-between py-4">
+        <div className="flex items-center gap-2 text-lg font-bold">
           <Logo />
           <span>Minha Vez</span>
         </div>
-        <Link to="/acompanhar" className="landing-nav-cta">
+        <Link to="/acompanhar" className="font-semibold text-[var(--color-green-500)] no-underline">
           Acompanhar solicitação
         </Link>
       </header>
 
-      <section className="landing-hero">
-        <h1>Marque, acompanhe e remarque sua consulta sem ligar, sem ir até a UBS.</h1>
-        <p>
+      <section className="py-16 text-center">
+        <h1 className="mx-auto mb-4 max-w-[720px] text-[clamp(1.75rem,3vw+1rem,2.75rem)] leading-[1.15] font-extrabold">
+          Marque, acompanhe e remarque sua consulta sem ligar, sem ir até a UBS.
+        </h1>
+        <p className="mx-auto max-w-[560px] text-[var(--color-neutral-700)]">
           Escolha a especialidade, veja os horários disponíveis e acompanhe cada etapa do
           encaminhamento até o resultado do exame.
         </p>
-        <div className="landing-hero-actions">
-          <Link to="/acompanhar" className="landing-button landing-button-primary">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            to="/acompanhar"
+            className="rounded-lg border border-[var(--color-green-500)] bg-[var(--color-green-500)] px-5 py-3 font-semibold text-[var(--color-neutral-50)] no-underline"
+          >
             Acompanhar uma solicitação
           </Link>
-          <Link to="/totem" className="landing-button">
+          <Link
+            to="/totem"
+            className="rounded-lg border border-[var(--color-neutral-300)] px-5 py-3 font-semibold text-[var(--color-neutral-950)] no-underline"
+          >
             Ver o totem da UBS
           </Link>
         </div>
       </section>
 
-      <section className="landing-section">
-        <h2>O que o MVP entrega</h2>
-        <div className="landing-features">
+      <section className="py-12">
+        <h2 className="mb-6 text-2xl font-bold">O que o MVP entrega</h2>
+        <div className="flex flex-col gap-14">
           {features.map((feature, index) => (
             <div
-              className={`feature${index % 2 === 1 ? ' feature-reverse' : ''}`}
+              className={`flex flex-col items-center gap-10 md:flex-row ${
+                index % 2 === 1 ? 'md:flex-row-reverse' : ''
+              }`}
               key={feature.eyebrow}
             >
-              <div className="feature-text">
-                <span className="feature-eyebrow">{feature.eyebrow}</span>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-                <Link className="feature-link" to={feature.to}>
+              <div className="min-w-[260px] flex-1">
+                <span className="mb-2 inline-block text-xs font-bold uppercase tracking-wide text-[var(--color-green-500)]">
+                  {feature.eyebrow}
+                </span>
+                <h3 className="mb-2.5 text-2xl">{feature.title}</h3>
+                <p className="mb-3.5 text-[var(--color-neutral-700)]">{feature.description}</p>
+                <Link
+                  className="font-semibold text-[var(--color-blue-500)] no-underline"
+                  to={feature.to}
+                >
                   {feature.linkLabel} →
                 </Link>
               </div>
-              <div className="feature-visual">
+              <div className="flex min-w-[280px] flex-1 justify-center">
                 <feature.Preview />
               </div>
             </div>
@@ -117,15 +130,23 @@ export default function LandingHome() {
         </div>
       </section>
 
-      <section className="landing-section">
-        <h2>Três cores, três funções</h2>
-        <div className="landing-grid landing-grid-3">
+      <section className="py-12">
+        <h2 className="mb-6 text-2xl font-bold">Três cores, três funções</h2>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
           {colorSystem.map((color) => (
-            <div className="landing-card" key={color.name}>
-              <span className="landing-swatch" style={{ background: color.hex }} />
-              <h3>{color.name}</h3>
-              <p className="landing-card-role">{color.role}</p>
-              <p>{color.description}</p>
+            <div
+              className="rounded-xl border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)] p-5"
+              key={color.name}
+            >
+              <span
+                className="mb-3 block h-10 w-full rounded-lg"
+                style={{ background: `var(${color.cssVar})` }}
+              />
+              <h3 className="mb-2">{color.name}</h3>
+              <p className="mb-2 text-xs tracking-wide text-[var(--color-neutral-500)] uppercase">
+                {color.role}
+              </p>
+              <p className="text-[var(--color-neutral-700)]">{color.description}</p>
             </div>
           ))}
         </div>

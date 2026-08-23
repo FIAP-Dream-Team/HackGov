@@ -1,25 +1,44 @@
+const deviceBase =
+  'w-full max-w-[360px] rounded-2xl border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)] p-5 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.35)]'
+
+const btnBase =
+  'mb-2 block w-full rounded-[10px] border border-[var(--color-neutral-300)] bg-[var(--color-neutral-50)] p-3 text-center text-[0.8rem] font-semibold text-[var(--color-neutral-950)]'
+
+const btnPrimary =
+  'mb-2 block w-full rounded-[10px] border border-[var(--color-green-500)] bg-[var(--color-green-500)] p-3 text-center text-[0.8rem] font-semibold text-[var(--color-neutral-50)]'
+
 export function TotemPreview() {
   return (
-    <div className="device device-totem">
-      <div className="device-topbar">
+    <div className={deviceBase}>
+      <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-[var(--color-neutral-950)]">
         <span>Minha Vez</span>
-        <span className="device-unit">UBS Vila União</span>
+        <span className="text-[0.7rem] font-medium text-[var(--color-neutral-500)]">UBS Vila União</span>
       </div>
-      <h4 className="device-heading">Veja em que etapa está seu pedido</h4>
-      <p className="device-caption">Consulta com especialista ou exame. É só encostar o cartão.</p>
-      <button className="device-btn device-btn-primary" type="button">
+      <h4 className="mt-2 mb-1 text-base text-[var(--color-neutral-950)]">
+        Veja em que etapa está seu pedido
+      </h4>
+      <p className="mb-3.5 text-[0.78rem] text-[var(--color-neutral-500)]">
+        Consulta com especialista ou exame. É só encostar o cartão.
+      </p>
+      <button className={btnPrimary} type="button">
         Encostar o Cartão SUS
       </button>
-      <button className="device-btn" type="button">
+      <button className={btnBase} type="button">
         Digitar CPF e data de nascimento
       </button>
-      <p className="device-disclaimer">
+      <p className="mt-1 mb-3.5 rounded-lg bg-[var(--color-neutral-100)] px-2.5 py-2 text-[0.68rem] text-[var(--color-neutral-500)]">
         Não precisa de senha. Seus dados clínicos não aparecem nesta tela.
       </p>
-      <div className="device-a11y-row">
-        <span>Aumentar letra</span>
-        <span>Ouvir a tela</span>
-        <span>Ajuda</span>
+      <div className="flex gap-2 border-t border-[var(--color-neutral-200)] pt-3">
+        <span className="flex-1 rounded-lg border border-[var(--color-neutral-200)] py-1.5 px-1 text-center text-[0.65rem] font-semibold text-[var(--color-neutral-700)]">
+          Aumentar letra
+        </span>
+        <span className="flex-1 rounded-lg border border-[var(--color-neutral-200)] py-1.5 px-1 text-center text-[0.65rem] font-semibold text-[var(--color-neutral-700)]">
+          Ouvir a tela
+        </span>
+        <span className="flex-1 rounded-lg border border-[var(--color-neutral-200)] py-1.5 px-1 text-center text-[0.65rem] font-semibold text-[var(--color-neutral-700)]">
+          Ajuda
+        </span>
       </div>
     </div>
   )
@@ -27,34 +46,51 @@ export function TotemPreview() {
 
 export function TrackingPreview() {
   return (
-    <div className="device device-tracking">
-      <div className="device-topbar">
+    <div className={deviceBase}>
+      <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-[var(--color-neutral-950)]">
         <span>#ENC-4821</span>
-        <span className="device-tag">Urgente</span>
+        <span className="rounded-full bg-[var(--color-yellow-200)] px-[9px] py-[3px] text-[0.65rem] font-bold text-[var(--color-yellow-800)]">
+          Urgente
+        </span>
       </div>
-      <p className="device-unit">UBS Vila União · Cardiologia</p>
-      <h4 className="device-heading">Falta 1 passo: marcar sua consulta</h4>
-      <div className="device-steps">
-        <span className="device-step device-step-done" />
-        <span className="device-step device-step-done" />
-        <span className="device-step device-step-current" />
-        <span className="device-step" />
+      <p className="text-[0.7rem] font-medium text-[var(--color-neutral-500)]">
+        UBS Vila União · Cardiologia
+      </p>
+      <h4 className="mt-2 mb-1 text-base text-[var(--color-neutral-950)]">
+        Falta 1 passo: marcar sua consulta
+      </h4>
+      <div className="mt-2.5 mb-1 flex gap-1">
+        <span className="h-[5px] flex-1 rounded-[3px] bg-[var(--color-green-500)]" />
+        <span className="h-[5px] flex-1 rounded-[3px] bg-[var(--color-green-500)]" />
+        <span className="h-[5px] flex-1 rounded-[3px] bg-[var(--color-blue-500)]" />
+        <span className="h-[5px] flex-1 rounded-[3px] bg-[var(--color-neutral-200)]" />
       </div>
-      <div className="device-steps-labels">
-        <span>Recebido</span>
-        <span>Triado</span>
-        <span>Marcar horário</span>
-        <span>Concluído</span>
+      <div className="mb-3.5 flex justify-between">
+        <span className="flex-1 text-center text-[0.6rem] text-[var(--color-neutral-500)]">Recebido</span>
+        <span className="flex-1 text-center text-[0.6rem] text-[var(--color-neutral-500)]">Triado</span>
+        <span className="flex-1 text-center text-[0.6rem] text-[var(--color-neutral-500)]">
+          Marcar horário
+        </span>
+        <span className="flex-1 text-center text-[0.6rem] text-[var(--color-neutral-500)]">Concluído</span>
       </div>
-      <div className="device-slots">
-        <span>qua 20/08 · 08:30</span>
-        <span className="device-slot-active">qui 21/08 · 14:00</span>
-        <span>sex 22/08 · 10:15</span>
+      <div className="mb-3 flex gap-1.5">
+        <span className="flex-1 rounded-lg border border-[var(--color-neutral-200)] bg-[var(--color-neutral-100)] px-1 py-2 text-center text-[0.68rem] text-[var(--color-neutral-700)]">
+          qua 20/08 · 08:30
+        </span>
+        <span className="flex-1 rounded-lg border border-[var(--color-green-500)] bg-[var(--color-green-100)] px-1 py-2 text-center text-[0.68rem] font-bold text-[var(--color-green-700)]">
+          qui 21/08 · 14:00
+        </span>
+        <span className="flex-1 rounded-lg border border-[var(--color-neutral-200)] bg-[var(--color-neutral-100)] px-1 py-2 text-center text-[0.68rem] text-[var(--color-neutral-700)]">
+          sex 22/08 · 10:15
+        </span>
       </div>
-      <button className="device-btn device-btn-primary" type="button">
+      <button className={btnPrimary} type="button">
         Confirmar e imprimir comprovante
       </button>
-      <button className="device-btn device-btn-link" type="button">
+      <button
+        className="block w-full rounded-[10px] border-0 bg-transparent p-1 text-center text-[0.8rem] font-semibold text-[var(--color-blue-500)]"
+        type="button"
+      >
         Escolher outra especialidade ou remarcar
       </button>
     </div>
@@ -63,25 +99,33 @@ export function TrackingPreview() {
 
 export function PanelPreview() {
   return (
-    <div className="device device-panel">
-      <p className="panel-label">Próximas senhas</p>
-      <div className="panel-queue">
-        <span>
+    <div className="w-full max-w-[320px] rounded-2xl border border-[var(--color-neutral-200)] bg-[var(--color-green-900)] p-5 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.35)]">
+      <p className="mb-2.5 text-[0.62rem] uppercase tracking-wide text-[var(--color-neutral-300)]">
+        Próximas senhas
+      </p>
+      <div className="mb-4 flex gap-2">
+        <span className="flex-1 rounded-lg bg-[var(--color-green-800)] py-2 px-1.5 text-center text-[0.75rem] font-bold text-[var(--color-neutral-50)]">
           C 043
-          <small>Sala 3</small>
+          <small className="mt-0.5 block text-[0.58rem] font-normal text-[var(--color-neutral-300)]">
+            Sala 3
+          </small>
         </span>
-        <span>
+        <span className="flex-1 rounded-lg bg-[var(--color-green-800)] py-2 px-1.5 text-center text-[0.75rem] font-bold text-[var(--color-neutral-50)]">
           A 118
-          <small>Acolhimento</small>
+          <small className="mt-0.5 block text-[0.58rem] font-normal text-[var(--color-neutral-300)]">
+            Acolhimento
+          </small>
         </span>
-        <span>
+        <span className="flex-1 rounded-lg bg-[var(--color-green-800)] py-2 px-1.5 text-center text-[0.75rem] font-bold text-[var(--color-neutral-50)]">
           C 044
-          <small>Sala 3</small>
+          <small className="mt-0.5 block text-[0.58rem] font-normal text-[var(--color-neutral-300)]">
+            Sala 3
+          </small>
         </span>
       </div>
-      <div className="panel-ticket">
-        <span className="panel-ticket-label">É a sua vez</span>
-        <strong>C 042</strong>
+      <div className="rounded-xl bg-[var(--color-yellow-500)] p-[18px] text-center text-[var(--color-neutral-950)]">
+        <span className="mb-1 block text-[0.68rem] uppercase tracking-wide">É a sua vez</span>
+        <strong className="block text-[2.4rem] leading-[1.15]">C 042</strong>
         <span>Maria A. S. · Sala 3 · Eletrocardiograma</span>
       </div>
     </div>
@@ -96,48 +140,66 @@ export function StaffPreview() {
   ]
 
   return (
-    <div className="device device-staff">
-      <nav className="staff-nav">
-        <span className="staff-nav-active">Fila de encaminhamentos</span>
+    <div className="w-full max-w-[420px] rounded-2xl border border-[var(--color-neutral-200)] bg-[var(--color-neutral-50)] p-5 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.35)]">
+      <nav className="mb-3 flex gap-3.5 border-b border-[var(--color-neutral-200)] pb-2.5 text-[0.68rem] font-semibold text-[var(--color-neutral-500)]">
+        <span className="text-[var(--color-blue-500)]">Fila de encaminhamentos</span>
         <span>Agenda de exames</span>
         <span>Indicadores</span>
       </nav>
-      <div className="staff-header">
+      <div className="mb-3 flex items-center justify-between text-[0.85rem] text-[var(--color-neutral-950)]">
         <strong>Cardiologia · 143 pessoas</strong>
-        <span className="device-tag">Ação pendente · 31</span>
+        <span className="rounded-full bg-[var(--color-yellow-200)] px-[9px] py-[3px] text-[0.65rem] font-bold text-[var(--color-yellow-800)]">
+          Ação pendente · 31
+        </span>
       </div>
-      <div className="staff-stats">
-        <div>
-          <strong>27 dias</strong>
-          <span>Espera média</span>
+      <div className="mb-3.5 flex gap-2">
+        <div className="flex-1 rounded-lg bg-[var(--color-neutral-100)] py-2 px-1 text-center">
+          <strong className="block text-[0.85rem] text-[var(--color-neutral-950)]">27 dias</strong>
+          <span className="text-[0.6rem] text-[var(--color-neutral-500)]">Espera média</span>
         </div>
-        <div>
-          <strong>31</strong>
-          <span>Pendentes</span>
+        <div className="flex-1 rounded-lg bg-[var(--color-neutral-100)] py-2 px-1 text-center">
+          <strong className="block text-[0.85rem] text-[var(--color-neutral-950)]">31</strong>
+          <span className="text-[0.6rem] text-[var(--color-neutral-500)]">Pendentes</span>
         </div>
-        <div>
-          <strong>58</strong>
-          <span>Na semana</span>
+        <div className="flex-1 rounded-lg bg-[var(--color-neutral-100)] py-2 px-1 text-center">
+          <strong className="block text-[0.85rem] text-[var(--color-neutral-950)]">58</strong>
+          <span className="text-[0.6rem] text-[var(--color-neutral-500)]">Na semana</span>
         </div>
-        <div>
-          <strong>9%</strong>
-          <span>Faltas</span>
+        <div className="flex-1 rounded-lg bg-[var(--color-neutral-100)] py-2 px-1 text-center">
+          <strong className="block text-[0.85rem] text-[var(--color-neutral-950)]">9%</strong>
+          <span className="text-[0.6rem] text-[var(--color-neutral-500)]">Faltas</span>
         </div>
       </div>
-      <table className="staff-table">
+      <table className="w-full border-collapse text-[0.7rem]">
         <thead>
           <tr>
-            <th>Paciente</th>
-            <th>Etapa atual</th>
-            <th>Prioridade</th>
+            <th className="border-b border-[var(--color-neutral-200)] py-1 px-1.5 text-left font-semibold text-[var(--color-neutral-500)]">
+              Paciente
+            </th>
+            <th className="border-b border-[var(--color-neutral-200)] py-1 px-1.5 text-left font-semibold text-[var(--color-neutral-500)]">
+              Etapa atual
+            </th>
+            <th className="border-b border-[var(--color-neutral-200)] py-1 px-1.5 text-left font-semibold text-[var(--color-neutral-500)]">
+              Prioridade
+            </th>
           </tr>
         </thead>
         <tbody>
           {rows.map((row) => (
             <tr key={row.patient}>
-              <td>{row.patient}</td>
-              <td>{row.step}</td>
-              <td className={row.priority === 'Urgente' ? 'staff-priority-urgent' : undefined}>
+              <td className="border-b border-[var(--color-neutral-100)] py-1.5 px-1.5 text-[var(--color-neutral-700)]">
+                {row.patient}
+              </td>
+              <td className="border-b border-[var(--color-neutral-100)] py-1.5 px-1.5 text-[var(--color-neutral-700)]">
+                {row.step}
+              </td>
+              <td
+                className={`border-b border-[var(--color-neutral-100)] py-1.5 px-1.5 ${
+                  row.priority === 'Urgente'
+                    ? 'font-bold text-[var(--color-red-700)]'
+                    : 'text-[var(--color-neutral-700)]'
+                }`}
+              >
                 {row.priority}
               </td>
             </tr>

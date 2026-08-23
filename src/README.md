@@ -15,8 +15,14 @@ Sobe em `http://localhost:8080`. Console do H2 em `http://localhost:8080/h2-cons
 
 ## Frontend (`frontend/`)
 
-Vite + React + TypeScript, com React Router. Consome os tokens de design direto de
-`docs/design/tokens.json`, sem duplicar cor.
+Vite + React + TypeScript, com React Router e Tailwind (v4, via `@tailwindcss/vite`, sem arquivo de
+config — o Tailwind escaneia o projeto sozinho).
+
+Estilização é por classe utilitária do Tailwind. Cor **não** é hex nem a paleta padrão do Tailwind —
+`src/theme/applyTheme.ts` lê `docs/design/tokens.json` e grava cada cor como variável CSS
+(`--color-green-500`, `--color-blue-500` etc.) na raiz do documento; as classes usam essas variáveis
+via valor arbitrário, por exemplo `bg-[var(--color-green-500)]`. Se o Vinícius mudar um tom no
+`tokens.json`, o frontend inteiro atualiza sozinho — não copiar hex direto num componente.
 
 ```bash
 cd src/frontend
