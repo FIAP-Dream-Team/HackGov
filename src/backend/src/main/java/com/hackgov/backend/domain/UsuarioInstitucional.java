@@ -54,6 +54,19 @@ public class UsuarioInstitucional extends Pessoa {
             );
         }
 
+        if (novoStatus == StatusEncaminhamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "O status AGENDADO é definido quando o cidadão confirma um horário."
+            );
+        }
+
+        if (encaminhamento.getStatus() == StatusEncaminhamento.AGENDADO
+                && novoStatus == StatusEncaminhamento.AGUARDANDO_AGENDAMENTO) {
+            throw new IllegalStateException(
+                    "Para voltar à fila, o agendamento precisa ser cancelado."
+            );
+        }
+
         encaminhamento.atualizarStatus(
                 novoStatus,
                 this

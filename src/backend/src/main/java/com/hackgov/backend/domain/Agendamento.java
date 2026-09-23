@@ -7,6 +7,7 @@ public class Agendamento {
     private Long id;
     private LocalDateTime dataHora;
     private StatusAgendamento status;
+    private HorarioDisponivel horario;
 
     public Agendamento(
             Long id,
@@ -30,14 +31,32 @@ public class Agendamento {
     }
 
     public void confirmar() {
-        this.status = StatusAgendamento.AGENDADO;
+
+        if (status != StatusAgendamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "Só é possível confirmar um agendamento ativo."
+            );
+        }
     }
 
     public void cancelar() {
+
+        if (status != StatusAgendamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "Só é possível cancelar um agendamento ativo."
+            );
+        }
+
         this.status = StatusAgendamento.CANCELADO;
     }
 
     public void reagendar(LocalDateTime novaDataHora) {
+
+        if (status != StatusAgendamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "Só é possível reagendar um agendamento ativo."
+            );
+        }
 
         if (novaDataHora == null) {
             throw new IllegalArgumentException(
@@ -52,7 +71,10 @@ public class Agendamento {
         }
 
         this.dataHora = novaDataHora;
-        this.status = StatusAgendamento.AGENDADO;
+    }
+
+    void definirHorario(HorarioDisponivel horario) {
+        this.horario = horario;
     }
 
     public Long getId() {
@@ -65,5 +87,9 @@ public class Agendamento {
 
     public StatusAgendamento getStatus() {
         return status;
+    }
+
+    public HorarioDisponivel getHorario() {
+        return horario;
     }
 }
