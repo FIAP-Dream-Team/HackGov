@@ -49,9 +49,10 @@ Todo card carrega dois campos na descrição, sempre: o **rastro** (que parte do
 **critério de aceitação** (o que precisa estar verdadeiro para fechar). Critério inventado na hora de criar
 o card é sinal de que o enunciado não foi lido direito.
 
-Sem estimativa, sem story point. Prioridade ordena o trabalho e não promete data: **Urgent** bloqueia outros
-cards ou é pré-requisito da entrega, **High** está no caminho crítico do prazo, **sem prioridade** é o padrão
-e não é vergonha nenhuma.
+Card de `Entrega acadêmica` e User Story pai ficam sem estimativa. Fatia `Implementação` leva estimativa
+(horas ou pontos, o que o grupo fechar), porque o Sprint Backlog da Fase 2 pede isso. Prioridade ordena o
+trabalho e não promete data: **Urgent** bloqueia outros cards ou é pré-requisito da entrega, **High** está no
+caminho crítico do prazo, **sem prioridade** é o padrão e não é vergonha nenhuma.
 
 ## Definição de pronto
 
@@ -70,19 +71,17 @@ isolamento abaixo, que é o que impede este projeto de encostar nos outros works
 por diante. Não crie time novo por matéria nem por pessoa, o grupo tem cinco integrantes e um time só.
 
 **Project:** `HackGov`, um só, guarda-chuva do ano inteiro. O critério de saída do capítulo em andamento
-está no conteúdo do project, em termos de passa ou não passa: o ZIP com documentação em PDF, código ou link
-do GitHub, slides em PDF e link do vídeo, enviado na FIAP ON até 06/09/2026 às 23h59. Datas do project:
-03/08/2026 a 06/09/2026.
+está no conteúdo do project. Fase 2: ZIP com PDF das Partes 1 a 4, código ou GitHub, slides em PDF e link
+do vídeo, na FIAP ON até **04/10/2026**. Datas do project: 03/08/2026 a 04/10/2026.
 
-**Milestones:** as fases de execução dentro do project. Hoje existem duas, `Fase 1 - Direcionamento` com
-alvo em 17/08/2026, que fecha qual serviço público e até onde vai o escopo, e
-`Fase 2 - Levantamento e análise de requisitos` com alvo em 31/08/2026, que é a Parte 2 do enunciado. As
-fases seguintes só entram quando a Fase 2 estiver perto de fechar, porque milestone criada cedo demais vira
-enfeite.
+**Milestones:** uma por Parte do enunciado, prefixadas pela fase do semestre (`Fase 1 - Parte 1 - …`,
+`Fase 2 - Parte 1 - …`), mais `Entrega da Fase N`. Não crie milestone chamada Sprint 1: a sprint é o
+conjunto de User Stories que têm filhos `Implementação`.
 
-**Labels:** o time tem só as três padrão do Linear (`Improvement`, `Bug`, `Feature`), que não servem para
-este trabalho. Se o grupo quiser visão transversal, crie `documentacao`, `requisitos`, `dados`, `codigo`,
-`apresentacao`, `video` e `decisao`. Enquanto não criar, não invente label na hora de criar card.
+**Labels do projeto:** `Entrega acadêmica` (parte do enunciado, tem milestone de Parte), `User Story`
+(product backlog, sem milestone de Parte) e `Implementação` (filho de User Story, recorte da sprint). As
+três padrão do Linear (`Improvement`, `Bug`, `Feature`) não se usam aqui. Não invente label na hora de
+criar card.
 
 **Cycles:** desligados. O prazo do capítulo já é a cadência.
 

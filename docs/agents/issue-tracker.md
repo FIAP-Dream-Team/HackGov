@@ -25,9 +25,8 @@ Quando houver conflito entre uma skill do Matt e o `linear-workflow`, o `linear-
   (ou artefato versionado), não fica só no card.
 - **Status / assignee:** só com OK do dono do card; estados do time são `Backlog`, `Todo`,
   `In Progress`, `Done`, `Canceled`, `Duplicate`.
-- **Labels:** hoje só as padrão do Linear (`Feature`, `Bug`, `Improvement`). Não invente nem crie
-  label na hora. Labels de Cap 1 candidatas (`documentacao`, `requisitos`, `dados`, `codigo`,
-  `apresentacao`, `video`, `decisao`) só depois de o grupo criar no time.
+- **Labels:** use as três do projeto: `Entrega acadêmica`, `User Story`, `Implementação`. Não invente
+  nem crie label na hora. As padrão (`Feature`, `Bug`, `Improvement`) não se aplicam a este trabalho.
 - **Bloqueio:** use relações nativas do Linear (`blockedBy` / blocks) quando existirem no MCP;
   senão declare no corpo do card.
 - **Conteúdo vs estado:** git guarda o artefato; Linear guarda execução. O identificador (`DT-N`)

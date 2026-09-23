@@ -18,22 +18,18 @@ um serviço público real, diagnosticar um problema concreto percebido pela popu
 levantar requisitos, montar backlog, analisar dados e propor a primeira versão conceitual de um sistema que
 será desenvolvido ao longo do ano.
 
-O capítulo em andamento é **Cap 1 - Contextualizando o HackGov**, aberto em 03/08/2026, com entrega até
-**06/09/2026 às 23h59** na plataforma FIAP ON. Entrega atrasada em até três dias recebe no máximo 70% da
-nota, calculado automaticamente pelo sistema, sem margem de negociação com o professor.
+O capítulo em andamento é a **Fase 2** (diagramas UML, classes, Sprint 1 e prototipação). A Fase 1 (Cap 1)
+foi entregue. Prazo na FIAP ON: **04/10/2026**. Alvos internos: Partes 1 a 4 até **24/09**; roteiro até
+**30/09**; gravação, ZIP e upload até **04/10**.
 
-## Estado atual, e o bloqueio que importa
+## Estado atual
 
-O grupo votou e **o eixo do produto está fechado: acompanhamento**. O cidadão precisa saber em que pé está a
-solicitação dele sem depender de ligar, ir presencialmente ou conhecer alguém dentro do órgão.
+O eixo do produto é **acompanhamento**. O serviço é **saúde / medicina primária** (filas da atenção
+primária). Os cards acadêmicos da Fase 2 são `DT-21` a `DT-35`. As User Stories do product backlog são `DT-36` a
+`DT-40` (US01–US05), em Backlog, sem milestone de Parte. Fatias `Implementação` ainda não existem: quem
+fecha `DT-22` as cria, seguindo `docs/como-criar-user-stories-no-linear.md`.
 
-**O serviço público onde esse acompanhamento acontece ainda não foi escolhido**, e as duas frentes na mesa
-são saúde (filas, vaga, acompanhamento, atendimento) e infraestrutura urbana (ticket, análise, atendimento
-primário). Essa decisão trava as Partes 2, 3, 4 e 5 inteiras. Não produza conteúdo dessas partes assumindo
-uma frente por conta própria. Se a frente for necessária para avançar, pare e pergunte.
-
-A decisão está sendo tratada na Fase 1, nos cards `DT-5` (evidência), `DT-6` (decisão) e `DT-7` (escopo), e
-é direcionamento apenas. Detalhamento de requisito é Fase 2.
+Não invente User Story, requisito ou dado. Não crie filhos `Implementação` no lugar de `DT-22`.
 
 ## Grupo 1
 
@@ -45,33 +41,27 @@ A decisão está sendo tratada na Fase 1, nos cards `DT-5` (evidência), `DT-6` 
 | João Pedro Thethê Andrade | Jaoshtt@gmail.com | a preencher |
 | John Vitor Silverio Pereira | john.silverio63@gmail.com | a preencher |
 
-Os RMs são obrigatórios na Parte 1 e no cadastro do grupo na plataforma. Enquanto estiverem em branco, a
-Parte 1 não está pronta, por mais que o resto avance.
+Os RMs ainda constam em branco nesta tabela. Conferir no cadastro da plataforma antes do ZIP (`DT-35`). Não
+bloqueia a Parte 1 da Fase 2.
 
 A distribuição de responsabilidades por capacidade está em `persona.md`.
 
-## O que o Cap 1 exige, em termos de passa ou não passa
+## O que a Fase 2 exige, em termos de passa ou não passa
 
 A entrega é um único arquivo `.ZIP`, com todos os arquivos dentro de uma mesma pasta, que precisa funcionar
 ao ser descompactado e aberto localmente. Dentro dele:
 
-1. Documentação do projeto em PDF, cobrindo as Partes 1 a 5.
+1. Documentação do projeto em PDF, cobrindo as Partes 1 a 4.
 2. Códigos do projeto, ou o link do repositório no GitHub com acesso liberado.
 3. Apresentação de slides em PDF.
-4. Link do vídeo de até 5 minutos, publicado como não listado no YouTube, com demonstração do que foi
-   implementado rodando. O link precisa aparecer tanto no documento quanto nos slides.
+4. Link do vídeo de até 5 minutos, publicado como não listado no YouTube, com demonstração do Java rodando.
+ O link precisa aparecer tanto no documento quanto nos slides.
 
 Uma única submissão em nome do grupo, feita por quem cadastrou o grupo na plataforma.
 
-As cinco partes do enunciado, resumidas para consulta rápida: Parte 1 dados do grupo com nome completo e RM;
-Parte 2 escolha do serviço público mais 5 requisitos funcionais e 2 não funcionais em tabela com descrição,
-tipo e prioridade, mais a análise de impacto social, operacional e institucional da ausência de um requisito
-escolhido; Parte 3 os cinco requisitos funcionais virados em user stories no formato "Como [usuário], quero
-[objetivo], para que [benefício]", cada uma com critérios de aceitação e priorizadas por uma matriz de
-priorização estudada em aula; Parte 4 conjunto de dados do serviço escolhido organizado em tabela de
-frequência, com gráfico de barras e gráfico de setores, mais a leitura dos padrões, gargalos e a decisão
-estratégica de gestão que os dados sustentam; Parte 5 um parágrafo sobre o problema público atacado, como o
-sistema melhora produtividade, transparência e custo, mais dois riscos de implementação com mitigação.
+As quatro partes, resumidas: Parte 1 backlog refinado, Sprint Backlog da Sprint 1 e métricas ágeis; Parte 2
+quatro diagramas UML, reflexão técnica e início em Java; Parte 3 protótipo da jornada essencial e critérios
+de validação; Parte 4 medidas de dispersão e pergunta probabilística sobre o dataset.
 
 ## Regras de trabalho
 
@@ -121,8 +111,8 @@ Qualquer skill que publique ticket passa pela regra de aprovação do `linear-wo
 
 ### Triage labels
 
-Vocabulário canônico do Matt mapeado; labels ainda **não** existem no Linear e não devem ser
-criadas automaticamente. Ver `docs/agents/triage-labels.md`.
+Vocabulário canônico do Matt mapeado. No Linear do HackGov as labels do projeto são `Entrega acadêmica`,
+`User Story` e `Implementação`. Não crie outras automaticamente. Ver `docs/agents/triage-labels.md`.
 
 ### Domain docs
 
@@ -130,7 +120,7 @@ Layout single-context (`CONTEXT.md` + `docs/adr/` quando existirem). Ver `docs/a
 
 ## O que não fazer
 
-Não escolher o serviço público sozinho. Não inventar RM, nome ou dado de pesquisa. Não criar card no Linear
-antes do dono aprovar a lista, porque identificador criado já entra em circulação. Não afirmar que existe
-automação de status pelo GitHub, porque ela não está configurada neste repositório. Não deixar skill do
-Matt criar label ou card no Linear sem passar pelo `linear-workflow`.
+Não inventar RM, nome ou dado de pesquisa. Não criar card no Linear antes do dono aprovar a lista, porque
+identificador criado já entra em circulação. Não criar User Story ou `Implementação` no lugar de `DT-21` /
+`DT-22`. Não afirmar que existe automação de status pelo GitHub. Não deixar skill do Matt criar label ou
+card no Linear sem passar pelo `linear-workflow`.
