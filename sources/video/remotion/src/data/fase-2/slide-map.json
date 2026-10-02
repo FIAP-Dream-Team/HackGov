@@ -1,17 +1,17 @@
 {
-  "_comment": "Ordem do vídeo = ordem do PDF = numeração do roteiro (1 a 12). Os números impressos no deck (01 / ONDE ESTAMOS no segundo slide) ficam como estão; o mapa usa a página. startSec é o plano de 5:00 até existir áudio alinhado. Âncoras apontam para trechos da fala onde o slide deve entrar.",
+  "_comment": "Ordem do vídeo = ordem do PDF = numeração do roteiro (1 a 12). 'fala' aponta para roteiro.json. 'anchor' é o trecho literal onde o slide entra; sem âncora, começa junto com a fala. Depois de editar, rode npm run fase2:align — os segundos saem do áudio, não deste arquivo.",
   "slides": [
-    { "slide": "01", "label": "Capa",                    "fala": "f01", "startSec": 0 },
-    { "slide": "02", "label": "Onde estamos",            "fala": "f01", "anchor": "Na Fase 1", "startSec": 10 },
-    { "slide": "03", "label": "Backlog refinado",        "fala": "f02", "startSec": 25 },
-    { "slide": "04", "label": "Priorização GUT",         "fala": "f02", "anchor": "Mantivemos a matriz GUT", "startSec": 48 },
-    { "slide": "05", "label": "Sprint 1 e métricas",     "fala": "f02", "anchor": "A Sprint 1", "startSec": 62 },
-    { "slide": "06", "label": "UML atores e processo",   "fala": "f03", "startSec": 80 },
-    { "slide": "07", "label": "UML estrutura",           "fala": "f03", "anchor": "O de classes", "startSec": 108 },
-    { "slide": "08", "label": "Protótipo",               "fala": "f04", "startSec": 135 },
-    { "slide": "09", "label": "Critérios de validação",  "fala": "f04", "anchor": "Validamos com quatro critérios", "startSec": 175 },
-    { "slide": "10", "label": "Dispersão",               "fala": "f05", "startSec": 205 },
-    { "slide": "11", "label": "Probabilidade",           "fala": "f05", "anchor": "Depois, a probabilidade", "startSec": 238 },
-    { "slide": "12", "label": "Encerramento",            "fala": "f06", "startSec": 270 }
+    { "slide": "01", "label": "Capa",                    "fala": "f01" },
+    { "slide": "02", "label": "Onde estamos",            "fala": "f01", "anchor": "Na Fase 1" },
+    { "slide": "03", "label": "Backlog refinado",        "fala": "f02" },
+    { "slide": "04", "label": "Priorização GUT",         "fala": "f02", "anchor": "Mantivemos a matriz GUT" },
+    { "slide": "05", "label": "Sprint 1 e métricas",     "fala": "f02", "anchor": "A Sprint 1" },
+    { "slide": "06", "label": "UML atores e processo",   "fala": "f03" },
+    { "slide": "07", "label": "UML estrutura",           "fala": "f03", "anchor": "O de classes" },
+    { "slide": "08", "label": "Protótipo",               "fala": "f04" },
+    { "slide": "09", "label": "Critérios de validação",  "fala": "f04", "anchor": "Validamos com quatro critérios" },
+    { "slide": "10", "label": "Dispersão",               "fala": "f05" },
+    { "slide": "11", "label": "Probabilidade",           "fala": "f05", "anchor": "Depois, a probabilidade" },
+    { "slide": "12", "label": "Encerramento",            "fala": "f06" }
   ]
 }

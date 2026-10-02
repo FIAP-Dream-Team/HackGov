@@ -2,3 +2,5 @@ node_modules/
 out/
 .cache/
 public/audio.mp3
+public/fase-2/audio.mp3
+public/fase-2/audio.wav

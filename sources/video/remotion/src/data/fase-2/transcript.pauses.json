@@ -1,0 +1,2763 @@
+{
+  "model": "ffmpeg silencedetect (-26dB, 0.14s) + F0",
+  "durationSec": 225.16,
+  "note": "Divisas entre falas medidas do audio; tempo dentro de cada fala e interpolado.",
+  "text": "E aí, pessoal! Somos a equipe do HackGov: eu, John, Ana Larissa, João Pedro, Vinícius e Brenda. Na Fase 1, escolhemos o problema: o encaminhamento da UBS para a atenção especializada, onde o paciente some. Agora aprofundamos a solução do Minha Vez: refinamos o backlog, modelamos o sistema, prototipamos a jornada do cidadão e analisamos os dados. Vamos ver cada etapa. Na Fase 2 refinamos o backlog. Corrigimos contradições da Fase 1: a ausência de senha vale só no totem, enquanto o app usa CPF e senha ou Gov.br, e o cancelamento ganhou regra objetiva, até 24 horas antes e no máximo dois reagendamentos. Cada story passou a ter escopo, critérios de aceitação e exceções. Mantivemos a matriz GUT e criamos um desempate: vem primeiro a story da qual a outra depende, então a US02 antecede a US03. A Sprint 1 dura duas semanas e vai entregar o fluxo do cidadão, com 19 tarefas e 47 horas de uma capacidade de 48. Para acompanhar, usamos quatro métricas: esforço estimado versus realizado, burndown, taxa de conclusão e taxa de retrabalho. Na Parte 2, modelamos o sistema com quatro diagramas UML. O de casos de uso mostra os três atores: cidadão, equipe e gestor da UBS. O de atividades detalha o fluxo de agendamento, com exceções como dados inválidos, ausência de encaminhamento e falta de horários. O de classes organiza o domínio: o Encaminhamento coordena o agendamento e a classe HistoricoStatus registra cada mudança de etapa. E o de sequência mostra a US03, inclusive quando outro cidadão ocupa o horário antes da confirmação. Por ser um serviço público de saúde, a modelagem cuida de rastreabilidade, controle de acesso a dados sensíveis e consistência das vagas. Na Parte 3, usamos o Design Sprint para validar a hipótese de que o problema é a falta de acompanhamento. Prototipamos no Figma as três stories prioritárias como um único fluxo, porque isoladas elas não fecham a jornada. O cidadão se identifica: no totem, com Cartão SUS ou CPF e nascimento, sem senha; no app, com CPF e senha ou Gov.br. Depois vê a etapa do encaminhamento e a próxima ação, sem dado clínico. Quando há vaga, escolhe o horário, confirma, e pode cancelar ou reagendar. Sem encaminhamento ou sem vagas, a tela diz isso claramente. Validamos com quatro critérios: clareza do fluxo, facilidade de acompanhamento, redução de retrabalho e redução de ambiguidades. Na Parte 4, mantivemos os dados da Fase 1 e calculamos a dispersão dos tempos médios de espera. Eles vão de 25 dias na Oncologia a 180 na Ortopedia: média de 103,75 dias, amplitude de 155, desvio padrão de cerca de 56 e IQR de 92,5. Ou seja, a média sozinha esconde filas muito diferentes. Depois, a probabilidade: adotando 100 dias como limite analítico, 60% dos encaminhamentos estão em especialidades acima dele. E a chance de um encaminhamento ser urgente é de 17,5%, ponderada pelo volume, e não os 27,5% da média simples. Como os dados são agregados, não dizem quanto cada paciente espera, mas apoiam decisões como redistribuir recursos, organizar mutirões e priorizar filas. Fechamos esta fase com um projeto estruturado: requisitos refinados, modelagem, protótipo validado e dados que sustentam decisões. Com a Sprint 1 planejada, o Minha Vez está pronto para virar código e tornar a fila visível para o cidadão. Muito obrigado!",
+  "words": [
+    {
+      "text": "E",
+      "start": 0.38,
+      "end": 0.811
+    },
+    {
+      "text": "aí,",
+      "start": 0.811,
+      "end": 1.241
+    },
+    {
+      "text": "pessoal!",
+      "start": 1.241,
+      "end": 1.672
+    },
+    {
+      "text": "Somos",
+      "start": 1.672,
+      "end": 2.102
+    },
+    {
+      "text": "a",
+      "start": 2.102,
+      "end": 2.533
+    },
+    {
+      "text": "equipe",
+      "start": 2.533,
+      "end": 2.964
+    },
+    {
+      "text": "do",
+      "start": 2.964,
+      "end": 3.394
+    },
+    {
+      "text": "HackGov:",
+      "start": 3.394,
+      "end": 3.825
+    },
+    {
+      "text": "eu,",
+      "start": 3.825,
+      "end": 4.256
+    },
+    {
+      "text": "John,",
+      "start": 4.256,
+      "end": 4.686
+    },
+    {
+      "text": "Ana",
+      "start": 4.686,
+      "end": 5.117
+    },
+    {
+      "text": "Larissa,",
+      "start": 5.117,
+      "end": 5.547
+    },
+    {
+      "text": "João",
+      "start": 5.547,
+      "end": 5.978
+    },
+    {
+      "text": "Pedro,",
+      "start": 5.978,
+      "end": 6.409
+    },
+    {
+      "text": "Vinícius",
+      "start": 6.409,
+      "end": 6.839
+    },
+    {
+      "text": "e",
+      "start": 6.839,
+      "end": 7.27
+    },
+    {
+      "text": "Brenda.",
+      "start": 7.27,
+      "end": 7.701
+    },
+    {
+      "text": "Na",
+      "start": 7.701,
+      "end": 8.131
+    },
+    {
+      "text": "Fase",
+      "start": 8.131,
+      "end": 8.562
+    },
+    {
+      "text": "1,",
+      "start": 8.562,
+      "end": 8.992
+    },
+    {
+      "text": "escolhemos",
+      "start": 8.992,
+      "end": 9.423
+    },
+    {
+      "text": "o",
+      "start": 9.423,
+      "end": 9.854
+    },
+    {
+      "text": "problema:",
+      "start": 9.854,
+      "end": 10.284
+    },
+    {
+      "text": "o",
+      "start": 10.284,
+      "end": 10.715
+    },
+    {
+      "text": "encaminhamento",
+      "start": 10.715,
+      "end": 11.146
+    },
+    {
+      "text": "da",
+      "start": 11.146,
+      "end": 11.576
+    },
+    {
+      "text": "UBS",
+      "start": 11.576,
+      "end": 12.007
+    },
+    {
+      "text": "para",
+      "start": 12.007,
+      "end": 12.437
+    },
+    {
+      "text": "a",
+      "start": 12.437,
+      "end": 12.868
+    },
+    {
+      "text": "atenção",
+      "start": 12.868,
+      "end": 13.299
+    },
+    {
+      "text": "especializada,",
+      "start": 13.299,
+      "end": 13.729
+    },
+    {
+      "text": "onde",
+      "start": 13.729,
+      "end": 14.16
+    },
+    {
+      "text": "o",
+      "start": 14.16,
+      "end": 14.591
+    },
+    {
+      "text": "paciente",
+      "start": 14.591,
+      "end": 15.021
+    },
+    {
+      "text": "some.",
+      "start": 15.021,
+      "end": 15.452
+    },
+    {
+      "text": "Agora",
+      "start": 15.452,
+      "end": 15.882
+    },
+    {
+      "text": "aprofundamos",
+      "start": 15.882,
+      "end": 16.313
+    },
+    {
+      "text": "a",
+      "start": 16.313,
+      "end": 16.744
+    },
+    {
+      "text": "solução",
+      "start": 16.744,
+      "end": 17.174
+    },
+    {
+      "text": "do",
+      "start": 17.174,
+      "end": 17.605
+    },
+    {
+      "text": "Minha",
+      "start": 17.605,
+      "end": 18.036
+    },
+    {
+      "text": "Vez:",
+      "start": 18.036,
+      "end": 18.466
+    },
+    {
+      "text": "refinamos",
+      "start": 18.466,
+      "end": 18.897
+    },
+    {
+      "text": "o",
+      "start": 18.897,
+      "end": 19.327
+    },
+    {
+      "text": "backlog,",
+      "start": 19.327,
+      "end": 19.758
+    },
+    {
+      "text": "modelamos",
+      "start": 19.758,
+      "end": 20.189
+    },
+    {
+      "text": "o",
+      "start": 20.189,
+      "end": 20.619
+    },
+    {
+      "text": "sistema,",
+      "start": 20.619,
+      "end": 21.05
+    },
+    {
+      "text": "prototipamos",
+      "start": 21.05,
+      "end": 21.481
+    },
+    {
+      "text": "a",
+      "start": 21.481,
+      "end": 21.911
+    },
+    {
+      "text": "jornada",
+      "start": 21.911,
+      "end": 22.342
+    },
+    {
+      "text": "do",
+      "start": 22.342,
+      "end": 22.772
+    },
+    {
+      "text": "cidadão",
+      "start": 22.772,
+      "end": 23.203
+    },
+    {
+      "text": "e",
+      "start": 23.203,
+      "end": 23.634
+    },
+    {
+      "text": "analisamos",
+      "start": 23.634,
+      "end": 24.064
+    },
+    {
+      "text": "os",
+      "start": 24.064,
+      "end": 24.495
+    },
+    {
+      "text": "dados.",
+      "start": 24.495,
+      "end": 24.926
+    },
+    {
+      "text": "Vamos",
+      "start": 24.926,
+      "end": 25.356
+    },
+    {
+      "text": "ver",
+      "start": 25.356,
+      "end": 25.787
+    },
+    {
+      "text": "cada",
+      "start": 25.787,
+      "end": 26.217
+    },
+    {
+      "text": "etapa.",
+      "start": 26.217,
+      "end": 26.648
+    },
+    {
+      "text": "Na",
+      "start": 26.648,
+      "end": 27.046
+    },
+    {
+      "text": "Fase",
+      "start": 27.046,
+      "end": 27.444
+    },
+    {
+      "text": "2",
+      "start": 27.444,
+      "end": 27.842
+    },
+    {
+      "text": "refinamos",
+      "start": 27.842,
+      "end": 28.239
+    },
+    {
+      "text": "o",
+      "start": 28.239,
+      "end": 28.637
+    },
+    {
+      "text": "backlog.",
+      "start": 28.637,
+      "end": 29.035
+    },
+    {
+      "text": "Corrigimos",
+      "start": 29.035,
+      "end": 29.433
+    },
+    {
+      "text": "contradições",
+      "start": 29.433,
+      "end": 29.831
+    },
+    {
+      "text": "da",
+      "start": 29.831,
+      "end": 30.229
+    },
+    {
+      "text": "Fase",
+      "start": 30.229,
+      "end": 30.627
+    },
+    {
+      "text": "1:",
+      "start": 30.627,
+      "end": 31.025
+    },
+    {
+      "text": "a",
+      "start": 31.025,
+      "end": 31.422
+    },
+    {
+      "text": "ausência",
+      "start": 31.422,
+      "end": 31.82
+    },
+    {
+      "text": "de",
+      "start": 31.82,
+      "end": 32.218
+    },
+    {
+      "text": "senha",
+      "start": 32.218,
+      "end": 32.616
+    },
+    {
+      "text": "vale",
+      "start": 32.616,
+      "end": 33.014
+    },
+    {
+      "text": "só",
+      "start": 33.014,
+      "end": 33.412
+    },
+    {
+      "text": "no",
+      "start": 33.412,
+      "end": 33.81
+    },
+    {
+      "text": "totem,",
+      "start": 33.81,
+      "end": 34.207
+    },
+    {
+      "text": "enquanto",
+      "start": 34.207,
+      "end": 34.605
+    },
+    {
+      "text": "o",
+      "start": 34.605,
+      "end": 35.003
+    },
+    {
+      "text": "app",
+      "start": 35.003,
+      "end": 35.401
+    },
+    {
+      "text": "usa",
+      "start": 35.401,
+      "end": 35.799
+    },
+    {
+      "text": "CPF",
+      "start": 35.799,
+      "end": 36.197
+    },
+    {
+      "text": "e",
+      "start": 36.197,
+      "end": 36.595
+    },
+    {
+      "text": "senha",
+      "start": 36.595,
+      "end": 36.992
+    },
+    {
+      "text": "ou",
+      "start": 36.992,
+      "end": 37.39
+    },
+    {
+      "text": "Gov.br,",
+      "start": 37.39,
+      "end": 37.788
+    },
+    {
+      "text": "e",
+      "start": 37.788,
+      "end": 38.186
+    },
+    {
+      "text": "o",
+      "start": 38.186,
+      "end": 38.584
+    },
+    {
+      "text": "cancelamento",
+      "start": 38.584,
+      "end": 38.982
+    },
+    {
+      "text": "ganhou",
+      "start": 38.982,
+      "end": 39.38
+    },
+    {
+      "text": "regra",
+      "start": 39.38,
+      "end": 39.778
+    },
+    {
+      "text": "objetiva,",
+      "start": 39.778,
+      "end": 40.175
+    },
+    {
+      "text": "até",
+      "start": 40.175,
+      "end": 40.573
+    },
+    {
+      "text": "24",
+      "start": 40.573,
+      "end": 40.971
+    },
+    {
+      "text": "horas",
+      "start": 40.971,
+      "end": 41.369
+    },
+    {
+      "text": "antes",
+      "start": 41.369,
+      "end": 41.767
+    },
+    {
+      "text": "e",
+      "start": 41.767,
+      "end": 42.165
+    },
+    {
+      "text": "no",
+      "start": 42.165,
+      "end": 42.563
+    },
+    {
+      "text": "máximo",
+      "start": 42.563,
+      "end": 42.96
+    },
+    {
+      "text": "dois",
+      "start": 42.96,
+      "end": 43.358
+    },
+    {
+      "text": "reagendamentos.",
+      "start": 43.358,
+      "end": 43.756
+    },
+    {
+      "text": "Cada",
+      "start": 43.756,
+      "end": 44.154
+    },
+    {
+      "text": "story",
+      "start": 44.154,
+      "end": 44.552
+    },
+    {
+      "text": "passou",
+      "start": 44.552,
+      "end": 44.95
+    },
+    {
+      "text": "a",
+      "start": 44.95,
+      "end": 45.348
+    },
+    {
+      "text": "ter",
+      "start": 45.348,
+      "end": 45.745
+    },
+    {
+      "text": "escopo,",
+      "start": 45.745,
+      "end": 46.143
+    },
+    {
+      "text": "critérios",
+      "start": 46.143,
+      "end": 46.541
+    },
+    {
+      "text": "de",
+      "start": 46.541,
+      "end": 46.939
+    },
+    {
+      "text": "aceitação",
+      "start": 46.939,
+      "end": 47.337
+    },
+    {
+      "text": "e",
+      "start": 47.337,
+      "end": 47.735
+    },
+    {
+      "text": "exceções.",
+      "start": 47.735,
+      "end": 48.133
+    },
+    {
+      "text": "Mantivemos",
+      "start": 48.133,
+      "end": 48.531
+    },
+    {
+      "text": "a",
+      "start": 48.531,
+      "end": 48.928
+    },
+    {
+      "text": "matriz",
+      "start": 48.928,
+      "end": 49.326
+    },
+    {
+      "text": "GUT",
+      "start": 49.326,
+      "end": 49.724
+    },
+    {
+      "text": "e",
+      "start": 49.724,
+      "end": 50.122
+    },
+    {
+      "text": "criamos",
+      "start": 50.122,
+      "end": 50.52
+    },
+    {
+      "text": "um",
+      "start": 50.52,
+      "end": 50.918
+    },
+    {
+      "text": "desempate:",
+      "start": 50.918,
+      "end": 51.316
+    },
+    {
+      "text": "vem",
+      "start": 51.316,
+      "end": 51.713
+    },
+    {
+      "text": "primeiro",
+      "start": 51.713,
+      "end": 52.111
+    },
+    {
+      "text": "a",
+      "start": 52.111,
+      "end": 52.509
+    },
+    {
+      "text": "story",
+      "start": 52.509,
+      "end": 52.907
+    },
+    {
+      "text": "da",
+      "start": 52.907,
+      "end": 53.305
+    },
+    {
+      "text": "qual",
+      "start": 53.305,
+      "end": 53.703
+    },
+    {
+      "text": "a",
+      "start": 53.703,
+      "end": 54.101
+    },
+    {
+      "text": "outra",
+      "start": 54.101,
+      "end": 54.499
+    },
+    {
+      "text": "depende,",
+      "start": 54.499,
+      "end": 54.896
+    },
+    {
+      "text": "então",
+      "start": 54.896,
+      "end": 55.294
+    },
+    {
+      "text": "a",
+      "start": 55.294,
+      "end": 55.692
+    },
+    {
+      "text": "US02",
+      "start": 55.692,
+      "end": 56.09
+    },
+    {
+      "text": "antecede",
+      "start": 56.09,
+      "end": 56.488
+    },
+    {
+      "text": "a",
+      "start": 56.488,
+      "end": 56.886
+    },
+    {
+      "text": "US03.",
+      "start": 56.886,
+      "end": 57.284
+    },
+    {
+      "text": "A",
+      "start": 57.284,
+      "end": 57.681
+    },
+    {
+      "text": "Sprint",
+      "start": 57.681,
+      "end": 58.079
+    },
+    {
+      "text": "1",
+      "start": 58.079,
+      "end": 58.477
+    },
+    {
+      "text": "dura",
+      "start": 58.477,
+      "end": 58.875
+    },
+    {
+      "text": "duas",
+      "start": 58.875,
+      "end": 59.273
+    },
+    {
+      "text": "semanas",
+      "start": 59.273,
+      "end": 59.671
+    },
+    {
+      "text": "e",
+      "start": 59.671,
+      "end": 60.069
+    },
+    {
+      "text": "vai",
+      "start": 60.069,
+      "end": 60.466
+    },
+    {
+      "text": "entregar",
+      "start": 60.466,
+      "end": 60.864
+    },
+    {
+      "text": "o",
+      "start": 60.864,
+      "end": 61.262
+    },
+    {
+      "text": "fluxo",
+      "start": 61.262,
+      "end": 61.66
+    },
+    {
+      "text": "do",
+      "start": 61.66,
+      "end": 62.058
+    },
+    {
+      "text": "cidadão,",
+      "start": 62.058,
+      "end": 62.456
+    },
+    {
+      "text": "com",
+      "start": 62.456,
+      "end": 62.854
+    },
+    {
+      "text": "19",
+      "start": 62.854,
+      "end": 63.252
+    },
+    {
+      "text": "tarefas",
+      "start": 63.252,
+      "end": 63.649
+    },
+    {
+      "text": "e",
+      "start": 63.649,
+      "end": 64.047
+    },
+    {
+      "text": "47",
+      "start": 64.047,
+      "end": 64.445
+    },
+    {
+      "text": "horas",
+      "start": 64.445,
+      "end": 64.843
+    },
+    {
+      "text": "de",
+      "start": 64.843,
+      "end": 65.241
+    },
+    {
+      "text": "uma",
+      "start": 65.241,
+      "end": 65.639
+    },
+    {
+      "text": "capacidade",
+      "start": 65.639,
+      "end": 66.037
+    },
+    {
+      "text": "de",
+      "start": 66.037,
+      "end": 66.434
+    },
+    {
+      "text": "48.",
+      "start": 66.434,
+      "end": 66.832
+    },
+    {
+      "text": "Para",
+      "start": 66.832,
+      "end": 67.23
+    },
+    {
+      "text": "acompanhar,",
+      "start": 67.23,
+      "end": 67.628
+    },
+    {
+      "text": "usamos",
+      "start": 67.628,
+      "end": 68.026
+    },
+    {
+      "text": "quatro",
+      "start": 68.026,
+      "end": 68.424
+    },
+    {
+      "text": "métricas:",
+      "start": 68.424,
+      "end": 68.822
+    },
+    {
+      "text": "esforço",
+      "start": 68.822,
+      "end": 69.219
+    },
+    {
+      "text": "estimado",
+      "start": 69.219,
+      "end": 69.617
+    },
+    {
+      "text": "versus",
+      "start": 69.617,
+      "end": 70.015
+    },
+    {
+      "text": "realizado,",
+      "start": 70.015,
+      "end": 70.413
+    },
+    {
+      "text": "burndown,",
+      "start": 70.413,
+      "end": 70.811
+    },
+    {
+      "text": "taxa",
+      "start": 70.811,
+      "end": 71.209
+    },
+    {
+      "text": "de",
+      "start": 71.209,
+      "end": 71.607
+    },
+    {
+      "text": "conclusão",
+      "start": 71.607,
+      "end": 72.005
+    },
+    {
+      "text": "e",
+      "start": 72.005,
+      "end": 72.402
+    },
+    {
+      "text": "taxa",
+      "start": 72.402,
+      "end": 72.8
+    },
+    {
+      "text": "de",
+      "start": 72.8,
+      "end": 73.198
+    },
+    {
+      "text": "retrabalho.",
+      "start": 73.198,
+      "end": 73.596
+    },
+    {
+      "text": "Na",
+      "start": 73.596,
+      "end": 73.988
+    },
+    {
+      "text": "Parte",
+      "start": 73.988,
+      "end": 74.381
+    },
+    {
+      "text": "2,",
+      "start": 74.381,
+      "end": 74.773
+    },
+    {
+      "text": "modelamos",
+      "start": 74.773,
+      "end": 75.165
+    },
+    {
+      "text": "o",
+      "start": 75.165,
+      "end": 75.558
+    },
+    {
+      "text": "sistema",
+      "start": 75.558,
+      "end": 75.95
+    },
+    {
+      "text": "com",
+      "start": 75.95,
+      "end": 76.342
+    },
+    {
+      "text": "quatro",
+      "start": 76.342,
+      "end": 76.735
+    },
+    {
+      "text": "diagramas",
+      "start": 76.735,
+      "end": 77.127
+    },
+    {
+      "text": "UML.",
+      "start": 77.127,
+      "end": 77.52
+    },
+    {
+      "text": "O",
+      "start": 77.52,
+      "end": 77.912
+    },
+    {
+      "text": "de",
+      "start": 77.912,
+      "end": 78.304
+    },
+    {
+      "text": "casos",
+      "start": 78.304,
+      "end": 78.697
+    },
+    {
+      "text": "de",
+      "start": 78.697,
+      "end": 79.089
+    },
+    {
+      "text": "uso",
+      "start": 79.089,
+      "end": 79.481
+    },
+    {
+      "text": "mostra",
+      "start": 79.481,
+      "end": 79.874
+    },
+    {
+      "text": "os",
+      "start": 79.874,
+      "end": 80.266
+    },
+    {
+      "text": "três",
+      "start": 80.266,
+      "end": 80.658
+    },
+    {
+      "text": "atores:",
+      "start": 80.658,
+      "end": 81.051
+    },
+    {
+      "text": "cidadão,",
+      "start": 81.051,
+      "end": 81.443
+    },
+    {
+      "text": "equipe",
+      "start": 81.443,
+      "end": 81.835
+    },
+    {
+      "text": "e",
+      "start": 81.835,
+      "end": 82.228
+    },
+    {
+      "text": "gestor",
+      "start": 82.228,
+      "end": 82.62
+    },
+    {
+      "text": "da",
+      "start": 82.62,
+      "end": 83.013
+    },
+    {
+      "text": "UBS.",
+      "start": 83.013,
+      "end": 83.405
+    },
+    {
+      "text": "O",
+      "start": 83.405,
+      "end": 83.797
+    },
+    {
+      "text": "de",
+      "start": 83.797,
+      "end": 84.19
+    },
+    {
+      "text": "atividades",
+      "start": 84.19,
+      "end": 84.582
+    },
+    {
+      "text": "detalha",
+      "start": 84.582,
+      "end": 84.974
+    },
+    {
+      "text": "o",
+      "start": 84.974,
+      "end": 85.367
+    },
+    {
+      "text": "fluxo",
+      "start": 85.367,
+      "end": 85.759
+    },
+    {
+      "text": "de",
+      "start": 85.759,
+      "end": 86.151
+    },
+    {
+      "text": "agendamento,",
+      "start": 86.151,
+      "end": 86.544
+    },
+    {
+      "text": "com",
+      "start": 86.544,
+      "end": 86.936
+    },
+    {
+      "text": "exceções",
+      "start": 86.936,
+      "end": 87.328
+    },
+    {
+      "text": "como",
+      "start": 87.328,
+      "end": 87.721
+    },
+    {
+      "text": "dados",
+      "start": 87.721,
+      "end": 88.113
+    },
+    {
+      "text": "inválidos,",
+      "start": 88.113,
+      "end": 88.506
+    },
+    {
+      "text": "ausência",
+      "start": 88.506,
+      "end": 88.898
+    },
+    {
+      "text": "de",
+      "start": 88.898,
+      "end": 89.29
+    },
+    {
+      "text": "encaminhamento",
+      "start": 89.29,
+      "end": 89.683
+    },
+    {
+      "text": "e",
+      "start": 89.683,
+      "end": 90.075
+    },
+    {
+      "text": "falta",
+      "start": 90.075,
+      "end": 90.467
+    },
+    {
+      "text": "de",
+      "start": 90.467,
+      "end": 90.86
+    },
+    {
+      "text": "horários.",
+      "start": 90.86,
+      "end": 91.252
+    },
+    {
+      "text": "O",
+      "start": 91.252,
+      "end": 91.644
+    },
+    {
+      "text": "de",
+      "start": 91.644,
+      "end": 92.037
+    },
+    {
+      "text": "classes",
+      "start": 92.037,
+      "end": 92.429
+    },
+    {
+      "text": "organiza",
+      "start": 92.429,
+      "end": 92.821
+    },
+    {
+      "text": "o",
+      "start": 92.821,
+      "end": 93.214
+    },
+    {
+      "text": "domínio:",
+      "start": 93.214,
+      "end": 93.606
+    },
+    {
+      "text": "o",
+      "start": 93.606,
+      "end": 93.999
+    },
+    {
+      "text": "Encaminhamento",
+      "start": 93.999,
+      "end": 94.391
+    },
+    {
+      "text": "coordena",
+      "start": 94.391,
+      "end": 94.783
+    },
+    {
+      "text": "o",
+      "start": 94.783,
+      "end": 95.176
+    },
+    {
+      "text": "agendamento",
+      "start": 95.176,
+      "end": 95.568
+    },
+    {
+      "text": "e",
+      "start": 95.568,
+      "end": 95.96
+    },
+    {
+      "text": "a",
+      "start": 95.96,
+      "end": 96.353
+    },
+    {
+      "text": "classe",
+      "start": 96.353,
+      "end": 96.745
+    },
+    {
+      "text": "HistoricoStatus",
+      "start": 96.745,
+      "end": 97.137
+    },
+    {
+      "text": "registra",
+      "start": 97.137,
+      "end": 97.53
+    },
+    {
+      "text": "cada",
+      "start": 97.53,
+      "end": 97.922
+    },
+    {
+      "text": "mudança",
+      "start": 97.922,
+      "end": 98.314
+    },
+    {
+      "text": "de",
+      "start": 98.314,
+      "end": 98.707
+    },
+    {
+      "text": "etapa.",
+      "start": 98.707,
+      "end": 99.099
+    },
+    {
+      "text": "E",
+      "start": 99.099,
+      "end": 99.491
+    },
+    {
+      "text": "o",
+      "start": 99.491,
+      "end": 99.884
+    },
+    {
+      "text": "de",
+      "start": 99.884,
+      "end": 100.276
+    },
+    {
+      "text": "sequência",
+      "start": 100.276,
+      "end": 100.669
+    },
+    {
+      "text": "mostra",
+      "start": 100.669,
+      "end": 101.061
+    },
+    {
+      "text": "a",
+      "start": 101.061,
+      "end": 101.453
+    },
+    {
+      "text": "US03,",
+      "start": 101.453,
+      "end": 101.846
+    },
+    {
+      "text": "inclusive",
+      "start": 101.846,
+      "end": 102.238
+    },
+    {
+      "text": "quando",
+      "start": 102.238,
+      "end": 102.63
+    },
+    {
+      "text": "outro",
+      "start": 102.63,
+      "end": 103.023
+    },
+    {
+      "text": "cidadão",
+      "start": 103.023,
+      "end": 103.415
+    },
+    {
+      "text": "ocupa",
+      "start": 103.415,
+      "end": 103.807
+    },
+    {
+      "text": "o",
+      "start": 103.807,
+      "end": 104.2
+    },
+    {
+      "text": "horário",
+      "start": 104.2,
+      "end": 104.592
+    },
+    {
+      "text": "antes",
+      "start": 104.592,
+      "end": 104.984
+    },
+    {
+      "text": "da",
+      "start": 104.984,
+      "end": 105.377
+    },
+    {
+      "text": "confirmação.",
+      "start": 105.377,
+      "end": 105.769
+    },
+    {
+      "text": "Por",
+      "start": 105.769,
+      "end": 106.162
+    },
+    {
+      "text": "ser",
+      "start": 106.162,
+      "end": 106.554
+    },
+    {
+      "text": "um",
+      "start": 106.554,
+      "end": 106.946
+    },
+    {
+      "text": "serviço",
+      "start": 106.946,
+      "end": 107.339
+    },
+    {
+      "text": "público",
+      "start": 107.339,
+      "end": 107.731
+    },
+    {
+      "text": "de",
+      "start": 107.731,
+      "end": 108.123
+    },
+    {
+      "text": "saúde,",
+      "start": 108.123,
+      "end": 108.516
+    },
+    {
+      "text": "a",
+      "start": 108.516,
+      "end": 108.908
+    },
+    {
+      "text": "modelagem",
+      "start": 108.908,
+      "end": 109.3
+    },
+    {
+      "text": "cuida",
+      "start": 109.3,
+      "end": 109.693
+    },
+    {
+      "text": "de",
+      "start": 109.693,
+      "end": 110.085
+    },
+    {
+      "text": "rastreabilidade,",
+      "start": 110.085,
+      "end": 110.477
+    },
+    {
+      "text": "controle",
+      "start": 110.477,
+      "end": 110.87
+    },
+    {
+      "text": "de",
+      "start": 110.87,
+      "end": 111.262
+    },
+    {
+      "text": "acesso",
+      "start": 111.262,
+      "end": 111.655
+    },
+    {
+      "text": "a",
+      "start": 111.655,
+      "end": 112.047
+    },
+    {
+      "text": "dados",
+      "start": 112.047,
+      "end": 112.439
+    },
+    {
+      "text": "sensíveis",
+      "start": 112.439,
+      "end": 112.832
+    },
+    {
+      "text": "e",
+      "start": 112.832,
+      "end": 113.224
+    },
+    {
+      "text": "consistência",
+      "start": 113.224,
+      "end": 113.616
+    },
+    {
+      "text": "das",
+      "start": 113.616,
+      "end": 114.009
+    },
+    {
+      "text": "vagas.",
+      "start": 114.009,
+      "end": 114.401
+    },
+    {
+      "text": "Na",
+      "start": 114.401,
+      "end": 114.798
+    },
+    {
+      "text": "Parte",
+      "start": 114.798,
+      "end": 115.195
+    },
+    {
+      "text": "3,",
+      "start": 115.195,
+      "end": 115.592
+    },
+    {
+      "text": "usamos",
+      "start": 115.592,
+      "end": 115.989
+    },
+    {
+      "text": "o",
+      "start": 115.989,
+      "end": 116.385
+    },
+    {
+      "text": "Design",
+      "start": 116.385,
+      "end": 116.782
+    },
+    {
+      "text": "Sprint",
+      "start": 116.782,
+      "end": 117.179
+    },
+    {
+      "text": "para",
+      "start": 117.179,
+      "end": 117.576
+    },
+    {
+      "text": "validar",
+      "start": 117.576,
+      "end": 117.973
+    },
+    {
+      "text": "a",
+      "start": 117.973,
+      "end": 118.37
+    },
+    {
+      "text": "hipótese",
+      "start": 118.37,
+      "end": 118.767
+    },
+    {
+      "text": "de",
+      "start": 118.767,
+      "end": 119.164
+    },
+    {
+      "text": "que",
+      "start": 119.164,
+      "end": 119.561
+    },
+    {
+      "text": "o",
+      "start": 119.561,
+      "end": 119.958
+    },
+    {
+      "text": "problema",
+      "start": 119.958,
+      "end": 120.354
+    },
+    {
+      "text": "é",
+      "start": 120.354,
+      "end": 120.751
+    },
+    {
+      "text": "a",
+      "start": 120.751,
+      "end": 121.148
+    },
+    {
+      "text": "falta",
+      "start": 121.148,
+      "end": 121.545
+    },
+    {
+      "text": "de",
+      "start": 121.545,
+      "end": 121.942
+    },
+    {
+      "text": "acompanhamento.",
+      "start": 121.942,
+      "end": 122.339
+    },
+    {
+      "text": "Prototipamos",
+      "start": 122.339,
+      "end": 122.736
+    },
+    {
+      "text": "no",
+      "start": 122.736,
+      "end": 123.133
+    },
+    {
+      "text": "Figma",
+      "start": 123.133,
+      "end": 123.53
+    },
+    {
+      "text": "as",
+      "start": 123.53,
+      "end": 123.926
+    },
+    {
+      "text": "três",
+      "start": 123.926,
+      "end": 124.323
+    },
+    {
+      "text": "stories",
+      "start": 124.323,
+      "end": 124.72
+    },
+    {
+      "text": "prioritárias",
+      "start": 124.72,
+      "end": 125.117
+    },
+    {
+      "text": "como",
+      "start": 125.117,
+      "end": 125.514
+    },
+    {
+      "text": "um",
+      "start": 125.514,
+      "end": 125.911
+    },
+    {
+      "text": "único",
+      "start": 125.911,
+      "end": 126.308
+    },
+    {
+      "text": "fluxo,",
+      "start": 126.308,
+      "end": 126.705
+    },
+    {
+      "text": "porque",
+      "start": 126.705,
+      "end": 127.102
+    },
+    {
+      "text": "isoladas",
+      "start": 127.102,
+      "end": 127.498
+    },
+    {
+      "text": "elas",
+      "start": 127.498,
+      "end": 127.895
+    },
+    {
+      "text": "não",
+      "start": 127.895,
+      "end": 128.292
+    },
+    {
+      "text": "fecham",
+      "start": 128.292,
+      "end": 128.689
+    },
+    {
+      "text": "a",
+      "start": 128.689,
+      "end": 129.086
+    },
+    {
+      "text": "jornada.",
+      "start": 129.086,
+      "end": 129.483
+    },
+    {
+      "text": "O",
+      "start": 129.483,
+      "end": 129.88
+    },
+    {
+      "text": "cidadão",
+      "start": 129.88,
+      "end": 130.277
+    },
+    {
+      "text": "se",
+      "start": 130.277,
+      "end": 130.674
+    },
+    {
+      "text": "identifica:",
+      "start": 130.674,
+      "end": 131.071
+    },
+    {
+      "text": "no",
+      "start": 131.071,
+      "end": 131.467
+    },
+    {
+      "text": "totem,",
+      "start": 131.467,
+      "end": 131.864
+    },
+    {
+      "text": "com",
+      "start": 131.864,
+      "end": 132.261
+    },
+    {
+      "text": "Cartão",
+      "start": 132.261,
+      "end": 132.658
+    },
+    {
+      "text": "SUS",
+      "start": 132.658,
+      "end": 133.055
+    },
+    {
+      "text": "ou",
+      "start": 133.055,
+      "end": 133.452
+    },
+    {
+      "text": "CPF",
+      "start": 133.452,
+      "end": 133.849
+    },
+    {
+      "text": "e",
+      "start": 133.849,
+      "end": 134.246
+    },
+    {
+      "text": "nascimento,",
+      "start": 134.246,
+      "end": 134.643
+    },
+    {
+      "text": "sem",
+      "start": 134.643,
+      "end": 135.039
+    },
+    {
+      "text": "senha;",
+      "start": 135.039,
+      "end": 135.436
+    },
+    {
+      "text": "no",
+      "start": 135.436,
+      "end": 135.833
+    },
+    {
+      "text": "app,",
+      "start": 135.833,
+      "end": 136.23
+    },
+    {
+      "text": "com",
+      "start": 136.23,
+      "end": 136.627
+    },
+    {
+      "text": "CPF",
+      "start": 136.627,
+      "end": 137.024
+    },
+    {
+      "text": "e",
+      "start": 137.024,
+      "end": 137.421
+    },
+    {
+      "text": "senha",
+      "start": 137.421,
+      "end": 137.818
+    },
+    {
+      "text": "ou",
+      "start": 137.818,
+      "end": 138.215
+    },
+    {
+      "text": "Gov.br.",
+      "start": 138.215,
+      "end": 138.612
+    },
+    {
+      "text": "Depois",
+      "start": 138.612,
+      "end": 139.008
+    },
+    {
+      "text": "vê",
+      "start": 139.008,
+      "end": 139.405
+    },
+    {
+      "text": "a",
+      "start": 139.405,
+      "end": 139.802
+    },
+    {
+      "text": "etapa",
+      "start": 139.802,
+      "end": 140.199
+    },
+    {
+      "text": "do",
+      "start": 140.199,
+      "end": 140.596
+    },
+    {
+      "text": "encaminhamento",
+      "start": 140.596,
+      "end": 140.993
+    },
+    {
+      "text": "e",
+      "start": 140.993,
+      "end": 141.39
+    },
+    {
+      "text": "a",
+      "start": 141.39,
+      "end": 141.787
+    },
+    {
+      "text": "próxima",
+      "start": 141.787,
+      "end": 142.184
+    },
+    {
+      "text": "ação,",
+      "start": 142.184,
+      "end": 142.58
+    },
+    {
+      "text": "sem",
+      "start": 142.58,
+      "end": 142.977
+    },
+    {
+      "text": "dado",
+      "start": 142.977,
+      "end": 143.374
+    },
+    {
+      "text": "clínico.",
+      "start": 143.374,
+      "end": 143.771
+    },
+    {
+      "text": "Quando",
+      "start": 143.771,
+      "end": 144.168
+    },
+    {
+      "text": "há",
+      "start": 144.168,
+      "end": 144.565
+    },
+    {
+      "text": "vaga,",
+      "start": 144.565,
+      "end": 144.962
+    },
+    {
+      "text": "escolhe",
+      "start": 144.962,
+      "end": 145.359
+    },
+    {
+      "text": "o",
+      "start": 145.359,
+      "end": 145.756
+    },
+    {
+      "text": "horário,",
+      "start": 145.756,
+      "end": 146.153
+    },
+    {
+      "text": "confirma,",
+      "start": 146.153,
+      "end": 146.549
+    },
+    {
+      "text": "e",
+      "start": 146.549,
+      "end": 146.946
+    },
+    {
+      "text": "pode",
+      "start": 146.946,
+      "end": 147.343
+    },
+    {
+      "text": "cancelar",
+      "start": 147.343,
+      "end": 147.74
+    },
+    {
+      "text": "ou",
+      "start": 147.74,
+      "end": 148.137
+    },
+    {
+      "text": "reagendar.",
+      "start": 148.137,
+      "end": 148.534
+    },
+    {
+      "text": "Sem",
+      "start": 148.534,
+      "end": 148.931
+    },
+    {
+      "text": "encaminhamento",
+      "start": 148.931,
+      "end": 149.328
+    },
+    {
+      "text": "ou",
+      "start": 149.328,
+      "end": 149.725
+    },
+    {
+      "text": "sem",
+      "start": 149.725,
+      "end": 150.121
+    },
+    {
+      "text": "vagas,",
+      "start": 150.121,
+      "end": 150.518
+    },
+    {
+      "text": "a",
+      "start": 150.518,
+      "end": 150.915
+    },
+    {
+      "text": "tela",
+      "start": 150.915,
+      "end": 151.312
+    },
+    {
+      "text": "diz",
+      "start": 151.312,
+      "end": 151.709
+    },
+    {
+      "text": "isso",
+      "start": 151.709,
+      "end": 152.106
+    },
+    {
+      "text": "claramente.",
+      "start": 152.106,
+      "end": 152.503
+    },
+    {
+      "text": "Validamos",
+      "start": 152.503,
+      "end": 152.9
+    },
+    {
+      "text": "com",
+      "start": 152.9,
+      "end": 153.297
+    },
+    {
+      "text": "quatro",
+      "start": 153.297,
+      "end": 153.693
+    },
+    {
+      "text": "critérios:",
+      "start": 153.693,
+      "end": 154.09
+    },
+    {
+      "text": "clareza",
+      "start": 154.09,
+      "end": 154.487
+    },
+    {
+      "text": "do",
+      "start": 154.487,
+      "end": 154.884
+    },
+    {
+      "text": "fluxo,",
+      "start": 154.884,
+      "end": 155.281
+    },
+    {
+      "text": "facilidade",
+      "start": 155.281,
+      "end": 155.678
+    },
+    {
+      "text": "de",
+      "start": 155.678,
+      "end": 156.075
+    },
+    {
+      "text": "acompanhamento,",
+      "start": 156.075,
+      "end": 156.472
+    },
+    {
+      "text": "redução",
+      "start": 156.472,
+      "end": 156.869
+    },
+    {
+      "text": "de",
+      "start": 156.869,
+      "end": 157.266
+    },
+    {
+      "text": "retrabalho",
+      "start": 157.266,
+      "end": 157.662
+    },
+    {
+      "text": "e",
+      "start": 157.662,
+      "end": 158.059
+    },
+    {
+      "text": "redução",
+      "start": 158.059,
+      "end": 158.456
+    },
+    {
+      "text": "de",
+      "start": 158.456,
+      "end": 158.853
+    },
+    {
+      "text": "ambiguidades.",
+      "start": 158.853,
+      "end": 159.25
+    },
+    {
+      "text": "Na",
+      "start": 159.25,
+      "end": 159.677
+    },
+    {
+      "text": "Parte",
+      "start": 159.677,
+      "end": 160.104
+    },
+    {
+      "text": "4,",
+      "start": 160.104,
+      "end": 160.531
+    },
+    {
+      "text": "mantivemos",
+      "start": 160.531,
+      "end": 160.958
+    },
+    {
+      "text": "os",
+      "start": 160.958,
+      "end": 161.386
+    },
+    {
+      "text": "dados",
+      "start": 161.386,
+      "end": 161.813
+    },
+    {
+      "text": "da",
+      "start": 161.813,
+      "end": 162.24
+    },
+    {
+      "text": "Fase",
+      "start": 162.24,
+      "end": 162.667
+    },
+    {
+      "text": "1",
+      "start": 162.667,
+      "end": 163.094
+    },
+    {
+      "text": "e",
+      "start": 163.094,
+      "end": 163.521
+    },
+    {
+      "text": "calculamos",
+      "start": 163.521,
+      "end": 163.948
+    },
+    {
+      "text": "a",
+      "start": 163.948,
+      "end": 164.375
+    },
+    {
+      "text": "dispersão",
+      "start": 164.375,
+      "end": 164.802
+    },
+    {
+      "text": "dos",
+      "start": 164.802,
+      "end": 165.229
+    },
+    {
+      "text": "tempos",
+      "start": 165.229,
+      "end": 165.657
+    },
+    {
+      "text": "médios",
+      "start": 165.657,
+      "end": 166.084
+    },
+    {
+      "text": "de",
+      "start": 166.084,
+      "end": 166.511
+    },
+    {
+      "text": "espera.",
+      "start": 166.511,
+      "end": 166.938
+    },
+    {
+      "text": "Eles",
+      "start": 166.938,
+      "end": 167.365
+    },
+    {
+      "text": "vão",
+      "start": 167.365,
+      "end": 167.792
+    },
+    {
+      "text": "de",
+      "start": 167.792,
+      "end": 168.219
+    },
+    {
+      "text": "25",
+      "start": 168.219,
+      "end": 168.646
+    },
+    {
+      "text": "dias",
+      "start": 168.646,
+      "end": 169.073
+    },
+    {
+      "text": "na",
+      "start": 169.073,
+      "end": 169.501
+    },
+    {
+      "text": "Oncologia",
+      "start": 169.501,
+      "end": 169.928
+    },
+    {
+      "text": "a",
+      "start": 169.928,
+      "end": 170.355
+    },
+    {
+      "text": "180",
+      "start": 170.355,
+      "end": 170.782
+    },
+    {
+      "text": "na",
+      "start": 170.782,
+      "end": 171.209
+    },
+    {
+      "text": "Ortopedia:",
+      "start": 171.209,
+      "end": 171.636
+    },
+    {
+      "text": "média",
+      "start": 171.636,
+      "end": 172.063
+    },
+    {
+      "text": "de",
+      "start": 172.063,
+      "end": 172.49
+    },
+    {
+      "text": "103,75",
+      "start": 172.49,
+      "end": 172.917
+    },
+    {
+      "text": "dias,",
+      "start": 172.917,
+      "end": 173.344
+    },
+    {
+      "text": "amplitude",
+      "start": 173.344,
+      "end": 173.772
+    },
+    {
+      "text": "de",
+      "start": 173.772,
+      "end": 174.199
+    },
+    {
+      "text": "155,",
+      "start": 174.199,
+      "end": 174.626
+    },
+    {
+      "text": "desvio",
+      "start": 174.626,
+      "end": 175.053
+    },
+    {
+      "text": "padrão",
+      "start": 175.053,
+      "end": 175.48
+    },
+    {
+      "text": "de",
+      "start": 175.48,
+      "end": 175.907
+    },
+    {
+      "text": "cerca",
+      "start": 175.907,
+      "end": 176.334
+    },
+    {
+      "text": "de",
+      "start": 176.334,
+      "end": 176.761
+    },
+    {
+      "text": "56",
+      "start": 176.761,
+      "end": 177.188
+    },
+    {
+      "text": "e",
+      "start": 177.188,
+      "end": 177.615
+    },
+    {
+      "text": "IQR",
+      "start": 177.615,
+      "end": 178.043
+    },
+    {
+      "text": "de",
+      "start": 178.043,
+      "end": 178.47
+    },
+    {
+      "text": "92,5.",
+      "start": 178.47,
+      "end": 178.897
+    },
+    {
+      "text": "Ou",
+      "start": 178.897,
+      "end": 179.324
+    },
+    {
+      "text": "seja,",
+      "start": 179.324,
+      "end": 179.751
+    },
+    {
+      "text": "a",
+      "start": 179.751,
+      "end": 180.178
+    },
+    {
+      "text": "média",
+      "start": 180.178,
+      "end": 180.605
+    },
+    {
+      "text": "sozinha",
+      "start": 180.605,
+      "end": 181.032
+    },
+    {
+      "text": "esconde",
+      "start": 181.032,
+      "end": 181.459
+    },
+    {
+      "text": "filas",
+      "start": 181.459,
+      "end": 181.887
+    },
+    {
+      "text": "muito",
+      "start": 181.887,
+      "end": 182.314
+    },
+    {
+      "text": "diferentes.",
+      "start": 182.314,
+      "end": 182.741
+    },
+    {
+      "text": "Depois,",
+      "start": 182.741,
+      "end": 183.168
+    },
+    {
+      "text": "a",
+      "start": 183.168,
+      "end": 183.595
+    },
+    {
+      "text": "probabilidade:",
+      "start": 183.595,
+      "end": 184.022
+    },
+    {
+      "text": "adotando",
+      "start": 184.022,
+      "end": 184.449
+    },
+    {
+      "text": "100",
+      "start": 184.449,
+      "end": 184.876
+    },
+    {
+      "text": "dias",
+      "start": 184.876,
+      "end": 185.303
+    },
+    {
+      "text": "como",
+      "start": 185.303,
+      "end": 185.73
+    },
+    {
+      "text": "limite",
+      "start": 185.73,
+      "end": 186.158
+    },
+    {
+      "text": "analítico,",
+      "start": 186.158,
+      "end": 186.585
+    },
+    {
+      "text": "60%",
+      "start": 186.585,
+      "end": 187.012
+    },
+    {
+      "text": "dos",
+      "start": 187.012,
+      "end": 187.439
+    },
+    {
+      "text": "encaminhamentos",
+      "start": 187.439,
+      "end": 187.866
+    },
+    {
+      "text": "estão",
+      "start": 187.866,
+      "end": 188.293
+    },
+    {
+      "text": "em",
+      "start": 188.293,
+      "end": 188.72
+    },
+    {
+      "text": "especialidades",
+      "start": 188.72,
+      "end": 189.147
+    },
+    {
+      "text": "acima",
+      "start": 189.147,
+      "end": 189.574
+    },
+    {
+      "text": "dele.",
+      "start": 189.574,
+      "end": 190.002
+    },
+    {
+      "text": "E",
+      "start": 190.002,
+      "end": 190.429
+    },
+    {
+      "text": "a",
+      "start": 190.429,
+      "end": 190.856
+    },
+    {
+      "text": "chance",
+      "start": 190.856,
+      "end": 191.283
+    },
+    {
+      "text": "de",
+      "start": 191.283,
+      "end": 191.71
+    },
+    {
+      "text": "um",
+      "start": 191.71,
+      "end": 192.137
+    },
+    {
+      "text": "encaminhamento",
+      "start": 192.137,
+      "end": 192.564
+    },
+    {
+      "text": "ser",
+      "start": 192.564,
+      "end": 192.991
+    },
+    {
+      "text": "urgente",
+      "start": 192.991,
+      "end": 193.418
+    },
+    {
+      "text": "é",
+      "start": 193.418,
+      "end": 193.845
+    },
+    {
+      "text": "de",
+      "start": 193.845,
+      "end": 194.273
+    },
+    {
+      "text": "17,5%,",
+      "start": 194.273,
+      "end": 194.7
+    },
+    {
+      "text": "ponderada",
+      "start": 194.7,
+      "end": 195.127
+    },
+    {
+      "text": "pelo",
+      "start": 195.127,
+      "end": 195.554
+    },
+    {
+      "text": "volume,",
+      "start": 195.554,
+      "end": 195.981
+    },
+    {
+      "text": "e",
+      "start": 195.981,
+      "end": 196.408
+    },
+    {
+      "text": "não",
+      "start": 196.408,
+      "end": 196.835
+    },
+    {
+      "text": "os",
+      "start": 196.835,
+      "end": 197.262
+    },
+    {
+      "text": "27,5%",
+      "start": 197.262,
+      "end": 197.689
+    },
+    {
+      "text": "da",
+      "start": 197.689,
+      "end": 198.116
+    },
+    {
+      "text": "média",
+      "start": 198.116,
+      "end": 198.544
+    },
+    {
+      "text": "simples.",
+      "start": 198.544,
+      "end": 198.971
+    },
+    {
+      "text": "Como",
+      "start": 198.971,
+      "end": 199.398
+    },
+    {
+      "text": "os",
+      "start": 199.398,
+      "end": 199.825
+    },
+    {
+      "text": "dados",
+      "start": 199.825,
+      "end": 200.252
+    },
+    {
+      "text": "são",
+      "start": 200.252,
+      "end": 200.679
+    },
+    {
+      "text": "agregados,",
+      "start": 200.679,
+      "end": 201.106
+    },
+    {
+      "text": "não",
+      "start": 201.106,
+      "end": 201.533
+    },
+    {
+      "text": "dizem",
+      "start": 201.533,
+      "end": 201.96
+    },
+    {
+      "text": "quanto",
+      "start": 201.96,
+      "end": 202.388
+    },
+    {
+      "text": "cada",
+      "start": 202.388,
+      "end": 202.815
+    },
+    {
+      "text": "paciente",
+      "start": 202.815,
+      "end": 203.242
+    },
+    {
+      "text": "espera,",
+      "start": 203.242,
+      "end": 203.669
+    },
+    {
+      "text": "mas",
+      "start": 203.669,
+      "end": 204.096
+    },
+    {
+      "text": "apoiam",
+      "start": 204.096,
+      "end": 204.523
+    },
+    {
+      "text": "decisões",
+      "start": 204.523,
+      "end": 204.95
+    },
+    {
+      "text": "como",
+      "start": 204.95,
+      "end": 205.377
+    },
+    {
+      "text": "redistribuir",
+      "start": 205.377,
+      "end": 205.804
+    },
+    {
+      "text": "recursos,",
+      "start": 205.804,
+      "end": 206.231
+    },
+    {
+      "text": "organizar",
+      "start": 206.231,
+      "end": 206.659
+    },
+    {
+      "text": "mutirões",
+      "start": 206.659,
+      "end": 207.086
+    },
+    {
+      "text": "e",
+      "start": 207.086,
+      "end": 207.513
+    },
+    {
+      "text": "priorizar",
+      "start": 207.513,
+      "end": 207.94
+    },
+    {
+      "text": "filas.",
+      "start": 207.94,
+      "end": 208.367
+    },
+    {
+      "text": "Fechamos",
+      "start": 208.367,
+      "end": 208.787
+    },
+    {
+      "text": "esta",
+      "start": 208.787,
+      "end": 209.207
+    },
+    {
+      "text": "fase",
+      "start": 209.207,
+      "end": 209.626
+    },
+    {
+      "text": "com",
+      "start": 209.626,
+      "end": 210.046
+    },
+    {
+      "text": "um",
+      "start": 210.046,
+      "end": 210.466
+    },
+    {
+      "text": "projeto",
+      "start": 210.466,
+      "end": 210.886
+    },
+    {
+      "text": "estruturado:",
+      "start": 210.886,
+      "end": 211.306
+    },
+    {
+      "text": "requisitos",
+      "start": 211.306,
+      "end": 211.726
+    },
+    {
+      "text": "refinados,",
+      "start": 211.726,
+      "end": 212.145
+    },
+    {
+      "text": "modelagem,",
+      "start": 212.145,
+      "end": 212.565
+    },
+    {
+      "text": "protótipo",
+      "start": 212.565,
+      "end": 212.985
+    },
+    {
+      "text": "validado",
+      "start": 212.985,
+      "end": 213.405
+    },
+    {
+      "text": "e",
+      "start": 213.405,
+      "end": 213.825
+    },
+    {
+      "text": "dados",
+      "start": 213.825,
+      "end": 214.245
+    },
+    {
+      "text": "que",
+      "start": 214.245,
+      "end": 214.664
+    },
+    {
+      "text": "sustentam",
+      "start": 214.664,
+      "end": 215.084
+    },
+    {
+      "text": "decisões.",
+      "start": 215.084,
+      "end": 215.504
+    },
+    {
+      "text": "Com",
+      "start": 215.504,
+      "end": 215.924
+    },
+    {
+      "text": "a",
+      "start": 215.924,
+      "end": 216.344
+    },
+    {
+      "text": "Sprint",
+      "start": 216.344,
+      "end": 216.763
+    },
+    {
+      "text": "1",
+      "start": 216.763,
+      "end": 217.183
+    },
+    {
+      "text": "planejada,",
+      "start": 217.183,
+      "end": 217.603
+    },
+    {
+      "text": "o",
+      "start": 217.603,
+      "end": 218.023
+    },
+    {
+      "text": "Minha",
+      "start": 218.023,
+      "end": 218.443
+    },
+    {
+      "text": "Vez",
+      "start": 218.443,
+      "end": 218.863
+    },
+    {
+      "text": "está",
+      "start": 218.863,
+      "end": 219.282
+    },
+    {
+      "text": "pronto",
+      "start": 219.282,
+      "end": 219.702
+    },
+    {
+      "text": "para",
+      "start": 219.702,
+      "end": 220.122
+    },
+    {
+      "text": "virar",
+      "start": 220.122,
+      "end": 220.542
+    },
+    {
+      "text": "código",
+      "start": 220.542,
+      "end": 220.962
+    },
+    {
+      "text": "e",
+      "start": 220.962,
+      "end": 221.382
+    },
+    {
+      "text": "tornar",
+      "start": 221.382,
+      "end": 221.801
+    },
+    {
+      "text": "a",
+      "start": 221.801,
+      "end": 222.221
+    },
+    {
+      "text": "fila",
+      "start": 222.221,
+      "end": 222.641
+    },
+    {
+      "text": "visível",
+      "start": 222.641,
+      "end": 223.061
+    },
+    {
+      "text": "para",
+      "start": 223.061,
+      "end": 223.481
+    },
+    {
+      "text": "o",
+      "start": 223.481,
+      "end": 223.901
+    },
+    {
+      "text": "cidadão.",
+      "start": 223.901,
+      "end": 224.32
+    },
+    {
+      "text": "Muito",
+      "start": 224.32,
+      "end": 224.74
+    },
+    {
+      "text": "obrigado!",
+      "start": 224.74,
+      "end": 225.16
+    }
+  ]
+}

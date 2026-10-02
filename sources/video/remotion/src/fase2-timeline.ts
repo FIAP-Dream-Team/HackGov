@@ -1,6 +1,7 @@
 import rawTiming from "./data/fase-2/timing.json";
+import rawMusic from "./data/fase-2/music.json";
 import type { SpeakerId } from "./data/speakers";
-import type { RevealCue, SpeakerTurn } from "./timeline";
+import type { MusicBed, RevealCue, SpeakerTurn } from "./timeline";
 
 export type Fase2SlideCue = {
   slide: string;
@@ -24,9 +25,11 @@ export type Fase2Timing = {
   durationInFrames: number;
   alignmentRate: number;
   source: string;
+  audio: string;
   turns: SpeakerTurn[];
   slides: Fase2SlideCue[];
   reveals: RevealCue[];
 };
 
 export const fase2Timing = rawTiming as Fase2Timing;
+export const fase2Music = rawMusic as MusicBed;

@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame
 import { loadFont as loadBricolage } from "@remotion/google-fonts/BricolageGrotesque";
 import { loadFont as loadFigtree } from "@remotion/google-fonts/Figtree";
 
-import { fase2Timing as timing } from "./fase2-timeline";
+import { fase2Timing as timing, fase2Music as music } from "./fase2-timeline";
 import { PdfSlide } from "./components/PdfSlide";
 import { SpeakerCard, CARD_HOLD } from "./components/SpeakerCard";
 import { COLORS, SLIDE_FADE } from "./theme";
@@ -30,9 +30,12 @@ export const Fase2: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: COLORS.cream }}>
       {timing.slides.map((entry, index) => {
+        // Fade in on the incoming speaker's time, never by starting the next
+        // slide while the previous person is still talking.
         const fade = index === 0 ? 0 : SLIDE_FADE;
-        const from = Math.max(0, entry.startFrame - fade);
-        const durationInFrames = Math.max(1, entry.endFrame - from);
+        const from = entry.startFrame;
+        const tail = index < timing.slides.length - 1 ? fade : 0;
+        const durationInFrames = Math.max(1, entry.endFrame + tail - from);
 
         return (
           <Sequence
@@ -66,7 +69,20 @@ export const Fase2: React.FC = () => {
         );
       })}
 
-      <MusicBed />
+      <Audio src={staticFile(timing.audio)} />
+
+      <Audio
+        src={staticFile(music.file)}
+        volume={(frame) => music.first[frame] ?? 0}
+        name="Trilha (1a passada)"
+      />
+      <Sequence from={music.seamFrame} name="Trilha (2a passada)" layout="none">
+        <Audio
+          src={staticFile(music.file)}
+          trimBefore={music.secondPassTrimFrames}
+          volume={(frame) => music.second[frame] ?? 0}
+        />
+      </Sequence>
     </AbsoluteFill>
   );
 };
@@ -82,36 +98,4 @@ const CrossFade: React.FC<{ fade: number; children: React.ReactNode }> = ({ fade
         });
 
   return <AbsoluteFill style={{ opacity }}>{children}</AbsoluteFill>;
-};
-
-/**
- * Same track as Cap 1, at a flat low level. Per-speaker ducking waits for the
- * real narration file — music-bed.mjs needs measured voice levels.
- */
-const MusicBed: React.FC = () => {
-  const duration = timing.durationInFrames;
-  const seam = 3240;
-  const level = 0.1;
-
-  const volume = (frame: number, origin: number) => {
-    const absolute = origin + frame;
-    const fadeIn = interpolate(absolute, [0, 45], [0, level], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
-    const fadeOut = interpolate(absolute, [duration - 90, duration], [level, 0], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
-    return Math.min(fadeIn, fadeOut);
-  };
-
-  return (
-    <>
-      <Audio src={staticFile("musica.mp3")} volume={(frame) => volume(frame, 0)} name="Trilha (1a passada)" />
-      <Sequence from={seam} name="Trilha (2a passada)" layout="none">
-        <Audio src={staticFile("musica.mp3")} volume={(frame) => volume(frame, seam)} />
-      </Sequence>
-    </>
-  );
 };

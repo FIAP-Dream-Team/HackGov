@@ -1,9 +1,10 @@
-"""Rasterize the Fase 2 PDF into 1920x1080 JPEGs and patch spoken numbers.
+"""Rasterize the Fase 2 PDF into 1920x1080 JPEGs and patch the video frames.
 
-The deck PDF is the visual source. Two figures on slide 11 contradict the
-roteiro the group is recording: 65% (Ortopedia 35% + Cardiologia 30%) vs the
-spoken 60%. This script paints 60% over 65% and drops the volume add-up so
-the card does not still sum to 65 next to a 60.
+Edits applied only to the JPEG the Remotion composition plays — the PDF the
+group submits is not touched:
+
+  - Slide 11: spoken 60% instead of the printed 65%.
+  - Slides 1 and 12: drop '[colar link]' (this file is the video).
 
 Requires: pip install pypdfium2 pillow
 """
@@ -76,6 +77,16 @@ def center_text(
     draw.text((x, y), text, font=font, fill=fill)
 
 
+def patch_slide_01(image: Image.Image) -> None:
+    """Drop the 'VÍDEO DO PROJETO / [colar link]' card — this file is the video."""
+    stamp_green(image, (1418, 818, 1800, 962), (1500, 400, 1700, 600))
+
+
+def patch_slide_12(image: Image.Image) -> None:
+    """Drop the footer line 'Vídeo: [colar link]'."""
+    stamp_green(image, (118, 916, 420, 954), (118, 960, 400, 1020))
+
+
 def patch_slide_11(image: Image.Image) -> None:
     """65% → 60%. Drop '35% + 30%' so the card does not still add to 65."""
     # Second digit of the big number (the 5 of 65%). 6 and % stay from the PDF.
@@ -98,7 +109,9 @@ def main() -> None:
         raise SystemExit(f"PDF not found: {PDF}")
     OUT.mkdir(parents=True, exist_ok=True)
     pages = rasterize()
+    patch_slide_01(pages[0])
     patch_slide_11(pages[10])
+    patch_slide_12(pages[11])
     for index, page in enumerate(pages, start=1):
         dest = OUT / f"{index:02d}.jpg"
         page.save(dest, "JPEG", quality=94, optimize=True)

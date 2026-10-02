@@ -1,0 +1,49 @@
+{
+  "detector": "silencedetect noise=-26dB d=0.14 + F0",
+  "durationSec": 225.16,
+  "voices": {
+    "john": 160,
+    "larissa": 200,
+    "joao": 115.9,
+    "vinicius": 150.9,
+    "brenda": 200
+  },
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "start": 0.38,
+      "end": 26.648
+    },
+    {
+      "id": "f02",
+      "speaker": "larissa",
+      "start": 26.648,
+      "end": 73.596
+    },
+    {
+      "id": "f03",
+      "speaker": "joao",
+      "start": 73.596,
+      "end": 114.401
+    },
+    {
+      "id": "f04",
+      "speaker": "vinicius",
+      "start": 114.401,
+      "end": 159.25
+    },
+    {
+      "id": "f05",
+      "speaker": "brenda",
+      "start": 159.25,
+      "end": 208.367
+    },
+    {
+      "id": "f06",
+      "speaker": "john",
+      "start": 208.367,
+      "end": 225.16
+    }
+  ]
+}

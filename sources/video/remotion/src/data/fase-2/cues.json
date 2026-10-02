@@ -1,0 +1,151 @@
+{
+  "_comment": "Fala a fala, com o recorte de audio medido e os slides que entram nela. Edite slide-map.json (ancoras) e rode align de novo.",
+  "durationSec": 225.16,
+  "videoSec": 228.66,
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "section": "1. Abertura",
+      "start": 0,
+      "end": 26.648,
+      "text": "E aí, pessoal! Somos a equipe do HackGov: eu, John, Ana Larissa, João Pedro, Vinícius e Brenda. Na Fase 1, escolhemos o problema: o encaminhamento da UBS para a atenção especializada, onde o paciente some. Agora aprofundamos a solução do Minha Vez: refinamos o backlog, modelamos o sistema, prototipamos a jornada do cidadão e analisamos os dados. Vamos ver cada etapa.",
+      "slides": [
+        {
+          "slide": "01",
+          "label": "Capa",
+          "start": 0,
+          "end": 7.426907568143748,
+          "anchor": null
+        },
+        {
+          "slide": "02",
+          "label": "Onde estamos",
+          "start": 7.426907568143748,
+          "end": 26.648,
+          "anchor": "Na Fase 1"
+        }
+      ]
+    },
+    {
+      "id": "f02",
+      "speaker": "larissa",
+      "section": "2. Parte 1 — Backlog e Sprint 1",
+      "start": 26.648,
+      "end": 73.596,
+      "text": "Na Fase 2 refinamos o backlog. Corrigimos contradições da Fase 1: a ausência de senha vale só no totem, enquanto o app usa CPF e senha ou Gov.br, e o cancelamento ganhou regra objetiva, até 24 horas antes e no máximo dois reagendamentos. Cada story passou a ter escopo, critérios de aceitação e exceções. Mantivemos a matriz GUT e criamos um desempate: vem primeiro a story da qual a outra depende, então a US02 antecede a US03. A Sprint 1 dura duas semanas e vai entregar o fluxo do cidadão, com 19 tarefas e 47 horas de uma capacidade de 48. Para acompanhar, usamos quatro métricas: esforço estimado versus realizado, burndown, taxa de conclusão e taxa de retrabalho.",
+      "slides": [
+        {
+          "slide": "03",
+          "label": "Backlog refinado",
+          "start": 26.648,
+          "end": 48.133,
+          "anchor": null
+        },
+        {
+          "slide": "04",
+          "label": "Priorização GUT",
+          "start": 48.133,
+          "end": 57.284,
+          "anchor": "Mantivemos a matriz GUT"
+        },
+        {
+          "slide": "05",
+          "label": "Sprint 1 e métricas",
+          "start": 57.284,
+          "end": 73.596,
+          "anchor": "A Sprint 1"
+        }
+      ]
+    },
+    {
+      "id": "f03",
+      "speaker": "joao",
+      "section": "3. Parte 2 — UML",
+      "start": 73.596,
+      "end": 114.401,
+      "text": "Na Parte 2, modelamos o sistema com quatro diagramas UML. O de casos de uso mostra os três atores: cidadão, equipe e gestor da UBS. O de atividades detalha o fluxo de agendamento, com exceções como dados inválidos, ausência de encaminhamento e falta de horários. O de classes organiza o domínio: o Encaminhamento coordena o agendamento e a classe HistoricoStatus registra cada mudança de etapa. E o de sequência mostra a US03, inclusive quando outro cidadão ocupa o horário antes da confirmação. Por ser um serviço público de saúde, a modelagem cuida de rastreabilidade, controle de acesso a dados sensíveis e consistência das vagas.",
+      "slides": [
+        {
+          "slide": "06",
+          "label": "UML atores e processo",
+          "start": 73.596,
+          "end": 91.252,
+          "anchor": null
+        },
+        {
+          "slide": "07",
+          "label": "UML estrutura",
+          "start": 91.252,
+          "end": 114.401,
+          "anchor": "O de classes"
+        }
+      ]
+    },
+    {
+      "id": "f04",
+      "speaker": "vinicius",
+      "section": "4. Parte 3 — Protótipo",
+      "start": 114.401,
+      "end": 159.25,
+      "text": "Na Parte 3, usamos o Design Sprint para validar a hipótese de que o problema é a falta de acompanhamento. Prototipamos no Figma as três stories prioritárias como um único fluxo, porque isoladas elas não fecham a jornada. O cidadão se identifica: no totem, com Cartão SUS ou CPF e nascimento, sem senha; no app, com CPF e senha ou Gov.br. Depois vê a etapa do encaminhamento e a próxima ação, sem dado clínico. Quando há vaga, escolhe o horário, confirma, e pode cancelar ou reagendar. Sem encaminhamento ou sem vagas, a tela diz isso claramente. Validamos com quatro critérios: clareza do fluxo, facilidade de acompanhamento, redução de retrabalho e redução de ambiguidades.",
+      "slides": [
+        {
+          "slide": "08",
+          "label": "Protótipo",
+          "start": 114.401,
+          "end": 152.503,
+          "anchor": null
+        },
+        {
+          "slide": "09",
+          "label": "Critérios de validação",
+          "start": 152.503,
+          "end": 159.25,
+          "anchor": "Validamos com quatro critérios"
+        }
+      ]
+    },
+    {
+      "id": "f05",
+      "speaker": "brenda",
+      "section": "5. Parte 4 — Dispersão e probabilidade",
+      "start": 159.25,
+      "end": 208.367,
+      "text": "Na Parte 4, mantivemos os dados da Fase 1 e calculamos a dispersão dos tempos médios de espera. Eles vão de 25 dias na Oncologia a 180 na Ortopedia: média de 103,75 dias, amplitude de 155, desvio padrão de cerca de 56 e IQR de 92,5. Ou seja, a média sozinha esconde filas muito diferentes. Depois, a probabilidade: adotando 100 dias como limite analítico, 60% dos encaminhamentos estão em especialidades acima dele. E a chance de um encaminhamento ser urgente é de 17,5%, ponderada pelo volume, e não os 27,5% da média simples. Como os dados são agregados, não dizem quanto cada paciente espera, mas apoiam decisões como redistribuir recursos, organizar mutirões e priorizar filas.",
+      "slides": [
+        {
+          "slide": "10",
+          "label": "Dispersão",
+          "start": 159.25,
+          "end": 182.741,
+          "anchor": null
+        },
+        {
+          "slide": "11",
+          "label": "Probabilidade",
+          "start": 182.741,
+          "end": 208.367,
+          "anchor": "Depois, a probabilidade"
+        }
+      ]
+    },
+    {
+      "id": "f06",
+      "speaker": "john",
+      "section": "6. Encerramento",
+      "start": 208.367,
+      "end": 225.16,
+      "text": "Fechamos esta fase com um projeto estruturado: requisitos refinados, modelagem, protótipo validado e dados que sustentam decisões. Com a Sprint 1 planejada, o Minha Vez está pronto para virar código e tornar a fila visível para o cidadão. Muito obrigado!",
+      "slides": [
+        {
+          "slide": "12",
+          "label": "Encerramento",
+          "start": 208.367,
+          "end": 228.66,
+          "anchor": null
+        }
+      ]
+    }
+  ]
+}
