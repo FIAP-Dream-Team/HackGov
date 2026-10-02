@@ -1,13 +1,35 @@
 import React from "react";
 import { Composition } from "remotion";
 import { MinhaVez } from "./MinhaVez";
+import { Fase2 } from "./Fase2";
+import { Fase2Check } from "./Fase2Check";
 import { SlideCheck } from "./SlideCheck";
 import { timing } from "./timeline";
+import { fase2Timing } from "./fase2-timeline";
 import { VIDEO } from "./theme";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="Fase2"
+        component={Fase2}
+        durationInFrames={Math.max(1, fase2Timing.durationInFrames)}
+        fps={VIDEO.fps}
+        width={VIDEO.width}
+        height={VIDEO.height}
+      />
+
+      <Composition
+        id="Fase2Check"
+        component={Fase2Check}
+        durationInFrames={1}
+        fps={VIDEO.fps}
+        width={VIDEO.width}
+        height={VIDEO.height}
+        defaultProps={{ page: 11 }}
+      />
+
       <Composition
         id="MinhaVez"
         component={MinhaVez}

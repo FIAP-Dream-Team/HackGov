@@ -1,5 +1,9 @@
 # Vídeo HackGov — Minha Vez
 
+O vídeo da **Fase 2** é a composição `Fase2` (PDF em `../fase-2/`, dados em
+`src/data/fase-2/`). Ver `../fase-2/README.md`. A composição `MinhaVez` abaixo
+é o vídeo do Cap 1 e continua intacta.
+
 Projeto Remotion que monta o vídeo de até 5 minutos exigido pelo Cap 1. A narração já gravada
 (`../audio.mp3`) manda no tempo; os slides do deck (`../minhavez/HackGov Minha Vez v2.dc.html`) entram como
 apoio visual, sincronizados fala a fala.
