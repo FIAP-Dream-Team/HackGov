@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --type-title: 76px; --type-subtitle: 44px; --type-body: 34px; --type-small: 28px;
+    --pad-top: 96px; --pad-bottom: 80px; --pad-x: 104px; --gap-title: 48px; --gap-item: 28px;
+  }
+  body { margin: 0; background: #12211A; font-family: Figtree, system-ui, sans-serif; }
+  a { color: #1D5FA8; text-decoration: none; }
+  a:hover { color: #16487E; }
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Capa" data-screen-label="01" data-speaker-notes="Abertura. O MVP tem três canais e três cores com função definida." style="background: #1E8E63; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="display: flex; align-items: center; gap: 20px">
+      <div style="position: relative; width: 74px; height: 54px">
+        <div style="position: absolute; left: 0; top: 0; width: 48px; height: 48px; border-radius: 50%; border: 7px solid #FFFFFF"></div>
+        <div style="position: absolute; left: 24px; top: 6px; width: 48px; height: 48px; border-radius: 50%; border: 7px solid #F5B700"></div>
+      </div>
+      <div style="font-size: var(--type-subtitle); font-weight: 700; letter-spacing: -0.01em">Minha Vez</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 32px; max-width: 1400px">
+      <h1 style="margin: 0; font-size: 110px; line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; text-wrap: pretty">Paleta e telas do MVP</h1>
+      <p style="margin: 0; font-size: var(--type-subtitle); line-height: 1.35; color: #D8EFE5; max-width: 1100px; text-wrap: pretty">Atenção primária conectada à atenção especializada. Três cores, três canais.</p>
+    </div>
+    <div style="display: flex; gap: 48px; font-size: var(--type-small); color: #C4E6D7">
+      <div>Verde saúde · paciente</div>
+      <div>Azul gestão · equipe</div>
+      <div>Amarelo senha · chamada</div>
+    </div>
+  </section>
+
+  <section data-label="Paleta" data-screen-label="02" data-speaker-notes="Cada cor tem função. O amarelo nunca é decoração." style="background: #F6F3EC; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <h2 style="margin: 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Três cores, três funções</h2>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; flex: 1">
+      <div style="background: #FFFFFF; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E3DED3">
+        <div style="height: 240px; background: #1E8E63"></div>
+        <div style="padding: 40px; display: flex; flex-direction: column; gap: 16px">
+          <div style="font-size: var(--type-subtitle); font-weight: 800; letter-spacing: -0.02em">Verde saúde</div>
+          <div style="font-family: ui-monospace, monospace; font-size: var(--type-small); color: #6B7A72">#1E8E63</div>
+          <p style="margin: 0; font-size: var(--type-small); line-height: 1.45; color: #43534B">Cor principal da marca. Saúde sem imitar o azul institucional do SUS.</p>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E3DED3">
+        <div style="height: 240px; background: #1D5FA8"></div>
+        <div style="padding: 40px; display: flex; flex-direction: column; gap: 16px">
+          <div style="font-size: var(--type-subtitle); font-weight: 800; letter-spacing: -0.02em">Azul gestão</div>
+          <div style="font-family: ui-monospace, monospace; font-size: var(--type-small); color: #6B7A72">#1D5FA8</div>
+          <p style="margin: 0; font-size: var(--type-small); line-height: 1.45; color: #43534B">Canal web da equipe da UBS e do gestor. Tom institucional.</p>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid #E3DED3">
+        <div style="height: 240px; background: #F5B700"></div>
+        <div style="padding: 40px; display: flex; flex-direction: column; gap: 16px">
+          <div style="font-size: var(--type-subtitle); font-weight: 800; letter-spacing: -0.02em">Amarelo senha</div>
+          <div style="font-family: ui-monospace, monospace; font-size: var(--type-small); color: #6B7A72">#F5B700</div>
+          <p style="margin: 0; font-size: var(--type-small); line-height: 1.45; color: #43534B">Exclusivo da senha e da chamada no painel. Só aparece quando é a vez de alguém.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Totem início" data-screen-label="03" data-speaker-notes="Sem senha, sem dado clínico exposto. Fonte grande, áudio e ajuda em toda tela." style="background: #F6F3EC; color: #12211A; display: flex; padding: var(--pad-top) var(--pad-x) var(--pad-bottom); gap: 90px; align-items: flex-start">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: var(--gap-title); padding-top: 20px">
+      <div>
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63">Totem da UBS</div>
+        <h2 style="margin: 18px 0 0; font-size: var(--type-title); line-height: 1.06; font-weight: 800; letter-spacing: -0.025em; text-wrap: pretty">Identificação em um toque</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--gap-item)">
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #2E3D35">Cartão SUS encostado ou CPF digitado.</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #2E3D35">Sem senha e sem dado clínico exposto.</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #2E3D35">Aumentar letra, ouvir a tela e ajuda em todas as telas.</div>
+      </div>
+    </div>
+    <div data-om-raster style="width: 604px; height: 847px; flex: none">
+      <div style="transform: scale(0.7368); transform-origin: top left; width: 820px; height: 1150px; box-sizing: border-box; border-radius: 32px; background: #1E8E63; padding: 22px">
+        <div style="height: 100%; box-sizing: border-box; border-radius: 22px; background: #FCFBF7; display: flex; flex-direction: column; padding: 46px 44px 36px">
+          <div style="display: flex; align-items: center; justify-content: space-between">
+            <div style="display: flex; align-items: center; gap: 14px">
+              <div style="position: relative; width: 54px; height: 40px">
+                <div style="position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; border: 5px solid #1E8E63"></div>
+                <div style="position: absolute; left: 18px; top: 6px; width: 34px; height: 34px; border-radius: 50%; border: 5px solid #F5B700"></div>
+              </div>
+              <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.01em">Minha Vez</div>
+            </div>
+            <div style="font-size: 22px; color: #5C6C64; font-weight: 500">UBS Vila União</div>
+          </div>
+          <div style="margin-top: 64px; display: flex; flex-direction: column; gap: 20px">
+            <div style="font-size: 58px; line-height: 1.08; font-weight: 800; letter-spacing: -0.025em">Veja em que etapa está seu pedido</div>
+            <div style="font-size: 30px; line-height: 1.4; color: #43534B; max-width: 620px">Consulta com especialista ou exame. É só encostar o cartão.</div>
+          </div>
+          <div style="margin-top: 56px; display: flex; flex-direction: column; gap: 20px">
+            <div style="display: flex; align-items: center; gap: 24px; background: #1E8E63; color: #FFFFFF; border-radius: 22px; padding: 34px; font-size: 36px; font-weight: 700">
+              <span style="width: 60px; height: 60px; border-radius: 16px; background: rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center; flex: none">
+                <span style="width: 30px; height: 22px; border: 4px solid #FFFFFF; border-radius: 5px; display: block"></span>
+              </span>
+              Encostar o Cartão SUS
+            </div>
+            <div style="display: flex; align-items: center; gap: 24px; background: #FFFFFF; border: 3px solid #1E8E63; border-radius: 22px; padding: 31px; font-size: 36px; font-weight: 700">
+              <span style="width: 60px; height: 60px; border-radius: 16px; background: #E7F3EE; display: flex; align-items: center; justify-content: center; flex: none">
+                <span style="display: grid; grid-template-columns: repeat(3, 8px); gap: 4px">
+                  <span style="width: 8px; height: 8px; background: #1E8E63; border-radius: 2px"></span>
+                  <span style="width: 8px; height: 8px; background: #1E8E63; border-radius: 2px"></span>
+                  <span style="width: 8px; height: 8px; background: #1E8E63; border-radius: 2px"></span>
+                  <span style="width: 8px; height: 8px; background: #1E8E63; border-radius: 2px"></span>
+                  <span style="width: 8px; height: 8px; background: #1E8E63; border-radius: 2px"></span>
+                  <span style="width: 8px; height: 8px; background: #1E8E63; border-radius: 2px"></span>
+                </span>
+              </span>
+              Digitar CPF e data de nascimento
+            </div>
+          </div>
+          <div style="margin-top: 40px; border-radius: 18px; background: #F1F4F2; padding: 28px 30px; font-size: 24px; line-height: 1.45; color: #43534B">Não precisa de senha. Seus dados clínicos não aparecem nesta tela.</div>
+          <div style="margin-top: auto; padding-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+            <div style="background: #FFFFFF; border: 2px solid #DCE4E0; border-radius: 18px; padding: 26px 12px; font-size: 26px; font-weight: 700; text-align: center">Aumentar letra</div>
+            <div style="background: #FFFFFF; border: 2px solid #DCE4E0; border-radius: 18px; padding: 26px 12px; font-size: 26px; font-weight: 700; text-align: center">Ouvir a tela</div>
+            <div style="background: #FFFFFF; border: 2px solid #DCE4E0; border-radius: 18px; padding: 26px 12px; font-size: 26px; font-weight: 700; text-align: center">Ajuda</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Totem etapa" data-screen-label="04" data-speaker-notes="A etapa atual em letra grande, a ação pendente em destaque e o horário escolhido ali mesmo." style="background: #F6F3EC; color: #12211A; display: flex; padding: var(--pad-top) var(--pad-x) var(--pad-bottom); gap: 90px; align-items: flex-start">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: var(--gap-title); padding-top: 20px">
+      <div>
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63">Totem da UBS</div>
+        <h2 style="margin: 18px 0 0; font-size: var(--type-title); line-height: 1.06; font-weight: 800; letter-spacing: -0.025em; text-wrap: pretty">Etapa atual e escolha de horário</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--gap-item)">
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #2E3D35">A etapa atual em letra grande, com a data de cada passo.</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #2E3D35">A ação pendente em destaque: falta 1 passo.</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #2E3D35">O horário do exame escolhido ali mesmo, com comprovante impresso.</div>
+        <div style="font-size: var(--type-small); line-height: 1.4; color: #6B7A72">Também disponível no celular. Posição na fila de cardiologia: 18º de 143 · espera média 27 dias.</div>
+      </div>
+    </div>
+    <div data-om-raster style="width: 604px; height: 847px; flex: none">
+      <div style="transform: scale(0.7368); transform-origin: top left; width: 820px; height: 1150px; box-sizing: border-box; border-radius: 32px; background: #1E8E63; padding: 22px">
+        <div style="height: 100%; box-sizing: border-box; border-radius: 22px; background: #FCFBF7; display: flex; flex-direction: column; padding: 40px 44px 36px; overflow: hidden">
+          <div style="display: flex; align-items: center; justify-content: space-between">
+            <div style="font-size: 22px; color: #5C6C64; font-weight: 500">UBS Vila União · 12/08</div>
+            <div style="font-family: ui-monospace, monospace; font-size: 22px; color: #5C6C64">#ENC-4821</div>
+          </div>
+          <div style="margin-top: 34px; display: flex; align-items: center; gap: 16px">
+            <div style="border: 2px solid #12211A; border-radius: 999px; padding: 8px 20px; font-size: 22px; font-weight: 700">Urgente</div>
+            <div style="font-size: 24px; color: #43534B">Encaminhamento para cardiologia</div>
+          </div>
+          <div style="margin-top: 22px; font-size: 54px; line-height: 1.08; font-weight: 800; letter-spacing: -0.025em">Falta 1 passo: marcar seu exame</div>
+          <div style="margin-top: 40px; display: flex; flex-direction: column">
+            <div style="display: flex; gap: 22px; align-items: stretch">
+              <div style="display: flex; flex-direction: column; align-items: center; flex: none; padding-top: 6px">
+                <div style="width: 26px; height: 26px; border-radius: 50%; background: #1E8E63; flex: none"></div>
+                <div style="width: 4px; flex: 1; background: #1E8E63"></div>
+              </div>
+              <div style="padding-bottom: 24px">
+                <div style="font-size: 28px; font-weight: 700">Recebido e triado</div>
+                <div style="font-size: 24px; color: #6B7A72">12/08</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 22px; align-items: stretch">
+              <div style="display: flex; flex-direction: column; align-items: center; flex: none">
+                <div style="width: 26px; height: 26px; border-radius: 50%; background: #1E8E63; flex: none"></div>
+                <div style="width: 4px; flex: 1; background: #D8DEDA"></div>
+              </div>
+              <div style="padding-bottom: 24px">
+                <div style="font-size: 28px; font-weight: 700">Exame pedido</div>
+                <div style="font-size: 24px; color: #6B7A72">13/08 · eletrocardiograma</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 22px; align-items: stretch">
+              <div style="display: flex; flex-direction: column; align-items: center; flex: none">
+                <div style="width: 26px; height: 26px; border-radius: 50%; border: 7px solid #1E8E63; background: #FCFBF7; box-sizing: border-box; flex: none"></div>
+                <div style="width: 4px; flex: 1; background: #D8DEDA"></div>
+              </div>
+              <div style="padding-bottom: 24px">
+                <div style="font-size: 28px; font-weight: 800; color: #1E8E63">Agora: escolher horário do exame</div>
+                <div style="font-size: 24px; color: #43534B">3 horários disponíveis nesta semana</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 22px">
+              <div style="flex: none">
+                <div style="width: 26px; height: 26px; border-radius: 50%; border: 4px solid #D8DEDA; background: #FCFBF7; box-sizing: border-box"></div>
+              </div>
+              <div>
+                <div style="font-size: 28px; font-weight: 700; color: #8A968F">Consulta com cardiologista</div>
+                <div style="font-size: 24px; color: #8A968F">liberada após o resultado do exame</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 38px; background: #E7F3EE; border-radius: 22px; padding: 30px">
+            <div style="font-size: 26px; font-weight: 700; color: #15563C">Escolher horário do eletrocardiograma</div>
+            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px">
+              <div style="background: #FFFFFF; border: 3px solid #1E8E63; border-radius: 18px; padding: 22px 10px; text-align: center">
+                <div style="font-size: 26px; font-weight: 800">qua 20/08</div>
+                <div style="font-size: 24px; color: #43534B">08:30</div>
+              </div>
+              <div style="background: #FFFFFF; border: 3px solid #C9DCD4; border-radius: 18px; padding: 22px 10px; text-align: center">
+                <div style="font-size: 26px; font-weight: 800">qui 21/08</div>
+                <div style="font-size: 24px; color: #43534B">14:00</div>
+              </div>
+              <div style="background: #FFFFFF; border: 3px solid #C9DCD4; border-radius: 18px; padding: 22px 10px; text-align: center">
+                <div style="font-size: 26px; font-weight: 800">sex 22/08</div>
+                <div style="font-size: 24px; color: #43534B">10:15</div>
+              </div>
+            </div>
+            <div style="margin-top: 18px; background: #1E8E63; color: #FFFFFF; border-radius: 20px; padding: 30px; font-size: 32px; font-weight: 800; text-align: center">Confirmar e imprimir comprovante</div>
+          </div>
+          <div style="margin-top: auto; padding-top: 28px; font-size: 22px; color: #6B7A72; line-height: 1.4">Também disponível no celular. Posição na fila de cardiologia: 18º de 143 · espera média 27 dias.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Painel de senha" data-screen-label="05" data-speaker-notes="O amarelo só entra aqui, quando é a vez de alguém. Nenhum dado clínico no painel." style="background: #0F1A15; color: #FFFFFF; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+      <div>
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #F5B700">Painel da sala de espera</div>
+        <h2 style="margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Amarelo só quando é a sua vez</h2>
+      </div>
+      <div style="font-size: var(--type-small); color: #9AA8A1; max-width: 520px; line-height: 1.45; text-align: right">Cor com semântica, não decoração. Nenhum dado clínico é exibido.</div>
+    </div>
+    <div data-om-raster style="margin-top: var(--gap-title); width: 1712px; height: 594px; align-self: center; flex: none">
+      <div style="transform: scale(1.07); transform-origin: top left; width: 1600px; height: 555px; box-sizing: border-box; border-radius: 24px; background: #182620; padding: 40px 44px; display: flex; gap: 40px">
+        <div style="flex: 1.35; background: #F5B700; border-radius: 22px; padding: 36px 40px; display: flex; flex-direction: column; justify-content: center">
+          <div style="font-size: 34px; font-weight: 800; letter-spacing: 0.06em; color: #3A2B00">É A SUA VEZ</div>
+          <div style="font-size: 150px; line-height: 0.95; font-weight: 800; letter-spacing: -0.04em; color: #1A1300; margin-top: 12px">C 042</div>
+          <div style="margin-top: 18px; font-size: 44px; font-weight: 700; color: #1A1300">Maria A. S.</div>
+          <div style="margin-top: 8px; font-size: 34px; font-weight: 600; color: #4A3800">Sala 3 · Eletrocardiograma</div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 16px">
+          <div style="font-size: 24px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #9AA8A1">Próximas senhas</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; background: #22342B; border-radius: 16px; padding: 20px 26px">
+            <div style="font-size: 40px; font-weight: 800; color: #FFFFFF">C 043</div>
+            <div style="font-size: 26px; color: #9AA8A1">Sala 3</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; background: #22342B; border-radius: 16px; padding: 20px 26px">
+            <div style="font-size: 40px; font-weight: 800; color: #FFFFFF">A 118</div>
+            <div style="font-size: 26px; color: #9AA8A1">Acolhimento</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; background: #22342B; border-radius: 16px; padding: 20px 26px">
+            <div style="font-size: 40px; font-weight: 800; color: #FFFFFF">C 044</div>
+            <div style="font-size: 26px; color: #9AA8A1">Sala 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Canal web" data-screen-label="06" data-speaker-notes="Azul é o que é institucional: nome completo e dado clínico só para a equipe." style="background: #F6F3EC; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+      <div>
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1D5FA8">Canal web</div>
+        <h2 style="margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Equipe da UBS e gestor</h2>
+      </div>
+      <div style="font-size: var(--type-small); color: #4B5866; max-width: 560px; line-height: 1.45; text-align: right">Fila por especialidade, ação pendente por protocolo e indicadores de espera.</div>
+    </div>
+    <div data-om-raster style="margin-top: var(--gap-title); width: 1712px; height: 610px; align-self: center; flex: none">
+      <div style="transform: scale(1.07); transform-origin: top left; width: 1600px; height: 570px; box-sizing: border-box; border-radius: 24px; overflow: hidden; display: flex; background: #FFFFFF; border: 1px solid #E5E9EF">
+        <div style="width: 280px; background: #1D5FA8; padding: 28px 22px; display: flex; flex-direction: column; gap: 26px">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div style="position: relative; width: 44px; height: 32px">
+              <div style="position: absolute; left: 0; top: 0; width: 27px; height: 27px; border-radius: 50%; border: 4px solid #FFFFFF"></div>
+              <div style="position: absolute; left: 15px; top: 5px; width: 27px; height: 27px; border-radius: 50%; border: 4px solid #8FC3F5"></div>
+            </div>
+            <div style="font-size: 21px; font-weight: 700; color: #FFFFFF">Minha Vez</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="background: rgba(255,255,255,0.16); color: #FFFFFF; border-radius: 12px; padding: 13px 16px; font-size: 18px; font-weight: 700">Fila de encaminhamentos</div>
+            <div style="color: #CFE1F5; border-radius: 12px; padding: 13px 16px; font-size: 18px">Agenda de exames</div>
+            <div style="color: #CFE1F5; border-radius: 12px; padding: 13px 16px; font-size: 18px">Painel de senhas</div>
+            <div style="color: #CFE1F5; border-radius: 12px; padding: 13px 16px; font-size: 18px">Indicadores</div>
+          </div>
+          <div style="margin-top: auto; border-top: 1px solid rgba(255,255,255,0.24); padding-top: 18px; color: #CFE1F5; font-size: 17px; line-height: 1.45">UBS Vila União<br>Regulação municipal</div>
+        </div>
+        <div style="flex: 1; padding: 30px 36px; display: flex; flex-direction: column; gap: 22px; background: #FBFBFC; overflow: hidden">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+            <div style="font-size: 32px; font-weight: 800; letter-spacing: -0.02em">Cardiologia · 143 pessoas</div>
+            <div style="background: #1D5FA8; color: #FFFFFF; border-radius: 999px; padding: 10px 18px; font-size: 17px; font-weight: 700">Ação pendente · 31</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px">
+            <div style="background: #FFFFFF; border: 1px solid #E5E9EF; border-radius: 14px; padding: 18px">
+              <div style="font-size: 16px; color: #66727E; font-weight: 600">Espera média</div>
+              <div style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px">27 dias</div>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E5E9EF; border-radius: 14px; padding: 18px">
+              <div style="font-size: 16px; color: #66727E; font-weight: 600">Exames pendentes</div>
+              <div style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px">31</div>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E5E9EF; border-radius: 14px; padding: 18px">
+              <div style="font-size: 16px; color: #66727E; font-weight: 600">Marcados na semana</div>
+              <div style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px">58</div>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E5E9EF; border-radius: 14px; padding: 18px">
+              <div style="font-size: 16px; color: #66727E; font-weight: 600">Faltas no mês</div>
+              <div style="font-size: 34px; font-weight: 800; letter-spacing: -0.02em; margin-top: 4px">9%</div>
+            </div>
+          </div>
+          <div style="background: #FFFFFF; border: 1px solid #E5E9EF; border-radius: 16px; overflow: hidden">
+            <div style="display: grid; grid-template-columns: 150px 1.2fr 1.2fr 130px 180px; gap: 16px; padding: 14px 22px; background: #F2F5F9; font-size: 16px; font-weight: 700; color: #4B5866">
+              <div>Protocolo</div>
+              <div>Paciente</div>
+              <div>Etapa atual</div>
+              <div>Prioridade</div>
+              <div>Ação</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1.2fr 1.2fr 130px 180px; gap: 16px; padding: 15px 22px; border-top: 1px solid #EDF0F4; font-size: 17px">
+              <div style="font-family: ui-monospace, monospace; color: #4B5866">ENC-4821</div>
+              <div style="font-weight: 700">Maria A. Souza</div>
+              <div style="color: #4B5866">Aguarda marcação</div>
+              <div>Urgente</div>
+              <div style="font-weight: 700; color: #1D5FA8">Cobrar marcação</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1.2fr 1.2fr 130px 180px; gap: 16px; padding: 15px 22px; border-top: 1px solid #EDF0F4; font-size: 17px">
+              <div style="font-family: ui-monospace, monospace; color: #4B5866">ENC-4793</div>
+              <div style="font-weight: 700">João P. Ribeiro</div>
+              <div style="color: #4B5866">Exame marcado · 21/08</div>
+              <div>Eletiva</div>
+              <div style="font-weight: 700; color: #66727E">Nenhuma</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1.2fr 1.2fr 130px 180px; gap: 16px; padding: 15px 22px; border-top: 1px solid #EDF0F4; font-size: 17px">
+              <div style="font-family: ui-monospace, monospace; color: #4B5866">ENC-4770</div>
+              <div style="font-weight: 700">Antônia L. Dias</div>
+              <div style="color: #4B5866">Resultado pendente há 9 dias</div>
+              <div>Urgente</div>
+              <div style="font-weight: 700; color: #1D5FA8">Buscar resultado</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 150px 1.2fr 1.2fr 130px 180px; gap: 16px; padding: 15px 22px; border-top: 1px solid #EDF0F4; font-size: 17px">
+              <div style="font-family: ui-monospace, monospace; color: #4B5866">ENC-4731</div>
+              <div style="font-weight: 700">Cleide F. Nunes</div>
+              <div style="color: #4B5866">Faltou ao exame · 14/08</div>
+              <div>Urgente</div>
+              <div style="font-weight: 700; color: #1D5FA8">Reagendar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Mascote" data-screen-label="07" data-speaker-notes="Esboço geométrico. A capivara assume a cor do canal em que aparece." style="background: #F6F3EC; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+      <div>
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63">Mascote</div>
+        <h2 style="margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Capi acompanha a espera</h2>
+      </div>
+      <div style="font-size: var(--type-small); color: #4A5A52; max-width: 560px; line-height: 1.45; text-align: right">Assume a cor do canal. Aparece ao lado do texto, nunca no lugar dele.</div>
+    </div>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; flex: 1">
+      <div style="background: #FFFFFF; border: 1px solid #E3DED3; border-radius: 26px; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px">
+        <div style="position: relative; width: 240px; height: 210px; flex: none">
+          <div style="position: absolute; left: 30px; top: 4px; width: 34px; height: 30px; border-radius: 50%; background: #17724F"></div>
+          <div style="position: absolute; left: 176px; top: 4px; width: 34px; height: 30px; border-radius: 50%; background: #17724F"></div>
+          <div style="position: absolute; left: 12px; top: 18px; width: 216px; height: 192px; border-radius: 46% 46% 42% 42%; background: #1E8E63"></div>
+          <div style="position: absolute; left: 40px; top: 74px; width: 30px; height: 34px; border-radius: 50%; background: #0C2A1E"></div>
+          <div style="position: absolute; left: 48px; top: 80px; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF"></div>
+          <div style="position: absolute; left: 170px; top: 74px; width: 30px; height: 34px; border-radius: 50%; background: #0C2A1E"></div>
+          <div style="position: absolute; left: 178px; top: 80px; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF"></div>
+          <div style="position: absolute; left: 74px; top: 122px; width: 92px; height: 62px; border-radius: 44px 44px 38px 38px; background: #F0EDE4"></div>
+          <div style="position: absolute; left: 100px; top: 138px; width: 16px; height: 12px; border-radius: 50%; background: #0C2A1E"></div>
+          <div style="position: absolute; left: 124px; top: 138px; width: 16px; height: 12px; border-radius: 50%; background: #0C2A1E"></div>
+        </div>
+        <div style="text-align: center">
+          <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.01em">Totem e app</div>
+          <div style="margin-top: 8px; font-size: var(--type-small); color: #4A5A52">Verde saúde</div>
+        </div>
+      </div>
+      <div style="background: #0F1A15; border-radius: 26px; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px">
+        <div style="position: relative; width: 240px; height: 210px; flex: none">
+          <div style="position: absolute; left: 30px; top: 4px; width: 34px; height: 30px; border-radius: 50%; background: #C79400"></div>
+          <div style="position: absolute; left: 176px; top: 4px; width: 34px; height: 30px; border-radius: 50%; background: #C79400"></div>
+          <div style="position: absolute; left: 12px; top: 18px; width: 216px; height: 192px; border-radius: 46% 46% 42% 42%; background: #F5B700"></div>
+          <div style="position: absolute; left: 36px; top: 76px; width: 38px; height: 12px; border-radius: 6px; background: #1A1300; transform: rotate(-12deg)"></div>
+          <div style="position: absolute; left: 166px; top: 76px; width: 38px; height: 12px; border-radius: 6px; background: #1A1300; transform: rotate(12deg)"></div>
+          <div style="position: absolute; left: 74px; top: 118px; width: 92px; height: 66px; border-radius: 44px 44px 40px 40px; background: #FFF6DC"></div>
+          <div style="position: absolute; left: 100px; top: 132px; width: 16px; height: 12px; border-radius: 50%; background: #1A1300"></div>
+          <div style="position: absolute; left: 124px; top: 132px; width: 16px; height: 12px; border-radius: 50%; background: #1A1300"></div>
+          <div style="position: absolute; left: 104px; top: 150px; width: 32px; height: 24px; border-radius: 0 0 18px 18px; background: #1A1300"></div>
+        </div>
+        <div style="text-align: center">
+          <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.01em; color: #FFFFFF">Chamada da senha</div>
+          <div style="margin-top: 8px; font-size: var(--type-small); color: #9AA8A1">Amarelo senha</div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E5E9EF; border-radius: 26px; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px">
+        <div style="position: relative; width: 240px; height: 210px; flex: none">
+          <div style="position: absolute; left: 30px; top: 4px; width: 34px; height: 30px; border-radius: 50%; background: #16487E"></div>
+          <div style="position: absolute; left: 176px; top: 4px; width: 34px; height: 30px; border-radius: 50%; background: #16487E"></div>
+          <div style="position: absolute; left: 12px; top: 18px; width: 216px; height: 192px; border-radius: 46% 46% 42% 42%; background: #1D5FA8"></div>
+          <div style="position: absolute; left: 40px; top: 74px; width: 30px; height: 34px; border-radius: 50%; background: #0B2646"></div>
+          <div style="position: absolute; left: 48px; top: 80px; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF"></div>
+          <div style="position: absolute; left: 170px; top: 74px; width: 30px; height: 34px; border-radius: 50%; background: #0B2646"></div>
+          <div style="position: absolute; left: 178px; top: 80px; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF"></div>
+          <div style="position: absolute; left: 74px; top: 122px; width: 92px; height: 62px; border-radius: 44px 44px 38px 38px; background: #EAF1FA"></div>
+          <div style="position: absolute; left: 100px; top: 138px; width: 16px; height: 12px; border-radius: 50%; background: #0B2646"></div>
+          <div style="position: absolute; left: 124px; top: 138px; width: 16px; height: 12px; border-radius: 50%; background: #0B2646"></div>
+          <div style="position: absolute; left: 108px; top: 156px; width: 24px; height: 8px; border-radius: 4px; background: #0B2646"></div>
+        </div>
+        <div style="text-align: center">
+          <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.01em">Canal da equipe</div>
+          <div style="margin-top: 8px; font-size: var(--type-small); color: #4B5866">Azul gestão · estado neutro</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Regras de cor" data-screen-label="08" data-speaker-notes="Fechamento: as três regras que sustentam a paleta." style="background: #1E8E63; color: #FFFFFF; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <h2 style="margin: 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Regras de uso da cor</h2>
+    <div style="margin-top: var(--gap-title); display: flex; flex-direction: column; gap: 40px; flex: 1">
+      <div style="display: flex; gap: 40px; align-items: baseline; border-top: 2px solid rgba(255,255,255,0.34); padding-top: 36px">
+        <div style="font-size: 64px; font-weight: 800; color: #A9DCC5; width: 90px; flex: none">01</div>
+        <div style="flex: 1">
+          <div style="font-size: var(--type-subtitle); font-weight: 700; letter-spacing: -0.01em">Verde é do paciente</div>
+          <div style="margin-top: 12px; font-size: var(--type-body); line-height: 1.4; color: #D8EFE5">Totem, app e comprovante. Nunca imita o azul institucional do SUS.</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 40px; align-items: baseline; border-top: 2px solid rgba(255,255,255,0.34); padding-top: 36px">
+        <div style="font-size: 64px; font-weight: 800; color: #A9DCC5; width: 90px; flex: none">02</div>
+        <div style="flex: 1">
+          <div style="font-size: var(--type-subtitle); font-weight: 700; letter-spacing: -0.01em">Azul é institucional</div>
+          <div style="margin-top: 12px; font-size: var(--type-body); line-height: 1.4; color: #D8EFE5">Só a equipe e o gestor veem nome completo e dado clínico.</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 40px; align-items: baseline; border-top: 2px solid rgba(255,255,255,0.34); padding-top: 36px">
+        <div style="font-size: 64px; font-weight: 800; color: #A9DCC5; width: 90px; flex: none">03</div>
+        <div style="flex: 1">
+          <div style="font-size: var(--type-subtitle); font-weight: 700; letter-spacing: -0.01em">Amarelo é a vez de alguém</div>
+          <div style="margin-top: 12px; font-size: var(--type-body); line-height: 1.4; color: #D8EFE5">Senha e chamada no painel. Fora daí, não aparece.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>

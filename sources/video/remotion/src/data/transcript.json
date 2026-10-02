@@ -1,0 +1,3137 @@
+{
+  "model": "onnx-community/whisper-tiny",
+  "durationSec": 190.6,
+  "text": " E aí, pessoal, sou Jones-Souverum. E aí, que pessoal, eu amanelaria, João Pedro, ministro Cardoso, e Brenda Araújo. Hoje, apresentamos o Rack Goa, um projeto focado no agendaamento e é acompanhamento de encaminhamentos da tensão primária para especializar. E escolhamos esse tema para resolver um gargalo grave. A falta de raste habilidade entre a UPS e especial especialista, onde o paciete se permite somir. Segundo a instituto locomotiva, um em cada 3 para os leiros já desistir de consultos de no sujo, por favor da informação. O próprio seu ult é, também, já apontou essa falta de fazer uma necessidade, como o problema de desimblitar. Para resolver isso, estruturamos o sequisido da nossa plataforma ideal. O sequisito funciona é definir o que o sistema pará na prática. Por isso, eu vou ver que é do funcionar um, por exemplo, permite que o cos de funcionar, é que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os estudos de funcionar. E, em que os estudos de funcionar são os. O atendimento físico, é que ele funciona ao quarto, o definio do painel de espera que chama pela senha, preservando a privacidade. Para o BSC, o reconhecimento de você não é assim, o propôio do painel de ageracial com a fila de púrgia de necessidade. Também temos requisitos no funcionais, focadas na qualidade. Para atendir a possibilidade, coletor de tela, no que se não funcionou do hoje e segurar essa quenha, com controle é a gente agora, hoje é que não funcionaram. Criamos o Progto de Becloid e usamos a matriz Goet, para priorizar o desenvolvimento. Aí, osyrsitoria um sobretecente ficação atendiu de 120 pontos e ficou em primeiro lugar. Pois eu perrequisito para acessar a plataforma. Em segundo lugar, no pataram acompanhamento de status e o agendamento de horário, que são um núcleo de valor para o cidadão. O panel de Rincel foi um quarto e o panel de esperem quinto. O paciente consegue acompanhar o sistema sem independêf�icamente deles. Analizando os dados e identificamos um gargalo de abandono enorme. A ortopedia chega a 180 dias de espera e a cardiologia 120. Contaixas de falta, assimos de 40%. A Orto-pedia sozinho representa 35% da demanda. Já um cologia, a atingia metrana se anodivinte e cinco dias, focando em urgência e tendo só 5% de falta. Nossa proposta entra para equilibrar isso. Em vez de apenas gastar com multirões, queremos atacar a falta de informação. Com o painel de silproposto, a equipe identifica gargalos e faz confirmações ativas. O cidadão acompanha tudo, não diz isso, e as vagas ofciosas são realocadas rapidamente para quem precisa. O rato e o próprio apoio é uma verdadeira transformação digital, mudando o afilo à estátia para o fluxo dinâmico. O cidadão é trascaleista, e o BSC ganhado produtividade, acabando com aquele retrapalho manual para chicar em caminhamentos. Também mapeamos os riscos. A barreira tecnológica é mitigada com o total tem simplificados e a sensibilidade. E as posições de dados é combatida com controle de perfil e senhas a lume imisadas. É assim que d'alizamos um projeto maduro e seguro para mudar a realidade do suício. Muito obrigado.",
+  "words": [
+    {
+      "text": "E",
+      "start": 0,
+      "end": 0.72
+    },
+    {
+      "text": "aí,",
+      "start": 0.72,
+      "end": 1.44
+    },
+    {
+      "text": "pessoal,",
+      "start": 1.44,
+      "end": 2.16
+    },
+    {
+      "text": "sou",
+      "start": 2.16,
+      "end": 2.88
+    },
+    {
+      "text": "Jones-Souverum.",
+      "start": 2.88,
+      "end": 3.6
+    },
+    {
+      "text": "E",
+      "start": 3.6,
+      "end": 4.023
+    },
+    {
+      "text": "aí,",
+      "start": 4.023,
+      "end": 4.446
+    },
+    {
+      "text": "que",
+      "start": 4.446,
+      "end": 4.869
+    },
+    {
+      "text": "pessoal,",
+      "start": 4.869,
+      "end": 5.292
+    },
+    {
+      "text": "eu",
+      "start": 5.292,
+      "end": 5.715
+    },
+    {
+      "text": "amanelaria,",
+      "start": 5.715,
+      "end": 6.138
+    },
+    {
+      "text": "João",
+      "start": 6.138,
+      "end": 6.562
+    },
+    {
+      "text": "Pedro,",
+      "start": 6.562,
+      "end": 6.985
+    },
+    {
+      "text": "ministro",
+      "start": 6.985,
+      "end": 7.408
+    },
+    {
+      "text": "Cardoso,",
+      "start": 7.408,
+      "end": 7.831
+    },
+    {
+      "text": "e",
+      "start": 7.831,
+      "end": 8.254
+    },
+    {
+      "text": "Brenda",
+      "start": 8.254,
+      "end": 8.677
+    },
+    {
+      "text": "Araújo.",
+      "start": 8.677,
+      "end": 9.1
+    },
+    {
+      "text": "Hoje,",
+      "start": 9.1,
+      "end": 9.542
+    },
+    {
+      "text": "apresentamos",
+      "start": 9.542,
+      "end": 9.983
+    },
+    {
+      "text": "o",
+      "start": 9.983,
+      "end": 10.425
+    },
+    {
+      "text": "Rack",
+      "start": 10.425,
+      "end": 10.867
+    },
+    {
+      "text": "Goa,",
+      "start": 10.867,
+      "end": 11.308
+    },
+    {
+      "text": "um",
+      "start": 11.308,
+      "end": 11.75
+    },
+    {
+      "text": "projeto",
+      "start": 11.75,
+      "end": 12.192
+    },
+    {
+      "text": "focado",
+      "start": 12.192,
+      "end": 12.633
+    },
+    {
+      "text": "no",
+      "start": 12.633,
+      "end": 13.075
+    },
+    {
+      "text": "agendaamento",
+      "start": 13.075,
+      "end": 13.517
+    },
+    {
+      "text": "e",
+      "start": 13.517,
+      "end": 13.958
+    },
+    {
+      "text": "é",
+      "start": 13.958,
+      "end": 14.4
+    },
+    {
+      "text": "acompanhamento",
+      "start": 14.4,
+      "end": 14.938
+    },
+    {
+      "text": "de",
+      "start": 14.938,
+      "end": 15.475
+    },
+    {
+      "text": "encaminhamentos",
+      "start": 15.475,
+      "end": 16.012
+    },
+    {
+      "text": "da",
+      "start": 16.012,
+      "end": 16.55
+    },
+    {
+      "text": "tensão",
+      "start": 16.55,
+      "end": 17.087
+    },
+    {
+      "text": "primária",
+      "start": 17.087,
+      "end": 17.625
+    },
+    {
+      "text": "para",
+      "start": 17.625,
+      "end": 18.163
+    },
+    {
+      "text": "especializar.",
+      "start": 18.163,
+      "end": 18.7
+    },
+    {
+      "text": "E",
+      "start": 18.7,
+      "end": 19.022
+    },
+    {
+      "text": "escolhamos",
+      "start": 19.022,
+      "end": 19.344
+    },
+    {
+      "text": "esse",
+      "start": 19.344,
+      "end": 19.667
+    },
+    {
+      "text": "tema",
+      "start": 19.667,
+      "end": 19.989
+    },
+    {
+      "text": "para",
+      "start": 19.989,
+      "end": 20.311
+    },
+    {
+      "text": "resolver",
+      "start": 20.311,
+      "end": 20.633
+    },
+    {
+      "text": "um",
+      "start": 20.633,
+      "end": 20.956
+    },
+    {
+      "text": "gargalo",
+      "start": 20.956,
+      "end": 21.278
+    },
+    {
+      "text": "grave.",
+      "start": 21.278,
+      "end": 21.6
+    },
+    {
+      "text": "A",
+      "start": 21.6,
+      "end": 21.908
+    },
+    {
+      "text": "falta",
+      "start": 21.908,
+      "end": 22.216
+    },
+    {
+      "text": "de",
+      "start": 22.216,
+      "end": 22.525
+    },
+    {
+      "text": "raste",
+      "start": 22.525,
+      "end": 22.833
+    },
+    {
+      "text": "habilidade",
+      "start": 22.833,
+      "end": 23.141
+    },
+    {
+      "text": "entre",
+      "start": 23.141,
+      "end": 23.449
+    },
+    {
+      "text": "a",
+      "start": 23.449,
+      "end": 23.758
+    },
+    {
+      "text": "UPS",
+      "start": 23.758,
+      "end": 24.066
+    },
+    {
+      "text": "e",
+      "start": 24.066,
+      "end": 24.374
+    },
+    {
+      "text": "especial",
+      "start": 24.374,
+      "end": 24.682
+    },
+    {
+      "text": "especialista,",
+      "start": 24.682,
+      "end": 24.991
+    },
+    {
+      "text": "onde",
+      "start": 24.991,
+      "end": 25.299
+    },
+    {
+      "text": "o",
+      "start": 25.299,
+      "end": 25.607
+    },
+    {
+      "text": "paciete",
+      "start": 25.607,
+      "end": 25.915
+    },
+    {
+      "text": "se",
+      "start": 25.915,
+      "end": 26.224
+    },
+    {
+      "text": "permite",
+      "start": 26.224,
+      "end": 26.532
+    },
+    {
+      "text": "somir.",
+      "start": 26.532,
+      "end": 26.84
+    },
+    {
+      "text": "Segundo",
+      "start": 26.84,
+      "end": 27.129
+    },
+    {
+      "text": "a",
+      "start": 27.129,
+      "end": 27.418
+    },
+    {
+      "text": "instituto",
+      "start": 27.418,
+      "end": 27.706
+    },
+    {
+      "text": "locomotiva,",
+      "start": 27.706,
+      "end": 27.995
+    },
+    {
+      "text": "um",
+      "start": 27.995,
+      "end": 28.284
+    },
+    {
+      "text": "em",
+      "start": 28.284,
+      "end": 28.573
+    },
+    {
+      "text": "cada",
+      "start": 28.573,
+      "end": 28.861
+    },
+    {
+      "text": "3",
+      "start": 28.861,
+      "end": 29.15
+    },
+    {
+      "text": "para",
+      "start": 29.15,
+      "end": 29.439
+    },
+    {
+      "text": "os",
+      "start": 29.439,
+      "end": 29.727
+    },
+    {
+      "text": "leiros",
+      "start": 29.727,
+      "end": 30.016
+    },
+    {
+      "text": "já",
+      "start": 30.016,
+      "end": 30.305
+    },
+    {
+      "text": "desistir",
+      "start": 30.305,
+      "end": 30.594
+    },
+    {
+      "text": "de",
+      "start": 30.594,
+      "end": 30.883
+    },
+    {
+      "text": "consultos",
+      "start": 30.883,
+      "end": 31.171
+    },
+    {
+      "text": "de",
+      "start": 31.171,
+      "end": 31.46
+    },
+    {
+      "text": "no",
+      "start": 31.46,
+      "end": 31.793
+    },
+    {
+      "text": "sujo,",
+      "start": 31.793,
+      "end": 32.127
+    },
+    {
+      "text": "por",
+      "start": 32.127,
+      "end": 32.46
+    },
+    {
+      "text": "favor",
+      "start": 32.46,
+      "end": 32.793
+    },
+    {
+      "text": "da",
+      "start": 32.793,
+      "end": 33.127
+    },
+    {
+      "text": "informação.",
+      "start": 33.127,
+      "end": 33.46
+    },
+    {
+      "text": "O",
+      "start": 33.46,
+      "end": 33.707
+    },
+    {
+      "text": "próprio",
+      "start": 33.707,
+      "end": 33.953
+    },
+    {
+      "text": "seu",
+      "start": 33.953,
+      "end": 34.2
+    },
+    {
+      "text": "ult",
+      "start": 34.2,
+      "end": 34.447
+    },
+    {
+      "text": "é,",
+      "start": 34.447,
+      "end": 34.693
+    },
+    {
+      "text": "também,",
+      "start": 34.693,
+      "end": 34.94
+    },
+    {
+      "text": "já",
+      "start": 34.94,
+      "end": 35.187
+    },
+    {
+      "text": "apontou",
+      "start": 35.187,
+      "end": 35.433
+    },
+    {
+      "text": "essa",
+      "start": 35.433,
+      "end": 35.68
+    },
+    {
+      "text": "falta",
+      "start": 35.68,
+      "end": 35.927
+    },
+    {
+      "text": "de",
+      "start": 35.927,
+      "end": 36.173
+    },
+    {
+      "text": "fazer",
+      "start": 36.173,
+      "end": 36.42
+    },
+    {
+      "text": "uma",
+      "start": 36.42,
+      "end": 36.667
+    },
+    {
+      "text": "necessidade,",
+      "start": 36.667,
+      "end": 36.913
+    },
+    {
+      "text": "como",
+      "start": 36.913,
+      "end": 37.16
+    },
+    {
+      "text": "o",
+      "start": 37.16,
+      "end": 37.41
+    },
+    {
+      "text": "problema",
+      "start": 37.41,
+      "end": 37.66
+    },
+    {
+      "text": "de",
+      "start": 37.66,
+      "end": 37.91
+    },
+    {
+      "text": "desimblitar.",
+      "start": 37.91,
+      "end": 38.16
+    },
+    {
+      "text": "Para",
+      "start": 38.16,
+      "end": 38.628
+    },
+    {
+      "text": "resolver",
+      "start": 38.628,
+      "end": 39.096
+    },
+    {
+      "text": "isso,",
+      "start": 39.096,
+      "end": 39.564
+    },
+    {
+      "text": "estruturamos",
+      "start": 39.564,
+      "end": 40.032
+    },
+    {
+      "text": "o",
+      "start": 40.032,
+      "end": 40.5
+    },
+    {
+      "text": "sequisido",
+      "start": 40.5,
+      "end": 40.968
+    },
+    {
+      "text": "da",
+      "start": 40.968,
+      "end": 41.436
+    },
+    {
+      "text": "nossa",
+      "start": 41.436,
+      "end": 41.904
+    },
+    {
+      "text": "plataforma",
+      "start": 41.904,
+      "end": 42.372
+    },
+    {
+      "text": "ideal.",
+      "start": 42.372,
+      "end": 42.84
+    },
+    {
+      "text": "O",
+      "start": 42.84,
+      "end": 42.918
+    },
+    {
+      "text": "sequisito",
+      "start": 42.918,
+      "end": 42.997
+    },
+    {
+      "text": "funciona",
+      "start": 42.997,
+      "end": 43.075
+    },
+    {
+      "text": "é",
+      "start": 43.075,
+      "end": 43.154
+    },
+    {
+      "text": "definir",
+      "start": 43.154,
+      "end": 43.232
+    },
+    {
+      "text": "o",
+      "start": 43.232,
+      "end": 43.311
+    },
+    {
+      "text": "que",
+      "start": 43.311,
+      "end": 43.389
+    },
+    {
+      "text": "o",
+      "start": 43.389,
+      "end": 43.468
+    },
+    {
+      "text": "sistema",
+      "start": 43.468,
+      "end": 43.546
+    },
+    {
+      "text": "pará",
+      "start": 43.546,
+      "end": 43.625
+    },
+    {
+      "text": "na",
+      "start": 43.625,
+      "end": 43.703
+    },
+    {
+      "text": "prática.",
+      "start": 43.703,
+      "end": 43.782
+    },
+    {
+      "text": "Por",
+      "start": 43.782,
+      "end": 43.86
+    },
+    {
+      "text": "isso,",
+      "start": 43.86,
+      "end": 43.939
+    },
+    {
+      "text": "eu",
+      "start": 43.939,
+      "end": 44.017
+    },
+    {
+      "text": "vou",
+      "start": 44.017,
+      "end": 44.096
+    },
+    {
+      "text": "ver",
+      "start": 44.096,
+      "end": 44.174
+    },
+    {
+      "text": "que",
+      "start": 44.174,
+      "end": 44.253
+    },
+    {
+      "text": "é",
+      "start": 44.253,
+      "end": 44.331
+    },
+    {
+      "text": "do",
+      "start": 44.331,
+      "end": 44.41
+    },
+    {
+      "text": "funcionar",
+      "start": 44.41,
+      "end": 44.488
+    },
+    {
+      "text": "um,",
+      "start": 44.488,
+      "end": 44.567
+    },
+    {
+      "text": "por",
+      "start": 44.567,
+      "end": 44.645
+    },
+    {
+      "text": "exemplo,",
+      "start": 44.645,
+      "end": 44.724
+    },
+    {
+      "text": "permite",
+      "start": 44.724,
+      "end": 44.802
+    },
+    {
+      "text": "que",
+      "start": 44.802,
+      "end": 44.881
+    },
+    {
+      "text": "o",
+      "start": 44.881,
+      "end": 44.959
+    },
+    {
+      "text": "cos",
+      "start": 44.959,
+      "end": 45.038
+    },
+    {
+      "text": "de",
+      "start": 45.038,
+      "end": 45.116
+    },
+    {
+      "text": "funcionar,",
+      "start": 45.116,
+      "end": 45.195
+    },
+    {
+      "text": "é",
+      "start": 45.195,
+      "end": 45.273
+    },
+    {
+      "text": "que",
+      "start": 45.273,
+      "end": 45.352
+    },
+    {
+      "text": "os",
+      "start": 45.352,
+      "end": 45.43
+    },
+    {
+      "text": "estudos",
+      "start": 45.43,
+      "end": 45.509
+    },
+    {
+      "text": "de",
+      "start": 45.509,
+      "end": 45.587
+    },
+    {
+      "text": "funcionar",
+      "start": 45.587,
+      "end": 45.666
+    },
+    {
+      "text": "são",
+      "start": 45.666,
+      "end": 45.744
+    },
+    {
+      "text": "os",
+      "start": 45.744,
+      "end": 45.823
+    },
+    {
+      "text": "estudos",
+      "start": 45.823,
+      "end": 45.901
+    },
+    {
+      "text": "de",
+      "start": 45.901,
+      "end": 45.98
+    },
+    {
+      "text": "funcionar.",
+      "start": 45.98,
+      "end": 46.058
+    },
+    {
+      "text": "E,",
+      "start": 46.058,
+      "end": 46.137
+    },
+    {
+      "text": "em",
+      "start": 46.137,
+      "end": 46.215
+    },
+    {
+      "text": "que",
+      "start": 46.215,
+      "end": 46.294
+    },
+    {
+      "text": "os",
+      "start": 46.294,
+      "end": 46.372
+    },
+    {
+      "text": "estudos",
+      "start": 46.372,
+      "end": 46.451
+    },
+    {
+      "text": "de",
+      "start": 46.451,
+      "end": 46.529
+    },
+    {
+      "text": "funcionar",
+      "start": 46.529,
+      "end": 46.608
+    },
+    {
+      "text": "são",
+      "start": 46.608,
+      "end": 46.686
+    },
+    {
+      "text": "os",
+      "start": 46.686,
+      "end": 46.765
+    },
+    {
+      "text": "estudos",
+      "start": 46.765,
+      "end": 46.843
+    },
+    {
+      "text": "de",
+      "start": 46.843,
+      "end": 46.922
+    },
+    {
+      "text": "funcionar.",
+      "start": 46.922,
+      "end": 47
+    },
+    {
+      "text": "E,",
+      "start": 47,
+      "end": 47.167
+    },
+    {
+      "text": "em",
+      "start": 47.167,
+      "end": 47.333
+    },
+    {
+      "text": "que",
+      "start": 47.333,
+      "end": 47.5
+    },
+    {
+      "text": "os",
+      "start": 47.5,
+      "end": 47.667
+    },
+    {
+      "text": "estudos",
+      "start": 47.667,
+      "end": 47.833
+    },
+    {
+      "text": "de",
+      "start": 47.833,
+      "end": 48
+    },
+    {
+      "text": "funcionar",
+      "start": 48,
+      "end": 48.167
+    },
+    {
+      "text": "são",
+      "start": 48.167,
+      "end": 48.333
+    },
+    {
+      "text": "os",
+      "start": 48.333,
+      "end": 48.5
+    },
+    {
+      "text": "estudos",
+      "start": 48.5,
+      "end": 48.667
+    },
+    {
+      "text": "de",
+      "start": 48.667,
+      "end": 48.833
+    },
+    {
+      "text": "funcionar.",
+      "start": 48.833,
+      "end": 49
+    },
+    {
+      "text": "E,",
+      "start": 49,
+      "end": 49.25
+    },
+    {
+      "text": "em",
+      "start": 49.25,
+      "end": 49.5
+    },
+    {
+      "text": "que",
+      "start": 49.5,
+      "end": 49.75
+    },
+    {
+      "text": "os",
+      "start": 49.75,
+      "end": 50
+    },
+    {
+      "text": "estudos",
+      "start": 50,
+      "end": 50.25
+    },
+    {
+      "text": "de",
+      "start": 50.25,
+      "end": 50.5
+    },
+    {
+      "text": "funcionar",
+      "start": 50.5,
+      "end": 50.75
+    },
+    {
+      "text": "são",
+      "start": 50.75,
+      "end": 51
+    },
+    {
+      "text": "os",
+      "start": 51,
+      "end": 51.25
+    },
+    {
+      "text": "estudos",
+      "start": 51.25,
+      "end": 51.5
+    },
+    {
+      "text": "de",
+      "start": 51.5,
+      "end": 51.75
+    },
+    {
+      "text": "funcionar.",
+      "start": 51.75,
+      "end": 52
+    },
+    {
+      "text": "E,",
+      "start": 52,
+      "end": 52.333
+    },
+    {
+      "text": "em",
+      "start": 52.333,
+      "end": 52.667
+    },
+    {
+      "text": "que",
+      "start": 52.667,
+      "end": 53
+    },
+    {
+      "text": "os",
+      "start": 53,
+      "end": 53.333
+    },
+    {
+      "text": "estudos",
+      "start": 53.333,
+      "end": 53.667
+    },
+    {
+      "text": "de",
+      "start": 53.667,
+      "end": 54
+    },
+    {
+      "text": "funcionar",
+      "start": 54,
+      "end": 54.333
+    },
+    {
+      "text": "são",
+      "start": 54.333,
+      "end": 54.667
+    },
+    {
+      "text": "os",
+      "start": 54.667,
+      "end": 55
+    },
+    {
+      "text": "estudos",
+      "start": 55,
+      "end": 55.333
+    },
+    {
+      "text": "de",
+      "start": 55.333,
+      "end": 55.667
+    },
+    {
+      "text": "funcionar.",
+      "start": 55.667,
+      "end": 56
+    },
+    {
+      "text": "E,",
+      "start": 56,
+      "end": 56.167
+    },
+    {
+      "text": "em",
+      "start": 56.167,
+      "end": 56.333
+    },
+    {
+      "text": "que",
+      "start": 56.333,
+      "end": 56.5
+    },
+    {
+      "text": "os",
+      "start": 56.5,
+      "end": 56.667
+    },
+    {
+      "text": "estudos",
+      "start": 56.667,
+      "end": 56.833
+    },
+    {
+      "text": "de",
+      "start": 56.833,
+      "end": 57
+    },
+    {
+      "text": "funcionar",
+      "start": 57,
+      "end": 57.167
+    },
+    {
+      "text": "são",
+      "start": 57.167,
+      "end": 57.333
+    },
+    {
+      "text": "os",
+      "start": 57.333,
+      "end": 57.5
+    },
+    {
+      "text": "estudos",
+      "start": 57.5,
+      "end": 57.667
+    },
+    {
+      "text": "de",
+      "start": 57.667,
+      "end": 57.833
+    },
+    {
+      "text": "funcionar.",
+      "start": 57.833,
+      "end": 58
+    },
+    {
+      "text": "E,",
+      "start": 58,
+      "end": 58.167
+    },
+    {
+      "text": "em",
+      "start": 58.167,
+      "end": 58.333
+    },
+    {
+      "text": "que",
+      "start": 58.333,
+      "end": 58.5
+    },
+    {
+      "text": "os",
+      "start": 58.5,
+      "end": 58.667
+    },
+    {
+      "text": "estudos",
+      "start": 58.667,
+      "end": 58.833
+    },
+    {
+      "text": "de",
+      "start": 58.833,
+      "end": 59
+    },
+    {
+      "text": "funcionar",
+      "start": 59,
+      "end": 59.167
+    },
+    {
+      "text": "são",
+      "start": 59.167,
+      "end": 59.333
+    },
+    {
+      "text": "os",
+      "start": 59.333,
+      "end": 59.5
+    },
+    {
+      "text": "estudos",
+      "start": 59.5,
+      "end": 59.667
+    },
+    {
+      "text": "de",
+      "start": 59.667,
+      "end": 59.833
+    },
+    {
+      "text": "funcionar.",
+      "start": 59.833,
+      "end": 60
+    },
+    {
+      "text": "E,",
+      "start": 60,
+      "end": 60.167
+    },
+    {
+      "text": "em",
+      "start": 60.167,
+      "end": 60.333
+    },
+    {
+      "text": "que",
+      "start": 60.333,
+      "end": 60.5
+    },
+    {
+      "text": "os",
+      "start": 60.5,
+      "end": 60.667
+    },
+    {
+      "text": "estudos",
+      "start": 60.667,
+      "end": 60.833
+    },
+    {
+      "text": "de",
+      "start": 60.833,
+      "end": 61
+    },
+    {
+      "text": "funcionar",
+      "start": 61,
+      "end": 61.167
+    },
+    {
+      "text": "são",
+      "start": 61.167,
+      "end": 61.333
+    },
+    {
+      "text": "os",
+      "start": 61.333,
+      "end": 61.5
+    },
+    {
+      "text": "estudos",
+      "start": 61.5,
+      "end": 61.667
+    },
+    {
+      "text": "de",
+      "start": 61.667,
+      "end": 61.833
+    },
+    {
+      "text": "funcionar.",
+      "start": 61.833,
+      "end": 62
+    },
+    {
+      "text": "E,",
+      "start": 62,
+      "end": 62.083
+    },
+    {
+      "text": "em",
+      "start": 62.083,
+      "end": 62.167
+    },
+    {
+      "text": "que",
+      "start": 62.167,
+      "end": 62.25
+    },
+    {
+      "text": "os",
+      "start": 62.25,
+      "end": 62.333
+    },
+    {
+      "text": "estudos",
+      "start": 62.333,
+      "end": 62.417
+    },
+    {
+      "text": "de",
+      "start": 62.417,
+      "end": 62.5
+    },
+    {
+      "text": "funcionar",
+      "start": 62.5,
+      "end": 62.583
+    },
+    {
+      "text": "são",
+      "start": 62.583,
+      "end": 62.667
+    },
+    {
+      "text": "os",
+      "start": 62.667,
+      "end": 62.75
+    },
+    {
+      "text": "estudos",
+      "start": 62.75,
+      "end": 62.833
+    },
+    {
+      "text": "de",
+      "start": 62.833,
+      "end": 62.917
+    },
+    {
+      "text": "funcionar.",
+      "start": 62.917,
+      "end": 63
+    },
+    {
+      "text": "E,",
+      "start": 63,
+      "end": 63.1
+    },
+    {
+      "text": "em",
+      "start": 63.1,
+      "end": 63.2
+    },
+    {
+      "text": "que",
+      "start": 63.2,
+      "end": 63.3
+    },
+    {
+      "text": "os",
+      "start": 63.3,
+      "end": 63.4
+    },
+    {
+      "text": "estudos",
+      "start": 63.4,
+      "end": 63.5
+    },
+    {
+      "text": "de",
+      "start": 63.5,
+      "end": 63.6
+    },
+    {
+      "text": "funcionar",
+      "start": 63.6,
+      "end": 63.7
+    },
+    {
+      "text": "são",
+      "start": 63.7,
+      "end": 63.8
+    },
+    {
+      "text": "os",
+      "start": 63.8,
+      "end": 63.9
+    },
+    {
+      "text": "estudos",
+      "start": 63.9,
+      "end": 64
+    },
+    {
+      "text": "de",
+      "start": 64,
+      "end": 64.1
+    },
+    {
+      "text": "funcionar.",
+      "start": 64.1,
+      "end": 64.2
+    },
+    {
+      "text": "E,",
+      "start": 64.2,
+      "end": 64.3
+    },
+    {
+      "text": "em",
+      "start": 64.3,
+      "end": 64.4
+    },
+    {
+      "text": "que",
+      "start": 64.4,
+      "end": 64.5
+    },
+    {
+      "text": "os",
+      "start": 64.5,
+      "end": 64.6
+    },
+    {
+      "text": "estudos",
+      "start": 64.6,
+      "end": 64.7
+    },
+    {
+      "text": "de",
+      "start": 64.7,
+      "end": 64.8
+    },
+    {
+      "text": "funcionar",
+      "start": 64.8,
+      "end": 64.9
+    },
+    {
+      "text": "são",
+      "start": 64.9,
+      "end": 65
+    },
+    {
+      "text": "os.",
+      "start": 65,
+      "end": 65.1
+    },
+    {
+      "text": "O",
+      "start": 65.1,
+      "end": 65.2
+    },
+    {
+      "text": "atendimento",
+      "start": 65.2,
+      "end": 65.3
+    },
+    {
+      "text": "físico,",
+      "start": 65.3,
+      "end": 65.4
+    },
+    {
+      "text": "é",
+      "start": 65.4,
+      "end": 65.5
+    },
+    {
+      "text": "que",
+      "start": 65.5,
+      "end": 65.6
+    },
+    {
+      "text": "ele",
+      "start": 65.6,
+      "end": 65.7
+    },
+    {
+      "text": "funciona",
+      "start": 65.7,
+      "end": 65.8
+    },
+    {
+      "text": "ao",
+      "start": 65.8,
+      "end": 65.9
+    },
+    {
+      "text": "quarto,",
+      "start": 65.9,
+      "end": 66
+    },
+    {
+      "text": "o",
+      "start": 66,
+      "end": 66.276
+    },
+    {
+      "text": "definio",
+      "start": 66.276,
+      "end": 66.552
+    },
+    {
+      "text": "do",
+      "start": 66.552,
+      "end": 66.828
+    },
+    {
+      "text": "painel",
+      "start": 66.828,
+      "end": 67.104
+    },
+    {
+      "text": "de",
+      "start": 67.104,
+      "end": 67.38
+    },
+    {
+      "text": "espera",
+      "start": 67.38,
+      "end": 67.656
+    },
+    {
+      "text": "que",
+      "start": 67.656,
+      "end": 67.932
+    },
+    {
+      "text": "chama",
+      "start": 67.932,
+      "end": 68.208
+    },
+    {
+      "text": "pela",
+      "start": 68.208,
+      "end": 68.484
+    },
+    {
+      "text": "senha,",
+      "start": 68.484,
+      "end": 68.76
+    },
+    {
+      "text": "preservando",
+      "start": 68.76,
+      "end": 69.373
+    },
+    {
+      "text": "a",
+      "start": 69.373,
+      "end": 69.987
+    },
+    {
+      "text": "privacidade.",
+      "start": 69.987,
+      "end": 70.6
+    },
+    {
+      "text": "Para",
+      "start": 70.6,
+      "end": 70.804
+    },
+    {
+      "text": "o",
+      "start": 70.804,
+      "end": 71.008
+    },
+    {
+      "text": "BSC,",
+      "start": 71.008,
+      "end": 71.212
+    },
+    {
+      "text": "o",
+      "start": 71.212,
+      "end": 71.416
+    },
+    {
+      "text": "reconhecimento",
+      "start": 71.416,
+      "end": 71.62
+    },
+    {
+      "text": "de",
+      "start": 71.62,
+      "end": 71.824
+    },
+    {
+      "text": "você",
+      "start": 71.824,
+      "end": 72.028
+    },
+    {
+      "text": "não",
+      "start": 72.028,
+      "end": 72.232
+    },
+    {
+      "text": "é",
+      "start": 72.232,
+      "end": 72.436
+    },
+    {
+      "text": "assim,",
+      "start": 72.436,
+      "end": 72.64
+    },
+    {
+      "text": "o",
+      "start": 72.64,
+      "end": 72.911
+    },
+    {
+      "text": "propôio",
+      "start": 72.911,
+      "end": 73.182
+    },
+    {
+      "text": "do",
+      "start": 73.182,
+      "end": 73.452
+    },
+    {
+      "text": "painel",
+      "start": 73.452,
+      "end": 73.723
+    },
+    {
+      "text": "de",
+      "start": 73.723,
+      "end": 73.994
+    },
+    {
+      "text": "ageracial",
+      "start": 73.994,
+      "end": 74.265
+    },
+    {
+      "text": "com",
+      "start": 74.265,
+      "end": 74.535
+    },
+    {
+      "text": "a",
+      "start": 74.535,
+      "end": 74.806
+    },
+    {
+      "text": "fila",
+      "start": 74.806,
+      "end": 75.077
+    },
+    {
+      "text": "de",
+      "start": 75.077,
+      "end": 75.348
+    },
+    {
+      "text": "púrgia",
+      "start": 75.348,
+      "end": 75.618
+    },
+    {
+      "text": "de",
+      "start": 75.618,
+      "end": 75.889
+    },
+    {
+      "text": "necessidade.",
+      "start": 75.889,
+      "end": 76.16
+    },
+    {
+      "text": "Também",
+      "start": 76.16,
+      "end": 76.6
+    },
+    {
+      "text": "temos",
+      "start": 76.6,
+      "end": 77.04
+    },
+    {
+      "text": "requisitos",
+      "start": 77.04,
+      "end": 77.48
+    },
+    {
+      "text": "no",
+      "start": 77.48,
+      "end": 77.92
+    },
+    {
+      "text": "funcionais,",
+      "start": 77.92,
+      "end": 78.36
+    },
+    {
+      "text": "focadas",
+      "start": 78.36,
+      "end": 79.013
+    },
+    {
+      "text": "na",
+      "start": 79.013,
+      "end": 79.667
+    },
+    {
+      "text": "qualidade.",
+      "start": 79.667,
+      "end": 80.32
+    },
+    {
+      "text": "Para",
+      "start": 80.32,
+      "end": 80.76
+    },
+    {
+      "text": "atendir",
+      "start": 80.76,
+      "end": 81.2
+    },
+    {
+      "text": "a",
+      "start": 81.2,
+      "end": 81.64
+    },
+    {
+      "text": "possibilidade,",
+      "start": 81.64,
+      "end": 82.08
+    },
+    {
+      "text": "coletor",
+      "start": 82.08,
+      "end": 82.52
+    },
+    {
+      "text": "de",
+      "start": 82.52,
+      "end": 82.96
+    },
+    {
+      "text": "tela,",
+      "start": 82.96,
+      "end": 83.4
+    },
+    {
+      "text": "no",
+      "start": 83.4,
+      "end": 83.613
+    },
+    {
+      "text": "que",
+      "start": 83.613,
+      "end": 83.827
+    },
+    {
+      "text": "se",
+      "start": 83.827,
+      "end": 84.04
+    },
+    {
+      "text": "não",
+      "start": 84.04,
+      "end": 84.253
+    },
+    {
+      "text": "funcionou",
+      "start": 84.253,
+      "end": 84.467
+    },
+    {
+      "text": "do",
+      "start": 84.467,
+      "end": 84.68
+    },
+    {
+      "text": "hoje",
+      "start": 84.68,
+      "end": 84.893
+    },
+    {
+      "text": "e",
+      "start": 84.893,
+      "end": 85.107
+    },
+    {
+      "text": "segurar",
+      "start": 85.107,
+      "end": 85.32
+    },
+    {
+      "text": "essa",
+      "start": 85.32,
+      "end": 85.628
+    },
+    {
+      "text": "quenha,",
+      "start": 85.628,
+      "end": 85.935
+    },
+    {
+      "text": "com",
+      "start": 85.935,
+      "end": 86.243
+    },
+    {
+      "text": "controle",
+      "start": 86.243,
+      "end": 86.551
+    },
+    {
+      "text": "é",
+      "start": 86.551,
+      "end": 86.858
+    },
+    {
+      "text": "a",
+      "start": 86.858,
+      "end": 87.166
+    },
+    {
+      "text": "gente",
+      "start": 87.166,
+      "end": 87.474
+    },
+    {
+      "text": "agora,",
+      "start": 87.474,
+      "end": 87.782
+    },
+    {
+      "text": "hoje",
+      "start": 87.782,
+      "end": 88.089
+    },
+    {
+      "text": "é",
+      "start": 88.089,
+      "end": 88.397
+    },
+    {
+      "text": "que",
+      "start": 88.397,
+      "end": 88.705
+    },
+    {
+      "text": "não",
+      "start": 88.705,
+      "end": 89.012
+    },
+    {
+      "text": "funcionaram.",
+      "start": 89.012,
+      "end": 89.32
+    },
+    {
+      "text": "Criamos",
+      "start": 89.32,
+      "end": 89.643
+    },
+    {
+      "text": "o",
+      "start": 89.643,
+      "end": 89.966
+    },
+    {
+      "text": "Progto",
+      "start": 89.966,
+      "end": 90.289
+    },
+    {
+      "text": "de",
+      "start": 90.289,
+      "end": 90.611
+    },
+    {
+      "text": "Becloid",
+      "start": 90.611,
+      "end": 90.934
+    },
+    {
+      "text": "e",
+      "start": 90.934,
+      "end": 91.257
+    },
+    {
+      "text": "usamos",
+      "start": 91.257,
+      "end": 91.58
+    },
+    {
+      "text": "a",
+      "start": 91.58,
+      "end": 91.903
+    },
+    {
+      "text": "matriz",
+      "start": 91.903,
+      "end": 92.226
+    },
+    {
+      "text": "Goet,",
+      "start": 92.226,
+      "end": 92.549
+    },
+    {
+      "text": "para",
+      "start": 92.549,
+      "end": 92.871
+    },
+    {
+      "text": "priorizar",
+      "start": 92.871,
+      "end": 93.194
+    },
+    {
+      "text": "o",
+      "start": 93.194,
+      "end": 93.517
+    },
+    {
+      "text": "desenvolvimento.",
+      "start": 93.517,
+      "end": 93.84
+    },
+    {
+      "text": "Aí,",
+      "start": 93.84,
+      "end": 94.22
+    },
+    {
+      "text": "osyrsitoria",
+      "start": 94.22,
+      "end": 94.6
+    },
+    {
+      "text": "um",
+      "start": 94.6,
+      "end": 94.98
+    },
+    {
+      "text": "sobretecente",
+      "start": 94.98,
+      "end": 95.36
+    },
+    {
+      "text": "ficação",
+      "start": 95.36,
+      "end": 95.74
+    },
+    {
+      "text": "atendiu",
+      "start": 95.74,
+      "end": 96.12
+    },
+    {
+      "text": "de",
+      "start": 96.12,
+      "end": 96.5
+    },
+    {
+      "text": "120",
+      "start": 96.5,
+      "end": 96.88
+    },
+    {
+      "text": "pontos",
+      "start": 96.88,
+      "end": 97.26
+    },
+    {
+      "text": "e",
+      "start": 97.26,
+      "end": 97.64
+    },
+    {
+      "text": "ficou",
+      "start": 97.64,
+      "end": 98.02
+    },
+    {
+      "text": "em",
+      "start": 98.02,
+      "end": 98.4
+    },
+    {
+      "text": "primeiro",
+      "start": 98.4,
+      "end": 98.78
+    },
+    {
+      "text": "lugar.",
+      "start": 98.78,
+      "end": 99.16
+    },
+    {
+      "text": "Pois",
+      "start": 99.16,
+      "end": 99.537
+    },
+    {
+      "text": "eu",
+      "start": 99.537,
+      "end": 99.914
+    },
+    {
+      "text": "perrequisito",
+      "start": 99.914,
+      "end": 100.291
+    },
+    {
+      "text": "para",
+      "start": 100.291,
+      "end": 100.669
+    },
+    {
+      "text": "acessar",
+      "start": 100.669,
+      "end": 101.046
+    },
+    {
+      "text": "a",
+      "start": 101.046,
+      "end": 101.423
+    },
+    {
+      "text": "plataforma.",
+      "start": 101.423,
+      "end": 101.8
+    },
+    {
+      "text": "Em",
+      "start": 101.8,
+      "end": 102.162
+    },
+    {
+      "text": "segundo",
+      "start": 102.162,
+      "end": 102.523
+    },
+    {
+      "text": "lugar,",
+      "start": 102.523,
+      "end": 102.885
+    },
+    {
+      "text": "no",
+      "start": 102.885,
+      "end": 103.246
+    },
+    {
+      "text": "pataram",
+      "start": 103.246,
+      "end": 103.608
+    },
+    {
+      "text": "acompanhamento",
+      "start": 103.608,
+      "end": 103.969
+    },
+    {
+      "text": "de",
+      "start": 103.969,
+      "end": 104.331
+    },
+    {
+      "text": "status",
+      "start": 104.331,
+      "end": 104.692
+    },
+    {
+      "text": "e",
+      "start": 104.692,
+      "end": 105.054
+    },
+    {
+      "text": "o",
+      "start": 105.054,
+      "end": 105.415
+    },
+    {
+      "text": "agendamento",
+      "start": 105.415,
+      "end": 105.777
+    },
+    {
+      "text": "de",
+      "start": 105.777,
+      "end": 106.138
+    },
+    {
+      "text": "horário,",
+      "start": 106.138,
+      "end": 106.5
+    },
+    {
+      "text": "que",
+      "start": 106.5,
+      "end": 106.778
+    },
+    {
+      "text": "são",
+      "start": 106.778,
+      "end": 107.056
+    },
+    {
+      "text": "um",
+      "start": 107.056,
+      "end": 107.333
+    },
+    {
+      "text": "núcleo",
+      "start": 107.333,
+      "end": 107.611
+    },
+    {
+      "text": "de",
+      "start": 107.611,
+      "end": 107.889
+    },
+    {
+      "text": "valor",
+      "start": 107.889,
+      "end": 108.167
+    },
+    {
+      "text": "para",
+      "start": 108.167,
+      "end": 108.444
+    },
+    {
+      "text": "o",
+      "start": 108.444,
+      "end": 108.722
+    },
+    {
+      "text": "cidadão.",
+      "start": 108.722,
+      "end": 109
+    },
+    {
+      "text": "O",
+      "start": 109,
+      "end": 109.269
+    },
+    {
+      "text": "panel",
+      "start": 109.269,
+      "end": 109.538
+    },
+    {
+      "text": "de",
+      "start": 109.538,
+      "end": 109.808
+    },
+    {
+      "text": "Rincel",
+      "start": 109.808,
+      "end": 110.077
+    },
+    {
+      "text": "foi",
+      "start": 110.077,
+      "end": 110.346
+    },
+    {
+      "text": "um",
+      "start": 110.346,
+      "end": 110.615
+    },
+    {
+      "text": "quarto",
+      "start": 110.615,
+      "end": 110.885
+    },
+    {
+      "text": "e",
+      "start": 110.885,
+      "end": 111.154
+    },
+    {
+      "text": "o",
+      "start": 111.154,
+      "end": 111.423
+    },
+    {
+      "text": "panel",
+      "start": 111.423,
+      "end": 111.692
+    },
+    {
+      "text": "de",
+      "start": 111.692,
+      "end": 111.962
+    },
+    {
+      "text": "esperem",
+      "start": 111.962,
+      "end": 112.231
+    },
+    {
+      "text": "quinto.",
+      "start": 112.231,
+      "end": 112.5
+    },
+    {
+      "text": "O",
+      "start": 112.5,
+      "end": 113
+    },
+    {
+      "text": "paciente",
+      "start": 113,
+      "end": 113.5
+    },
+    {
+      "text": "consegue",
+      "start": 113.5,
+      "end": 114
+    },
+    {
+      "text": "acompanhar",
+      "start": 114,
+      "end": 114.5
+    },
+    {
+      "text": "o",
+      "start": 114.5,
+      "end": 115
+    },
+    {
+      "text": "sistema",
+      "start": 115,
+      "end": 115.5
+    },
+    {
+      "text": "sem",
+      "start": 115.5,
+      "end": 116
+    },
+    {
+      "text": "independêf�icamente",
+      "start": 116,
+      "end": 116.5
+    },
+    {
+      "text": "deles.",
+      "start": 116.5,
+      "end": 117
+    },
+    {
+      "text": "Analizando",
+      "start": 117,
+      "end": 117.4
+    },
+    {
+      "text": "os",
+      "start": 117.4,
+      "end": 117.8
+    },
+    {
+      "text": "dados",
+      "start": 117.8,
+      "end": 118.2
+    },
+    {
+      "text": "e",
+      "start": 118.2,
+      "end": 118.6
+    },
+    {
+      "text": "identificamos",
+      "start": 118.6,
+      "end": 119
+    },
+    {
+      "text": "um",
+      "start": 119,
+      "end": 119.4
+    },
+    {
+      "text": "gargalo",
+      "start": 119.4,
+      "end": 119.8
+    },
+    {
+      "text": "de",
+      "start": 119.8,
+      "end": 120.2
+    },
+    {
+      "text": "abandono",
+      "start": 120.2,
+      "end": 120.6
+    },
+    {
+      "text": "enorme.",
+      "start": 120.6,
+      "end": 121
+    },
+    {
+      "text": "A",
+      "start": 121,
+      "end": 121.374
+    },
+    {
+      "text": "ortopedia",
+      "start": 121.374,
+      "end": 121.749
+    },
+    {
+      "text": "chega",
+      "start": 121.749,
+      "end": 122.123
+    },
+    {
+      "text": "a",
+      "start": 122.123,
+      "end": 122.497
+    },
+    {
+      "text": "180",
+      "start": 122.497,
+      "end": 122.871
+    },
+    {
+      "text": "dias",
+      "start": 122.871,
+      "end": 123.246
+    },
+    {
+      "text": "de",
+      "start": 123.246,
+      "end": 123.62
+    },
+    {
+      "text": "espera",
+      "start": 123.62,
+      "end": 123.994
+    },
+    {
+      "text": "e",
+      "start": 123.994,
+      "end": 124.369
+    },
+    {
+      "text": "a",
+      "start": 124.369,
+      "end": 124.743
+    },
+    {
+      "text": "cardiologia",
+      "start": 124.743,
+      "end": 125.117
+    },
+    {
+      "text": "120.",
+      "start": 125.117,
+      "end": 125.491
+    },
+    {
+      "text": "Contaixas",
+      "start": 125.491,
+      "end": 125.866
+    },
+    {
+      "text": "de",
+      "start": 125.866,
+      "end": 126.24
+    },
+    {
+      "text": "falta,",
+      "start": 126.24,
+      "end": 126.737
+    },
+    {
+      "text": "assimos",
+      "start": 126.737,
+      "end": 127.234
+    },
+    {
+      "text": "de",
+      "start": 127.234,
+      "end": 127.731
+    },
+    {
+      "text": "40%.",
+      "start": 127.731,
+      "end": 128.229
+    },
+    {
+      "text": "A",
+      "start": 128.229,
+      "end": 128.726
+    },
+    {
+      "text": "Orto-pedia",
+      "start": 128.726,
+      "end": 129.223
+    },
+    {
+      "text": "sozinho",
+      "start": 129.223,
+      "end": 129.72
+    },
+    {
+      "text": "representa",
+      "start": 129.72,
+      "end": 130.217
+    },
+    {
+      "text": "35%",
+      "start": 130.217,
+      "end": 130.714
+    },
+    {
+      "text": "da",
+      "start": 130.714,
+      "end": 131.211
+    },
+    {
+      "text": "demanda.",
+      "start": 131.211,
+      "end": 131.709
+    },
+    {
+      "text": "Já",
+      "start": 131.709,
+      "end": 132.206
+    },
+    {
+      "text": "um",
+      "start": 132.206,
+      "end": 132.703
+    },
+    {
+      "text": "cologia,",
+      "start": 132.703,
+      "end": 133.2
+    },
+    {
+      "text": "a",
+      "start": 133.2,
+      "end": 133.501
+    },
+    {
+      "text": "atingia",
+      "start": 133.501,
+      "end": 133.802
+    },
+    {
+      "text": "metrana",
+      "start": 133.802,
+      "end": 134.104
+    },
+    {
+      "text": "se",
+      "start": 134.104,
+      "end": 134.405
+    },
+    {
+      "text": "anodivinte",
+      "start": 134.405,
+      "end": 134.706
+    },
+    {
+      "text": "e",
+      "start": 134.706,
+      "end": 135.007
+    },
+    {
+      "text": "cinco",
+      "start": 135.007,
+      "end": 135.308
+    },
+    {
+      "text": "dias,",
+      "start": 135.308,
+      "end": 135.609
+    },
+    {
+      "text": "focando",
+      "start": 135.609,
+      "end": 135.911
+    },
+    {
+      "text": "em",
+      "start": 135.911,
+      "end": 136.212
+    },
+    {
+      "text": "urgência",
+      "start": 136.212,
+      "end": 136.513
+    },
+    {
+      "text": "e",
+      "start": 136.513,
+      "end": 136.814
+    },
+    {
+      "text": "tendo",
+      "start": 136.814,
+      "end": 137.115
+    },
+    {
+      "text": "só",
+      "start": 137.115,
+      "end": 137.416
+    },
+    {
+      "text": "5%",
+      "start": 137.416,
+      "end": 137.718
+    },
+    {
+      "text": "de",
+      "start": 137.718,
+      "end": 138.019
+    },
+    {
+      "text": "falta.",
+      "start": 138.019,
+      "end": 138.32
+    },
+    {
+      "text": "Nossa",
+      "start": 138.32,
+      "end": 138.763
+    },
+    {
+      "text": "proposta",
+      "start": 138.763,
+      "end": 139.206
+    },
+    {
+      "text": "entra",
+      "start": 139.206,
+      "end": 139.649
+    },
+    {
+      "text": "para",
+      "start": 139.649,
+      "end": 140.092
+    },
+    {
+      "text": "equilibrar",
+      "start": 140.092,
+      "end": 140.535
+    },
+    {
+      "text": "isso.",
+      "start": 140.535,
+      "end": 140.978
+    },
+    {
+      "text": "Em",
+      "start": 140.978,
+      "end": 141.422
+    },
+    {
+      "text": "vez",
+      "start": 141.422,
+      "end": 141.865
+    },
+    {
+      "text": "de",
+      "start": 141.865,
+      "end": 142.308
+    },
+    {
+      "text": "apenas",
+      "start": 142.308,
+      "end": 142.751
+    },
+    {
+      "text": "gastar",
+      "start": 142.751,
+      "end": 143.194
+    },
+    {
+      "text": "com",
+      "start": 143.194,
+      "end": 143.637
+    },
+    {
+      "text": "multirões,",
+      "start": 143.637,
+      "end": 144.08
+    },
+    {
+      "text": "queremos",
+      "start": 144.08,
+      "end": 144.433
+    },
+    {
+      "text": "atacar",
+      "start": 144.433,
+      "end": 144.787
+    },
+    {
+      "text": "a",
+      "start": 144.787,
+      "end": 145.14
+    },
+    {
+      "text": "falta",
+      "start": 145.14,
+      "end": 145.493
+    },
+    {
+      "text": "de",
+      "start": 145.493,
+      "end": 145.847
+    },
+    {
+      "text": "informação.",
+      "start": 145.847,
+      "end": 146.2
+    },
+    {
+      "text": "Com",
+      "start": 146.2,
+      "end": 146.623
+    },
+    {
+      "text": "o",
+      "start": 146.623,
+      "end": 147.046
+    },
+    {
+      "text": "painel",
+      "start": 147.046,
+      "end": 147.469
+    },
+    {
+      "text": "de",
+      "start": 147.469,
+      "end": 147.892
+    },
+    {
+      "text": "silproposto,",
+      "start": 147.892,
+      "end": 148.315
+    },
+    {
+      "text": "a",
+      "start": 148.315,
+      "end": 148.738
+    },
+    {
+      "text": "equipe",
+      "start": 148.738,
+      "end": 149.162
+    },
+    {
+      "text": "identifica",
+      "start": 149.162,
+      "end": 149.585
+    },
+    {
+      "text": "gargalos",
+      "start": 149.585,
+      "end": 150.008
+    },
+    {
+      "text": "e",
+      "start": 150.008,
+      "end": 150.431
+    },
+    {
+      "text": "faz",
+      "start": 150.431,
+      "end": 150.854
+    },
+    {
+      "text": "confirmações",
+      "start": 150.854,
+      "end": 151.277
+    },
+    {
+      "text": "ativas.",
+      "start": 151.277,
+      "end": 151.7
+    },
+    {
+      "text": "O",
+      "start": 151.7,
+      "end": 152.043
+    },
+    {
+      "text": "cidadão",
+      "start": 152.043,
+      "end": 152.386
+    },
+    {
+      "text": "acompanha",
+      "start": 152.386,
+      "end": 152.729
+    },
+    {
+      "text": "tudo,",
+      "start": 152.729,
+      "end": 153.071
+    },
+    {
+      "text": "não",
+      "start": 153.071,
+      "end": 153.414
+    },
+    {
+      "text": "diz",
+      "start": 153.414,
+      "end": 153.757
+    },
+    {
+      "text": "isso,",
+      "start": 153.757,
+      "end": 154.1
+    },
+    {
+      "text": "e",
+      "start": 154.1,
+      "end": 154.443
+    },
+    {
+      "text": "as",
+      "start": 154.443,
+      "end": 154.786
+    },
+    {
+      "text": "vagas",
+      "start": 154.786,
+      "end": 155.129
+    },
+    {
+      "text": "ofciosas",
+      "start": 155.129,
+      "end": 155.471
+    },
+    {
+      "text": "são",
+      "start": 155.471,
+      "end": 155.814
+    },
+    {
+      "text": "realocadas",
+      "start": 155.814,
+      "end": 156.157
+    },
+    {
+      "text": "rapidamente",
+      "start": 156.157,
+      "end": 156.5
+    },
+    {
+      "text": "para",
+      "start": 156.5,
+      "end": 156.833
+    },
+    {
+      "text": "quem",
+      "start": 156.833,
+      "end": 157.167
+    },
+    {
+      "text": "precisa.",
+      "start": 157.167,
+      "end": 157.5
+    },
+    {
+      "text": "O",
+      "start": 157.5,
+      "end": 157.818
+    },
+    {
+      "text": "rato",
+      "start": 157.818,
+      "end": 158.136
+    },
+    {
+      "text": "e",
+      "start": 158.136,
+      "end": 158.455
+    },
+    {
+      "text": "o",
+      "start": 158.455,
+      "end": 158.773
+    },
+    {
+      "text": "próprio",
+      "start": 158.773,
+      "end": 159.091
+    },
+    {
+      "text": "apoio",
+      "start": 159.091,
+      "end": 159.409
+    },
+    {
+      "text": "é",
+      "start": 159.409,
+      "end": 159.727
+    },
+    {
+      "text": "uma",
+      "start": 159.727,
+      "end": 160.045
+    },
+    {
+      "text": "verdadeira",
+      "start": 160.045,
+      "end": 160.364
+    },
+    {
+      "text": "transformação",
+      "start": 160.364,
+      "end": 160.682
+    },
+    {
+      "text": "digital,",
+      "start": 160.682,
+      "end": 161
+    },
+    {
+      "text": "mudando",
+      "start": 161,
+      "end": 161.333
+    },
+    {
+      "text": "o",
+      "start": 161.333,
+      "end": 161.667
+    },
+    {
+      "text": "afilo",
+      "start": 161.667,
+      "end": 162
+    },
+    {
+      "text": "à",
+      "start": 162,
+      "end": 162.333
+    },
+    {
+      "text": "estátia",
+      "start": 162.333,
+      "end": 162.667
+    },
+    {
+      "text": "para",
+      "start": 162.667,
+      "end": 163
+    },
+    {
+      "text": "o",
+      "start": 163,
+      "end": 163.333
+    },
+    {
+      "text": "fluxo",
+      "start": 163.333,
+      "end": 163.667
+    },
+    {
+      "text": "dinâmico.",
+      "start": 163.667,
+      "end": 164
+    },
+    {
+      "text": "O",
+      "start": 164,
+      "end": 164.457
+    },
+    {
+      "text": "cidadão",
+      "start": 164.457,
+      "end": 164.913
+    },
+    {
+      "text": "é",
+      "start": 164.913,
+      "end": 165.37
+    },
+    {
+      "text": "trascaleista,",
+      "start": 165.37,
+      "end": 165.827
+    },
+    {
+      "text": "e",
+      "start": 165.827,
+      "end": 166.283
+    },
+    {
+      "text": "o",
+      "start": 166.283,
+      "end": 166.74
+    },
+    {
+      "text": "BSC",
+      "start": 166.74,
+      "end": 167.197
+    },
+    {
+      "text": "ganhado",
+      "start": 167.197,
+      "end": 167.653
+    },
+    {
+      "text": "produtividade,",
+      "start": 167.653,
+      "end": 168.11
+    },
+    {
+      "text": "acabando",
+      "start": 168.11,
+      "end": 168.567
+    },
+    {
+      "text": "com",
+      "start": 168.567,
+      "end": 169.023
+    },
+    {
+      "text": "aquele",
+      "start": 169.023,
+      "end": 169.48
+    },
+    {
+      "text": "retrapalho",
+      "start": 169.48,
+      "end": 169.98
+    },
+    {
+      "text": "manual",
+      "start": 169.98,
+      "end": 170.48
+    },
+    {
+      "text": "para",
+      "start": 170.48,
+      "end": 170.98
+    },
+    {
+      "text": "chicar",
+      "start": 170.98,
+      "end": 171.48
+    },
+    {
+      "text": "em",
+      "start": 171.48,
+      "end": 171.98
+    },
+    {
+      "text": "caminhamentos.",
+      "start": 171.98,
+      "end": 172.48
+    },
+    {
+      "text": "Também",
+      "start": 172.48,
+      "end": 172.93
+    },
+    {
+      "text": "mapeamos",
+      "start": 172.93,
+      "end": 173.38
+    },
+    {
+      "text": "os",
+      "start": 173.38,
+      "end": 173.83
+    },
+    {
+      "text": "riscos.",
+      "start": 173.83,
+      "end": 174.28
+    },
+    {
+      "text": "A",
+      "start": 174.28,
+      "end": 174.665
+    },
+    {
+      "text": "barreira",
+      "start": 174.665,
+      "end": 175.049
+    },
+    {
+      "text": "tecnológica",
+      "start": 175.049,
+      "end": 175.434
+    },
+    {
+      "text": "é",
+      "start": 175.434,
+      "end": 175.818
+    },
+    {
+      "text": "mitigada",
+      "start": 175.818,
+      "end": 176.203
+    },
+    {
+      "text": "com",
+      "start": 176.203,
+      "end": 176.588
+    },
+    {
+      "text": "o",
+      "start": 176.588,
+      "end": 176.972
+    },
+    {
+      "text": "total",
+      "start": 176.972,
+      "end": 177.357
+    },
+    {
+      "text": "tem",
+      "start": 177.357,
+      "end": 177.742
+    },
+    {
+      "text": "simplificados",
+      "start": 177.742,
+      "end": 178.126
+    },
+    {
+      "text": "e",
+      "start": 178.126,
+      "end": 178.511
+    },
+    {
+      "text": "a",
+      "start": 178.511,
+      "end": 178.895
+    },
+    {
+      "text": "sensibilidade.",
+      "start": 178.895,
+      "end": 179.28
+    },
+    {
+      "text": "E",
+      "start": 179.28,
+      "end": 179.608
+    },
+    {
+      "text": "as",
+      "start": 179.608,
+      "end": 179.937
+    },
+    {
+      "text": "posições",
+      "start": 179.937,
+      "end": 180.265
+    },
+    {
+      "text": "de",
+      "start": 180.265,
+      "end": 180.594
+    },
+    {
+      "text": "dados",
+      "start": 180.594,
+      "end": 180.922
+    },
+    {
+      "text": "é",
+      "start": 180.922,
+      "end": 181.25
+    },
+    {
+      "text": "combatida",
+      "start": 181.25,
+      "end": 181.579
+    },
+    {
+      "text": "com",
+      "start": 181.579,
+      "end": 181.907
+    },
+    {
+      "text": "controle",
+      "start": 181.907,
+      "end": 182.235
+    },
+    {
+      "text": "de",
+      "start": 182.235,
+      "end": 182.564
+    },
+    {
+      "text": "perfil",
+      "start": 182.564,
+      "end": 182.892
+    },
+    {
+      "text": "e",
+      "start": 182.892,
+      "end": 183.221
+    },
+    {
+      "text": "senhas",
+      "start": 183.221,
+      "end": 183.549
+    },
+    {
+      "text": "a",
+      "start": 183.549,
+      "end": 183.877
+    },
+    {
+      "text": "lume",
+      "start": 183.877,
+      "end": 184.206
+    },
+    {
+      "text": "imisadas.",
+      "start": 184.206,
+      "end": 184.534
+    },
+    {
+      "text": "É",
+      "start": 184.534,
+      "end": 184.863
+    },
+    {
+      "text": "assim",
+      "start": 184.863,
+      "end": 185.191
+    },
+    {
+      "text": "que",
+      "start": 185.191,
+      "end": 185.519
+    },
+    {
+      "text": "d'alizamos",
+      "start": 185.519,
+      "end": 185.848
+    },
+    {
+      "text": "um",
+      "start": 185.848,
+      "end": 186.176
+    },
+    {
+      "text": "projeto",
+      "start": 186.176,
+      "end": 186.505
+    },
+    {
+      "text": "maduro",
+      "start": 186.505,
+      "end": 186.833
+    },
+    {
+      "text": "e",
+      "start": 186.833,
+      "end": 187.161
+    },
+    {
+      "text": "seguro",
+      "start": 187.161,
+      "end": 187.49
+    },
+    {
+      "text": "para",
+      "start": 187.49,
+      "end": 187.818
+    },
+    {
+      "text": "mudar",
+      "start": 187.818,
+      "end": 188.146
+    },
+    {
+      "text": "a",
+      "start": 188.146,
+      "end": 188.475
+    },
+    {
+      "text": "realidade",
+      "start": 188.475,
+      "end": 188.803
+    },
+    {
+      "text": "do",
+      "start": 188.803,
+      "end": 189.132
+    },
+    {
+      "text": "suício.",
+      "start": 189.132,
+      "end": 189.46
+    },
+    {
+      "text": "Muito",
+      "start": 189.46,
+      "end": 190.02
+    },
+    {
+      "text": "obrigado.",
+      "start": 190.02,
+      "end": 190.58
+    }
+  ]
+}

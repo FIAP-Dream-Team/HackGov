@@ -1,0 +1,19 @@
+{
+  "_comment": "Mapeia cada slide do deck v2 a um trecho de fala do roteiro. 'fala' = id em roteiro.json. 'anchor' = trecho literal da fala onde o slide entra (o alinhamento converte em segundos); sem anchor, o slide comeca junto com a fala. Varios slides sem anchor na mesma fala dividem o tempo pelo peso 'share'. A ordem no video segue a narracao, nao a ordem do deck: os slides 05 e 06 aparecem antes do 04 porque e ali que a fala os descreve. Este e o unico arquivo a mexer para reordenar o video; depois rode 'npm run align'.",
+  "slides": [
+    { "slide": "01", "label": "Capa",                "fala": "f01" },
+    { "slide": "02", "label": "O Problema",          "fala": "f02" },
+    { "slide": "03", "label": "Req. Funcionais",     "fala": "f03" },
+    { "slide": "05", "label": "Landing Page",        "fala": "f03", "anchor": "o paciente ganha autonomia" },
+    { "slide": "06", "label": "Telas do MVP",        "fala": "f04" },
+    { "slide": "04", "label": "Req. Nao Funcionais", "fala": "f04", "anchor": "Requisitos Não Funcionais" },
+    { "slide": "07", "label": "Matriz GUT",          "fala": "f05" },
+    { "slide": "08", "label": "Ranking",             "fala": "f06" },
+    { "slide": "09", "label": "Tempo de espera",     "fala": "f07" },
+    { "slide": "10", "label": "Distribuicao",        "fala": "f07", "anchor": "focando em urgências" },
+    { "slide": "11", "label": "Decisoes",            "fala": "f08", "anchor": "Em vez de apenas gastar" },
+    { "slide": "12", "label": "Antes x Depois",      "fala": "f09" },
+    { "slide": "13", "label": "Riscos",              "fala": "f10" },
+    { "slide": "14", "label": "Encerramento",        "fala": "f10", "anchor": "Muito obrigado" }
+  ]
+}

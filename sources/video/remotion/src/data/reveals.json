@@ -1,0 +1,145 @@
+{
+  "_comment": "Liga cada elemento marcado com data-reveal (ver scripts/ui-fixes.mjs) ao momento da fala em que ele deve entrar. 'anchor' e um trecho literal da fala; o alinhamento converte em segundos. Sem 'anchor', o elemento entra 'offsetSec' depois do reveal anterior do mesmo slide, o que serve para escalonar itens que a narracao nao cita um a um. 'lead' antecipa a entrada em segundos, para o elemento ja estar na tela quando a palavra sai (padrao 0.35). Rode 'npm run align' depois de editar.",
+  "_modes": "Sobrepoe a decisao automatica de encenar ou mostrar o slide inteiro de uma vez. \"staged\" forca a encenacao, \"immediate\" forca tudo junto. Sem entrada, o align decide pelo tempo de leitura: se ler o conteudo segurado leva mais tempo do que resta de slide, ele mostra tudo de uma vez.",
+  "modes": {},
+  "reveals": [
+    {
+      "id": "s02-rastreabilidade",
+      "slide": "02",
+      "fala": "f02",
+      "anchor": "a falta de rastreabilidade"
+    },
+    {
+      "id": "s02-estatisticas",
+      "slide": "02",
+      "fala": "f02",
+      "anchor": "Segundo o Instituto Locomotiva"
+    },
+    {
+      "id": "s02-tcu",
+      "slide": "02",
+      "fala": "f02",
+      "anchor": "O próprio TCU"
+    },
+    {
+      "id": "s03-rf01",
+      "slide": "03",
+      "fala": "f03",
+      "anchor": "O RF01"
+    },
+    {
+      "id": "s03-rf02",
+      "slide": "03",
+      "fala": "f03",
+      "offsetSec": 1.6
+    },
+    {
+      "id": "s03-rf03",
+      "slide": "03",
+      "fala": "f03",
+      "offsetSec": 0.45
+    },
+    {
+      "id": "s03-rf04",
+      "slide": "03",
+      "fala": "f03",
+      "offsetSec": 0.45
+    },
+    {
+      "id": "s03-rf05",
+      "slide": "03",
+      "fala": "f03",
+      "offsetSec": 0.45
+    },
+    {
+      "id": "s07-us01",
+      "slide": "07",
+      "fala": "f05",
+      "anchor": "A User Story 01"
+    },
+    {
+      "id": "s07-us02",
+      "slide": "07",
+      "fala": "f05",
+      "offsetSec": 1.4
+    },
+    {
+      "id": "s07-us03",
+      "slide": "07",
+      "fala": "f05",
+      "offsetSec": 0.4
+    },
+    {
+      "id": "s07-us05",
+      "slide": "07",
+      "fala": "f05",
+      "offsetSec": 0.4
+    },
+    {
+      "id": "s07-us04",
+      "slide": "07",
+      "fala": "f05",
+      "offsetSec": 0.4
+    },
+    {
+      "id": "s09-ortopedia",
+      "slide": "09",
+      "fala": "f07",
+      "anchor": "A Ortopedia chega"
+    },
+    {
+      "id": "s09-cardiologia",
+      "slide": "09",
+      "fala": "f07",
+      "anchor": "e a Cardiologia"
+    },
+    {
+      "id": "s09-oftalmologia",
+      "slide": "09",
+      "fala": "f07",
+      "offsetSec": 0.6
+    },
+    {
+      "id": "s09-oncologia",
+      "slide": "09",
+      "fala": "f07",
+      "anchor": "Já a Oncologia"
+    },
+    {
+      "id": "s11-proposta01",
+      "slide": "11",
+      "fala": "f08",
+      "anchor": "faz confirmações ativas"
+    },
+    {
+      "id": "s11-proposta02",
+      "slide": "11",
+      "fala": "f08",
+      "anchor": "são realocadas rapidamente"
+    },
+    {
+      "id": "s12-antes",
+      "slide": "12",
+      "fala": "f09",
+      "anchor": "uma fila estática"
+    },
+    {
+      "id": "s12-depois",
+      "slide": "12",
+      "fala": "f09",
+      "anchor": "um fluxo dinâmico"
+    },
+    {
+      "id": "s13-risco01",
+      "slide": "13",
+      "fala": "f10",
+      "anchor": "A barreira tecnológica"
+    },
+    {
+      "id": "s13-risco02",
+      "slide": "13",
+      "fala": "f10",
+      "anchor": "a exposição de dados"
+    }
+  ]
+}

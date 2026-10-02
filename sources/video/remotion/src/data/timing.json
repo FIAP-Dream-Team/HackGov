@@ -1,0 +1,516 @@
+{
+  "fps": 30,
+  "durationSec": 195.13,
+  "narrationSec": 190.6,
+  "durationInFrames": 5854,
+  "alignmentRate": 0.6369294605809128,
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "section": "1. Abertura e o problema",
+      "text": "E aí, pessoal! Sou o John Vitor. A equipe sou eu, Ana Larissa, João Pedro, Vinícius Cardoso e Brenda Araújo. Hoje apresentamos o HackGov, um projeto focado no agendamento e acompanhamento de encaminhamentos da atenção primária para a especializada.",
+      "start": 0,
+      "end": 18.489,
+      "startFrame": 0,
+      "endFrame": 555
+    },
+    {
+      "id": "f02",
+      "speaker": "larissa",
+      "section": "1. Abertura e o problema",
+      "text": "Escolhemos esse tema para resolver um gargalo grave: a falta de rastreabilidade entre a UBS e o especialista, onde o paciente simplesmente some. Segundo o Instituto Locomotiva, 1 em cada 3 brasileiros já desistiu de consultas no SUS por falta de informação. O próprio TCU também já apontou essa falta de padronização de dados como um problema de visibilidade.",
+      "start": 18.708,
+      "end": 39.434,
+      "startFrame": 561,
+      "endFrame": 1183
+    },
+    {
+      "id": "f03",
+      "speaker": "john",
+      "section": "2. A solução e os requisitos",
+      "text": "Para resolver isso, estruturamos os requisitos da nossa plataforma ideal. Os Requisitos Funcionais definem o que o sistema fará na prática. O RF01, por exemplo, permite que o cidadão se identifique no totem da UBS só com Cartão SUS ou CPF, sem senha. Com o RF02 e RF03, o paciente ganha autonomia para consultar a etapa do seu encaminhamento e agendar exames.",
+      "start": 39.743,
+      "end": 61.594,
+      "startFrame": 1192,
+      "endFrame": 1848
+    },
+    {
+      "id": "f04",
+      "speaker": "larissa",
+      "section": "2. A solução e os requisitos",
+      "text": "No atendimento físico, o RF04 define um painel de espera que chama pela senha, preservando a privacidade. Para a UBS, o RF05 propõe um painel gerencial com a fila por especialidade. Também temos os Requisitos Não Funcionais, focados na qualidade. Garantimos acessibilidade com leitura de tela, no RNF02, e segurança clínica com controle de acesso rigoroso, no RNF01.",
+      "start": 61.989,
+      "end": 89.022,
+      "startFrame": 1860,
+      "endFrame": 2671
+    },
+    {
+      "id": "f05",
+      "speaker": "vinicius",
+      "section": "3. Priorização do backlog",
+      "text": "Na Parte 3, criamos o Product Backlog e usamos a Matriz GUT para priorizar o desenvolvimento. A User Story 01, sobre Identificação, atingiu 125 pontos e ficou em primeiro lugar, pois é o pré-requisito para acessar a plataforma.",
+      "start": 89.396,
+      "end": 101.265,
+      "startFrame": 2682,
+      "endFrame": 3038
+    },
+    {
+      "id": "f06",
+      "speaker": "vinicius",
+      "section": "3. Priorização do backlog",
+      "text": "Em segundo lugar, empataram o Acompanhamento de Status e o Agendamento de Horário, que são o núcleo de valor para o cidadão. O painel gerencial ficou em quarto, e o painel de espera em quinto, pois o paciente consegue acompanhar o sistema sem depender fisicamente deles.",
+      "start": 102.024,
+      "end": 116.216,
+      "startFrame": 3061,
+      "endFrame": 3486
+    },
+    {
+      "id": "f07",
+      "speaker": "brenda",
+      "section": "4. Dados e gestão estratégica",
+      "text": "Analisando os dados, identificamos um gargalo de abandono enorme. A Ortopedia chega a 180 dias de espera e a Cardiologia a 120, com taxas de faltas acima de 40%. A Ortopedia sozinha representa 35% da demanda. Já a Oncologia atinge a meta nacional de 25 dias, focando em urgências e tendo só 5% de faltas.",
+      "start": 116.945,
+      "end": 141.093,
+      "startFrame": 3508,
+      "endFrame": 4233
+    },
+    {
+      "id": "f08",
+      "speaker": "brenda",
+      "section": "4. Dados e gestão estratégica",
+      "text": "Nossa proposta entra para equilibrar isso. Em vez de apenas gastar com mutirões, queremos atacar a falta de informação. Com o painel gerencial proposto, a equipe identifica gargalos e faz confirmações ativas. O cidadão acompanha tudo, não desiste, e as vagas ociosas são realocadas rapidamente para quem precisa.",
+      "start": 141.591,
+      "end": 157.235,
+      "startFrame": 4248,
+      "endFrame": 4717
+    },
+    {
+      "id": "f09",
+      "speaker": "joao",
+      "section": "5. Transformação digital",
+      "text": "O HackGov propõe uma verdadeira transformação digital, mudando uma fila estática para um fluxo dinâmico. O cidadão ganha transparência, e a UBS ganha produtividade, acabando com aquele retrabalho manual para checar encaminhamentos.",
+      "start": 157.634,
+      "end": 171.644,
+      "startFrame": 4729,
+      "endFrame": 5149
+    },
+    {
+      "id": "f10",
+      "speaker": "joao",
+      "section": "5. Transformação digital",
+      "text": "Também mapeamos os riscos. A barreira tecnológica é mitigada com totens simplificados e acessibilidade. E a exposição de dados é combatida com controle de perfil e senhas anonimizadas. É assim que idealizamos um projeto maduro e seguro para mudar a realidade do SUS. Muito obrigado!",
+      "start": 172.347,
+      "end": 190.63,
+      "startFrame": 5170,
+      "endFrame": 5719
+    }
+  ],
+  "turns": [
+    {
+      "speaker": "john",
+      "start": 0,
+      "end": 18.489,
+      "startFrame": 0,
+      "endFrame": 555
+    },
+    {
+      "speaker": "larissa",
+      "start": 18.708,
+      "end": 39.434,
+      "startFrame": 561,
+      "endFrame": 1183
+    },
+    {
+      "speaker": "john",
+      "start": 39.743,
+      "end": 61.594,
+      "startFrame": 1192,
+      "endFrame": 1848
+    },
+    {
+      "speaker": "larissa",
+      "start": 61.989,
+      "end": 89.022,
+      "startFrame": 1860,
+      "endFrame": 2671
+    },
+    {
+      "speaker": "vinicius",
+      "start": 89.396,
+      "end": 116.216,
+      "startFrame": 2682,
+      "endFrame": 3486
+    },
+    {
+      "speaker": "brenda",
+      "start": 116.945,
+      "end": 157.235,
+      "startFrame": 3508,
+      "endFrame": 4717
+    },
+    {
+      "speaker": "joao",
+      "start": 157.634,
+      "end": 190.63,
+      "startFrame": 4729,
+      "endFrame": 5719
+    }
+  ],
+  "slides": [
+    {
+      "slide": "01",
+      "label": "Capa",
+      "falaId": "f01",
+      "speaker": "john",
+      "start": 0,
+      "end": 18.708,
+      "startFrame": 0,
+      "endFrame": 561,
+      "durationInFrames": 561,
+      "deckIndex": 0
+    },
+    {
+      "slide": "02",
+      "label": "O Problema",
+      "falaId": "f02",
+      "speaker": "larissa",
+      "start": 18.708,
+      "end": 39.743,
+      "startFrame": 561,
+      "endFrame": 1192,
+      "durationInFrames": 631,
+      "deckIndex": 1
+    },
+    {
+      "slide": "03",
+      "label": "Req. Funcionais",
+      "falaId": "f03",
+      "speaker": "john",
+      "start": 39.743,
+      "end": 59.66997162901033,
+      "startFrame": 1192,
+      "endFrame": 1790,
+      "durationInFrames": 598,
+      "deckIndex": 2
+    },
+    {
+      "slide": "05",
+      "label": "Landing Page",
+      "falaId": "f03",
+      "speaker": "john",
+      "start": 59.66997162901033,
+      "end": 61.989,
+      "startFrame": 1790,
+      "endFrame": 1860,
+      "durationInFrames": 70,
+      "deckIndex": 4
+    },
+    {
+      "slide": "06",
+      "label": "Telas do MVP",
+      "falaId": "f04",
+      "speaker": "larissa",
+      "start": 61.989,
+      "end": 76.09942837777427,
+      "startFrame": 1860,
+      "endFrame": 2283,
+      "durationInFrames": 423,
+      "deckIndex": 5
+    },
+    {
+      "slide": "04",
+      "label": "Req. Nao Funcionais",
+      "falaId": "f04",
+      "speaker": "larissa",
+      "start": 76.09942837777427,
+      "end": 89.396,
+      "startFrame": 2283,
+      "endFrame": 2682,
+      "durationInFrames": 399,
+      "deckIndex": 3
+    },
+    {
+      "slide": "07",
+      "label": "Matriz GUT",
+      "falaId": "f05",
+      "speaker": "vinicius",
+      "start": 89.396,
+      "end": 102.024,
+      "startFrame": 2682,
+      "endFrame": 3061,
+      "durationInFrames": 379,
+      "deckIndex": 6
+    },
+    {
+      "slide": "08",
+      "label": "Ranking",
+      "falaId": "f06",
+      "speaker": "vinicius",
+      "start": 102.024,
+      "end": 116.945,
+      "startFrame": 3061,
+      "endFrame": 3508,
+      "durationInFrames": 447,
+      "deckIndex": 7
+    },
+    {
+      "slide": "09",
+      "label": "Tempo de espera",
+      "falaId": "f07",
+      "speaker": "brenda",
+      "start": 116.945,
+      "end": 138.14438634683708,
+      "startFrame": 3508,
+      "endFrame": 4144,
+      "durationInFrames": 636,
+      "deckIndex": 8
+    },
+    {
+      "slide": "10",
+      "label": "Distribuicao",
+      "falaId": "f07",
+      "speaker": "brenda",
+      "start": 138.14438634683708,
+      "end": 143.75897455683005,
+      "startFrame": 4144,
+      "endFrame": 4313,
+      "durationInFrames": 169,
+      "deckIndex": 9
+    },
+    {
+      "slide": "11",
+      "label": "Decisoes",
+      "falaId": "f08",
+      "speaker": "brenda",
+      "start": 143.75897455683005,
+      "end": 157.634,
+      "startFrame": 4313,
+      "endFrame": 4729,
+      "durationInFrames": 416,
+      "deckIndex": 10
+    },
+    {
+      "slide": "12",
+      "label": "Antes x Depois",
+      "falaId": "f09",
+      "speaker": "joao",
+      "start": 157.634,
+      "end": 172.347,
+      "startFrame": 4729,
+      "endFrame": 5170,
+      "durationInFrames": 441,
+      "deckIndex": 11
+    },
+    {
+      "slide": "13",
+      "label": "Riscos",
+      "falaId": "f10",
+      "speaker": "joao",
+      "start": 172.347,
+      "end": 189.4986762430939,
+      "startFrame": 5170,
+      "endFrame": 5685,
+      "durationInFrames": 515,
+      "deckIndex": 12
+    },
+    {
+      "slide": "14",
+      "label": "Encerramento",
+      "falaId": "f10",
+      "speaker": "joao",
+      "start": 189.4986762430939,
+      "end": 195.13,
+      "startFrame": 5685,
+      "endFrame": 5854,
+      "durationInFrames": 169,
+      "deckIndex": 13
+    }
+  ],
+  "reveals": [
+    {
+      "id": "s02-rastreabilidade",
+      "slide": "02",
+      "start": 21.143026400684704,
+      "startFrame": 634,
+      "source": "\"a falta de rastreabilidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-estatisticas",
+      "slide": "02",
+      "start": 26.863178616103756,
+      "startFrame": 806,
+      "source": "\"Segundo o Instituto Locomotiva\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-tcu",
+      "slide": "02",
+      "start": 34.08978313253012,
+      "startFrame": 1023,
+      "source": "\"O próprio TCU\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-rf01",
+      "slide": "03",
+      "start": 39.943000000000005,
+      "startFrame": 1198,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s03-rf02",
+      "slide": "03",
+      "start": 39.943000000000005,
+      "startFrame": 1198,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s03-rf03",
+      "slide": "03",
+      "start": 39.943000000000005,
+      "startFrame": 1198,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s03-rf04",
+      "slide": "03",
+      "start": 39.943000000000005,
+      "startFrame": 1198,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s03-rf05",
+      "slide": "03",
+      "start": 39.943000000000005,
+      "startFrame": 1198,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s07-us01",
+      "slide": "07",
+      "start": 89.596,
+      "startFrame": 2688,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s07-us02",
+      "slide": "07",
+      "start": 89.596,
+      "startFrame": 2688,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s07-us03",
+      "slide": "07",
+      "start": 89.596,
+      "startFrame": 2688,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s07-us05",
+      "slide": "07",
+      "start": 89.596,
+      "startFrame": 2688,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s07-us04",
+      "slide": "07",
+      "start": 89.596,
+      "startFrame": 2688,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s09-ortopedia",
+      "slide": "09",
+      "start": 120.97099370514319,
+      "startFrame": 3629,
+      "source": "\"A Ortopedia chega\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-cardiologia",
+      "slide": "09",
+      "start": 124.41881611387967,
+      "startFrame": 3733,
+      "source": "\"e a Cardiologia\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-oftalmologia",
+      "slide": "09",
+      "start": 125.01881611387967,
+      "startFrame": 3751,
+      "source": "+0.60s",
+      "clamped": false
+    },
+    {
+      "id": "s09-oncologia",
+      "slide": "09",
+      "start": 133.30323491261117,
+      "startFrame": 3999,
+      "source": "\"Já a Oncologia\"",
+      "clamped": false
+    },
+    {
+      "id": "s11-proposta01",
+      "slide": "11",
+      "start": 151.1192316996872,
+      "startFrame": 4534,
+      "source": "\"faz confirmações ativas\"",
+      "clamped": false
+    },
+    {
+      "id": "s11-proposta02",
+      "slide": "11",
+      "start": 155.2300638164755,
+      "startFrame": 4657,
+      "source": "\"são realocadas rapidamente\"",
+      "clamped": false
+    },
+    {
+      "id": "s12-antes",
+      "slide": "12",
+      "start": 160.61066284658037,
+      "startFrame": 4818,
+      "source": "\"uma fila estática\"",
+      "clamped": false
+    },
+    {
+      "id": "s12-depois",
+      "slide": "12",
+      "start": 162.16445212569315,
+      "startFrame": 4865,
+      "source": "\"um fluxo dinâmico\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-risco01",
+      "slide": "13",
+      "start": 172.547,
+      "startFrame": 5176,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    },
+    {
+      "id": "s13-risco02",
+      "slide": "13",
+      "start": 172.547,
+      "startFrame": 5176,
+      "source": "slide curto demais para encenar",
+      "clamped": false
+    }
+  ]
+}

@@ -1,0 +1,2418 @@
+{
+  "model": "ffmpeg silencedetect (-26dB, 0.14s) + F0",
+  "durationSec": 190.63,
+  "note": "Divisas entre falas medidas do audio; tempo dentro de cada fala e interpolado.",
+  "text": "E aí, pessoal! Sou o John Vitor. A equipe sou eu, Ana Larissa, João Pedro, Vinícius Cardoso e Brenda Araújo. Hoje apresentamos o HackGov, um projeto focado no agendamento e acompanhamento de encaminhamentos da atenção primária para a especializada. Escolhemos esse tema para resolver um gargalo grave: a falta de rastreabilidade entre a UBS e o especialista, onde o paciente simplesmente some. Segundo o Instituto Locomotiva, 1 em cada 3 brasileiros já desistiu de consultas no SUS por falta de informação. O próprio TCU também já apontou essa falta de padronização de dados como um problema de visibilidade. Para resolver isso, estruturamos os requisitos da nossa plataforma ideal. Os Requisitos Funcionais definem o que o sistema fará na prática. O RF01, por exemplo, permite que o cidadão se identifique no totem da UBS só com Cartão SUS ou CPF, sem senha. Com o RF02 e RF03, o paciente ganha autonomia para consultar a etapa do seu encaminhamento e agendar exames. No atendimento físico, o RF04 define um painel de espera que chama pela senha, preservando a privacidade. Para a UBS, o RF05 propõe um painel gerencial com a fila por especialidade. Também temos os Requisitos Não Funcionais, focados na qualidade. Garantimos acessibilidade com leitura de tela, no RNF02, e segurança clínica com controle de acesso rigoroso, no RNF01. Na Parte 3, criamos o Product Backlog e usamos a Matriz GUT para priorizar o desenvolvimento. A User Story 01, sobre Identificação, atingiu 125 pontos e ficou em primeiro lugar, pois é o pré-requisito para acessar a plataforma. Em segundo lugar, empataram o Acompanhamento de Status e o Agendamento de Horário, que são o núcleo de valor para o cidadão. O painel gerencial ficou em quarto, e o painel de espera em quinto, pois o paciente consegue acompanhar o sistema sem depender fisicamente deles. Analisando os dados, identificamos um gargalo de abandono enorme. A Ortopedia chega a 180 dias de espera e a Cardiologia a 120, com taxas de faltas acima de 40%. A Ortopedia sozinha representa 35% da demanda. Já a Oncologia atinge a meta nacional de 25 dias, focando em urgências e tendo só 5% de faltas. Nossa proposta entra para equilibrar isso. Em vez de apenas gastar com mutirões, queremos atacar a falta de informação. Com o painel gerencial proposto, a equipe identifica gargalos e faz confirmações ativas. O cidadão acompanha tudo, não desiste, e as vagas ociosas são realocadas rapidamente para quem precisa. O HackGov propõe uma verdadeira transformação digital, mudando uma fila estática para um fluxo dinâmico. O cidadão ganha transparência, e a UBS ganha produtividade, acabando com aquele retrabalho manual para checar encaminhamentos. Também mapeamos os riscos. A barreira tecnológica é mitigada com totens simplificados e acessibilidade. E a exposição de dados é combatida com controle de perfil e senhas anonimizadas. É assim que idealizamos um projeto maduro e seguro para mudar a realidade do SUS. Muito obrigado!",
+  "words": [
+    {
+      "text": "E",
+      "start": 1.52,
+      "end": 1.955
+    },
+    {
+      "text": "aí,",
+      "start": 1.955,
+      "end": 2.39
+    },
+    {
+      "text": "pessoal!",
+      "start": 2.39,
+      "end": 2.825
+    },
+    {
+      "text": "Sou",
+      "start": 2.825,
+      "end": 3.26
+    },
+    {
+      "text": "o",
+      "start": 3.26,
+      "end": 3.696
+    },
+    {
+      "text": "John",
+      "start": 3.696,
+      "end": 4.131
+    },
+    {
+      "text": "Vitor.",
+      "start": 4.131,
+      "end": 4.566
+    },
+    {
+      "text": "A",
+      "start": 4.566,
+      "end": 5.001
+    },
+    {
+      "text": "equipe",
+      "start": 5.001,
+      "end": 5.436
+    },
+    {
+      "text": "sou",
+      "start": 5.436,
+      "end": 5.871
+    },
+    {
+      "text": "eu,",
+      "start": 5.871,
+      "end": 6.306
+    },
+    {
+      "text": "Ana",
+      "start": 6.306,
+      "end": 6.741
+    },
+    {
+      "text": "Larissa,",
+      "start": 6.741,
+      "end": 7.176
+    },
+    {
+      "text": "João",
+      "start": 7.176,
+      "end": 7.611
+    },
+    {
+      "text": "Pedro,",
+      "start": 7.611,
+      "end": 8.046
+    },
+    {
+      "text": "Vinícius",
+      "start": 8.046,
+      "end": 8.482
+    },
+    {
+      "text": "Cardoso",
+      "start": 8.482,
+      "end": 8.917
+    },
+    {
+      "text": "e",
+      "start": 8.917,
+      "end": 9.352
+    },
+    {
+      "text": "Brenda",
+      "start": 9.352,
+      "end": 9.787
+    },
+    {
+      "text": "Araújo.",
+      "start": 9.787,
+      "end": 10.222
+    },
+    {
+      "text": "Hoje",
+      "start": 10.222,
+      "end": 10.657
+    },
+    {
+      "text": "apresentamos",
+      "start": 10.657,
+      "end": 11.092
+    },
+    {
+      "text": "o",
+      "start": 11.092,
+      "end": 11.527
+    },
+    {
+      "text": "HackGov,",
+      "start": 11.527,
+      "end": 11.962
+    },
+    {
+      "text": "um",
+      "start": 11.962,
+      "end": 12.398
+    },
+    {
+      "text": "projeto",
+      "start": 12.398,
+      "end": 12.833
+    },
+    {
+      "text": "focado",
+      "start": 12.833,
+      "end": 13.268
+    },
+    {
+      "text": "no",
+      "start": 13.268,
+      "end": 13.703
+    },
+    {
+      "text": "agendamento",
+      "start": 13.703,
+      "end": 14.138
+    },
+    {
+      "text": "e",
+      "start": 14.138,
+      "end": 14.573
+    },
+    {
+      "text": "acompanhamento",
+      "start": 14.573,
+      "end": 15.008
+    },
+    {
+      "text": "de",
+      "start": 15.008,
+      "end": 15.443
+    },
+    {
+      "text": "encaminhamentos",
+      "start": 15.443,
+      "end": 15.878
+    },
+    {
+      "text": "da",
+      "start": 15.878,
+      "end": 16.313
+    },
+    {
+      "text": "atenção",
+      "start": 16.313,
+      "end": 16.749
+    },
+    {
+      "text": "primária",
+      "start": 16.749,
+      "end": 17.184
+    },
+    {
+      "text": "para",
+      "start": 17.184,
+      "end": 17.619
+    },
+    {
+      "text": "a",
+      "start": 17.619,
+      "end": 18.054
+    },
+    {
+      "text": "especializada.",
+      "start": 18.054,
+      "end": 18.489
+    },
+    {
+      "text": "Escolhemos",
+      "start": 18.708,
+      "end": 19.059
+    },
+    {
+      "text": "esse",
+      "start": 19.059,
+      "end": 19.41
+    },
+    {
+      "text": "tema",
+      "start": 19.41,
+      "end": 19.761
+    },
+    {
+      "text": "para",
+      "start": 19.761,
+      "end": 20.113
+    },
+    {
+      "text": "resolver",
+      "start": 20.113,
+      "end": 20.464
+    },
+    {
+      "text": "um",
+      "start": 20.464,
+      "end": 20.815
+    },
+    {
+      "text": "gargalo",
+      "start": 20.815,
+      "end": 21.167
+    },
+    {
+      "text": "grave:",
+      "start": 21.167,
+      "end": 21.518
+    },
+    {
+      "text": "a",
+      "start": 21.518,
+      "end": 21.869
+    },
+    {
+      "text": "falta",
+      "start": 21.869,
+      "end": 22.221
+    },
+    {
+      "text": "de",
+      "start": 22.221,
+      "end": 22.572
+    },
+    {
+      "text": "rastreabilidade",
+      "start": 22.572,
+      "end": 22.923
+    },
+    {
+      "text": "entre",
+      "start": 22.923,
+      "end": 23.274
+    },
+    {
+      "text": "a",
+      "start": 23.274,
+      "end": 23.626
+    },
+    {
+      "text": "UBS",
+      "start": 23.626,
+      "end": 23.977
+    },
+    {
+      "text": "e",
+      "start": 23.977,
+      "end": 24.328
+    },
+    {
+      "text": "o",
+      "start": 24.328,
+      "end": 24.68
+    },
+    {
+      "text": "especialista,",
+      "start": 24.68,
+      "end": 25.031
+    },
+    {
+      "text": "onde",
+      "start": 25.031,
+      "end": 25.382
+    },
+    {
+      "text": "o",
+      "start": 25.382,
+      "end": 25.734
+    },
+    {
+      "text": "paciente",
+      "start": 25.734,
+      "end": 26.085
+    },
+    {
+      "text": "simplesmente",
+      "start": 26.085,
+      "end": 26.436
+    },
+    {
+      "text": "some.",
+      "start": 26.436,
+      "end": 26.787
+    },
+    {
+      "text": "Segundo",
+      "start": 26.787,
+      "end": 27.139
+    },
+    {
+      "text": "o",
+      "start": 27.139,
+      "end": 27.49
+    },
+    {
+      "text": "Instituto",
+      "start": 27.49,
+      "end": 27.841
+    },
+    {
+      "text": "Locomotiva,",
+      "start": 27.841,
+      "end": 28.193
+    },
+    {
+      "text": "1",
+      "start": 28.193,
+      "end": 28.544
+    },
+    {
+      "text": "em",
+      "start": 28.544,
+      "end": 28.895
+    },
+    {
+      "text": "cada",
+      "start": 28.895,
+      "end": 29.246
+    },
+    {
+      "text": "3",
+      "start": 29.246,
+      "end": 29.598
+    },
+    {
+      "text": "brasileiros",
+      "start": 29.598,
+      "end": 29.949
+    },
+    {
+      "text": "já",
+      "start": 29.949,
+      "end": 30.3
+    },
+    {
+      "text": "desistiu",
+      "start": 30.3,
+      "end": 30.652
+    },
+    {
+      "text": "de",
+      "start": 30.652,
+      "end": 31.003
+    },
+    {
+      "text": "consultas",
+      "start": 31.003,
+      "end": 31.354
+    },
+    {
+      "text": "no",
+      "start": 31.354,
+      "end": 31.706
+    },
+    {
+      "text": "SUS",
+      "start": 31.706,
+      "end": 32.057
+    },
+    {
+      "text": "por",
+      "start": 32.057,
+      "end": 32.408
+    },
+    {
+      "text": "falta",
+      "start": 32.408,
+      "end": 32.759
+    },
+    {
+      "text": "de",
+      "start": 32.759,
+      "end": 33.111
+    },
+    {
+      "text": "informação.",
+      "start": 33.111,
+      "end": 33.462
+    },
+    {
+      "text": "O",
+      "start": 33.462,
+      "end": 33.813
+    },
+    {
+      "text": "próprio",
+      "start": 33.813,
+      "end": 34.165
+    },
+    {
+      "text": "TCU",
+      "start": 34.165,
+      "end": 34.516
+    },
+    {
+      "text": "também",
+      "start": 34.516,
+      "end": 34.867
+    },
+    {
+      "text": "já",
+      "start": 34.867,
+      "end": 35.219
+    },
+    {
+      "text": "apontou",
+      "start": 35.219,
+      "end": 35.57
+    },
+    {
+      "text": "essa",
+      "start": 35.57,
+      "end": 35.921
+    },
+    {
+      "text": "falta",
+      "start": 35.921,
+      "end": 36.272
+    },
+    {
+      "text": "de",
+      "start": 36.272,
+      "end": 36.624
+    },
+    {
+      "text": "padronização",
+      "start": 36.624,
+      "end": 36.975
+    },
+    {
+      "text": "de",
+      "start": 36.975,
+      "end": 37.326
+    },
+    {
+      "text": "dados",
+      "start": 37.326,
+      "end": 37.678
+    },
+    {
+      "text": "como",
+      "start": 37.678,
+      "end": 38.029
+    },
+    {
+      "text": "um",
+      "start": 38.029,
+      "end": 38.38
+    },
+    {
+      "text": "problema",
+      "start": 38.38,
+      "end": 38.732
+    },
+    {
+      "text": "de",
+      "start": 38.732,
+      "end": 39.083
+    },
+    {
+      "text": "visibilidade.",
+      "start": 39.083,
+      "end": 39.434
+    },
+    {
+      "text": "Para",
+      "start": 39.743,
+      "end": 40.096
+    },
+    {
+      "text": "resolver",
+      "start": 40.096,
+      "end": 40.448
+    },
+    {
+      "text": "isso,",
+      "start": 40.448,
+      "end": 40.8
+    },
+    {
+      "text": "estruturamos",
+      "start": 40.8,
+      "end": 41.153
+    },
+    {
+      "text": "os",
+      "start": 41.153,
+      "end": 41.505
+    },
+    {
+      "text": "requisitos",
+      "start": 41.505,
+      "end": 41.858
+    },
+    {
+      "text": "da",
+      "start": 41.858,
+      "end": 42.21
+    },
+    {
+      "text": "nossa",
+      "start": 42.21,
+      "end": 42.563
+    },
+    {
+      "text": "plataforma",
+      "start": 42.563,
+      "end": 42.915
+    },
+    {
+      "text": "ideal.",
+      "start": 42.915,
+      "end": 43.267
+    },
+    {
+      "text": "Os",
+      "start": 43.267,
+      "end": 43.62
+    },
+    {
+      "text": "Requisitos",
+      "start": 43.62,
+      "end": 43.972
+    },
+    {
+      "text": "Funcionais",
+      "start": 43.972,
+      "end": 44.325
+    },
+    {
+      "text": "definem",
+      "start": 44.325,
+      "end": 44.677
+    },
+    {
+      "text": "o",
+      "start": 44.677,
+      "end": 45.03
+    },
+    {
+      "text": "que",
+      "start": 45.03,
+      "end": 45.382
+    },
+    {
+      "text": "o",
+      "start": 45.382,
+      "end": 45.735
+    },
+    {
+      "text": "sistema",
+      "start": 45.735,
+      "end": 46.087
+    },
+    {
+      "text": "fará",
+      "start": 46.087,
+      "end": 46.439
+    },
+    {
+      "text": "na",
+      "start": 46.439,
+      "end": 46.792
+    },
+    {
+      "text": "prática.",
+      "start": 46.792,
+      "end": 47.144
+    },
+    {
+      "text": "O",
+      "start": 47.144,
+      "end": 47.497
+    },
+    {
+      "text": "RF01,",
+      "start": 47.497,
+      "end": 47.849
+    },
+    {
+      "text": "por",
+      "start": 47.849,
+      "end": 48.202
+    },
+    {
+      "text": "exemplo,",
+      "start": 48.202,
+      "end": 48.554
+    },
+    {
+      "text": "permite",
+      "start": 48.554,
+      "end": 48.906
+    },
+    {
+      "text": "que",
+      "start": 48.906,
+      "end": 49.259
+    },
+    {
+      "text": "o",
+      "start": 49.259,
+      "end": 49.611
+    },
+    {
+      "text": "cidadão",
+      "start": 49.611,
+      "end": 49.964
+    },
+    {
+      "text": "se",
+      "start": 49.964,
+      "end": 50.316
+    },
+    {
+      "text": "identifique",
+      "start": 50.316,
+      "end": 50.669
+    },
+    {
+      "text": "no",
+      "start": 50.669,
+      "end": 51.021
+    },
+    {
+      "text": "totem",
+      "start": 51.021,
+      "end": 51.374
+    },
+    {
+      "text": "da",
+      "start": 51.374,
+      "end": 51.726
+    },
+    {
+      "text": "UBS",
+      "start": 51.726,
+      "end": 52.078
+    },
+    {
+      "text": "só",
+      "start": 52.078,
+      "end": 52.431
+    },
+    {
+      "text": "com",
+      "start": 52.431,
+      "end": 52.783
+    },
+    {
+      "text": "Cartão",
+      "start": 52.783,
+      "end": 53.136
+    },
+    {
+      "text": "SUS",
+      "start": 53.136,
+      "end": 53.488
+    },
+    {
+      "text": "ou",
+      "start": 53.488,
+      "end": 53.841
+    },
+    {
+      "text": "CPF,",
+      "start": 53.841,
+      "end": 54.193
+    },
+    {
+      "text": "sem",
+      "start": 54.193,
+      "end": 54.545
+    },
+    {
+      "text": "senha.",
+      "start": 54.545,
+      "end": 54.898
+    },
+    {
+      "text": "Com",
+      "start": 54.898,
+      "end": 55.25
+    },
+    {
+      "text": "o",
+      "start": 55.25,
+      "end": 55.603
+    },
+    {
+      "text": "RF02",
+      "start": 55.603,
+      "end": 55.955
+    },
+    {
+      "text": "e",
+      "start": 55.955,
+      "end": 56.308
+    },
+    {
+      "text": "RF03,",
+      "start": 56.308,
+      "end": 56.66
+    },
+    {
+      "text": "o",
+      "start": 56.66,
+      "end": 57.013
+    },
+    {
+      "text": "paciente",
+      "start": 57.013,
+      "end": 57.365
+    },
+    {
+      "text": "ganha",
+      "start": 57.365,
+      "end": 57.717
+    },
+    {
+      "text": "autonomia",
+      "start": 57.717,
+      "end": 58.07
+    },
+    {
+      "text": "para",
+      "start": 58.07,
+      "end": 58.422
+    },
+    {
+      "text": "consultar",
+      "start": 58.422,
+      "end": 58.775
+    },
+    {
+      "text": "a",
+      "start": 58.775,
+      "end": 59.127
+    },
+    {
+      "text": "etapa",
+      "start": 59.127,
+      "end": 59.48
+    },
+    {
+      "text": "do",
+      "start": 59.48,
+      "end": 59.832
+    },
+    {
+      "text": "seu",
+      "start": 59.832,
+      "end": 60.184
+    },
+    {
+      "text": "encaminhamento",
+      "start": 60.184,
+      "end": 60.537
+    },
+    {
+      "text": "e",
+      "start": 60.537,
+      "end": 60.889
+    },
+    {
+      "text": "agendar",
+      "start": 60.889,
+      "end": 61.242
+    },
+    {
+      "text": "exames.",
+      "start": 61.242,
+      "end": 61.594
+    },
+    {
+      "text": "No",
+      "start": 61.989,
+      "end": 62.455
+    },
+    {
+      "text": "atendimento",
+      "start": 62.455,
+      "end": 62.921
+    },
+    {
+      "text": "físico,",
+      "start": 62.921,
+      "end": 63.387
+    },
+    {
+      "text": "o",
+      "start": 63.387,
+      "end": 63.853
+    },
+    {
+      "text": "RF04",
+      "start": 63.853,
+      "end": 64.319
+    },
+    {
+      "text": "define",
+      "start": 64.319,
+      "end": 64.786
+    },
+    {
+      "text": "um",
+      "start": 64.786,
+      "end": 65.252
+    },
+    {
+      "text": "painel",
+      "start": 65.252,
+      "end": 65.718
+    },
+    {
+      "text": "de",
+      "start": 65.718,
+      "end": 66.184
+    },
+    {
+      "text": "espera",
+      "start": 66.184,
+      "end": 66.65
+    },
+    {
+      "text": "que",
+      "start": 66.65,
+      "end": 67.116
+    },
+    {
+      "text": "chama",
+      "start": 67.116,
+      "end": 67.582
+    },
+    {
+      "text": "pela",
+      "start": 67.582,
+      "end": 68.048
+    },
+    {
+      "text": "senha,",
+      "start": 68.048,
+      "end": 68.514
+    },
+    {
+      "text": "preservando",
+      "start": 68.514,
+      "end": 68.98
+    },
+    {
+      "text": "a",
+      "start": 68.98,
+      "end": 69.446
+    },
+    {
+      "text": "privacidade.",
+      "start": 69.446,
+      "end": 69.913
+    },
+    {
+      "text": "Para",
+      "start": 69.913,
+      "end": 70.379
+    },
+    {
+      "text": "a",
+      "start": 70.379,
+      "end": 70.845
+    },
+    {
+      "text": "UBS,",
+      "start": 70.845,
+      "end": 71.311
+    },
+    {
+      "text": "o",
+      "start": 71.311,
+      "end": 71.777
+    },
+    {
+      "text": "RF05",
+      "start": 71.777,
+      "end": 72.243
+    },
+    {
+      "text": "propõe",
+      "start": 72.243,
+      "end": 72.709
+    },
+    {
+      "text": "um",
+      "start": 72.709,
+      "end": 73.175
+    },
+    {
+      "text": "painel",
+      "start": 73.175,
+      "end": 73.641
+    },
+    {
+      "text": "gerencial",
+      "start": 73.641,
+      "end": 74.107
+    },
+    {
+      "text": "com",
+      "start": 74.107,
+      "end": 74.574
+    },
+    {
+      "text": "a",
+      "start": 74.574,
+      "end": 75.04
+    },
+    {
+      "text": "fila",
+      "start": 75.04,
+      "end": 75.506
+    },
+    {
+      "text": "por",
+      "start": 75.506,
+      "end": 75.972
+    },
+    {
+      "text": "especialidade.",
+      "start": 75.972,
+      "end": 76.438
+    },
+    {
+      "text": "Também",
+      "start": 76.438,
+      "end": 76.904
+    },
+    {
+      "text": "temos",
+      "start": 76.904,
+      "end": 77.37
+    },
+    {
+      "text": "os",
+      "start": 77.37,
+      "end": 77.836
+    },
+    {
+      "text": "Requisitos",
+      "start": 77.836,
+      "end": 78.302
+    },
+    {
+      "text": "Não",
+      "start": 78.302,
+      "end": 78.768
+    },
+    {
+      "text": "Funcionais,",
+      "start": 78.768,
+      "end": 79.234
+    },
+    {
+      "text": "focados",
+      "start": 79.234,
+      "end": 79.701
+    },
+    {
+      "text": "na",
+      "start": 79.701,
+      "end": 80.167
+    },
+    {
+      "text": "qualidade.",
+      "start": 80.167,
+      "end": 80.633
+    },
+    {
+      "text": "Garantimos",
+      "start": 80.633,
+      "end": 81.099
+    },
+    {
+      "text": "acessibilidade",
+      "start": 81.099,
+      "end": 81.565
+    },
+    {
+      "text": "com",
+      "start": 81.565,
+      "end": 82.031
+    },
+    {
+      "text": "leitura",
+      "start": 82.031,
+      "end": 82.497
+    },
+    {
+      "text": "de",
+      "start": 82.497,
+      "end": 82.963
+    },
+    {
+      "text": "tela,",
+      "start": 82.963,
+      "end": 83.429
+    },
+    {
+      "text": "no",
+      "start": 83.429,
+      "end": 83.895
+    },
+    {
+      "text": "RNF02,",
+      "start": 83.895,
+      "end": 84.361
+    },
+    {
+      "text": "e",
+      "start": 84.361,
+      "end": 84.828
+    },
+    {
+      "text": "segurança",
+      "start": 84.828,
+      "end": 85.294
+    },
+    {
+      "text": "clínica",
+      "start": 85.294,
+      "end": 85.76
+    },
+    {
+      "text": "com",
+      "start": 85.76,
+      "end": 86.226
+    },
+    {
+      "text": "controle",
+      "start": 86.226,
+      "end": 86.692
+    },
+    {
+      "text": "de",
+      "start": 86.692,
+      "end": 87.158
+    },
+    {
+      "text": "acesso",
+      "start": 87.158,
+      "end": 87.624
+    },
+    {
+      "text": "rigoroso,",
+      "start": 87.624,
+      "end": 88.09
+    },
+    {
+      "text": "no",
+      "start": 88.09,
+      "end": 88.556
+    },
+    {
+      "text": "RNF01.",
+      "start": 88.556,
+      "end": 89.022
+    },
+    {
+      "text": "Na",
+      "start": 89.396,
+      "end": 89.708
+    },
+    {
+      "text": "Parte",
+      "start": 89.708,
+      "end": 90.02
+    },
+    {
+      "text": "3,",
+      "start": 90.02,
+      "end": 90.333
+    },
+    {
+      "text": "criamos",
+      "start": 90.333,
+      "end": 90.645
+    },
+    {
+      "text": "o",
+      "start": 90.645,
+      "end": 90.958
+    },
+    {
+      "text": "Product",
+      "start": 90.958,
+      "end": 91.27
+    },
+    {
+      "text": "Backlog",
+      "start": 91.27,
+      "end": 91.582
+    },
+    {
+      "text": "e",
+      "start": 91.582,
+      "end": 91.895
+    },
+    {
+      "text": "usamos",
+      "start": 91.895,
+      "end": 92.207
+    },
+    {
+      "text": "a",
+      "start": 92.207,
+      "end": 92.519
+    },
+    {
+      "text": "Matriz",
+      "start": 92.519,
+      "end": 92.832
+    },
+    {
+      "text": "GUT",
+      "start": 92.832,
+      "end": 93.144
+    },
+    {
+      "text": "para",
+      "start": 93.144,
+      "end": 93.456
+    },
+    {
+      "text": "priorizar",
+      "start": 93.456,
+      "end": 93.769
+    },
+    {
+      "text": "o",
+      "start": 93.769,
+      "end": 94.081
+    },
+    {
+      "text": "desenvolvimento.",
+      "start": 94.081,
+      "end": 94.393
+    },
+    {
+      "text": "A",
+      "start": 94.393,
+      "end": 94.706
+    },
+    {
+      "text": "User",
+      "start": 94.706,
+      "end": 95.018
+    },
+    {
+      "text": "Story",
+      "start": 95.018,
+      "end": 95.33
+    },
+    {
+      "text": "01,",
+      "start": 95.33,
+      "end": 95.643
+    },
+    {
+      "text": "sobre",
+      "start": 95.643,
+      "end": 95.955
+    },
+    {
+      "text": "Identificação,",
+      "start": 95.955,
+      "end": 96.267
+    },
+    {
+      "text": "atingiu",
+      "start": 96.267,
+      "end": 96.58
+    },
+    {
+      "text": "125",
+      "start": 96.58,
+      "end": 96.892
+    },
+    {
+      "text": "pontos",
+      "start": 96.892,
+      "end": 97.204
+    },
+    {
+      "text": "e",
+      "start": 97.204,
+      "end": 97.517
+    },
+    {
+      "text": "ficou",
+      "start": 97.517,
+      "end": 97.829
+    },
+    {
+      "text": "em",
+      "start": 97.829,
+      "end": 98.142
+    },
+    {
+      "text": "primeiro",
+      "start": 98.142,
+      "end": 98.454
+    },
+    {
+      "text": "lugar,",
+      "start": 98.454,
+      "end": 98.766
+    },
+    {
+      "text": "pois",
+      "start": 98.766,
+      "end": 99.079
+    },
+    {
+      "text": "é",
+      "start": 99.079,
+      "end": 99.391
+    },
+    {
+      "text": "o",
+      "start": 99.391,
+      "end": 99.703
+    },
+    {
+      "text": "pré-requisito",
+      "start": 99.703,
+      "end": 100.016
+    },
+    {
+      "text": "para",
+      "start": 100.016,
+      "end": 100.328
+    },
+    {
+      "text": "acessar",
+      "start": 100.328,
+      "end": 100.64
+    },
+    {
+      "text": "a",
+      "start": 100.64,
+      "end": 100.953
+    },
+    {
+      "text": "plataforma.",
+      "start": 100.953,
+      "end": 101.265
+    },
+    {
+      "text": "Em",
+      "start": 102.024,
+      "end": 102.333
+    },
+    {
+      "text": "segundo",
+      "start": 102.333,
+      "end": 102.641
+    },
+    {
+      "text": "lugar,",
+      "start": 102.641,
+      "end": 102.95
+    },
+    {
+      "text": "empataram",
+      "start": 102.95,
+      "end": 103.258
+    },
+    {
+      "text": "o",
+      "start": 103.258,
+      "end": 103.567
+    },
+    {
+      "text": "Acompanhamento",
+      "start": 103.567,
+      "end": 103.875
+    },
+    {
+      "text": "de",
+      "start": 103.875,
+      "end": 104.184
+    },
+    {
+      "text": "Status",
+      "start": 104.184,
+      "end": 104.492
+    },
+    {
+      "text": "e",
+      "start": 104.492,
+      "end": 104.801
+    },
+    {
+      "text": "o",
+      "start": 104.801,
+      "end": 105.109
+    },
+    {
+      "text": "Agendamento",
+      "start": 105.109,
+      "end": 105.418
+    },
+    {
+      "text": "de",
+      "start": 105.418,
+      "end": 105.726
+    },
+    {
+      "text": "Horário,",
+      "start": 105.726,
+      "end": 106.035
+    },
+    {
+      "text": "que",
+      "start": 106.035,
+      "end": 106.343
+    },
+    {
+      "text": "são",
+      "start": 106.343,
+      "end": 106.652
+    },
+    {
+      "text": "o",
+      "start": 106.652,
+      "end": 106.96
+    },
+    {
+      "text": "núcleo",
+      "start": 106.96,
+      "end": 107.269
+    },
+    {
+      "text": "de",
+      "start": 107.269,
+      "end": 107.577
+    },
+    {
+      "text": "valor",
+      "start": 107.577,
+      "end": 107.886
+    },
+    {
+      "text": "para",
+      "start": 107.886,
+      "end": 108.194
+    },
+    {
+      "text": "o",
+      "start": 108.194,
+      "end": 108.503
+    },
+    {
+      "text": "cidadão.",
+      "start": 108.503,
+      "end": 108.811
+    },
+    {
+      "text": "O",
+      "start": 108.811,
+      "end": 109.12
+    },
+    {
+      "text": "painel",
+      "start": 109.12,
+      "end": 109.429
+    },
+    {
+      "text": "gerencial",
+      "start": 109.429,
+      "end": 109.737
+    },
+    {
+      "text": "ficou",
+      "start": 109.737,
+      "end": 110.046
+    },
+    {
+      "text": "em",
+      "start": 110.046,
+      "end": 110.354
+    },
+    {
+      "text": "quarto,",
+      "start": 110.354,
+      "end": 110.663
+    },
+    {
+      "text": "e",
+      "start": 110.663,
+      "end": 110.971
+    },
+    {
+      "text": "o",
+      "start": 110.971,
+      "end": 111.28
+    },
+    {
+      "text": "painel",
+      "start": 111.28,
+      "end": 111.588
+    },
+    {
+      "text": "de",
+      "start": 111.588,
+      "end": 111.897
+    },
+    {
+      "text": "espera",
+      "start": 111.897,
+      "end": 112.205
+    },
+    {
+      "text": "em",
+      "start": 112.205,
+      "end": 112.514
+    },
+    {
+      "text": "quinto,",
+      "start": 112.514,
+      "end": 112.822
+    },
+    {
+      "text": "pois",
+      "start": 112.822,
+      "end": 113.131
+    },
+    {
+      "text": "o",
+      "start": 113.131,
+      "end": 113.439
+    },
+    {
+      "text": "paciente",
+      "start": 113.439,
+      "end": 113.748
+    },
+    {
+      "text": "consegue",
+      "start": 113.748,
+      "end": 114.056
+    },
+    {
+      "text": "acompanhar",
+      "start": 114.056,
+      "end": 114.365
+    },
+    {
+      "text": "o",
+      "start": 114.365,
+      "end": 114.673
+    },
+    {
+      "text": "sistema",
+      "start": 114.673,
+      "end": 114.982
+    },
+    {
+      "text": "sem",
+      "start": 114.982,
+      "end": 115.29
+    },
+    {
+      "text": "depender",
+      "start": 115.29,
+      "end": 115.599
+    },
+    {
+      "text": "fisicamente",
+      "start": 115.599,
+      "end": 115.907
+    },
+    {
+      "text": "deles.",
+      "start": 115.907,
+      "end": 116.216
+    },
+    {
+      "text": "Analisando",
+      "start": 116.945,
+      "end": 117.384
+    },
+    {
+      "text": "os",
+      "start": 117.384,
+      "end": 117.823
+    },
+    {
+      "text": "dados,",
+      "start": 117.823,
+      "end": 118.262
+    },
+    {
+      "text": "identificamos",
+      "start": 118.262,
+      "end": 118.701
+    },
+    {
+      "text": "um",
+      "start": 118.701,
+      "end": 119.14
+    },
+    {
+      "text": "gargalo",
+      "start": 119.14,
+      "end": 119.579
+    },
+    {
+      "text": "de",
+      "start": 119.579,
+      "end": 120.018
+    },
+    {
+      "text": "abandono",
+      "start": 120.018,
+      "end": 120.457
+    },
+    {
+      "text": "enorme.",
+      "start": 120.457,
+      "end": 120.896
+    },
+    {
+      "text": "A",
+      "start": 120.896,
+      "end": 121.336
+    },
+    {
+      "text": "Ortopedia",
+      "start": 121.336,
+      "end": 121.775
+    },
+    {
+      "text": "chega",
+      "start": 121.775,
+      "end": 122.214
+    },
+    {
+      "text": "a",
+      "start": 122.214,
+      "end": 122.653
+    },
+    {
+      "text": "180",
+      "start": 122.653,
+      "end": 123.092
+    },
+    {
+      "text": "dias",
+      "start": 123.092,
+      "end": 123.531
+    },
+    {
+      "text": "de",
+      "start": 123.531,
+      "end": 123.97
+    },
+    {
+      "text": "espera",
+      "start": 123.97,
+      "end": 124.409
+    },
+    {
+      "text": "e",
+      "start": 124.409,
+      "end": 124.848
+    },
+    {
+      "text": "a",
+      "start": 124.848,
+      "end": 125.287
+    },
+    {
+      "text": "Cardiologia",
+      "start": 125.287,
+      "end": 125.726
+    },
+    {
+      "text": "a",
+      "start": 125.726,
+      "end": 126.165
+    },
+    {
+      "text": "120,",
+      "start": 126.165,
+      "end": 126.604
+    },
+    {
+      "text": "com",
+      "start": 126.604,
+      "end": 127.043
+    },
+    {
+      "text": "taxas",
+      "start": 127.043,
+      "end": 127.482
+    },
+    {
+      "text": "de",
+      "start": 127.482,
+      "end": 127.921
+    },
+    {
+      "text": "faltas",
+      "start": 127.921,
+      "end": 128.36
+    },
+    {
+      "text": "acima",
+      "start": 128.36,
+      "end": 128.799
+    },
+    {
+      "text": "de",
+      "start": 128.799,
+      "end": 129.239
+    },
+    {
+      "text": "40%.",
+      "start": 129.239,
+      "end": 129.678
+    },
+    {
+      "text": "A",
+      "start": 129.678,
+      "end": 130.117
+    },
+    {
+      "text": "Ortopedia",
+      "start": 130.117,
+      "end": 130.556
+    },
+    {
+      "text": "sozinha",
+      "start": 130.556,
+      "end": 130.995
+    },
+    {
+      "text": "representa",
+      "start": 130.995,
+      "end": 131.434
+    },
+    {
+      "text": "35%",
+      "start": 131.434,
+      "end": 131.873
+    },
+    {
+      "text": "da",
+      "start": 131.873,
+      "end": 132.312
+    },
+    {
+      "text": "demanda.",
+      "start": 132.312,
+      "end": 132.751
+    },
+    {
+      "text": "Já",
+      "start": 132.751,
+      "end": 133.19
+    },
+    {
+      "text": "a",
+      "start": 133.19,
+      "end": 133.629
+    },
+    {
+      "text": "Oncologia",
+      "start": 133.629,
+      "end": 134.068
+    },
+    {
+      "text": "atinge",
+      "start": 134.068,
+      "end": 134.507
+    },
+    {
+      "text": "a",
+      "start": 134.507,
+      "end": 134.946
+    },
+    {
+      "text": "meta",
+      "start": 134.946,
+      "end": 135.385
+    },
+    {
+      "text": "nacional",
+      "start": 135.385,
+      "end": 135.824
+    },
+    {
+      "text": "de",
+      "start": 135.824,
+      "end": 136.263
+    },
+    {
+      "text": "25",
+      "start": 136.263,
+      "end": 136.702
+    },
+    {
+      "text": "dias,",
+      "start": 136.702,
+      "end": 137.142
+    },
+    {
+      "text": "focando",
+      "start": 137.142,
+      "end": 137.581
+    },
+    {
+      "text": "em",
+      "start": 137.581,
+      "end": 138.02
+    },
+    {
+      "text": "urgências",
+      "start": 138.02,
+      "end": 138.459
+    },
+    {
+      "text": "e",
+      "start": 138.459,
+      "end": 138.898
+    },
+    {
+      "text": "tendo",
+      "start": 138.898,
+      "end": 139.337
+    },
+    {
+      "text": "só",
+      "start": 139.337,
+      "end": 139.776
+    },
+    {
+      "text": "5%",
+      "start": 139.776,
+      "end": 140.215
+    },
+    {
+      "text": "de",
+      "start": 140.215,
+      "end": 140.654
+    },
+    {
+      "text": "faltas.",
+      "start": 140.654,
+      "end": 141.093
+    },
+    {
+      "text": "Nossa",
+      "start": 141.591,
+      "end": 141.917
+    },
+    {
+      "text": "proposta",
+      "start": 141.917,
+      "end": 142.243
+    },
+    {
+      "text": "entra",
+      "start": 142.243,
+      "end": 142.569
+    },
+    {
+      "text": "para",
+      "start": 142.569,
+      "end": 142.895
+    },
+    {
+      "text": "equilibrar",
+      "start": 142.895,
+      "end": 143.221
+    },
+    {
+      "text": "isso.",
+      "start": 143.221,
+      "end": 143.547
+    },
+    {
+      "text": "Em",
+      "start": 143.547,
+      "end": 143.872
+    },
+    {
+      "text": "vez",
+      "start": 143.872,
+      "end": 144.198
+    },
+    {
+      "text": "de",
+      "start": 144.198,
+      "end": 144.524
+    },
+    {
+      "text": "apenas",
+      "start": 144.524,
+      "end": 144.85
+    },
+    {
+      "text": "gastar",
+      "start": 144.85,
+      "end": 145.176
+    },
+    {
+      "text": "com",
+      "start": 145.176,
+      "end": 145.502
+    },
+    {
+      "text": "mutirões,",
+      "start": 145.502,
+      "end": 145.828
+    },
+    {
+      "text": "queremos",
+      "start": 145.828,
+      "end": 146.154
+    },
+    {
+      "text": "atacar",
+      "start": 146.154,
+      "end": 146.48
+    },
+    {
+      "text": "a",
+      "start": 146.48,
+      "end": 146.806
+    },
+    {
+      "text": "falta",
+      "start": 146.806,
+      "end": 147.132
+    },
+    {
+      "text": "de",
+      "start": 147.132,
+      "end": 147.458
+    },
+    {
+      "text": "informação.",
+      "start": 147.458,
+      "end": 147.783
+    },
+    {
+      "text": "Com",
+      "start": 147.783,
+      "end": 148.109
+    },
+    {
+      "text": "o",
+      "start": 148.109,
+      "end": 148.435
+    },
+    {
+      "text": "painel",
+      "start": 148.435,
+      "end": 148.761
+    },
+    {
+      "text": "gerencial",
+      "start": 148.761,
+      "end": 149.087
+    },
+    {
+      "text": "proposto,",
+      "start": 149.087,
+      "end": 149.413
+    },
+    {
+      "text": "a",
+      "start": 149.413,
+      "end": 149.739
+    },
+    {
+      "text": "equipe",
+      "start": 149.739,
+      "end": 150.065
+    },
+    {
+      "text": "identifica",
+      "start": 150.065,
+      "end": 150.391
+    },
+    {
+      "text": "gargalos",
+      "start": 150.391,
+      "end": 150.717
+    },
+    {
+      "text": "e",
+      "start": 150.717,
+      "end": 151.043
+    },
+    {
+      "text": "faz",
+      "start": 151.043,
+      "end": 151.369
+    },
+    {
+      "text": "confirmações",
+      "start": 151.369,
+      "end": 151.694
+    },
+    {
+      "text": "ativas.",
+      "start": 151.694,
+      "end": 152.02
+    },
+    {
+      "text": "O",
+      "start": 152.02,
+      "end": 152.346
+    },
+    {
+      "text": "cidadão",
+      "start": 152.346,
+      "end": 152.672
+    },
+    {
+      "text": "acompanha",
+      "start": 152.672,
+      "end": 152.998
+    },
+    {
+      "text": "tudo,",
+      "start": 152.998,
+      "end": 153.324
+    },
+    {
+      "text": "não",
+      "start": 153.324,
+      "end": 153.65
+    },
+    {
+      "text": "desiste,",
+      "start": 153.65,
+      "end": 153.976
+    },
+    {
+      "text": "e",
+      "start": 153.976,
+      "end": 154.302
+    },
+    {
+      "text": "as",
+      "start": 154.302,
+      "end": 154.628
+    },
+    {
+      "text": "vagas",
+      "start": 154.628,
+      "end": 154.954
+    },
+    {
+      "text": "ociosas",
+      "start": 154.954,
+      "end": 155.28
+    },
+    {
+      "text": "são",
+      "start": 155.28,
+      "end": 155.605
+    },
+    {
+      "text": "realocadas",
+      "start": 155.605,
+      "end": 155.931
+    },
+    {
+      "text": "rapidamente",
+      "start": 155.931,
+      "end": 156.257
+    },
+    {
+      "text": "para",
+      "start": 156.257,
+      "end": 156.583
+    },
+    {
+      "text": "quem",
+      "start": 156.583,
+      "end": 156.909
+    },
+    {
+      "text": "precisa.",
+      "start": 156.909,
+      "end": 157.235
+    },
+    {
+      "text": "O",
+      "start": 157.634,
+      "end": 158.072
+    },
+    {
+      "text": "HackGov",
+      "start": 158.072,
+      "end": 158.51
+    },
+    {
+      "text": "propõe",
+      "start": 158.51,
+      "end": 158.947
+    },
+    {
+      "text": "uma",
+      "start": 158.947,
+      "end": 159.385
+    },
+    {
+      "text": "verdadeira",
+      "start": 159.385,
+      "end": 159.823
+    },
+    {
+      "text": "transformação",
+      "start": 159.823,
+      "end": 160.261
+    },
+    {
+      "text": "digital,",
+      "start": 160.261,
+      "end": 160.699
+    },
+    {
+      "text": "mudando",
+      "start": 160.699,
+      "end": 161.136
+    },
+    {
+      "text": "uma",
+      "start": 161.136,
+      "end": 161.574
+    },
+    {
+      "text": "fila",
+      "start": 161.574,
+      "end": 162.012
+    },
+    {
+      "text": "estática",
+      "start": 162.012,
+      "end": 162.45
+    },
+    {
+      "text": "para",
+      "start": 162.45,
+      "end": 162.888
+    },
+    {
+      "text": "um",
+      "start": 162.888,
+      "end": 163.326
+    },
+    {
+      "text": "fluxo",
+      "start": 163.326,
+      "end": 163.763
+    },
+    {
+      "text": "dinâmico.",
+      "start": 163.763,
+      "end": 164.201
+    },
+    {
+      "text": "O",
+      "start": 164.201,
+      "end": 164.639
+    },
+    {
+      "text": "cidadão",
+      "start": 164.639,
+      "end": 165.077
+    },
+    {
+      "text": "ganha",
+      "start": 165.077,
+      "end": 165.515
+    },
+    {
+      "text": "transparência,",
+      "start": 165.515,
+      "end": 165.952
+    },
+    {
+      "text": "e",
+      "start": 165.952,
+      "end": 166.39
+    },
+    {
+      "text": "a",
+      "start": 166.39,
+      "end": 166.828
+    },
+    {
+      "text": "UBS",
+      "start": 166.828,
+      "end": 167.266
+    },
+    {
+      "text": "ganha",
+      "start": 167.266,
+      "end": 167.704
+    },
+    {
+      "text": "produtividade,",
+      "start": 167.704,
+      "end": 168.142
+    },
+    {
+      "text": "acabando",
+      "start": 168.142,
+      "end": 168.579
+    },
+    {
+      "text": "com",
+      "start": 168.579,
+      "end": 169.017
+    },
+    {
+      "text": "aquele",
+      "start": 169.017,
+      "end": 169.455
+    },
+    {
+      "text": "retrabalho",
+      "start": 169.455,
+      "end": 169.893
+    },
+    {
+      "text": "manual",
+      "start": 169.893,
+      "end": 170.331
+    },
+    {
+      "text": "para",
+      "start": 170.331,
+      "end": 170.768
+    },
+    {
+      "text": "checar",
+      "start": 170.768,
+      "end": 171.206
+    },
+    {
+      "text": "encaminhamentos.",
+      "start": 171.206,
+      "end": 171.644
+    },
+    {
+      "text": "Também",
+      "start": 172.347,
+      "end": 172.753
+    },
+    {
+      "text": "mapeamos",
+      "start": 172.753,
+      "end": 173.16
+    },
+    {
+      "text": "os",
+      "start": 173.16,
+      "end": 173.566
+    },
+    {
+      "text": "riscos.",
+      "start": 173.566,
+      "end": 173.972
+    },
+    {
+      "text": "A",
+      "start": 173.972,
+      "end": 174.378
+    },
+    {
+      "text": "barreira",
+      "start": 174.378,
+      "end": 174.785
+    },
+    {
+      "text": "tecnológica",
+      "start": 174.785,
+      "end": 175.191
+    },
+    {
+      "text": "é",
+      "start": 175.191,
+      "end": 175.597
+    },
+    {
+      "text": "mitigada",
+      "start": 175.597,
+      "end": 176.004
+    },
+    {
+      "text": "com",
+      "start": 176.004,
+      "end": 176.41
+    },
+    {
+      "text": "totens",
+      "start": 176.41,
+      "end": 176.816
+    },
+    {
+      "text": "simplificados",
+      "start": 176.816,
+      "end": 177.222
+    },
+    {
+      "text": "e",
+      "start": 177.222,
+      "end": 177.629
+    },
+    {
+      "text": "acessibilidade.",
+      "start": 177.629,
+      "end": 178.035
+    },
+    {
+      "text": "E",
+      "start": 178.035,
+      "end": 178.441
+    },
+    {
+      "text": "a",
+      "start": 178.441,
+      "end": 178.848
+    },
+    {
+      "text": "exposição",
+      "start": 178.848,
+      "end": 179.254
+    },
+    {
+      "text": "de",
+      "start": 179.254,
+      "end": 179.66
+    },
+    {
+      "text": "dados",
+      "start": 179.66,
+      "end": 180.066
+    },
+    {
+      "text": "é",
+      "start": 180.066,
+      "end": 180.473
+    },
+    {
+      "text": "combatida",
+      "start": 180.473,
+      "end": 180.879
+    },
+    {
+      "text": "com",
+      "start": 180.879,
+      "end": 181.285
+    },
+    {
+      "text": "controle",
+      "start": 181.285,
+      "end": 181.692
+    },
+    {
+      "text": "de",
+      "start": 181.692,
+      "end": 182.098
+    },
+    {
+      "text": "perfil",
+      "start": 182.098,
+      "end": 182.504
+    },
+    {
+      "text": "e",
+      "start": 182.504,
+      "end": 182.911
+    },
+    {
+      "text": "senhas",
+      "start": 182.911,
+      "end": 183.317
+    },
+    {
+      "text": "anonimizadas.",
+      "start": 183.317,
+      "end": 183.723
+    },
+    {
+      "text": "É",
+      "start": 183.723,
+      "end": 184.129
+    },
+    {
+      "text": "assim",
+      "start": 184.129,
+      "end": 184.536
+    },
+    {
+      "text": "que",
+      "start": 184.536,
+      "end": 184.942
+    },
+    {
+      "text": "idealizamos",
+      "start": 184.942,
+      "end": 185.348
+    },
+    {
+      "text": "um",
+      "start": 185.348,
+      "end": 185.755
+    },
+    {
+      "text": "projeto",
+      "start": 185.755,
+      "end": 186.161
+    },
+    {
+      "text": "maduro",
+      "start": 186.161,
+      "end": 186.567
+    },
+    {
+      "text": "e",
+      "start": 186.567,
+      "end": 186.973
+    },
+    {
+      "text": "seguro",
+      "start": 186.973,
+      "end": 187.38
+    },
+    {
+      "text": "para",
+      "start": 187.38,
+      "end": 187.786
+    },
+    {
+      "text": "mudar",
+      "start": 187.786,
+      "end": 188.192
+    },
+    {
+      "text": "a",
+      "start": 188.192,
+      "end": 188.599
+    },
+    {
+      "text": "realidade",
+      "start": 188.599,
+      "end": 189.005
+    },
+    {
+      "text": "do",
+      "start": 189.005,
+      "end": 189.411
+    },
+    {
+      "text": "SUS.",
+      "start": 189.411,
+      "end": 189.817
+    },
+    {
+      "text": "Muito",
+      "start": 189.817,
+      "end": 190.224
+    },
+    {
+      "text": "obrigado!",
+      "start": 190.224,
+      "end": 190.63
+    }
+  ]
+}

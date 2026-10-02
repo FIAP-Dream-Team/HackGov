@@ -1,0 +1,38 @@
+{
+  "name": "hackgov-minhavez-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Video de apresentacao do HackGov - Minha Vez (Cap 1 FIAP)",
+  "type": "module",
+  "scripts": {
+    "extract": "node scripts/extract-slides.mjs",
+    "transcribe": "node scripts/transcribe.mjs",
+    "align": "node scripts/align.mjs",
+    "prepare-data": "npm run repair-audio && npm run extract && npm run pauses && npm run transcribe && npm run align && npm run music",
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "render": "remotion render MinhaVez out/raw.mp4 && node scripts/master-audio.mjs",
+    "still": "remotion still MinhaVez out/frame.png",
+    "pauses": "node scripts/detect-pauses.mjs",
+    "fetch-model": "bash scripts/fetch-model.sh",
+    "sample": "node scripts/make-sample-transcript.mjs",
+    "music": "node scripts/music-bed.mjs",
+    "master": "node scripts/master-audio.mjs",
+    "repair-audio": "node scripts/repair-narration.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.521",
+    "@remotion/google-fonts": "4.0.521",
+    "@remotion/media-utils": "4.0.521",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.521"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "4.2.0",
+    "@types/react": "19.2.7",
+    "cheerio": "1.1.2",
+    "ffmpeg-static": "5.3.0",
+    "typescript": "5.9.3"
+  }
+}

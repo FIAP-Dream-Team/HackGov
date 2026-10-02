@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --type-title: 72px; --type-subtitle: 42px; --type-body: 32px; --type-small: 26px;
+    --pad-top: 92px; --pad-bottom: 76px; --pad-x: 100px; --gap-title: 52px;
+  }
+  body { margin: 0; background: #12211A; font-family: Figtree, system-ui, sans-serif; }
+  a { color: #1D5FA8; text-decoration: none; }
+  a:hover { color: #16487E; }
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section data-label="Capa" data-screen-label="01" data-speaker-notes="Abertura. Somos o Minha Vez: agendamento e acompanhamento de encaminhamentos da UBS até a atenção especializada." style="background: #1E8E63; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="display: flex; align-items: center; gap: 20px">
+        <svg width="64" height="64" viewBox="0 0 28 28" aria-hidden="true" style="display: block; flex: none"><circle cx="11" cy="11" r="7" fill="none" stroke="#FFFFFF" stroke-width="3"></circle><circle cx="17" cy="17" r="7" fill="none" stroke="#F5B700" stroke-width="3"></circle></svg>
+        <div style="font-size: var(--type-subtitle); font-weight: 700; letter-spacing: -0.01em">HackGov — Minha Vez</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 40px; max-width: 1520px">
+      <div style="width: 132px; height: 6px; background: #FFFFFF; border-radius: 3px"></div>
+      <h1 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 0; font-size: 112px; line-height: 1; font-weight: 800; letter-spacing: -0.035em; text-wrap: pretty">Agendamento e acompanhamento de encaminhamentos</h1>
+      <div style="display: flex; align-items: center; gap: 28px; font-size: var(--type-subtitle); font-weight: 600; color: #D8EFE5">
+        <span>UBS</span>
+        <span style="width: 110px; height: 3px; background: #8FD3B4; border-radius: 2px"></span>
+        <span>atenção especializada</span>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.32); padding-top: 28px; display: flex; justify-content: space-between; gap: 40px; font-size: var(--type-small); color: #D8EFE5"><div>Equipe: John Vitor · Ana Larissa · João Pedro · Vinícius Cardoso · Brenda Araújo</div><div style="color: #A9DCC5">01 / 14</div></div>
+  </section>
+
+  <section data-label="O Problema" data-screen-label="02" data-speaker-notes="Hoje o encaminhamento sai da UBS em papel, ligação ou sistema paralelo. Ninguém consegue rastrear onde o paciente está." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">02</span><span style="color: #8A968F; padding: 0 12px">/</span>O problema</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); line-height: 1.06; font-weight: 800; letter-spacing: -0.025em; max-width: 1500px; text-wrap: pretty">O paciente "some" entre a UBS e o especialista</h2>
+    <div style="margin-top: var(--gap-title); display: flex; flex-direction: column; gap: 34px; flex: 1; justify-content: center">
+      <div style="display: flex; gap: 34px; align-items: flex-start; border-top: 2px solid #DCD6C9; padding-top: 32px">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: #1E8E63; flex: none; margin-top: 14px"></div>
+        <div style="font-size: var(--type-subtitle); line-height: 1.3; font-weight: 600; letter-spacing: -0.01em; flex: 1; text-wrap: pretty">Falta de rastreabilidade no encaminhamento (papel, ligação, sistema paralelo)</div>
+      </div>
+      <div style="display: flex; gap: 34px; align-items: flex-start; border-top: 2px solid #DCD6C9; padding-top: 32px">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: #1E8E63; flex: none; margin-top: 14px"></div>
+        <div style="flex: 1; display: flex; gap: 56px; align-items: baseline">
+          <div style="display: flex; gap: 24px; align-items: baseline">
+            <div style="font-size: 92px; font-weight: 800; letter-spacing: -0.03em; color: #1E8E63; flex: none">1 em 3</div>
+            <div style="font-size: var(--type-small); line-height: 1.3; color: #2E3D35; max-width: 340px; text-wrap: pretty">brasileiros da Classe C já desistiu de uma consulta demorada</div>
+          </div>
+          <div style="display: flex; gap: 24px; align-items: baseline">
+            <div style="font-size: 92px; font-weight: 800; letter-spacing: -0.03em; color: #1E8E63; flex: none">94%</div>
+            <div style="font-size: var(--type-small); line-height: 1.3; color: #2E3D35; max-width: 360px; text-wrap: pretty">concordam que o tempo de espera no SUS coloca vidas em risco</div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 34px; align-items: flex-start; border-top: 2px solid #DCD6C9; padding-top: 32px">
+        <div style="width: 20px; height: 20px; border-radius: 50%; background: #1E8E63; flex: none; margin-top: 14px"></div>
+        <div style="font-size: var(--type-subtitle); line-height: 1.3; font-weight: 600; letter-spacing: -0.01em; flex: 1; text-wrap: pretty">TCU aponta falta de padronização de dados como gargalo de visibilidade</div>
+      </div>
+    </div>
+    <div style="font-size: var(--type-small); color: #6B7A72">Fonte: Instituto Locomotiva / Auditoria TCU</div>
+  </section>
+
+  <section data-label="Req. Funcionais" data-screen-label="03" data-speaker-notes="Cinco requisitos funcionais. O RF01 é a porta de entrada: sem senha, só o cartão." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">03</span><span style="color: #8A968F; padding: 0 12px">/</span>Requisitos funcionais</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">O que o sistema faz na prática</h2>
+    <div style="margin-top: var(--gap-title); flex: 1; display: grid; align-content: center; grid-template-columns: repeat(5, 1fr); gap: 24px; align-items: stretch">
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 26px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 36px 30px; display: flex; flex-direction: column; gap: 24px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1E8E63">RF01</div>
+        <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; text-wrap: pretty">Identificação sem senha</div>
+        <div style="font-size: var(--type-small); line-height: 1.4; color: #4A5A52">Cartão SUS ou CPF no totem. No app, CPF+senha ou OAuth.</div>
+        <div style="margin-top: 8px; padding-top: 26px; border-top: 1px solid #EDE8DD; display: flex; align-items: center; gap: 12px; min-height: 34px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #1E8E63"></span><span style="font-size: var(--type-small); font-weight: 600; color: #6B7A72; white-space: nowrap">Canal do paciente</span></div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 26px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 36px 30px; display: flex; flex-direction: column; gap: 24px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1E8E63">RF02</div>
+        <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; text-wrap: pretty">Acompanhamento do status</div>
+        <div style="font-size: var(--type-small); line-height: 1.4; color: #4A5A52">Etapa atual do encaminhamento</div>
+        <div style="margin-top: 8px; padding-top: 26px; border-top: 1px solid #EDE8DD; display: flex; align-items: center; gap: 12px; min-height: 34px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #1E8E63"></span><span style="font-size: var(--type-small); font-weight: 600; color: #6B7A72; white-space: nowrap">Canal do paciente</span></div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 26px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 36px 30px; display: flex; flex-direction: column; gap: 24px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1E8E63">RF03</div>
+        <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; text-wrap: pretty">Agendamento do horário</div>
+        <div style="font-size: var(--type-small); line-height: 1.4; color: #4A5A52">Escolha entre os horários disponíveis</div>
+        <div style="margin-top: 8px; padding-top: 26px; border-top: 1px solid #EDE8DD; display: flex; align-items: center; gap: 12px; min-height: 34px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #1E8E63"></span><span style="font-size: var(--type-small); font-weight: 600; color: #6B7A72; white-space: nowrap">Canal do paciente</span></div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 26px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 36px 30px; display: flex; flex-direction: column; gap: 24px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #B08200">RF04</div>
+        <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; text-wrap: pretty">Chamada na sala de espera</div>
+        <div style="font-size: var(--type-small); line-height: 1.4; color: #4A5A52">Senha e sala no painel</div>
+        <div style="margin-top: 8px; padding-top: 26px; border-top: 1px solid #EDE8DD; display: flex; align-items: center; gap: 12px; min-height: 34px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #F5B700"></span><span style="font-size: var(--type-small); font-weight: 600; color: #6B7A72; white-space: nowrap">Painel público</span></div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 26px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 36px 30px; display: flex; flex-direction: column; gap: 24px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1D5FA8">RF05</div>
+        <div style="font-size: 34px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; text-wrap: pretty">Painel gerencial</div>
+        <div style="font-size: var(--type-small); line-height: 1.4; color: #4A5A52">Equipe da UBS e gestor</div>
+        <div style="margin-top: 8px; padding-top: 26px; border-top: 1px solid #EDE8DD; display: flex; align-items: center; gap: 12px; min-height: 34px"><span style="width: 14px; height: 14px; border-radius: 4px; background: #1D5FA8"></span><span style="font-size: var(--type-small); font-weight: 600; color: #6B7A72; white-space: nowrap">Institucional</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Req. Não Funcionais" data-screen-label="04" data-speaker-notes="Dois não funcionais que vieram do brainstorm: acesso por perfil e acessibilidade." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1D5FA8"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">04</span><span style="color: #8A968F; padding: 0 12px">/</span>Requisitos não funcionais</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Qualidade e segurança do sistema</h2>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; flex: 1">
+      <div style="background: #1D5FA8; color: #FFFFFF; border-radius: 26px; padding: 52px; display: flex; flex-direction: column; gap: 26px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #A9CDF0">RNF01</div>
+        <div style="font-size: var(--type-subtitle); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; text-wrap: pretty">Controle de acesso por perfil</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #D6E7F8; text-wrap: pretty">Dado clínico só no canal institucional. O paciente vê etapa e horário, nunca o prontuário.</div>
+        <div style="margin-top: auto; display: flex; gap: 12px; flex-wrap: wrap">
+          <div style="border: 2px solid rgba(255,255,255,0.5); border-radius: 999px; padding: 10px 22px; font-size: var(--type-small); font-weight: 600">Paciente</div>
+          <div style="border: 2px solid rgba(255,255,255,0.5); border-radius: 999px; padding: 10px 22px; font-size: var(--type-small); font-weight: 600">Equipe da UBS</div>
+          <div style="border: 2px solid rgba(255,255,255,0.5); border-radius: 999px; padding: 10px 22px; font-size: var(--type-small); font-weight: 600">Gestor</div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 28px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 52px; display: flex; flex-direction: column; gap: 26px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1E8E63">RNF02</div>
+        <div style="font-size: var(--type-subtitle); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; text-wrap: pretty">Acessibilidade</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #43534B; text-wrap: pretty">Fonte grande e leitura em voz alta, disponíveis em todas as telas do totem.</div>
+        <div style="margin-top: auto; display: flex; gap: 12px; flex-wrap: wrap">
+          <div style="border: 2px solid #C9DCD4; border-radius: 999px; padding: 10px 22px; font-size: var(--type-small); font-weight: 600">Aumentar letra</div>
+          <div style="border: 2px solid #C9DCD4; border-radius: 999px; padding: 10px 22px; font-size: var(--type-small); font-weight: 600">Ouvir a tela</div>
+          <div style="border: 2px solid #C9DCD4; border-radius: 999px; padding: 10px 22px; font-size: var(--type-small); font-weight: 600">Ajuda</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 34px; font-size: var(--type-small); color: #6B7A72">Restrições vindas do brainstorm: informação de fácil acesso, escopo enxuto</div>
+  </section>
+
+  <section data-label="Landing Page" data-screen-label="05" data-speaker-notes="Esta é a landing page que já está implementada no front. Ela apresenta o produto e leva para o acompanhamento ou para o totem." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: 56px var(--pad-x) 48px">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+      <div>
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">05</span><span style="color: #8A968F; padding: 0 12px">/</span>Landing page</div>
+        <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 14px 0 0; font-size: 50px; font-weight: 800; letter-spacing: -0.025em">Minha Vez — apresentação do produto</h2>
+      </div>
+      <div style="font-size: var(--type-small); color: #6B7A72; text-align: right; max-width: 480px; line-height: 1.4">Identidade visual: as 3 cores que escolhemos pro projeto</div>
+    </div>
+    <div data-om-raster style="margin-top: 26px; flex: 1; align-self: center; width: 1300px; display: flex; justify-content: center">
+      <div style="width: 1300px; height: 850px; box-sizing: border-box; border-radius: 22px; overflow: hidden; background: #FFFFFF; border: 1px solid #E3DED3; box-shadow: 0 20px 50px rgba(18,33,26,0.12); display: flex; flex-direction: column">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: #F1EEE7; border-bottom: 1px solid #E3DED3; flex: none">
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: #D9D3C7"></div>
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: #D9D3C7"></div>
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: #D9D3C7"></div>
+          <div style="margin-left: 16px; background: #FFFFFF; border: 1px solid #E3DED3; border-radius: 999px; padding: 6px 18px; font-size: 15px; color: #6B7A72">minhavez.saude.gov.br</div>
+        </div>
+        <div style="flex: 1; overflow: hidden; padding: 0 110px">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 0">
+            <div style="display: flex; align-items: center; gap: 10px">
+              <svg width="38" height="38" viewBox="0 0 28 28" aria-hidden="true" style="display: block; flex: none"><circle cx="11" cy="11" r="7" fill="none" stroke="#1E8E63" stroke-width="3"></circle><circle cx="17" cy="17" r="7" fill="none" stroke="#F5B700" stroke-width="3"></circle></svg>
+              <div style="font-size: 22px; font-weight: 800">Minha Vez</div>
+            </div>
+            <div style="font-size: 19px; font-weight: 600; color: #1E8E63">Acompanhar solicitação</div>
+          </div>
+          <div style="padding: 26px 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+            <div style="font-size: 44px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; max-width: 760px">Marque, acompanhe e remarque sua consulta sem ligar, sem ir até a UBS.</div>
+            <div style="font-size: 20px; line-height: 1.45; color: #4A5A52; max-width: 620px">Escolha a especialidade, veja os horários disponíveis e acompanhe cada etapa do encaminhamento até o resultado do exame.</div>
+            <div style="margin-top: 14px; display: flex; gap: 12px">
+              <div style="background: #1E8E63; color: #FFFFFF; border: 1px solid #1E8E63; border-radius: 10px; padding: 14px 24px; font-size: 19px; font-weight: 600">Acompanhar uma solicitação</div>
+              <div style="border: 1px solid #D8D3C7; border-radius: 10px; padding: 14px 24px; font-size: 19px; font-weight: 600">Ver o totem da UBS</div>
+            </div>
+          </div>
+          <div style="border-top: 1px solid #EDEAE2; padding-top: 26px; display: flex; gap: 56px; align-items: center">
+            <div style="flex: 1">
+              <div style="font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1E8E63">Totem da UBS</div>
+              <div style="margin-top: 10px; font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Identificação em um toque</div>
+              <div style="margin-top: 10px; font-size: 18px; line-height: 1.45; color: #4A5A52">Cartão SUS encostado ou CPF digitado, sem senha e sem dado clínico exposto na tela. Aumentar letra, ouvir a tela e ajuda em qualquer etapa.</div>
+              <div style="margin-top: 12px; font-size: 18px; font-weight: 600; color: #1D5FA8">Ver o totem →</div>
+            </div>
+            <div style="width: 330px; flex: none; border: 1px solid #E3DED3; border-radius: 16px; background: #FFFFFF; padding: 14px; box-shadow: 0 12px 32px -20px rgba(0,0,0,0.35)">
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 700">
+                <div>Minha Vez</div>
+                <div style="font-size: 13px; font-weight: 500; color: #8A968F">UBS Vila União</div>
+              </div>
+              <div style="margin-top: 10px; font-size: 17px; font-weight: 700">Veja em que etapa está seu pedido</div>
+              <div style="margin-top: 6px; font-size: 14px; color: #8A968F">Consulta com especialista ou exame. É só encostar o cartão.</div>
+              <div style="margin-top: 12px; background: #1E8E63; color: #FFFFFF; border-radius: 10px; padding: 11px; text-align: center; font-size: 14px; font-weight: 600">Encostar o Cartão SUS</div>
+              <div style="margin-top: 8px; border: 1px solid #D8D3C7; border-radius: 10px; padding: 11px; text-align: center; font-size: 14px; font-weight: 600">Digitar CPF e data de nascimento</div>
+              <div style="margin-top: 10px; background: #F1EEE7; border-radius: 8px; padding: 9px 10px; font-size: 12px; color: #8A968F">Não precisa de senha. Seus dados clínicos não aparecem nesta tela.</div>
+              <div style="margin-top: 12px; border-top: 1px solid #EDEAE2; padding-top: 12px; display: flex; gap: 8px">
+                <div style="flex: 1; border: 1px solid #E3DED3; border-radius: 8px; padding: 6px 4px; text-align: center; font-size: 12px; font-weight: 600; color: #4A5A52">Aumentar letra</div>
+                <div style="flex: 1; border: 1px solid #E3DED3; border-radius: 8px; padding: 6px 4px; text-align: center; font-size: 12px; font-weight: 600; color: #4A5A52">Ouvir a tela</div>
+                <div style="flex: 1; border: 1px solid #E3DED3; border-radius: 8px; padding: 6px 4px; text-align: center; font-size: 12px; font-weight: 600; color: #4A5A52">Ajuda</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Telas do MVP" data-screen-label="06" data-speaker-notes="Protótipos de tela em desenvolvimento: por enquanto existem como previews na landing page. Totem, acompanhamento, painel de senha e canal da equipe." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: 72px var(--pad-x) 56px">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px">
+      <div>
+        <div style="display: flex; align-items: center; gap: 16px"><div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">06</span><span style="color: #8A968F; padding: 0 12px">/</span>Telas do MVP</div><div style="border: 2px solid #C9C2B2; border-radius: 999px; padding: 7px 20px; font-size: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #6B7A72">Em desenvolvimento</div></div>
+        <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 16px 0 0; font-size: 58px; font-weight: 800; letter-spacing: -0.025em">Para onde o produto está indo</h2>
+      </div>
+      <div style="font-size: var(--type-small); color: #6B7A72; text-align: right; max-width: 500px; line-height: 1.4">Hoje implementadas como protótipos na landing page. Cada canal com sua cor: verde do paciente, amarelo da chamada, azul da equipe.</div>
+    </div>
+    <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; flex: 1">
+
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Totem da UBS</div>
+        <div data-om-raster style="flex: 1; border: 1px solid #E3DED3; border-radius: 18px; background: #FFFFFF; padding: 28px; box-shadow: 0 14px 34px -22px rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: space-between">
+          <div style="display: flex; align-items: center; justify-content: space-between; font-size: 24px; font-weight: 700">
+            <div>Minha Vez</div>
+            <div style="font-size: 21px; font-weight: 500; color: #8A968F">UBS Vila União</div>
+          </div>
+          <div style="margin-top: 14px; font-size: 31px; font-weight: 700; line-height: 1.25">Veja em que etapa está seu pedido</div>
+          <div style="margin-top: 8px; font-size: 24px; line-height: 1.4; color: #8A968F">Consulta com especialista ou exame. É só encostar o cartão.</div>
+          <div style="margin-top: 18px; background: #1E8E63; color: #FFFFFF; border-radius: 12px; padding: 14px; text-align: center; font-size: 24px; font-weight: 600">Encostar o Cartão SUS</div>
+          <div style="margin-top: 10px; border: 1px solid #D8D3C7; border-radius: 12px; padding: 14px; text-align: center; font-size: 24px; font-weight: 600">Digitar CPF e data de nascimento</div>
+          <div style="margin-top: 14px; background: #F1EEE7; border-radius: 10px; padding: 12px; font-size: 21px; line-height: 1.35; color: #8A968F">Não precisa de senha. Seus dados clínicos não aparecem nesta tela.</div>
+          <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #EDEAE2; display: flex; gap: 8px">
+            <div style="flex: 1; border: 1px solid #E3DED3; border-radius: 10px; padding: 9px 4px; text-align: center; font-size: 20px; font-weight: 600; color: #4A5A52">Aumentar letra</div>
+            <div style="flex: 1; border: 1px solid #E3DED3; border-radius: 10px; padding: 9px 4px; text-align: center; font-size: 20px; font-weight: 600; color: #4A5A52">Ouvir a tela</div>
+            <div style="flex: 1; border: 1px solid #E3DED3; border-radius: 10px; padding: 9px 4px; text-align: center; font-size: 20px; font-weight: 600; color: #4A5A52">Ajuda</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Acompanhamento</div>
+        <div data-om-raster style="flex: 1; border: 1px solid #E3DED3; border-radius: 18px; background: #FFFFFF; padding: 28px; box-shadow: 0 14px 34px -22px rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: space-between">
+          <div style="display: flex; align-items: center; justify-content: space-between">
+            <div style="font-size: 24px; font-weight: 700">#ENC-4821</div>
+            <div style="background: #FFF0BF; color: #7A5C00; border-radius: 999px; padding: 5px 12px; font-size: 20px; font-weight: 700">Urgente</div>
+          </div>
+          <div style="margin-top: 8px; font-size: 21px; font-weight: 500; color: #8A968F">UBS Vila União · Cardiologia</div>
+          <div style="margin-top: 14px; font-size: 31px; font-weight: 700; line-height: 1.25">Falta 1 passo: marcar sua consulta</div>
+          <div style="margin-top: 18px; display: flex; gap: 6px">
+            <div style="flex: 1; height: 7px; border-radius: 4px; background: #1E8E63"></div>
+            <div style="flex: 1; height: 7px; border-radius: 4px; background: #1E8E63"></div>
+            <div style="flex: 1; height: 7px; border-radius: 4px; background: #1D5FA8"></div>
+            <div style="flex: 1; height: 7px; border-radius: 4px; background: #E3DED3"></div>
+          </div>
+          <div style="margin-top: 8px; display: flex; gap: 6px; font-size: 18px; color: #8A968F; text-align: center">
+            <div style="flex: 1">Recebido</div><div style="flex: 1">Triado</div><div style="flex: 1">Marcar horário</div><div style="flex: 1">Concluído</div>
+          </div>
+          <div style="margin-top: 18px; display: flex; gap: 8px">
+            <div style="flex: 1; border: 1px solid #E3DED3; background: #F7F5F0; border-radius: 10px; padding: 10px 4px; text-align: center; font-size: 20px; color: #4A5A52">qua 20/08 · 08:30</div>
+            <div style="flex: 1; border: 1px solid #1E8E63; background: #E7F3EE; border-radius: 10px; padding: 10px 4px; text-align: center; font-size: 20px; font-weight: 700; color: #15563C">qui 21/08 · 14:00</div>
+            <div style="flex: 1; border: 1px solid #E3DED3; background: #F7F5F0; border-radius: 10px; padding: 10px 4px; text-align: center; font-size: 20px; color: #4A5A52">sex 22/08 · 10:15</div>
+          </div>
+          <div style="margin-top: 18px">
+            <div style="background: #1E8E63; color: #FFFFFF; border-radius: 12px; padding: 14px; text-align: center; font-size: 24px; font-weight: 600">Confirmar e imprimir comprovante</div>
+            <div style="margin-top: 10px; text-align: center; font-size: 22px; font-weight: 600; color: #1D5FA8">Escolher outra especialidade ou remarcar</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Painel da sala de espera</div>
+        <div data-om-raster style="flex: 1; border-radius: 18px; background: #0F1A15; padding: 28px; box-shadow: 0 14px 34px -22px rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: space-between">
+          <div style="font-size: 20px; letter-spacing: 0.1em; text-transform: uppercase; color: #9AA8A1">Próximas senhas</div>
+          <div style="margin-top: 12px; display: flex; gap: 8px">
+            <div style="flex: 1; background: #1A2A22; border-radius: 10px; padding: 12px 6px; text-align: center">
+              <div style="font-size: 24px; font-weight: 800; color: #FFFFFF">C 043</div>
+              <div style="margin-top: 3px; font-size: 18px; color: #9AA8A1">Sala 3</div>
+            </div>
+            <div style="flex: 1; background: #1A2A22; border-radius: 10px; padding: 12px 6px; text-align: center">
+              <div style="font-size: 24px; font-weight: 800; color: #FFFFFF">A 118</div>
+              <div style="margin-top: 3px; font-size: 18px; color: #9AA8A1">Acolhimento</div>
+            </div>
+            <div style="flex: 1; background: #1A2A22; border-radius: 10px; padding: 12px 6px; text-align: center">
+              <div style="font-size: 24px; font-weight: 800; color: #FFFFFF">C 044</div>
+              <div style="margin-top: 3px; font-size: 18px; color: #9AA8A1">Sala 3</div>
+            </div>
+          </div>
+          <div style="margin-top: 22px; background: #F5B700; border-radius: 16px; padding: 28px 20px; text-align: center; color: #1A1300">
+            <div style="font-size: 21px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700">É a sua vez</div>
+            <div style="margin-top: 8px; font-size: 104px; line-height: 1; font-weight: 800; letter-spacing: -0.03em">C 042</div>
+            <div style="margin-top: 12px; font-size: 24px; font-weight: 600; color: #4A3800">Maria A. S. · Sala 3 · Eletrocardiograma</div>
+          </div>
+          <div style="margin-top: 18px; font-size: 21px; line-height: 1.4; color: #9AA8A1">Nenhum dado clínico é exibido publicamente.</div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div style="font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Canal da equipe</div>
+        <div data-om-raster style="flex: 1; border: 1px solid #E3DED3; border-radius: 18px; background: #FFFFFF; padding: 28px; box-shadow: 0 14px 34px -22px rgba(0,0,0,0.4); display: flex; flex-direction: column; justify-content: space-between">
+          <div style="display: flex; gap: 14px; border-bottom: 1px solid #EDEAE2; padding-bottom: 12px; font-size: 20px; font-weight: 600; color: #8A968F">
+            <div style="color: #1D5FA8">Fila de encaminhamentos</div>
+            <div>Agenda</div>
+            <div>Indicadores</div>
+          </div>
+          <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="font-size: 25px; font-weight: 700">Cardiologia · 143</div>
+            <div style="background: #FFF0BF; color: #7A5C00; border-radius: 999px; padding: 5px 12px; font-size: 18px; font-weight: 700">Pendente · 31</div>
+          </div>
+          <div style="margin-top: 14px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px">
+            <div style="background: #F5F6F8; border-radius: 10px; padding: 12px; text-align: center">
+              <div style="font-size: 28px; font-weight: 800">27 dias</div>
+              <div style="margin-top: 2px; font-size: 18px; color: #8A968F">Espera média</div>
+            </div>
+            <div style="background: #F5F6F8; border-radius: 10px; padding: 12px; text-align: center">
+              <div style="font-size: 28px; font-weight: 800">31</div>
+              <div style="margin-top: 2px; font-size: 18px; color: #8A968F">Pendentes</div>
+            </div>
+            <div style="background: #F5F6F8; border-radius: 10px; padding: 12px; text-align: center">
+              <div style="font-size: 28px; font-weight: 800">58</div>
+              <div style="margin-top: 2px; font-size: 18px; color: #8A968F">Na semana</div>
+            </div>
+            <div style="background: #F5F6F8; border-radius: 10px; padding: 12px; text-align: center">
+              <div style="font-size: 28px; font-weight: 800">9%</div>
+              <div style="margin-top: 2px; font-size: 18px; color: #8A968F">Faltas</div>
+            </div>
+          </div>
+          <div style="margin-top: 16px; display: flex; flex-direction: column">
+            <div style="display: grid; grid-template-columns: 1.1fr 1.3fr 0.8fr; gap: 8px; padding-bottom: 8px; border-bottom: 1px solid #EDEAE2; font-size: 18px; font-weight: 600; color: #8A968F">
+              <div>Paciente</div><div>Etapa atual</div><div>Prioridade</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.1fr 1.3fr 0.8fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid #F2F0EB; font-size: 20px; color: #4A5A52">
+              <div>Maria A. Souza</div><div>Aguarda marcação</div><div style="font-weight: 700; color: #B3261E">Urgente</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.1fr 1.3fr 0.8fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid #F2F0EB; font-size: 20px; color: #4A5A52">
+              <div>João P. Ribeiro</div><div>Exame marcado · 21/08</div><div>Eletiva</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.1fr 1.3fr 0.8fr; gap: 8px; padding: 10px 0; font-size: 20px; color: #4A5A52">
+              <div>Antônia L. Dias</div><div>Resultado pendente há 9 dias</div><div style="font-weight: 700; color: #B3261E">Urgente</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section data-label="Matriz GUT" data-screen-label="07" data-speaker-notes="Priorizamos o backlog por Gravidade, Urgência e Tendência. US01 lidera com 125 pontos." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1D5FA8"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">07</span><span style="color: #8A968F; padding: 0 12px">/</span>Matriz GUT</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Priorização do backlog</h2>
+    <div style="margin-top: 12px; font-size: var(--type-body); color: #4A5A52">Gravidade × Urgência × Tendência</div>
+    <div style="margin-top: 44px; background: #FFFFFF; border: 1px solid #E3DED3; border-radius: 24px; overflow: hidden; flex: 1; display: flex; flex-direction: column">
+      <div style="display: grid; grid-template-columns: 2fr 120px 120px 120px 220px 200px; gap: 20px; padding: 26px 44px; background: #F1EEE7; font-size: var(--type-small); font-weight: 700; color: #4A5A52; letter-spacing: 0.04em; text-transform: uppercase">
+        <div>User story</div><div style="text-align: center">G</div><div style="text-align: center">U</div><div style="text-align: center">T</div><div style="text-align: center">Pontuação</div><div style="text-align: center">Prioridade</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 120px 120px 120px 220px 200px; gap: 20px; padding: 30px 44px; border-top: 1px solid #EDEAE2; align-items: center; font-size: 30px; background: #F2FAF6">
+        <div style="font-weight: 800">US01 — Identificação</div>
+        <div style="text-align: center; color: #4A5A52">5</div><div style="text-align: center; color: #4A5A52">5</div><div style="text-align: center; color: #4A5A52">5</div>
+        <div style="text-align: center; font-weight: 800; font-size: 38px; color: #1E8E63">125</div>
+        <div style="text-align: center; font-weight: 800">1ª</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 120px 120px 120px 220px 200px; gap: 20px; padding: 30px 44px; border-top: 1px solid #EDEAE2; align-items: center; font-size: 30px">
+        <div style="font-weight: 700">US02 — Status</div>
+        <div style="text-align: center; color: #4A5A52">5</div><div style="text-align: center; color: #4A5A52">4</div><div style="text-align: center; color: #4A5A52">5</div>
+        <div style="text-align: center; font-weight: 800; font-size: 38px">100</div>
+        <div style="text-align: center; font-weight: 700">2ª</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 120px 120px 120px 220px 200px; gap: 20px; padding: 30px 44px; border-top: 1px solid #EDEAE2; align-items: center; font-size: 30px">
+        <div style="font-weight: 700">US03 — Agendamento</div>
+        <div style="text-align: center; color: #4A5A52">5</div><div style="text-align: center; color: #4A5A52">5</div><div style="text-align: center; color: #4A5A52">4</div>
+        <div style="text-align: center; font-weight: 800; font-size: 38px">100</div>
+        <div style="text-align: center; font-weight: 700">2ª</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 120px 120px 120px 220px 200px; gap: 20px; padding: 30px 44px; border-top: 1px solid #EDEAE2; align-items: center; font-size: 30px">
+        <div style="font-weight: 700">US05 — Painel gerencial</div>
+        <div style="text-align: center; color: #4A5A52">4</div><div style="text-align: center; color: #4A5A52">3</div><div style="text-align: center; color: #4A5A52">4</div>
+        <div style="text-align: center; font-weight: 800; font-size: 38px">48</div>
+        <div style="text-align: center; font-weight: 700">4ª</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 120px 120px 120px 220px 200px; gap: 20px; padding: 30px 44px; border-top: 1px solid #EDEAE2; align-items: center; font-size: 30px">
+        <div style="font-weight: 700">US04 — Sala de espera</div>
+        <div style="text-align: center; color: #4A5A52">3</div><div style="text-align: center; color: #4A5A52">3</div><div style="text-align: center; color: #4A5A52">3</div>
+        <div style="text-align: center; font-weight: 800; font-size: 38px">27</div>
+        <div style="text-align: center; font-weight: 700">5ª</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Ranking" data-screen-label="08" data-speaker-notes="A ordem de desenvolvimento sai direto da matriz. US01 antes de tudo, porque é pré-requisito técnico." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">08</span><span style="color: #8A968F; padding: 0 12px">/</span>Ranking de prioridades</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Ordem de desenvolvimento</h2>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; align-items: end; flex: 1">
+      <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 100%">
+        <div style="background: #1E8E63; color: #FFFFFF; border-radius: 24px 24px 0 0; padding: 44px 36px; height: 78%; box-sizing: border-box; display: flex; flex-direction: column">
+          <div style="font-size: 76px; font-weight: 800; letter-spacing: -0.03em; color: #A9DCC5">1º</div>
+          <div style="margin-top: 20px; font-size: var(--type-subtitle); font-weight: 800; line-height: 1.15; letter-spacing: -0.015em">US01<br>Identificação</div>
+          <div style="margin-top: auto; font-size: var(--type-small); color: #C4E6D7">125 pontos</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 100%">
+        <div style="background: #FFFFFF; border: 2px solid #1E8E63; border-bottom: none; border-radius: 24px 24px 0 0; padding: 40px 32px; height: 62%; box-sizing: border-box; display: flex; flex-direction: column">
+          <div style="font-size: 62px; font-weight: 800; letter-spacing: -0.03em; color: #1E8E63">2º</div>
+          <div style="margin-top: 16px; font-size: 34px; font-weight: 800; line-height: 1.2; letter-spacing: -0.015em">US02 — Status<br>US03 — Agendamento</div>
+          <div style="margin-top: auto; font-size: var(--type-small); color: #4A5A52">100 pontos · empate</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 100%">
+        <div style="background: #FFFFFF; border: 2px solid #DCD6C9; border-bottom: none; border-radius: 24px 24px 0 0; padding: 36px 32px; height: 40%; box-sizing: border-box; display: flex; flex-direction: column">
+          <div style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #8A968F">4º</div>
+          <div style="margin-top: 14px; font-size: 30px; font-weight: 700; line-height: 1.2">US05 — Painel gerencial</div>
+          <div style="margin-top: auto; font-size: var(--type-small); color: #6B7A72">48 pontos</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: flex-end; height: 100%">
+        <div style="background: #FFFFFF; border: 2px solid #DCD6C9; border-bottom: none; border-radius: 24px 24px 0 0; padding: 34px 32px; height: 30%; box-sizing: border-box; display: flex; flex-direction: column">
+          <div style="font-size: 46px; font-weight: 800; letter-spacing: -0.03em; color: #8A968F">5º</div>
+          <div style="margin-top: 12px; font-size: 28px; font-weight: 700; line-height: 1.2">US04 — Sala de espera</div>
+          <div style="margin-top: auto; font-size: var(--type-small); color: #6B7A72">27 pontos</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 3px solid #12211A; padding-top: 26px; font-size: var(--type-body); font-weight: 600">US01 é pré-requisito técnico de toda a plataforma</div>
+  </section>
+
+  <section data-label="Tempo de espera" data-screen-label="09" data-speaker-notes="Ortopedia leva seis vezes a meta nacional. Oncologia é a única dentro do prazo." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1D5FA8"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">09</span><span style="color: #8A968F; padding: 0 12px">/</span>Tempo de espera por especialidade</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Onde está o gargalo operacional</h2>
+    <div style="margin-top: var(--gap-title); flex: 1; display: flex; flex-direction: column; gap: 30px; justify-content: center">
+      <div style="display: flex; align-items: center; gap: 32px">
+        <div style="width: 300px; font-size: 34px; font-weight: 700; flex: none; text-align: right">Ortopedia</div>
+        <div style="flex: 1; display: flex; align-items: center; gap: 24px; min-width: 0; position: relative">
+          <div style="flex: none; width: 900px; height: 76px; background: #1D5FA8; border-radius: 0 12px 12px 0"></div>
+          <div style="flex: none; width: 210px; font-size: 40px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap">180 dias</div>
+          <div style="position: absolute; right: 0; font-size: 26px; color: #6B7A72; white-space: nowrap">40% de faltas</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <div style="width: 300px; font-size: 34px; font-weight: 700; flex: none; text-align: right">Cardiologia</div>
+        <div style="flex: 1; display: flex; align-items: center; gap: 24px; min-width: 0; position: relative">
+          <div style="flex: none; width: 600px; height: 76px; background: #1D5FA8; border-radius: 0 12px 12px 0"></div>
+          <div style="flex: none; width: 210px; font-size: 40px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap">120 dias</div>
+          <div style="position: absolute; right: 0; font-size: 26px; color: #6B7A72; white-space: nowrap">41% de faltas</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <div style="width: 300px; font-size: 34px; font-weight: 700; flex: none; text-align: right">Oftalmologia</div>
+        <div style="flex: 1; display: flex; align-items: center; gap: 24px; min-width: 0; position: relative">
+          <div style="flex: none; width: 450px; height: 76px; background: #1D5FA8; border-radius: 0 12px 12px 0"></div>
+          <div style="flex: none; width: 210px; font-size: 40px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap">90 dias</div>
+          <div style="position: absolute; right: 0; font-size: 26px; color: #6B7A72; white-space: nowrap">45% de faltas</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <div style="width: 300px; font-size: 34px; font-weight: 700; flex: none; text-align: right">Oncologia</div>
+        <div style="flex: 1; display: flex; align-items: center; gap: 24px; min-width: 0; position: relative">
+          <div style="flex: none; width: 125px; height: 76px; background: #1E8E63; border-radius: 0 12px 12px 0"></div>
+          <div style="flex: none; width: 210px; font-size: 40px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; color: #1E8E63">25 dias</div>
+          <div style="position: absolute; right: 0; font-size: 26px; font-weight: 700; color: #1E8E63; white-space: nowrap">5% de faltas</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 32px">
+      <div style="width: 300px; flex: none"></div>
+      <div style="font-size: var(--type-small); color: #6B7A72">Meta nacional: até 30 dias</div>
+    </div>
+  </section>
+
+  <section data-label="Distribuição" data-screen-label="10" data-speaker-notes="Quase três quartos da demanda é eletiva. A urgência se concentra em Oncologia." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1D5FA8"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">10</span><span style="color: #8A968F; padding: 0 12px">/</span>Distribuição de atendimentos</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Urgência vs. eletivo</h2>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: 1fr 1.15fr; gap: 44px; flex: 1">
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 28px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 44px; display: flex; align-items: center; gap: 44px">
+        <div data-om-raster style="width: 320px; height: 320px; border-radius: 50%; background: conic-gradient(#1E8E63 0 72.5%, #1D5FA8 72.5% 100%); flex: none"></div>
+        <div style="display: flex; flex-direction: column; gap: 34px">
+          <div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <div style="width: 24px; height: 24px; border-radius: 6px; background: #1E8E63"></div>
+              <div style="font-size: var(--type-body); font-weight: 700">Eletivos</div>
+            </div>
+            <div style="margin-top: 6px; font-size: 62px; font-weight: 800; letter-spacing: -0.03em">72,5%</div>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <div style="width: 24px; height: 24px; border-radius: 6px; background: #1D5FA8"></div>
+              <div style="font-size: var(--type-body); font-weight: 700">Urgentes</div>
+            </div>
+            <div style="margin-top: 6px; font-size: 62px; font-weight: 800; letter-spacing: -0.03em">27,5%</div>
+          </div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 28px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 44px; display: flex; flex-direction: column; gap: 30px">
+        <div style="font-size: var(--type-body); font-weight: 700">Proporção de urgência por especialidade</div>
+        <div style="display: flex; flex-direction: column; gap: 26px; flex: 1; justify-content: center">
+          <div style="display: flex; align-items: center; gap: 22px">
+            <div style="width: 230px; font-size: 28px; font-weight: 600; flex: none">Ortopedia</div>
+            <div style="flex: 1; height: 40px; background: #F1EEE7; border-radius: 10px; overflow: hidden"><div style="width: 18.75%; height: 100%; background: #1D5FA8; border-radius: 10px"></div></div>
+            <div style="width: 100px; font-size: 30px; font-weight: 800; text-align: right; flex: none">15%</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 22px">
+            <div style="width: 230px; font-size: 28px; font-weight: 600; flex: none">Cardiologia</div>
+            <div style="flex: 1; height: 40px; background: #F1EEE7; border-radius: 10px; overflow: hidden"><div style="width: 12.5%; height: 100%; background: #1D5FA8; border-radius: 10px"></div></div>
+            <div style="width: 100px; font-size: 30px; font-weight: 800; text-align: right; flex: none">10%</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 22px">
+            <div style="width: 230px; font-size: 28px; font-weight: 600; flex: none">Oftalmologia</div>
+            <div style="flex: 1; height: 40px; background: #F1EEE7; border-radius: 10px; overflow: hidden"><div style="width: 6.25%; height: 100%; background: #1D5FA8; border-radius: 10px"></div></div>
+            <div style="width: 100px; font-size: 30px; font-weight: 800; text-align: right; flex: none">5%</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 22px">
+            <div style="width: 230px; font-size: 28px; font-weight: 600; flex: none">Oncologia</div>
+            <div style="flex: 1; height: 40px; background: #F1EEE7; border-radius: 10px; overflow: hidden"><div style="width: 100%; height: 100%; background: #1D5FA8; border-radius: 10px"></div></div>
+            <div style="width: 100px; font-size: 30px; font-weight: 800; text-align: right; flex: none">80%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Decisões" data-screen-label="11" data-speaker-notes="Onde a espera é maior, a falta passa de 40%. Oncologia mostra que triagem eficiente resolve." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">11</span><span style="color: #8A968F; padding: 0 12px">/</span>Decisões estratégicas</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Da análise de dados à ação</h2>
+    <div style="margin-top: var(--gap-title); display: flex; flex-direction: column; gap: 26px">
+      <div style="display: flex; gap: 28px; align-items: flex-start; border-top: 2px solid #DCD6C9; padding-top: 26px">
+        <div style="width: 18px; height: 18px; border-radius: 50%; background: #1E8E63; flex: none; margin-top: 12px"></div>
+        <div style="font-size: 36px; line-height: 1.3; font-weight: 600; text-wrap: pretty">Gargalo: faltas acima de 40% nas especialidades com maior espera</div>
+      </div>
+      <div style="display: flex; gap: 28px; align-items: flex-start; border-top: 2px solid #DCD6C9; padding-top: 26px">
+        <div style="width: 18px; height: 18px; border-radius: 50%; background: #1E8E63; flex: none; margin-top: 12px"></div>
+        <div style="font-size: 36px; line-height: 1.3; font-weight: 600; text-wrap: pretty">Oncologia é referência: triagem eficiente, 5% de faltas, 25 dias</div>
+      </div>
+    </div>
+    <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; flex: 1">
+      <div style="background: #1E8E63; color: #FFFFFF; border-radius: 26px; padding: 46px; display: flex; flex-direction: column; gap: 20px">
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #A9DCC5">Proposta 01</div>
+        <div style="font-size: var(--type-subtitle); font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; text-wrap: pretty">Confirmação ativa 48h antes</div>
+        <div style="margin-top: auto; font-size: var(--type-body); color: #D8EFE5">SMS · WhatsApp · app</div>
+      </div>
+      <div style="background: #1D5FA8; color: #FFFFFF; border-radius: 26px; padding: 46px; display: flex; flex-direction: column; gap: 20px">
+        <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #A9CDF0">Proposta 02</div>
+        <div style="font-size: var(--type-subtitle); font-weight: 800; line-height: 1.15; letter-spacing: -0.015em; text-wrap: pretty">Realocação de verba para mutirões</div>
+        <div style="margin-top: auto; font-size: var(--type-body); color: #D6E7F8">Ortopedia e Cardiologia</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Antes x Depois" data-screen-label="12" data-speaker-notes="A fila deixa de ser um estoque estático e vira um fluxo que todo mundo enxerga." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E8E63"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">12</span><span style="color: #8A968F; padding: 0 12px">/</span>Antes x depois</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">Transformação digital</h2>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: 1fr 1fr; gap: 36px; flex: 1">
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 28px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 52px; display: flex; flex-direction: column; gap: 34px">
+        <div style="font-size: var(--type-subtitle); font-weight: 800; letter-spacing: -0.015em; color: #8A968F">Antes</div>
+        <div style="display: flex; flex-direction: column; gap: 26px">
+          <div style="font-size: 34px; line-height: 1.3; color: #4A5A52; border-top: 2px solid #EDEAE2; padding-top: 24px">Fila estática</div>
+          <div style="font-size: 34px; line-height: 1.3; color: #4A5A52; border-top: 2px solid #EDEAE2; padding-top: 24px">Invisível para o paciente</div>
+          <div style="font-size: 34px; line-height: 1.3; color: #4A5A52; border-top: 2px solid #EDEAE2; padding-top: 24px">Retrabalho manual da UBS</div>
+        </div>
+      </div>
+      <div style="background: #1E8E63; color: #FFFFFF; border-radius: 26px; padding: 52px; display: flex; flex-direction: column; gap: 34px">
+        <div style="font-size: var(--type-subtitle); font-weight: 800; letter-spacing: -0.015em; color: #A9DCC5">Depois</div>
+        <div style="display: flex; flex-direction: column; gap: 26px">
+          <div style="font-size: 34px; line-height: 1.3; border-top: 2px solid rgba(255,255,255,0.34); padding-top: 24px">Fluxo dinâmico</div>
+          <div style="font-size: 34px; line-height: 1.3; border-top: 2px solid rgba(255,255,255,0.34); padding-top: 24px">Cidadão com transparência</div>
+          <div style="font-size: 34px; line-height: 1.3; border-top: 2px solid rgba(255,255,255,0.34); padding-top: 24px">Equipe com produtividade</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Riscos" data-screen-label="13" data-speaker-notes="Dois riscos principais, cada um endereçado por um requisito que já está no escopo." style="background: #F5F2EA; color: #12211A; display: flex; flex-direction: column; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="font-size: var(--type-small); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1D5FA8"><span style="color: #6B7A72; font-variant-numeric: tabular-nums">13</span><span style="color: #8A968F; padding: 0 12px">/</span>Riscos e mitigações</div>
+    <h2 style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; margin: 18px 0 0; font-size: var(--type-title); font-weight: 800; letter-spacing: -0.025em">O que pode dar errado — e como resolvemos</h2>
+    <div style="margin-top: var(--gap-title); display: grid; grid-template-columns: 1fr 1fr; gap: 36px; flex: 1">
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 28px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 48px; display: flex; flex-direction: column; gap: 28px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #8A968F">Risco 01</div>
+        <div style="font-size: var(--type-subtitle); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; text-wrap: pretty">Barreira tecnológica e letramento digital</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #4A5A52; text-wrap: pretty">Pacientes idosos ou com pouca familiaridade com smartphones mantêm a dependência do balcão da UBS.</div>
+        <div style="margin-top: auto; border-top: 3px solid #1E8E63; padding-top: 28px">
+          <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1E8E63">Mitigação</div>
+          <div style="margin-top: 12px; font-size: var(--type-body); line-height: 1.35; color: #2E3D35; text-wrap: pretty">Totens na UBS + RNF02: fonte grande e leitura em voz alta</div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border: 1px solid #E8E3D8; border-radius: 28px; box-shadow: 0 22px 44px -34px rgba(11,26,20,0.55); padding: 48px; display: flex; flex-direction: column; gap: 28px">
+        <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #8A968F">Risco 02</div>
+        <div style="font-size: var(--type-subtitle); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; text-wrap: pretty">Exposição de dados sensíveis (LGPD)</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #4A5A52; text-wrap: pretty">O vazamento ou a exibição pública de nomes e dados clínicos fere a LGPD e quebra a confiança no serviço público.</div>
+        <div style="margin-top: auto; border-top: 3px solid #1D5FA8; padding-top: 28px">
+          <div style="font-size: var(--type-small); font-weight: 800; letter-spacing: 0.06em; color: #1D5FA8">Mitigação</div>
+          <div style="margin-top: 12px; font-size: var(--type-body); line-height: 1.35; color: #2E3D35; text-wrap: pretty">RNF01: controle de acesso por perfil + senha anonimizada no painel (RF04)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Encerramento" data-screen-label="14" data-speaker-notes="Fechamento. Obrigado." style="background: #1E8E63; color: #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; padding: var(--pad-top) var(--pad-x) var(--pad-bottom)">
+    <div style="display: flex; align-items: center; gap: 22px">
+      <svg width="64" height="64" viewBox="0 0 28 28" aria-hidden="true" style="display: block; flex: none"><circle cx="11" cy="11" r="7" fill="none" stroke="#FFFFFF" stroke-width="3"></circle><circle cx="17" cy="17" r="7" fill="none" stroke="#F5B700" stroke-width="3"></circle></svg>
+      <div style="font-size: var(--type-subtitle); font-weight: 700; letter-spacing: -0.01em">Minha Vez</div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 80px">
+      <div style="display: flex; flex-direction: column; gap: 34px">
+        <div style="width: 132px; height: 6px; background: #FFFFFF; border-radius: 3px"></div>
+        <div style="font-family: 'Bricolage Grotesque', Figtree, system-ui, sans-serif; font-size: 132px; line-height: 1; font-weight: 800; letter-spacing: -0.04em">Obrigado!</div>
+        <div style="font-size: var(--type-body); line-height: 1.4; color: #7FCFAB; max-width: 720px">Minha Vez · agendamento e acompanhamento de encaminhamentos da UBS à atenção especializada</div>
+      </div>
+      <div data-om-raster style="position: relative; width: 300px; height: 262px; flex: none">
+        <div style="position: absolute; left: 38px; top: 5px; width: 42px; height: 38px; border-radius: 50%; background: #17724F"></div>
+        <div style="position: absolute; left: 220px; top: 5px; width: 42px; height: 38px; border-radius: 50%; background: #17724F"></div>
+        <div style="position: absolute; left: 15px; top: 22px; width: 270px; height: 240px; border-radius: 46% 46% 42% 42%; background: #FFFFFF"></div>
+        <div style="position: absolute; left: 50px; top: 92px; width: 38px; height: 42px; border-radius: 50%; background: #0C2A1E"></div>
+        <div style="position: absolute; left: 60px; top: 100px; width: 12px; height: 12px; border-radius: 50%; background: #FFFFFF"></div>
+        <div style="position: absolute; left: 213px; top: 92px; width: 38px; height: 42px; border-radius: 50%; background: #0C2A1E"></div>
+        <div style="position: absolute; left: 223px; top: 100px; width: 12px; height: 12px; border-radius: 50%; background: #FFFFFF"></div>
+        <div style="position: absolute; left: 93px; top: 152px; width: 115px; height: 78px; border-radius: 55px 55px 48px 48px; background: #F0EDE4"></div>
+        <div style="position: absolute; left: 125px; top: 172px; width: 20px; height: 15px; border-radius: 50%; background: #0C2A1E"></div>
+        <div style="position: absolute; left: 155px; top: 172px; width: 20px; height: 15px; border-radius: 50%; background: #0C2A1E"></div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.32); padding-top: 28px; display: flex; justify-content: space-between; gap: 40px; font-size: var(--type-small); color: #D8EFE5"><div>Equipe: John Vitor · Ana Larissa · João Pedro · Vinícius Cardoso · Brenda Araújo</div><div style="color: #A9DCC5">14 / 14</div></div>
+  </section>
+
+</x-import>
+</x-dc>
+</body>
+</html>
