@@ -7,7 +7,7 @@ A seção 1 é a parte viva e é o que se atualiza ao fechar uma sessão. As se�
 Toda afirmação de estado aqui foi verificada por comando, e os comandos estão na seção 8. Se algo neste
 arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 
-Última atualização: **23/09/2026**.
+Última atualização: **02/10/2026**.
 
 ---
 
@@ -16,7 +16,9 @@ arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 ### Repositório
 
 Branch `main`, rastreando `origin/main` em `https://github.com/FIAP-Dream-Team/HackGov.git`. A Fase 1 (Cap 1)
-foi entregue. O board da Fase 2 está montado no Linear (`DT-21` a `DT-35`). Tutorial de User Story em
+foi entregue. Vídeo da Fase 2: composição `Fase2`, narração `sources/video/fase-2/audio.wav` (3:45)
+alinhada em `src/data/fase-2/cues.json`. Pipeline copiado em `scripts/fase-2/` — os scripts da
+Fase 1 não foram alterados. Tutorial de User Story em
 `docs/como-criar-user-stories-no-linear.md`. Tokens de design em `docs/design/tokens.json`.
 Protótipo no Figma [Minha vez](https://www.figma.com/design/jVZtzCqq1vTrkIXsqF5yHf/Minha-vez).
 Fluxos e critérios de validação da Parte 3 em
