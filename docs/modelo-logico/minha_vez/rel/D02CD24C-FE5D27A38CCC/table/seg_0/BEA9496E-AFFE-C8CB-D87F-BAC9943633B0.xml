@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BEA9496E-AFFE-C8CB-D87F-BAC9943633B0" name="HORARIO_DISPONIVEL">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>C946AF47-7D97-4DDF-9F6E-8785E7865F4B</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_HORARIO" id="99981A8E-86A2-8421-90C6-25154038D3C1">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>A321B706-A3DE-AF27-B85B-139D932AA44E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_ESPECIALIDADE" id="F6D275F6-2038-50DD-068F-7CAE0BFD5D60">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>3D975192-B272-6371-B6D5-B9C10697DDBB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5A15969B-8517-E0B9-7654-F5C6D06BC676" referredColumn="DB6FFC37-C112-C307-3D2A-687E253CEDC0"/>
+</associations>
+</Column>
+<Column name="ID_UNIDADE" id="FA909628-E0DB-3F55-678E-C3E113448977">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>0F04B176-76A1-8A6D-EB6B-57A3DB6A9026</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="98CC9FBB-76B8-3B18-67C3-BFCEEE4343EF" referredColumn="18935F31-2806-F6E2-8924-DF043EE0FF54"/>
+</associations>
+</Column>
+<Column name="DATA_HORA" id="F3AB7389-33FB-CA43-2A2D-40815328B37E">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>18502227-F644-8363-5C5D-784A6B688315</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>CEF75D65-EC56-A6F5-802C-B7374BC7BFAB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2C7BE130-E2EB-1DD0-12A6-5522A5F6569A" name="PK_HORARIO_DISPONIVEL">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>9C28DBF7-983D-BC49-C45A-4BD65CABA613</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99981A8E-86A2-8421-90C6-25154038D3C1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B813B3B4-7922-0228-3A9B-44E809BD26F7" name="UK_HORARIO_VAGA">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>9C806FD0-1E99-CE2B-BD8B-EF40B10F2314</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6D275F6-2038-50DD-068F-7CAE0BFD5D60"/>
+<colUsage columnID="FA909628-E0DB-3F55-678E-C3E113448977"/>
+<colUsage columnID="F3AB7389-33FB-CA43-2A2D-40815328B37E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3B50885-9090-CC50-C868-B31E07214F13" name="UK_HORARIO_ESPEC_UNID">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>33D44EB9-9105-9C63-B12D-AED97C488FAD</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99981A8E-86A2-8421-90C6-25154038D3C1"/>
+<colUsage columnID="F6D275F6-2038-50DD-068F-7CAE0BFD5D60"/>
+<colUsage columnID="FA909628-E0DB-3F55-678E-C3E113448977"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3A4CCD5-6E6A-2CEB-5B6F-00C6B5FF91BA" name="IX_HORARIO_BUSCA">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>60CE570F-8DDF-61E3-899D-60E443EFEE97</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6D275F6-2038-50DD-068F-7CAE0BFD5D60"/>
+<colUsage columnID="F3AB7389-33FB-CA43-2A2D-40815328B37E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6377AE2B-B5ED-F2FF-EC88-39EC6481CCAB" name="FK_HORARIO_ESPECIALIDADE">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6D275F6-2038-50DD-068F-7CAE0BFD5D60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26429BF2-0B0B-2ABC-1BC4-5EBBACED93BD" name="FK_HORARIO_UNIDADE">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FA909628-E0DB-3F55-678E-C3E113448977"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

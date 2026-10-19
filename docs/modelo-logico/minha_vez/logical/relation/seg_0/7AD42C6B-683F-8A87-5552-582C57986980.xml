@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_CHAMADA_USUARIO" directorySegmentName="seg_0" id="7AD42C6B-683F-8A87-5552-582C57986980">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>2BAA3338-2CAE-66E4-296B-9192D2047899</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<sourcePk>871E0EB1-7795-F655-6B79-D2A45636F508</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>46378951-BC61-5721-634D-34E130F171E3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>6DE50942-1BA5-6DE2-EB2B-9B8F75F729A2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

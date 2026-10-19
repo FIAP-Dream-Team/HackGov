@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="UNIDADE_SAUDE" directorySegmentName="seg_0" id="BD4434DD-31AB-CB66-BB5B-C8B1F9A8D790">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOME" id="170D3165-C391-072A-03C1-87DA574445DF">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_UNIDADE" id="18935F31-2806-F6E2-8924-DF043EE0FF54">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUMERO" id="1A0D4363-3A7D-610F-7CC2-E725E66AA66D">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOGRADOURO" id="3D4FCD04-F7E5-8E25-DDA8-2D4C5355295F">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TIPO_UNIDADE" id="5FD0980D-8341-026E-B3A7-B7AAB49E833B">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CEP" id="6363A753-9AD3-B536-7C27-C266C1EBD6FD">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BAIRRO" id="63C7BA26-7C98-DCC8-742A-35E019EF0A43">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMPLEMENTO" id="720FBDA9-5535-CA91-A245-EF554C9AD76C">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CIDADE" id="7EFDD257-DC9A-BD05-EE95-56F834299BF4">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UF" id="B34D6967-ABC7-7E62-EA71-6EEDE663CC04">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CNES" id="DB5ECA25-0627-F906-E71A-91CD12C8973D">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_UNIDADE_SAUDE" id="28268B6E-813B-BD03-47D0-BB953C85ADB3">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="CK_UNIDADE_TIPO" id="9AA03466-1D36-011D-C98B-A3D847DF2A58">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_UNIDADE_CNES" id="44CF83B0-51CE-9E5A-D298-82AE44A03FA1">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

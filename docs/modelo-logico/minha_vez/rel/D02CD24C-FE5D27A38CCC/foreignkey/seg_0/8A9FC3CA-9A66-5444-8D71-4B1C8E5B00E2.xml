@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8A9FC3CA-9A66-5444-8D71-4B1C8E5B00E2" containerWithKeyObject="259A2C5C-018B-2FDA-AE43-DAF1E74A873C" localFKIndex="E7F107A5-EE42-4883-A92A-3E873EAE9CEB" name="FK_AGEND_ORIGEM">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>1075EB5B-C966-3638-E239-634FBCE445D2</importedID>
+<referredTableLongName>AGENDAMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>259A2C5C-018B-2FDA-AE43-DAF1E74A873C</referredTableID>
+<keyObject>82993939-DB35-A439-46F9-1F927BF965D6</keyObject>
+<referredKeyID>82993939-DB35-A439-46F9-1F927BF965D6</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_AGENDAMENTO,ID_ENCAMINHAMENTO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

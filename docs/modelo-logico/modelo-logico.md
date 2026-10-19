@@ -1,17 +1,24 @@
 # Parte 2 — Modelo Lógico de Dados do Minha Vez
 
+O modelo parte do que já foi entregue na Fase 2: as user stories refinadas (US01 a US05),
 o diagrama de casos de uso, o diagrama de classes e o recorte Java em
 `src/backend/src/main/java/com/hackgov/backend/domain`. Nada aqui cria requisito novo. Onde o modelo vai além do
 Java, a coluna "Origem" aponta a regra da user story que justifica o dado.
 
 Artefatos desta pasta:
 
-| Arquivo                              | O que é                                                           |
-| ------------------------------------ | ----------------------------------------------------------------- |
-| `minha_vez_ddl.sql`                  | DDL Oracle do modelo, para importar no SQL Developer Data Modeler |
-| `modelo-logico.png`                  | Rascunho da imagem do modelo (gerado de `diagrama-er.html`)       |
-| `diagrama-er.html`                   | Fonte do rascunho da imagem                                       |
-| `minha_vez.dmd` + pasta `minha_vez/` | **A gerar pelo grupo** no Data Modeler (ver seção 7)              |
+| Arquivo                              | O que é                                                                                  |
+| ------------------------------------ | ---------------------------------------------------------------------------------------- |
+| `modelo-logico.png`                  | **Imagem da entrega**: diagrama lógico exportado do Data Modeler (4766 × 1988 px)        |
+| `modelo-logico.pdf`                  | O mesmo diagrama em PDF vetorial, nítido em qualquer ampliação                           |
+| `minha_vez.dmd` + pasta `minha_vez/` | **Projeto do Data Modeler**. Os dois vão juntos no ZIP; o `.dmd` sozinho não abre         |
+| `minha_vez_ddl.sql`                  | DDL Oracle do modelo, importado no Data Modeler para gerar o projeto                     |
+| `modelo-logico-rascunho.png`         | Rascunho anterior à ferramenta (gerado de `diagrama-er.html`), só para conferência       |
+| `diagrama-er.html`                   | Fonte do rascunho                                                                        |
+
+Para o ZIP, copiar a pasta `minha_vez/` do disco, não do GitHub: os arquivos `*.local` que o Data Modeler cria
+ficam fora do Git (`.gitignore` desta pasta). Eles são recriados pela ferramenta, mas a cópia do disco evita
+qualquer diferença.
 
 ## 1. Entidades
 
@@ -20,7 +27,7 @@ Artefatos desta pasta:
 | PESSOA                | Supertipo com o que cidadão e servidor têm em comum (id, nome) | classe abstrata `Pessoa`            |
 | CIDADAO               | Quem acompanha e agenda o encaminhamento                       | `Cidadao`, US01                     |
 | USUARIO_INSTITUCIONAL | Equipe da UBS (Atendente) e Gestor                             | `UsuarioInstitucional`, US05, RNF01 |
-| UNIDADE_SAUDE         | UBS de origem e unidade onde o horário acontece                | US03 (confirmação mostra a unidade) |
+| UNIDADE_SAUDE         | UBS de origem, unidade de destino e unidade onde o horário acontece | US03 (unidade definida no encaminhamento; confirmação mostra a unidade) |
 | ESPECIALIDADE         | Cardiologia, Ortopedia etc.                                    | `Especialidade`                     |
 | HORARIO_DISPONIVEL    | Cada vaga publicada para uma especialidade                     | `HorarioDisponivel`, US03           |
 | ENCAMINHAMENTO        | O pedido acompanhado pelo cidadão, com protocolo e status      | `Encaminhamento`, US02              |
@@ -42,7 +49,8 @@ número pronto criaria um dado que pode divergir da fonte.
 | CIDADAO — CONTATO_CIDADAO                   | 1 : 0..N                        | contato é opcional                                                                                                |
 | CIDADAO — ENCAMINHAMENTO                    | 1 : 0..N                        | estado "sem encaminhamento" existe (US02)                                                                         |
 | ESPECIALIDADE — ENCAMINHAMENTO              | 1 : 0..N                        | cada encaminhamento é para uma especialidade                                                                      |
-| UNIDADE_SAUDE — ENCAMINHAMENTO              | 1 : 0..N                        | a UBS que originou o pedido                                                                                       |
+| UNIDADE_SAUDE — ENCAMINHAMENTO (origem)     | 1 : 0..N                        | a UBS que originou o pedido                                                                                       |
+| UNIDADE_SAUDE — ENCAMINHAMENTO (destino)    | 1 : 0..N                        | a unidade onde a consulta ou o exame deve acontecer, definida no encaminhamento (US03)                            |
 | ESPECIALIDADE — HORARIO_DISPONIVEL          | 1 : 0..N                        | estado "sem vagas" existe (US03)                                                                                  |
 | UNIDADE_SAUDE — HORARIO_DISPONIVEL          | 1 : 0..N                        | onde a vaga acontece                                                                                              |
 | ENCAMINHAMENTO — AGENDAMENTO                | 1 : 0..N, **no máximo 1 ativo** | cancelados ficam como histórico                                                                                   |
@@ -100,8 +108,8 @@ Senhas só como hash (US01).
 | --------------------- | -------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | CIDADAO               | CPF, data de nascimento                                  | Cartão SUS, senha, Gov.br, bloqueio         | US01: cadastro exige CPF e nascimento; quem entra só pelo Gov.br não tem senha, quem entra só pelo app pode não informar o Cartão SUS |
 | USUARIO_INSTITUCIONAL | login, senha, perfil, unidade                            | —                                           | RNF01: acesso só com login institucional                                                                                              |
-| ENCAMINHAMENTO        | protocolo, status, cidadão, especialidade, UBS de origem | —                                           | US02: a tela sempre mostra protocolo e etapa                                                                                          |
-| AGENDAMENTO           | encaminhamento, horário, especialidade, status           | data de cancelamento, agendamento de origem | data de cancelamento só quando status = CANCELADO (CHECK); origem só quando o agendamento veio de um reagendamento                    |
+| ENCAMINHAMENTO        | protocolo, status, cidadão, especialidade, UBS de origem, unidade de destino | —                       | US02: a tela sempre mostra protocolo e etapa; US03: a unidade é definida no encaminhamento                                          |
+| AGENDAMENTO           | encaminhamento, horário, especialidade, unidade, status  | data de cancelamento, agendamento de origem | data de cancelamento só quando status = CANCELADO (CHECK); origem só quando o agendamento veio de um reagendamento                    |
 | HISTORICO_STATUS      | status novo, data/hora                                   | status anterior, responsável                | anterior nulo = criação; responsável nulo = ação do sistema ou do cidadão                                                             |
 | UNIDADE_SAUDE         | nome, tipo, endereço                                     | CNES, complemento                           | —                                                                                                                                     |
 
@@ -134,12 +142,19 @@ sobrenome separados.
 | Não há duas vagas iguais                                                          | `Especialidade.publicarHorario` | UNIQUE (especialidade, unidade, data/hora)                                                                       |
 | Cada linha do histórico é uma mudança real de etapa                               | US05 (auditoria)                | CHECK STATUS_ANTERIOR <> STATUS_NOVO                                                                             |
 | Só horários da especialidade do encaminhamento                                    | US03, critério 1                | ID_ESPECIALIDADE em AGENDAMENTO, presente nas duas FKs compostas (para ENCAMINHAMENTO e para HORARIO_DISPONIVEL) |
+| Só horários da unidade de destino definida no encaminhamento                      | US03 (não escolhe outra unidade) | ID_UNIDADE em AGENDAMENTO, presente nas mesmas duas FKs compostas                                               |
 
-A última regra usa **redundância controlada**: AGENDAMENTO repete a especialidade, mas a coluna faz parte das
-duas chaves estrangeiras compostas. Por isso ela só aceita o valor que for igual no encaminhamento e no
-horário, e não pode divergir de nenhum dos dois. A especialidade do encaminhamento não muda depois de criada
-(a US03 exclui a troca de especialidade), então o Oracle não precisar de `ON UPDATE CASCADE` não é problema.
-Em Java a mesma regra está em `Encaminhamento.validarHorarioLivre()`.
+As duas últimas regras usam **redundância controlada**: AGENDAMENTO repete a especialidade e a unidade, mas
+as duas colunas fazem parte das duas chaves estrangeiras compostas, cada uma com três colunas:
+`(ID_ENCAMINHAMENTO, ID_ESPECIALIDADE, ID_UNIDADE)` aponta para `(ID_ENCAMINHAMENTO, ID_ESPECIALIDADE,
+ID_UNIDADE_DESTINO)` em ENCAMINHAMENTO, e `(ID_HORARIO, ID_ESPECIALIDADE, ID_UNIDADE)` aponta para o mesmo trio
+em HORARIO_DISPONIVEL. Por isso o agendamento só é aceito quando especialidade e unidade são iguais no
+encaminhamento e no horário, e nenhuma das duas colunas pode divergir das tabelas de origem. As duas regras
+foram tratadas com a mesma técnica de propósito: são exigências da mesma user story.
+
+A especialidade e a unidade de destino não mudam depois de definidas (a US03 exclui a troca), então o Oracle
+não ter `ON UPDATE CASCADE` não é problema. Em Java, a regra da especialidade está em
+`Encaminhamento.validarHorarioLivre()`; a da unidade ainda não existe no código (seção 4).
 
 Regras que o banco não consegue garantir com restrições declarativas ficam na camada Java. Parte delas já está
 implementada em `Encaminhamento` e `HorarioDisponivel`; as marcadas com \* ainda não existem no código:
@@ -171,8 +186,11 @@ Para o grupo decidir se o Java acompanha o modelo na próxima sprint:
 7. `Encaminhamento.reagendar()` troca o horário do **mesmo** `Agendamento`. No modelo, reagendar cancela o atual
    e cria um novo com `ID_AGENDAMENTO_ORIGEM` (seção 2, "Reagendamento"). `Agendamento` precisa de uma referência
    ao agendamento de origem.
-8. AGENDAMENTO tem `ID_ESPECIALIDADE`, que não existe na classe `Agendamento`. Ao gravar, o valor é copiado da
-   especialidade do encaminhamento; o banco recusa se ela não for a mesma do horário.
+8. AGENDAMENTO tem `ID_ESPECIALIDADE` e `ID_UNIDADE`, que não existem na classe `Agendamento`. Ao gravar, os
+   valores são copiados do encaminhamento (especialidade e unidade de destino); o banco recusa se não forem os
+   mesmos do horário.
+9. `Encaminhamento` não tem unidade de origem nem de destino, e `HorarioDisponivel` não tem unidade. A lista de
+   horários livres da US03 precisa filtrar também pela unidade de destino.
 
 ## 5. Modelo coerente com casos de uso
 
@@ -196,54 +214,44 @@ atributo ou uma entidade para o resultado nesse momento.
 
 ## 6. Validação feita
 
-**Primeira versão do DDL.** O DDL foi executado no H2 2.2 (modo Oracle). As tabelas foram criadas e um cenário válido foi inserido
-(cidadão, encaminhamento, agendamento cancelado, novo agendamento, histórico, chamada). Foram rejeitados,
-como esperado: cidadão sem pessoa, CPF repetido, vaga duplicada, terceiro reagendamento, status inexistente,
-agendamento ativo com data de cancelamento e perfil inválido. Os dois índices únicos baseados em função são
-sintaxe específica do Oracle e **não** foram testados no H2.
+O DDL foi executado no H2 2.2, em modo de compatibilidade Oracle, e submetido a 30 cenários com dados de teste
+(não são dados de pesquisa). O H2 não aceita os dois índices únicos baseados em função; no teste, eles foram
+reproduzidos com a mesma lógica por colunas calculadas com índice único. Todos os 30 cenários deram o resultado
+esperado, e cada recusa veio da regra prevista:
 
-**Depois da FK composta, do CHECK do histórico e do reagendamento.** O roteiro do H2 acima ficou desatualizado:
-ele não preenche `ID_ESPECIALIDADE` em AGENDAMENTO e ainda usa `QTD_REAGENDAMENTOS`. A versão atual foi
-conferida assim: o DDL inteiro passa num parser no dialeto Oracle, e as tabelas foram criadas e testadas no
-SQLite, com os dois índices baseados em função trocados por índices parciais equivalentes
-(`... WHERE STATUS = 'AGENDADO'`). Resultados:
+| Grupo | Cenários aceitos | Cenários recusados (regra que recusou) |
+| --- | --- | --- |
+| US01 Identificação | cadastro de cidadão e de servidor | cidadão sem pessoa (FK); CPF repetido e Cartão SUS repetido (UNIQUE); tipo de pessoa inválido, 6 tentativas de login e perfil inválido (CHECK); contato repetido (UNIQUE) |
+| US02 / US05 Acompanhamento e auditoria | histórico de criação (status anterior nulo); mudança feita pela atendente | status inexistente (CHECK); protocolo repetido (UNIQUE); encaminhamento sem unidade de destino (NOT NULL); unidade de destino inexistente (FK); histórico sem mudança real (CHECK); responsável que não é servidor (FK) |
+| US03 Agendamento | agendar a vaga certa; cancelar; reagendar (cancela o atual e cria um novo com origem); outro cidadão ocupar a vaga liberada | vaga duplicada (UNIQUE); vaga de outra unidade e vaga de outra especialidade (FK composta); agendamento sem unidade (NOT NULL); dois cidadãos na mesma vaga e dois agendamentos ativos no mesmo encaminhamento (índice único condicional); ativo com data de cancelamento e cancelado sem data (CHECK); origem de outro encaminhamento (FK composta); dois reagendamentos da mesma origem (UNIQUE); origem nele mesmo (CHECK) |
+| US04 Chamada | chamada feita por servidor | chamada feita por cidadão (FK) |
 
-| Cenário                                                | Esperado | Resultado               |
-| ------------------------------------------------------ | -------- | ----------------------- |
-| Agendar em horário da mesma especialidade              | aceito   | aceito                  |
-| Agendar em horário de outra especialidade              | recusado | recusado (FK composta)  |
-| Segundo agendamento ativo no mesmo encaminhamento      | recusado | recusado (índice único) |
-| Dois cidadãos no mesmo horário                         | recusado | recusado (índice único) |
-| Horário volta a ficar livre depois do cancelamento     | aceito   | aceito                  |
-| Agendamento ativo com data de cancelamento             | recusado | recusado (CHECK)        |
-| Histórico com status anterior igual ao novo            | recusado | recusado (CHECK)        |
-| Histórico de criação (status anterior nulo)            | aceito   | aceito                  |
-| Reagendar: cancelar o atual e criar um novo com origem | aceito   | aceito                  |
-| Reagendamento com origem de outro encaminhamento       | recusado | recusado (FK composta)  |
-| Dois reagendamentos a partir do mesmo agendamento      | recusado | recusado (UNIQUE)       |
-| Agendamento com origem nele mesmo                      | recusado | recusado (CHECK)        |
-
-Falta executar num Oracle real. O comportamento das FKs compostas e dos índices baseados em função é padrão do
-Oracle, mas não foi testado nele.
+Limite do teste: o DDL não foi executado num Oracle real. FKs compostas e índices baseados em função são
+recursos padrão do Oracle, mas a confirmação final vem da importação no Data Modeler (seção 7).
 
 ## 7. Como gerar os artefatos no Oracle SQL Developer Data Modeler
 
-1. Abrir o Data Modeler. **File > Import > DDL File**, selecionar `minha_vez_ddl.sql`.
-2. Banco: **Oracle Database 19c** (ou o mais próximo). Confirmar a importação: o modelo relacional aparece.
-3. No modelo relacional, clicar em **Engineer to Logical Model** (botão `<<`). O modelo lógico (entidades e
-   relacionamentos) é gerado.
+Os menus aparecem em inglês ou em português conforme a instalação; os dois nomes estão indicados.
+
+1. Abrir o Data Modeler num design novo (**File > New** / **Arquivo > Novo**), para não misturar com
+   importações anteriores. **File > Import > DDL File** (**Arquivo > Importar > Arquivo DDL**), selecionar
+   `minha_vez_ddl.sql`.
+2. Banco: **Oracle Database 21c** (versões do Data Modeler que não listam a 19c) ou **19c**. Mesclar tudo e
+   confirmar: o modelo relacional aparece com as 11 tabelas.
+3. No modelo relacional, clicar em **Engineer to Logical Model** (**Engenharia para Modelo Lógico**, botão
+   `<<`). O modelo lógico (entidades e relacionamentos) é gerado.
 4. No modelo lógico, montar a hierarquia: abrir a entidade CIDADAO > **Super Type** = PESSOA; repetir para
    USUARIO_INSTITUCIONAL. Remover as relações 1:1 que o engenharia reversa criou entre elas e PESSOA.
    **Conferir AGENDAMENTO.** Ela tem três chaves estrangeiras compostas que apontam para UNIQUE, não para a
-   PK: `(ID_ENCAMINHAMENTO, ID_ESPECIALIDADE)`, `(ID_HORARIO, ID_ESPECIALIDADE)` e
+   PK: `(ID_ENCAMINHAMENTO, ID_ESPECIALIDADE, ID_UNIDADE)`, `(ID_HORARIO, ID_ESPECIALIDADE, ID_UNIDADE)` e
    `(ID_AGENDAMENTO_ORIGEM, ID_ENCAMINHAMENTO)`. Não está confirmado como o Data Modeler converte isso para o
    modelo lógico. Verificar que:
 
    - existem os três relacionamentos: com ENCAMINHAMENTO, com HORARIO_DISPONIVEL e o autorrelacionamento
      "reagendado de";
-   - `ID_ESPECIALIDADE` e `ID_ENCAMINHAMENTO` aparecem **uma vez só**. Se surgir uma cópia (por exemplo
-     `ID_ESPECIALIDADE1`), a ferramenta separou a coluna compartilhada, e a garantia da mesma especialidade
-     se perde;
+   - `ID_ESPECIALIDADE`, `ID_UNIDADE` e `ID_ENCAMINHAMENTO` aparecem **uma vez só**. Se surgir uma cópia
+     (por exemplo `ID_ESPECIALIDADE1` ou `ID_UNIDADE1`), a ferramenta separou a coluna compartilhada, e a
+     garantia da mesma especialidade e da mesma unidade se perde;
    - o autorrelacionamento está opcional nas duas pontas (0..1 : 0..1).
 
    Se a ferramenta não representar bem, o plano B é voltar às chaves estrangeiras simples e citar as regras
@@ -251,7 +259,26 @@ Oracle, mas não foi testado nele.
 
 5. Em **Tools > Preferences > Data Modeler > Diagram > Logical Model**, escolher notação (Barker ou
    Information Engineering, a mesma do material da aula).
-6. Arrumar o layout, então **File > Data Modeler > Print Diagram > To Image File** e salvar
-   `modelo-logico.png` (substitui o rascunho desta pasta).
-7. **File > Save As** `minha_vez.dmd` nesta pasta. O Data Modeler cria junto a pasta `minha_vez/`; os dois
-   vão juntos no ZIP.
+6. Arrumar o layout sem soltar uma entidade dentro de outra: no Data Modeler, isso cria uma herança.
+7. Aumentar o zoom do diagrama (a exportação usa o zoom da tela) e exportar por **File > Data Modeler > Print
+   Diagram > To Image File** (**Arquivo > Imprimir Diagrama > Para Arquivo de Imagem**) e **To PDF**.
+8. **File > Save As** `minha_vez.dmd` nesta pasta. O Data Modeler cria junto a pasta `minha_vez/`; os dois
+   vão juntos no ZIP. Não rodar depois **Engineer to Relational Model**: o modelo relacional do projeto deve
+   continuar igual ao DDL.
+
+### Resultado (18/10/2026)
+
+Os passos acima foram executados no Data Modeler, com o banco Oracle Database 21c e a notação Barker.
+
+| Conferência                                      | Resultado                                                                          |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Tabelas importadas no modelo relacional          | 11, com as 17 chaves estrangeiras e os 2 índices baseados em função                |
+| Entidades no modelo lógico                       | 11                                                                                 |
+| Relacionamentos                                  | 15 (17 FKs, menos as 2 relações 1:1 com PESSOA, substituídas pela herança)         |
+| Hierarquias                                      | 2: CIDADAO e USUARIO_INSTITUCIONAL com supertipo PESSOA                            |
+| Colunas compartilhadas das FKs compostas          | sem duplicação (`ID_ESPECIALIDADE1`, `ID_UNIDADE1` não apareceram)                 |
+| Cardinalidade do autorrelacionamento "reagendado de" | a ferramenta gerou 0..\* : 0..1; ajustada à mão para **0..1 : 0..1**, porque o `UNIQUE` em `ID_AGENDAMENTO_ORIGEM` não é lido pela engenharia reversa |
+
+Na notação Barker usada no diagrama: `#` identificador, `*` obrigatório, `o` opcional, `U` único; linha contínua
+é participação obrigatória daquele lado, tracejada é opcional, e o pé de galinha marca o lado "muitos". As
+chaves estrangeiras não aparecem como atributos no modelo lógico: são as linhas de relacionamento.

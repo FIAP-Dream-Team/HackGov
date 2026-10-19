@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="092B9A62-CA67-80F6-2A70-851DE0E5EF34" containerWithKeyObject="259A2C5C-018B-2FDA-AE43-DAF1E74A873C" localFKIndex="611BC9DC-CB2A-F800-DE6F-60377FAD0261" name="FK_AGEND_HORARIO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>EA552DD1-2E31-EA45-6FB5-DDE211866F95</importedID>
+<referredTableLongName>HORARIO_DISPONIVEL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BEA9496E-AFFE-C8CB-D87F-BAC9943633B0</referredTableID>
+<keyObject>B3B50885-9090-CC50-C868-B31E07214F13</keyObject>
+<referredKeyID>B3B50885-9090-CC50-C868-B31E07214F13</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_HORARIO,ID_ESPECIALIDADE,ID_UNIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -21,6 +21,7 @@ erDiagram
     CIDADAO ||--o{ ENCAMINHAMENTO : "recebe"
     ESPECIALIDADE ||--o{ ENCAMINHAMENTO : "destina"
     UNIDADE_SAUDE ||--o{ ENCAMINHAMENTO : "origina"
+    UNIDADE_SAUDE ||--o{ ENCAMINHAMENTO : "destino de"
     ESPECIALIDADE ||--o{ HORARIO_DISPONIVEL : "oferece"
     UNIDADE_SAUDE ||--o{ HORARIO_DISPONIVEL : "sedia"
     ENCAMINHAMENTO ||--o{ AGENDAMENTO : "gera"
@@ -93,12 +94,14 @@ erDiagram
         NUMBER ID_CIDADAO FK "NN"
         NUMBER ID_ESPECIALIDADE FK "NN"
         NUMBER ID_UNIDADE_ORIGEM FK "NN"
+        NUMBER ID_UNIDADE_DESTINO FK "NN"
     }
     AGENDAMENTO {
         NUMBER ID_AGENDAMENTO PK
         NUMBER ID_ENCAMINHAMENTO FK "NN 1 ativo por encaminhamento"
         NUMBER ID_HORARIO FK "NN 1 ativo por horario"
         NUMBER ID_ESPECIALIDADE FK "NN igual no encaminhamento e no horario"
+        NUMBER ID_UNIDADE FK "NN igual ao destino e ao horario"
         NUMBER ID_AGENDAMENTO_ORIGEM FK "opcional agendamento substituido"
         VARCHAR2 STATUS "NN AGENDADO CANCELADO CONCLUIDO FALTA"
         TIMESTAMP DATA_CRIACAO "NN"

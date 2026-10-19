@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C66962CD-88A5-E530-355B-21EBBBC622D6" containerWithKeyObject="57926DFF-E15A-F558-C939-59C7EDF8283D" localFKIndex="D347E92E-CD91-5637-3B55-2CC2B2DAA15B" name="FK_HIST_ENCAMINHAMENTO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>2DE23049-3F3C-A798-00A2-7BA4EA5BFB7E</importedID>
+<referredTableLongName>ENCAMINHAMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>49F991BF-787F-82F7-ED7D-6203730B2E09</referredTableID>
+<keyObject>705C3E3E-F671-E463-5249-93C4C3AA4C31</keyObject>
+<referredKeyID>705C3E3E-F671-E463-5249-93C4C3AA4C31</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ENCAMINHAMENTO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

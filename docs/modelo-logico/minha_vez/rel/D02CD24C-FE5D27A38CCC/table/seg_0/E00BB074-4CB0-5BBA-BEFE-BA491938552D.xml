@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E00BB074-4CB0-5BBA-BEFE-BA491938552D" name="CONTATO_CIDADAO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>B5E10118-44E3-05B2-3CA0-FA52626B48DB</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_CONTATO" id="2CCC0600-A16D-674A-463F-380383F0218E">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>4DA3A640-42C4-F412-422E-B931C7DFB2F0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_CIDADAO" id="7064F6FE-8339-1524-DE86-0CBE2C2AB1F5">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>A5A6D37E-54A9-BF84-6509-32502B073E13</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8271FD52-5295-6E1D-4BD0-7D603492E28A" referredColumn="C8A1B5A7-B691-E60A-A8E9-BA123787D36E"/>
+</associations>
+</Column>
+<Column name="TIPO_CONTATO" id="9C457BB8-DD74-5934-A333-91AAC543A17A">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>B03C8077-8992-043A-04C6-C6F5415BB3B1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F242F18C-352E-6838-4B17-6F989DC5EF0D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALOR" id="95D0CF7D-E68A-FE87-6800-C7593F743F96">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>A936F645-89A8-C896-AD39-9F2CE2EADFE4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E7C6BB7A-BF35-257A-60A0-DB1584D9A5A0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRINCIPAL" id="8D593436-717F-1A24-963A-A19F95435FB9">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>644B9767-1090-471E-51BC-4151537416FA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>33BAA95B-69DF-9718-EAC0-46D928F2BEA8</domain>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7AA659ED-6428-CD88-C58C-9F8DA0867E34" name="PK_CONTATO_CIDADAO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>568FD830-EC94-1BB2-A87D-18BF04944035</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2CCC0600-A16D-674A-463F-380383F0218E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D569566C-7356-028F-06B6-2BF21E0E2AE0" name="UK_CONTATO_VALOR">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>E2D5B0AA-527A-BFDD-209B-D447D5811E99</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7064F6FE-8339-1524-DE86-0CBE2C2AB1F5"/>
+<colUsage columnID="9C457BB8-DD74-5934-A333-91AAC543A17A"/>
+<colUsage columnID="95D0CF7D-E68A-FE87-6800-C7593F743F96"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE40DA7A-1E27-97F0-84EF-E4F43BE68410" name="FK_CONTATO_CIDADAO">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7064F6FE-8339-1524-DE86-0CBE2C2AB1F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_CONTATO_TIPO" directorySegmentName="seg_0" id="CDBDA545-A044-A97F-8CE7-40CFA7CD9891">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>384D4B4A-B9BC-5EF2-7EF7-0C1D0C337BCC</importedID>
+<rule><![CDATA[TIPO_CONTATO IN ('CELULAR', 'TELEFONE', 'EMAIL')]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_CONTATO_PRINCIPAL" directorySegmentName="seg_0" id="5A104163-5C67-5799-2C8A-B8CA20CC29B1">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>6EAB0BA3-DDA4-5990-57B0-7854815E5101</importedID>
+<rule><![CDATA[PRINCIPAL IN ('S', 'N')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
