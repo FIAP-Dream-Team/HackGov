@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Minha Vez - Modelo Lógico</title>
+<style>
+  body { margin: 0; padding: 24px; background: #ffffff; font-family: Arial, sans-serif; }
+  h1 { font-size: 22px; margin: 0 0 4px; color: #1f2937; }
+  p { font-size: 13px; margin: 0 0 12px; color: #4b5563; }
+</style>
+</head>
+<body>
+<h1>Minha Vez (HackGov) - Modelo Lógico de Dados</h1>
+<p>Rascunho gerado a partir de minha_vez_ddl.sql. A versão oficial da entrega é a exportada do Oracle SQL Developer Data Modeler.</p>
+<pre class="mermaid">
+erDiagram
+    PESSOA ||--o| CIDADAO : "especializa (C)"
+    PESSOA ||--o| USUARIO_INSTITUCIONAL : "especializa (U)"
+    UNIDADE_SAUDE ||--o{ USUARIO_INSTITUCIONAL : "lota"
+    CIDADAO ||--o{ CONTATO_CIDADAO : "possui"
+    CIDADAO ||--o{ ENCAMINHAMENTO : "recebe"
+    ESPECIALIDADE ||--o{ ENCAMINHAMENTO : "destina"
+    UNIDADE_SAUDE ||--o{ ENCAMINHAMENTO : "origina"
+    UNIDADE_SAUDE ||--o{ ENCAMINHAMENTO : "destino de"
+    ESPECIALIDADE ||--o{ HORARIO_DISPONIVEL : "oferece"
+    UNIDADE_SAUDE ||--o{ HORARIO_DISPONIVEL : "sedia"
+    ENCAMINHAMENTO ||--o{ AGENDAMENTO : "gera"
+    HORARIO_DISPONIVEL ||--o{ AGENDAMENTO : "ocupado por"
+    AGENDAMENTO |o--o| AGENDAMENTO : "reagendado de"
+    ENCAMINHAMENTO ||--o{ HISTORICO_STATUS : "registra"
+    USUARIO_INSTITUCIONAL |o--o{ HISTORICO_STATUS : "responde por"
+    AGENDAMENTO ||--o{ CHAMADA : "chamado em"
+    USUARIO_INSTITUCIONAL ||--o{ CHAMADA : "realiza"
+
+    PESSOA {
+        NUMBER ID_PESSOA PK
+        VARCHAR2 NOME "NN"
+        CHAR TIPO_PESSOA "NN C ou U"
+        DATE DATA_CADASTRO "NN"
+    }
+    CIDADAO {
+        NUMBER ID_PESSOA PK,FK
+        CHAR CPF UK "NN"
+        CHAR CARTAO_SUS UK "opcional"
+        DATE DATA_NASCIMENTO "NN"
+        VARCHAR2 SENHA_HASH "opcional"
+        VARCHAR2 ID_GOV_BR UK "opcional"
+        NUMBER TENTATIVAS_LOGIN "NN 0 a 5"
+        TIMESTAMP BLOQUEADO_ATE "opcional"
+    }
+    USUARIO_INSTITUCIONAL {
+        NUMBER ID_PESSOA PK,FK
+        NUMBER ID_UNIDADE FK "NN"
+        VARCHAR2 LOGIN UK "NN"
+        VARCHAR2 SENHA_HASH "NN"
+        VARCHAR2 PERFIL "NN ATENDENTE ou GESTOR"
+    }
+    CONTATO_CIDADAO {
+        NUMBER ID_CONTATO PK
+        NUMBER ID_CIDADAO FK "NN"
+        VARCHAR2 TIPO_CONTATO "NN"
+        VARCHAR2 VALOR "NN"
+        CHAR PRINCIPAL "NN S ou N"
+    }
+    UNIDADE_SAUDE {
+        NUMBER ID_UNIDADE PK
+        VARCHAR2 NOME "NN"
+        CHAR CNES UK "opcional"
+        VARCHAR2 TIPO_UNIDADE "NN UBS ou ESPECIALIZADA"
+        VARCHAR2 LOGRADOURO "NN endereco"
+        VARCHAR2 NUMERO "NN endereco"
+        VARCHAR2 COMPLEMENTO "opcional endereco"
+        VARCHAR2 BAIRRO "NN endereco"
+        VARCHAR2 CIDADE "NN endereco"
+        CHAR UF "NN endereco"
+        CHAR CEP "NN endereco"
+    }
+    ESPECIALIDADE {
+        NUMBER ID_ESPECIALIDADE PK
+        VARCHAR2 NOME UK "NN"
+    }
+    HORARIO_DISPONIVEL {
+        NUMBER ID_HORARIO PK
+        NUMBER ID_ESPECIALIDADE FK,UK "NN"
+        NUMBER ID_UNIDADE FK,UK "NN"
+        TIMESTAMP DATA_HORA UK "NN"
+    }
+    ENCAMINHAMENTO {
+        NUMBER ID_ENCAMINHAMENTO PK
+        VARCHAR2 PROTOCOLO UK "NN"
+        DATE DATA_CRIACAO "NN"
+        VARCHAR2 STATUS "NN 4 status"
+        CHAR URGENTE "NN S ou N"
+        NUMBER ID_CIDADAO FK "NN"
+        NUMBER ID_ESPECIALIDADE FK "NN"
+        NUMBER ID_UNIDADE_ORIGEM FK "NN"
+        NUMBER ID_UNIDADE_DESTINO FK "NN"
+    }
+    AGENDAMENTO {
+        NUMBER ID_AGENDAMENTO PK
+        NUMBER ID_ENCAMINHAMENTO FK "NN 1 ativo por encaminhamento"
+        NUMBER ID_HORARIO FK "NN 1 ativo por horario"
+        NUMBER ID_ESPECIALIDADE FK "NN igual no encaminhamento e no horario"
+        NUMBER ID_UNIDADE FK "NN igual ao destino e ao horario"
+        NUMBER ID_AGENDAMENTO_ORIGEM FK "opcional agendamento substituido"
+        VARCHAR2 STATUS "NN AGENDADO CANCELADO CONCLUIDO FALTA"
+        TIMESTAMP DATA_CRIACAO "NN"
+        TIMESTAMP DATA_CANCELAMENTO "opcional"
+    }
+    HISTORICO_STATUS {
+        NUMBER ID_HISTORICO PK
+        NUMBER ID_ENCAMINHAMENTO FK "NN"
+        VARCHAR2 STATUS_ANTERIOR "opcional"
+        VARCHAR2 STATUS_NOVO "NN"
+        TIMESTAMP DATA_HORA "NN"
+        NUMBER ID_RESPONSAVEL FK "opcional"
+    }
+    CHAMADA {
+        NUMBER ID_CHAMADA PK
+        NUMBER ID_AGENDAMENTO FK "NN"
+        VARCHAR2 SENHA "NN"
+        VARCHAR2 SALA "NN"
+        TIMESTAMP DATA_HORA "NN"
+        NUMBER ID_USUARIO FK "NN"
+    }
+</pre>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: "default", er: { useMaxWidth: false, layoutDirection: "TB" } });
+</script>
+</body>
+</html>

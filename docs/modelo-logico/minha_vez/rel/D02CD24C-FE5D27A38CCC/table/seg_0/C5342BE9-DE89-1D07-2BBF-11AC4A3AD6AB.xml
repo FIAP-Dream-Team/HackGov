@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C5342BE9-DE89-1D07-2BBF-11AC4A3AD6AB" name="USUARIO_INSTITUCIONAL">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>B10452A3-26A6-C518-FF5E-1E36887E3ECD</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PESSOA" id="6B4D1935-B628-3F28-D2B7-D62880AB00FF">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>3D8C3751-C5D5-A4A8-57A1-49C9F2549286</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70C42E7A-714F-2667-44B3-98A75459094E" referredColumn="AB3FF1D5-0CD0-B20D-2FE2-1EB621A2694F"/>
+</associations>
+</Column>
+<Column name="ID_UNIDADE" id="D4858877-E932-1464-AE83-8B2AA531CA04">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>2DBF9692-23B1-0030-C8AF-94E20E9D886D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4ACDD142-112F-4200-EEA4-8C30E757EF3A" referredColumn="18935F31-2806-F6E2-8924-DF043EE0FF54"/>
+</associations>
+</Column>
+<Column name="LOGIN" id="50F5E1FC-AB5E-ABBD-4EC2-E65FE9F3CA9B">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>09B4A5DF-4700-6621-32B4-345BA74BE6EA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>88B24FA3-0E7E-42C8-ED81-6757E8BA55C4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENHA_HASH" id="6F27E3F0-D3F0-B6A5-F5F4-BB8967A40EEA">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>F95F9C33-A0E1-F131-F088-50D51897161D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28266E3F-C720-67D0-6B73-AC1A4F3C79D1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PERFIL" id="FB5D0E51-39C0-813C-ED6E-5537C8D72266">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>EFD2823A-7FB9-D413-9406-C9E211A61D15</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F242F18C-352E-6838-4B17-6F989DC5EF0D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1D92C925-0E73-01AF-0DBB-EE066C7A6BC4" name="PK_USUARIO_INSTITUCIONAL">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>DF2F332B-A033-72BA-99D9-C989A623E580</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B4D1935-B628-3F28-D2B7-D62880AB00FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFEDE09A-BF26-9786-A560-0EAD05D793C5" name="UK_USUARIO_LOGIN">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>A1BADD3A-2172-4EBD-2275-1AFD23FB3108</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50F5E1FC-AB5E-ABBD-4EC2-E65FE9F3CA9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CDE52046-A1DD-2D32-4876-EDBF3B29CEFE" name="FK_USUARIO_PESSOA">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B4D1935-B628-3F28-D2B7-D62880AB00FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8FE2C53C-9C86-F746-8BFB-DF711B717B22" name="FK_USUARIO_UNIDADE">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D4858877-E932-1464-AE83-8B2AA531CA04"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_USUARIO_PERFIL" directorySegmentName="seg_0" id="2D4C740A-2F95-5B01-5F1A-B909B6D9F511">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>18E8BEBD-9C71-7B93-B0FF-736A8E55C08A</importedID>
+<rule><![CDATA[PERFIL IN ('ATENDENTE', 'GESTOR')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

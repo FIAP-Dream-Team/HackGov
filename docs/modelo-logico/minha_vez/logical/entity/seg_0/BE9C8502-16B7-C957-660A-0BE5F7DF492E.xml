@@ -1,0 +1,213 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BE9C8502-16B7-C957-660A-0BE5F7DF492E" name="AGENDAMENTO">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>259A2C5C-018B-2FDA-AE43-DAF1E74A873C</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID AGENDAMENTO" id="887E8FE0-A9D6-E751-9FE0-50BBF0F350D7">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>9300A54A-B8C0-25CE-9B92-36E82D02F4A1</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID ENCAMINHAMENTO" id="C08C06A6-64E7-1C52-BCBD-2B3D734C78F0">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>03B8D2C0-40F4-C2A1-7AB0-BD6F81FC8583</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<referedAttribute>B08593F9-D4A2-189C-A129-18C56DE83B98</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID HORARIO" id="40AD1048-AA75-1FE3-0F50-3AD822C5A6F9">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>DC012BE3-9E7A-5D52-520A-D54E9024EEFE</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<referedAttribute>60B2E0DC-6C76-C19B-60D6-39DBC9829450</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID ESPECIALIDADE" id="84E56597-4442-4B8B-ADCB-D1C7254D6093">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>03B8D2C0-40F4-C2A1-7AB0-BD6F81FC8583</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<referedAttribute>F06E14E1-7B7C-523E-C399-18C33A2F88A1</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID UNIDADE" id="137B035B-AE93-6677-6BB3-598F6EF719B1">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>03B8D2C0-40F4-C2A1-7AB0-BD6F81FC8583</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<referedAttribute>2E97179D-070D-E732-C22D-5759CEC11D5E</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID AGENDAMENTO ORIGEM" id="C30E8AE4-5C07-2BBB-0950-47F86314AC32">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>2FEC06C0-AE93-F08F-C099-4914DDC428F0</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>887E8FE0-A9D6-E751-9FE0-50BBF0F350D7</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="STATUS" id="799C02CF-3D6D-0551-D6DB-EF7209921056">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>A2DD0FEF-2B1F-0E1E-9FDF-0D306978FBCC</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F242F18C-352E-6838-4B17-6F989DC5EF0D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DATA CRIACAO" id="92D68B47-F2BC-1432-3C73-A4C83EA4EE68">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>31C22AE0-7AB8-D321-6306-787A01DB6091</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>CEF75D65-EC56-A6F5-802C-B7374BC7BFAB</domain>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DATA CANCELAMENTO" id="8E3DE500-4B70-B118-3854-EB059089D969">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>AECC3D46-FD76-453B-DF97-9E2486C9DE0A</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>CEF75D65-EC56-A6F5-802C-B7374BC7BFAB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID ESPECIALIDADE1" id="3C607450-E650-2B8B-695F-5B8F2373FE41">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>DC012BE3-9E7A-5D52-520A-D54E9024EEFE</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<referedAttribute>2E02F96A-EE81-589A-12F5-EFB5662F4C02</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID UNIDADE1" id="B9F02FDA-5D5E-A03A-FF3D-0C48BCCF861D">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>DC012BE3-9E7A-5D52-520A-D54E9024EEFE</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<referedAttribute>402B8458-EEAA-2A44-E96B-47D57ECEFDC5</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="571DC0F8-DD23-E529-65B2-A026586E9DB7" name="PK AGENDAMENTO">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>40CAF8DA-8BF3-ED28-42C1-722B99B14178</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>887E8FE0-A9D6-E751-9FE0-50BBF0F350D7</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="97A8FADB-C6B9-3684-7381-1E8984FEF1A4" name="UK AGEND ENCAM">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>82993939-DB35-A439-46F9-1F927BF965D6</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>887E8FE0-A9D6-E751-9FE0-50BBF0F350D7</attributeRef>
+<attributeRef>C08C06A6-64E7-1C52-BCBD-2B3D734C78F0</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="CF10F292-4F86-A319-A916-CA84750BBDD9" name="UK AGEND ORIGEM">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>B014503D-BF96-EAFB-011A-B63886F3090F</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>C30E8AE4-5C07-2BBB-0950-47F86314AC32</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6B73CF78-6D3E-9FE4-7373-071D0F8E2DA5" containerWithKeyObject="49F991BF-787F-82F7-ED7D-6203730B2E09" localFKIndex="5A96680F-CEF3-5AB2-D5B0-DF69E0A3D2E2" name="FK_ENCAM_ESPECIALIDADE">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>A1DFDD75-4837-9EAC-2CFB-A9EED91BCB6E</importedID>
+<referredTableLongName>ESPECIALIDADE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E20895EE-F9F0-CA34-79A8-F9D46EDCFF3A</referredTableID>
+<keyObject>B3574FAE-61CA-E23B-692B-E075E843CF04</keyObject>
+<referredKeyID>B3574FAE-61CA-E23B-692B-E075E843CF04</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ESPECIALIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

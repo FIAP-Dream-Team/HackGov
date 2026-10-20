@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_HIST_RESPONSAVEL" directorySegmentName="seg_0" id="320C8546-AC51-14B9-D7C5-4294BBA796A5">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>55CFA7BB-D761-C4EC-9FE7-08403CB5605C</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<sourcePk>871E0EB1-7795-F655-6B79-D2A45636F508</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>46378951-BC61-5721-634D-34E130F171E3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>268C58D3-8A5E-A3A4-E97C-52A8960E6F5A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

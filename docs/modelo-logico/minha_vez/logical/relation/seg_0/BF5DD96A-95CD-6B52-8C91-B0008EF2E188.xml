@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_ENCAM_UNIDADE_DESTINO" directorySegmentName="seg_0" id="BF5DD96A-95CD-6B52-8C91-B0008EF2E188">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>E5CC5FC3-AC88-97D6-7629-62B9DC8B4572</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<sourcePk>E220A943-16CA-BFD6-4F8F-853ABCDE2A3B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1BEA47D5-7F0B-4541-3107-4A0671C1433F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B3D7BCA5-DD25-2073-97AE-9298718B8D06</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

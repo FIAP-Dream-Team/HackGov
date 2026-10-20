@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_HIST_ENCAMINHAMENTO" directorySegmentName="seg_0" id="BB3CD6AA-5D0F-FED1-618F-FB042AC04659">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>C66962CD-88A5-E530-355B-21EBBBC622D6</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<sourcePk>3F6BEF32-8695-77ED-9213-AD3CA159599A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B3D7BCA5-DD25-2073-97AE-9298718B8D06</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>268C58D3-8A5E-A3A4-E97C-52A8960E6F5A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

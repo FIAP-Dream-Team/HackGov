@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="HISTORICO_STATUS" directorySegmentName="seg_0" id="57926DFF-E15A-F558-C939-59C7EDF8283D">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_RESPONSAVEL" id="3D127216-AE88-A95F-92F6-D3671A8D2084">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_HISTORICO" id="461899B7-206B-BFDE-0623-9CA1DFDF73F7">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STATUS_ANTERIOR" id="93E9226F-754F-90BE-898C-A8EE446174F2">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_ENCAMINHAMENTO" id="BFDAD657-8DEC-824B-832F-94E03F301E75">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STATUS_NOVO" id="CB7B64A3-8AA3-C785-7496-6EA5ED69F132">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DATA_HORA" id="E4770A09-09CB-BFEF-9CB8-6CBC6F309560">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_HIST_ENCAMINHAMENTO" id="ADB3DB6B-829F-883F-6295-F24147B72797">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_HIST_RESPONSAVEL" id="3952CBE1-DBAE-2DE7-E2C8-0B551F6406D9">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_HIST_ENCAMINHAMENTO" id="D347E92E-CD91-5637-3B55-2CC2B2DAA15B">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_HISTORICO_STATUS" id="AD17E3A3-FEBB-A90E-A980-3FEB5BCEA238">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="CK_HIST_STATUS_ANTERIOR" id="59E1E74A-3326-69CF-5AA1-B068CCC8F45C">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="CK_HIST_MUDANCA" id="6AFA5065-A959-1D0D-60AD-E79A5E782A15">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="CK_HIST_STATUS_NOVO" id="BBCD8BF1-503D-A3FE-6CEF-073F5B0B01EC">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev20c>

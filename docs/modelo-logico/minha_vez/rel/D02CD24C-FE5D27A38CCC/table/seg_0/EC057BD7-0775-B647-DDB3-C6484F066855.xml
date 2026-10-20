@@ -1,0 +1,188 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC057BD7-0775-B647-DDB3-C6484F066855" name="CIDADAO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>6F7BC02D-B47D-A51F-AB88-D8ACCA615E2E</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PESSOA" id="C8A1B5A7-B691-E60A-A8E9-BA123787D36E">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>86ACEED7-9717-226A-B99E-6993AF475750</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>F14D82AC-F5A1-A98C-179D-7F26EEDCFB9F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0494BCFA-5373-5FE0-852D-CECA94C837FC" referredColumn="AB3FF1D5-0CD0-B20D-2FE2-1EB621A2694F"/>
+</associations>
+</Column>
+<Column name="CPF" id="70A28AD8-0278-14F2-5E7F-3346D980AFAF">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>E24B6101-4D85-D081-3140-6680586FAEC0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>ACC982D7-EB5B-8F85-164B-CD41221D8A7F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARTAO_SUS" id="5E5A092C-B2BC-0ED4-4E91-AC579ED96A20">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>27C06C01-A978-865F-88BF-513AE5BC706D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>3696DD0D-0CA2-9AAC-E1AB-438C22ED6846</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_NASCIMENTO" id="90CDBA6B-F700-C24D-4709-3234CF2A1DA6">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>3FA0DFCF-F1EC-CD44-436D-1B2BF766DF64</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>3BFB3F56-0772-D0F8-1EAD-A4979061E712</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENHA_HASH" id="BAF3FD53-4E48-1E10-2797-C52AB4CC8FAE">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>F94208EA-D739-6402-5AB9-FBF81116039B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>28266E3F-C720-67D0-6B73-AC1A4F3C79D1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_GOV_BR" id="A0E2927C-F458-1C2A-3FF5-1562CCDFBCD4">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>7C4535CF-F484-6EB5-5141-0815A83F7B4A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>2254A347-C9B8-7655-8FA2-184AFA169B1C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TENTATIVAS_LOGIN" id="B64173EF-E15D-08E3-29BB-54C3479123CB">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>30A3FB3C-93B7-E749-99EF-420C3FDA91F1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>6C836501-4DB5-2549-FFEC-A707847D7891</domain>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BLOQUEADO_ATE" id="C0A4F448-131A-7644-360A-7F606831E9AB">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>247A0756-A3F8-96D8-017F-7C69CE44BC56</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>CEF75D65-EC56-A6F5-802C-B7374BC7BFAB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1B966831-0E60-0B96-F4F1-BF023E848CF5" name="PK_CIDADAO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>F0E147E5-6339-51D5-B31B-6E005787F0A8</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8A1B5A7-B691-E60A-A8E9-BA123787D36E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C1D9BD58-1243-83DE-3AFB-1710D343B264" name="UK_CIDADAO_CPF">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>556B1011-F144-8C85-F74E-2E27BBF4A9C8</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70A28AD8-0278-14F2-5E7F-3346D980AFAF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0D8EF275-B861-F07B-6445-1387CEFE2E07" name="UK_CIDADAO_CARTAO_SUS">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>6317CC82-BD2A-034A-ED57-DC8D916F6D31</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E5A092C-B2BC-0ED4-4E91-AC579ED96A20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="54F158F5-C2C9-3E18-1F9F-DACD47929B3E" name="UK_CIDADAO_GOV_BR">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>DCF705BE-9012-391D-8F04-248F8E689778</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0E2927C-F458-1C2A-3FF5-1562CCDFBCD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="12E9F625-14FF-89E8-40BD-4F4D22DA30EF" name="FK_CIDADAO_PESSOA">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8A1B5A7-B691-E60A-A8E9-BA123787D36E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_CIDADAO_TENTATIVAS" directorySegmentName="seg_0" id="8CAC5F03-7D2E-ABC0-E32C-D9B102B429CF">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>F8AC55C0-C1FF-3193-1474-77D79ED8E507</importedID>
+<rule><![CDATA[TENTATIVAS_LOGIN BETWEEN 0 AND 5]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

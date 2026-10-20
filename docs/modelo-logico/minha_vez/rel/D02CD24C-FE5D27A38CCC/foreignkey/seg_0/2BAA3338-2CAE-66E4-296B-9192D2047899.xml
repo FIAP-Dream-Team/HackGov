@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2BAA3338-2CAE-66E4-296B-9192D2047899" containerWithKeyObject="CC01DDAE-BD54-EAFD-63D4-4821FE428A09" localFKIndex="8C660710-36ED-8A86-E618-0B01A5B42141" name="FK_CHAMADA_USUARIO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>0548B440-A32C-FAE6-3DE6-7C5C81CD036D</importedID>
+<referredTableLongName>USUARIO_INSTITUCIONAL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C5342BE9-DE89-1D07-2BBF-11AC4A3AD6AB</referredTableID>
+<keyObject>1D92C925-0E73-01AF-0DBB-EE066C7A6BC4</keyObject>
+<referredKeyID>1D92C925-0E73-01AF-0DBB-EE066C7A6BC4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_PESSOA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

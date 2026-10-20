@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_CONTATO_CIDADAO" directorySegmentName="seg_0" id="633510F9-47A0-62F0-9F70-078A1AD37CE7">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>8271FD52-5295-6E1D-4BD0-7D603492E28A</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<sourcePk>CE6FDF63-EBC6-6BED-43BD-25AD890BDEF3</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AD873B58-AAB4-CE6C-AE01-A5C70C43C2ED</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>BA7B4E9C-1065-D60B-C433-033D1D5C30C0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

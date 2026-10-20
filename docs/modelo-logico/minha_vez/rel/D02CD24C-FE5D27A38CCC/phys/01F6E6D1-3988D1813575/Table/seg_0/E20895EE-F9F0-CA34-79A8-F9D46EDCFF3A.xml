@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="ESPECIALIDADE" directorySegmentName="seg_0" id="E20895EE-F9F0-CA34-79A8-F9D46EDCFF3A">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOME" id="5B143127-0546-580E-6748-4A7698D23843">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_ESPECIALIDADE" id="DB6FFC37-C112-C307-3D2A-687E253CEDC0">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_ESPECIALIDADE" id="B3574FAE-61CA-E23B-692B-E075E843CF04">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_ESPECIALIDADE_NOME" id="408374F5-F15D-EB4E-78BB-6714725C132B">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:16 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

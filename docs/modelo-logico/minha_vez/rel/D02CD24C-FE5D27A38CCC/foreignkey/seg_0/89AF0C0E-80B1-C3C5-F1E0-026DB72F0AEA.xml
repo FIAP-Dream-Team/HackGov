@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="89AF0C0E-80B1-C3C5-F1E0-026DB72F0AEA" containerWithKeyObject="259A2C5C-018B-2FDA-AE43-DAF1E74A873C" localFKIndex="8B811F4C-B5EC-A1C0-5CE7-39BAF627108C" name="FK_AGEND_ENCAMINHAMENTO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>DDBFDF84-E55F-4670-27CF-6388A8C5BFC6</importedID>
+<referredTableLongName>ENCAMINHAMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>49F991BF-787F-82F7-ED7D-6203730B2E09</referredTableID>
+<keyObject>9E9DE5F8-0306-07F4-C2A4-2098D64086E5</keyObject>
+<referredKeyID>9E9DE5F8-0306-07F4-C2A4-2098D64086E5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ENCAMINHAMENTO,ID_ESPECIALIDADE,ID_UNIDADE_DESTINO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

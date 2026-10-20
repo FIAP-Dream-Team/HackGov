@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_HORARIO_ESPECIALIDADE" directorySegmentName="seg_0" id="5D928E72-C4B0-36C9-034C-54F869BF006E">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:24:14 UTC</createdTime>
+<generatorID>5A15969B-8517-E0B9-7654-F5C6D06BC676</generatorID>
+<ownerDesignName>minha_vez</ownerDesignName>
+<engineerTo>
+<item key="D02CD24C-2D7C-9393-9D89-FE5D27A38CCC" value="true"/>
+</engineerTo>
+<sourcePk>BFBBA530-2B26-C911-604A-F3C62D9E8B37</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>517F64EE-67F8-71FB-CE39-5FF0C6476CBC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F2D9E722-436E-989B-223F-652484E12536</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

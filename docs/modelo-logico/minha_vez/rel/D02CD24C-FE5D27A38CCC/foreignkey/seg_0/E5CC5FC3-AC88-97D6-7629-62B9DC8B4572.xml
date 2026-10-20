@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E5CC5FC3-AC88-97D6-7629-62B9DC8B4572" containerWithKeyObject="49F991BF-787F-82F7-ED7D-6203730B2E09" localFKIndex="5F944809-538D-ACB9-D5DB-1B6F3A22905F" name="FK_ENCAM_UNIDADE_DESTINO">
+<sourceDDLFile>minha_vez_ddl.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-18 23:20:17 UTC</createdTime>
+<ownerDesignName>minha_vez</ownerDesignName>
+<importedID>2D8DAFE5-3EE4-1A08-AE18-88DC8095646E</importedID>
+<referredTableLongName>UNIDADE_SAUDE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BD4434DD-31AB-CB66-BB5B-C8B1F9A8D790</referredTableID>
+<keyObject>28268B6E-813B-BD03-47D0-BB953C85ADB3</keyObject>
+<referredKeyID>28268B6E-813B-BD03-47D0-BB953C85ADB3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_UNIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
