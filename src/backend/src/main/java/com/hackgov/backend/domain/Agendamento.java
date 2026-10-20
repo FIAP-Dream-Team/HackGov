@@ -6,8 +6,10 @@ public class Agendamento {
 
     private Long id;
     private LocalDateTime dataHora;
+    private LocalDateTime dataCancelamento;
     private StatusAgendamento status;
     private HorarioDisponivel horario;
+    private Agendamento agendamentoOrigem;
 
     public Agendamento(
             Long id,
@@ -48,33 +50,34 @@ public class Agendamento {
         }
 
         this.status = StatusAgendamento.CANCELADO;
-    }
-
-    public void reagendar(LocalDateTime novaDataHora) {
-
-        if (status != StatusAgendamento.AGENDADO) {
-            throw new IllegalStateException(
-                    "Só é possível reagendar um agendamento ativo."
-            );
-        }
-
-        if (novaDataHora == null) {
-            throw new IllegalArgumentException(
-                    "O novo horário é obrigatório."
-            );
-        }
-
-        if (novaDataHora.isBefore(LocalDateTime.now())) {
-            throw new IllegalArgumentException(
-                    "Não é possível reagendar para uma data passada."
-            );
-        }
-
-        this.dataHora = novaDataHora;
+        this.dataCancelamento = LocalDateTime.now();
     }
 
     void definirHorario(HorarioDisponivel horario) {
         this.horario = horario;
+    }
+
+    void definirOrigem(Agendamento origem) {
+
+        if (origem == null) {
+            throw new IllegalArgumentException(
+                    "O agendamento de origem é obrigatório."
+            );
+        }
+
+        if (origem == this) {
+            throw new IllegalArgumentException(
+                    "O agendamento não pode ser origem de si mesmo."
+            );
+        }
+
+        if (this.agendamentoOrigem != null) {
+            throw new IllegalStateException(
+                    "O agendamento já aponta para uma origem."
+            );
+        }
+
+        this.agendamentoOrigem = origem;
     }
 
     public Long getId() {
@@ -85,11 +88,19 @@ public class Agendamento {
         return dataHora;
     }
 
+    public LocalDateTime getDataCancelamento() {
+        return dataCancelamento;
+    }
+
     public StatusAgendamento getStatus() {
         return status;
     }
 
     public HorarioDisponivel getHorario() {
         return horario;
+    }
+
+    public Agendamento getAgendamentoOrigem() {
+        return agendamentoOrigem;
     }
 }

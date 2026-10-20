@@ -25,8 +25,12 @@ public class HistoricoStatus {
 
     public void registrarAlteracao() {
 
+        String anterior = statusAnterior == null
+                ? "criação"
+                : statusAnterior.toString();
+
         System.out.println(
-                statusAnterior + " -> " + statusNovo
+                anterior + " -> " + statusNovo
         );
 
         if (responsavel != null) {

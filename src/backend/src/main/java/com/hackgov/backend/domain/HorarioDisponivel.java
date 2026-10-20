@@ -6,17 +6,25 @@ public class HorarioDisponivel {
 
     private Long id;
     private Especialidade especialidade;
+    private UnidadeSaude unidade;
     private LocalDateTime dataHora;
     private Agendamento agendamento;
 
     public HorarioDisponivel(
             Long id,
             Especialidade especialidade,
+            UnidadeSaude unidade,
             LocalDateTime dataHora) {
 
         if (especialidade == null) {
             throw new IllegalArgumentException(
                     "A especialidade é obrigatória."
+            );
+        }
+
+        if (unidade == null) {
+            throw new IllegalArgumentException(
+                    "A unidade é obrigatória."
             );
         }
 
@@ -34,6 +42,7 @@ public class HorarioDisponivel {
 
         this.id = id;
         this.especialidade = especialidade;
+        this.unidade = unidade;
         this.dataHora = dataHora;
     }
 
@@ -75,6 +84,10 @@ public class HorarioDisponivel {
 
     public Especialidade getEspecialidade() {
         return especialidade;
+    }
+
+    public UnidadeSaude getUnidade() {
+        return unidade;
     }
 
     public LocalDateTime getDataHora() {

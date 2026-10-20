@@ -23,6 +23,18 @@ public class Cidadao extends Pessoa {
             );
         }
 
+        if (dataNascimento == null) {
+            throw new IllegalArgumentException(
+                    "A data de nascimento é obrigatória."
+            );
+        }
+
+        if (dataNascimento.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException(
+                    "A data de nascimento não pode ser no futuro."
+            );
+        }
+
         this.cpf = cpf;
         this.cartaoSus = cartaoSus;
         this.dataNascimento = dataNascimento;

@@ -38,9 +38,10 @@ public class Especialidade {
 
         for (HorarioDisponivel existente : horarios) {
 
-            if (existente.getDataHora().equals(horario.getDataHora())) {
+            if (existente.getDataHora().equals(horario.getDataHora())
+                    && existente.getUnidade().equals(horario.getUnidade())) {
                 throw new IllegalArgumentException(
-                        "Já existe horário nessa data para a especialidade."
+                        "Já existe horário nessa data para a especialidade nesta unidade."
                 );
             }
         }

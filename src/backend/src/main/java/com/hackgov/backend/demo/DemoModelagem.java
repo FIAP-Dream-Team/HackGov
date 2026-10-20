@@ -32,17 +32,61 @@ public class DemoModelagem {
                         "Cardiologia"
                 );
 
+        UnidadeSaude ubsCentro = new UnidadeSaude(
+                1L,
+                "UBS Centro",
+                TipoUnidade.UBS,
+                null,
+                "Rua das Flores",
+                "100",
+                null,
+                "Centro",
+                "São Paulo",
+                "SP",
+                "01001000"
+        );
+
+        UnidadeSaude ambulatorio = new UnidadeSaude(
+                2L,
+                "Ambulatório de Especialidades",
+                TipoUnidade.ESPECIALIZADA,
+                "1234567",
+                "Avenida Brasil",
+                "500",
+                "Bloco B",
+                "Centro",
+                "São Paulo",
+                "SP",
+                "01002000"
+        );
+
+        UnidadeSaude outroAmbulatorio = new UnidadeSaude(
+                3L,
+                "Ambulatório Leste",
+                TipoUnidade.ESPECIALIZADA,
+                null,
+                "Rua do Leste",
+                "20",
+                null,
+                "Tatuapé",
+                "São Paulo",
+                "SP",
+                "03001000"
+        );
+
         UsuarioInstitucional atendente =
                 new UsuarioInstitucional(
                         1L,
                         "Maria Souza",
                         "maria.ubs",
-                        PerfilUsuario.ATENDENTE
+                        PerfilUsuario.ATENDENTE,
+                        ubsCentro
                 );
 
         HorarioDisponivel horarioQuatorze = new HorarioDisponivel(
                 1L,
                 cardiologia,
+                ambulatorio,
                 LocalDateTime.now()
                         .plusDays(7)
                         .withHour(14)
@@ -54,6 +98,7 @@ public class DemoModelagem {
         HorarioDisponivel horarioNove = new HorarioDisponivel(
                 2L,
                 cardiologia,
+                ambulatorio,
                 LocalDateTime.now()
                         .plusDays(8)
                         .withHour(9)
@@ -62,8 +107,21 @@ public class DemoModelagem {
                         .withNano(0)
         );
 
+        HorarioDisponivel horarioOutraUnidade = new HorarioDisponivel(
+                3L,
+                cardiologia,
+                outroAmbulatorio,
+                LocalDateTime.now()
+                        .plusDays(7)
+                        .withHour(14)
+                        .withMinute(0)
+                        .withSecond(0)
+                        .withNano(0)
+        );
+
         cardiologia.publicarHorario(horarioQuatorze);
         cardiologia.publicarHorario(horarioNove);
+        cardiologia.publicarHorario(horarioOutraUnidade);
 
         System.out.println();
 
@@ -72,8 +130,11 @@ public class DemoModelagem {
         Encaminhamento encaminhamento =
                 new Encaminhamento(
                         1L,
+                        "MV-2026-0001",
                         cidadao,
-                        cardiologia
+                        cardiologia,
+                        ubsCentro,
+                        ambulatorio
                 );
 
         System.out.println();
@@ -85,6 +146,16 @@ public class DemoModelagem {
         System.out.println(
                 "Especialidade: "
                         + cardiologia.getNome()
+        );
+
+        System.out.println(
+                "Protocolo: "
+                        + encaminhamento.getProtocolo()
+        );
+
+        System.out.println(
+                "Urgente: "
+                        + encaminhamento.isUrgente()
         );
 
         System.out.println(
@@ -109,15 +180,24 @@ public class DemoModelagem {
 
         System.out.println();
         System.out.println(
-                "Horários livres: " + livres.size()
+                "Horários livres na unidade de destino: "
+                        + livres.size()
         );
 
         for (HorarioDisponivel horario : livres) {
             System.out.println(
                     "- "
                             + horario.getDataHora().format(formato)
+                            + " ("
+                            + horario.getUnidade().getNome()
+                            + ")"
             );
         }
+
+        System.out.println(
+                "Vaga de outra unidade visível: "
+                        + livres.contains(horarioOutraUnidade)
+        );
 
         Agendamento agendamento = encaminhamento.selecionarHorario(
                 horarioQuatorze
@@ -139,10 +219,10 @@ public class DemoModelagem {
         );
         System.out.println(
                 "Horários livres depois da escolha: "
-                        + cardiologia.consultarHorariosDisponiveis().size()
+                        + vagasLivresNaUnidade(cardiologia, ambulatorio)
         );
 
-        encaminhamento.reagendar(
+        Agendamento reagendado = encaminhamento.reagendar(
                 agendamento,
                 horarioNove
         );
@@ -150,7 +230,19 @@ public class DemoModelagem {
         System.out.println();
         System.out.println(
                 "Reagendado para: "
-                        + agendamento.getDataHora().format(formato)
+                        + reagendado.getDataHora().format(formato)
+        );
+        System.out.println(
+                "Agendamentos no encaminhamento: "
+                        + encaminhamento.getAgendamentos().size()
+        );
+        System.out.println(
+                "Anterior ficou: "
+                        + agendamento.getStatus()
+        );
+        System.out.println(
+                "Novo aponta para o cancelado: "
+                        + (reagendado.getAgendamentoOrigem() == agendamento)
         );
         System.out.println(
                 "Horário das 14h liberado: "
@@ -161,12 +253,20 @@ public class DemoModelagem {
                         + !horarioNove.estaLivre()
         );
 
-        encaminhamento.cancelarAgendamento(agendamento);
+        encaminhamento.cancelarAgendamento(reagendado);
 
         System.out.println();
         System.out.println(
                 "Agendamento cancelado: "
-                        + agendamento.getStatus()
+                        + reagendado.getStatus()
+        );
+        System.out.println(
+                "Horário cancelado ainda registrado: "
+                        + (reagendado.getHorario() == horarioNove)
+        );
+        System.out.println(
+                "Data de cancelamento preenchida: "
+                        + (reagendado.getDataCancelamento() != null)
         );
         System.out.println(
                 "Encaminhamento voltou para: "
@@ -174,7 +274,7 @@ public class DemoModelagem {
         );
         System.out.println(
                 "Horários livres depois do cancelamento: "
-                        + cardiologia.consultarHorariosDisponiveis().size()
+                        + vagasLivresNaUnidade(cardiologia, ambulatorio)
         );
 
         System.out.println();
@@ -200,13 +300,24 @@ public class DemoModelagem {
         Encaminhamento aindaTriado =
                 new Encaminhamento(
                         2L,
+                        "MV-2026-0002",
                         cidadao,
-                        cardiologia
+                        cardiologia,
+                        ubsCentro,
+                        ambulatorio
                 );
 
         try {
             aindaTriado.solicitarAgendamento();
         } catch (IllegalStateException erro) {
+            System.out.println(
+                    "Erro esperado: " + erro.getMessage()
+            );
+        }
+
+        try {
+            encaminhamento.selecionarHorario(horarioOutraUnidade);
+        } catch (IllegalArgumentException erro) {
             System.out.println(
                     "Erro esperado: " + erro.getMessage()
             );
@@ -244,5 +355,15 @@ public class DemoModelagem {
         System.out.println("==========================");
         System.out.println("     FIM DA EXECUÇÃO");
         System.out.println("==========================");
+    }
+
+    private static long vagasLivresNaUnidade(
+            Especialidade especialidade,
+            UnidadeSaude unidade) {
+
+        return especialidade.consultarHorariosDisponiveis()
+                .stream()
+                .filter(horario -> unidade.equals(horario.getUnidade()))
+                .count();
     }
 }

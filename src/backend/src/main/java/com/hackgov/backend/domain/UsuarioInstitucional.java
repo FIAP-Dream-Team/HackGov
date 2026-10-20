@@ -4,12 +4,14 @@ public class UsuarioInstitucional extends Pessoa {
 
     private String login;
     private PerfilUsuario perfil;
+    private UnidadeSaude unidade;
 
     public UsuarioInstitucional(
             Long id,
             String nome,
             String login,
-            PerfilUsuario perfil) {
+            PerfilUsuario perfil,
+            UnidadeSaude unidade) {
 
         super(id, nome);
 
@@ -25,8 +27,15 @@ public class UsuarioInstitucional extends Pessoa {
             );
         }
 
+        if (unidade == null) {
+            throw new IllegalArgumentException(
+                    "A unidade de lotação é obrigatória."
+            );
+        }
+
         this.login = login;
         this.perfil = perfil;
+        this.unidade = unidade;
     }
 
     public String getLogin() {
@@ -35,6 +44,10 @@ public class UsuarioInstitucional extends Pessoa {
 
     public PerfilUsuario getPerfil() {
         return perfil;
+    }
+
+    public UnidadeSaude getUnidade() {
+        return unidade;
     }
 
     public void autenticar() {

@@ -1,25 +1,61 @@
 package com.hackgov.backend.domain;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Encaminhamento {
 
+    private static final int LIMITE_DE_REAGENDAMENTOS = 2;
+
     private Long id;
+    private String protocolo;
     private LocalDate dataCriacao;
+    private boolean urgente;
     private StatusEncaminhamento status;
 
     private Cidadao cidadao;
     private Especialidade especialidade;
+    private UnidadeSaude unidadeOrigem;
+    private UnidadeSaude unidadeDestino;
 
     private List<Agendamento> agendamentos;
     private List<HistoricoStatus> historico;
 
     public Encaminhamento(
             Long id,
+            String protocolo,
             Cidadao cidadao,
-            Especialidade especialidade) {
+            Especialidade especialidade,
+            UnidadeSaude unidadeOrigem,
+            UnidadeSaude unidadeDestino) {
+
+        this(
+                id,
+                protocolo,
+                cidadao,
+                especialidade,
+                unidadeOrigem,
+                unidadeDestino,
+                false
+        );
+    }
+
+    public Encaminhamento(
+            Long id,
+            String protocolo,
+            Cidadao cidadao,
+            Especialidade especialidade,
+            UnidadeSaude unidadeOrigem,
+            UnidadeSaude unidadeDestino,
+            boolean urgente) {
+
+        if (protocolo == null || protocolo.isBlank()) {
+            throw new IllegalArgumentException(
+                    "O protocolo é obrigatório."
+            );
+        }
 
         if (cidadao == null) {
             throw new IllegalArgumentException(
@@ -33,9 +69,25 @@ public class Encaminhamento {
             );
         }
 
+        if (unidadeOrigem == null) {
+            throw new IllegalArgumentException(
+                    "A unidade de origem é obrigatória."
+            );
+        }
+
+        if (unidadeDestino == null) {
+            throw new IllegalArgumentException(
+                    "A unidade de destino é obrigatória."
+            );
+        }
+
         this.id = id;
+        this.protocolo = protocolo;
         this.cidadao = cidadao;
         this.especialidade = especialidade;
+        this.unidadeOrigem = unidadeOrigem;
+        this.unidadeDestino = unidadeDestino;
+        this.urgente = urgente;
         this.dataCriacao = LocalDate.now();
 
         this.status =
@@ -43,6 +95,15 @@ public class Encaminhamento {
 
         this.agendamentos = new ArrayList<>();
         this.historico = new ArrayList<>();
+
+        historico.add(
+                new HistoricoStatus(
+                        1L,
+                        null,
+                        StatusEncaminhamento.RECEBIDO_TRIADO,
+                        null
+                )
+        );
     }
 
     public boolean podeAgendar() {
@@ -59,7 +120,17 @@ public class Encaminhamento {
             );
         }
 
-        return especialidade.consultarHorariosDisponiveis();
+        List<HorarioDisponivel> livres = new ArrayList<>();
+
+        for (HorarioDisponivel horario :
+                especialidade.consultarHorariosDisponiveis()) {
+
+            if (unidadeDestino.equals(horario.getUnidade())) {
+                livres.add(horario);
+            }
+        }
+
+        return List.copyOf(livres);
     }
 
     public Agendamento selecionarHorario(HorarioDisponivel horario) {
@@ -159,15 +230,9 @@ public class Encaminhamento {
     public void cancelarAgendamento(Agendamento agendamento) {
 
         exigirAgendamentoAtivo(agendamento);
+        exigirPrazoDeAlteracao(agendamento);
 
-        HorarioDisponivel horario = agendamento.getHorario();
-
-        agendamento.cancelar();
-
-        if (horario != null) {
-            horario.liberar(agendamento);
-            agendamento.definirHorario(null);
-        }
+        encerrarAgendamento(agendamento);
 
         atualizarStatus(
                 StatusEncaminhamento.AGUARDANDO_AGENDAMENTO,
@@ -175,11 +240,13 @@ public class Encaminhamento {
         );
     }
 
-    public void reagendar(
+    public Agendamento reagendar(
             Agendamento agendamento,
             HorarioDisponivel novoHorario) {
 
         exigirAgendamentoAtivo(agendamento);
+        exigirPrazoDeAlteracao(agendamento);
+        exigirLimiteDeReagendamento();
         validarHorarioLivre(novoHorario);
 
         if (agendamento.getHorario() == novoHorario) {
@@ -188,18 +255,33 @@ public class Encaminhamento {
             );
         }
 
-        HorarioDisponivel horarioAtual = agendamento.getHorario();
+        encerrarAgendamento(agendamento);
 
-        if (horarioAtual == null) {
+        Agendamento novo = new Agendamento(
+                (long) agendamentos.size() + 1,
+                novoHorario.getDataHora()
+        );
+
+        novo.definirOrigem(agendamento);
+        novoHorario.ocupar(novo);
+        novo.definirHorario(novoHorario);
+        agendamentos.add(novo);
+
+        return novo;
+    }
+
+    private void encerrarAgendamento(Agendamento agendamento) {
+
+        HorarioDisponivel horario = agendamento.getHorario();
+
+        if (horario == null) {
             throw new IllegalStateException(
                     "O agendamento não está vinculado a um horário."
             );
         }
 
-        agendamento.reagendar(novoHorario.getDataHora());
-        horarioAtual.liberar(agendamento);
-        novoHorario.ocupar(agendamento);
-        agendamento.definirHorario(novoHorario);
+        agendamento.cancelar();
+        horario.liberar(agendamento);
     }
 
     private void exigirAgendamentoAtivo(Agendamento agendamento) {
@@ -223,6 +305,37 @@ public class Encaminhamento {
         }
     }
 
+    private void exigirPrazoDeAlteracao(Agendamento agendamento) {
+
+        LocalDateTime limite = agendamento
+                .getDataHora()
+                .minusHours(24);
+
+        if (LocalDateTime.now().isAfter(limite)) {
+            throw new IllegalStateException(
+                    "Só é possível cancelar ou reagendar até 24 horas antes do horário marcado."
+            );
+        }
+    }
+
+    private void exigirLimiteDeReagendamento() {
+
+        int reagendamentos = 0;
+
+        for (Agendamento existente : agendamentos) {
+
+            if (existente.getAgendamentoOrigem() != null) {
+                reagendamentos++;
+            }
+        }
+
+        if (reagendamentos >= LIMITE_DE_REAGENDAMENTOS) {
+            throw new IllegalStateException(
+                    "O próximo reagendamento só pode ser feito no balcão da UBS."
+            );
+        }
+    }
+
     private void validarHorarioLivre(HorarioDisponivel horario) {
 
         if (horario == null) {
@@ -234,6 +347,12 @@ public class Encaminhamento {
         if (!especialidade.equals(horario.getEspecialidade())) {
             throw new IllegalArgumentException(
                     "O horário não pertence à especialidade do encaminhamento."
+            );
+        }
+
+        if (!unidadeDestino.equals(horario.getUnidade())) {
+            throw new IllegalArgumentException(
+                    "O horário não pertence à unidade de destino do encaminhamento."
             );
         }
 
@@ -275,8 +394,16 @@ public class Encaminhamento {
         return id;
     }
 
+    public String getProtocolo() {
+        return protocolo;
+    }
+
     public LocalDate getDataCriacao() {
         return dataCriacao;
+    }
+
+    public boolean isUrgente() {
+        return urgente;
     }
 
     public StatusEncaminhamento getStatus() {
@@ -289,6 +416,14 @@ public class Encaminhamento {
 
     public Especialidade getEspecialidade() {
         return especialidade;
+    }
+
+    public UnidadeSaude getUnidadeOrigem() {
+        return unidadeOrigem;
+    }
+
+    public UnidadeSaude getUnidadeDestino() {
+        return unidadeDestino;
     }
 
     public List<Agendamento> getAgendamentos() {
