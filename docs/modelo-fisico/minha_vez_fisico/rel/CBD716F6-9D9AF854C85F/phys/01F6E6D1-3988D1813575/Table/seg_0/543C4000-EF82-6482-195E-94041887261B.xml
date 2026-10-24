@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="CONTATO_CIDADAO" directorySegmentName="seg_0" id="543C4000-EF82-6482-195E-94041887261B">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_CIDADAO" id="166FF06C-9808-3B9F-92E0-D1D511C21360">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_CONTATO" id="4422E885-8699-A6EF-2F2C-492210A4AABE">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TIPO_CONTATO" id="4BC4453A-13FD-E0C5-376D-AD5D3A57F973">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VALOR" id="54526296-047D-7AAE-3AA6-E0A299D81374">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRINCIPAL" id="816EDC31-8D45-6F44-3F7A-D61405AF3098">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<defaultValue>&apos;N&apos;</defaultValue>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CONTATO_CIDADAO" id="A59C9B71-E769-DC13-0C36-6917EF57833D">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_CONTATO_CIDADAO" id="BC3BD518-9887-C005-384A-258444E34D15">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="CK_CONTATO_TIPO" id="612F55BA-04BC-93CE-A667-D68A4FAFF4AB">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="CK_CONTATO_PRINCIPAL" id="8A5E0284-DD37-A9BF-008E-525913DAC1E2">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_CONTATO_VALOR" id="F61766A5-C9DD-EFE1-F1D3-5C90D893ECEB">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

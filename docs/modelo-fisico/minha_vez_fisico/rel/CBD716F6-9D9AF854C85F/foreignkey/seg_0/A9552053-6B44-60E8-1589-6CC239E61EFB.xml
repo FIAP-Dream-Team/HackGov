@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A9552053-6B44-60E8-1589-6CC239E61EFB" containerWithKeyObject="A277EB2F-CAAC-75C2-7A1C-9EC7588E7124" localFKIndex="4E0C825C-658E-DC27-30B1-EC80BF682D97" name="FK_HORARIO_ESPECIALIDADE">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>A8388BE4-ED33-B267-786A-ACE276C64B94</importedID>
+<referredTableLongName>ESPECIALIDADE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F8FCB77A-226C-1D45-7102-6D29061578A4</referredTableID>
+<keyObject>B21CB01D-D7B7-3622-77F4-783FAB27A87E</keyObject>
+<referredKeyID>B21CB01D-D7B7-3622-77F4-783FAB27A87E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ESPECIALIDADE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

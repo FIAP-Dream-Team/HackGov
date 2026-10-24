@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56F9B071-4F0C-65C5-93F2-6F465F19229B" name="USUARIO_INSTITUCIONAL">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>6351DD7D-7310-1058-0760-701F23713ED6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PESSOA" id="09C73883-71B7-AD74-B064-7CE2A4289E60">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>4B4974B7-C9D2-7C62-F062-F7FC001FC175</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11616918-7F77-08A7-0349-0A660E0BBDED" referredColumn="59628FCE-03E9-93EF-7B5A-CA6AD5988ACD"/>
+</associations>
+</Column>
+<Column name="ID_UNIDADE" id="3234C1F9-7A21-342D-0AF8-E87BE29803E8">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>A7127D1D-7F8E-7DA6-1C37-8081A5812707</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D8E6657-A865-1815-86B9-063963C22298" referredColumn="68D13C7B-4E16-3A2E-A5E9-731EC2283AC4"/>
+</associations>
+</Column>
+<Column name="LOGIN" id="225A78B2-65ED-2627-7336-B026B93BEDFD">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>02F4F9A9-0FD5-D41A-592B-E49F209D41B9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>9D3D0723-6DF2-EC8A-B145-4A9FE40AACBF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENHA_HASH" id="11B0563C-D208-269F-09C0-E87CE4285EA2">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>5F557151-FB5D-2D68-BC68-F3C66B9D5E0F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>FB6F6D19-77E6-0D2F-855B-1DFC12C43CC4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PERFIL" id="68A68211-4558-6493-6566-12E3F9CDC25A">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>1E965A7F-51A8-1A71-B4ED-F2848AD37D8C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5121BF35-8679-84D0-E6A2-E5BD41BB1A63</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DD33F558-35AB-AD85-BD70-682DA87517B3" name="PK_USUARIO_INSTITUCIONAL">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>D6ED4F31-EED2-F7AD-B78E-92BB9A2FD2A2</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09C73883-71B7-AD74-B064-7CE2A4289E60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="878CE1A7-1C49-BDD9-48C1-F086E82BC0BD" name="UK_USUARIO_LOGIN">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>E327A195-DDCE-880E-DA4E-77180E5CDCE3</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="225A78B2-65ED-2627-7336-B026B93BEDFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="224FC2CB-8AF2-B8CF-9926-03348C438A8E" name="FK_USUARIO_PESSOA">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09C73883-71B7-AD74-B064-7CE2A4289E60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E8E09D2B-CCB5-C1F5-9E0F-C92850BCA8B6" name="FK_USUARIO_UNIDADE">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3234C1F9-7A21-342D-0AF8-E87BE29803E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_USUARIO_PERFIL" directorySegmentName="seg_0" id="2AAE2D78-A1F8-D04B-1401-4A881DC8936D">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>E5CE9493-9AE5-0CF0-598F-23647B8C5310</importedID>
+<rule><![CDATA[PERFIL IN ('ATENDENTE', 'GESTOR')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

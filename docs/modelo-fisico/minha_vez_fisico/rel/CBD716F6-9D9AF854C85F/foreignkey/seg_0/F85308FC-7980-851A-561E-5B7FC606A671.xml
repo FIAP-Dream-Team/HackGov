@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F85308FC-7980-851A-561E-5B7FC606A671" containerWithKeyObject="44FB76F7-F654-1C73-0BA2-76CBB0038062" localFKIndex="F0F6A4D8-8518-91CA-7E66-907D737BF694" name="FK_UNIDADE_CEP">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>CAD62BDB-EC7C-B91E-D6E5-FEB594756FD0</importedID>
+<referredTableLongName>CEP</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1C9A14C1-86E7-B11F-2D93-469C3764DB46</referredTableID>
+<keyObject>E22484DB-BC42-FC74-D16B-8A61246F787D</keyObject>
+<referredKeyID>E22484DB-BC42-FC74-D16B-8A61246F787D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CEP</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

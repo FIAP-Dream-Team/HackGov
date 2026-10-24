@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4AD92BBC-A07F-080F-93D0-EA535CB68D0F" containerWithKeyObject="7A454175-A50A-54E2-9D97-3561FA608335" localFKIndex="A2E1872D-95DD-D0E9-E5CC-3DEAFDB80C20" name="FK_ENCAM_CIDADAO">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>7F025516-E4D1-5D01-0119-A9F31B0B422A</importedID>
+<referredTableLongName>CIDADAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>AE7956FC-8922-02FD-F8B5-62DDC60A5BB4</referredTableID>
+<keyObject>E22FCB1B-FC30-7A3B-CC94-A50D6128E56C</keyObject>
+<referredKeyID>E22FCB1B-FC30-7A3B-CC94-A50D6128E56C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_PESSOA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,274 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2596D611-B446-7318-01F8-4EE065FB5FB4" name="AGENDAMENTO">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>85CE0004-856A-89B5-3581-D124170C8620</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_AGENDAMENTO" id="3AC4E959-65F2-8A2D-7906-0A14D8E73330">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>4A6AB90D-D799-F6F0-ED8E-9E1857F859FA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_ENCAMINHAMENTO" id="990F823F-1568-64A0-1C8D-32032BC1D6A4">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>0C5D938B-B44D-34F4-8301-E78CF580BFC9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D591C0E2-3EE1-066E-3D74-637D42CB8203" referredColumn="2581B51B-F467-5C37-10FA-829773D17CEC"/>
+<colAssociation fkAssociation="103FACA7-9BDE-E3EC-EA11-BDE1D9662DA3" referredColumn="990F823F-1568-64A0-1C8D-32032BC1D6A4"/>
+</associations>
+</Column>
+<Column name="ID_HORARIO" id="F8BA54D9-B061-A08E-DDB2-D25CD7942D6A">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>E5BEFBC9-F91C-78ED-EE21-947103FF3B27</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DC370A59-368C-C928-C941-D603584F4F8D" referredColumn="A9083F9E-324A-E111-5D6B-8E4100A4A179"/>
+</associations>
+</Column>
+<Column name="ID_ESPECIALIDADE" id="31896897-B6B7-BB5C-69BC-BE34B94EEDEE">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>D0704904-8E10-B49C-0557-7AA2F3569C54</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D591C0E2-3EE1-066E-3D74-637D42CB8203" referredColumn="972420DF-5282-7A34-7946-78921AFE26DC"/>
+<colAssociation fkAssociation="DC370A59-368C-C928-C941-D603584F4F8D" referredColumn="5FB802F1-6F81-D246-34A8-631BB792768E"/>
+</associations>
+</Column>
+<Column name="ID_UNIDADE" id="B69A46B2-E9B7-8DB4-585A-3FEEBA0308BD">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>3E9D8197-6FEC-0261-A760-FF247AF63B24</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D591C0E2-3EE1-066E-3D74-637D42CB8203" referredColumn="C69A81EA-625E-F3A9-2367-E73908CC20A2"/>
+<colAssociation fkAssociation="DC370A59-368C-C928-C941-D603584F4F8D" referredColumn="09201133-FEA4-668A-B2F8-4371C9C7981D"/>
+</associations>
+</Column>
+<Column name="ID_AGENDAMENTO_ORIGEM" id="27C1E397-311F-BF02-348E-A7477648C7DF">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>DFEEA292-FD12-9EEF-ED1B-A16D71B258AB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>8D729CF6-B8BD-5BBE-DBC4-60BF05122FE4</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="103FACA7-9BDE-E3EC-EA11-BDE1D9662DA3" referredColumn="3AC4E959-65F2-8A2D-7906-0A14D8E73330"/>
+</associations>
+</Column>
+<Column name="STATUS" id="662A40FC-EA41-6CE3-F2D6-7891DFA92BEA">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>0F74FB17-F1A8-D65B-A8EB-216C8D959E24</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5121BF35-8679-84D0-E6A2-E5BD41BB1A63</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_CRIACAO" id="7C46877D-22AC-1BE6-AA34-DE3A66D35539">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>3989037E-01E5-FF9D-4FE0-66395E699AC8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>1B394C86-1498-5F8A-C750-E7A30442AFFB</domain>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA_CANCELAMENTO" id="2FD42F3D-3CFA-35C3-27F3-C618439F1593">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>E9DD7EBB-8489-097F-0C41-62481E2B4A12</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>1B394C86-1498-5F8A-C750-E7A30442AFFB</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4DEC3FFA-5F9F-0273-A3C1-57B9C57D1BB3" name="PK_AGENDAMENTO">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>282AA3AF-3322-0A44-B583-073E65BAD342</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AC4E959-65F2-8A2D-7906-0A14D8E73330"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="656F5618-7C95-AD2A-E301-5D37666B61FF" name="UK_AGEND_ENCAM">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>9FBEFD37-93D5-6497-37E2-D034948A0F48</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AC4E959-65F2-8A2D-7906-0A14D8E73330"/>
+<colUsage columnID="990F823F-1568-64A0-1C8D-32032BC1D6A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="01A7BA14-647B-4C09-3CCD-C556F7C87D7C" name="UK_AGEND_ORIGEM">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>831EFDC2-AA11-FC62-9CB2-F5C63AABB1A5</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27C1E397-311F-BF02-348E-A7477648C7DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6FE36DA3-6BF3-A6C4-7DB3-1051F55568F5" name="IX_AGEND_ENCAMINHAMENTO">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>3D400155-C989-4660-4E87-8BCEDD534579</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="990F823F-1568-64A0-1C8D-32032BC1D6A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="59021DD8-DEBB-BED0-2550-118D3D63A77D" name="UX_AGEND_ATIVO_POR_ENCAM">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>90EDCCE8-1B6C-F0D9-404D-0D00CCA08871</importedID>
+<indexExpression>CASE WHEN STATUS = &apos;AGENDADO&apos; THEN ID_ENCAMINHAMENTO END</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="3FBD0A44-F97D-D181-409D-1BBB28192FF0" name="UX_AGEND_ATIVO_POR_HORARIO">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>D9CF682B-85D1-5182-B49D-666D5B063986</importedID>
+<indexExpression>CASE WHEN STATUS = &apos;AGENDADO&apos; THEN ID_HORARIO END</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="87D92694-5CF0-DE6F-3B05-786BD108BB9C" name="FK_AGEND_ENCAMINHAMENTO">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="990F823F-1568-64A0-1C8D-32032BC1D6A4"/>
+<colUsage columnID="31896897-B6B7-BB5C-69BC-BE34B94EEDEE"/>
+<colUsage columnID="B69A46B2-E9B7-8DB4-585A-3FEEBA0308BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8071FFC2-46C6-C0DE-BB40-C56857441DBE" name="FK_AGEND_HORARIO">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8BA54D9-B061-A08E-DDB2-D25CD7942D6A"/>
+<colUsage columnID="31896897-B6B7-BB5C-69BC-BE34B94EEDEE"/>
+<colUsage columnID="B69A46B2-E9B7-8DB4-585A-3FEEBA0308BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="840C7812-64C7-DC99-27F7-35F76AB03938" name="FK_AGEND_ORIGEM">
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27C1E397-311F-BF02-348E-A7477648C7DF"/>
+<colUsage columnID="990F823F-1568-64A0-1C8D-32032BC1D6A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_AGEND_ORIGEM" directorySegmentName="seg_0" id="1C7A93E7-1B8B-8FC2-0854-1E2F8C68ED9F">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>83019076-2C73-1361-B0CB-83DC4AB2DE90</importedID>
+<rule><![CDATA[ID_AGENDAMENTO_ORIGEM <> ID_AGENDAMENTO]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_AGEND_STATUS" directorySegmentName="seg_0" id="323929C2-DDBD-C0E1-DFC6-9F4E68A3EA8E">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>1CD8E928-3B81-319D-FA7E-3E76C1E2AB11</importedID>
+<rule><![CDATA[STATUS IN ('AGENDADO', 'CANCELADO', 'CONCLUIDO', 'FALTA')]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_AGEND_CANCELAMENTO" directorySegmentName="seg_0" id="F3DB2374-AECC-23FA-B3E4-3990A0299B24">
+<sourceDDLFile>minha_vez_fisico.sql</sourceDDLFile>
+<createdBy>Jaosh</createdBy>
+<createdTime>2026-10-24 21:53:22 UTC</createdTime>
+<ownerDesignName>minha_vez_fisico</ownerDesignName>
+<importedID>F81A774A-FFA3-6CF8-1DE7-C6AE2068C98C</importedID>
+<rule><![CDATA[(STATUS = 'CANCELADO' AND DATA_CANCELAMENTO IS NOT NULL) OR (STATUS <> 'CANCELADO' AND DATA_CANCELAMENTO IS NULL)]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
