@@ -86,6 +86,11 @@ public class UsuarioInstitucional extends Pessoa {
         );
     }
 
+    public Chamada chamar(Long id, Agendamento agendamento, String senha, String sala) {
+
+        return new Chamada(id, agendamento, senha, sala, this);
+    }
+
     public void consultarFila() {
         System.out.println(
                 "Consultando fila de encaminhamentos..."

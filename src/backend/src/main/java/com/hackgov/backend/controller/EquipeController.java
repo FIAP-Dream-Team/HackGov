@@ -6,6 +6,10 @@ import com.hackgov.backend.equipe.PedidoLoginEquipe;
 import com.hackgov.backend.equipe.RespostaLoginEquipe;
 import com.hackgov.backend.equipe.ServicoDeEquipe;
 import com.hackgov.backend.equipe.StatusAtualizadoResposta;
+import com.hackgov.backend.painel.PainelResposta;
+import com.hackgov.backend.painel.PedidoDeChamada;
+import com.hackgov.backend.painel.ServicoDePainel;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,9 +24,11 @@ public class EquipeController {
     private static final String BEARER = "Bearer ";
 
     private final ServicoDeEquipe equipe;
+    private final ServicoDePainel painel;
 
-    public EquipeController(ServicoDeEquipe equipe) {
+    public EquipeController(ServicoDeEquipe equipe, ServicoDePainel painel) {
         this.equipe = equipe;
+        this.painel = painel;
     }
 
     @PostMapping("/login")
@@ -36,6 +42,14 @@ public class EquipeController {
             @PathVariable String protocolo,
             @RequestBody PedidoDeStatus pedido) {
         return equipe.atualizarStatus(tokenDe(autorizacao), protocolo, pedido);
+    }
+
+    @PostMapping("/encaminhamentos/{protocolo}/chamada")
+    public ResponseEntity<PainelResposta> chamar(
+            @RequestHeader(value = "Authorization", required = false) String autorizacao,
+            @PathVariable String protocolo,
+            @RequestBody(required = false) PedidoDeChamada pedido) {
+        return ResponseEntity.status(201).body(painel.chamar(tokenDe(autorizacao), protocolo, pedido));
     }
 
     private static String tokenDe(String autorizacao) {
