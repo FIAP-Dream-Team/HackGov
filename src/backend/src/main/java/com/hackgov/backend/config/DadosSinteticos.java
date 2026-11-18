@@ -3,8 +3,10 @@ package com.hackgov.backend.config;
 import com.hackgov.backend.domain.Cidadao;
 import com.hackgov.backend.domain.Encaminhamento;
 import com.hackgov.backend.domain.Especialidade;
+import com.hackgov.backend.domain.PerfilUsuario;
 import com.hackgov.backend.domain.TipoUnidade;
 import com.hackgov.backend.domain.UnidadeSaude;
+import com.hackgov.backend.equipe.ServicoDeEquipe;
 import com.hackgov.backend.identificacao.ServicoDeIdentificacao;
 import com.hackgov.backend.memoria.AcervoMinhaVez;
 import org.springframework.boot.CommandLineRunner;
@@ -24,12 +26,18 @@ public class DadosSinteticos implements CommandLineRunner {
     static final String CARTAO_SUS = "100000000060018";
     static final LocalDate NASCIMENTO = LocalDate.of(1988, 4, 12);
     static final String SENHA = "minhavez";
+    static final String LOGIN_EQUIPE = "atendente.centro";
 
     private final ServicoDeIdentificacao identificacao;
+    private final ServicoDeEquipe equipe;
     private final AcervoMinhaVez acervo;
 
-    public DadosSinteticos(ServicoDeIdentificacao identificacao, AcervoMinhaVez acervo) {
+    public DadosSinteticos(
+            ServicoDeIdentificacao identificacao,
+            ServicoDeEquipe equipe,
+            AcervoMinhaVez acervo) {
         this.identificacao = identificacao;
+        this.equipe = equipe;
         this.acervo = acervo;
     }
 
@@ -44,14 +52,24 @@ public class DadosSinteticos implements CommandLineRunner {
                 false
         );
 
+        UnidadeSaude origem = unidade(acervo.proximoId(), "UBS Centro", TipoUnidade.UBS);
+
         acervo.adicionarEncaminhamento(new Encaminhamento(
                 acervo.proximoId(),
                 "MV-2026-0001",
                 cidadao,
                 new Especialidade(acervo.proximoId(), "Cardiologia"),
-                unidade(acervo.proximoId(), "UBS Centro", TipoUnidade.UBS),
+                origem,
                 unidade(acervo.proximoId(), "Ambulatório Central", TipoUnidade.ESPECIALIZADA)
         ));
+
+        equipe.registrar(
+                "Ana Atendente",
+                LOGIN_EQUIPE,
+                SENHA,
+                PerfilUsuario.ATENDENTE,
+                origem
+        );
     }
 
     private static UnidadeSaude unidade(long id, String nome, TipoUnidade tipo) {

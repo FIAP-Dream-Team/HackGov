@@ -152,6 +152,11 @@ public class ServicoDeIdentificacao {
         );
     }
 
+    public AreaPessoalResposta acompanhamento(String token) {
+        Sessao sessao = exigirSessao(token);
+        return areaPessoal.de(sessao.getCidadaoId());
+    }
+
     public RespostaDeIdentificacao areaDaSessao(String token) {
         Sessao sessao = exigirSessao(token);
         return responder(sessao, null, null);
