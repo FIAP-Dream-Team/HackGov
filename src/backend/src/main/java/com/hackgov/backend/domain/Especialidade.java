@@ -70,6 +70,22 @@ public class Especialidade {
                 && horarioLivre(horario);
     }
 
+    public HorarioDisponivel buscarHorario(Long id) {
+
+        if (id == null) {
+            return null;
+        }
+
+        for (HorarioDisponivel horario : horarios) {
+
+            if (id.equals(horario.getId())) {
+                return horario;
+            }
+        }
+
+        return null;
+    }
+
     private boolean horarioLivre(HorarioDisponivel horario) {
 
         return horario.estaLivre()

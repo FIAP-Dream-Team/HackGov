@@ -3,6 +3,7 @@ package com.hackgov.backend.config;
 import com.hackgov.backend.domain.Cidadao;
 import com.hackgov.backend.domain.Encaminhamento;
 import com.hackgov.backend.domain.Especialidade;
+import com.hackgov.backend.domain.HorarioDisponivel;
 import com.hackgov.backend.domain.PerfilUsuario;
 import com.hackgov.backend.domain.TipoUnidade;
 import com.hackgov.backend.domain.UnidadeSaude;
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Synthetic demo data for local runs. These are not real patients.
@@ -53,15 +55,37 @@ public class DadosSinteticos implements CommandLineRunner {
         );
 
         UnidadeSaude origem = unidade(acervo.proximoId(), "UBS Centro", TipoUnidade.UBS);
+        UnidadeSaude destino = unidade(
+                acervo.proximoId(),
+                "Ambulatório Central",
+                TipoUnidade.ESPECIALIZADA
+        );
+        Especialidade cardiologia = new Especialidade(acervo.proximoId(), "Cardiologia");
 
         acervo.adicionarEncaminhamento(new Encaminhamento(
                 acervo.proximoId(),
                 "MV-2026-0001",
                 cidadao,
-                new Especialidade(acervo.proximoId(), "Cardiologia"),
+                cardiologia,
                 origem,
-                unidade(acervo.proximoId(), "Ambulatório Central", TipoUnidade.ESPECIALIZADA)
+                destino
         ));
+
+        // Synthetic free slots so the demo list is not empty once scheduling opens.
+        LocalDateTime base = LocalDateTime.now()
+                .plusDays(7)
+                .withMinute(0)
+                .withSecond(0)
+                .withNano(0);
+
+        for (int hora : new int[] {8, 10, 14}) {
+            cardiologia.publicarHorario(new HorarioDisponivel(
+                    acervo.proximoId(),
+                    cardiologia,
+                    destino,
+                    base.withHour(hora)
+            ));
+        }
 
         equipe.registrar(
                 "Ana Atendente",
