@@ -94,6 +94,10 @@ public class AcervoMinhaVez {
         encaminhamentos.add(encaminhamento);
     }
 
+    public synchronized List<Encaminhamento> encaminhamentos() {
+        return List.copyOf(encaminhamentos);
+    }
+
     public synchronized List<Encaminhamento> encaminhamentosDe(Long cidadaoId) {
         List<Encaminhamento> doCidadao = new ArrayList<>();
 

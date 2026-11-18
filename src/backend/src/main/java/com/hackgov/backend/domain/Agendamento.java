@@ -53,6 +53,17 @@ public class Agendamento {
         this.dataCancelamento = LocalDateTime.now();
     }
 
+    public void registrarFalta() {
+
+        if (status != StatusAgendamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "Só é possível registrar falta de um agendamento ativo."
+            );
+        }
+
+        this.status = StatusAgendamento.FALTA;
+    }
+
     void definirHorario(HorarioDisponivel horario) {
         this.horario = horario;
     }
