@@ -1,0 +1,778 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-11-18T18:20:00.000Z",
+  "__export_source": "hackgov.docs:fase-4",
+  "resources": [
+    {
+      "_id": "wrk_hackgov",
+      "_type": "workspace",
+      "parentId": null,
+      "name": "HackGov — Minha Vez (local)",
+      "description": "API local do Minha Vez. Ambiente Local aponta para http://localhost:8080.",
+      "scope": "collection",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "env_hackgov_base",
+      "_type": "environment",
+      "parentId": "wrk_hackgov",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8080",
+        "cpf": "52998224725",
+        "senha": "minhavez",
+        "cartao_sus": "100000000060018",
+        "nascimento": "1988-04-12",
+        "nome": "Maria Andrade",
+        "login_equipe": "atendente.centro",
+        "protocolo": "MV-2026-0001",
+        "app_token": "",
+        "totem_token": "",
+        "equipe_token": "",
+        "horario_id": "",
+        "horario_id_2": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "cpf",
+          "senha",
+          "cartao_sus",
+          "nascimento",
+          "nome",
+          "login_equipe",
+          "protocolo",
+          "app_token",
+          "totem_token",
+          "equipe_token",
+          "horario_id",
+          "horario_id_2"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "env_hackgov_local",
+      "_type": "environment",
+      "parentId": "env_hackgov_base",
+      "name": "Local",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": "#7d69cb",
+      "isPrivate": false,
+      "metaSortKey": 2,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "jar_hackgov",
+      "_type": "cookie_jar",
+      "parentId": "wrk_hackgov",
+      "name": "Default Jar",
+      "cookies": [],
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "fld_01",
+      "_type": "request_group",
+      "parentId": "wrk_hackgov",
+      "name": "01 Identificação",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -5000,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "fld_02",
+      "_type": "request_group",
+      "parentId": "wrk_hackgov",
+      "name": "02 Acompanhamento",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -4000,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "fld_03",
+      "_type": "request_group",
+      "parentId": "wrk_hackgov",
+      "name": "03 Agendamento",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -3000,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "fld_04",
+      "_type": "request_group",
+      "parentId": "wrk_hackgov",
+      "name": "04 Equipe",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -2000,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "fld_05",
+      "_type": "request_group",
+      "parentId": "wrk_hackgov",
+      "name": "05 Painel",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1000,
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_equipe_login",
+      "_type": "request",
+      "parentId": "fld_04",
+      "name": "01 Login da equipe",
+      "description": "Grava equipe_token no ambiente Local.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/equipe/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"login\": \"{{ _.login_equipe }}\",\n  \"senha\": \"{{ _.senha }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_eq_login"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000,
+      "afterResponseScript": "const body = insomnia.response.json();\nif (body && body.token) {\n  await insomnia.environment.set('equipe_token', body.token);\n}\n"
+    },
+    {
+      "_id": "req_status",
+      "_type": "request",
+      "parentId": "fld_04",
+      "name": "02 Liberar agendamento",
+      "description": "Tira o encaminhamento sintético de RECEBIDO_TRIADO.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/equipe/encaminhamentos/{{ _.protocolo }}/status",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": \"AGUARDANDO_AGENDAMENTO\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_status"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.equipe_token }}",
+          "id": "h_status_auth"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -900,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_app_login",
+      "_type": "request",
+      "parentId": "fld_01",
+      "name": "03 Login do aplicativo",
+      "description": "Grava app_token no ambiente Local.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/app/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"cpf\": \"{{ _.cpf }}\",\n  \"senha\": \"{{ _.senha }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_app_login"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000,
+      "afterResponseScript": "const body = insomnia.response.json();\nif (body && body.token) {\n  await insomnia.environment.set('app_token', body.token);\n}\n"
+    },
+    {
+      "_id": "req_acompanhamento",
+      "_type": "request",
+      "parentId": "fld_02",
+      "name": "04 Acompanhamento",
+      "description": "Mesma trilha no totem e no aplicativo. Troque o token se quiser o canal do totem.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/acompanhamento",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_acomp"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_horarios",
+      "_type": "request",
+      "parentId": "fld_03",
+      "name": "05 Horários livres",
+      "description": "Grava horario_id e horario_id_2. Só responde 200 depois do passo 02.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/app/encaminhamentos/{{ _.protocolo }}/horarios",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_hor"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000,
+      "afterResponseScript": "const body = insomnia.response.json();\nif (body && body.horarios && body.horarios.length > 0) {\n  await insomnia.environment.set('horario_id', String(body.horarios[0].id));\n  if (body.horarios.length > 1) {\n    await insomnia.environment.set('horario_id_2', String(body.horarios[1].id));\n  }\n}\n"
+    },
+    {
+      "_id": "req_agendar",
+      "_type": "request",
+      "parentId": "fld_03",
+      "name": "06 Confirmar horário",
+      "description": "Usa o horario_id gravado no passo 05.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/app/encaminhamentos/{{ _.protocolo }}/agendamento",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"horarioId\": {{ _.horario_id }}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_ag"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_ag_auth"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -900,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_painel",
+      "_type": "request",
+      "parentId": "fld_05",
+      "name": "07 Painel",
+      "description": "Público. Sem chamada, temChamada é falso.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/painel",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_chamar",
+      "_type": "request",
+      "parentId": "fld_04",
+      "name": "08 Chamar senha",
+      "description": "Exige agendamento ativo. A senha A12 é a da chamada, não a senha de login.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/equipe/encaminhamentos/{{ _.protocolo }}/chamada",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"senha\": \"A12\",\n  \"sala\": \"2\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_ch"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.equipe_token }}",
+          "id": "h_ch_auth"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -800,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_painel2",
+      "_type": "request",
+      "parentId": "fld_05",
+      "name": "09 Painel depois da chamada",
+      "description": "Deve trazer senha, sala, estado CHAMADA e cor AMARELO.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/painel",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -900,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_fila",
+      "_type": "request",
+      "parentId": "fld_04",
+      "name": "10 Fila da equipe",
+      "description": "Fila da unidade de lotação, por especialidade.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/equipe/fila",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.equipe_token }}",
+          "id": "h_fila"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -700,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_cancelar",
+      "_type": "request",
+      "parentId": "fld_03",
+      "name": "11 Cancelar horário",
+      "description": "Sem confirmado true o horário permanece. Não use na mesma subida em que registrar falta.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/app/encaminhamentos/{{ _.protocolo }}/cancelamento",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"confirmado\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_can"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_can_auth"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -800,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_falta",
+      "_type": "request",
+      "parentId": "fld_04",
+      "name": "12 Registrar falta",
+      "description": "No lugar do cancelamento. Exige agendamento ativo.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/equipe/encaminhamentos/{{ _.protocolo }}/falta",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.equipe_token }}",
+          "id": "h_falta"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -600,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_reagendar",
+      "_type": "request",
+      "parentId": "fld_03",
+      "name": "13 Reagendar",
+      "description": "Usa horario_id_2. Rode antes do cancelamento e da falta, com o horário ainda ativo.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/app/encaminhamentos/{{ _.protocolo }}/reagendamento",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"horarioId\": {{ _.horario_id_2 }}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_re"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_re_auth"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -700,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_eventos",
+      "_type": "request",
+      "parentId": "fld_05",
+      "name": "14 Painel (eventos)",
+      "description": "Segura a conexão. Cancele a requisição depois do primeiro evento.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/painel/eventos",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "text/event-stream",
+          "id": "h_sse"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -800,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_totem_cartao",
+      "_type": "request",
+      "parentId": "fld_01",
+      "name": "Totem por Cartão SUS",
+      "description": "Grava totem_token.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/totem/identificacao",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"cartaoSus\": \"{{ _.cartao_sus }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_totem_c"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -900,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000,
+      "afterResponseScript": "const body = insomnia.response.json();\nif (body && body.token) {\n  await insomnia.environment.set('totem_token', body.token);\n}\n"
+    },
+    {
+      "_id": "req_totem_cpf",
+      "_type": "request",
+      "parentId": "fld_01",
+      "name": "Totem por CPF e nascimento",
+      "description": "Grava totem_token. Sem senha.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/totem/identificacao",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"cpf\": \"{{ _.cpf }}\",\n  \"dataNascimento\": \"{{ _.nascimento }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_totem_cpf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -800,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000,
+      "afterResponseScript": "const body = insomnia.response.json();\nif (body && body.token) {\n  await insomnia.environment.set('totem_token', body.token);\n}\n"
+    },
+    {
+      "_id": "req_oauth",
+      "_type": "request",
+      "parentId": "fld_01",
+      "name": "Login ilustrado pelo Gov.br",
+      "description": "Não há redirecionamento. Grava app_token. oauthSimulado vem verdadeiro.",
+      "method": "POST",
+      "url": "{{ _.base_url }}/api/app/oauth",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"provedor\": \"gov.br\",\n  \"cpf\": \"{{ _.cpf }}\",\n  \"nome\": \"{{ _.nome }}\",\n  \"dataNascimento\": \"{{ _.nascimento }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "h_oauth"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -700,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000,
+      "afterResponseScript": "const body = insomnia.response.json();\nif (body && body.token) {\n  await insomnia.environment.set('app_token', body.token);\n}\n"
+    },
+    {
+      "_id": "req_sessao",
+      "_type": "request",
+      "parentId": "fld_01",
+      "name": "Sessão atual",
+      "description": "Token do cidadão.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/sessoes/atual",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_sessao"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -600,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_encerrar",
+      "_type": "request",
+      "parentId": "fld_01",
+      "name": "Encerrar sessão",
+      "description": "204 sem corpo. A sessão deixa de valer.",
+      "method": "DELETE",
+      "url": "{{ _.base_url }}/api/sessoes/atual",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.app_token }}",
+          "id": "h_encerrar"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -500,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    },
+    {
+      "_id": "req_fila_filtro",
+      "_type": "request",
+      "parentId": "fld_04",
+      "name": "Fila de especialidade vazia",
+      "description": "Especialidade sem encaminhamento volta o segmento vazio, com 200.",
+      "method": "GET",
+      "url": "{{ _.base_url }}/api/equipe/fila",
+      "body": {},
+      "parameters": [
+        {
+          "name": "especialidade",
+          "value": "Dermatologia",
+          "id": "q_esp"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.equipe_token }}",
+          "id": "h_fila_f"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -500,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "created": 1763481600000,
+      "modified": 1763481600000
+    }
+  ]
+}

@@ -18,20 +18,23 @@ arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 Capítulo corrente: **Fase 4**. O texto abaixo desta nota ainda descreve a Fase 3 e está desatualizado onde
 conflitar com o disco.
 
-Parte 1 da Fase 4 está em código, ainda sem commit. A US01 (`DT-36`) está implementada no working tree:
-identificação do totem e do aplicativo em `src/backend`, com testes em
-`IdentificacaoHttpTest` e `DocumentosDeIdentificacaoTest`. Gov.br é contrato simulado
-(`oauthSimulado: true`), sem redirecionamento real. O acervo da API é em memória; o H2 sobe com a
-aplicação e ainda não mapeia as tabelas da Fase 3. Dado de demonstração sintético: CPF `52998224725`,
-Cartão SUS `100000000060018`, nascimento `1988-04-12`, senha `minhavez`.
+Parte 1 da Fase 4 está em código na `main`. A US01 (`DT-36`) foi mergeada pelo PR #2. A US02 (`DT-37`) pelo PR #3. A US03 (`DT-38`) pelo PR #4. A US04 (`DT-39`) pelo PR #5. A US05 (`DT-40`) pelo PR #6.
 
-Branch sugerida para o commit da US01: `vinikrdoso/dt-36-us01-como-cidadao-quero-me-identificar-no`.
-`docs/arquivos-fases/` está untracked e não faz parte dessa story. US02 em diante esperam esse commit,
-para cada story ficar na própria branch.
+A fila da equipe, em `src/backend`, é do canal institucional. Atendente e gestor entram com o login da equipe. Token de cidadão recebe 403. Sem token, 401.
+
+- `GET /api/equipe/fila` segmenta os encaminhamentos da unidade de lotação por especialidade. Fila vazia responde 200 com "Nenhum encaminhamento nesta unidade." `?especialidade=` sem encaminhamento devolve o segmento vazio, sem erro. Cada item traz protocolo, nome e status. CPF não sai. O nome fica neste canal: o painel público e o acompanhamento continuam sem ele.
+- A ação pendente não é coluna. `AGUARDANDO_AGENDAMENTO` sem agendamento ativo vira `COBRAR_MARCACAO` ("Cobrar marcação"). O último agendamento em `FALTA` vira `REAGENDAR` ("Reagendar"). "Buscar resultado" não sai no JSON: o modelo lógico não tem dado para essa ação.
+- A espera média está em `esperaMediaSegundos`. É a última permanência em `AGUARDANDO_AGENDAMENTO`, em segundos inteiros, fechada na troca de status ou no instante da consulta se a etapa ainda está aberta. Quem nunca entrou nessa etapa não entra na média. Sem amostra, a mensagem é "Ainda não há espera medida."
+- A taxa de faltas é `taxaFaltasPercentual`, com `faltas` e `agendamentos`. O denominador ignora agendamento cancelado. Sem agendamento contável, a mensagem é "Ainda não há agendamento para calcular a taxa de faltas."
+- `POST /api/equipe/encaminhamentos/{protocolo}/falta` registra a falta do agendamento ativo, só na unidade da equipe. O horário continua ocupado. O painel da sala deixa de mostrar a senha, porque o agendamento deixou de estar ativo. O reagendamento do cidadão continua exigindo agendamento ativo.
+
+O acervo continua em memória. O dado sintético `MV-2026-0001` segue em `RECEBIDO_TRIADO`, especialidade Cardiologia, com os três horários livres da US03. Na fila da UBS Centro ele aparece sem ação pendente até a equipe liberar o agendamento. Não há falta semeada.
+
+`docs/arquivos-fases/` está untracked e não faz parte dessa story. Os comentários do backend estão em português. O rascunho da Parte 1 está em `docs/fase-4/parte-1-versao-atual.md`. O contrato está em `docs/fase-4/contrato-da-api.md`. A coleção do Insomnia, com a base local, está em `docs/fase-4/insomnia/HackGov-Minha-Vez-local.json`. Os cards `DT-112`, `DT-119` e `DT-129` continuam em Todo: o texto ainda não foi entregue ao João nem o contrato passado à Brenda.
 
 ### Repositório
 
-Branch `main`, rastreando `origin/main` em `https://github.com/FIAP-Dream-Team/HackGov.git`. A Fase 1 (Cap 1)
+Branch `main`, que rastreia `origin/main` em `https://github.com/FIAP-Dream-Team/HackGov.git`. A Fase 1 (Cap 1)
 foi entregue. Vídeo da Fase 2: composição `Fase2`, narração `sources/video/fase-2/audio.wav` (3:45)
 alinhada em `src/data/fase-2/cues.json`. Pipeline copiado em `scripts/fase-2/` — os scripts da
 Fase 1 não foram alterados. Tutorial de User Story em
