@@ -7,11 +7,27 @@ A seção 1 é a parte viva e é o que se atualiza ao fechar uma sessão. As se�
 Toda afirmação de estado aqui foi verificada por comando, e os comandos estão na seção 8. Se algo neste
 arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 
-Última atualização: **20/10/2026**.
+Última atualização: **18/11/2026**.
 
 ---
 
 ## 1. Estado atual
+
+### Fase 4, em andamento
+
+Capítulo corrente: **Fase 4**. O texto abaixo desta nota ainda descreve a Fase 3 e está desatualizado onde
+conflitar com o disco.
+
+Parte 1 da Fase 4 está em código, ainda sem commit. A US01 (`DT-36`) está implementada no working tree:
+identificação do totem e do aplicativo em `src/backend`, com testes em
+`IdentificacaoHttpTest` e `DocumentosDeIdentificacaoTest`. Gov.br é contrato simulado
+(`oauthSimulado: true`), sem redirecionamento real. O acervo da API é em memória; o H2 sobe com a
+aplicação e ainda não mapeia as tabelas da Fase 3. Dado de demonstração sintético: CPF `52998224725`,
+Cartão SUS `100000000060018`, nascimento `1988-04-12`, senha `minhavez`.
+
+Branch sugerida para o commit da US01: `vinikrdoso/dt-36-us01-como-cidadao-quero-me-identificar-no`.
+`docs/arquivos-fases/` está untracked e não faz parte dessa story. US02 em diante esperam esse commit,
+para cada story ficar na própria branch.
 
 ### Repositório
 
