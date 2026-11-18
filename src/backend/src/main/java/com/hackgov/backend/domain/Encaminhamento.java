@@ -120,6 +120,36 @@ public class Encaminhamento {
             );
         }
 
+        return horariosLivres();
+    }
+
+    public List<HorarioDisponivel> reabrirLista() {
+
+        if (status != StatusEncaminhamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "Não há horário marcado para reagendar."
+            );
+        }
+
+        return horariosLivres();
+    }
+
+    public Agendamento agendamentoAtivo() {
+
+        for (Agendamento agendamento : agendamentos) {
+
+            if (agendamento.getStatus() == StatusAgendamento.AGENDADO) {
+                return agendamento;
+            }
+        }
+
+        throw new IllegalStateException(
+                "Este encaminhamento não possui agendamento ativo."
+        );
+    }
+
+    private List<HorarioDisponivel> horariosLivres() {
+
         List<HorarioDisponivel> livres = new ArrayList<>();
 
         for (HorarioDisponivel horario :
