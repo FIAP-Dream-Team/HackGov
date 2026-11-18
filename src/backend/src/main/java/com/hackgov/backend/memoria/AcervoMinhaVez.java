@@ -1,7 +1,9 @@
 package com.hackgov.backend.memoria;
 
+import com.hackgov.backend.domain.Chamada;
 import com.hackgov.backend.domain.Cidadao;
 import com.hackgov.backend.domain.Encaminhamento;
+import com.hackgov.backend.domain.StatusAgendamento;
 import com.hackgov.backend.domain.UsuarioInstitucional;
 import com.hackgov.backend.identificacao.Canal;
 import com.hackgov.backend.identificacao.Credencial;
@@ -30,6 +32,7 @@ public class AcervoMinhaVez {
     private final Map<Long, Credencial> credenciaisEquipe = new HashMap<>();
     private final Map<String, Long> sessoesEquipe = new HashMap<>();
     private final List<Encaminhamento> encaminhamentos = new ArrayList<>();
+    private final List<Chamada> chamadas = new ArrayList<>();
     private final SecureRandom aleatorio = new SecureRandom();
 
     private long proximoId = 1;
@@ -193,6 +196,32 @@ public class AcervoMinhaVez {
         return sessoes.size();
     }
 
+    public synchronized void adicionarChamada(Chamada chamada) {
+        if (chamada == null) {
+            throw new IllegalArgumentException("A chamada é obrigatória.");
+        }
+
+        chamadas.add(chamada);
+    }
+
+    public synchronized Optional<Chamada> chamadaAtiva() {
+        if (chamadas.isEmpty()) {
+            return Optional.empty();
+        }
+
+        Chamada ultima = chamadas.get(chamadas.size() - 1);
+
+        if (ultima.getAgendamento().getStatus() != StatusAgendamento.AGENDADO) {
+            return Optional.empty();
+        }
+
+        return Optional.of(ultima);
+    }
+
+    public synchronized List<Chamada> chamadas() {
+        return List.copyOf(chamadas);
+    }
+
     public synchronized void limpar() {
         cidadaos.clear();
         porCpf.clear();
@@ -204,6 +233,7 @@ public class AcervoMinhaVez {
         equipePorLogin.clear();
         credenciaisEquipe.clear();
         sessoesEquipe.clear();
+        chamadas.clear();
     }
 
     private Optional<Cidadao> buscar(Long id) {

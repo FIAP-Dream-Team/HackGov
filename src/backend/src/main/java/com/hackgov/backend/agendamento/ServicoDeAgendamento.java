@@ -8,6 +8,7 @@ import com.hackgov.backend.domain.StatusEncaminhamento;
 import com.hackgov.backend.identificacao.Canal;
 import com.hackgov.backend.identificacao.Sessao;
 import com.hackgov.backend.memoria.AcervoMinhaVez;
+import com.hackgov.backend.painel.AtualizacaoDoPainel;
 import org.springframework.stereotype.Service;
 
 import java.time.format.DateTimeFormatter;
@@ -32,9 +33,11 @@ public class ServicoDeAgendamento {
                     + "O horário atual continua marcado.";
 
     private final AcervoMinhaVez acervo;
+    private final AtualizacaoDoPainel painel;
 
-    public ServicoDeAgendamento(AcervoMinhaVez acervo) {
+    public ServicoDeAgendamento(AcervoMinhaVez acervo, AtualizacaoDoPainel painel) {
         this.acervo = acervo;
+        this.painel = painel;
     }
 
     public synchronized ListaDeHorariosResposta listar(String token, String protocolo) {
@@ -73,6 +76,7 @@ public class ServicoDeAgendamento {
         }
 
         encaminhamento.cancelarAgendamento(encaminhamento.agendamentoAtivo());
+        painel.painelMudou();
 
         return new CancelamentoResposta(
                 encaminhamento.getProtocolo(),
@@ -90,6 +94,7 @@ public class ServicoDeAgendamento {
         Agendamento atual = encaminhamento.agendamentoAtivo();
         HorarioDisponivel horario = horarioEscolhido(encaminhamento, pedido);
         Agendamento novo = encaminhamento.reagendar(atual, horario);
+        painel.painelMudou();
         return confirmacao(encaminhamento, novo, atual.getId(), "Horário reagendado");
     }
 
