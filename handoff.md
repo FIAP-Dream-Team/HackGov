@@ -7,11 +7,27 @@ A seção 1 é a parte viva e é o que se atualiza ao fechar uma sessão. As se�
 Toda afirmação de estado aqui foi verificada por comando, e os comandos estão na seção 8. Se algo neste
 arquivo contradisser o disco, o disco vence e este arquivo é que está errado.
 
-Última atualização: **02/10/2026**.
+Última atualização: **18/11/2026**.
 
 ---
 
 ## 1. Estado atual
+
+### Fase 4, em andamento
+
+Capítulo corrente: **Fase 4**. O texto abaixo desta nota ainda descreve a Fase 3 e está desatualizado onde
+conflitar com o disco.
+
+Parte 1 da Fase 4 está em código, ainda sem commit. A US01 (`DT-36`) está implementada no working tree:
+identificação do totem e do aplicativo em `src/backend`, com testes em
+`IdentificacaoHttpTest` e `DocumentosDeIdentificacaoTest`. Gov.br é contrato simulado
+(`oauthSimulado: true`), sem redirecionamento real. O acervo da API é em memória; o H2 sobe com a
+aplicação e ainda não mapeia as tabelas da Fase 3. Dado de demonstração sintético: CPF `52998224725`,
+Cartão SUS `100000000060018`, nascimento `1988-04-12`, senha `minhavez`.
+
+Branch sugerida para o commit da US01: `vinikrdoso/dt-36-us01-como-cidadao-quero-me-identificar-no`.
+`docs/arquivos-fases/` está untracked e não faz parte dessa story. US02 em diante esperam esse commit,
+para cada story ficar na própria branch.
 
 ### Repositório
 
@@ -23,47 +39,49 @@ Fase 1 não foram alterados. Tutorial de User Story em
 Protótipo no Figma [Minha vez](https://www.figma.com/design/jVZtzCqq1vTrkIXsqF5yHf/Minha-vez).
 Fluxos e critérios de validação da Parte 3 em
 `docs/fase-2-parte-3-prototipo-e-validacao.md` (rascunho para o PDF; `DT-27`/`DT-28` ainda Backlog).
-Recorte Java do domínio: a agenda de vagas fica em `Especialidade`; `Encaminhamento`
-agenda, reagenda, cancela e só aceita a transição de status seguinte. `Cidadao` não
-agenda. Identificação (RF01), indicadores da equipe, o `alt` da sequência e
-falta/chamada continuam fora deste recorte.
+Recorte Java do domínio alinhado ao modelo lógico nos itens de prioridade alta
+(20/10/2026): nascimento obrigatório, protocolo e urgência, histórico de criação,
+`UnidadeSaude` com origem, destino e filtro de vaga, reagendar cria outro
+`Agendamento` apontando para o anterior, cancelar mantém o horário e grava a data,
+limite de 2 reagendamentos e prazo de 24 h. Credenciais, chamada, contato e JPA
+continuam fora. Registro em `docs/modelo-logico/alinhamento-java.md`.
+Conferência: `DemoModelagem` e `RegrasDoEncaminhamentoTest`.
+Parte 4 em `docs/modelo-fisico/modelo-fisico.md`. A figura é
+`docs/modelo-fisico/minha_vez_fisico.png`, exportada do Data Modeler a partir de
+`minha_vez_fisico.sql` (12 tabelas, com `CEP`). O `minha_vez_ddl.sql` da Parte 2 não foi
+alterado.
+Parte 5 em `docs/scripts-sql/scripts-sql.md`. O DDL é o mesmo `minha_vez_fisico.sql` da
+Parte 4 (12 PK, 18 FK, 13 UNIQUE, 14 CHECK). Em 23/10/2026 rodou no H2 2.2.224 em modo
+Oracle: 12 tabelas e 5 índices comuns. Os dois índices com `CASE WHEN` o H2 recusou; no
+teste viraram coluna calculada. O arquivo SQL não foi alterado e não rodou num Oracle real.
 
 ### Linear
 
 Workspace `FIAP Dream Team`, time `Dream Team`, prefixo `DT`, cycles desligados. Labels do projeto:
-`Entrega acadêmica`, `User Story`, `Implementação`. Project `HackGov`, `In Progress`, 03/08/2026 a
-**04/10/2026**.
+`Entrega acadêmica`, `User Story`, `Implementação`. Project `HackGov`. Capítulo em andamento: **Fase 3**.
+Datas internas de 15/10/2026: Parte 2 em 19/10; Partes 1, 3, 4 e 5 em 23/10; PDF, roteiro e slides em 26/10; vídeo em 30/10; ZIP e entrega em 03/11. O enunciado colado não trazia o prazo da FIAP ON.
 
-Milestones da Fase 1 (100%, nomes prefixados) e da Fase 2:
+Milestones da Fase 3, criados em 15/10/2026. Responsáveis fechados pelo Vinícius em 15/10: Parte 1 e ZIP com João; Parte 2 e slides com Larissa; Parte 3, PDF e roteiro com Brenda; Partes 4 e 5 e vídeo com Vinícius.
 
-- `Fase 2 - Parte 1 - Backlog e Sprint 1`, alvo 24/09/2026
-- `Fase 2 - Parte 2 - UML e Java`, alvo 24/09/2026
-- `Fase 2 - Parte 3 - Prototipação`, alvo 24/09/2026
-- `Fase 2 - Parte 4 - Dispersão e probabilidade`, alvo 24/09/2026
-- `Entrega da Fase 2`, alvo 04/10/2026 (roteiro 30/09; vídeo e ZIP 04/10)
+- `Fase 3 - Parte 1 - Versão atual do projeto` — `DT-45` texto da evolução, `DT-42` wireframes, `DT-44` UML, `DT-43` Java
+- `Fase 3 - Parte 2 - Modelo lógico` — `DT-46`
+- `Fase 3 - Parte 3 - Formas normais` — `DT-47`
+- `Fase 3 - Parte 4 - Modelo físico` — `DT-49`
+- `Fase 3 - Parte 5 - Scripts SQL` — `DT-48`
+- `Entrega da Fase 3` — `DT-50` PDF, `DT-51` slides, `DT-52` roteiro, `DT-54` vídeo, `DT-53` ZIP
 
-Cards acadêmicos da Fase 2, **sem responsável** até a reunião:
+Sprint 1 da Fase 2 virou filhos `Implementação` (`DT-55`–`DT-73`, T01–T19), sem milestone de Parte.
+Horas do consolidado foram gravadas no campo de estimativa do Linear, que o time exibe como pontos; o
+valor em horas está na descrição de cada card. Responsáveis conforme o consolidado da Fase 2.
 
-| Card | Milestone | Due | Status |
-| --- | --- | --- | --- |
-| `DT-21` Refinar as user stories prioritárias | Parte 1 | 24/09 | Todo |
-| `DT-22` Montar o Sprint Backlog da Sprint 1 | Parte 1 | 24/09 | Backlog |
-| `DT-23` Definir e justificar pelo menos 3 métricas ágeis | Parte 1 | 24/09 | Backlog |
-| `DT-24` Produzir os 4 diagramas UML | Parte 2 | 24/09 | Backlog |
-| `DT-25` Escrever a reflexão técnica sobre a modelagem | Parte 2 | 24/09 | Backlog |
-| `DT-26` Implementar o recorte Java do domínio | Parte 2 | 24/09 | Backlog |
-| `DT-27` Produzir o protótipo da jornada essencial | Parte 3 | 24/09 | Backlog |
-| `DT-28` Definir os critérios de validação | Parte 3 | 24/09 | Backlog |
-| `DT-29` Revisar o dataset e calcular dispersão | Parte 4 | 24/09 | Todo |
-| `DT-30` Pergunta probabilística e decisão de gestão | Parte 4 | 24/09 | Backlog |
-| `DT-31` Compilar a documentação em PDF | Entrega | 24/09 | Backlog |
-| `DT-32` Produzir os slides em PDF | Entrega | 30/09 | Backlog |
-| `DT-33` Escrever o roteiro do vídeo | Entrega | 30/09 | Backlog |
-| `DT-34` Gravar e publicar o vídeo | Entrega | 04/10 | Backlog |
-| `DT-35` Montar o ZIP e entregar na FIAP ON | Entrega | 04/10 | Backlog |
+| Story | Filhos |
+| --- | --- |
+| US01 `DT-36` | T03–T07, mais a base T01, T02, T18 e T19 (servem US01–US03; pai único é a US01) |
+| US02 `DT-37` | T08–T12 |
+| US03 `DT-38` | T13–T17 |
+| US04 `DT-39` e US05 `DT-40` | sem filho |
 
-User Stories criadas: `DT-36`–`DT-40` (US01–US05). Sem filhos `Implementação`. `DT-21` refina essas
-issues; `DT-22` é quem decompõe a Sprint 1.
+`DT-41` é um card de teste da label `Implementação`, título pede para apagar. Não foi cancelado nesta sessão.
 
 `docs/decisoes.md` existe. Serviço: saúde / atenção primária na UBS, produto Minha Vez. `DT-6` ainda
 pode estar desatualizado em relação a esse arquivo.
@@ -77,7 +95,7 @@ real, diagnosticar um problema concreto percebido pela população próxima ao g
 backlog, analisar dados e propor a primeira versão conceitual de um sistema que será desenvolvido ao longo do
 ano.
 
-Capítulo em andamento: **Fase 2**, entrega na FIAP ON até **04/10/2026**. Eixo: acompanhamento. Serviço:
+Capítulo em andamento: **Fase 3** (banco de dados). A Fase 2 foi entregue. Eixo: acompanhamento. Serviço:
 saúde / medicina primária (filas da atenção primária). A Fase 1 (Cap 1) está entregue.
 
 Entrega: `.ZIP` único com PDF das Partes 1 a 4, código ou GitHub, slides em PDF, e link do vídeo não listado
@@ -108,9 +126,7 @@ para lá e deixar aqui só o ponteiro.
 
 ## 4. O que está bloqueado
 
-**Atribuição dos cards `DT-21` a `DT-35` pendente de reunião.** Sem responsável de propósito.
-
-**Fatias `Implementação` ainda não existem.** Quem as cria é `DT-22`, não este passo.
+**O enunciado colado não traz a data oficial da FIAP ON.** As datas nos cards são alvos internos: Parte 2 em 19/10, Partes 1, 3, 4 e 5 em 23/10, PDF, roteiro e slides em 26/10, vídeo em 30/10, ZIP em 03/11.
 
 **`docs/decisoes.md` ainda não existe.** A decisão do serviço vive só no comentário de `DT-6`.
 
@@ -118,11 +134,9 @@ para lá e deixar aqui só o ponteiro.
 
 ## 5. Próximos passos, em ordem
 
-1. Reunião para dono de `DT-21` a `DT-35`.
-2. `DT-21`: refinar `DT-36`–`DT-40`. `DT-22`: decompor a Sprint 1 em filhos `Implementação`.
-3. Partes 2, 3 e 4 em paralelo depois do recorte da Sprint 1; Parte 4 (`DT-29`) já pode começar.
-4. PDF das partes em 24/09 (`DT-31`); slides e roteiro em 30/09 (`DT-32`, `DT-33`); vídeo e ZIP em 04/10.
-5. Criar `docs/decisoes.md` e migrar a tabela da seção 3, incluindo a frente de saúde.
+1. Conferir na FIAP ON se o prazo oficial da Fase 3 bate com o alvo interno de 03/11.
+2. Executar a Sprint 1 nos filhos `DT-55`–`DT-73`.
+3. Apagar ou cancelar `DT-41` (card de teste).
 
 `README.md` ainda descreve o Cap 1 e o serviço em aberto. Atualizar quando for a vez da documentação humana.
 
