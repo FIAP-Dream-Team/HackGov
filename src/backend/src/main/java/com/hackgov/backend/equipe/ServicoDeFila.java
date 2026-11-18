@@ -18,11 +18,11 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Team queue. The pending action and the two indicators are calculated,
- * not stored. Average wait is the latest stay in AGUARDANDO_AGENDAMENTO,
- * in whole seconds, closed at the next status change or at the query
- * when the referral is still waiting. The no-show rate ignores cancelled
- * appointments. "Buscar resultado" has no source in the model.
+ * Fila da equipe. A ação pendente e os dois indicadores são calculados,
+ * não gravados. A espera média é a última permanência em AGUARDANDO_AGENDAMENTO,
+ * em segundos inteiros, fechada na troca de status ou na consulta se o
+ * encaminhamento ainda espera. A taxa de faltas ignora agendamento cancelado.
+ * "Buscar resultado" não tem fonte no modelo.
  */
 @Service
 public class ServicoDeFila {

@@ -1,9 +1,9 @@
 package com.hackgov.backend.domain;
 
 /**
- * Next team action for one referral. It is derived, not stored.
- * Phase 1 also names "buscar resultado"; the logical model has no
- * source for that action, so it is not a value here.
+ * Próxima ação da equipe para um encaminhamento. É derivada, não gravada.
+ * A Fase 1 também cita "buscar resultado"; o modelo lógico não tem fonte
+ * para essa ação, então ela não é um valor aqui.
  */
 public enum AcaoPendente {
 

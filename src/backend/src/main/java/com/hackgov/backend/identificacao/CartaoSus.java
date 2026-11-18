@@ -1,9 +1,9 @@
 package com.hackgov.backend.identificacao;
 
 /**
- * Cartão Nacional de Saúde check digits, following the DATASUS routine
- * published by ANVISA: definitive cards start with 1 or 2, provisional
- * cards start with 7, 8 or 9.
+ * Dígitos verificadores do Cartão Nacional de Saúde, pela rotina do DATASUS
+ * publicada pela ANVISA: cartão definitivo começa com 1 ou 2, provisório
+ * começa com 7, 8 ou 9.
  */
 public final class CartaoSus {
 

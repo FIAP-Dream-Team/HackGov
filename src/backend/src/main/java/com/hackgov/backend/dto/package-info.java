@@ -1,4 +1,4 @@
 /**
- * Request and response payloads for the REST API.
+ * Corpos de pedido e resposta da API REST.
  */
 package com.hackgov.backend.dto;

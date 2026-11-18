@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 /**
- * Citizen identification for the kiosk and the app.
- * Gov.br is not a real OAuth redirect: the endpoint accepts the CPF the
- * provider would have asserted, and the response marks oauthSimulado.
+ * Identificação do cidadão no totem e no aplicativo.
+ * O gov.br não é um redirecionamento OAuth de verdade: o endpoint aceita o
+ * CPF que o provedor teria confirmado, e a resposta marca oauthSimulado.
  */
 @Service
 public class ServicoDeIdentificacao {

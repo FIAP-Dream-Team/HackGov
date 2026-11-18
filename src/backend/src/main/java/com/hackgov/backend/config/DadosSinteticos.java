@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * Synthetic demo data for local runs. These are not real patients.
+ * Dados sintéticos para a demonstração local. Não são pacientes reais.
  */
 @Component
 @ConditionalOnProperty(name = "hackgov.seed", havingValue = "true", matchIfMissing = true)
@@ -71,7 +71,7 @@ public class DadosSinteticos implements CommandLineRunner {
                 destino
         ));
 
-        // Synthetic free slots so the demo list is not empty once scheduling opens.
+        // Horários livres sintéticos para a lista da demonstração não começar vazia.
         LocalDateTime base = LocalDateTime.now()
                 .plusDays(7)
                 .withMinute(0)

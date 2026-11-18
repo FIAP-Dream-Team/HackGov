@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Waiting-room panel. The public payload is the ticket and the room.
- * The yellow state is the called ticket, not a stored column.
+ * Painel da sala de espera. O que sai para o público é a senha e a sala.
+ * O estado amarelo é a senha chamada, não uma coluna gravada.
  */
 @Service
 public class ServicoDePainel implements AtualizacaoDoPainel {
@@ -101,11 +101,12 @@ public class ServicoDePainel implements AtualizacaoDoPainel {
         try {
             emissor.send(SseEmitter.event().name("painel").data(estado));
         } catch (Exception erro) {
+            // A tela que soltou a conexão não pode derrubar a chamada nem o cancelamento.
             emissores.remove(emissor);
             try {
                 emissor.complete();
             } catch (Exception ignorado) {
-                // The waiting-room screen already dropped the stream.
+                // A tela da sala de espera já soltou a conexão.
             }
         }
     }

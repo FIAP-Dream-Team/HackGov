@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * App-only scheduling. Availability, the 24-hour window and the
- * reschedule limit stay on the domain objects.
+ * Agendamento só pelo aplicativo. A vaga, a janela de 24 horas e o
+ * limite de reagendamento ficam nos objetos de domínio.
  */
 @Service
 public class ServicoDeAgendamento {
