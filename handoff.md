@@ -20,6 +20,13 @@ conflitar com o disco.
 
 Parte 1 da Fase 4 está em código na `main`. A US01 (`DT-36`) foi mergeada pelo PR #2. A US02 (`DT-37`) pelo PR #3. A US03 (`DT-38`) pelo PR #4. A US04 (`DT-39`) pelo PR #5. A US05 (`DT-40`) pelo PR #6.
 
+**Parte 3 (front React), 20/11/2026**, na branch `feature/fase-4-front-us01-us05`, ainda sem commit: as quatro rotas
+(`/acompanhar`, `/equipe`, `/painel`, `/totem`) consomem a API real, só com as US01–US05. Nenhuma história nova foi criada:
+a Larissa pediu para esperar. Estrutura e roteiro de demonstração em `src/README.md`. Testado no navegador: validação,
+login, liberar, agendar, reagendar, chamar senha com painel via SSE, falta, totem, sessão vencida e servidor fora do ar.
+Lacuna do backend: depois de uma falta, nem a equipe (409 "o agendamento precisa ser cancelado") nem o cidadão conseguem
+remarcar. O botão foi retirado do front. Dados sintéticos ampliados no `DadosSinteticos.java`: 6 cidadãos, `MV-2026-0001` a `0006` em 3 especialidades e o login `gestor.centro` (tabela em `src/README.md`). O CORS do backend passou a aceitar qualquer porta de localhost. `LandingHome.tsx` já tinha `colorSystem` sem uso, e isso quebra o `npm run build` (erro TS6133 anterior a esta branch).
+
 A fila da equipe, em `src/backend`, é do canal institucional. Atendente e gestor entram com o login da equipe. Token de cidadão recebe 403. Sem token, 401.
 
 - `GET /api/equipe/fila` segmenta os encaminhamentos da unidade de lotação por especialidade. Fila vazia responde 200 com "Nenhum encaminhamento nesta unidade." `?especialidade=` sem encaminhamento devolve o segmento vazio, sem erro. Cada item traz protocolo, nome e status. CPF não sai. O nome fica neste canal: o painel público e o acompanhamento continuam sem ele.
