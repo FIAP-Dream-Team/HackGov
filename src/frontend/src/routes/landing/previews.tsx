@@ -1,197 +1,211 @@
-const deviceBase =
-  'w-full max-w-[360px] rounded-2xl border border-neutral-200 bg-neutral-50 p-5 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.35)]'
+import { AArrowUp, CircleHelp, CreditCard, IdCard, Volume2 } from 'lucide-react'
+import { useEffect, useRef, type ReactNode } from 'react'
+import type { QueueItem, Referral, TrailStep } from '../../api/types'
+import { NumericKeypad } from '../../components/ui'
+import { MethodCard } from '../kiosk/KioskHome'
+import { QUEUE_COLUMNS, QueueItemRow } from '../staff/QueueItemRow'
+import { ReferralCard } from '../tracking/ReferralCard'
 
-const btnBase =
-  'mb-2 block w-full rounded-[10px] border border-neutral-300 bg-neutral-50 p-3 text-center text-[0.8rem] font-semibold text-neutral-950'
+// Previews da home montados com os componentes de verdade do app, alimentados
+// com dados de exemplo (sintéticos). Quando o app muda, a home muda junto.
 
-const btnPrimary =
-  'mb-2 block w-full rounded-[10px] border border-green-500 bg-green-500 p-3 text-center text-[0.8rem] font-semibold text-neutral-50'
+const noop = () => undefined
 
-export function TotemPreview() {
+/**
+ * Moldura de vitrine: o componente aparece igual ao app, mas não recebe
+ * clique nem foco (`inert`), porque na home ele é só ilustração.
+ */
+export function Showcase({ children, label, className = '' }: { children: ReactNode; label: string; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    ref.current?.setAttribute('inert', '')
+  }, [])
+
   return (
-    <div className={deviceBase}>
-      <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-neutral-950">
-        <span>Minha Vez</span>
-        <span className="text-[0.7rem] font-medium text-neutral-500">UBS Vila União</span>
+    <figure className={`w-full ${className}`}>
+      <div ref={ref} aria-hidden="true" className="select-none">
+        {children}
       </div>
-      <h4 className="mt-2 mb-1 text-base text-neutral-950">Veja em que etapa está seu pedido</h4>
-      <p className="mb-3.5 text-[0.78rem] text-neutral-500">
-        Consulta com especialista ou exame. É só encostar o cartão.
-      </p>
-      <button className={btnPrimary} type="button">
-        Encostar o Cartão SUS
-      </button>
-      <button className={btnBase} type="button">
-        Digitar CPF e data de nascimento
-      </button>
-      <p className="mt-1 mb-3.5 rounded-lg bg-neutral-100 px-2.5 py-2 text-[0.68rem] text-neutral-500">
-        Não precisa de senha. Seus dados clínicos não aparecem nesta tela.
-      </p>
-      <div className="flex gap-2 border-t border-neutral-200 pt-3">
-        <span className="flex-1 rounded-lg border border-neutral-200 py-1.5 px-1 text-center text-[0.65rem] font-semibold text-neutral-700">
-          Aumentar letra
-        </span>
-        <span className="flex-1 rounded-lg border border-neutral-200 py-1.5 px-1 text-center text-[0.65rem] font-semibold text-neutral-700">
-          Ouvir a tela
-        </span>
-        <span className="flex-1 rounded-lg border border-neutral-200 py-1.5 px-1 text-center text-[0.65rem] font-semibold text-neutral-700">
-          Ajuda
-        </span>
-      </div>
-    </div>
+      <figcaption className="mt-2 text-center text-xs text-neutral-500">{label}</figcaption>
+    </figure>
+  )
+}
+
+/** Data daqui a `days` dias, às `hour` horas, no formato do backend. */
+function inDays(days: number, hour: number): string {
+  const date = new Date()
+  date.setDate(date.getDate() + days)
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(hour)}:00:00`
+}
+
+function trail(current: number): TrailStep[] {
+  const steps: [TrailStep['status'], string][] = [
+    ['RECEBIDO_TRIADO', 'Recebido e triado'],
+    ['AGUARDANDO_AGENDAMENTO', 'Aguardando agendamento'],
+    ['AGENDADO', 'Agendado'],
+    ['CONCLUIDO', 'Concluído'],
+  ]
+  return steps.map(([status, rotulo], index) => ({
+    status,
+    rotulo,
+    situacao: index < current ? 'CONCLUIDA' : index === current ? 'ATUAL' : 'PENDENTE',
+  }))
+}
+
+const SCHEDULED: Referral = {
+  protocolo: 'MV-2026-0004',
+  status: 'AGENDADO',
+  rotulo: 'Agendado',
+  especialidade: 'Ortopedia',
+  unidadeDestino: 'Ambulatório Central',
+  podeAgendar: false,
+  podeAlterarHorario: false,
+  proximoPasso: 'No dia, chegue com 15 minutos de antecedência.',
+  horarioMarcado: { id: 1, dataHora: inDays(9, 10) },
+  trilha: trail(2),
+  agendamentos: [],
+}
+
+const WAITING: Referral = {
+  protocolo: 'MV-2026-0002',
+  status: 'AGUARDANDO_AGENDAMENTO',
+  rotulo: 'Aguardando agendamento',
+  especialidade: 'Dermatologia',
+  unidadeDestino: 'Ambulatório Central',
+  podeAgendar: true,
+  podeAlterarHorario: false,
+  proximoPasso: 'Já é possível escolher um horário no aplicativo.',
+  trilha: trail(1),
+  agendamentos: [],
+}
+
+/** Cartão do app com horário marcado: o resultado da jornada. */
+export function HeroPreview() {
+  return (
+    <Showcase label="Tela do aplicativo · exemplo com dados sintéticos">
+      <ReferralCard referral={SCHEDULED} />
+    </Showcase>
   )
 }
 
 export function TrackingPreview() {
   return (
-    <div className={deviceBase}>
-      <div className="mb-1.5 flex items-center justify-between text-xs font-bold text-neutral-950">
-        <span>#ENC-4821</span>
-        <span className="rounded-full bg-yellow-200 px-[9px] py-[3px] text-[0.65rem] font-bold text-yellow-800">
-          Urgente
-        </span>
+    <Showcase label="Acompanhamento no aplicativo">
+      <ReferralCard referral={WAITING} token="exemplo" />
+    </Showcase>
+  )
+}
+
+export function TotemPreview() {
+  return (
+    <Showcase label="Totem da UBS, com teclado e acessibilidade" className="mx-auto max-w-[360px]">
+      <div className="flex flex-col gap-3 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+        <div className="grid grid-cols-2 gap-2 [&_button]:p-3 [&_span.block.text-base]:hidden [&_span.block.text-xl]:text-base">
+          <MethodCard icon={CreditCard} title="Cartão SUS" text="" selected onSelect={noop} />
+          <MethodCard icon={IdCard} title="CPF" text="" selected={false} onSelect={noop} />
+        </div>
+        <div className="rounded-[10px] border border-green-500 bg-white px-3 py-2 text-lg tracking-wider text-neutral-950">
+          100 0000 0006 00<span className="animate-pulse text-green-600">|</span>
+        </div>
+        <div className="[&_button]:h-11 [&_button]:text-lg">
+          <NumericKeypad onDigit={noop} onBackspace={noop} onClear={noop} targetLabel="Cartão SUS" />
+        </div>
+        <div className="grid grid-cols-3 gap-2 border-t border-neutral-200 pt-3">
+          {[
+            [AArrowUp, 'Aumentar letra'],
+            [Volume2, 'Ouvir a tela'],
+            [CircleHelp, 'Ajuda'],
+          ].map(([Icon, label]) => {
+            const I = Icon as typeof AArrowUp
+            return (
+              <span
+                key={label as string}
+                className="flex flex-col items-center gap-1 rounded-xl border-2 border-neutral-200 bg-white px-1 py-2 text-center text-xs font-bold text-neutral-800"
+              >
+                <I aria-hidden="true" className="size-5" />
+                {label as string}
+              </span>
+            )
+          })}
+        </div>
       </div>
-      <p className="text-[0.7rem] font-medium text-neutral-500">UBS Vila União · Cardiologia</p>
-      <h4 className="mt-2 mb-1 text-base text-neutral-950">Falta 1 passo: marcar sua consulta</h4>
-      <div className="mt-2.5 mb-1 flex gap-1">
-        <span className="h-[5px] flex-1 rounded-[3px] bg-green-500" />
-        <span className="h-[5px] flex-1 rounded-[3px] bg-green-500" />
-        <span className="h-[5px] flex-1 rounded-[3px] bg-blue-500" />
-        <span className="h-[5px] flex-1 rounded-[3px] bg-neutral-200" />
-      </div>
-      <div className="mb-3.5 flex justify-between">
-        <span className="flex-1 text-center text-[0.6rem] text-neutral-500">Recebido</span>
-        <span className="flex-1 text-center text-[0.6rem] text-neutral-500">Triado</span>
-        <span className="flex-1 text-center text-[0.6rem] text-neutral-500">Marcar horário</span>
-        <span className="flex-1 text-center text-[0.6rem] text-neutral-500">Concluído</span>
-      </div>
-      <div className="mb-3 flex gap-1.5">
-        <span className="flex-1 rounded-lg border border-neutral-200 bg-neutral-100 px-1 py-2 text-center text-[0.68rem] text-neutral-700">
-          qua 20/08 · 08:30
-        </span>
-        <span className="flex-1 rounded-lg border border-green-500 bg-green-100 px-1 py-2 text-center text-[0.68rem] font-bold text-green-700">
-          qui 21/08 · 14:00
-        </span>
-        <span className="flex-1 rounded-lg border border-neutral-200 bg-neutral-100 px-1 py-2 text-center text-[0.68rem] text-neutral-700">
-          sex 22/08 · 10:15
-        </span>
-      </div>
-      <button className={btnPrimary} type="button">
-        Confirmar e imprimir comprovante
-      </button>
-      <button
-        className="block w-full rounded-[10px] border-0 bg-transparent p-1 text-center text-[0.8rem] font-semibold text-blue-500"
-        type="button"
-      >
-        Escolher outra especialidade ou remarcar
-      </button>
-    </div>
+    </Showcase>
   )
 }
 
 export function PanelPreview() {
   return (
-    <div className="w-full max-w-[320px] rounded-2xl border border-neutral-200 bg-green-900 p-5 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.35)]">
-      <p className="mb-2.5 text-[0.62rem] uppercase tracking-wide text-neutral-300">
-        Próximas senhas
-      </p>
-      <div className="mb-4 flex gap-2">
-        <span className="flex-1 rounded-lg bg-green-800 py-2 px-1.5 text-center text-[0.75rem] font-bold text-neutral-50">
-          C 043
-          <small className="mt-0.5 block text-[0.58rem] font-normal text-neutral-300">Sala 3</small>
-        </span>
-        <span className="flex-1 rounded-lg bg-green-800 py-2 px-1.5 text-center text-[0.75rem] font-bold text-neutral-50">
-          A 118
-          <small className="mt-0.5 block text-[0.58rem] font-normal text-neutral-300">
-            Acolhimento
-          </small>
-        </span>
-        <span className="flex-1 rounded-lg bg-green-800 py-2 px-1.5 text-center text-[0.75rem] font-bold text-neutral-50">
-          C 044
-          <small className="mt-0.5 block text-[0.58rem] font-normal text-neutral-300">Sala 3</small>
-        </span>
+    <Showcase label="Painel da sala de espera">
+      <div className="rounded-2xl bg-green-900 p-5 text-neutral-50">
+        <div className="mb-4 flex items-center justify-between text-xs text-green-200">
+          <span>Minha Vez · Sala de espera</span>
+          <span className="flex items-center gap-1.5 rounded-full bg-green-800 px-2.5 py-0.5">
+            <span className="size-1.5 rounded-full bg-green-400" /> Ao vivo
+          </span>
+        </div>
+        <div className="rounded-2xl bg-yellow-500 px-4 py-6 text-center text-neutral-950">
+          <p className="text-sm">É a vez de alguém.</p>
+          <p className="my-1 text-6xl leading-none font-extrabold tracking-tight">A12</p>
+          <p className="text-xl font-bold">Sala 2</p>
+        </div>
+        <p className="mt-3 text-center text-xs text-green-300">Sem nome, protocolo nem dado clínico.</p>
       </div>
-      <div className="rounded-xl bg-yellow-500 p-[18px] text-center text-neutral-950">
-        <span className="mb-1 block text-[0.68rem] uppercase tracking-wide">É a sua vez</span>
-        <strong className="block text-[2.4rem] leading-[1.15]">C 042</strong>
-        <span>Maria A. S. · Sala 3 · Eletrocardiograma</span>
-      </div>
-    </div>
+    </Showcase>
   )
 }
 
-export function StaffPreview() {
-  const rows = [
-    { patient: 'Maria A. Souza', step: 'Aguarda marcação', priority: 'Urgente' },
-    { patient: 'João P. Ribeiro', step: 'Exame marcado · 21/08', priority: 'Eletiva' },
-    { patient: 'Antônia L. Dias', step: 'Resultado pendente há 9 dias', priority: 'Urgente' },
-  ]
+const QUEUE: { item: QueueItem; specialty: string }[] = [
+  { item: { protocolo: 'MV-2026-0001', nome: 'Maria Andrade', status: 'RECEBIDO_TRIADO' }, specialty: 'Cardiologia' },
+  {
+    item: {
+      protocolo: 'MV-2026-0002',
+      nome: 'João Pedro Ribeiro',
+      status: 'AGUARDANDO_AGENDAMENTO',
+      acaoPendente: 'COBRAR_MARCACAO',
+      rotuloAcao: 'Cobrar marcação',
+    },
+    specialty: 'Dermatologia',
+  },
+  { item: { protocolo: 'MV-2026-0004', nome: 'Carlos Eduardo Souza', status: 'AGENDADO' }, specialty: 'Ortopedia' },
+]
 
+export function StaffPreview() {
   return (
-    <div className="w-full max-w-[420px] rounded-2xl border border-neutral-200 bg-neutral-50 p-5 shadow-[0_12px_32px_-20px_rgba(0,0,0,0.35)]">
-      <nav className="mb-3 flex gap-3.5 border-b border-neutral-200 pb-2.5 text-[0.68rem] font-semibold text-neutral-500">
-        <span className="text-blue-500">Fila de encaminhamentos</span>
-        <span>Agenda de exames</span>
-        <span>Indicadores</span>
-      </nav>
-      <div className="mb-3 flex items-center justify-between text-[0.85rem] text-neutral-950">
-        <strong>Cardiologia · 143 pessoas</strong>
-        <span className="rounded-full bg-yellow-200 px-[9px] py-[3px] text-[0.65rem] font-bold text-yellow-800">
-          Ação pendente · 31
-        </span>
+    <Showcase label="Fila da equipe · exemplo com dados sintéticos">
+      {/* No computador, a tabela tem a largura do app e é reduzida com zoom
+          para caber na coluna; no celular ela empilha, como no próprio app. */}
+      <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
+        <div className="md:w-[980px] md:[zoom:0.48]">
+          <div className="flex gap-1 overflow-hidden border-b border-neutral-200 px-3 pt-3 text-sm font-semibold">
+            <span className="-mb-px shrink-0 border-b-2 border-blue-500 px-3 py-2.5 text-blue-600">Todas 6</span>
+            <span className="shrink-0 px-3 py-2.5 text-neutral-600">Cardiologia 1</span>
+            <span className="shrink-0 px-3 py-2.5 text-neutral-600">Dermatologia 2</span>
+            <span className="shrink-0 px-3 py-2.5 text-neutral-600">Ortopedia 3</span>
+          </div>
+          <div
+            className={`hidden gap-4 border-b border-neutral-200 bg-neutral-100 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 md:grid ${QUEUE_COLUMNS}`}
+          >
+            <span>Pessoa</span>
+            <span>Etapa</span>
+            <span>Ação pendente</span>
+            <span className="text-right">O que fazer</span>
+          </div>
+          <ul className="divide-y divide-neutral-200">
+            {QUEUE.map(({ item, specialty }) => (
+              <QueueItemRow
+                key={item.protocolo}
+                item={item}
+                specialty={specialty}
+                token="exemplo"
+                onChanged={noop}
+                onSessionExpired={noop}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="mb-3.5 flex gap-2">
-        <div className="flex-1 rounded-lg bg-neutral-100 py-2 px-1 text-center">
-          <strong className="block text-[0.85rem] text-neutral-950">27 dias</strong>
-          <span className="text-[0.6rem] text-neutral-500">Espera média</span>
-        </div>
-        <div className="flex-1 rounded-lg bg-neutral-100 py-2 px-1 text-center">
-          <strong className="block text-[0.85rem] text-neutral-950">31</strong>
-          <span className="text-[0.6rem] text-neutral-500">Pendentes</span>
-        </div>
-        <div className="flex-1 rounded-lg bg-neutral-100 py-2 px-1 text-center">
-          <strong className="block text-[0.85rem] text-neutral-950">58</strong>
-          <span className="text-[0.6rem] text-neutral-500">Na semana</span>
-        </div>
-        <div className="flex-1 rounded-lg bg-neutral-100 py-2 px-1 text-center">
-          <strong className="block text-[0.85rem] text-neutral-950">9%</strong>
-          <span className="text-[0.6rem] text-neutral-500">Faltas</span>
-        </div>
-      </div>
-      <table className="w-full border-collapse text-[0.7rem]">
-        <thead>
-          <tr>
-            <th className="border-b border-neutral-200 py-1 px-1.5 text-left font-semibold text-neutral-500">
-              Paciente
-            </th>
-            <th className="border-b border-neutral-200 py-1 px-1.5 text-left font-semibold text-neutral-500">
-              Etapa atual
-            </th>
-            <th className="border-b border-neutral-200 py-1 px-1.5 text-left font-semibold text-neutral-500">
-              Prioridade
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.patient}>
-              <td className="border-b border-neutral-100 py-1.5 px-1.5 text-neutral-700">
-                {row.patient}
-              </td>
-              <td className="border-b border-neutral-100 py-1.5 px-1.5 text-neutral-700">
-                {row.step}
-              </td>
-              <td
-                className={`border-b border-neutral-100 py-1.5 px-1.5 ${
-                  row.priority === 'Urgente' ? 'font-bold text-red-700' : 'text-neutral-700'
-                }`}
-              >
-                {row.priority}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    </Showcase>
   )
 }

@@ -1,6 +1,7 @@
-import { useEffect, useState, type FormEvent } from 'react'
+import { LogOut, ShieldCheck } from 'lucide-react'
+import { useCallback, useEffect, useState, type FormEvent } from 'react'
 import { staffApi } from '../../api/staff'
-import { Alert, AppShell, Button, Card, TextField } from '../../components/ui'
+import { AppShell, Button, Card, ErrorAlert, TextField, useToast } from '../../components/ui'
 import { useAction } from '../../hooks/useAsync'
 import { useForm } from '../../hooks/useForm'
 import { useStoredSession } from '../../session/session'
@@ -10,6 +11,17 @@ import { QueueView } from './QueueView'
 /** Canal web da equipe e do gestor (US05). Login próprio, separado do cidadão. */
 export default function StaffHome() {
   const session = useStoredSession('equipe')
+  const toast = useToast()
+
+  const expire = useCallback(() => {
+    session.signOut()
+    toast.warning('Sua sessão terminou', 'Por segurança, entre de novo para continuar.')
+  }, [session, toast])
+
+  function logout() {
+    session.signOut()
+    toast.info('Você saiu do canal da equipe')
+  }
 
   return (
     <AppShell
@@ -18,14 +30,19 @@ export default function StaffHome() {
       width="wide"
       actions={
         session.token && (
-          <button type="button" onClick={session.signOut} className="rounded-lg px-3 py-2 text-sm font-semibold text-neutral-50 hover:bg-blue-600">
+          <button
+            type="button"
+            onClick={logout}
+            className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold text-neutral-50 hover:bg-blue-600"
+          >
+            <LogOut aria-hidden="true" className="size-4" />
             Sair
           </button>
         )
       }
     >
       {session.token ? (
-        <QueueView token={session.token} onSessionExpired={session.signOut} />
+        <QueueView token={session.token} onSessionExpired={expire} />
       ) : (
         <div className="mx-auto max-w-[420px]">
           <StaffLogin onAuthenticated={session.signIn} />
@@ -57,11 +74,16 @@ function StaffLogin({ onAuthenticated }: { onAuthenticated: (token: string) => v
   return (
     <Card>
       <form onSubmit={submit} noValidate className="flex flex-col gap-4">
-        <div>
-          <h1 className="text-xl font-bold text-neutral-950">Entrar no canal da equipe</h1>
-          <p className="text-sm text-neutral-600">Acesso de atendentes e gestores da unidade.</p>
+        <div className="flex items-center gap-3">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+            <ShieldCheck aria-hidden="true" className="size-6" />
+          </span>
+          <div>
+            <h1 className="text-xl font-bold text-neutral-950">Entrar no canal da equipe</h1>
+            <p className="text-sm text-neutral-600">Acesso restrito a atendentes e gestores da unidade.</p>
+          </div>
         </div>
-        {attempted && login.state.status === 'error' && <Alert tone="error">{login.state.error.message}</Alert>}
+        {attempted && login.state.status === 'error' && <ErrorAlert error={login.state.error} />}
         <TextField label="Login institucional" autoComplete="username" {...form.field('login')} />
         <TextField label="Senha" type="password" autoComplete="current-password" {...form.field('senha')} />
         <Button type="submit" tone="staff" block loading={login.state.status === 'loading'}>

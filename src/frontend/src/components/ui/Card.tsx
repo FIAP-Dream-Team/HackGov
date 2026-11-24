@@ -1,18 +1,31 @@
+import type { LucideIcon } from 'lucide-react'
 import type { ReactNode } from 'react'
 
 export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <section className={`rounded-2xl border border-neutral-200 bg-neutral-50 p-5 sm:p-6 ${className}`}>
+    <section className={`rounded-2xl border border-neutral-200 bg-neutral-50 p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:p-6 ${className}`}>
       {children}
     </section>
   )
 }
 
-export function EmptyState({ title, children }: { title: string; children?: ReactNode }) {
+interface EmptyStateProps {
+  title: string
+  icon?: LucideIcon
+  children?: ReactNode
+}
+
+/** Estado vazio: diz o que não há e o que vai acontecer, sem parecer erro. */
+export function EmptyState({ title, icon: Icon, children }: EmptyStateProps) {
   return (
-    <div className="rounded-xl border border-dashed border-neutral-300 px-4 py-6 text-center">
-      <p className="font-semibold text-neutral-800">{title}</p>
-      {children && <div className="mt-1 text-sm text-neutral-600">{children}</div>}
+    <div className="flex flex-col items-center rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 px-6 py-10 text-center">
+      {Icon && (
+        <span className="mb-3 flex size-14 items-center justify-center rounded-full bg-green-100 text-green-700">
+          <Icon aria-hidden="true" className="size-7" strokeWidth={1.75} />
+        </span>
+      )}
+      <p className="font-semibold text-neutral-900">{title}</p>
+      {children && <div className="mt-1 max-w-sm text-sm text-neutral-600">{children}</div>}
     </div>
   )
 }
@@ -29,7 +42,7 @@ const badgeTones: Record<BadgeTone, string> = {
 
 export function Badge({ tone = 'neutral', children }: { tone?: BadgeTone; children: ReactNode }) {
   return (
-    <span className={`inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-bold ${badgeTones[tone]}`}>
+    <span className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-bold ${badgeTones[tone]}`}>
       {children}
     </span>
   )

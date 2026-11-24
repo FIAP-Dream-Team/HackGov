@@ -25,3 +25,12 @@ export function formatDuration(seconds: number): string {
   if (hours < 48) return `${hours} h`
   return `${Math.round(hours / 24)} dias`
 }
+
+const longDay = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: '2-digit' })
+
+/** "sexta-feira, 27/11" a partir de aaaa-mm-dd. */
+export function formatLongDay(isoDate: string): string {
+  const text = longDay.format(new Date(`${isoDate.slice(0, 10)}T12:00:00`))
+  // Só a primeira letra maiúscula: "Quarta-feira", não "Quarta-Feira".
+  return text.charAt(0).toUpperCase() + text.slice(1)
+}

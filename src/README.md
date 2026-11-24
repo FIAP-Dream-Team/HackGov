@@ -63,7 +63,8 @@ vocabulário do produto):
 | `src/hooks/` | `useQuery` (leitura ao abrir a tela), `useAction` (envio de formulário) e `useForm` (validação por campo). Os estados são sempre `idle`, `loading`, `success` e `error`. |
 | `src/session/` | Token do aplicativo e da equipe em `sessionStorage`. O totem guarda a sessão só em memória. |
 | `src/lib/` | Validação de CPF, Cartão SUS, nascimento e senha com as mesmas regras do backend; formatação de data. |
-| `src/components/ui/` | `Button`, `TextField`, `Alert`, `Card`, `Badge`, `EmptyState`, `Skeleton`, `StatusTrail`, `AppShell`. |
+| `src/components/ui/` | `Button`, `TextField`, `Alert`, `ErrorAlert`, `Toast`, `Card`, `Badge`, `EmptyState`, `Skeleton`, `StatusTrail` (trilha em etapas), `AppointmentTicket` (horário marcado), `NumericKeypad` (teclado do totem), `AppShell`. Ícones: `lucide-react`. |
+| `src/lib/errors.ts` | Traduz cada `codigo` do contrato em título, explicação e dica. Ação concluída e sessão vencida avisam por toast; erro de formulário e de carregamento fica no lugar, com `ErrorAlert`. |
 | `src/routes/` | Uma pasta por canal. |
 
 ### Roteiro de demonstração

@@ -1,9 +1,10 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { citizenApi } from '../../api/citizen'
 import type { IdentificationResponse } from '../../api/types'
-import { Alert, Button, Card, TextField } from '../../components/ui'
+import { Alert, Button, Card, ErrorAlert, TextField, useToast } from '../../components/ui'
 import { useAction } from '../../hooks/useAsync'
 import { useForm } from '../../hooks/useForm'
+import { describeError } from '../../lib/errors'
 import {
   formatCpf,
   formatSusCard,
@@ -62,6 +63,12 @@ function LoginForm({ onAuthenticated, onGovBr }: AuthProps & { onGovBr: () => vo
 
   const error = login.state.status === 'error' ? login.state.error : null
 
+  function submitAgain() {
+    void login.run(onlyDigits(form.values.cpf), form.values.senha).then((response) => {
+      if (response) onAuthenticated(response)
+    })
+  }
+
   return (
     <form onSubmit={submit} noValidate className="flex flex-col gap-4">
       <div>
@@ -69,16 +76,14 @@ function LoginForm({ onAuthenticated, onGovBr }: AuthProps & { onGovBr: () => vo
         <p className="text-sm text-neutral-600">Acompanhe seu encaminhamento sem ligar para a UBS.</p>
       </div>
 
-      {error && (
-        <Alert tone="error">
-          {error.message}
-          {error.code === 'CONTA_GOVBR' && (
-            <button type="button" className="ml-1 font-semibold underline" onClick={onGovBr}>
-              Entrar com Gov.br
-            </button>
-          )}
-        </Alert>
-      )}
+      {error &&
+        (error.code === 'CONTA_GOVBR' ? (
+          <Alert tone="info" title="Esta conta entra pelo Gov.br" action={{ label: 'Entrar com Gov.br', onClick: onGovBr }}>
+            {error.message}
+          </Alert>
+        ) : (
+          <ErrorAlert error={error} onRetry={submitAgain} />
+        ))}
 
       <TextField
         label="CPF"
@@ -113,6 +118,15 @@ function SignUpForm({ onAuthenticated }: AuthProps) {
     },
   )
   const signUp = useAction(citizenApi.signUp)
+  const { setError } = form
+  const toast = useToast()
+
+  // CPF ou Cartão SUS já cadastrado: o erro aparece também embaixo do campo.
+  useEffect(() => {
+    if (signUp.state.status !== 'error') return
+    const { field, title } = describeError(signUp.state.error)
+    if (field) setError(field, `${title}.`)
+  }, [signUp.state, setError])
 
   async function submit(event: FormEvent) {
     event.preventDefault()
@@ -125,7 +139,10 @@ function SignUpForm({ onAuthenticated }: AuthProps) {
       senha,
       cartaoSus: cartaoSus.trim() ? onlyDigits(cartaoSus) : undefined,
     })
-    if (response) onAuthenticated(response)
+    if (response) {
+      toast.success('Cadastro criado', 'Você já está dentro do Minha Vez.')
+      onAuthenticated(response)
+    }
   }
 
   return (
@@ -135,7 +152,7 @@ function SignUpForm({ onAuthenticated }: AuthProps) {
         <p className="text-sm text-neutral-600">Use os mesmos dados do seu cadastro na UBS.</p>
       </div>
 
-      {signUp.state.status === 'error' && <Alert tone="error">{signUp.state.error.message}</Alert>}
+      {signUp.state.status === 'error' && <ErrorAlert error={signUp.state.error} title="O cadastro não foi criado" />}
 
       <TextField label="Nome completo" autoComplete="name" {...form.field('nome')} />
       <TextField
@@ -201,7 +218,7 @@ function GovBrForm({ onAuthenticated }: AuthProps) {
         </p>
       </div>
 
-      {govBr.state.status === 'error' && <Alert tone="error">{govBr.state.error.message}</Alert>}
+      {govBr.state.status === 'error' && <ErrorAlert error={govBr.state.error} />}
 
       <TextField
         label="CPF confirmado pelo Gov.br"

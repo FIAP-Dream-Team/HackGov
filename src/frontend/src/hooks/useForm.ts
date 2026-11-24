@@ -53,6 +53,11 @@ export function useForm<V extends Record<string, string>>(initial: V, validators
     return Object.keys(nextErrors).length === 0
   }, [validateField, validators, values])
 
+  /** Coloca um erro vindo do servidor ao lado do campo (ex.: CPF já cadastrado). */
+  const setError = useCallback((name: keyof V, message: string) => {
+    setErrors((errs) => ({ ...errs, [name]: message }))
+  }, [])
+
   /** Liga um campo ao TextField: value, onChange, onBlur e error. */
   const field = (name: keyof V) => ({
     value: values[name],
@@ -61,5 +66,5 @@ export function useForm<V extends Record<string, string>>(initial: V, validators
     error: errors[name] ?? null,
   })
 
-  return { values, errors, setValue, field, validateAll }
+  return { values, errors, setValue, setError, field, validateAll }
 }
