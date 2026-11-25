@@ -25,9 +25,7 @@ export function AppShell({ channel, tone = 'citizen', actions, width = 'narrow',
       <header className={staff ? 'bg-blue-500 text-neutral-50' : hero ? 'bg-green-800 text-neutral-50' : 'border-b border-neutral-200 bg-neutral-50'}>
         <div className={`mx-auto flex items-center justify-between gap-3 px-4 py-3 ${container}`}>
           <Link to="/" className="flex min-w-0 items-center gap-2 font-bold text-inherit no-underline">
-            <span className={staff || hero ? 'rounded-full bg-neutral-50 p-0.5' : ''}>
-              <Logo />
-            </span>
+            <Logo tone={staff || hero ? 'light' : 'color'} />
             <span className="whitespace-nowrap">Minha Vez</span>
             <span
               className={`hidden truncate text-sm font-medium sm:inline ${

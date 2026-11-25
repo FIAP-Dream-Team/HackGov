@@ -17,9 +17,17 @@ O corpo de erro é sempre o mesmo:
 | Protocolo, horário ou cadastro que não existe para quem pediu | 404 | `ENCAMINHAMENTO_NAO_ENCONTRADO`, `HORARIO_NAO_ENCONTRADO` ou `CIDADAO_NAO_ENCONTRADO` |
 | Regra do domínio (prazo, limite, etapa, vaga de outra unidade, agendamento inativo) | 409 | `REGRA_VIOLADA`, com a mensagem da regra |
 | CPF ou Cartão SUS já cadastrado | 409 | `CPF_JA_CADASTRADO` ou `CARTAO_JA_CADASTRADO` |
+| Cinco tentativas de entrada erradas seguidas na mesma conta | 429 | `MUITAS_TENTATIVAS` |
 | Falha não prevista | 500 | `FALHA_INTERNA` |
 
 Datas de vaga saem como `aaaa-mm-dd`. Hora de vaga sai como `hh:mm`. A frase de confirmação repete a data em `dd/mm/aaaa`.
+
+## Segurança da sessão e do acesso
+
+- **Limite de tentativas.** Depois de 5 erros seguidos, a conta fica bloqueada por 5 minutos, mesmo com a senha certa: `429 MUITAS_TENTATIVAS`. Vale para o login do aplicativo (chave: CPF), o totem (chave: CPF ou Cartão SUS) e o login da equipe (chave: login). Um acerto zera a contagem. CPF sem cadastro também conta, com a mesma resposta de senha errada, para não revelar quem tem cadastro.
+- **Validade da sessão.** O token vence depois de um tempo sem uso: 30 minutos no aplicativo e na equipe, 3 minutos no totem. Cada uso renova o prazo. Token vencido responde `401 SESSAO_INVALIDA`.
+- **Proteção contra iframe.** Toda resposta traz `X-Frame-Options: DENY` e `Content-Security-Policy: frame-ancestors 'none'`: nenhuma página de fora consegue abrir a API ou o front dentro de um iframe.
+- **Perfis da equipe (segregação de funções).** O ATENDENTE libera o agendamento, chama a senha e registra falta. O GESTOR acompanha a fila e os indicadores e é quem conclui o encaminhamento. Ação do perfil errado responde `403 ACESSO_NEGADO`.
 
 O dado que o servidor semeia ao subir é sintético: CPF `52998224725`, senha `minhavez`, protocolo `MV-2026-0001`, login da equipe `atendente.centro`. O encaminhamento começa em `RECEBIDO_TRIADO`. Listar horário antes de a equipe liberar a etapa responde 409.
 
@@ -200,7 +208,11 @@ Login próprio. O token de cidadão não serve.
 { "login": "atendente.centro", "senha": "minhavez" }
 ```
 
-200: `{ "token": "…", "canal": "EQUIPE" }`. 401 `SENHA_INCORRETA` se login ou senha não conferem.
+200: `{ "token": "…", "canal": "EQUIPE", "perfil": "ATENDENTE" }` (ou `GESTOR`). 401 `SENHA_INCORRETA` se login ou senha não conferem. 429 `MUITAS_TENTATIVAS` depois de 5 erros seguidos.
+
+### DELETE `/api/equipe/sessao`
+
+Cabeçalho da equipe. 204 sem corpo: o token deixa de valer no servidor. 401 se o token já não valia.
 
 Nas rotas abaixo, o cabeçalho é `Authorization: Bearer <token da equipe>`. Sem ele, 401 "Não há sessão de equipe ativa. Entre de novo."
 

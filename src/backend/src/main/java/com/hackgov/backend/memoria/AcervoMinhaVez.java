@@ -11,6 +11,9 @@ import com.hackgov.backend.identificacao.Sessao;
 import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +37,22 @@ public class AcervoMinhaVez {
     private final List<Encaminhamento> encaminhamentos = new ArrayList<>();
     private final List<Chamada> chamadas = new ArrayList<>();
     private final SecureRandom aleatorio = new SecureRandom();
+
+    // Segurança da sessão: cada token vale enquanto é usado e expira depois de
+    // um tempo parado. O totem expira rápido porque é equipamento público.
+    public static final Duration INATIVIDADE_APP = Duration.ofMinutes(30);
+    public static final Duration INATIVIDADE_TOTEM = Duration.ofMinutes(3);
+    public static final Duration INATIVIDADE_EQUIPE = Duration.ofMinutes(30);
+
+    // Limite de tentativas: depois de 5 erros seguidos na mesma conta, o
+    // acesso fica bloqueado por 5 minutos, contra chute de senha.
+    public static final int MAXIMO_DE_TENTATIVAS = 5;
+    public static final Duration BLOQUEIO = Duration.ofMinutes(5);
+
+    private final Map<String, Instant> ultimoUso = new HashMap<>();
+    private final Map<String, Integer> falhas = new HashMap<>();
+    private final Map<String, Instant> bloqueadoAte = new HashMap<>();
+    private Clock relogio = Clock.systemDefaultZone();
 
     private long proximoId = 1;
 
@@ -159,6 +178,7 @@ public class AcervoMinhaVez {
         aleatorio.nextBytes(bytes);
         String token = HexFormat.of().formatHex(bytes);
         sessoesEquipe.put(token, usuarioId);
+        ultimoUso.put(token, relogio.instant());
         return token;
     }
 
@@ -172,6 +192,11 @@ public class AcervoMinhaVez {
             return Optional.empty();
         }
 
+        if (expirou(token, INATIVIDADE_EQUIPE)) {
+            sessoesEquipe.remove(token);
+            return Optional.empty();
+        }
+
         return Optional.ofNullable(equipe.get(id));
     }
 
@@ -179,8 +204,9 @@ public class AcervoMinhaVez {
         byte[] bytes = new byte[32];
         aleatorio.nextBytes(bytes);
         String token = HexFormat.of().formatHex(bytes);
-        Sessao sessao = new Sessao(token, canal, cidadaoId, LocalDateTime.now());
+        Sessao sessao = new Sessao(token, canal, cidadaoId, LocalDateTime.now(relogio));
         sessoes.put(token, sessao);
+        ultimoUso.put(token, relogio.instant());
         return sessao;
     }
 
@@ -189,11 +215,84 @@ public class AcervoMinhaVez {
             return Optional.empty();
         }
 
-        return Optional.ofNullable(sessoes.get(token));
+        Sessao sessao = sessoes.get(token);
+        if (sessao == null) {
+            return Optional.empty();
+        }
+
+        Duration limite = sessao.getCanal() == Canal.TOTEM ? INATIVIDADE_TOTEM : INATIVIDADE_APP;
+        if (expirou(token, limite)) {
+            sessoes.remove(token);
+            return Optional.empty();
+        }
+
+        return Optional.of(sessao);
     }
 
     public synchronized boolean encerrarSessao(String token) {
+        ultimoUso.remove(token);
         return sessoes.remove(token) != null;
+    }
+
+    public synchronized boolean encerrarSessaoEquipe(String token) {
+        ultimoUso.remove(token);
+        return token != null && sessoesEquipe.remove(token) != null;
+    }
+
+    /**
+     * Expira o token parado há mais tempo que o limite; se ainda vale, renova
+     * o último uso (a sessão vale enquanto a pessoa está usando).
+     */
+    private boolean expirou(String token, Duration limite) {
+        Instant agora = relogio.instant();
+        Instant visto = ultimoUso.get(token);
+
+        if (visto == null || Duration.between(visto, agora).compareTo(limite) > 0) {
+            ultimoUso.remove(token);
+            return true;
+        }
+
+        ultimoUso.put(token, agora);
+        return false;
+    }
+
+    /** Até quando a chave (ex.: "app:<cpf>") está bloqueada, se estiver. */
+    public synchronized Optional<Instant> bloqueioDe(String chave) {
+        Instant ate = bloqueadoAte.get(chave);
+        if (ate == null) {
+            return Optional.empty();
+        }
+
+        if (!relogio.instant().isBefore(ate)) {
+            bloqueadoAte.remove(chave);
+            return Optional.empty();
+        }
+
+        return Optional.of(ate);
+    }
+
+    /** Conta uma tentativa errada; na quinta seguida, bloqueia a chave. */
+    public synchronized void registrarFalha(String chave) {
+        int total = falhas.merge(chave, 1, Integer::sum);
+
+        if (total >= MAXIMO_DE_TENTATIVAS) {
+            falhas.remove(chave);
+            bloqueadoAte.put(chave, relogio.instant().plus(BLOQUEIO));
+        }
+    }
+
+    public synchronized void registrarSucesso(String chave) {
+        falhas.remove(chave);
+        bloqueadoAte.remove(chave);
+    }
+
+    public synchronized Instant agora() {
+        return relogio.instant();
+    }
+
+    /** Só para testes: troca o relógio para simular a passagem do tempo. */
+    public synchronized void usarRelogio(Clock outro) {
+        relogio = outro;
     }
 
     public synchronized int sessoesAbertas() {
@@ -238,6 +337,10 @@ public class AcervoMinhaVez {
         credenciaisEquipe.clear();
         sessoesEquipe.clear();
         chamadas.clear();
+        ultimoUso.clear();
+        falhas.clear();
+        bloqueadoAte.clear();
+        relogio = Clock.systemDefaultZone();
     }
 
     private Optional<Cidadao> buscar(Long id) {

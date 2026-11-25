@@ -1,6 +1,7 @@
 package com.hackgov.backend.painel;
 
 import com.hackgov.backend.api.ApiException;
+import com.hackgov.backend.equipe.RegrasDePerfil;
 import com.hackgov.backend.domain.Chamada;
 import com.hackgov.backend.domain.Encaminhamento;
 import com.hackgov.backend.domain.UsuarioInstitucional;
@@ -63,6 +64,8 @@ public class ServicoDePainel implements AtualizacaoDoPainel {
                 )
         );
 
+        RegrasDePerfil.exigirAtendente(usuario);
+
         if (pedido == null
                 || pedido.senha() == null || pedido.senha().isBlank()
                 || pedido.sala() == null || pedido.sala().isBlank()) {
@@ -76,6 +79,16 @@ public class ServicoDePainel implements AtualizacaoDoPainel {
                         "Não encontramos esse encaminhamento."
                 )
         );
+
+        // Mesma regra de liberar e registrar falta: a equipe só age sobre
+        // encaminhamentos da própria unidade de lotação.
+        if (!usuario.getUnidade().equals(encaminhamento.getUnidadeOrigem())) {
+            throw new ApiException(
+                    403,
+                    "ACESSO_NEGADO",
+                    "Este encaminhamento é de outra unidade."
+            );
+        }
 
         Chamada chamada = usuario.chamar(
                 acervo.proximoId(),

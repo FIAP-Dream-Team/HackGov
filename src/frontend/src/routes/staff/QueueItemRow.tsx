@@ -1,7 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { staffApi } from '../../api/staff'
 import { CheckCheck, Megaphone, TriangleAlert, Unlock, UserX } from 'lucide-react'
-import type { QueueItem, ReferralStatus } from '../../api/types'
+import type { QueueItem, ReferralStatus, StaffRole } from '../../api/types'
 import { Badge, Button, ErrorAlert, TextField, useToast } from '../../components/ui'
 import { useAction } from '../../hooks/useAsync'
 import { useForm } from '../../hooks/useForm'
@@ -13,6 +13,8 @@ interface QueueItemRowProps {
   item: QueueItem
   /** Mostrada só na aba "Todas", onde as especialidades se misturam. */
   specialty?: string
+  /** Define os botões: atendente opera, gestor só conclui. */
+  role?: StaffRole
   token: string
   onChanged: () => void
   onSessionExpired: () => void
@@ -35,7 +37,7 @@ const STATUS_TONE: Record<ReferralStatus, 'neutral' | 'green' | 'blue'> = {
  * (Encaminhamento.transicaoPermitida): só aparece o botão que faz sentido para
  * a etapa atual.
  */
-export function QueueItemRow({ item, specialty, token, onChanged, onSessionExpired }: QueueItemRowProps) {
+export function QueueItemRow({ item, specialty, role = 'ATENDENTE', token, onChanged, onSessionExpired }: QueueItemRowProps) {
   const [calling, setCalling] = useState(false)
   // Falta e conclusão não têm volta no backend: pedem confirmação na linha.
   const [confirming, setConfirming] = useState<'noShow' | 'conclude' | null>(null)
@@ -82,6 +84,7 @@ export function QueueItemRow({ item, specialty, token, onChanged, onSessionExpir
 
   const busy = action.state.status === 'loading'
   const activeAppointment = item.status === 'AGENDADO' && item.acaoPendente !== 'REAGENDAR'
+  const attendant = role === 'ATENDENTE'
   const initials = item.nome
     .split(' ')
     .filter(Boolean)
@@ -126,13 +129,13 @@ export function QueueItemRow({ item, specialty, token, onChanged, onSessionExpir
         </div>
 
         <div className="flex flex-wrap items-center gap-2 md:flex-nowrap md:justify-end">
-          {item.status === 'RECEBIDO_TRIADO' && (
+          {attendant && item.status === 'RECEBIDO_TRIADO' && (
             <Button tone="staff" onClick={() => run('release')} loading={busy}>
               <Unlock aria-hidden="true" className="size-4" />
               Liberar agendamento
             </Button>
           )}
-          {activeAppointment && !calling && !confirming && (
+          {attendant && activeAppointment && !calling && !confirming && (
             <>
               <Button tone="staff" onClick={() => setCalling(true)} disabled={busy}>
                 <Megaphone aria-hidden="true" className="size-4" />
@@ -142,13 +145,18 @@ export function QueueItemRow({ item, specialty, token, onChanged, onSessionExpir
                 <UserX aria-hidden="true" className="size-4" />
                 Falta
               </Button>
-              <Button tone="staff" variant="secondary" onClick={() => setConfirming('conclude')} disabled={busy} title="Concluir encaminhamento">
-                <CheckCheck aria-hidden="true" className="size-4" />
-                Concluir
-              </Button>
             </>
           )}
-          {item.status === 'AGUARDANDO_AGENDAMENTO' && (
+          {!attendant && item.status === 'AGENDADO' && !confirming && (
+            <Button tone="staff" variant="secondary" onClick={() => setConfirming('conclude')} disabled={busy} title="Concluir encaminhamento">
+              <CheckCheck aria-hidden="true" className="size-4" />
+              Concluir
+            </Button>
+          )}
+          {!attendant && item.status !== 'AGENDADO' && item.status !== 'CONCLUIDO' && (
+            <span className="text-sm text-neutral-500">Com o atendente</span>
+          )}
+          {attendant && item.status === 'AGUARDANDO_AGENDAMENTO' && (
             <span className="text-sm text-neutral-500">Aguardando o cidadão</span>
           )}
         </div>

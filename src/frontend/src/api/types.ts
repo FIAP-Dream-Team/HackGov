@@ -96,9 +96,12 @@ export interface CancellationResponse {
   mensagem: string
 }
 
+export type StaffRole = 'ATENDENTE' | 'GESTOR'
+
 export interface StaffLoginResponse {
   token: string
   canal: 'EQUIPE'
+  perfil: StaffRole
 }
 
 export type PendingAction = 'COBRAR_MARCACAO' | 'REAGENDAR'
@@ -125,6 +128,8 @@ export interface Queue {
   agendamentos: number
   taxaFaltasPercentual?: number
   mensagemFaltas?: string
+  /** Quem consultou: ATENDENTE opera a fila, GESTOR acompanha e conclui. */
+  perfil: StaffRole
 }
 
 export interface StatusUpdated {

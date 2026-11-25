@@ -18,7 +18,10 @@ export default function StaffHome() {
     toast.warning('Sua sessão terminou', 'Por segurança, entre de novo para continuar.')
   }, [session, toast])
 
-  function logout() {
+  async function logout() {
+    // Encerra no servidor para o token deixar de valer; se falhar, a sessão
+    // local é apagada do mesmo jeito.
+    if (session.token) await staffApi.logout(session.token).catch(() => undefined)
     session.signOut()
     toast.info('Você saiu do canal da equipe')
   }

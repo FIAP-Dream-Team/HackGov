@@ -38,6 +38,13 @@ export function describeError(error: ApiError): ErrorDescription {
         hint: 'Confira os números e a senha. Letras maiúsculas e minúsculas fazem diferença.',
         retryable: false,
       }
+    case 'MUITAS_TENTATIVAS':
+      return {
+        title: 'Acesso bloqueado por alguns minutos',
+        message: error.message,
+        hint: 'É uma proteção contra quem tenta adivinhar senhas. Espere e tente de novo, ou peça ajuda no balcão da UBS.',
+        retryable: false,
+      }
     case 'CONTA_GOVBR':
       return {
         title: 'Esta conta entra pelo Gov.br',

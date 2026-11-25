@@ -20,6 +20,7 @@ export type ErrorCode =
   | 'CPF_JA_CADASTRADO'
   | 'CARTAO_JA_CADASTRADO'
   | 'FALHA_INTERNA'
+  | 'MUITAS_TENTATIVAS'
   // Códigos gerados no próprio cliente, quando o servidor nem respondeu.
   | 'SEM_CONEXAO'
   | 'RESPOSTA_INESPERADA'
@@ -54,6 +55,7 @@ const FALLBACK_MESSAGES: Record<number, string> = {
   403: 'Este canal não pode fazer essa ação.',
   404: 'Não encontramos o que você procurou.',
   409: 'Essa ação não é permitida agora.',
+  429: 'Muitas tentativas seguidas. Espere alguns minutos e tente de novo.',
   500: 'O servidor teve um problema. Tente de novo em instantes.',
 }
 

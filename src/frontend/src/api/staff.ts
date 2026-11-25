@@ -8,6 +8,11 @@ export const staffApi = {
     return request<StaffLoginResponse>('/equipe/login', { method: 'POST', body: { login, senha } })
   },
 
+  /** Encerra a sessão no servidor: o token deixa de valer na hora. */
+  logout(token: string) {
+    return request<void>('/equipe/sessao', { method: 'DELETE', token })
+  },
+
   queue(token: string, specialty?: string, signal?: AbortSignal) {
     const query = specialty ? `?especialidade=${encodeURIComponent(specialty)}` : ''
     return request<Queue>(`/equipe/fila${query}`, { token, signal })

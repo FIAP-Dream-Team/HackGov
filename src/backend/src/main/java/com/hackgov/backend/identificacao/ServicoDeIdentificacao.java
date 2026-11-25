@@ -49,6 +49,12 @@ public class ServicoDeIdentificacao {
 
         Cidadao porCartao = null;
         Cidadao porCpf = null;
+        // No totem, a data de nascimento não é segredo: o limite de tentativas
+        // impede que alguém fique chutando datas para um CPF.
+        String chave = LimiteDeTentativas.chaveTotem(temCpf
+                ? Cpf.analisar(pedido.cpf()).digitos()
+                : CartaoSus.analisar(pedido.cartaoSus()).digitos());
+        LimiteDeTentativas.verificar(acervo, chave);
 
         if (temCartao) {
             CartaoSus cartao = CartaoSus.analisar(pedido.cartaoSus());
@@ -64,7 +70,16 @@ public class ServicoDeIdentificacao {
             }
         }
 
-        Cidadao cidadao = resolverTotem(temCartao, temCpf, porCartao, porCpf);
+        Cidadao cidadao;
+
+        try {
+            cidadao = resolverTotem(temCartao, temCpf, porCartao, porCpf);
+        } catch (ApiException naoEncontrado) {
+            acervo.registrarFalha(chave);
+            throw naoEncontrado;
+        }
+
+        acervo.registrarSucesso(chave);
         return responder(acervo.abrirSessao(Canal.TOTEM, cidadao.getId()), null, null);
     }
 
@@ -98,12 +113,16 @@ public class ServicoDeIdentificacao {
         }
 
         Cpf cpf = Cpf.analisar(pedido.cpf());
+        String chave = LimiteDeTentativas.chaveApp(cpf.digitos());
+        LimiteDeTentativas.verificar(acervo, chave);
+
         Cidadao cidadao = acervo.buscarPorCpf(cpf.digitos()).orElse(null);
         Credencial credencial = cidadao == null
                 ? null
                 : acervo.credencialDe(cidadao.getId()).orElse(null);
 
         if (cidadao == null || credencial == null) {
+            acervo.registrarFalha(chave);
             throw senhaNaoConfere();
         }
 
@@ -116,9 +135,11 @@ public class ServicoDeIdentificacao {
         }
 
         if (!credencial.getSenha().confere(pedido.senha())) {
+            acervo.registrarFalha(chave);
             throw senhaNaoConfere();
         }
 
+        acervo.registrarSucesso(chave);
         return responder(acervo.abrirSessao(Canal.APP, cidadao.getId()), null, null);
     }
 
