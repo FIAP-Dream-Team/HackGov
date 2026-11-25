@@ -15,6 +15,7 @@ import {
 } from '../../lib/validation'
 import { ReferralCard } from '../tracking/ReferralCard'
 import { AccessibilityBar, HelpPanel, TEXT_SCALES, screenText, useScreenReader } from './Accessibility'
+import { IdleGuard } from './IdleGuard'
 
 type Method = 'card' | 'cpf'
 type Field = 'cartaoSus' | 'cpf' | 'nascimento'
@@ -34,13 +35,18 @@ export default function KioskHome() {
   const reader = useScreenReader()
   const toast = useToast()
 
-  async function finish() {
+  async function finish(reason: 'button' | 'idle' = 'button') {
     if (session) await citizenApi.logout(session.token).catch(() => undefined)
     setSession(null)
     // A próxima pessoa começa do padrão: letra normal e leitura parada.
     setScaleIndex(0)
+    setHelpOpen(false)
     reader.stop()
-    toast.info('Tela limpa', 'Seus dados não ficaram no totem. A próxima pessoa já pode usar.')
+    if (reason === 'idle') {
+      toast.info('Tela limpa por inatividade', 'Ninguém tocou no totem por um tempo, então os dados foram apagados.')
+    } else {
+      toast.info('Tela limpa', 'Seus dados não ficaram no totem. A próxima pessoa já pode usar.')
+    }
   }
 
   function identified(response: IdentificationResponse) {
@@ -62,7 +68,7 @@ export default function KioskHome() {
   return (
     <>
       <div style={{ zoom: TEXT_SCALES[scaleIndex] }} className="pb-28">
-        <KioskScreen session={session} onIdentified={identified} onFinish={finish} />
+        <KioskScreen session={session} onIdentified={identified} onFinish={() => finish('button')} />
       </div>
       <AccessibilityBar
         scaleIndex={scaleIndex}
@@ -73,6 +79,7 @@ export default function KioskHome() {
         onHelp={() => setHelpOpen(true)}
       />
       <HelpPanel open={helpOpen} onClose={() => setHelpOpen(false)} />
+      <IdleGuard active={session !== null} onTimeout={() => finish('idle')} />
     </>
   )
 }

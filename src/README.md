@@ -91,8 +91,18 @@ Tudo fica em memória: reiniciar volta a este estado.
 | Carlos Eduardo Souza | CPF `111.444.777-35` | `MV-2026-0004` Ortopedia, já agendado (dá para chamar no painel) |
 | Lúcia Ferreira | CPF `246.813.579-28` | `MV-2026-0005` Dermatologia aguardando e `MV-2026-0006` Ortopedia em triagem |
 | Pedro Henrique Lima | CPF `135.792.468-28` | nenhum (estado vazio) |
-| Equipe, atendente | `atendente.centro` | UBS Centro |
-| Equipe, gestor | `gestor.centro` | UBS Centro. Hoje vê e faz o mesmo que o atendente |
+| Equipe, atendente | `atendente.centro` | UBS Centro. Libera agendamentos, chama senhas e registra faltas |
+| Equipe, gestor | `gestor.centro` | UBS Centro. Acompanha a fila e os indicadores e conclui encaminhamentos; liberar, chamar e registrar falta ficam com o atendente |
 
 Não há falta nem encaminhamento concluído semeados: o domínio recusa agendamento no passado.
+
+### Segurança (Parte 4 da Fase 4)
+
+Senha com hash PBKDF2 e sal, login que não revela quem tem cadastro, acesso por canal e por unidade, limite de 5
+tentativas (bloqueio de 5 minutos), sessão que vence sem uso (30 min no app e na equipe, 3 min no totem), logout da
+equipe no servidor e segregação de funções entre atendente e gestor. No front, o totem avisa e limpa a tela depois de
+1 minuto parado. Proteção contra iframe (clickjacking): backend (`ProtecaoContraIframe.java`) e Vite (`vite.config.ts`,
+no `dev` e no `preview`) mandam `X-Frame-Options: DENY` e `frame-ancestors 'none'`; o `index.html` tem um script de
+reserva para servidores que não mandam esses cabeçalhos. Os testes ficam em `backend/src/test/java/com/hackgov/backend/seguranca/SegurancaHttpTest.java`.
+Atenção ao testar: 5 senhas erradas bloqueiam aquela conta por 5 minutos; reiniciar o backend também desbloqueia.
 

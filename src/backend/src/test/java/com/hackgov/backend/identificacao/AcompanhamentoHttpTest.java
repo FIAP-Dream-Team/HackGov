@@ -148,8 +148,12 @@ class AcompanhamentoHttpTest {
                 .andExpect(status().isForbidden())
                 .andExpect(jsonPath("$.codigo").value("ACESSO_NEGADO"));
 
+        // Concluir é do gestor (segregação de funções); a transição inválida
+        // continua barrada pela regra do domínio.
+        String tokenGestor = tokenDoGestor();
+
         mvc.perform(post("/api/equipe/encaminhamentos/MV-2026-0099/status")
-                        .header("Authorization", "Bearer " + tokenEquipe)
+                        .header("Authorization", "Bearer " + tokenGestor)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {"status":"CONCLUIDO"}
@@ -243,6 +247,19 @@ class AcompanhamentoHttpTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.canal").value("EQUIPE"))
                 .andExpect(jsonPath("$.nome").doesNotExist())
+                .andReturn();
+        return token(login);
+    }
+
+    private String tokenDoGestor() throws Exception {
+        equipe.registrar("Gestor Secreto", "gestor.centro", "minhavez", PerfilUsuario.GESTOR, origem);
+
+        MvcResult login = mvc.perform(post("/api/equipe/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"login":"gestor.centro","senha":"minhavez"}
+                                """))
+                .andExpect(status().isOk())
                 .andReturn();
         return token(login);
     }

@@ -8,6 +8,7 @@ import com.hackgov.backend.domain.UnidadeSaude;
 import com.hackgov.backend.domain.UsuarioInstitucional;
 import com.hackgov.backend.identificacao.AreaPessoal;
 import com.hackgov.backend.identificacao.Credencial;
+import com.hackgov.backend.identificacao.LimiteDeTentativas;
 import com.hackgov.backend.identificacao.SenhaHash;
 import com.hackgov.backend.memoria.AcervoMinhaVez;
 import org.springframework.stereotype.Service;
@@ -50,6 +51,9 @@ public class ServicoDeEquipe {
             throw new ApiException(400, "DADOS_INVALIDOS", "Informe o login e a senha da equipe.");
         }
 
+        String chave = LimiteDeTentativas.chaveEquipe(pedido.login().trim());
+        LimiteDeTentativas.verificar(acervo, chave);
+
         UsuarioInstitucional usuario = acervo.buscarEquipePorLogin(pedido.login().trim()).orElse(null);
         Credencial credencial = usuario == null
                 ? null
@@ -57,10 +61,22 @@ public class ServicoDeEquipe {
 
         if (usuario == null || credencial == null || !credencial.temSenha()
                 || !credencial.getSenha().confere(pedido.senha())) {
+            acervo.registrarFalha(chave);
             throw new ApiException(401, "SENHA_INCORRETA", "Login ou senha não conferem. Tente de novo.");
         }
 
-        return new RespostaLoginEquipe(acervo.abrirSessaoEquipe(usuario.getId()), "EQUIPE");
+        acervo.registrarSucesso(chave);
+        return new RespostaLoginEquipe(
+                acervo.abrirSessaoEquipe(usuario.getId()),
+                "EQUIPE",
+                usuario.getPerfil().name()
+        );
+    }
+
+    public void sair(String token) {
+        if (!acervo.encerrarSessaoEquipe(token)) {
+            throw new ApiException(401, "SESSAO_INVALIDA", "Não há sessão de equipe ativa. Entre de novo.");
+        }
     }
 
     public StatusAtualizadoResposta atualizarStatus(String token, String protocolo, PedidoDeStatus pedido) {
@@ -90,6 +106,12 @@ public class ServicoDeEquipe {
             novoStatus = StatusEncaminhamento.valueOf(pedido.status());
         } catch (IllegalArgumentException erro) {
             throw new ApiException(400, "DADOS_INVALIDOS", "Informe uma etapa válida.");
+        }
+
+        if (novoStatus == StatusEncaminhamento.CONCLUIDO) {
+            RegrasDePerfil.exigirGestor(usuario);
+        } else {
+            RegrasDePerfil.exigirAtendente(usuario);
         }
 
         Encaminhamento encaminhamento = acervo.buscarEncaminhamentoPorProtocolo(protocolo).orElseThrow(

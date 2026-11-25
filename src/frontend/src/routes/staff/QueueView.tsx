@@ -1,7 +1,7 @@
-import { CalendarX2, ClipboardList, Clock, Inbox, RefreshCw, TriangleAlert, type LucideIcon } from 'lucide-react'
+import { CalendarX2, ClipboardList, Clock, Inbox, RefreshCw, TriangleAlert, UserCog, type LucideIcon } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { staffApi } from '../../api/staff'
-import type { Queue } from '../../api/types'
+import type { Queue, StaffRole } from '../../api/types'
 import { Card, EmptyState, ErrorAlert, Skeleton } from '../../components/ui'
 import { useQuery } from '../../hooks/useAsync'
 import { formatDuration } from '../../lib/format'
@@ -59,10 +59,27 @@ export function QueueView({ token, onSessionExpired }: QueueViewProps) {
 
       {data && (
         <>
+          <RoleNotice role={data.perfil} />
           <Indicators queue={data} />
           <QueueTable queue={data} tab={tab} onTab={setTab} token={token} onChanged={queue.reload} onSessionExpired={onSessionExpired} />
         </>
       )}
+    </div>
+  )
+}
+
+/** Diz o que o perfil logado pode fazer (segregação de funções). */
+function RoleNotice({ role }: { role: StaffRole }) {
+  const gestor = role === 'GESTOR'
+  return (
+    <div className="flex items-start gap-3 rounded-2xl border border-blue-200 bg-blue-100 px-4 py-3 text-sm text-blue-900">
+      <UserCog aria-hidden="true" className="mt-0.5 size-5 shrink-0" />
+      <p>
+        <strong>Você entrou como {gestor ? 'gestor' : 'atendente'}.</strong>{' '}
+        {gestor
+          ? 'Você acompanha a fila e os indicadores e conclui encaminhamentos. Liberar, chamar senha e registrar falta ficam com o atendente.'
+          : 'Você libera agendamentos, chama senhas e registra faltas. Concluir o encaminhamento fica com o gestor, que confere o que foi registrado.'}
+      </p>
     </div>
   )
 }
@@ -201,6 +218,7 @@ function QueueTable({ queue, tab, onTab, token, onChanged, onSessionExpired }: Q
                 key={item.protocolo}
                 item={item}
                 specialty={tab === ALL ? specialty : undefined}
+                role={queue.perfil}
                 token={token}
                 onChanged={onChanged}
                 onSessionExpired={onSessionExpired}

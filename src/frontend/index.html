@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0F4631" />
     <title>Minha Vez</title>
+    <!--
+      Última barreira contra clickjacking, para quando o servidor não manda os
+      cabeçalhos X-Frame-Options / frame-ancestors (ex.: arquivo aberto direto
+      ou hospedagem estática simples). Se a página estiver dentro de um iframe,
+      ela fica escondida e tenta sair para a janela principal.
+    -->
+    <style id="anti-iframe">html { display: none !important; }</style>
+    <script>
+      if (window.self === window.top) {
+        document.getElementById('anti-iframe').remove()
+      } else {
+        try {
+          window.top.location = window.self.location
+        } catch (erro) {
+          // Iframe de outro site que bloqueia a saída: a página continua escondida.
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

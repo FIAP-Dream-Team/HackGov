@@ -77,11 +77,12 @@ public class ServicoDeFila {
             mensagem = FILA_VAZIA;
         }
 
-        return montar(mensagem, grupos, considerados);
+        return montar(mensagem, grupos, considerados, usuario.getPerfil().name());
     }
 
     public FaltaRegistradaResposta registrarFalta(String token, String protocolo) {
         UsuarioInstitucional usuario = equipeDe(token);
+        RegrasDePerfil.exigirAtendente(usuario);
         Encaminhamento encaminhamento = acervo.buscarEncaminhamentoPorProtocolo(protocolo).orElseThrow(
                 () -> new ApiException(
                         404,
@@ -113,7 +114,8 @@ public class ServicoDeFila {
     private FilaResposta montar(
             String mensagem,
             List<EspecialidadeFilaResposta> grupos,
-            List<Encaminhamento> considerados) {
+            List<Encaminhamento> considerados,
+            String perfil) {
         long soma = 0;
         int amostras = 0;
         int faltas = 0;
@@ -151,7 +153,8 @@ public class ServicoDeFila {
                 temTaxa ? faltas : null,
                 temTaxa ? agendamentos : null,
                 temTaxa ? (int) Math.round(100.0 * faltas / agendamentos) : null,
-                temTaxa ? null : SEM_FALTAS
+                temTaxa ? null : SEM_FALTAS,
+                perfil
         );
     }
 

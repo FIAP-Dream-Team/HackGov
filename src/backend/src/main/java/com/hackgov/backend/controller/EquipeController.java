@@ -13,6 +13,7 @@ import com.hackgov.backend.painel.PainelResposta;
 import com.hackgov.backend.painel.PedidoDeChamada;
 import com.hackgov.backend.painel.ServicoDePainel;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,6 +42,13 @@ public class EquipeController {
     @PostMapping("/login")
     public RespostaLoginEquipe login(@RequestBody PedidoLoginEquipe pedido) {
         return equipe.entrar(pedido);
+    }
+
+    /** Encerra a sessão da equipe no servidor: o token deixa de valer na hora. */
+    @DeleteMapping("/sessao")
+    public ResponseEntity<Void> sair(@RequestHeader(value = "Authorization", required = false) String autorizacao) {
+        equipe.sair(tokenDe(autorizacao));
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/encaminhamentos/{protocolo}/status")

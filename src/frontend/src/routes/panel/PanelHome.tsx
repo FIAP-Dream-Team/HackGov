@@ -60,7 +60,7 @@ export default function PanelHome() {
     <div className="flex min-h-dvh flex-col bg-green-900 text-neutral-50">
       <header className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2 font-bold">
-          <Logo />
+          <Logo tone="light" />
           Minha Vez · Sala de espera
         </div>
         <ConnectionBadge connection={connection} />

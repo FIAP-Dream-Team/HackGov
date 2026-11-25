@@ -7,10 +7,13 @@ import {
   LockKeyhole,
   Monitor,
   MonitorSmartphone,
+  ShieldAlert,
   ShieldCheck,
   Smartphone,
   Tablet,
   Timer,
+  TimerOff,
+  UserCog,
   Users,
   type LucideIcon,
 } from 'lucide-react'
@@ -96,6 +99,21 @@ const privacy: { icon: LucideIcon; title: string; text: string }[] = [
     title: 'Cada canal no seu lugar',
     text: 'O acesso do cidadão não abre a fila da equipe, e a equipe só vê a própria unidade. O CPF não aparece na fila.',
   },
+  {
+    icon: ShieldAlert,
+    title: 'Contra chute de senha',
+    text: 'Depois de 5 tentativas erradas seguidas, o acesso daquela conta fica bloqueado por 5 minutos, inclusive no totem.',
+  },
+  {
+    icon: TimerOff,
+    title: 'Sessão que expira',
+    text: 'O acesso vence depois de um tempo sem uso. O totem avisa e limpa a tela sozinho se a pessoa for embora sem encerrar.',
+  },
+  {
+    icon: UserCog,
+    title: 'Quem executa não encerra',
+    text: 'O atendente libera, chama e registra falta; o gestor acompanha os indicadores e conclui o encaminhamento.',
+  },
 ]
 
 const colorSystem = [
@@ -120,7 +138,8 @@ const colorSystem = [
 ]
 
 const demoLogins = [
-  { where: 'Equipe', path: '/equipe', login: 'atendente.centro', note: 'ou gestor.centro' },
+  { where: 'Equipe', path: '/equipe', login: 'atendente.centro', note: 'opera a fila' },
+  { where: 'Equipe', path: '/equipe', login: 'gestor.centro', note: 'acompanha e conclui' },
   { where: 'Aplicativo', path: '/acompanhar', login: 'CPF 529.982.247-25', note: 'Maria, em triagem' },
   { where: 'Aplicativo', path: '/acompanhar', login: 'CPF 111.444.777-35', note: 'Carlos, já agendado' },
   { where: 'Totem', path: '/totem', login: 'Cartão SUS 100 0000 0006 0018', note: 'sem senha' },
@@ -150,9 +169,7 @@ export default function LandingHome() {
       <header className="sticky top-0 z-40 border-b border-green-700 bg-green-800 text-neutral-50">
         <div className="mx-auto flex max-w-[1080px] items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center gap-2 font-bold text-inherit no-underline">
-            <span className="rounded-full bg-neutral-50 p-0.5">
-              <Logo />
-            </span>
+            <Logo tone="light" />
             Minha Vez
           </Link>
           <nav aria-label="Seções" className="hidden items-center gap-5 text-sm text-green-100 lg:flex">
@@ -375,9 +392,7 @@ export default function LandingHome() {
         <div className="mx-auto grid max-w-[1080px] gap-8 px-4 py-10 md:grid-cols-2">
           <div>
             <p className="flex items-center gap-2 font-bold text-neutral-50">
-              <span className="rounded-full bg-neutral-50 p-0.5">
-                <Logo />
-              </span>
+              <Logo tone="light" />
               Minha Vez
             </p>
             <p className="mt-2 text-sm">

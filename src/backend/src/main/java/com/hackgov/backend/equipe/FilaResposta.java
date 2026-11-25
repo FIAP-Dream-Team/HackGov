@@ -13,6 +13,8 @@ public record FilaResposta(
         Integer faltas,
         Integer agendamentos,
         Integer taxaFaltasPercentual,
-        String mensagemFaltas
+        String mensagemFaltas,
+        // Perfil de quem consultou: o front mostra só as ações permitidas.
+        String perfil
 ) {
 }
