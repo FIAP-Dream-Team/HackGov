@@ -1,122 +1,140 @@
-# HackGov
+# Minha Vez · HackGov
 
-Projeto em grupo da FIAP sobre transformação digital da gestão pública. A proposta é escolher um serviço
-público real, diagnosticar um problema concreto percebido pela população próxima ao grupo, levantar
-requisitos, montar backlog, analisar dados e propor a primeira versão conceitual de um sistema que será
-desenvolvido ao longo do ano.
+**Minha Vez** é um sistema para o cidadão acompanhar o encaminhamento da UBS até a consulta com especialista, sem
+precisar ligar nem ir até a unidade só para perguntar. É o projeto do Grupo 1 no **HackGov**, atividade da FIAP
+sobre transformação digital da gestão pública, desenvolvido ao longo de 2026.
 
-O pano de fundo é conhecido de quem já precisou de qualquer coisa da prefeitura: serviços que funcionam de
-forma fragmentada, sistemas isolados, pouco uso de dado e quase nenhuma integração entre órgãos. O resultado
-são filas, retrabalho, cidadão sem informação, servidor sobrecarregado e gestor sem saber se a política
-pública está funcionando.
+> Protótipo acadêmico. Não é um serviço oficial do SUS. Todos os dados usados nas telas são sintéticos.
 
-## Direção do produto
+## O problema
 
-O grupo votou e o eixo está fechado: **acompanhamento**. O cidadão precisa saber em que pé está a
-solicitação dele sem depender de ligar, ir presencialmente ou conhecer alguém dentro do órgão.
+O encaminhamento do cidadão da UBS para a atenção especializada não pode ser acompanhado. Hoje ele vira papel,
+ligação ou sistema paralelo, e quem espera não sabe em que pé está o pedido. Uma auditoria do TCU apontou a falta
+de alimentação padronizada de dados no sistema do Ministério da Saúde como gargalo de visibilidade, e pesquisa do
+Instituto Locomotiva indica que 94% dos brasileiros da Classe C acham que a espera no SUS coloca vidas em risco
+(fontes citadas na documentação da Fase 1).
 
-O serviço público onde esse acompanhamento acontece ainda está em decisão, entre duas frentes:
+## A solução
 
-| Frente | Recorte discutido |
-| --- | --- |
-| Saúde | filas, vaga, acompanhamento, atendimento |
-| Infraestrutura urbana | abertura de ticket, análise, atendimento primário |
+Uma mesma informação, a etapa do encaminhamento, chega a quem precisa por quatro canais:
 
-Essa decisão é o bloqueio que importa hoje, porque requisito, user story, dataset e reflexão final derivam
-toda dela. Ela está sendo tratada na Fase 1, nos cards `DT-5`, `DT-6` e `DT-7`, e é direcionamento apenas: o
-detalhamento acontece na Fase 2, que é a análise de requisitos.
-
-## Capítulo em andamento
-
-**Cap 1 - Contextualizando o HackGov**, aberto em 03/08/2026, entrega até **06/09/2026 às 23h59** na
-plataforma FIAP ON. Entrega atrasada em até três dias recebe no máximo 70% da nota, calculado
-automaticamente pelo sistema, sem margem de negociação com o professor.
-
-## O que precisa ser entregue
-
-Um único arquivo `.ZIP`, com todos os arquivos dentro de uma mesma pasta, que precisa funcionar ao ser
-descompactado e aberto localmente. Dentro dele:
-
-1. Documentação do projeto em PDF, cobrindo as Partes 1 a 5.
-2. Códigos do projeto, ou o link do repositório no GitHub com acesso liberado.
-3. Apresentação de slides em PDF.
-4. Link do vídeo de até 5 minutos, publicado como não listado no YouTube, com demonstração do que foi
-   implementado rodando. O link precisa aparecer tanto no documento quanto nos slides.
-
-Submissão única em nome do grupo, feita por quem cadastrou o grupo na plataforma. Conferir o cadastro de
-alunos e RMs antes de enviar.
-
-## As cinco partes do enunciado
-
-**Parte 1, dados do grupo.** Nome completo e RM de cada integrante.
-
-**Parte 2, levantamento de requisitos.** Escolher o serviço público atendido pelo HackGov, descrever cinco
-requisitos funcionais e dois não funcionais, organizar tudo em uma tabela com descrição, tipo e prioridade,
-e escolher um requisito para explicar qual seria o impacto social, operacional e institucional caso ele não
-fosse implementado.
-
-**Parte 3, product backlog.** Transformar os cinco requisitos funcionais em user stories no formato
-"Como [tipo de usuário], quero [objetivo], para que [benefício]", cada uma com critérios de aceitação, e
-priorizar as histórias usando uma matriz de priorização estudada em aula.
-
-**Parte 4, estatística descritiva.** Pesquisar ou criar um conjunto de dados do serviço escolhido, organizar
-em tabela de frequência, gerar um gráfico de barras e um de setores, e responder duas perguntas: quais
-padrões, comportamentos ou gargalos aparecem, e que decisão estratégica de gestão pública os dados
-sustentam. Esses números viram os primeiros indicadores de desempenho e serão reaproveitados em dashboards
-mais adiante.
-
-**Parte 5, reflexão sobre transformação digital.** Um parágrafo explicando qual problema público real o
-HackGov ataca, como o sistema melhora produtividade, aumenta transparência e reduz custo, mais dois riscos
-de implementação com as respectivas mitigações.
-
-## Grupo 1
-
-| Integrante | E-mail | RM |
+| Canal | Para quem | O que faz |
 | --- | --- | --- |
-| Vinícius Cardoso Junqueira | vinikrdoso@gmail.com | a preencher |
-| Brenda Cristina Martins Araújo | brendacristina3624@gmail.com | a preencher |
-| Ana Larissa Cristo Mendes | mendes.larissa13@gmail.com | a preencher |
-| João Pedro Thethê Andrade | Jaoshtt@gmail.com | a preencher |
-| John Vitor Silverio Pereira | john.silverio63@gmail.com | a preencher |
+| **Aplicativo** | Cidadão | Acompanha cada etapa, escolhe horário quando a unidade libera, reagenda e cancela |
+| **Totem da UBS** | Cidadão na unidade | Consulta a etapa com Cartão SUS ou CPF, sem senha, com letra ampliada, leitura em voz e ajuda |
+| **Painel da sala de espera** | Quem aguarda atendimento | Mostra a senha chamada em tempo real, sem nome nem dado clínico |
+| **Canal da equipe** | Atendente e gestor da UBS | Fila por especialidade, ações pendentes, espera média e taxa de faltas |
 
-Os RMs são obrigatórios na Parte 1 e no cadastro do grupo na plataforma. Enquanto estiverem em branco, a
-Parte 1 não está pronta.
+## Situação do projeto
 
-A distribuição de responsabilidades por capacidade está em [`persona.md`](persona.md).
+| Fase | Conteúdo | Situação |
+| --- | --- | --- |
+| Fase 1 | Diagnóstico, requisitos, backlog e dados | Entregue |
+| Fase 2 | Backlog refinado, Sprint 1, UML, Java e protótipo de telas | Entregue |
+| Fase 3 | Modelo lógico, formas normais, modelo físico e scripts SQL | Entregue |
+| Fase 4 | Front-end em React, segurança da informação e reflexão sobre blockchain | Em andamento |
 
-## Como o trabalho é acompanhado
+Na Fase 4, o backend Spring atende as cinco User Stories (US01 a US05) e o front-end React consome a API real em
+todos os canais. Detalhes em [`docs/fase-4/`](docs/fase-4/).
 
-O quadro fica no Linear, workspace `FIAP Dream Team`, time `Dream Team` (prefixo `DT`), project `HackGov`.
-As fases são milestones dentro do project:
+## Como rodar
 
-- **Fase 1 - Direcionamento**, alvo 17/08/2026. Fecha qual serviço público e até onde vai o escopo.
-- **Fase 2 - Levantamento e análise de requisitos**, alvo 31/08/2026. É a Parte 2 do enunciado.
+Requisitos: Java 17 ou mais recente, Maven e Node.js 20 ou mais recente.
 
-Card é entregável com dono e critério de aceitação, nunca lista de tarefas. Documento, dado e código vivem
-neste repositório; o Linear guarda apenas estado de execução. O identificador do card, `DT-6` por exemplo, é
-o único campo que aparece nos dois lados.
+Backend, em um terminal:
 
-Decisão fechada vira uma linha em `docs/decisoes.md`, com data e quem decidiu. Decisão não se fecha em
-comentário de card.
+```bash
+cd src/backend && mvn spring-boot:run
+```
 
-## Regras de trabalho
+Front-end, em outro terminal:
 
-**Idioma.** Documento, card e comentário em português. Identificadores e comentários de código em inglês.
+```bash
+cd src/frontend && npm install && npm run dev
+```
 
-**Dados da Parte 4.** O enunciado permite pesquisar ou criar o conjunto de dados. Dado inventado é rotulado
-como sintético na própria tabela e no documento, com a premissa que gerou os números escrita ao lado. Dado
-real vai com a fonte citada: órgão, ano e link. Dado fabricado apresentado como real derruba a nota inteira
-no momento em que alguém pergunta de onde veio.
+Abrir **http://localhost:5173**. O backend sobe em `localhost:8080`, e o front repassa para ele tudo o que começa
+com `/api`. Os dados ficam em memória: reiniciar o backend volta ao estado inicial.
 
-**Revisão.** Todo entregável é revisado por alguém que não o escreveu, antes de ir para Done.
+Testes do backend:
+
+```bash
+cd src/backend && mvn test
+```
+
+### Logins de demonstração
+
+Dados sintéticos, criados a cada vez que o backend sobe. A senha de todos é `minhavez`.
+
+| Onde | Login | Situação |
+| --- | --- | --- |
+| `/acompanhar` | CPF `529.982.247-25` | Maria: encaminhamento recebido e triado |
+| `/acompanhar` | CPF `123.456.781-43` | João: já pode escolher horário |
+| `/acompanhar` | CPF `111.444.777-35` | Carlos: horário marcado |
+| `/totem` | Cartão SUS `100 0000 0006 0018` | Maria, sem senha |
+| `/equipe` | `atendente.centro` | Libera agendamento, chama senha, registra falta |
+| `/equipe` | `gestor.centro` | Acompanha indicadores e conclui encaminhamentos |
+
+A lista completa e o roteiro de demonstração estão em [`src/README.md`](src/README.md).
+
+## Tecnologias
+
+| Parte | Tecnologias |
+| --- | --- |
+| Backend | Java 17, Spring Boot 3.3, H2 (em memória), JUnit e MockMvc |
+| Front-end | React 18, TypeScript, Vite 5, React Router, Tailwind CSS 4, Lucide |
+| Modelagem | Oracle SQL Developer Data Modeler (modelos lógico e físico) |
+
+## Segurança
+
+O sistema aplica senha com hash e sal, limite de tentativas, sessão com validade, controle de acesso por canal e por
+unidade, segregação de funções entre atendente e gestor, validação de entradas, minimização de dados pessoais e
+proteção contra clickjacking. A justificativa de cada prática está em
+[`docs/fase-4/parte-4-seguranca.md`](docs/fase-4/parte-4-seguranca.md).
+
+## Documentação
+
+| Assunto | Onde |
+| --- | --- |
+| Backlog, Sprint 1 e métricas (Fase 2) | [`docs/fase-2-parte-1-backlog-e-sprint-1.md`](docs/fase-2-parte-1-backlog-e-sprint-1.md) |
+| UML e Java (Fase 2) | [`docs/fase-2-parte-2-uml-e-java.md`](docs/fase-2-parte-2-uml-e-java.md) |
+| Protótipo e validação (Fase 2) | [`docs/fase-2-parte-3-prototipo-e-validacao.md`](docs/fase-2-parte-3-prototipo-e-validacao.md) |
+| Modelo lógico (Fase 3) | [`docs/modelo-logico/modelo-logico.md`](docs/modelo-logico/modelo-logico.md) |
+| Modelo físico (Fase 3) | [`docs/modelo-fisico/`](docs/modelo-fisico/) |
+| Scripts SQL (Fase 3) | [`docs/scripts-sql/scripts-sql.md`](docs/scripts-sql/scripts-sql.md) |
+| Contrato da API (Fase 4) | [`docs/fase-4/contrato-da-api.md`](docs/fase-4/contrato-da-api.md) |
+| Protótipo em React (Fase 4) | [`docs/fase-4/parte-3-prototipo-react.md`](docs/fase-4/parte-3-prototipo-react.md) |
+| Segurança da informação (Fase 4) | [`docs/fase-4/parte-4-seguranca.md`](docs/fase-4/parte-4-seguranca.md) |
+| Proposta de IA (Enterprise Challenge) | [`docs/enterprise-challenge/proposta-ia-ciencia-de-dados.md`](docs/enterprise-challenge/proposta-ia-ciencia-de-dados.md) |
+| Decisões do grupo | [`docs/decisoes.md`](docs/decisoes.md) |
+| Tokens de design (cores) | [`docs/design/tokens.json`](docs/design/tokens.json) |
+
+A coleção do Insomnia para testar a API está em [`docs/fase-4/insomnia/`](docs/fase-4/insomnia/).
 
 ## Estrutura do repositório
 
-Cada pasta só é criada quando tiver conteúdo real:
+```
+docs/            documentação de cada fase, decisões, modelos de dados e prints
+src/backend/     API em Java com Spring Boot
+src/frontend/    aplicação React (app, totem, painel, equipe e página inicial)
+sources/         material de apoio (fotos do grupo, áudio dos vídeos)
+```
 
-```
-docs/          documentação das partes 1 a 5, decisões, dados e gráficos
-slides/        apresentação
-src/           protótipo, quando existir
-entrega/       o ZIP montado, com tudo dentro de uma pasta só
-```
+## Grupo 1
+
+| Integrante | RM |
+| --- | --- |
+| Ana Larissa Cristo Mendes | 567403 |
+| Brenda Cristina Martins Araújo | 575032 |
+| João Pedro Thethê Andrade | 568305 |
+| John Vitor Silverio Pereira | 566968 |
+| Vinícius Cardoso Junqueira | 566906 |
+
+## Como o trabalho é acompanhado
+
+O quadro fica no Linear, workspace `FIAP Dream Team`, time `Dream Team` (prefixo `DT`), project `HackGov`, com uma
+milestone por parte de cada fase. Documento, dado e código ficam neste repositório; o Linear guarda só o estado de
+execução. Decisões fechadas pelo grupo ficam em [`docs/decisoes.md`](docs/decisoes.md).
+
+Regras de trabalho: documento e card em português, código em inglês; dado inventado é sempre rotulado como
+sintético, e dado real vai com fonte (órgão, ano e link).
