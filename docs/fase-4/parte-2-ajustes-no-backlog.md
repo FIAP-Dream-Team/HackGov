@@ -9,8 +9,8 @@ Nesta parte o grupo fez três coisas:
 2. escreveu onze user stories novas, de front-end, de segurança e de manipulação de arquivos;
 3. escreveu os critérios de aceitação das mais importantes.
 
-Com isso o backlog passou de 5 para 16 user stories. Treze estão prontas, uma está pronta em parte e duas ficam
-para a próxima sprint.
+Com isso o backlog passou de 5 para 16 user stories. Doze estão prontas, uma está pronta em parte e três ainda não foram
+implementadas.
 
 ## 2.1 Revisão das user stories antigas
 
@@ -91,8 +91,8 @@ Vêm das práticas de segurança descritas na Parte 4.
 
 | US | User story | Situação |
 | --- | --- | --- |
-| US14 | Como cidadão, quero baixar em arquivo o comprovante do meu horário ou o histórico do meu encaminhamento, para guardar e apresentar na unidade mesmo sem acesso ao aplicativo. | Pronta |
-| US15 | Como gestor da UBS, quero exportar a fila por especialidade e os indicadores em CSV, para analisar os números em planilha. | Próxima sprint |
+| US14 | Como cidadão, quero baixar em arquivo o comprovante do meu horário ou o histórico do meu encaminhamento, para guardar e apresentar na unidade mesmo sem acesso ao aplicativo. | Não implementada |
+| US15 | Como gestor da UBS, quero exportar a fila por especialidade e os indicadores em CSV, para analisar os números em planilha. | Não implementada |
 
 ### Fluxo de atendimento
 
@@ -100,7 +100,7 @@ Esta veio da revisão da US03.
 
 | US | User story | Situação |
 | --- | --- | --- |
-| US16 | Como atendente, quero liberar um novo agendamento para quem faltou, para que a pessoa consiga marcar outro horário. | Próxima sprint |
+| US16 | Como atendente, quero liberar um novo agendamento para quem faltou, para que a pessoa consiga marcar outro horário. | Não implementada |
 
 ## 2.3 Prioridade e backlog atualizado
 
@@ -118,14 +118,14 @@ notas da Fase 1.
 | US10 | Bloqueio depois de tentativas erradas | Segurança | 5 | 4 | 4 | **80** | Pronta |
 | US11 | Sessão que se encerra sozinha | Segurança | 5 | 5 | 3 | **75** | Pronta |
 | US06 | Retorno de cada ação na tela | Front-end | 4 | 4 | 4 | **64** | Pronta |
-| US16 | Novo horário depois da falta | Fluxo | 4 | 4 | 4 | **64** | Próxima sprint |
+| US16 | Novo horário depois da falta | Fluxo | 4 | 4 | 4 | **64** | Não implementada |
 | US07 | Erro apontado no campo | Front-end | 4 | 4 | 3 | **48** | Pronta |
 | US13 | Registro de quem fez cada ação | Segurança | 4 | 3 | 4 | **48** | Pronta em parte |
 | US08 | Uso no celular e no computador | Front-end | 4 | 3 | 3 | 36 | Pronta |
 | US12 | Funções separadas de atendente e gestor | Segurança | 4 | 3 | 3 | 36 | Pronta |
-| US14 | Comprovante ou histórico em arquivo | Arquivos | 4 | 3 | 3 | 36 | Pronta |
+| US14 | Comprovante ou histórico em arquivo | Arquivos | 4 | 3 | 3 | 36 | Não implementada |
 | US09 | Totem acessível | Front-end | 3 | 3 | 3 | 27 | Pronta |
-| US15 | Fila e indicadores em CSV | Arquivos | 3 | 2 | 3 | 18 | Próxima sprint |
+| US15 | Fila e indicadores em CSV | Arquivos | 3 | 2 | 3 | 18 | Não implementada |
 
 **Por que essas notas.** As duas de segurança ficam no topo por causa do totem. Ele é compartilhado e identifica
 a pessoa por CPF e data de nascimento, que não é segredo. Sem o limite de tentativas, um programa testa todas
@@ -137,7 +137,7 @@ acumulam a cada falta. As de arquivos pontuam menos porque a informação que el
 **User stories prioritárias.** São as seis com 48 pontos ou mais (US10, US11, US06, US16, US07 e US13) e a
 US14, a mais bem pontuada do tema de arquivos, que o enunciado desta fase pede.
 
-Para a próxima sprint, a ordem pela pontuação é: US16, o que falta da US13 e US15.
+Se o grupo seguir com as que faltam, a ordem pela pontuação seria: US16, o que falta da US13, US14 e US15.
 
 ## 2.4 Critérios de aceitação das user stories prioritárias
 
@@ -223,7 +223,7 @@ Como foi conferido: os seis formulários testados no navegador, e os testes de c
 > reclamação de um cidadão.
 
 Situação: pronta em parte. A mudança de etapa e a chamada de senha já guardam quem fez. Faltam o registro da
-falta e a tela de consulta do gestor.
+falta, o reagendamento, a identificação do cidadão nas ações dele e a tela de consulta do gestor.
 
 - Toda ação da equipe sobre um encaminhamento guarda quem fez, o perfil, a ação, o protocolo e a data e hora.
   As ações são: liberar agendamento, chamar senha, registrar falta e concluir.
@@ -240,7 +240,7 @@ Esse registro é a base da Parte 5: cada linha dele é o evento que teria o hash
 > Como atendente, quero liberar um novo agendamento para quem faltou, para que a pessoa consiga marcar outro
 > horário.
 
-Situação: próxima sprint.
+Situação: não implementada.
 
 - Depois da falta, o encaminhamento continua na fila com a ação "Reagendar".
 - O atendente libera um novo agendamento para esse encaminhamento, e a ação "Reagendar" some da fila.
@@ -257,7 +257,7 @@ US03.
 > Como cidadão, quero baixar em arquivo o comprovante do meu horário ou o histórico do meu encaminhamento, para
 > guardar e apresentar na unidade mesmo sem acesso ao aplicativo.
 
-Situação: pronta.
+Situação: não implementada.
 
 - No aplicativo, o cidadão baixa o comprovante do horário ou o histórico do encaminhamento.
 - O arquivo sai em JSON ou CSV e abre com os dados certos: protocolo, especialidade, data, hora e unidade.
