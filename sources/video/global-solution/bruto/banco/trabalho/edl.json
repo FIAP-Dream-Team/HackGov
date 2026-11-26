@@ -1,0 +1,992 @@
+[
+{
+"a": 4.0,
+"b": 4.7,
+"v": 1.0,
+"r": "clica em Test Connection"
+},
+{
+"a": 4.7,
+"b": 5.5,
+"v": 2.0,
+"r": "testando"
+},
+{
+"a": 5.5,
+"b": 7.1,
+"v": 1.0,
+"r": "Connected"
+},
+{
+"a": 32.3,
+"b": 32.525,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 32.975,
+"b": 34.325,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 34.742,
+"b": 35.958,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 36.475,
+"b": 37.2,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 38.3,
+"b": 41.525,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 42.242,
+"b": 42.758,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 43.342,
+"b": 46.158,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 46.642,
+"b": 47.325,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 48.142,
+"b": 48.45,
+"v": 3.0,
+"r": "B06 digitando: tabelas"
+},
+{
+"a": 49.35,
+"b": 52.8,
+"v": 1.0,
+"r": "B06 resultado: as 13 tabelas"
+},
+{
+"a": 59.7,
+"b": 60.592,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 63.442,
+"b": 63.725,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 64.508,
+"b": 65.725,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 66.208,
+"b": 66.492,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 66.875,
+"b": 67.225,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 67.575,
+"b": 67.858,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 68.442,
+"b": 68.725,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 69.442,
+"b": 71.692,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 72.375,
+"b": 72.658,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 73.908,
+"b": 75.425,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 76.275,
+"b": 78.192,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 78.808,
+"b": 79.625,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 80.008,
+"b": 80.925,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 81.408,
+"b": 81.925,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 82.342,
+"b": 83.525,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 83.942,
+"b": 84.692,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 85.208,
+"b": 87.025,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 87.708,
+"b": 88.458,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 89.308,
+"b": 91.725,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 92.908,
+"b": 93.192,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 100.85,
+"b": 101.125,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 101.908,
+"b": 102.592,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 103.308,
+"b": 103.6,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 109.0,
+"b": 110.292,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 110.942,
+"b": 111.392,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 112.142,
+"b": 112.425,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 114.242,
+"b": 114.525,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 116.475,
+"b": 117.292,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 118.575,
+"b": 119.392,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 120.142,
+"b": 123.558,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 126.908,
+"b": 128.492,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 133.7,
+"b": 134.492,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 135.208,
+"b": 136.125,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 136.808,
+"b": 137.092,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 138.25,
+"b": 140.492,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 142.775,
+"b": 143.5,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 145.05,
+"b": 145.358,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 146.242,
+"b": 147.292,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 147.975,
+"b": 149.092,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 150.042,
+"b": 150.325,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 150.742,
+"b": 152.825,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 153.575,
+"b": 154.492,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 154.908,
+"b": 155.392,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 156.175,
+"b": 160.15,
+"v": 3.0,
+"r": "B07 digitando: ocorrência"
+},
+{
+"a": 164.75,
+"b": 167.4,
+"v": 1.0,
+"r": "B07 resultado: ocorrência ATIVA, 2 confirmações"
+},
+{
+"a": 185.3,
+"b": 185.85,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 187.05,
+"b": 187.592,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 188.208,
+"b": 189.458,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 189.908,
+"b": 191.292,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 191.975,
+"b": 192.625,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 193.308,
+"b": 194.958,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 195.342,
+"b": 200.358,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 201.208,
+"b": 201.892,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 202.308,
+"b": 202.55,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 203.3,
+"b": 204.85,
+"v": 3.0,
+"r": "B08 digitando: estação"
+},
+{
+"a": 207.0,
+"b": 209.9,
+"v": 1.0,
+"r": "B08 resultado: ETA sem energia"
+},
+{
+"a": 223.7,
+"b": 227.592,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 228.142,
+"b": 228.992,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 229.808,
+"b": 230.092,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 230.808,
+"b": 235.292,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 236.242,
+"b": 240.058,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 240.708,
+"b": 241.325,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 241.675,
+"b": 244.45,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 245.842,
+"b": 246.125,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 254.875,
+"b": 255.292,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 255.775,
+"b": 257.792,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 258.475,
+"b": 258.758,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 259.275,
+"b": 259.558,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 261.808,
+"b": 262.092,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 262.542,
+"b": 264.858,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 266.108,
+"b": 266.758,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 267.342,
+"b": 267.625,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 268.175,
+"b": 270.092,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 270.775,
+"b": 271.45,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 272.4,
+"b": 272.692,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 273.575,
+"b": 273.858,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 274.542,
+"b": 275.725,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 279.108,
+"b": 280.058,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 281.408,
+"b": 282.38,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 283.5,
+"b": 283.992,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 284.608,
+"b": 284.85,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 286.942,
+"b": 287.392,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 288.275,
+"b": 290.558,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 293.975,
+"b": 294.258,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 296.142,
+"b": 297.025,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 298.175,
+"b": 298.6,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 299.6,
+"b": 301.3,
+"v": 3.0,
+"r": "B09a digitando: alerta"
+},
+{
+"a": 318.05,
+"b": 321.0,
+"v": 1.0,
+"r": "B09a resultado: alerta CASCATA, 3 notificações"
+},
+{
+"a": 369.5,
+"b": 372.325,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 372.775,
+"b": 373.558,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 375.9,
+"b": 378.125,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 378.875,
+"b": 382.792,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 383.242,
+"b": 383.858,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 384.675,
+"b": 386.258,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 386.608,
+"b": 389.992,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 390.775,
+"b": 392.792,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 394.242,
+"b": 396.458,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 397.075,
+"b": 398.425,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 398.875,
+"b": 399.1,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 399.65,
+"b": 400.492,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 401.208,
+"b": 403.7,
+"v": 3.0,
+"r": "B09b digitando: bairros avisados"
+},
+{
+"a": 406.65,
+"b": 409.4,
+"v": 1.0,
+"r": "B09b resultado: 3 bairros avisados"
+},
+{
+"a": 420.6,
+"b": 422.025,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 422.708,
+"b": 424.692,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 426.742,
+"b": 427.192,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 428.475,
+"b": 430.758,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 431.642,
+"b": 432.825,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 433.375,
+"b": 434.125,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 434.775,
+"b": 435.058,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 435.475,
+"b": 437.125,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 437.942,
+"b": 438.258,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 439.15,
+"b": 439.558,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 444.55,
+"b": 444.625,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 445.742,
+"b": 446.025,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 446.375,
+"b": 446.658,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 447.075,
+"b": 448.492,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 449.308,
+"b": 449.692,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 450.508,
+"b": 451.092,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 451.842,
+"b": 452.125,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 452.642,
+"b": 453.658,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 454.208,
+"b": 454.925,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 455.308,
+"b": 455.825,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 456.942,
+"b": 457.425,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 458.308,
+"b": 460.092,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 460.775,
+"b": 461.058,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 461.442,
+"b": 462.725,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 463.175,
+"b": 463.458,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 465.408,
+"b": 465.825,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 466.608,
+"b": 467.192,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 468.708,
+"b": 468.992,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 470.108,
+"b": 472.325,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 472.908,
+"b": 474.425,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 475.008,
+"b": 475.292,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 476.708,
+"b": 478.158,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 482.342,
+"b": 483.058,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 483.575,
+"b": 484.592,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 485.4,
+"b": 486.258,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 487.075,
+"b": 487.358,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 489.3,
+"b": 490.158,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 491.975,
+"b": 492.258,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 493.475,
+"b": 494.292,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 495.575,
+"b": 495.858,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 497.375,
+"b": 497.658,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 498.742,
+"b": 499.025,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 499.975,
+"b": 500.258,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 501.008,
+"b": 501.292,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 501.775,
+"b": 502.0,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 507.742,
+"b": 508.025,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 508.508,
+"b": 509.292,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 509.842,
+"b": 511.658,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 512.775,
+"b": 512.9,
+"v": 3.0,
+"r": "B10 digitando: taxa de resolvidas"
+},
+{
+"a": 528.55,
+"b": 531.5,
+"v": 1.0,
+"r": "B10 resultado: taxa de resolvidas"
+}
+]

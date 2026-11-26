@@ -1,0 +1,1311 @@
+{
+  "fps": 30,
+  "draft": false,
+  "durationSec": 241.673,
+  "narrationSec": 238.173,
+  "durationInFrames": 7251,
+  "alignmentRate": 0.98,
+  "source": "audio+roteiro",
+  "audio": "ec-1/mix.wav",
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "section": "1. Grupo",
+      "text": "Olá! Eu sou o John, e comigo estão a Ana Larissa, João Pedro, Vinícius Cardoso e Brenda. Hoje vamos mostrar como a inteligência artificial e a ciência de dados entram no Minha Vez.",
+      "speechStart": 0,
+      "speechEnd": 11.46,
+      "end": 11.714,
+      "start": 0,
+      "startFrame": 0,
+      "endFrame": 351
+    },
+    {
+      "id": "f02",
+      "speaker": "john",
+      "section": "2. O problema público",
+      "text": "Primeiro, o problema. Quando a UBS encaminha um paciente para o especialista, o pedido vira papel, ligação ou sistema paralelo. Daí em diante, ninguém rastreia: o cidadão não sabe em que pé está, e o gestor não enxerga a fila. Falta um fluxo com dados padronizados, e uma auditoria do TCU já apontou isso como gargalo de visibilidade.",
+      "speechStart": 11.62,
+      "speechEnd": 34,
+      "start": 11.714,
+      "end": 34.481,
+      "startFrame": 351,
+      "endFrame": 1034
+    },
+    {
+      "id": "f03",
+      "speaker": "john",
+      "section": "3. Por que resolver",
+      "text": "E resolver isso importa, porque a espera custa saúde. Segundo o Instituto Locomotiva, 94% dos brasileiros da classe C acham que a espera no SUS coloca vidas em risco, e cerca de 1 em cada 3 já desistiu de uma consulta demorada. Quem mais perde são idosos e trabalhadores informais.",
+      "speechStart": 34.54,
+      "speechEnd": 53.28,
+      "start": 34.481,
+      "end": 53.863,
+      "startFrame": 1034,
+      "endFrame": 1616
+    },
+    {
+      "id": "f04",
+      "speaker": "john",
+      "section": "4. O Minha Vez",
+      "text": "A nossa resposta é o Minha Vez, um sistema de gestão pública que acompanha o encaminhamento da UBS até a consulta especializada. Pelo app ou pelo totem, o cidadão vê a etapa do pedido e agenda o horário. O painel da sala de espera chama pela senha. E a equipe e o gestor veem a fila no painel web. Uma regra guia tudo: dado clínico nunca aparece nas telas públicas.",
+      "speechStart": 53.28,
+      "speechEnd": 76.88,
+      "start": 53.863,
+      "end": 78.047,
+      "startFrame": 1616,
+      "endFrame": 2341
+    },
+    {
+      "id": "f05",
+      "speaker": "john",
+      "section": "5. O que a IA e os dados resolvem",
+      "text": "Então, onde entram a IA e os dados? A IA ataca a origem da fila: a consulta, onde o encaminhamento nasce. Com dezenas de pacientes em poucas horas, detalhes importantes podem passar despercebidos. Essa é uma hipótese nossa, que vamos confirmar na UBS. E o encaminhamento incompleto volta, atrasa ou fica com a prioridade errada. Já a ciência de dados ataca o fim: o painel do gestor, que mostra a fila de hoje, mas não antecipa a de amanhã.",
+      "speechStart": 78.24,
+      "speechEnd": 107.62,
+      "start": 78.047,
+      "end": 108.455,
+      "startFrame": 2341,
+      "endFrame": 3254
+    },
+    {
+      "id": "f06",
+      "speaker": "john",
+      "section": "6. A ferramenta",
+      "text": "A ferramenta é um assistente de documentação clínica. Não é um chatbot: quem usa é o médico. São seis etapas. Com o consentimento do paciente, a consulta é gravada. O reconhecimento de fala transcreve a conversa, e o áudio é apagado. Um modelo de linguagem monta o relatório e, depois, o rascunho do encaminhamento. Aí vem a única decisão do fluxo, e ela é humana: o médico confirma. Só então o encaminhamento nasce, em Recebido e Triado, e segue o fluxo do Minha Vez.",
+      "speechStart": 107.62,
+      "speechEnd": 138.97,
+      "start": 108.455,
+      "end": 139.307,
+      "startFrame": 3254,
+      "endFrame": 4179
+    },
+    {
+      "id": "f07",
+      "speaker": "john",
+      "section": "7. Como entra no Minha Vez",
+      "text": "Na tela do médico, cada item do relatório aponta para o trecho de fala que o gerou. O rascunho usa o domínio que já tem, a especialidade e o selo de urgência, e descreve a justificativa. Ao confirmar, o histórico de status registra quem confirmou e quando. Escolhemos esse ponto porque é onde o erro custa mais caro: um encaminhamento mal feito gera semanas de espera inútil. E sem criar um sistema paralelo.",
+      "speechStart": 139.26,
+      "speechEnd": 163.92,
+      "start": 139.307,
+      "end": 164.088,
+      "startFrame": 4179,
+      "endFrame": 4923
+    },
+    {
+      "id": "f08",
+      "speaker": "john",
+      "section": "8. Ciência de dados",
+      "text": "A ciência de dados trabalha sobre esses encaminhamentos, já estruturados e anonimizados. O painel do gestor passa a mostrar a demanda por especialidade, a previsão da fila e onde as faltas se concentram. Os números aqui são ilustrativos; a ideia é ver a especialidade que cresce antes da espera explodir, e planejar vagas com dados.",
+      "speechStart": 164.08,
+      "speechEnd": 183.4,
+      "start": 164.088,
+      "end": 183.947,
+      "startFrame": 4923,
+      "endFrame": 5518
+    },
+    {
+      "id": "f09",
+      "speaker": "john",
+      "section": "9. Benefícios e desafios",
+      "text": "Os benefícios disso é que o médico olha para o paciente ao invés de digitar; o cidadão recebe encaminhamento completo, com prioridade justa; e a equipe tem menos retrabalho. E o gestor ganha dados padronizados. Os grandes desafios disso é que os dados de saúde é sensível na LGPD, então há consentimento, áudio apagado e relatório só no canal institucional. A IA pode errar ou inventar algum sintoma; por isso, cada item aponta para a fala. E ruídos, sotaques ou estrutura das UBS pedem um piloto antes de ampliar. O maior risco é o médico assinar sem ler.",
+      "speechStart": 183.88,
+      "speechEnd": 218.64,
+      "start": 183.947,
+      "end": 219.278,
+      "startFrame": 5518,
+      "endFrame": 6578
+    },
+    {
+      "id": "f10",
+      "speaker": "john",
+      "section": "10. A IA não decide",
+      "text": "Por isso, a IA não entra como diagnóstico, como receita e encaminhamento. Tudo entra como rascunho. Nada vira encaminhamento sem o médico confirmar. E ele pode editar ou recusar tudo. E, se a IA falhar, a consulta segue igual. A IA organiza as informações. E quem decide é o médico. Obrigado!",
+      "speechStart": 219.2,
+      "speechEnd": 238.14,
+      "start": 219.278,
+      "end": 238.173,
+      "startFrame": 6578,
+      "endFrame": 7145
+    }
+  ],
+  "turns": [
+    {
+      "speaker": "john",
+      "start": 0,
+      "end": 238.173,
+      "startFrame": 0,
+      "endFrame": 7145
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "01",
+      "label": "Grupo",
+      "falaId": "f01",
+      "speaker": "john",
+      "anchor": null,
+      "start": 0,
+      "end": 11.714,
+      "startFrame": 0,
+      "endFrame": 351,
+      "durationInFrames": 351,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "02",
+      "label": "O problema público",
+      "falaId": "f02",
+      "speaker": "john",
+      "anchor": null,
+      "start": 11.714,
+      "end": 34.481,
+      "startFrame": 351,
+      "endFrame": 1034,
+      "durationInFrames": 683,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "03",
+      "label": "Por que resolver",
+      "falaId": "f03",
+      "speaker": "john",
+      "anchor": null,
+      "start": 34.481,
+      "end": 53.863,
+      "startFrame": 1034,
+      "endFrame": 1616,
+      "durationInFrames": 582,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "04",
+      "label": "O Minha Vez",
+      "falaId": "f04",
+      "speaker": "john",
+      "anchor": null,
+      "start": 53.863,
+      "end": 78.047,
+      "startFrame": 1616,
+      "endFrame": 2341,
+      "durationInFrames": 725,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "05",
+      "label": "Onde a IA entra",
+      "falaId": "f05",
+      "speaker": "john",
+      "anchor": null,
+      "start": 78.047,
+      "end": 108.455,
+      "startFrame": 2341,
+      "endFrame": 3254,
+      "durationInFrames": 913,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "06",
+      "label": "A ferramenta",
+      "falaId": "f06",
+      "speaker": "john",
+      "anchor": null,
+      "start": 108.455,
+      "end": 139.307,
+      "startFrame": 3254,
+      "endFrame": 4179,
+      "durationInFrames": 925,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "07",
+      "label": "Tela do médico",
+      "falaId": "f07",
+      "speaker": "john",
+      "anchor": null,
+      "start": 139.307,
+      "end": 164.088,
+      "startFrame": 4179,
+      "endFrame": 4923,
+      "durationInFrames": 744,
+      "kind": "figure",
+      "camera": "tudo"
+    },
+    {
+      "scene": "08",
+      "label": "Ciência de dados",
+      "falaId": "f08",
+      "speaker": "john",
+      "anchor": null,
+      "start": 164.088,
+      "end": 183.947,
+      "startFrame": 4923,
+      "endFrame": 5518,
+      "durationInFrames": 595,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "09",
+      "label": "Benefícios e desafios",
+      "falaId": "f09",
+      "speaker": "john",
+      "anchor": null,
+      "start": 183.947,
+      "end": 219.278,
+      "startFrame": 5518,
+      "endFrame": 6578,
+      "durationInFrames": 1060,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "10",
+      "label": "A IA não decide",
+      "falaId": "f10",
+      "speaker": "john",
+      "anchor": null,
+      "start": 219.278,
+      "end": 241.673,
+      "startFrame": 6578,
+      "endFrame": 7250,
+      "durationInFrames": 672,
+      "kind": "slide",
+      "camera": null
+    }
+  ],
+  "reveals": [
+    {
+      "id": "s01-john",
+      "scene": "01",
+      "start": 0.87,
+      "startFrame": 26,
+      "source": "\"Eu sou o John\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-larissa",
+      "scene": "01",
+      "start": 2.75,
+      "startFrame": 83,
+      "source": "\"Ana Larissa\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-joao",
+      "scene": "01",
+      "start": 3.53,
+      "startFrame": 106,
+      "source": "\"João Pedro\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-vinicius",
+      "scene": "01",
+      "start": 4.39,
+      "startFrame": 132,
+      "source": "\"Vinícius\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-brenda",
+      "scene": "01",
+      "start": 5.45,
+      "startFrame": 164,
+      "source": "\"Brenda\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-lead",
+      "scene": "01",
+      "start": 7.63,
+      "startFrame": 229,
+      "source": "\"a inteligência artificial\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-ubs",
+      "scene": "02",
+      "start": 13.41,
+      "startFrame": 402,
+      "source": "\"Quando a UBS\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-ubs-t",
+      "scene": "02",
+      "start": 13.56,
+      "startFrame": 407,
+      "source": "+0.15s",
+      "clamped": false
+    },
+    {
+      "id": "s02-sai",
+      "scene": "02",
+      "start": 14.01,
+      "startFrame": 420,
+      "source": "\"encaminha um paciente\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-esp",
+      "scene": "02",
+      "start": 14.95,
+      "startFrame": 449,
+      "source": "\"para o especialista\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-esp-t",
+      "scene": "02",
+      "start": 15.1,
+      "startFrame": 453,
+      "source": "+0.15s",
+      "clamped": false
+    },
+    {
+      "id": "s02-papel",
+      "scene": "02",
+      "start": 17.02,
+      "startFrame": 511,
+      "source": "\"papel\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-ligacao",
+      "scene": "02",
+      "start": 17.86,
+      "startFrame": 536,
+      "source": "\"ligação\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-sistema",
+      "scene": "02",
+      "start": 18.74,
+      "startFrame": 562,
+      "source": "\"sistema paralelo\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-ideal",
+      "scene": "02",
+      "start": 20,
+      "startFrame": 600,
+      "source": "\"Daí em diante\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-lost",
+      "scene": "02",
+      "start": 21.25,
+      "startFrame": 638,
+      "source": "\"ninguém rastreia\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-cidadao",
+      "scene": "02",
+      "start": 22.61,
+      "startFrame": 678,
+      "source": "\"o cidadão não sabe\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-gestor",
+      "scene": "02",
+      "start": 25.35,
+      "startFrame": 761,
+      "source": "\"o gestor não enxerga\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-tcu",
+      "scene": "02",
+      "start": 26.77,
+      "startFrame": 803,
+      "source": "\"Falta um fluxo\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-mk-tcu",
+      "scene": "02",
+      "start": 29.67,
+      "startFrame": 890,
+      "source": "\"auditoria do TCU\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-94",
+      "scene": "03",
+      "start": 38.97,
+      "startFrame": 1169,
+      "source": "\"Instituto Locomotiva\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-94n",
+      "scene": "03",
+      "start": 38.97,
+      "startFrame": 1169,
+      "source": "+0s",
+      "clamped": false
+    },
+    {
+      "id": "s03-meter",
+      "scene": "03",
+      "start": 44.47,
+      "startFrame": 1334,
+      "source": "\"coloca vidas em risco\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-1em3",
+      "scene": "03",
+      "start": 46.37,
+      "startFrame": 1391,
+      "source": "\"cerca de 1\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-desistiu",
+      "scene": "03",
+      "start": 47.89,
+      "startFrame": 1437,
+      "source": "\"já desistiu\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-perde",
+      "scene": "03",
+      "start": 50.15,
+      "startFrame": 1505,
+      "source": "\"Quem mais perde\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-mk-perde",
+      "scene": "03",
+      "start": 51.11,
+      "startFrame": 1533,
+      "source": "\"idosos e trabalhadores\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-what",
+      "scene": "04",
+      "start": 55.73,
+      "startFrame": 1672,
+      "source": "\"um sistema de gestão\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-mk-what",
+      "scene": "04",
+      "start": 58.69,
+      "startFrame": 1761,
+      "source": "\"da UBS até\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-cidadao",
+      "scene": "04",
+      "start": 61.47,
+      "startFrame": 1844,
+      "source": "\"Pelo app\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-app",
+      "scene": "04",
+      "start": 63.93,
+      "startFrame": 1918,
+      "source": "\"a etapa do pedido\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-sala",
+      "scene": "04",
+      "start": 66.63,
+      "startFrame": 1999,
+      "source": "\"O painel da sala\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-gestor",
+      "scene": "04",
+      "start": 69.43,
+      "startFrame": 2083,
+      "source": "\"a equipe e o gestor\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-fase3",
+      "scene": "04",
+      "start": 70.63,
+      "startFrame": 2119,
+      "source": "+1.2s",
+      "clamped": false
+    },
+    {
+      "id": "s04-rnf",
+      "scene": "04",
+      "start": 72.85,
+      "startFrame": 2186,
+      "source": "\"Uma regra guia tudo\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-mk-rnf",
+      "scene": "04",
+      "start": 74.95,
+      "startFrame": 2249,
+      "source": "\"nunca aparece\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-rail",
+      "scene": "05",
+      "start": 78.83,
+      "startFrame": 2365,
+      "source": "\"onde entram\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-zia",
+      "scene": "05",
+      "start": 80.63,
+      "startFrame": 2419,
+      "source": "\"A IA ataca\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-consulta",
+      "scene": "05",
+      "start": 83.21,
+      "startFrame": 2496,
+      "source": "\"a consulta, onde\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-hyp",
+      "scene": "05",
+      "start": 91.61,
+      "startFrame": 2748,
+      "source": "\"Essa é uma hipótese\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-enc",
+      "scene": "05",
+      "start": 95.31,
+      "startFrame": 2859,
+      "source": "\"E o encaminhamento incompleto\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-volta",
+      "scene": "05",
+      "start": 96.61,
+      "startFrame": 2898,
+      "source": "\"volta, atrasa\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-fila",
+      "scene": "05",
+      "start": 98.99,
+      "startFrame": 2970,
+      "source": "\"prioridade errada\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-zds",
+      "scene": "05",
+      "start": 100.45,
+      "startFrame": 3014,
+      "source": "\"Já a ciência de dados\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-painel",
+      "scene": "05",
+      "start": 102.71,
+      "startFrame": 3081,
+      "source": "\"o painel do gestor\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-lede",
+      "scene": "06",
+      "start": 109.07,
+      "startFrame": 3272,
+      "source": "\"um assistente de documentação\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-e1",
+      "scene": "06",
+      "start": 115.27,
+      "startFrame": 3458,
+      "source": "\"Com o consentimento\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-seg2",
+      "scene": "06",
+      "start": 117.98,
+      "startFrame": 3539,
+      "source": "\"O reconhecimento de fala\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-e2",
+      "scene": "06",
+      "start": 118.23,
+      "startFrame": 3547,
+      "source": "\"O reconhecimento de fala\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-zia",
+      "scene": "06",
+      "start": 122.12,
+      "startFrame": 3664,
+      "source": "\"Um modelo de linguagem\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-seg3",
+      "scene": "06",
+      "start": 123.187,
+      "startFrame": 3696,
+      "source": "\"monta o relatório\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-e3",
+      "scene": "06",
+      "start": 123.437,
+      "startFrame": 3703,
+      "source": "\"monta o relatório\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-seg4",
+      "scene": "06",
+      "start": 125.42,
+      "startFrame": 3763,
+      "source": "\"o rascunho do encaminhamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-e4",
+      "scene": "06",
+      "start": 125.67,
+      "startFrame": 3770,
+      "source": "\"o rascunho do encaminhamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-zhum",
+      "scene": "06",
+      "start": 128.09,
+      "startFrame": 3843,
+      "source": "\"a única decisão\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-seg5",
+      "scene": "06",
+      "start": 130.92,
+      "startFrame": 3928,
+      "source": "\"o médico confirma\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-e5",
+      "scene": "06",
+      "start": 131.17,
+      "startFrame": 3935,
+      "source": "\"o médico confirma\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-ring",
+      "scene": "06",
+      "start": 131.52,
+      "startFrame": 3946,
+      "source": "+0.35s",
+      "clamped": false
+    },
+    {
+      "id": "s06-seg6",
+      "scene": "06",
+      "start": 132,
+      "startFrame": 3960,
+      "source": "\"Só então\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-e6",
+      "scene": "06",
+      "start": 133.27,
+      "startFrame": 3998,
+      "source": "\"o encaminhamento nasce\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-limite",
+      "scene": "06",
+      "start": 134.29,
+      "startFrame": 4029,
+      "source": "\"em Recebido e Triado\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-zmv",
+      "scene": "06",
+      "start": 134.39,
+      "startFrame": 4032,
+      "source": "+0.1s",
+      "clamped": false
+    },
+    {
+      "id": "s06-mk-limite",
+      "scene": "06",
+      "start": 136.87,
+      "startFrame": 4106,
+      "source": "\"segue o fluxo\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-r1",
+      "scene": "07",
+      "start": 140.9,
+      "startFrame": 4227,
+      "source": "\"cada item do relatório\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-r2",
+      "scene": "07",
+      "start": 141.15,
+      "startFrame": 4235,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s07-r3",
+      "scene": "07",
+      "start": 141.4,
+      "startFrame": 4242,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s07-r4",
+      "scene": "07",
+      "start": 141.65,
+      "startFrame": 4250,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s07-l1",
+      "scene": "07",
+      "start": 141.65,
+      "startFrame": 4250,
+      "source": "\"aponta para o trecho\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-l2",
+      "scene": "07",
+      "start": 141.8,
+      "startFrame": 4254,
+      "source": "+0.15s",
+      "clamped": false
+    },
+    {
+      "id": "s07-l3",
+      "scene": "07",
+      "start": 141.95,
+      "startFrame": 4259,
+      "source": "+0.15s",
+      "clamped": false
+    },
+    {
+      "id": "s07-l4",
+      "scene": "07",
+      "start": 142.1,
+      "startFrame": 4263,
+      "source": "+0.15s",
+      "clamped": false
+    },
+    {
+      "id": "s07-esp",
+      "scene": "07",
+      "start": 146.31,
+      "startFrame": 4389,
+      "source": "\"a especialidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-urg",
+      "scene": "07",
+      "start": 147.43,
+      "startFrame": 4423,
+      "source": "\"o selo de urgência\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-just",
+      "scene": "07",
+      "start": 148.85,
+      "startFrame": 4466,
+      "source": "\"descreve a justificativa\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-botoes",
+      "scene": "07",
+      "start": 150.34,
+      "startFrame": 4510,
+      "source": "\"Ao confirmar\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-ok",
+      "scene": "07",
+      "start": 151.24,
+      "startFrame": 4537,
+      "source": "\"Ao confirmar\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-hist",
+      "scene": "07",
+      "start": 151.83,
+      "startFrame": 4555,
+      "source": "\"o histórico de status\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-porque",
+      "scene": "07",
+      "start": 156.63,
+      "startFrame": 4699,
+      "source": "\"é onde o erro\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-dominio",
+      "scene": "07",
+      "start": 161.69,
+      "startFrame": 4851,
+      "source": "\"E sem criar\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-rnf",
+      "scene": "07",
+      "start": 162.49,
+      "startFrame": 4875,
+      "source": "+0.8s",
+      "clamped": false
+    },
+    {
+      "id": "s08-strip",
+      "scene": "08",
+      "start": 164.67,
+      "startFrame": 4940,
+      "source": "\"trabalha sobre esses\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-orto",
+      "scene": "08",
+      "start": 170.6,
+      "startFrame": 5118,
+      "source": "\"a demanda por especialidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-derm",
+      "scene": "08",
+      "start": 170.72,
+      "startFrame": 5122,
+      "source": "+0.12s",
+      "clamped": false
+    },
+    {
+      "id": "s08-endo",
+      "scene": "08",
+      "start": 170.84,
+      "startFrame": 5125,
+      "source": "+0.12s",
+      "clamped": false
+    },
+    {
+      "id": "s08-cardio",
+      "scene": "08",
+      "start": 171.04,
+      "startFrame": 5131,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s08-orto-dl",
+      "scene": "08",
+      "start": 171.54,
+      "startFrame": 5146,
+      "source": "+0.5s",
+      "clamped": false
+    },
+    {
+      "id": "s08-derm-dl",
+      "scene": "08",
+      "start": 171.59,
+      "startFrame": 5148,
+      "source": "+0.05s",
+      "clamped": false
+    },
+    {
+      "id": "s08-endo-dl",
+      "scene": "08",
+      "start": 171.64,
+      "startFrame": 5149,
+      "source": "+0.05s",
+      "clamped": false
+    },
+    {
+      "id": "s08-cardio-dl",
+      "scene": "08",
+      "start": 171.69,
+      "startFrame": 5151,
+      "source": "+0.05s",
+      "clamped": false
+    },
+    {
+      "id": "s08-banda",
+      "scene": "08",
+      "start": 172.89,
+      "startFrame": 5187,
+      "source": "\"a previsão da fila\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-cardio-fc",
+      "scene": "08",
+      "start": 172.99,
+      "startFrame": 5190,
+      "source": "+0.1s",
+      "clamped": false
+    },
+    {
+      "id": "s08-orto-fc",
+      "scene": "08",
+      "start": 173.09,
+      "startFrame": 5193,
+      "source": "+0.1s",
+      "clamped": false
+    },
+    {
+      "id": "s08-derm-fc",
+      "scene": "08",
+      "start": 173.14,
+      "startFrame": 5194,
+      "source": "+0.05s",
+      "clamped": false
+    },
+    {
+      "id": "s08-endo-fc",
+      "scene": "08",
+      "start": 173.19,
+      "startFrame": 5196,
+      "source": "+0.05s",
+      "clamped": false
+    },
+    {
+      "id": "s08-heat",
+      "scene": "08",
+      "start": 174.17,
+      "startFrame": 5225,
+      "source": "\"onde as faltas\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-hm",
+      "scene": "08",
+      "start": 174.27,
+      "startFrame": 5228,
+      "source": "+0.1s",
+      "clamped": false
+    },
+    {
+      "id": "s08-heat-annot",
+      "scene": "08",
+      "start": 174.79,
+      "startFrame": 5244,
+      "source": "\"se concentram\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-annot",
+      "scene": "08",
+      "start": 178.11,
+      "startFrame": 5343,
+      "source": "\"a especialidade que cresce\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-hb",
+      "scene": "09",
+      "start": 183.947,
+      "startFrame": 5518,
+      "source": "\"Os benefícios\"",
+      "clamped": true
+    },
+    {
+      "id": "s09-b-medico",
+      "scene": "09",
+      "start": 184.99,
+      "startFrame": 5550,
+      "source": "\"o médico olha\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-b-cidadao",
+      "scene": "09",
+      "start": 187.39,
+      "startFrame": 5622,
+      "source": "\"o cidadão recebe\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-b-equipe",
+      "scene": "09",
+      "start": 191.95,
+      "startFrame": 5759,
+      "source": "\"a equipe tem\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-b-gestor",
+      "scene": "09",
+      "start": 194.23,
+      "startFrame": 5827,
+      "source": "\"o gestor ganha\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-b-todos",
+      "scene": "09",
+      "start": 194.83,
+      "startFrame": 5845,
+      "source": "+0.6s",
+      "clamped": false
+    },
+    {
+      "id": "s09-hd",
+      "scene": "09",
+      "start": 196.99,
+      "startFrame": 5910,
+      "source": "\"Os grandes desafios\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-priv",
+      "scene": "09",
+      "start": 198.41,
+      "startFrame": 5952,
+      "source": "\"dados de saúde\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-erro",
+      "scene": "09",
+      "start": 206.01,
+      "startFrame": 6180,
+      "source": "\"A IA pode errar\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-ruido",
+      "scene": "09",
+      "start": 211.09,
+      "startFrame": 6333,
+      "source": "\"E ruídos\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-infra",
+      "scene": "09",
+      "start": 212.57,
+      "startFrame": 6377,
+      "source": "\"estrutura das UBS\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-integ",
+      "scene": "09",
+      "start": 212.97,
+      "startFrame": 6389,
+      "source": "+0.4s",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-adesao",
+      "scene": "09",
+      "start": 213.37,
+      "startFrame": 6401,
+      "source": "+0.4s",
+      "clamped": false
+    },
+    {
+      "id": "s09-d-conf",
+      "scene": "09",
+      "start": 215.49,
+      "startFrame": 6465,
+      "source": "\"O maior risco\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-hl-conf",
+      "scene": "09",
+      "start": 215.69,
+      "startFrame": 6471,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s09-mk-risco",
+      "scene": "09",
+      "start": 217.35,
+      "startFrame": 6521,
+      "source": "\"assinar sem ler\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-no",
+      "scene": "10",
+      "start": 219.59,
+      "startFrame": 6588,
+      "source": "\"a IA não entra\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-r1",
+      "scene": "10",
+      "start": 223.39,
+      "startFrame": 6702,
+      "source": "\"Tudo entra como rascunho\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-r2",
+      "scene": "10",
+      "start": 225.19,
+      "startFrame": 6756,
+      "source": "\"nada vira encaminhamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-r3",
+      "scene": "10",
+      "start": 227.67,
+      "startFrame": 6830,
+      "source": "\"ele pode editar\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-r4",
+      "scene": "10",
+      "start": 228.17,
+      "startFrame": 6845,
+      "source": "+0.5s",
+      "clamped": false
+    },
+    {
+      "id": "s10-r5",
+      "scene": "10",
+      "start": 229.99,
+      "startFrame": 6900,
+      "source": "\"se a IA falhar\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-decide",
+      "scene": "10",
+      "start": 232.47,
+      "startFrame": 6974,
+      "source": "\"A IA organiza\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-mk-decide",
+      "scene": "10",
+      "start": 235.07,
+      "startFrame": 7052,
+      "source": "\"quem decide\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-links",
+      "scene": "10",
+      "start": 235.87,
+      "startFrame": 7076,
+      "source": "+0.8s",
+      "clamped": false
+    },
+    {
+      "id": "s10-obrigado",
+      "scene": "10",
+      "start": 237.37,
+      "startFrame": 7121,
+      "source": "\"Obrigado\"",
+      "clamped": false
+    }
+  ],
+  "camera": [
+    {
+      "scene": "07",
+      "focus": "fala",
+      "start": 140.5,
+      "startFrame": 4215,
+      "durationInFrames": 36,
+      "anchor": "cada item do relatório"
+    },
+    {
+      "scene": "07",
+      "focus": "rascunho",
+      "start": 144.32,
+      "startFrame": 4330,
+      "durationInFrames": 36,
+      "anchor": "O rascunho usa"
+    },
+    {
+      "scene": "07",
+      "focus": "confirmar",
+      "start": 150.94,
+      "startFrame": 4528,
+      "durationInFrames": 36,
+      "anchor": "Ao confirmar"
+    },
+    {
+      "scene": "07",
+      "focus": "tudo",
+      "start": 155.42,
+      "startFrame": 4663,
+      "durationInFrames": 48,
+      "anchor": "Escolhemos esse ponto"
+    }
+  ]
+}

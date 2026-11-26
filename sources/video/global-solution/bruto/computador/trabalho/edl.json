@@ -1,0 +1,149 @@
+{
+ "B25-fluxo-computador": {
+  "duracao": 18.27,
+  "edl": [
+   {
+    "no_clipe": 0.0,
+    "duracao": 2.2,
+    "original": [
+     6.3,
+     8.5
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "Inicio: o mouse vai ate 'Abrir mapa'"
+   },
+   {
+    "no_clipe": 2.2,
+    "duracao": 0.5,
+    "original": [
+     9.97,
+     10.47
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "Inicio: parado em 'Abrir mapa' e clique (espera de 1,5 s cortada)"
+   },
+   {
+    "no_clipe": 2.7,
+    "duracao": 8.83,
+    "original": [
+     21.93,
+     30.77
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "Mapa: abre com Menino Deus; escolhe Praia de Belas na lista; clica em Centro Historico no mapa; mouse vai a 'Painel'"
+   },
+   {
+    "no_clipe": 11.53,
+    "duracao": 1.9,
+    "original": [
+     31.7,
+     33.6
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "Painel abre (Menino Deus) (1 s de mouse parado em 'Painel' cortado)"
+   },
+   {
+    "no_clipe": 13.43,
+    "duracao": 4.83,
+    "original": [
+     35.3,
+     39.13
+    ],
+    "velocidade": 1,
+    "segura": 1.0,
+    "mostra": "Painel: abas Praia de Belas e Centro Historico (2 s parado cortados); segura no fim"
+   }
+  ]
+ },
+ "B28-reportar-ocorrencia-computador": {
+  "duracao": 26.42,
+  "edl": [
+   {
+    "no_clipe": 0.0,
+    "duracao": 11.63,
+    "original": [
+     59.37,
+     71.0
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "Reportar abre; Falta de luz; bairro Centro Historico (Trabalho); Grande perigo; clique na descricao"
+   },
+   {
+    "no_clipe": 11.63,
+    "duracao": 3.95,
+    "original": [
+     71.0,
+     78.9
+    ],
+    "velocidade": 2,
+    "segura": 0,
+    "mostra": "digitando 'Rua sem luz as 14h' (2x)"
+   },
+   {
+    "no_clipe": 15.58,
+    "duracao": 3.1,
+    "original": [
+     78.9,
+     80.6
+    ],
+    "velocidade": 1,
+    "segura": 1.4,
+    "mostra": "Enviar -> Ocorrencia 'Relato enviado', Ainda esta 1, Ja voltou 0 de 3; segura"
+   },
+   {
+    "no_clipe": 18.68,
+    "duracao": 2.53,
+    "original": [
+     86.7,
+     89.23
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "mouse ja em 'Ja voltou' -> clique -> 'Obrigado!', Ja voltou 1 de 3"
+   },
+   {
+    "no_clipe": 21.22,
+    "duracao": 5.2,
+    "original": [
+     90.13,
+     95.33
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "mouse ate a seta de voltar -> Inicio com a falta de luz nova em Centro Historico"
+   }
+  ]
+ },
+ "B29-meus-bairros": {
+  "duracao": 5.67,
+  "edl": [
+   {
+    "no_clipe": 0.0,
+    "duracao": 1.4,
+    "original": [
+     44.6,
+     46.0
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "Meus bairros abre"
+   },
+   {
+    "no_clipe": 1.4,
+    "duracao": 4.27,
+    "original": [
+     47.0,
+     50.47
+    ],
+    "velocidade": 1,
+    "segura": 0.8,
+    "mostra": "marca Arquipelago: ele entra em 'Seus bairros' na lateral (1 s parado cortado); segura"
+   }
+  ]
+ }
+}

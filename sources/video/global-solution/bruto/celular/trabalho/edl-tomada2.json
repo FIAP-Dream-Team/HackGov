@@ -1,0 +1,15 @@
+{
+  "fonte_decupada": "originais/WhatsApp Video 2026-11-17 at 13.08.46.mp4",
+  "largura_decupada": 384,
+  "altura_decupada": 832,
+  "faixa": "17/11: B21 termina em 100,96 s e B22 começa em 104,10 s para tirar a faixa Relato enviado. Avisamos quem segue o bairro (texto legível de 100,98 a ~104,05 s), que sugere push inexistente. Fica uma borda verde lisa, sem texto, sob o cabeçalho.",
+  "nota": "Tempos em segundos do arquivo de origem. Recorte (crop) em pixels da fonte decupada; null = sem recorte. Para o original do celular, troque a fonte com --fonte: o render reescala o recorte pela largura nova.",
+  "crop": null,
+  "clipes": [
+    {"saida": "B20-inicio.mp4",          "segmentos": [[0.30, 7.40]],                    "segura": 0.0},
+    {"saida": "B21-reportar.mp4",        "segmentos": [[84.62, 87.65], [100.37, 100.96]], "segura": 0.3},
+    {"saida": "B21-reportar-completo.mp4","segmentos": [[84.62, 102.60]],                 "segura": 0.3},
+    {"saida": "B22-ocorrencia.mp4",      "segmentos": [[104.10, 108.45]],                "segura": 0.5},
+    {"saida": "B23-alerta-cascata.mp4",  "segmentos": [[34.80, 44.40]],                  "segura": 1.0}
+  ]
+}

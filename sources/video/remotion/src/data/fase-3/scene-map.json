@@ -1,0 +1,20 @@
+{
+  "_comment": "Ordem do vídeo = ordem das <section> do deck (sources/video/fase-3/deck/minha-vez-fase3.html). 'fala' aponta para roteiro.json. 'anchor' é o trecho literal da fala onde a cena entra; sem âncora, a cena começa junto com a fala. Os segundos saem do áudio: depois de editar, rode npm run fase3:align.",
+  "scenes": [
+    { "scene": "01", "label": "Capa",              "fala": "f01" },
+    { "scene": "02", "label": "O que mudou",       "fala": "f02" },
+    { "scene": "03", "label": "Regras da US03",    "fala": "f02", "anchor": "A principal regra" },
+    { "scene": "04", "label": "Testes e demo",     "fala": "f02", "anchor": "Os 5 testes passam" },
+    { "scene": "05", "label": "UML revisado",      "fala": "f03" },
+    { "scene": "06", "label": "Wireframes",        "fala": "f03", "anchor": "Nos wireframes" },
+    { "scene": "07", "label": "Data Modeler",      "fala": "f04" },
+    { "scene": "08", "label": "11 · 15 · 2",       "fala": "f04", "anchor": "São 11 entidades" },
+    { "scene": "09", "label": "Modelo lógico",     "fala": "f04", "anchor": "O modelo traz uma especialização" },
+    { "scene": "10", "label": "Tabela única",      "fala": "f05" },
+    { "scene": "11", "label": "Formas normais",    "fala": "f05", "anchor": "Aplicando as formas normais" },
+    { "scene": "12", "label": "Tabela CEP",        "fala": "f05", "anchor": "logradouro, bairro, cidade e UF" },
+    { "scene": "13", "label": "Modelo físico",     "fala": "f06" },
+    { "scene": "14", "label": "Script SQL",        "fala": "f07" },
+    { "scene": "15", "label": "Encerramento",      "fala": "f07", "anchor": "Foi assim que" }
+  ]
+}

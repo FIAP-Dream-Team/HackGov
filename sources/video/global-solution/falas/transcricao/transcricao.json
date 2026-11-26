@@ -1,0 +1,1942 @@
+{
+ "joao.mp4": {
+  "falas": [
+   "f02"
+  ],
+  "duracao": 14.61,
+  "fala_inicio": 0.0,
+  "fala_fim": 13.7,
+  "transcricao": "Isso acontece porque as estações que bombeam em água dependem de energia, sem luz a água para. Parece em dois problemas, mais um puxa o outro, e um de nós, que é do Sul, já viveu algo assim.",
+  "roteiro": "Isso acontece porque as estações que bombeiam água dependem de energia: sem luz, a água para. Parecem dois problemas, mas um puxa o outro. E um de nós, que é do Sul, já viveu algo assim.",
+  "semelhanca": 0.892,
+  "diferencas": [
+   [
+    "replace",
+    "bombeiam",
+    "bombeam em"
+   ],
+   [
+    "replace",
+    "parecem",
+    "parece em"
+   ],
+   [
+    "replace",
+    "mas",
+    "mais"
+   ]
+  ],
+  "palavras": [
+   {
+    "w": "Isso",
+    "s": 0.0,
+    "e": 0.94
+   },
+   {
+    "w": "acontece",
+    "s": 0.94,
+    "e": 1.42
+   },
+   {
+    "w": "porque",
+    "s": 1.42,
+    "e": 2.3
+   },
+   {
+    "w": "as",
+    "s": 2.3,
+    "e": 2.44
+   },
+   {
+    "w": "estações",
+    "s": 2.44,
+    "e": 2.84
+   },
+   {
+    "w": "que",
+    "s": 2.84,
+    "e": 3.0
+   },
+   {
+    "w": "bombeam",
+    "s": 3.0,
+    "e": 3.36
+   },
+   {
+    "w": "em",
+    "s": 3.36,
+    "e": 3.64
+   },
+   {
+    "w": "água",
+    "s": 3.64,
+    "e": 3.68
+   },
+   {
+    "w": "dependem",
+    "s": 3.68,
+    "e": 4.44
+   },
+   {
+    "w": "de",
+    "s": 4.44,
+    "e": 4.58
+   },
+   {
+    "w": "energia,",
+    "s": 4.58,
+    "e": 4.98
+   },
+   {
+    "w": "sem",
+    "s": 5.48,
+    "e": 5.76
+   },
+   {
+    "w": "luz",
+    "s": 5.76,
+    "e": 6.02
+   },
+   {
+    "w": "a",
+    "s": 6.02,
+    "e": 6.52
+   },
+   {
+    "w": "água",
+    "s": 6.52,
+    "e": 6.76
+   },
+   {
+    "w": "para.",
+    "s": 6.76,
+    "e": 7.18
+   },
+   {
+    "w": "Parece",
+    "s": 7.58,
+    "e": 7.94
+   },
+   {
+    "w": "em",
+    "s": 7.94,
+    "e": 8.14
+   },
+   {
+    "w": "dois",
+    "s": 8.14,
+    "e": 8.22
+   },
+   {
+    "w": "problemas,",
+    "s": 8.22,
+    "e": 8.74
+   },
+   {
+    "w": "mais",
+    "s": 9.1,
+    "e": 9.28
+   },
+   {
+    "w": "um",
+    "s": 9.28,
+    "e": 9.48
+   },
+   {
+    "w": "puxa",
+    "s": 9.48,
+    "e": 9.76
+   },
+   {
+    "w": "o",
+    "s": 9.76,
+    "e": 9.88
+   },
+   {
+    "w": "outro,",
+    "s": 9.88,
+    "e": 10.16
+   },
+   {
+    "w": "e",
+    "s": 10.9,
+    "e": 10.98
+   },
+   {
+    "w": "um",
+    "s": 10.98,
+    "e": 11.06
+   },
+   {
+    "w": "de",
+    "s": 11.06,
+    "e": 11.18
+   },
+   {
+    "w": "nós,",
+    "s": 11.18,
+    "e": 11.46
+   },
+   {
+    "w": "que",
+    "s": 11.88,
+    "e": 11.96
+   },
+   {
+    "w": "é",
+    "s": 11.96,
+    "e": 12.06
+   },
+   {
+    "w": "do",
+    "s": 12.06,
+    "e": 12.18
+   },
+   {
+    "w": "Sul,",
+    "s": 12.18,
+    "e": 12.46
+   },
+   {
+    "w": "já",
+    "s": 12.88,
+    "e": 12.94
+   },
+   {
+    "w": "viveu",
+    "s": 12.94,
+    "e": 13.28
+   },
+   {
+    "w": "algo",
+    "s": 13.28,
+    "e": 13.42
+   },
+   {
+    "w": "assim.",
+    "s": 13.42,
+    "e": 13.7
+   }
+  ]
+ },
+ "joao2.mp4": {
+  "falas": [
+   "f03"
+  ],
+  "duracao": 15.12,
+  "fala_inicio": 1.36,
+  "fala_fim": 14.42,
+  "transcricao": "Quem mora no bairro não sabe se o problema é só na sua casa, nem se ainda dá tempo de guardar água. E ainda quem cuida de um acamado, de idoso ou de quem usa aparelho de saúde. Essas horas pesam mais.",
+  "roteiro": "Quem mora no bairro não sabe se o problema é só na sua casa, nem se ainda dá tempo de guardar água. E para quem cuida de um acamado, de um idoso ou de quem usa aparelho de saúde, essas horas pesam mais.",
+  "semelhanca": 0.965,
+  "diferencas": [
+   [
+    "replace",
+    "para",
+    "ainda"
+   ],
+   [
+    "delete",
+    "um",
+    ""
+   ]
+  ],
+  "palavras": [
+   {
+    "w": "Quem",
+    "s": 1.36,
+    "e": 1.88
+   },
+   {
+    "w": "mora",
+    "s": 1.88,
+    "e": 2.18
+   },
+   {
+    "w": "no",
+    "s": 2.18,
+    "e": 2.28
+   },
+   {
+    "w": "bairro",
+    "s": 2.28,
+    "e": 2.66
+   },
+   {
+    "w": "não",
+    "s": 2.66,
+    "e": 2.8
+   },
+   {
+    "w": "sabe",
+    "s": 2.8,
+    "e": 3.12
+   },
+   {
+    "w": "se",
+    "s": 3.12,
+    "e": 3.28
+   },
+   {
+    "w": "o",
+    "s": 3.28,
+    "e": 3.36
+   },
+   {
+    "w": "problema",
+    "s": 3.36,
+    "e": 3.7
+   },
+   {
+    "w": "é",
+    "s": 3.7,
+    "e": 3.92
+   },
+   {
+    "w": "só",
+    "s": 3.92,
+    "e": 4.02
+   },
+   {
+    "w": "na",
+    "s": 4.02,
+    "e": 4.14
+   },
+   {
+    "w": "sua",
+    "s": 4.14,
+    "e": 4.32
+   },
+   {
+    "w": "casa,",
+    "s": 4.32,
+    "e": 4.76
+   },
+   {
+    "w": "nem",
+    "s": 5.46,
+    "e": 5.72
+   },
+   {
+    "w": "se",
+    "s": 5.72,
+    "e": 5.9
+   },
+   {
+    "w": "ainda",
+    "s": 5.9,
+    "e": 6.08
+   },
+   {
+    "w": "dá",
+    "s": 6.08,
+    "e": 6.26
+   },
+   {
+    "w": "tempo",
+    "s": 6.26,
+    "e": 6.52
+   },
+   {
+    "w": "de",
+    "s": 6.52,
+    "e": 6.68
+   },
+   {
+    "w": "guardar",
+    "s": 6.68,
+    "e": 7.04
+   },
+   {
+    "w": "água.",
+    "s": 7.04,
+    "e": 7.38
+   },
+   {
+    "w": "E",
+    "s": 8.1,
+    "e": 8.3
+   },
+   {
+    "w": "ainda",
+    "s": 8.3,
+    "e": 8.6
+   },
+   {
+    "w": "quem",
+    "s": 8.6,
+    "e": 8.9
+   },
+   {
+    "w": "cuida",
+    "s": 8.9,
+    "e": 9.2
+   },
+   {
+    "w": "de",
+    "s": 9.2,
+    "e": 9.32
+   },
+   {
+    "w": "um",
+    "s": 9.32,
+    "e": 9.42
+   },
+   {
+    "w": "acamado,",
+    "s": 9.42,
+    "e": 10.02
+   },
+   {
+    "w": "de",
+    "s": 10.32,
+    "e": 10.42
+   },
+   {
+    "w": "idoso",
+    "s": 10.42,
+    "e": 10.9
+   },
+   {
+    "w": "ou",
+    "s": 10.9,
+    "e": 11.36
+   },
+   {
+    "w": "de",
+    "s": 11.36,
+    "e": 11.48
+   },
+   {
+    "w": "quem",
+    "s": 11.48,
+    "e": 11.62
+   },
+   {
+    "w": "usa",
+    "s": 11.62,
+    "e": 11.8
+   },
+   {
+    "w": "aparelho",
+    "s": 11.8,
+    "e": 12.2
+   },
+   {
+    "w": "de",
+    "s": 12.2,
+    "e": 12.3
+   },
+   {
+    "w": "saúde.",
+    "s": 12.3,
+    "e": 12.6
+   },
+   {
+    "w": "Essas",
+    "s": 13.14,
+    "e": 13.58
+   },
+   {
+    "w": "horas",
+    "s": 13.58,
+    "e": 13.78
+   },
+   {
+    "w": "pesam",
+    "s": 13.78,
+    "e": 14.24
+   },
+   {
+    "w": "mais.",
+    "s": 14.24,
+    "e": 14.42
+   }
+  ]
+ },
+ "brenda.ogg": {
+  "falas": [
+   "f04"
+  ],
+  "duracao": 14.47,
+  "fala_inicio": 0.0,
+  "fala_fim": 13.3,
+  "transcricao": "E não é caso isolado. Na cheia de 2024, 160 mil moradores ficaram em área afetada. Dos 46 bairros atingidos, só cinco concentram mais da metade dessas pessoas. O risco tem endereço.",
+  "roteiro": "E não é caso isolado. Na cheia de 2024, cento e sessenta mil moradores ficaram em área afetada. Dos quarenta e seis bairros atingidos, só cinco concentram mais da metade dessas pessoas.  O risco tem endereço.",
+  "semelhanca": 0.882,
+  "diferencas": [
+   [
+    "replace",
+    "cento e sessenta",
+    "160"
+   ],
+   [
+    "replace",
+    "quarenta e seis",
+    "46"
+   ]
+  ],
+  "palavras": [
+   {
+    "w": "E",
+    "s": 0.0,
+    "e": 0.96
+   },
+   {
+    "w": "não",
+    "s": 0.96,
+    "e": 1.12
+   },
+   {
+    "w": "é",
+    "s": 1.12,
+    "e": 1.24
+   },
+   {
+    "w": "caso",
+    "s": 1.24,
+    "e": 1.46
+   },
+   {
+    "w": "isolado.",
+    "s": 1.46,
+    "e": 2.04
+   },
+   {
+    "w": "Na",
+    "s": 2.48,
+    "e": 2.52
+   },
+   {
+    "w": "cheia",
+    "s": 2.52,
+    "e": 2.8
+   },
+   {
+    "w": "de",
+    "s": 2.8,
+    "e": 2.86
+   },
+   {
+    "w": "2024,",
+    "s": 2.86,
+    "e": 3.52
+   },
+   {
+    "w": "160",
+    "s": 3.92,
+    "e": 4.32
+   },
+   {
+    "w": "mil",
+    "s": 4.32,
+    "e": 4.76
+   },
+   {
+    "w": "moradores",
+    "s": 4.76,
+    "e": 5.24
+   },
+   {
+    "w": "ficaram",
+    "s": 5.24,
+    "e": 5.7
+   },
+   {
+    "w": "em",
+    "s": 5.7,
+    "e": 5.86
+   },
+   {
+    "w": "área",
+    "s": 5.86,
+    "e": 5.98
+   },
+   {
+    "w": "afetada.",
+    "s": 5.98,
+    "e": 6.56
+   },
+   {
+    "w": "Dos",
+    "s": 7.02,
+    "e": 7.18
+   },
+   {
+    "w": "46",
+    "s": 7.18,
+    "e": 7.64
+   },
+   {
+    "w": "bairros",
+    "s": 7.64,
+    "e": 8.06
+   },
+   {
+    "w": "atingidos,",
+    "s": 8.06,
+    "e": 8.64
+   },
+   {
+    "w": "só",
+    "s": 8.9,
+    "e": 9.0
+   },
+   {
+    "w": "cinco",
+    "s": 9.0,
+    "e": 9.28
+   },
+   {
+    "w": "concentram",
+    "s": 9.28,
+    "e": 9.96
+   },
+   {
+    "w": "mais",
+    "s": 9.96,
+    "e": 10.48
+   },
+   {
+    "w": "da",
+    "s": 10.48,
+    "e": 10.6
+   },
+   {
+    "w": "metade",
+    "s": 10.6,
+    "e": 10.9
+   },
+   {
+    "w": "dessas",
+    "s": 10.9,
+    "e": 11.1
+   },
+   {
+    "w": "pessoas.",
+    "s": 11.1,
+    "e": 11.6
+   },
+   {
+    "w": "O",
+    "s": 12.28,
+    "e": 12.38
+   },
+   {
+    "w": "risco",
+    "s": 12.38,
+    "e": 12.62
+   },
+   {
+    "w": "tem",
+    "s": 12.62,
+    "e": 12.8
+   },
+   {
+    "w": "endereço.",
+    "s": 12.8,
+    "e": 13.3
+   }
+  ]
+ },
+ "vinicius.mp4": {
+  "falas": [
+   "f06",
+   "f07"
+  ],
+  "duracao": 36.88,
+  "fala_inicio": 1.58,
+  "fala_fim": 35.8,
+  "transcricao": "Vi um problema? Relata em dois toques. Se o vizinho já relatou, o seu ver a confirmação. Quando três pessoas avisam que voltou, o caso fecha. A comunidade é a principal fonte, sem sensor caro. Esse é o nosso diferencial, o efeito cascata. Quando a falta de luz é confirmada no bairro de uma estação de bombeamento, o Alertaí avisa quem acompanha os bairros que ela abastece. É possível falta de água, como o porquê, o que fazer e para quem ligar, antes da torneira secar.",
+  "roteiro": "Viu um problema? Relata em dois toques. Se o vizinho já relatou, o seu vira confirmação. Quando três pessoas avisam que voltou, o caso fecha. A comunidade é a principal fonte, sem sensor caro. Esse é o nosso diferencial: o efeito cascata. Quando a falta de luz é confirmada no bairro de uma estação de bombeamento, o Alertaí avisa quem acompanha os bairros que ela abastece: possível falta de água. Com o porquê, o que fazer e para quem ligar.  Antes da torneira secar.",
+  "semelhanca": 0.953,
+  "diferencas": [
+   [
+    "replace",
+    "viu",
+    "vi"
+   ],
+   [
+    "replace",
+    "vira",
+    "ver a"
+   ],
+   [
+    "insert",
+    "",
+    "e"
+   ],
+   [
+    "replace",
+    "com",
+    "como"
+   ]
+  ],
+  "palavras": [
+   {
+    "w": "Vi",
+    "s": 1.58,
+    "e": 2.22
+   },
+   {
+    "w": "um",
+    "s": 2.22,
+    "e": 2.38
+   },
+   {
+    "w": "problema?",
+    "s": 2.38,
+    "e": 2.78
+   },
+   {
+    "w": "Relata",
+    "s": 3.42,
+    "e": 3.86
+   },
+   {
+    "w": "em",
+    "s": 3.86,
+    "e": 4.0
+   },
+   {
+    "w": "dois",
+    "s": 4.0,
+    "e": 4.12
+   },
+   {
+    "w": "toques.",
+    "s": 4.12,
+    "e": 4.52
+   },
+   {
+    "w": "Se",
+    "s": 5.12,
+    "e": 5.18
+   },
+   {
+    "w": "o",
+    "s": 5.18,
+    "e": 5.28
+   },
+   {
+    "w": "vizinho",
+    "s": 5.28,
+    "e": 5.62
+   },
+   {
+    "w": "já",
+    "s": 5.62,
+    "e": 5.78
+   },
+   {
+    "w": "relatou,",
+    "s": 5.78,
+    "e": 6.3
+   },
+   {
+    "w": "o",
+    "s": 6.74,
+    "e": 6.84
+   },
+   {
+    "w": "seu",
+    "s": 6.84,
+    "e": 6.94
+   },
+   {
+    "w": "ver",
+    "s": 6.94,
+    "e": 7.1
+   },
+   {
+    "w": "a",
+    "s": 7.1,
+    "e": 7.22
+   },
+   {
+    "w": "confirmação.",
+    "s": 7.22,
+    "e": 8.0
+   },
+   {
+    "w": "Quando",
+    "s": 8.62,
+    "e": 8.88
+   },
+   {
+    "w": "três",
+    "s": 8.88,
+    "e": 9.2
+   },
+   {
+    "w": "pessoas",
+    "s": 9.2,
+    "e": 9.6
+   },
+   {
+    "w": "avisam",
+    "s": 9.6,
+    "e": 10.1
+   },
+   {
+    "w": "que",
+    "s": 10.1,
+    "e": 10.24
+   },
+   {
+    "w": "voltou,",
+    "s": 10.24,
+    "e": 10.68
+   },
+   {
+    "w": "o",
+    "s": 11.14,
+    "e": 11.22
+   },
+   {
+    "w": "caso",
+    "s": 11.22,
+    "e": 11.4
+   },
+   {
+    "w": "fecha.",
+    "s": 11.4,
+    "e": 11.86
+   },
+   {
+    "w": "A",
+    "s": 12.46,
+    "e": 12.58
+   },
+   {
+    "w": "comunidade",
+    "s": 12.58,
+    "e": 13.28
+   },
+   {
+    "w": "é",
+    "s": 13.28,
+    "e": 13.56
+   },
+   {
+    "w": "a",
+    "s": 13.56,
+    "e": 13.68
+   },
+   {
+    "w": "principal",
+    "s": 13.68,
+    "e": 14.0
+   },
+   {
+    "w": "fonte,",
+    "s": 14.0,
+    "e": 14.66
+   },
+   {
+    "w": "sem",
+    "s": 14.9,
+    "e": 15.2
+   },
+   {
+    "w": "sensor",
+    "s": 15.2,
+    "e": 15.54
+   },
+   {
+    "w": "caro.",
+    "s": 15.54,
+    "e": 16.64
+   },
+   {
+    "w": "Esse",
+    "s": 17.14,
+    "e": 17.78
+   },
+   {
+    "w": "é",
+    "s": 17.78,
+    "e": 17.88
+   },
+   {
+    "w": "o",
+    "s": 17.88,
+    "e": 17.92
+   },
+   {
+    "w": "nosso",
+    "s": 17.92,
+    "e": 18.06
+   },
+   {
+    "w": "diferencial,",
+    "s": 18.06,
+    "e": 18.7
+   },
+   {
+    "w": "o",
+    "s": 19.18,
+    "e": 19.24
+   },
+   {
+    "w": "efeito",
+    "s": 19.24,
+    "e": 19.56
+   },
+   {
+    "w": "cascata.",
+    "s": 19.56,
+    "e": 20.12
+   },
+   {
+    "w": "Quando",
+    "s": 20.82,
+    "e": 21.0
+   },
+   {
+    "w": "a",
+    "s": 21.0,
+    "e": 21.14
+   },
+   {
+    "w": "falta",
+    "s": 21.14,
+    "e": 21.36
+   },
+   {
+    "w": "de",
+    "s": 21.36,
+    "e": 21.56
+   },
+   {
+    "w": "luz",
+    "s": 21.56,
+    "e": 21.72
+   },
+   {
+    "w": "é",
+    "s": 21.72,
+    "e": 21.88
+   },
+   {
+    "w": "confirmada",
+    "s": 21.88,
+    "e": 22.48
+   },
+   {
+    "w": "no",
+    "s": 22.48,
+    "e": 22.68
+   },
+   {
+    "w": "bairro",
+    "s": 22.68,
+    "e": 22.98
+   },
+   {
+    "w": "de",
+    "s": 22.98,
+    "e": 23.12
+   },
+   {
+    "w": "uma",
+    "s": 23.12,
+    "e": 23.22
+   },
+   {
+    "w": "estação",
+    "s": 23.22,
+    "e": 23.64
+   },
+   {
+    "w": "de",
+    "s": 23.64,
+    "e": 23.74
+   },
+   {
+    "w": "bombeamento,",
+    "s": 23.74,
+    "e": 24.34
+   },
+   {
+    "w": "o",
+    "s": 24.84,
+    "e": 24.94
+   },
+   {
+    "w": "Alertaí",
+    "s": 24.94,
+    "e": 25.48
+   },
+   {
+    "w": "avisa",
+    "s": 25.48,
+    "e": 25.8
+   },
+   {
+    "w": "quem",
+    "s": 25.8,
+    "e": 26.02
+   },
+   {
+    "w": "acompanha",
+    "s": 26.02,
+    "e": 26.54
+   },
+   {
+    "w": "os",
+    "s": 26.54,
+    "e": 26.66
+   },
+   {
+    "w": "bairros",
+    "s": 26.66,
+    "e": 27.0
+   },
+   {
+    "w": "que",
+    "s": 27.0,
+    "e": 27.18
+   },
+   {
+    "w": "ela",
+    "s": 27.18,
+    "e": 27.28
+   },
+   {
+    "w": "abastece.",
+    "s": 27.28,
+    "e": 27.86
+   },
+   {
+    "w": "É",
+    "s": 27.86,
+    "e": 28.78
+   },
+   {
+    "w": "possível",
+    "s": 28.78,
+    "e": 28.78
+   },
+   {
+    "w": "falta",
+    "s": 28.78,
+    "e": 29.16
+   },
+   {
+    "w": "de",
+    "s": 29.16,
+    "e": 29.44
+   },
+   {
+    "w": "água,",
+    "s": 29.44,
+    "e": 29.7
+   },
+   {
+    "w": "como",
+    "s": 30.24,
+    "e": 30.54
+   },
+   {
+    "w": "o",
+    "s": 30.54,
+    "e": 30.76
+   },
+   {
+    "w": "porquê,",
+    "s": 30.76,
+    "e": 31.12
+   },
+   {
+    "w": "o",
+    "s": 31.56,
+    "e": 31.62
+   },
+   {
+    "w": "que",
+    "s": 31.62,
+    "e": 31.8
+   },
+   {
+    "w": "fazer",
+    "s": 31.8,
+    "e": 32.22
+   },
+   {
+    "w": "e",
+    "s": 32.22,
+    "e": 32.78
+   },
+   {
+    "w": "para",
+    "s": 32.78,
+    "e": 32.96
+   },
+   {
+    "w": "quem",
+    "s": 32.96,
+    "e": 33.2
+   },
+   {
+    "w": "ligar,",
+    "s": 33.2,
+    "e": 33.72
+   },
+   {
+    "w": "antes",
+    "s": 34.06,
+    "e": 34.88
+   },
+   {
+    "w": "da",
+    "s": 34.88,
+    "e": 35.06
+   },
+   {
+    "w": "torneira",
+    "s": 35.06,
+    "e": 35.4
+   },
+   {
+    "w": "secar.",
+    "s": 35.4,
+    "e": 35.8
+   }
+  ]
+ },
+ "lari.mp4": {
+  "falas": [
+   "f08"
+  ],
+  "duracao": 16.68,
+  "fala_inicio": 0.7,
+  "fala_fim": 16.4,
+  "transcricao": "Desenhamos sete telas do rascunho à alta fidelidade, tanto no celular quanto no computador, seguindo as diretrizes internacionais da sensibilidade. A informação nunca depende só da cor. Sempre vem com o ícone e o texto, o contraste adequado para a leitura, e a letra pode dobrar de tamanho sem perder o conteúdo.",
+  "roteiro": "Desenhamos sete telas, do rascunho à alta fidelidade, no celular e no computador. A gravidade nunca aparece só pela cor, o contraste segue as diretrizes internacionais de acessibilidade, e a letra pode aumentar.",
+  "semelhanca": 0.447,
+  "diferencas": [
+   [
+    "insert",
+    "",
+    "tanto"
+   ],
+   [
+    "replace",
+    "e",
+    "quanto"
+   ],
+   [
+    "replace",
+    "a gravidade nunca aparece so pela cor o contraste segue",
+    "seguindo"
+   ],
+   [
+    "replace",
+    "de acessibilidade",
+    "da sensibilidade a informacao nunca depende so da cor sempre vem com o icone e o texto o contraste adequado para a leitura"
+   ],
+   [
+    "replace",
+    "aumentar",
+    "dobrar de tamanho sem perder o conteudo"
+   ]
+  ],
+  "palavras": [
+   {
+    "w": "Desenhamos",
+    "s": 0.7,
+    "e": 1.18
+   },
+   {
+    "w": "sete",
+    "s": 1.18,
+    "e": 1.54
+   },
+   {
+    "w": "telas",
+    "s": 1.54,
+    "e": 1.98
+   },
+   {
+    "w": "do",
+    "s": 1.98,
+    "e": 2.22
+   },
+   {
+    "w": "rascunho",
+    "s": 2.22,
+    "e": 2.7
+   },
+   {
+    "w": "à",
+    "s": 2.7,
+    "e": 2.86
+   },
+   {
+    "w": "alta",
+    "s": 2.86,
+    "e": 3.02
+   },
+   {
+    "w": "fidelidade,",
+    "s": 3.02,
+    "e": 3.74
+   },
+   {
+    "w": "tanto",
+    "s": 4.04,
+    "e": 4.2
+   },
+   {
+    "w": "no",
+    "s": 4.2,
+    "e": 4.4
+   },
+   {
+    "w": "celular",
+    "s": 4.4,
+    "e": 4.68
+   },
+   {
+    "w": "quanto",
+    "s": 4.68,
+    "e": 5.0
+   },
+   {
+    "w": "no",
+    "s": 5.0,
+    "e": 5.18
+   },
+   {
+    "w": "computador,",
+    "s": 5.18,
+    "e": 5.68
+   },
+   {
+    "w": "seguindo",
+    "s": 5.98,
+    "e": 6.34
+   },
+   {
+    "w": "as",
+    "s": 6.34,
+    "e": 6.48
+   },
+   {
+    "w": "diretrizes",
+    "s": 6.48,
+    "e": 6.88
+   },
+   {
+    "w": "internacionais",
+    "s": 6.88,
+    "e": 7.42
+   },
+   {
+    "w": "da",
+    "s": 7.42,
+    "e": 7.56
+   },
+   {
+    "w": "sensibilidade.",
+    "s": 7.56,
+    "e": 8.26
+   },
+   {
+    "w": "A",
+    "s": 8.84,
+    "e": 8.94
+   },
+   {
+    "w": "informação",
+    "s": 8.94,
+    "e": 9.2
+   },
+   {
+    "w": "nunca",
+    "s": 9.2,
+    "e": 9.62
+   },
+   {
+    "w": "depende",
+    "s": 9.62,
+    "e": 9.88
+   },
+   {
+    "w": "só",
+    "s": 9.88,
+    "e": 10.14
+   },
+   {
+    "w": "da",
+    "s": 10.14,
+    "e": 10.28
+   },
+   {
+    "w": "cor.",
+    "s": 10.28,
+    "e": 10.48
+   },
+   {
+    "w": "Sempre",
+    "s": 10.98,
+    "e": 11.2
+   },
+   {
+    "w": "vem",
+    "s": 11.2,
+    "e": 11.38
+   },
+   {
+    "w": "com",
+    "s": 11.38,
+    "e": 11.52
+   },
+   {
+    "w": "o",
+    "s": 11.52,
+    "e": 11.62
+   },
+   {
+    "w": "ícone",
+    "s": 11.62,
+    "e": 11.82
+   },
+   {
+    "w": "e",
+    "s": 11.82,
+    "e": 12.0
+   },
+   {
+    "w": "o",
+    "s": 12.0,
+    "e": 12.0
+   },
+   {
+    "w": "texto,",
+    "s": 12.0,
+    "e": 12.26
+   },
+   {
+    "w": "o",
+    "s": 12.78,
+    "e": 12.9
+   },
+   {
+    "w": "contraste",
+    "s": 12.9,
+    "e": 13.28
+   },
+   {
+    "w": "adequado",
+    "s": 13.28,
+    "e": 13.58
+   },
+   {
+    "w": "para",
+    "s": 13.58,
+    "e": 13.74
+   },
+   {
+    "w": "a",
+    "s": 13.74,
+    "e": 13.76
+   },
+   {
+    "w": "leitura,",
+    "s": 13.76,
+    "e": 14.2
+   },
+   {
+    "w": "e",
+    "s": 14.6,
+    "e": 14.64
+   },
+   {
+    "w": "a",
+    "s": 14.64,
+    "e": 14.74
+   },
+   {
+    "w": "letra",
+    "s": 14.74,
+    "e": 14.92
+   },
+   {
+    "w": "pode",
+    "s": 14.92,
+    "e": 15.08
+   },
+   {
+    "w": "dobrar",
+    "s": 15.08,
+    "e": 15.32
+   },
+   {
+    "w": "de",
+    "s": 15.32,
+    "e": 15.42
+   },
+   {
+    "w": "tamanho",
+    "s": 15.42,
+    "e": 15.66
+   },
+   {
+    "w": "sem",
+    "s": 15.66,
+    "e": 15.84
+   },
+   {
+    "w": "perder",
+    "s": 15.84,
+    "e": 16.1
+   },
+   {
+    "w": "o",
+    "s": 16.1,
+    "e": 16.2
+   },
+   {
+    "w": "conteúdo.",
+    "s": 16.2,
+    "e": 16.4
+   }
+  ]
+ },
+ "brenda2.ogg": {
+  "falas": [
+   "f09"
+  ],
+  "duracao": 14.17,
+  "fala_inicio": 0.0,
+  "fala_fim": 13.26,
+  "transcricao": "Como saber se funciona? O indicador central é a antecedência. Quantas horas o aviso chega antes da água faltar? A meta, pelo menos duas horas. Também medimos se o alerta acerta e se as pessoas agem.",
+  "roteiro": "Como saber se funciona? O indicador central é a antecedência: quantas horas o aviso chega antes da água faltar. A meta: pelo menos duas horas. Também medimos se o alerta acerta e se as pessoas agem.",
+  "semelhanca": 1.0,
+  "diferencas": [],
+  "palavras": [
+   {
+    "w": "Como",
+    "s": 0.0,
+    "e": 1.06
+   },
+   {
+    "w": "saber",
+    "s": 1.06,
+    "e": 1.34
+   },
+   {
+    "w": "se",
+    "s": 1.34,
+    "e": 1.52
+   },
+   {
+    "w": "funciona?",
+    "s": 1.52,
+    "e": 2.0
+   },
+   {
+    "w": "O",
+    "s": 2.6,
+    "e": 2.68
+   },
+   {
+    "w": "indicador",
+    "s": 2.68,
+    "e": 3.1
+   },
+   {
+    "w": "central",
+    "s": 3.1,
+    "e": 3.48
+   },
+   {
+    "w": "é",
+    "s": 3.48,
+    "e": 3.66
+   },
+   {
+    "w": "a",
+    "s": 3.66,
+    "e": 3.78
+   },
+   {
+    "w": "antecedência.",
+    "s": 3.78,
+    "e": 4.6
+   },
+   {
+    "w": "Quantas",
+    "s": 4.94,
+    "e": 5.32
+   },
+   {
+    "w": "horas",
+    "s": 5.32,
+    "e": 5.52
+   },
+   {
+    "w": "o",
+    "s": 5.52,
+    "e": 5.72
+   },
+   {
+    "w": "aviso",
+    "s": 5.72,
+    "e": 6.02
+   },
+   {
+    "w": "chega",
+    "s": 6.02,
+    "e": 6.36
+   },
+   {
+    "w": "antes",
+    "s": 6.36,
+    "e": 6.68
+   },
+   {
+    "w": "da",
+    "s": 6.68,
+    "e": 6.86
+   },
+   {
+    "w": "água",
+    "s": 6.86,
+    "e": 7.0
+   },
+   {
+    "w": "faltar?",
+    "s": 7.0,
+    "e": 7.46
+   },
+   {
+    "w": "A",
+    "s": 7.78,
+    "e": 7.9
+   },
+   {
+    "w": "meta,",
+    "s": 7.9,
+    "e": 8.2
+   },
+   {
+    "w": "pelo",
+    "s": 8.54,
+    "e": 8.7
+   },
+   {
+    "w": "menos",
+    "s": 8.7,
+    "e": 8.94
+   },
+   {
+    "w": "duas",
+    "s": 8.94,
+    "e": 9.22
+   },
+   {
+    "w": "horas.",
+    "s": 9.22,
+    "e": 9.58
+   },
+   {
+    "w": "Também",
+    "s": 10.02,
+    "e": 10.42
+   },
+   {
+    "w": "medimos",
+    "s": 10.42,
+    "e": 10.78
+   },
+   {
+    "w": "se",
+    "s": 10.78,
+    "e": 10.98
+   },
+   {
+    "w": "o",
+    "s": 10.98,
+    "e": 11.06
+   },
+   {
+    "w": "alerta",
+    "s": 11.06,
+    "e": 11.52
+   },
+   {
+    "w": "acerta",
+    "s": 11.52,
+    "e": 12.02
+   },
+   {
+    "w": "e",
+    "s": 12.02,
+    "e": 12.26
+   },
+   {
+    "w": "se",
+    "s": 12.26,
+    "e": 12.28
+   },
+   {
+    "w": "as",
+    "s": 12.28,
+    "e": 12.4
+   },
+   {
+    "w": "pessoas",
+    "s": 12.4,
+    "e": 12.7
+   },
+   {
+    "w": "agem.",
+    "s": 12.7,
+    "e": 13.26
+   }
+  ]
+ },
+ "lari2.mp4": {
+  "falas": [
+   "f10"
+  ],
+  "duracao": 19.54,
+  "fala_inicio": 0.0,
+  "fala_fim": 19.06,
+  "transcricao": "Com isso, já atendemos quatro ADSes. O 13 e o 11 pedem alerta pré -conce e cidades mais preparadas para desastres. O 3 proteja a saúde de quem é mais vulnerável, e o 6 a comunidade participando da gestão da água. Começando por cinco bairros. O próximo é o Sarandi, com base atingindo em 2024.",
+  "roteiro": "Com isso, menos gente é pega de surpresa pelo clima, com alerta precoce, como pedem os ODS onze e treze. O aviso protege a saúde, e os relatos ajudam a gerir a água: ODS três e seis. Começamos por cinco bairros. O próximo é o Sarandi, o mais atingido em 2024.",
+  "semelhanca": 0.396,
+  "diferencas": [
+   [
+    "replace",
+    "menos gente",
+    "ja atendemos quatro adses o 13"
+   ],
+   [
+    "replace",
+    "pega de surpresa pelo clima com",
+    "o 11 pedem"
+   ],
+   [
+    "replace",
+    "precoce como pedem os ods onze",
+    "pre conce"
+   ],
+   [
+    "replace",
+    "treze",
+    "cidades mais preparadas para desastres"
+   ],
+   [
+    "replace",
+    "aviso protege",
+    "3 proteja"
+   ],
+   [
+    "insert",
+    "",
+    "de quem"
+   ],
+   [
+    "replace",
+    "os relatos ajudam",
+    "mais vulneravel e o 6"
+   ],
+   [
+    "replace",
+    "gerir a",
+    "comunidade participando da gestao da"
+   ],
+   [
+    "replace",
+    "ods tres e seis comecamos",
+    "comecando"
+   ],
+   [
+    "replace",
+    "o mais atingido",
+    "com base atingindo"
+   ]
+  ],
+  "palavras": [
+   {
+    "w": "Com",
+    "s": 0.0,
+    "e": 0.98
+   },
+   {
+    "w": "isso,",
+    "s": 0.98,
+    "e": 1.28
+   },
+   {
+    "w": "já",
+    "s": 1.4,
+    "e": 1.52
+   },
+   {
+    "w": "atendemos",
+    "s": 1.52,
+    "e": 1.94
+   },
+   {
+    "w": "quatro",
+    "s": 1.94,
+    "e": 2.24
+   },
+   {
+    "w": "ADSes.",
+    "s": 2.24,
+    "e": 3.04
+   },
+   {
+    "w": "O",
+    "s": 3.26,
+    "e": 3.4
+   },
+   {
+    "w": "13",
+    "s": 3.4,
+    "e": 3.66
+   },
+   {
+    "w": "e",
+    "s": 3.66,
+    "e": 3.84
+   },
+   {
+    "w": "o",
+    "s": 3.84,
+    "e": 3.9
+   },
+   {
+    "w": "11",
+    "s": 3.9,
+    "e": 4.22
+   },
+   {
+    "w": "pedem",
+    "s": 4.22,
+    "e": 4.8
+   },
+   {
+    "w": "alerta",
+    "s": 4.8,
+    "e": 5.24
+   },
+   {
+    "w": "pré",
+    "s": 5.24,
+    "e": 5.36
+   },
+   {
+    "w": "-conce",
+    "s": 5.36,
+    "e": 5.82
+   },
+   {
+    "w": "e",
+    "s": 5.82,
+    "e": 5.98
+   },
+   {
+    "w": "cidades",
+    "s": 5.98,
+    "e": 6.28
+   },
+   {
+    "w": "mais",
+    "s": 6.28,
+    "e": 6.5
+   },
+   {
+    "w": "preparadas",
+    "s": 6.5,
+    "e": 7.02
+   },
+   {
+    "w": "para",
+    "s": 7.02,
+    "e": 7.26
+   },
+   {
+    "w": "desastres.",
+    "s": 7.26,
+    "e": 7.94
+   },
+   {
+    "w": "O",
+    "s": 8.22,
+    "e": 8.28
+   },
+   {
+    "w": "3",
+    "s": 8.28,
+    "e": 8.56
+   },
+   {
+    "w": "proteja",
+    "s": 8.56,
+    "e": 9.46
+   },
+   {
+    "w": "a",
+    "s": 9.46,
+    "e": 9.56
+   },
+   {
+    "w": "saúde",
+    "s": 9.56,
+    "e": 9.84
+   },
+   {
+    "w": "de",
+    "s": 9.84,
+    "e": 10.0
+   },
+   {
+    "w": "quem",
+    "s": 10.0,
+    "e": 10.16
+   },
+   {
+    "w": "é",
+    "s": 10.16,
+    "e": 10.28
+   },
+   {
+    "w": "mais",
+    "s": 10.28,
+    "e": 10.36
+   },
+   {
+    "w": "vulnerável,",
+    "s": 10.36,
+    "e": 11.0
+   },
+   {
+    "w": "e",
+    "s": 11.38,
+    "e": 11.42
+   },
+   {
+    "w": "o",
+    "s": 11.42,
+    "e": 11.54
+   },
+   {
+    "w": "6",
+    "s": 11.54,
+    "e": 11.74
+   },
+   {
+    "w": "a",
+    "s": 11.74,
+    "e": 12.06
+   },
+   {
+    "w": "comunidade",
+    "s": 12.06,
+    "e": 12.48
+   },
+   {
+    "w": "participando",
+    "s": 12.48,
+    "e": 13.0
+   },
+   {
+    "w": "da",
+    "s": 13.0,
+    "e": 13.12
+   },
+   {
+    "w": "gestão",
+    "s": 13.12,
+    "e": 13.42
+   },
+   {
+    "w": "da",
+    "s": 13.42,
+    "e": 13.54
+   },
+   {
+    "w": "água.",
+    "s": 13.54,
+    "e": 13.9
+   },
+   {
+    "w": "Começando",
+    "s": 14.72,
+    "e": 15.16
+   },
+   {
+    "w": "por",
+    "s": 15.16,
+    "e": 15.32
+   },
+   {
+    "w": "cinco",
+    "s": 15.32,
+    "e": 15.48
+   },
+   {
+    "w": "bairros.",
+    "s": 15.48,
+    "e": 15.98
+   },
+   {
+    "w": "O",
+    "s": 16.3,
+    "e": 16.3
+   },
+   {
+    "w": "próximo",
+    "s": 16.3,
+    "e": 16.62
+   },
+   {
+    "w": "é",
+    "s": 16.62,
+    "e": 16.88
+   },
+   {
+    "w": "o",
+    "s": 16.88,
+    "e": 16.94
+   },
+   {
+    "w": "Sarandi,",
+    "s": 16.94,
+    "e": 17.4
+   },
+   {
+    "w": "com",
+    "s": 17.78,
+    "e": 17.92
+   },
+   {
+    "w": "base",
+    "s": 17.92,
+    "e": 18.06
+   },
+   {
+    "w": "atingindo",
+    "s": 18.06,
+    "e": 18.5
+   },
+   {
+    "w": "em",
+    "s": 18.5,
+    "e": 18.6
+   },
+   {
+    "w": "2024.",
+    "s": 18.6,
+    "e": 19.06
+   }
+  ]
+ }
+}

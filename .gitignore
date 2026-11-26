@@ -26,3 +26,23 @@ src/backend/target/
 src/frontend/node_modules/
 src/frontend/dist/
 src/frontend/src/theme/tokens.generated.css
+
+# Mídia pesada dos vídeos: fica só na máquina de quem edita, não vai para o repositório
+sources/**/*.mp4
+sources/**/*.mov
+sources/**/*.wav
+sources/**/*.cfa
+sources/**/*.pek
+sources/**/*.pma
+sources/**/*.prin
+sources/**/*.prproj
+sources/**/__pycache__/
+sources/**/*.npy
+sources/**/*.npz
+sources/video/global-solution/bruto/**/*.png
+sources/video/global-solution/bruto/**/*.jpg
+sources/**/*.ogg
+sources/global-solution/recursos/**/*.mp3
+sources/video/global-solution/**/*.mp3
+sources/video/global-solution/falas/transcricao/zoom200/
+sources/global-solution/recursos/Adobe Premiere Pro */

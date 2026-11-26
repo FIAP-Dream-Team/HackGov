@@ -1,0 +1,526 @@
+{
+ "_comment": "Liga cada elemento data-reveal do deck à palavra da fala em que ele entra (âncora = trecho literal de roteiro.json). Sem 'anchor', entra 'offsetSec' depois do reveal anterior da mesma cena. 'lead' antecipa em segundos (padrão 0.25; negativo atrasa). O COMO (fade, wipe, draw, count, pop, highlight) fica no deck, em data-anim. Âncoras vêm de ../../../global-solution/edicao-pitch.md.",
+ "reveals": [
+  {
+   "id": "s01-quando",
+   "scene": "01",
+   "anchor": "Janeiro de 2024"
+  },
+  {
+   "id": "s01-trilho",
+   "scene": "01",
+   "offsetSec": 0.5
+  },
+  {
+   "id": "s01-v1",
+   "scene": "01",
+   "offsetSec": 0.15
+  },
+  {
+   "id": "s01-v2",
+   "scene": "01",
+   "offsetSec": 0.25
+  },
+  {
+   "id": "s01-v3",
+   "scene": "01",
+   "offsetSec": 0.25
+  },
+  {
+   "id": "s01-temporal",
+   "scene": "01",
+   "anchor": "temporal comum"
+  },
+  {
+   "id": "s01-temporal-t",
+   "scene": "01",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s01-f1",
+   "scene": "01",
+   "anchor": "derruba"
+  },
+  {
+   "id": "s01-luz",
+   "scene": "01",
+   "anchor": "a luz"
+  },
+  {
+   "id": "s01-luz-t",
+   "scene": "01",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s01-f2",
+   "scene": "01",
+   "anchor": "Horas depois"
+  },
+  {
+   "id": "s01-horas",
+   "scene": "01",
+   "offsetSec": 0.3
+  },
+  {
+   "id": "s01-agua",
+   "scene": "01",
+   "anchor": "a torneira seca"
+  },
+  {
+   "id": "s01-agua-t",
+   "scene": "01",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s01-60",
+   "scene": "01",
+   "anchor": "dois dias e meio"
+  },
+  {
+   "id": "s01-157",
+   "scene": "01",
+   "anchor": "cento e cinquenta e sete mil"
+  },
+  {
+   "id": "s01-bombas",
+   "scene": "01",
+   "anchor": "seguem sem água"
+  },
+  {
+   "id": "s02-est",
+   "scene": "02",
+   "anchor": "estações que bombeiam"
+  },
+  {
+   "id": "s02-est-t",
+   "scene": "02",
+   "offsetSec": 0.25
+  },
+  {
+   "id": "s02-luz",
+   "scene": "02",
+   "anchor": "dependem de energia"
+  },
+  {
+   "id": "s02-luz-t",
+   "scene": "02",
+   "offsetSec": 0.25
+  },
+  {
+   "id": "s02-w1",
+   "scene": "02",
+   "offsetSec": 0.1
+  },
+  {
+   "id": "s02-w2",
+   "scene": "02",
+   "anchor": "sem luz"
+  },
+  {
+   "id": "s02-agua",
+   "scene": "02",
+   "anchor": "a água para"
+  },
+  {
+   "id": "s02-agua-t",
+   "scene": "02",
+   "offsetSec": 0.25
+  },
+  {
+   "id": "s02-frase",
+   "scene": "02",
+   "anchor": "Parecem dois problemas"
+  },
+  {
+   "id": "s02-mk",
+   "scene": "02",
+   "anchor": "um puxa o outro"
+  },
+  {
+   "id": "s02-viv",
+   "scene": "02",
+   "anchor": "um de nós"
+  },
+  {
+   "id": "s03-q1",
+   "scene": "03",
+   "anchor": "só na sua casa"
+  },
+  {
+   "id": "s03-q2",
+   "scene": "03",
+   "anchor": "ainda dá tempo"
+  },
+  {
+   "id": "s03-pesa",
+   "scene": "03",
+   "anchor": "quem cuida"
+  },
+  {
+   "id": "s03-acamado",
+   "scene": "03",
+   "anchor": "acamado"
+  },
+  {
+   "id": "s03-idoso",
+   "scene": "03",
+   "anchor": "idoso"
+  },
+  {
+   "id": "s03-aparelho",
+   "scene": "03",
+   "anchor": "aparelho de saúde"
+  },
+  {
+   "id": "s03-hoje",
+   "scene": "03",
+   "anchor": "pesam mais",
+   "lead": -0.4
+  },
+  {
+   "id": "s04-total",
+   "scene": "04",
+   "anchor": "Na cheia histórica"
+  },
+  {
+   "id": "s04-totaln",
+   "scene": "04",
+   "anchor": "cento e sessenta mil"
+  },
+  {
+   "id": "s04-bars",
+   "scene": "04",
+   "anchor": "quarenta e seis bairros"
+  },
+  {
+   "id": "s04-top5",
+   "scene": "04",
+   "anchor": "só cinco"
+  },
+  {
+   "id": "s04-chave",
+   "scene": "04",
+   "anchor": "mais da metade"
+  },
+  {
+   "id": "s04-pct",
+   "scene": "04",
+   "anchor": "mais da metade"
+  },
+  {
+   "id": "s04-pctn",
+   "scene": "04",
+   "anchor": "mais da metade"
+  },
+  {
+   "id": "s04-chave-resto",
+   "scene": "04",
+   "anchor": "dessas pessoas"
+  },
+  {
+   "id": "s04-resto",
+   "scene": "04",
+   "anchor": "dessas pessoas"
+  },
+  {
+   "id": "s04-first",
+   "scene": "04",
+   "anchor": "O risco tem endereço"
+  },
+  {
+   "id": "s04-nomes",
+   "scene": "04",
+   "anchor": "O risco tem endereço"
+  },
+  {
+   "id": "s05-logo",
+   "scene": "05",
+   "anchor": "criamos o Alertaí"
+  },
+  {
+   "id": "s05-app",
+   "scene": "05",
+   "anchor": "um app"
+  },
+  {
+   "id": "s05-pergunta",
+   "scene": "05",
+   "anchor": "uma pergunta"
+  },
+  {
+   "id": "s05-sub",
+   "scene": "05",
+   "anchor": "de alertas por bairro"
+  },
+  {
+   "id": "s05m-tipos",
+   "scene": "05m",
+   "anchor": "seus riscos"
+  },
+  {
+   "id": "s05m-oficial",
+   "scene": "05m",
+   "anchor": "avisos oficiais"
+  },
+  {
+   "id": "s05m-guaiba",
+   "scene": "05m",
+   "anchor": "nível do Guaíba"
+  },
+  {
+   "id": "s05m-previsao",
+   "scene": "05m",
+   "anchor": "a previsão"
+  },
+  {
+   "id": "s06-app",
+   "scene": "06",
+   "anchor": "Viu um problema"
+  },
+  {
+   "id": "s06-r1",
+   "scene": "06",
+   "anchor": "dois toques"
+  },
+  {
+   "id": "s06-r2",
+   "scene": "06",
+   "anchor": "vira confirmação"
+  },
+  {
+   "id": "s06-r3",
+   "scene": "06",
+   "anchor": "três pessoas"
+  },
+  {
+   "id": "s06-fonte",
+   "scene": "06",
+   "anchor": "Junto com os avisos"
+  },
+  {
+   "id": "s07-eixo",
+   "scene": "07",
+   "anchor": "Quando a falta de luz"
+  },
+  {
+   "id": "s07-luz",
+   "scene": "07",
+   "anchor": "falta de luz"
+  },
+  {
+   "id": "s07-luz-t",
+   "scene": "07",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s07-conf",
+   "scene": "07",
+   "anchor": "é confirmada"
+  },
+  {
+   "id": "s07-conf-t",
+   "scene": "07",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s07-est",
+   "scene": "07",
+   "anchor": "estação de bombeamento"
+  },
+  {
+   "id": "s07-est-t",
+   "scene": "07",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s07-aviso",
+   "scene": "07",
+   "anchor": "o Alertaí avisa"
+  },
+  {
+   "id": "s07-aviso-t",
+   "scene": "07",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s07-app",
+   "scene": "07",
+   "anchor": "possível falta de água"
+  },
+  {
+   "id": "s07-porque",
+   "scene": "07",
+   "anchor": "o porquê"
+  },
+  {
+   "id": "s07-fazer",
+   "scene": "07",
+   "anchor": "o que fazer"
+  },
+  {
+   "id": "s07-ligar",
+   "scene": "07",
+   "anchor": "para quem ligar"
+  },
+  {
+   "id": "s07-espera",
+   "scene": "07",
+   "anchor": "Antes da torneira"
+  },
+  {
+   "id": "s07-agua",
+   "scene": "07",
+   "anchor": "torneira secar"
+  },
+  {
+   "id": "s07-agua-t",
+   "scene": "07",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s07-gap",
+   "scene": "07",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s07-prep",
+   "scene": "07",
+   "offsetSec": 0.3
+  },
+  {
+   "id": "s08-wire",
+   "scene": "08",
+   "anchor": "sete telas"
+  },
+  {
+   "id": "s08-hifi-l",
+   "scene": "08",
+   "anchor": "alta fidelidade"
+  },
+  {
+   "id": "s08-hifi",
+   "scene": "08",
+   "anchor": "alta fidelidade"
+  },
+  {
+   "id": "s08-pc",
+   "scene": "08",
+   "anchor": "no computador"
+  },
+  {
+   "id": "s08-wcag",
+   "scene": "08",
+   "anchor": "diretrizes internacionais"
+  },
+  {
+   "id": "s08-cor",
+   "scene": "08",
+   "anchor": "só da cor"
+  },
+  {
+   "id": "s08-contraste",
+   "scene": "08",
+   "anchor": "o contraste"
+  },
+  {
+   "id": "s08-zoom",
+   "scene": "08",
+   "anchor": "dobrar de tamanho"
+  },
+  {
+   "id": "s09-antec",
+   "scene": "09",
+   "anchor": "antecedência"
+  },
+  {
+   "id": "s09-aviso",
+   "scene": "09",
+   "anchor": "o aviso chega"
+  },
+  {
+   "id": "s09-aviso-t",
+   "scene": "09",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s09-espera",
+   "scene": "09",
+   "anchor": "antes da água"
+  },
+  {
+   "id": "s09-agua",
+   "scene": "09",
+   "anchor": "água faltar"
+  },
+  {
+   "id": "s09-agua-t",
+   "scene": "09",
+   "offsetSec": 0.2
+  },
+  {
+   "id": "s09-chave",
+   "scene": "09",
+   "anchor": "A meta"
+  },
+  {
+   "id": "s09-meta",
+   "scene": "09",
+   "anchor": "duas horas"
+  },
+  {
+   "id": "s09-metan",
+   "scene": "09",
+   "anchor": "duas horas"
+  },
+  {
+   "id": "s09-acerta",
+   "scene": "09",
+   "anchor": "o alerta acerta"
+  },
+  {
+   "id": "s09-age",
+   "scene": "09",
+   "anchor": "as pessoas agem"
+  },
+  {
+   "id": "s10-ods13",
+   "scene": "10",
+   "anchor": "O treze"
+  },
+  {
+   "id": "s10-ods11",
+   "scene": "10",
+   "anchor": "o onze"
+  },
+  {
+   "id": "s10-ods3",
+   "scene": "10",
+   "anchor": "O três"
+  },
+  {
+   "id": "s10-ods6",
+   "scene": "10",
+   "anchor": "o seis"
+  },
+  {
+   "id": "s10-mapa",
+   "scene": "10",
+   "anchor": "cinco bairros"
+  },
+  {
+   "id": "s10-sarandi",
+   "scene": "10",
+   "anchor": "Sarandi"
+  },
+  {
+   "id": "s11-logo",
+   "scene": "11",
+   "anchor": "Alertaí"
+  },
+  {
+   "id": "s11-frase",
+   "scene": "11",
+   "anchor": "Da próxima vez"
+  }
+ ]
+}

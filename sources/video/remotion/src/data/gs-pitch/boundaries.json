@@ -1,0 +1,110 @@
+{
+  "detector": "faster-whisper (palavras) + silencedetect -32dB 0.12s",
+  "draft": false,
+  "durationSec": 173.646,
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "start": 0,
+      "end": 16.21,
+      "speechStart": 0.09,
+      "speechEnd": 14.68
+    },
+    {
+      "id": "f02",
+      "speaker": "joao",
+      "start": 16.21,
+      "end": 30.77,
+      "speechStart": 16.49,
+      "speechEnd": 29.67
+    },
+    {
+      "id": "f03",
+      "speaker": "joao",
+      "start": 30.77,
+      "end": 45.12,
+      "speechStart": 31.05,
+      "speechEnd": 44.07
+    },
+    {
+      "id": "f04",
+      "speaker": "larissa",
+      "start": 45.12,
+      "end": 58.45,
+      "speechStart": 45.4,
+      "speechEnd": 57.48
+    },
+    {
+      "id": "f05",
+      "speaker": "joao",
+      "start": 58.45,
+      "end": 68.15,
+      "speechStart": 58.73,
+      "speechEnd": 67.396
+    },
+    {
+      "id": "f05m",
+      "speaker": "joao",
+      "start": 68.15,
+      "end": 85.63,
+      "speechStart": 68.43,
+      "speechEnd": 84.466
+    },
+    {
+      "id": "f06",
+      "speaker": "larissa",
+      "start": 85.63,
+      "end": 98.67,
+      "speechStart": 85.91,
+      "speechEnd": 97.536
+    },
+    {
+      "id": "f07",
+      "speaker": "vinicius",
+      "start": 98.67,
+      "end": 118.19,
+      "speechStart": 98.95,
+      "speechEnd": 117.302
+    },
+    {
+      "id": "f08",
+      "speaker": "larissa",
+      "start": 118.19,
+      "end": 135.54,
+      "speechStart": 118.47,
+      "speechEnd": 134.432
+    },
+    {
+      "id": "f09",
+      "speaker": "brenda",
+      "start": 135.54,
+      "end": 150.22,
+      "speechStart": 135.82,
+      "speechEnd": 148.555
+    },
+    {
+      "id": "f10",
+      "speaker": "larissa",
+      "start": 150.22,
+      "end": 169.796,
+      "speechStart": 150.5,
+      "speechEnd": 169.115
+    },
+    {
+      "id": "f11",
+      "speaker": "john",
+      "start": 169.796,
+      "end": 173.646,
+      "speechStart": 170.076,
+      "speechEnd": 173.466
+    }
+  ],
+  "voices": {
+    "john": 120,
+    "joao": 120,
+    "vinicius": 120,
+    "brenda": 210,
+    "larissa": 210
+  }
+}

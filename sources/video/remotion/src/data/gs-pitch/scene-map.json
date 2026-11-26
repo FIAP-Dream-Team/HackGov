@@ -1,0 +1,65 @@
+{
+ "_comment": "Ordem do vídeo = ordem das <section> do deck (sources/video/global-solution/deck/alertai.html). Uma fala por cena; cada corte cai na pausa entre falas. Depois de editar, rode scripts/gs-pitch/align.mjs.",
+ "scenes": [
+  {
+   "scene": "01",
+   "label": "A torneira seca",
+   "fala": "f01"
+  },
+  {
+   "scene": "02",
+   "label": "Por que acontece",
+   "fala": "f02"
+  },
+  {
+   "scene": "03",
+   "label": "Quem sofre",
+   "fala": "f03"
+  },
+  {
+   "scene": "04",
+   "label": "A prova nos dados",
+   "fala": "f04"
+  },
+  {
+   "scene": "05",
+   "label": "Alertaí",
+   "fala": "f05"
+  },
+  {
+   "scene": "05m",
+   "label": "O mapa",
+   "fala": "f05m"
+  },
+  {
+   "scene": "06",
+   "label": "Como funciona",
+   "fala": "f06"
+  },
+  {
+   "scene": "07",
+   "label": "O efeito cascata",
+   "fala": "f07"
+  },
+  {
+   "scene": "08",
+   "label": "O protótipo",
+   "fala": "f08"
+  },
+  {
+   "scene": "09",
+   "label": "Como medir",
+   "fala": "f09"
+  },
+  {
+   "scene": "10",
+   "label": "ODS e próximo passo",
+   "fala": "f10"
+  },
+  {
+   "scene": "11",
+   "label": "Assinatura",
+   "fala": "f11"
+  }
+ ]
+}

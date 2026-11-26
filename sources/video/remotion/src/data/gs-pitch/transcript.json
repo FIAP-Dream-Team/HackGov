@@ -1,0 +1,2312 @@
+{
+ "model": "faster-whisper medium int8, fala a fala com o roteiro como contexto",
+ "durationSec": 173.646,
+ "text": "Janeiro de 2024, Porto Alegre. Um temporal comum derruba a luz. Horas depois, sem nenhum aviso, a torneira seca. E fica seca dois dias e meio depois, cento e cinquenta e sete mil pessoas seguem sem água. Isso acontece porque as estações que bombeiam água dependem de energia. Sem luz, a água para. Parecem dois problemas, mas um puxa o outro. E um de nós, que é do Sul, já viveu algo assim. Quem mora no bairro não sabe se o problema é só na sua casa, nem se ainda dá tempo de guardar água. E ainda quem cuida de um acamado, de idoso ou de quem usa aparelho de saúde, essas horas pesam mais. E isso não é um caso isolado. Na cheia histórica do Guaíba, em 2004, cento e sessenta mil moradores ficaram em área afetada. Dos quarenta e seis bairros atingidos, só cinco concentram mais da metade dessas pessoas. O risco tem endereço. Por isso criamos o Alertaí, um app de alertas por bairro que responde a uma pergunta o que está acontecendo no meu bairro agora, e o que eu faço? No mapa, cada bairro mostra seus riscos, chuva forte, alagamento, árvore caída, falta de luz e de água, com os avisos oficiais e o nível do Guaíba. E a previsão é de mais chuva forte até 2027. Viu um problema? Relata em dois toques. Se o vizinho já relatou, o seu vira confirmação. Quando três pessoas avisam que voltou, o caso fecha. Junto com os avisos oficiais, a comunidade é a principal fonte, sem sensor caro. Esse é o nosso diferencial, o efeito cascata. Quando a falta de luz é confirmada no bairro de uma estação de bombeamento, o Alertaí avisa quem acompanha os bairros que ela abastece. Possível falta de água. Com o porquê, o que fazer e para quem ligar. Antes da torneira secar. Desenhamos sete telas do rascunho à alta fidelidade, tanto no celular quanto no computador, seguindo as diretrizes internacionais de acessibilidade. A informação nunca depende só da cor, sempre vem com o ícone e o texto, o contraste adequado para a leitura, e a letra pode dobrar de tamanho sem perder o conteúdo. Como saber se funciona? O indicador central é a antecedência. Quantas horas o aviso chega antes da água faltar. A meta? Pelo menos duas horas. Também medimos se o alerta acerta e se as pessoas agem. Com isso, já atendemos quatro ODS. O treze e o onze pedem alerta precoce e cidades mais preparadas para desastres. O três protege a saúde de quem é mais vulnerável, e o seis, a comunidade participando da gestão da água. Começando por cinco bairros. O próximo é o Sarandi, o mais atingido em 2024. Alertaí. Da próxima vez, o aviso chega antes.",
+ "words": [
+  {
+   "text": "Janeiro",
+   "start": 0.0,
+   "end": 0.62
+  },
+  {
+   "text": "de",
+   "start": 0.62,
+   "end": 0.86
+  },
+  {
+   "text": "2024,",
+   "start": 0.86,
+   "end": 1.7
+  },
+  {
+   "text": "Porto",
+   "start": 2.18,
+   "end": 2.42
+  },
+  {
+   "text": "Alegre.",
+   "start": 2.42,
+   "end": 2.76
+  },
+  {
+   "text": "Um",
+   "start": 2.92,
+   "end": 3.0
+  },
+  {
+   "text": "temporal",
+   "start": 3.0,
+   "end": 3.48
+  },
+  {
+   "text": "comum",
+   "start": 3.48,
+   "end": 3.86
+  },
+  {
+   "text": "derruba",
+   "start": 3.86,
+   "end": 4.42
+  },
+  {
+   "text": "a",
+   "start": 4.42,
+   "end": 4.6
+  },
+  {
+   "text": "luz.",
+   "start": 4.6,
+   "end": 4.9
+  },
+  {
+   "text": "Horas",
+   "start": 5.18,
+   "end": 5.42
+  },
+  {
+   "text": "depois,",
+   "start": 5.42,
+   "end": 5.92
+  },
+  {
+   "text": "sem",
+   "start": 6.34,
+   "end": 6.44
+  },
+  {
+   "text": "nenhum",
+   "start": 6.44,
+   "end": 6.82
+  },
+  {
+   "text": "aviso,",
+   "start": 6.82,
+   "end": 7.38
+  },
+  {
+   "text": "a",
+   "start": 7.52,
+   "end": 7.66
+  },
+  {
+   "text": "torneira",
+   "start": 7.66,
+   "end": 8.0
+  },
+  {
+   "text": "seca.",
+   "start": 8.0,
+   "end": 8.36
+  },
+  {
+   "text": "E",
+   "start": 8.52,
+   "end": 8.68
+  },
+  {
+   "text": "fica",
+   "start": 8.68,
+   "end": 8.86
+  },
+  {
+   "text": "seca",
+   "start": 8.86,
+   "end": 9.32
+  },
+  {
+   "text": "dois",
+   "start": 9.32,
+   "end": 9.62
+  },
+  {
+   "text": "dias",
+   "start": 9.62,
+   "end": 9.86
+  },
+  {
+   "text": "e",
+   "start": 9.86,
+   "end": 10.06
+  },
+  {
+   "text": "meio",
+   "start": 10.06,
+   "end": 10.18
+  },
+  {
+   "text": "depois,",
+   "start": 10.18,
+   "end": 10.8
+  },
+  {
+   "text": "cento",
+   "start": 11.22,
+   "end": 11.4
+  },
+  {
+   "text": "e",
+   "start": 11.4,
+   "end": 11.48
+  },
+  {
+   "text": "cinquenta",
+   "start": 11.48,
+   "end": 12.04
+  },
+  {
+   "text": "e",
+   "start": 12.04,
+   "end": 12.08
+  },
+  {
+   "text": "sete",
+   "start": 12.08,
+   "end": 12.54
+  },
+  {
+   "text": "mil",
+   "start": 12.54,
+   "end": 12.68
+  },
+  {
+   "text": "pessoas",
+   "start": 12.68,
+   "end": 13.52
+  },
+  {
+   "text": "seguem",
+   "start": 13.52,
+   "end": 14.16
+  },
+  {
+   "text": "sem",
+   "start": 14.16,
+   "end": 14.36
+  },
+  {
+   "text": "água.",
+   "start": 14.36,
+   "end": 14.64
+  },
+  {
+   "text": "Isso",
+   "start": 15.71,
+   "end": 16.75
+  },
+  {
+   "text": "acontece",
+   "start": 16.75,
+   "end": 17.41
+  },
+  {
+   "text": "porque",
+   "start": 17.41,
+   "end": 18.09
+  },
+  {
+   "text": "as",
+   "start": 18.09,
+   "end": 18.27
+  },
+  {
+   "text": "estações",
+   "start": 18.27,
+   "end": 18.63
+  },
+  {
+   "text": "que",
+   "start": 18.63,
+   "end": 18.83
+  },
+  {
+   "text": "bombeiam",
+   "start": 18.83,
+   "end": 19.19
+  },
+  {
+   "text": "água",
+   "start": 19.19,
+   "end": 19.57
+  },
+  {
+   "text": "dependem",
+   "start": 19.57,
+   "end": 20.23
+  },
+  {
+   "text": "de",
+   "start": 20.23,
+   "end": 20.37
+  },
+  {
+   "text": "energia.",
+   "start": 20.37,
+   "end": 20.89
+  },
+  {
+   "text": "Sem",
+   "start": 21.35,
+   "end": 21.55
+  },
+  {
+   "text": "luz,",
+   "start": 21.55,
+   "end": 22.05
+  },
+  {
+   "text": "a",
+   "start": 22.35,
+   "end": 22.39
+  },
+  {
+   "text": "água",
+   "start": 22.39,
+   "end": 22.57
+  },
+  {
+   "text": "para.",
+   "start": 22.57,
+   "end": 23.05
+  },
+  {
+   "text": "Parecem",
+   "start": 23.59,
+   "end": 23.85
+  },
+  {
+   "text": "dois",
+   "start": 23.85,
+   "end": 24.07
+  },
+  {
+   "text": "problemas,",
+   "start": 24.07,
+   "end": 24.65
+  },
+  {
+   "text": "mas",
+   "start": 25.03,
+   "end": 25.07
+  },
+  {
+   "text": "um",
+   "start": 25.07,
+   "end": 25.27
+  },
+  {
+   "text": "puxa",
+   "start": 25.27,
+   "end": 25.57
+  },
+  {
+   "text": "o",
+   "start": 25.57,
+   "end": 25.71
+  },
+  {
+   "text": "outro.",
+   "start": 25.71,
+   "end": 26.19
+  },
+  {
+   "text": "E",
+   "start": 26.69,
+   "end": 26.77
+  },
+  {
+   "text": "um",
+   "start": 26.77,
+   "end": 26.89
+  },
+  {
+   "text": "de",
+   "start": 26.89,
+   "end": 27.11
+  },
+  {
+   "text": "nós,",
+   "start": 27.11,
+   "end": 27.47
+  },
+  {
+   "text": "que",
+   "start": 27.67,
+   "end": 27.75
+  },
+  {
+   "text": "é",
+   "start": 27.75,
+   "end": 27.83
+  },
+  {
+   "text": "do",
+   "start": 27.83,
+   "end": 28.03
+  },
+  {
+   "text": "Sul,",
+   "start": 28.03,
+   "end": 28.29
+  },
+  {
+   "text": "já",
+   "start": 28.63,
+   "end": 28.77
+  },
+  {
+   "text": "viveu",
+   "start": 28.77,
+   "end": 29.07
+  },
+  {
+   "text": "algo",
+   "start": 29.07,
+   "end": 29.21
+  },
+  {
+   "text": "assim.",
+   "start": 29.21,
+   "end": 29.45
+  },
+  {
+   "text": "Quem",
+   "start": 30.5,
+   "end": 31.2
+  },
+  {
+   "text": "mora",
+   "start": 31.2,
+   "end": 31.48
+  },
+  {
+   "text": "no",
+   "start": 31.48,
+   "end": 31.62
+  },
+  {
+   "text": "bairro",
+   "start": 31.62,
+   "end": 31.96
+  },
+  {
+   "text": "não",
+   "start": 31.96,
+   "end": 32.18
+  },
+  {
+   "text": "sabe",
+   "start": 32.18,
+   "end": 32.42
+  },
+  {
+   "text": "se",
+   "start": 32.42,
+   "end": 32.62
+  },
+  {
+   "text": "o",
+   "start": 32.62,
+   "end": 32.66
+  },
+  {
+   "text": "problema",
+   "start": 32.66,
+   "end": 33.06
+  },
+  {
+   "text": "é",
+   "start": 33.06,
+   "end": 33.24
+  },
+  {
+   "text": "só",
+   "start": 33.24,
+   "end": 33.36
+  },
+  {
+   "text": "na",
+   "start": 33.36,
+   "end": 33.54
+  },
+  {
+   "text": "sua",
+   "start": 33.54,
+   "end": 33.74
+  },
+  {
+   "text": "casa,",
+   "start": 33.74,
+   "end": 34.4
+  },
+  {
+   "text": "nem",
+   "start": 34.96,
+   "end": 35.06
+  },
+  {
+   "text": "se",
+   "start": 35.06,
+   "end": 35.24
+  },
+  {
+   "text": "ainda",
+   "start": 35.24,
+   "end": 35.42
+  },
+  {
+   "text": "dá",
+   "start": 35.42,
+   "end": 35.58
+  },
+  {
+   "text": "tempo",
+   "start": 35.58,
+   "end": 35.86
+  },
+  {
+   "text": "de",
+   "start": 35.86,
+   "end": 36.06
+  },
+  {
+   "text": "guardar",
+   "start": 36.06,
+   "end": 36.46
+  },
+  {
+   "text": "água.",
+   "start": 36.46,
+   "end": 36.78
+  },
+  {
+   "text": "E",
+   "start": 37.48,
+   "end": 37.68
+  },
+  {
+   "text": "ainda",
+   "start": 37.68,
+   "end": 38.02
+  },
+  {
+   "text": "quem",
+   "start": 38.02,
+   "end": 38.2
+  },
+  {
+   "text": "cuida",
+   "start": 38.2,
+   "end": 38.5
+  },
+  {
+   "text": "de",
+   "start": 38.5,
+   "end": 38.64
+  },
+  {
+   "text": "um",
+   "start": 38.64,
+   "end": 38.78
+  },
+  {
+   "text": "acamado,",
+   "start": 38.78,
+   "end": 39.38
+  },
+  {
+   "text": "de",
+   "start": 39.76,
+   "end": 39.84
+  },
+  {
+   "text": "idoso",
+   "start": 39.84,
+   "end": 40.34
+  },
+  {
+   "text": "ou",
+   "start": 40.34,
+   "end": 40.7
+  },
+  {
+   "text": "de",
+   "start": 40.7,
+   "end": 40.82
+  },
+  {
+   "text": "quem",
+   "start": 40.82,
+   "end": 40.92
+  },
+  {
+   "text": "usa",
+   "start": 40.92,
+   "end": 41.14
+  },
+  {
+   "text": "aparelho",
+   "start": 41.14,
+   "end": 41.6
+  },
+  {
+   "text": "de",
+   "start": 41.6,
+   "end": 41.7
+  },
+  {
+   "text": "saúde,",
+   "start": 41.7,
+   "end": 42.08
+  },
+  {
+   "text": "essas",
+   "start": 42.68,
+   "end": 42.86
+  },
+  {
+   "text": "horas",
+   "start": 42.86,
+   "end": 43.18
+  },
+  {
+   "text": "pesam",
+   "start": 43.18,
+   "end": 43.56
+  },
+  {
+   "text": "mais.",
+   "start": 43.56,
+   "end": 43.8
+  },
+  {
+   "text": "E",
+   "start": 45.1,
+   "end": 45.64
+  },
+  {
+   "text": "isso",
+   "start": 45.64,
+   "end": 45.92
+  },
+  {
+   "text": "não",
+   "start": 45.92,
+   "end": 46.12
+  },
+  {
+   "text": "é",
+   "start": 46.12,
+   "end": 46.22
+  },
+  {
+   "text": "um",
+   "start": 46.22,
+   "end": 46.24
+  },
+  {
+   "text": "caso",
+   "start": 46.24,
+   "end": 46.46
+  },
+  {
+   "text": "isolado.",
+   "start": 46.46,
+   "end": 47.2
+  },
+  {
+   "text": "Na",
+   "start": 47.44,
+   "end": 47.54
+  },
+  {
+   "text": "cheia",
+   "start": 47.54,
+   "end": 47.76
+  },
+  {
+   "text": "histórica",
+   "start": 47.76,
+   "end": 48.0
+  },
+  {
+   "text": "do",
+   "start": 48.0,
+   "end": 48.12
+  },
+  {
+   "text": "Guaíba,",
+   "start": 48.12,
+   "end": 48.42
+  },
+  {
+   "text": "em",
+   "start": 48.46,
+   "end": 48.52
+  },
+  {
+   "text": "2004,",
+   "start": 48.52,
+   "end": 49.24
+  },
+  {
+   "text": "cento",
+   "start": 49.74,
+   "end": 49.82
+  },
+  {
+   "text": "e",
+   "start": 49.82,
+   "end": 49.82
+  },
+  {
+   "text": "sessenta",
+   "start": 49.82,
+   "end": 50.14
+  },
+  {
+   "text": "mil",
+   "start": 50.14,
+   "end": 50.26
+  },
+  {
+   "text": "moradores",
+   "start": 50.26,
+   "end": 50.7
+  },
+  {
+   "text": "ficaram",
+   "start": 50.7,
+   "end": 51.12
+  },
+  {
+   "text": "em",
+   "start": 51.12,
+   "end": 51.14
+  },
+  {
+   "text": "área",
+   "start": 51.14,
+   "end": 51.28
+  },
+  {
+   "text": "afetada.",
+   "start": 51.28,
+   "end": 52.06
+  },
+  {
+   "text": "Dos",
+   "start": 52.32,
+   "end": 52.44
+  },
+  {
+   "text": "quarenta",
+   "start": 52.44,
+   "end": 52.74
+  },
+  {
+   "text": "e",
+   "start": 52.74,
+   "end": 52.86
+  },
+  {
+   "text": "seis",
+   "start": 52.86,
+   "end": 52.88
+  },
+  {
+   "text": "bairros",
+   "start": 52.88,
+   "end": 53.16
+  },
+  {
+   "text": "atingidos,",
+   "start": 53.16,
+   "end": 53.76
+  },
+  {
+   "text": "só",
+   "start": 54.0,
+   "end": 54.1
+  },
+  {
+   "text": "cinco",
+   "start": 54.1,
+   "end": 54.34
+  },
+  {
+   "text": "concentram",
+   "start": 54.34,
+   "end": 54.76
+  },
+  {
+   "text": "mais",
+   "start": 54.76,
+   "end": 55.0
+  },
+  {
+   "text": "da",
+   "start": 55.0,
+   "end": 55.12
+  },
+  {
+   "text": "metade",
+   "start": 55.12,
+   "end": 55.4
+  },
+  {
+   "text": "dessas",
+   "start": 55.4,
+   "end": 55.5
+  },
+  {
+   "text": "pessoas.",
+   "start": 55.5,
+   "end": 55.92
+  },
+  {
+   "text": "O",
+   "start": 56.32,
+   "end": 56.44
+  },
+  {
+   "text": "risco",
+   "start": 56.44,
+   "end": 56.7
+  },
+  {
+   "text": "tem",
+   "start": 56.7,
+   "end": 56.84
+  },
+  {
+   "text": "endereço.",
+   "start": 56.84,
+   "end": 57.34
+  },
+  {
+   "text": "Por",
+   "start": 58.346,
+   "end": 58.966
+  },
+  {
+   "text": "isso",
+   "start": 58.966,
+   "end": 59.206
+  },
+  {
+   "text": "criamos",
+   "start": 59.206,
+   "end": 59.606
+  },
+  {
+   "text": "o",
+   "start": 59.606,
+   "end": 59.766
+  },
+  {
+   "text": "Alertaí,",
+   "start": 59.766,
+   "end": 60.226
+  },
+  {
+   "text": "um",
+   "start": 60.806,
+   "end": 60.906
+  },
+  {
+   "text": "app",
+   "start": 60.906,
+   "end": 61.106
+  },
+  {
+   "text": "de",
+   "start": 61.106,
+   "end": 61.326
+  },
+  {
+   "text": "alertas",
+   "start": 61.326,
+   "end": 61.746
+  },
+  {
+   "text": "por",
+   "start": 61.746,
+   "end": 61.966
+  },
+  {
+   "text": "bairro",
+   "start": 61.966,
+   "end": 62.486
+  },
+  {
+   "text": "que",
+   "start": 62.486,
+   "end": 62.866
+  },
+  {
+   "text": "responde",
+   "start": 62.866,
+   "end": 63.346
+  },
+  {
+   "text": "a",
+   "start": 63.346,
+   "end": 63.426
+  },
+  {
+   "text": "uma",
+   "start": 63.426,
+   "end": 63.566
+  },
+  {
+   "text": "pergunta",
+   "start": 63.566,
+   "end": 64.026
+  },
+  {
+   "text": "o",
+   "start": 64.026,
+   "end": 64.566
+  },
+  {
+   "text": "que",
+   "start": 64.566,
+   "end": 64.726
+  },
+  {
+   "text": "está",
+   "start": 64.726,
+   "end": 64.906
+  },
+  {
+   "text": "acontecendo",
+   "start": 64.906,
+   "end": 65.366
+  },
+  {
+   "text": "no",
+   "start": 65.366,
+   "end": 65.506
+  },
+  {
+   "text": "meu",
+   "start": 65.506,
+   "end": 65.626
+  },
+  {
+   "text": "bairro",
+   "start": 65.626,
+   "end": 65.866
+  },
+  {
+   "text": "agora,",
+   "start": 65.866,
+   "end": 66.246
+  },
+  {
+   "text": "e",
+   "start": 66.366,
+   "end": 66.766
+  },
+  {
+   "text": "o",
+   "start": 66.766,
+   "end": 66.846
+  },
+  {
+   "text": "que",
+   "start": 66.846,
+   "end": 66.946
+  },
+  {
+   "text": "eu",
+   "start": 66.946,
+   "end": 67.146
+  },
+  {
+   "text": "faço?",
+   "start": 67.146,
+   "end": 67.366
+  },
+  {
+   "text": "No",
+   "start": 68.226,
+   "end": 68.646
+  },
+  {
+   "text": "mapa,",
+   "start": 68.646,
+   "end": 69.126
+  },
+  {
+   "text": "cada",
+   "start": 69.506,
+   "end": 69.706
+  },
+  {
+   "text": "bairro",
+   "start": 69.706,
+   "end": 70.066
+  },
+  {
+   "text": "mostra",
+   "start": 70.066,
+   "end": 70.346
+  },
+  {
+   "text": "seus",
+   "start": 70.346,
+   "end": 70.626
+  },
+  {
+   "text": "riscos,",
+   "start": 70.626,
+   "end": 71.446
+  },
+  {
+   "text": "chuva",
+   "start": 71.726,
+   "end": 72.086
+  },
+  {
+   "text": "forte,",
+   "start": 72.086,
+   "end": 72.706
+  },
+  {
+   "text": "alagamento,",
+   "start": 73.186,
+   "end": 73.986
+  },
+  {
+   "text": "árvore",
+   "start": 74.666,
+   "end": 74.926
+  },
+  {
+   "text": "caída,",
+   "start": 74.926,
+   "end": 75.866
+  },
+  {
+   "text": "falta",
+   "start": 76.386,
+   "end": 76.466
+  },
+  {
+   "text": "de",
+   "start": 76.466,
+   "end": 76.726
+  },
+  {
+   "text": "luz",
+   "start": 76.726,
+   "end": 76.886
+  },
+  {
+   "text": "e",
+   "start": 76.886,
+   "end": 77.126
+  },
+  {
+   "text": "de",
+   "start": 77.126,
+   "end": 77.446
+  },
+  {
+   "text": "água,",
+   "start": 77.446,
+   "end": 77.766
+  },
+  {
+   "text": "com",
+   "start": 78.246,
+   "end": 78.366
+  },
+  {
+   "text": "os",
+   "start": 78.366,
+   "end": 78.526
+  },
+  {
+   "text": "avisos",
+   "start": 78.526,
+   "end": 78.926
+  },
+  {
+   "text": "oficiais",
+   "start": 78.926,
+   "end": 79.466
+  },
+  {
+   "text": "e",
+   "start": 79.466,
+   "end": 79.566
+  },
+  {
+   "text": "o",
+   "start": 79.566,
+   "end": 79.706
+  },
+  {
+   "text": "nível",
+   "start": 79.706,
+   "end": 79.826
+  },
+  {
+   "text": "do",
+   "start": 79.826,
+   "end": 80.046
+  },
+  {
+   "text": "Guaíba.",
+   "start": 80.046,
+   "end": 80.606
+  },
+  {
+   "text": "E",
+   "start": 81.146,
+   "end": 81.326
+  },
+  {
+   "text": "a",
+   "start": 81.326,
+   "end": 81.486
+  },
+  {
+   "text": "previsão",
+   "start": 81.486,
+   "end": 82.106
+  },
+  {
+   "text": "é",
+   "start": 82.106,
+   "end": 82.326
+  },
+  {
+   "text": "de",
+   "start": 82.326,
+   "end": 82.466
+  },
+  {
+   "text": "mais",
+   "start": 82.466,
+   "end": 82.586
+  },
+  {
+   "text": "chuva",
+   "start": 82.586,
+   "end": 82.926
+  },
+  {
+   "text": "forte",
+   "start": 82.926,
+   "end": 83.186
+  },
+  {
+   "text": "até",
+   "start": 83.186,
+   "end": 83.486
+  },
+  {
+   "text": "2027.",
+   "start": 83.486,
+   "end": 84.226
+  },
+  {
+   "text": "Viu",
+   "start": 85.496,
+   "end": 86.096
+  },
+  {
+   "text": "um",
+   "start": 86.096,
+   "end": 86.256
+  },
+  {
+   "text": "problema?",
+   "start": 86.256,
+   "end": 86.676
+  },
+  {
+   "text": "Relata",
+   "start": 87.016,
+   "end": 87.196
+  },
+  {
+   "text": "em",
+   "start": 87.196,
+   "end": 87.276
+  },
+  {
+   "text": "dois",
+   "start": 87.276,
+   "end": 87.476
+  },
+  {
+   "text": "toques.",
+   "start": 87.476,
+   "end": 88.016
+  },
+  {
+   "text": "Se",
+   "start": 88.216,
+   "end": 88.296
+  },
+  {
+   "text": "o",
+   "start": 88.296,
+   "end": 88.396
+  },
+  {
+   "text": "vizinho",
+   "start": 88.396,
+   "end": 88.576
+  },
+  {
+   "text": "já",
+   "start": 88.576,
+   "end": 88.796
+  },
+  {
+   "text": "relatou,",
+   "start": 88.796,
+   "end": 89.196
+  },
+  {
+   "text": "o",
+   "start": 89.296,
+   "end": 89.316
+  },
+  {
+   "text": "seu",
+   "start": 89.316,
+   "end": 89.456
+  },
+  {
+   "text": "vira",
+   "start": 89.456,
+   "end": 89.756
+  },
+  {
+   "text": "confirmação.",
+   "start": 89.756,
+   "end": 90.476
+  },
+  {
+   "text": "Quando",
+   "start": 90.696,
+   "end": 90.836
+  },
+  {
+   "text": "três",
+   "start": 90.836,
+   "end": 91.096
+  },
+  {
+   "text": "pessoas",
+   "start": 91.096,
+   "end": 91.336
+  },
+  {
+   "text": "avisam",
+   "start": 91.336,
+   "end": 91.636
+  },
+  {
+   "text": "que",
+   "start": 91.636,
+   "end": 91.756
+  },
+  {
+   "text": "voltou,",
+   "start": 91.756,
+   "end": 92.256
+  },
+  {
+   "text": "o",
+   "start": 92.316,
+   "end": 92.336
+  },
+  {
+   "text": "caso",
+   "start": 92.336,
+   "end": 92.576
+  },
+  {
+   "text": "fecha.",
+   "start": 92.576,
+   "end": 93.076
+  },
+  {
+   "text": "Junto",
+   "start": 93.556,
+   "end": 93.756
+  },
+  {
+   "text": "com",
+   "start": 93.756,
+   "end": 93.876
+  },
+  {
+   "text": "os",
+   "start": 93.876,
+   "end": 93.976
+  },
+  {
+   "text": "avisos",
+   "start": 93.976,
+   "end": 94.276
+  },
+  {
+   "text": "oficiais,",
+   "start": 94.276,
+   "end": 94.756
+  },
+  {
+   "text": "a",
+   "start": 94.916,
+   "end": 95.016
+  },
+  {
+   "text": "comunidade",
+   "start": 95.016,
+   "end": 95.396
+  },
+  {
+   "text": "é",
+   "start": 95.396,
+   "end": 95.596
+  },
+  {
+   "text": "a",
+   "start": 95.596,
+   "end": 95.636
+  },
+  {
+   "text": "principal",
+   "start": 95.636,
+   "end": 95.856
+  },
+  {
+   "text": "fonte,",
+   "start": 95.856,
+   "end": 96.416
+  },
+  {
+   "text": "sem",
+   "start": 96.616,
+   "end": 96.736
+  },
+  {
+   "text": "sensor",
+   "start": 96.736,
+   "end": 97.076
+  },
+  {
+   "text": "caro.",
+   "start": 97.076,
+   "end": 97.416
+  },
+  {
+   "text": "Esse",
+   "start": 98.402,
+   "end": 99.202
+  },
+  {
+   "text": "é",
+   "start": 99.202,
+   "end": 99.322
+  },
+  {
+   "text": "o",
+   "start": 99.322,
+   "end": 99.382
+  },
+  {
+   "text": "nosso",
+   "start": 99.382,
+   "end": 99.562
+  },
+  {
+   "text": "diferencial,",
+   "start": 99.562,
+   "end": 100.282
+  },
+  {
+   "text": "o",
+   "start": 100.602,
+   "end": 100.782
+  },
+  {
+   "text": "efeito",
+   "start": 100.782,
+   "end": 101.082
+  },
+  {
+   "text": "cascata.",
+   "start": 101.082,
+   "end": 101.962
+  },
+  {
+   "text": "Quando",
+   "start": 102.282,
+   "end": 102.442
+  },
+  {
+   "text": "a",
+   "start": 102.442,
+   "end": 102.602
+  },
+  {
+   "text": "falta",
+   "start": 102.602,
+   "end": 102.842
+  },
+  {
+   "text": "de",
+   "start": 102.842,
+   "end": 103.062
+  },
+  {
+   "text": "luz",
+   "start": 103.062,
+   "end": 103.142
+  },
+  {
+   "text": "é",
+   "start": 103.142,
+   "end": 103.482
+  },
+  {
+   "text": "confirmada",
+   "start": 103.482,
+   "end": 103.962
+  },
+  {
+   "text": "no",
+   "start": 103.962,
+   "end": 104.122
+  },
+  {
+   "text": "bairro",
+   "start": 104.122,
+   "end": 104.442
+  },
+  {
+   "text": "de",
+   "start": 104.442,
+   "end": 104.582
+  },
+  {
+   "text": "uma",
+   "start": 104.582,
+   "end": 104.702
+  },
+  {
+   "text": "estação",
+   "start": 104.702,
+   "end": 105.062
+  },
+  {
+   "text": "de",
+   "start": 105.062,
+   "end": 105.262
+  },
+  {
+   "text": "bombeamento,",
+   "start": 105.262,
+   "end": 105.882
+  },
+  {
+   "text": "o",
+   "start": 106.302,
+   "end": 106.402
+  },
+  {
+   "text": "Alertaí",
+   "start": 106.402,
+   "end": 106.922
+  },
+  {
+   "text": "avisa",
+   "start": 106.922,
+   "end": 107.282
+  },
+  {
+   "text": "quem",
+   "start": 107.282,
+   "end": 107.502
+  },
+  {
+   "text": "acompanha",
+   "start": 107.502,
+   "end": 107.922
+  },
+  {
+   "text": "os",
+   "start": 107.922,
+   "end": 108.122
+  },
+  {
+   "text": "bairros",
+   "start": 108.122,
+   "end": 108.442
+  },
+  {
+   "text": "que",
+   "start": 108.442,
+   "end": 108.602
+  },
+  {
+   "text": "ela",
+   "start": 108.602,
+   "end": 108.782
+  },
+  {
+   "text": "abastece.",
+   "start": 108.782,
+   "end": 109.622
+  },
+  {
+   "text": "Possível",
+   "start": 109.902,
+   "end": 110.322
+  },
+  {
+   "text": "falta",
+   "start": 110.322,
+   "end": 110.662
+  },
+  {
+   "text": "de",
+   "start": 110.662,
+   "end": 111.022
+  },
+  {
+   "text": "água.",
+   "start": 111.022,
+   "end": 111.182
+  },
+  {
+   "text": "Com",
+   "start": 111.822,
+   "end": 112.002
+  },
+  {
+   "text": "o",
+   "start": 112.002,
+   "end": 112.142
+  },
+  {
+   "text": "porquê,",
+   "start": 112.142,
+   "end": 112.762
+  },
+  {
+   "text": "o",
+   "start": 113.002,
+   "end": 113.162
+  },
+  {
+   "text": "que",
+   "start": 113.162,
+   "end": 113.302
+  },
+  {
+   "text": "fazer",
+   "start": 113.302,
+   "end": 113.742
+  },
+  {
+   "text": "e",
+   "start": 113.742,
+   "end": 114.242
+  },
+  {
+   "text": "para",
+   "start": 114.242,
+   "end": 114.482
+  },
+  {
+   "text": "quem",
+   "start": 114.482,
+   "end": 114.622
+  },
+  {
+   "text": "ligar.",
+   "start": 114.622,
+   "end": 115.822
+  },
+  {
+   "text": "Antes",
+   "start": 116.022,
+   "end": 116.302
+  },
+  {
+   "text": "da",
+   "start": 116.302,
+   "end": 116.522
+  },
+  {
+   "text": "torneira",
+   "start": 116.522,
+   "end": 116.862
+  },
+  {
+   "text": "secar.",
+   "start": 116.862,
+   "end": 117.242
+  },
+  {
+   "text": "Desenhamos",
+   "start": 118.332,
+   "end": 118.992
+  },
+  {
+   "text": "sete",
+   "start": 118.992,
+   "end": 119.452
+  },
+  {
+   "text": "telas",
+   "start": 119.452,
+   "end": 119.872
+  },
+  {
+   "text": "do",
+   "start": 119.872,
+   "end": 120.052
+  },
+  {
+   "text": "rascunho",
+   "start": 120.052,
+   "end": 120.612
+  },
+  {
+   "text": "à",
+   "start": 120.612,
+   "end": 120.812
+  },
+  {
+   "text": "alta",
+   "start": 120.812,
+   "end": 120.912
+  },
+  {
+   "text": "fidelidade,",
+   "start": 120.912,
+   "end": 121.672
+  },
+  {
+   "text": "tanto",
+   "start": 121.992,
+   "end": 122.112
+  },
+  {
+   "text": "no",
+   "start": 122.112,
+   "end": 122.272
+  },
+  {
+   "text": "celular",
+   "start": 122.272,
+   "end": 122.592
+  },
+  {
+   "text": "quanto",
+   "start": 122.592,
+   "end": 122.892
+  },
+  {
+   "text": "no",
+   "start": 122.892,
+   "end": 123.052
+  },
+  {
+   "text": "computador,",
+   "start": 123.052,
+   "end": 123.772
+  },
+  {
+   "text": "seguindo",
+   "start": 124.012,
+   "end": 124.212
+  },
+  {
+   "text": "as",
+   "start": 124.212,
+   "end": 124.332
+  },
+  {
+   "text": "diretrizes",
+   "start": 124.332,
+   "end": 124.732
+  },
+  {
+   "text": "internacionais",
+   "start": 124.732,
+   "end": 125.292
+  },
+  {
+   "text": "de",
+   "start": 125.292,
+   "end": 125.412
+  },
+  {
+   "text": "acessibilidade.",
+   "start": 125.412,
+   "end": 126.212
+  },
+  {
+   "text": "A",
+   "start": 126.712,
+   "end": 126.832
+  },
+  {
+   "text": "informação",
+   "start": 126.832,
+   "end": 127.212
+  },
+  {
+   "text": "nunca",
+   "start": 127.212,
+   "end": 127.452
+  },
+  {
+   "text": "depende",
+   "start": 127.452,
+   "end": 127.792
+  },
+  {
+   "text": "só",
+   "start": 127.792,
+   "end": 127.972
+  },
+  {
+   "text": "da",
+   "start": 127.972,
+   "end": 128.172
+  },
+  {
+   "text": "cor,",
+   "start": 128.172,
+   "end": 128.432
+  },
+  {
+   "text": "sempre",
+   "start": 128.892,
+   "end": 129.052
+  },
+  {
+   "text": "vem",
+   "start": 129.052,
+   "end": 129.252
+  },
+  {
+   "text": "com",
+   "start": 129.252,
+   "end": 129.392
+  },
+  {
+   "text": "o",
+   "start": 129.392,
+   "end": 129.452
+  },
+  {
+   "text": "ícone",
+   "start": 129.452,
+   "end": 129.672
+  },
+  {
+   "text": "e",
+   "start": 129.672,
+   "end": 129.812
+  },
+  {
+   "text": "o",
+   "start": 129.812,
+   "end": 129.952
+  },
+  {
+   "text": "texto,",
+   "start": 129.952,
+   "end": 130.252
+  },
+  {
+   "text": "o",
+   "start": 130.692,
+   "end": 130.832
+  },
+  {
+   "text": "contraste",
+   "start": 130.832,
+   "end": 131.172
+  },
+  {
+   "text": "adequado",
+   "start": 131.172,
+   "end": 131.412
+  },
+  {
+   "text": "para",
+   "start": 131.412,
+   "end": 131.592
+  },
+  {
+   "text": "a",
+   "start": 131.592,
+   "end": 131.612
+  },
+  {
+   "text": "leitura,",
+   "start": 131.612,
+   "end": 132.152
+  },
+  {
+   "text": "e",
+   "start": 132.452,
+   "end": 132.492
+  },
+  {
+   "text": "a",
+   "start": 132.492,
+   "end": 132.572
+  },
+  {
+   "text": "letra",
+   "start": 132.572,
+   "end": 132.732
+  },
+  {
+   "text": "pode",
+   "start": 132.732,
+   "end": 132.932
+  },
+  {
+   "text": "dobrar",
+   "start": 132.932,
+   "end": 133.152
+  },
+  {
+   "text": "de",
+   "start": 133.152,
+   "end": 133.232
+  },
+  {
+   "text": "tamanho",
+   "start": 133.232,
+   "end": 133.552
+  },
+  {
+   "text": "sem",
+   "start": 133.552,
+   "end": 133.692
+  },
+  {
+   "text": "perder",
+   "start": 133.692,
+   "end": 133.932
+  },
+  {
+   "text": "o",
+   "start": 133.932,
+   "end": 134.152
+  },
+  {
+   "text": "conteúdo.",
+   "start": 134.152,
+   "end": 134.412
+  },
+  {
+   "text": "Como",
+   "start": 135.895,
+   "end": 136.435
+  },
+  {
+   "text": "saber",
+   "start": 136.435,
+   "end": 136.735
+  },
+  {
+   "text": "se",
+   "start": 136.735,
+   "end": 136.975
+  },
+  {
+   "text": "funciona?",
+   "start": 136.975,
+   "end": 137.415
+  },
+  {
+   "text": "O",
+   "start": 137.995,
+   "end": 138.155
+  },
+  {
+   "text": "indicador",
+   "start": 138.155,
+   "end": 138.495
+  },
+  {
+   "text": "central",
+   "start": 138.495,
+   "end": 138.835
+  },
+  {
+   "text": "é",
+   "start": 138.835,
+   "end": 139.095
+  },
+  {
+   "text": "a",
+   "start": 139.095,
+   "end": 139.295
+  },
+  {
+   "text": "antecedência.",
+   "start": 139.295,
+   "end": 139.995
+  },
+  {
+   "text": "Quantas",
+   "start": 140.495,
+   "end": 140.695
+  },
+  {
+   "text": "horas",
+   "start": 140.695,
+   "end": 140.915
+  },
+  {
+   "text": "o",
+   "start": 140.915,
+   "end": 141.135
+  },
+  {
+   "text": "aviso",
+   "start": 141.135,
+   "end": 141.455
+  },
+  {
+   "text": "chega",
+   "start": 141.455,
+   "end": 141.795
+  },
+  {
+   "text": "antes",
+   "start": 141.795,
+   "end": 142.075
+  },
+  {
+   "text": "da",
+   "start": 142.075,
+   "end": 142.235
+  },
+  {
+   "text": "água",
+   "start": 142.235,
+   "end": 142.355
+  },
+  {
+   "text": "faltar.",
+   "start": 142.355,
+   "end": 142.935
+  },
+  {
+   "text": "A",
+   "start": 143.155,
+   "end": 143.335
+  },
+  {
+   "text": "meta?",
+   "start": 143.335,
+   "end": 143.635
+  },
+  {
+   "text": "Pelo",
+   "start": 143.935,
+   "end": 144.135
+  },
+  {
+   "text": "menos",
+   "start": 144.135,
+   "end": 144.375
+  },
+  {
+   "text": "duas",
+   "start": 144.375,
+   "end": 144.635
+  },
+  {
+   "text": "horas.",
+   "start": 144.635,
+   "end": 145.035
+  },
+  {
+   "text": "Também",
+   "start": 145.555,
+   "end": 145.795
+  },
+  {
+   "text": "medimos",
+   "start": 145.795,
+   "end": 146.175
+  },
+  {
+   "text": "se",
+   "start": 146.175,
+   "end": 146.355
+  },
+  {
+   "text": "o",
+   "start": 146.355,
+   "end": 146.535
+  },
+  {
+   "text": "alerta",
+   "start": 146.535,
+   "end": 146.935
+  },
+  {
+   "text": "acerta",
+   "start": 146.935,
+   "end": 147.395
+  },
+  {
+   "text": "e",
+   "start": 147.395,
+   "end": 147.595
+  },
+  {
+   "text": "se",
+   "start": 147.595,
+   "end": 147.735
+  },
+  {
+   "text": "as",
+   "start": 147.735,
+   "end": 147.875
+  },
+  {
+   "text": "pessoas",
+   "start": 147.875,
+   "end": 148.195
+  },
+  {
+   "text": "agem.",
+   "start": 148.195,
+   "end": 148.595
+  },
+  {
+   "text": "Com",
+   "start": 150.185,
+   "end": 150.665
+  },
+  {
+   "text": "isso,",
+   "start": 150.665,
+   "end": 150.965
+  },
+  {
+   "text": "já",
+   "start": 151.125,
+   "end": 151.225
+  },
+  {
+   "text": "atendemos",
+   "start": 151.225,
+   "end": 151.665
+  },
+  {
+   "text": "quatro",
+   "start": 151.665,
+   "end": 151.945
+  },
+  {
+   "text": "ODS.",
+   "start": 151.945,
+   "end": 152.405
+  },
+  {
+   "text": "O",
+   "start": 152.925,
+   "end": 153.085
+  },
+  {
+   "text": "treze",
+   "start": 153.085,
+   "end": 153.405
+  },
+  {
+   "text": "e",
+   "start": 153.405,
+   "end": 153.465
+  },
+  {
+   "text": "o",
+   "start": 153.465,
+   "end": 153.645
+  },
+  {
+   "text": "onze",
+   "start": 153.645,
+   "end": 153.945
+  },
+  {
+   "text": "pedem",
+   "start": 153.945,
+   "end": 154.485
+  },
+  {
+   "text": "alerta",
+   "start": 154.485,
+   "end": 154.925
+  },
+  {
+   "text": "precoce",
+   "start": 154.925,
+   "end": 155.465
+  },
+  {
+   "text": "e",
+   "start": 155.465,
+   "end": 155.665
+  },
+  {
+   "text": "cidades",
+   "start": 155.665,
+   "end": 155.985
+  },
+  {
+   "text": "mais",
+   "start": 155.985,
+   "end": 156.185
+  },
+  {
+   "text": "preparadas",
+   "start": 156.185,
+   "end": 156.725
+  },
+  {
+   "text": "para",
+   "start": 156.725,
+   "end": 156.945
+  },
+  {
+   "text": "desastres.",
+   "start": 156.945,
+   "end": 157.665
+  },
+  {
+   "text": "O",
+   "start": 157.885,
+   "end": 158.045
+  },
+  {
+   "text": "três",
+   "start": 158.045,
+   "end": 158.465
+  },
+  {
+   "text": "protege",
+   "start": 158.465,
+   "end": 159.105
+  },
+  {
+   "text": "a",
+   "start": 159.105,
+   "end": 159.245
+  },
+  {
+   "text": "saúde",
+   "start": 159.245,
+   "end": 159.465
+  },
+  {
+   "text": "de",
+   "start": 159.465,
+   "end": 159.705
+  },
+  {
+   "text": "quem",
+   "start": 159.705,
+   "end": 159.805
+  },
+  {
+   "text": "é",
+   "start": 159.805,
+   "end": 159.865
+  },
+  {
+   "text": "mais",
+   "start": 159.865,
+   "end": 160.085
+  },
+  {
+   "text": "vulnerável,",
+   "start": 160.085,
+   "end": 160.785
+  },
+  {
+   "text": "e",
+   "start": 160.985,
+   "end": 161.105
+  },
+  {
+   "text": "o",
+   "start": 161.105,
+   "end": 161.285
+  },
+  {
+   "text": "seis,",
+   "start": 161.285,
+   "end": 161.505
+  },
+  {
+   "text": "a",
+   "start": 161.665,
+   "end": 161.805
+  },
+  {
+   "text": "comunidade",
+   "start": 161.805,
+   "end": 162.145
+  },
+  {
+   "text": "participando",
+   "start": 162.145,
+   "end": 162.665
+  },
+  {
+   "text": "da",
+   "start": 162.665,
+   "end": 162.745
+  },
+  {
+   "text": "gestão",
+   "start": 162.745,
+   "end": 163.085
+  },
+  {
+   "text": "da",
+   "start": 163.085,
+   "end": 163.405
+  },
+  {
+   "text": "água.",
+   "start": 163.405,
+   "end": 163.765
+  },
+  {
+   "text": "Começando",
+   "start": 164.565,
+   "end": 164.805
+  },
+  {
+   "text": "por",
+   "start": 164.805,
+   "end": 164.945
+  },
+  {
+   "text": "cinco",
+   "start": 164.945,
+   "end": 165.205
+  },
+  {
+   "text": "bairros.",
+   "start": 165.205,
+   "end": 165.745
+  },
+  {
+   "text": "O",
+   "start": 166.065,
+   "end": 166.065
+  },
+  {
+   "text": "próximo",
+   "start": 166.065,
+   "end": 166.285
+  },
+  {
+   "text": "é",
+   "start": 166.285,
+   "end": 166.525
+  },
+  {
+   "text": "o",
+   "start": 166.525,
+   "end": 166.685
+  },
+  {
+   "text": "Sarandi,",
+   "start": 166.685,
+   "end": 167.145
+  },
+  {
+   "text": "o",
+   "start": 167.465,
+   "end": 167.545
+  },
+  {
+   "text": "mais",
+   "start": 167.545,
+   "end": 167.705
+  },
+  {
+   "text": "atingido",
+   "start": 167.705,
+   "end": 168.125
+  },
+  {
+   "text": "em",
+   "start": 168.125,
+   "end": 168.265
+  },
+  {
+   "text": "2024.",
+   "start": 168.265,
+   "end": 168.905
+  },
+  {
+   "text": "Alertaí.",
+   "start": 169.976,
+   "end": 170.876
+  },
+  {
+   "text": "Da",
+   "start": 171.156,
+   "end": 171.316
+  },
+  {
+   "text": "próxima",
+   "start": 171.316,
+   "end": 171.576
+  },
+  {
+   "text": "vez,",
+   "start": 171.576,
+   "end": 172.016
+  },
+  {
+   "text": "o",
+   "start": 172.336,
+   "end": 172.476
+  },
+  {
+   "text": "aviso",
+   "start": 172.476,
+   "end": 172.796
+  },
+  {
+   "text": "chega",
+   "start": 172.796,
+   "end": 173.036
+  },
+  {
+   "text": "antes.",
+   "start": 173.036,
+   "end": 173.376
+  }
+ ]
+}

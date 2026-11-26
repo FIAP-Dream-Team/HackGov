@@ -1,0 +1,761 @@
+{
+  "_comment": "Mapa para conferir: fala a fala, quem fala, o recorte medido no audio e o que entra na tela. Gerado por scripts/fase-3/align.mjs; edite scene-map.json, reveals.json ou camera.json e rode de novo.",
+  "narrationSec": 256.441,
+  "videoSec": 259.941,
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "section": "1. Abertura",
+      "start": 0,
+      "end": 19.77,
+      "text": "E aí, pessoal! Somos a equipe do HackGov: meu nome é John, estou com Ana Larissa, João Pedro, Vinícius Cardoso e Brenda. Depois de modelar e prototipar o fluxo do Minha Vez, chegou a hora de armazenar os dados. Vamos mostrar como o projeto evoluiu, do código até o banco de dados.",
+      "scenes": [
+        {
+          "scene": "01",
+          "label": "Capa",
+          "kind": "slide",
+          "start": 0,
+          "end": 19.77,
+          "anchor": null,
+          "spoken": "E aí, pessoal! Somos a equipe do HackGov: meu nome é John, estou com Ana Larissa, João Pedro, Vinícius Cardoso e Brenda. Depois de modelar e prototipar o fluxo do Minha Vez, chegou a hora de armazenar os dados. Vamos mostrar como o projeto evoluiu, do código até o banco de dados.",
+          "reveals": [
+            {
+              "id": "s01-john",
+              "start": 3.09,
+              "at": "\"meu nome é John\""
+            },
+            {
+              "id": "s01-larissa",
+              "start": 4.55,
+              "at": "\"Ana Larissa\""
+            },
+            {
+              "id": "s01-joao",
+              "start": 5.79,
+              "at": "\"João Pedro\""
+            },
+            {
+              "id": "s01-vinicius",
+              "start": 6.49,
+              "at": "\"Vinícius Cardoso\""
+            },
+            {
+              "id": "s01-brenda",
+              "start": 7.41,
+              "at": "\"e Brenda\""
+            },
+            {
+              "id": "s01-titulo",
+              "start": 12.37,
+              "at": "\"chegou a hora de armazenar\""
+            },
+            {
+              "id": "s01-sub",
+              "start": 16.95,
+              "at": "\"do código até o banco\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f02",
+      "speaker": "joao",
+      "section": "2. Versão atual do projeto",
+      "start": 19.77,
+      "end": 91.306,
+      "text": "Na fase anterior, o Minha Vez tinha o fluxo do cidadão modelado, prototipado e com um primeiro recorte do domínio em Java. Ao desenhar o banco, a modelagem dos dados expôs regras da US03 que o código ainda não aplicava. Por isso atualizamos o projeto inteiro: agora são 9 classes em Java, 5 testes automatizados, diagramas e telas revisados, e o banco, com 11 entidades e 12 tabelas. A principal regra: o encaminhamento define a unidade da consulta, e o cidadão só vê e só agenda vagas dessa unidade. Reagendar cancela o horário atual e cria um novo, ligado a ele. Cancelar ou reagendar só vale até 24 horas antes, com no máximo 2 reagendamentos; depois, só no balcão. Os 5 testes passam, e a saída do demo mostra o anterior cancelado, o novo apontando para ele e o erro quando a vaga é de outra unidade. O domínio ainda roda em memória: gravar no banco é a próxima etapa.",
+      "scenes": [
+        {
+          "scene": "02",
+          "label": "O que mudou",
+          "kind": "slide",
+          "start": 19.77,
+          "end": 49.72,
+          "anchor": null,
+          "spoken": "Na fase anterior, o Minha Vez tinha o fluxo do cidadão modelado, prototipado e com um primeiro recorte do domínio em Java. Ao desenhar o banco, a modelagem dos dados expôs regras da US03 que o código ainda não aplicava. Por isso atualizamos o projeto inteiro: agora são 9 classes em Java, 5 testes automatizados, diagramas e telas revisados, e o banco, com 11 entidades e 12 tabelas.",
+          "reveals": [
+            {
+              "id": "s02-fase2",
+              "start": 21.63,
+              "at": "\"o fluxo do cidadão\""
+            },
+            {
+              "id": "s02-insight",
+              "start": 27.63,
+              "at": "\"Ao desenhar o banco\""
+            },
+            {
+              "id": "s02-java",
+              "start": 39.59,
+              "at": "\"9 classes em Java\""
+            },
+            {
+              "id": "s02-testes",
+              "start": 41.25,
+              "at": "\"5 testes automatizados\""
+            },
+            {
+              "id": "s02-uml",
+              "start": 43.77,
+              "at": "\"diagramas e telas\""
+            },
+            {
+              "id": "s02-telas",
+              "start": 44.27,
+              "at": "+0.5s"
+            },
+            {
+              "id": "s02-banco",
+              "start": 45.91,
+              "at": "\"e o banco\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "03",
+          "label": "Regras da US03",
+          "kind": "slide",
+          "start": 49.72,
+          "end": 73.8,
+          "anchor": "A principal regra",
+          "spoken": "A principal regra: o encaminhamento define a unidade da consulta, e o cidadão só vê e só agenda vagas dessa unidade. Reagendar cancela o horário atual e cria um novo, ligado a ele. Cancelar ou reagendar só vale até 24 horas antes, com no máximo 2 reagendamentos; depois, só no balcão.",
+          "reveals": [
+            {
+              "id": "s03-enc",
+              "start": 51.33,
+              "at": "\"o encaminhamento define\""
+            },
+            {
+              "id": "s03-r1",
+              "start": 54.95,
+              "at": "\"o cidadão só vê\""
+            },
+            {
+              "id": "s03-vaga1",
+              "start": 56.57,
+              "at": "\"só agenda vagas\""
+            },
+            {
+              "id": "s03-vaga2",
+              "start": 56.87,
+              "at": "+0.3s"
+            },
+            {
+              "id": "s03-vaga3",
+              "start": 57.37,
+              "at": "+0.5s"
+            },
+            {
+              "id": "s03-r2",
+              "start": 58.83,
+              "at": "\"Reagendar cancela\""
+            },
+            {
+              "id": "s03-r3",
+              "start": 64,
+              "at": "\"Cancelar ou reagendar\""
+            },
+            {
+              "id": "s03-r4",
+              "start": 69.51,
+              "at": "\"no máximo 2 reagendamentos\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "04",
+          "label": "Testes e demo",
+          "kind": "slide",
+          "start": 73.8,
+          "end": 91.306,
+          "anchor": "Os 5 testes passam",
+          "spoken": "Os 5 testes passam, e a saída do demo mostra o anterior cancelado, o novo apontando para ele e o erro quando a vaga é de outra unidade. O domínio ainda roda em memória: gravar no banco é a próxima etapa.",
+          "reveals": [
+            {
+              "id": "s04-testes",
+              "start": 73.8,
+              "at": "\"Os 5 testes passam\""
+            },
+            {
+              "id": "s04-anterior",
+              "start": 78.53,
+              "at": "\"o anterior cancelado\""
+            },
+            {
+              "id": "s04-novo",
+              "start": 80.79,
+              "at": "\"o novo apontando\""
+            },
+            {
+              "id": "s04-erro",
+              "start": 82.47,
+              "at": "\"e o erro\""
+            },
+            {
+              "id": "s04-memoria",
+              "start": 86.05,
+              "at": "\"O domínio ainda roda\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f03",
+      "speaker": "john",
+      "section": "2. Versão atual do projeto",
+      "start": 91.306,
+      "end": 111.423,
+      "text": "Os diagramas UML foram revisados contra o código: classes e sequência de agendar atualizados, mais dois diagramas novos, o de sequência do reagendamento e o de atividades de reagendar e cancelar. Nos wireframes, três telas foram atualizadas e três são novas, cobrindo reagendamento, limite e prazo.",
+      "scenes": [
+        {
+          "scene": "05",
+          "label": "UML revisado",
+          "kind": "slide",
+          "start": 91.306,
+          "end": 103.767,
+          "anchor": null,
+          "spoken": "Os diagramas UML foram revisados contra o código: classes e sequência de agendar atualizados, mais dois diagramas novos, o de sequência do reagendamento e o de atividades de reagendar e cancelar.",
+          "reveals": [
+            {
+              "id": "s05-classes",
+              "start": 94.25,
+              "at": "\"classes e sequência\""
+            },
+            {
+              "id": "s05-seq-agendar",
+              "start": 95.12,
+              "at": "\"sequência de agendar\""
+            },
+            {
+              "id": "s05-seq-reagendar",
+              "start": 99.05,
+              "at": "\"o de sequência do reagendamento\""
+            },
+            {
+              "id": "s05-atividades",
+              "start": 100.77,
+              "at": "\"o de atividades\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "06",
+          "label": "Wireframes",
+          "kind": "figure",
+          "start": 103.767,
+          "end": 111.423,
+          "anchor": "Nos wireframes",
+          "spoken": "Nos wireframes, três telas foram atualizadas e três são novas, cobrindo reagendamento, limite e prazo.",
+          "reveals": [
+            {
+              "id": "s06-atualizadas",
+              "start": 104.83,
+              "at": "\"três telas foram atualizadas\""
+            },
+            {
+              "id": "s06-novas",
+              "start": 106.73,
+              "at": "\"e três são novas\""
+            }
+          ],
+          "camera": [
+            {
+              "focus": "novas",
+              "start": 106.88,
+              "at": "\"e três são novas\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f04",
+      "speaker": "larissa",
+      "section": "3. Modelo lógico",
+      "start": 111.423,
+      "end": 144.362,
+      "text": "Para o modelo lógico, usamos o Oracle SQL Developer Data Modeler, com notação Barker. São 11 entidades, 15 relacionamentos e 2 heranças. O modelo traz uma especialização, com Pessoa dividida em Cidadão e Usuário Institucional; uma agregação, na entidade Agendamento; e um autorrelacionamento, que liga o reagendamento ao horário anterior. O contato do cidadão é multivalorado e virou entidade própria, e o endereço da unidade foi decomposto em atributos. CID, laudo e prontuário ficam fora do banco, para reduzir o dano em caso de vazamento.",
+      "scenes": [
+        {
+          "scene": "07",
+          "label": "Data Modeler",
+          "kind": "figure",
+          "start": 111.423,
+          "end": 116.36,
+          "anchor": null,
+          "spoken": "Para o modelo lógico, usamos o Oracle SQL Developer Data Modeler, com notação Barker.",
+          "reveals": [
+            {
+              "id": "s07-ferramenta",
+              "start": 113.154,
+              "at": "\"Oracle SQL Developer\""
+            },
+            {
+              "id": "s07-banco",
+              "start": 113.654,
+              "at": "+0.5s"
+            },
+            {
+              "id": "s07-barker",
+              "start": 114.87,
+              "at": "\"com notação Barker\""
+            }
+          ],
+          "camera": [
+            {
+              "focus": "diagrama",
+              "start": 115.02,
+              "at": "\"com notação Barker\""
+            }
+          ]
+        },
+        {
+          "scene": "08",
+          "label": "11 · 15 · 2",
+          "kind": "slide",
+          "start": 116.36,
+          "end": 120.34,
+          "anchor": "São 11 entidades",
+          "spoken": "São 11 entidades, 15 relacionamentos e 2 heranças.",
+          "reveals": [
+            {
+              "id": "s08-entidades",
+              "start": 116.53,
+              "at": "\"11 entidades\""
+            },
+            {
+              "id": "s08-m-entidades",
+              "start": 116.53,
+              "at": "\"11 entidades\""
+            },
+            {
+              "id": "s08-relacoes",
+              "start": 117.91,
+              "at": "\"15 relacionamentos\""
+            },
+            {
+              "id": "s08-m-relacoes",
+              "start": 117.91,
+              "at": "\"15 relacionamentos\""
+            },
+            {
+              "id": "s08-herancas",
+              "start": 118.99,
+              "at": "\"2 heranças\""
+            },
+            {
+              "id": "s08-m-herancas",
+              "start": 118.99,
+              "at": "\"2 heranças\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "09",
+          "label": "Modelo lógico",
+          "kind": "figure",
+          "start": 120.34,
+          "end": 144.362,
+          "anchor": "O modelo traz uma especialização",
+          "spoken": "O modelo traz uma especialização, com Pessoa dividida em Cidadão e Usuário Institucional; uma agregação, na entidade Agendamento; e um autorrelacionamento, que liga o reagendamento ao horário anterior. O contato do cidadão é multivalorado e virou entidade própria, e o endereço da unidade foi decomposto em atributos. CID, laudo e prontuário ficam fora do banco, para reduzir o dano em caso de vazamento.",
+          "reveals": [
+            {
+              "id": "s09-especializacao",
+              "start": 120.87,
+              "at": "\"uma especialização\""
+            },
+            {
+              "id": "s09-m-pessoa",
+              "start": 122.39,
+              "at": "\"Pessoa dividida\""
+            },
+            {
+              "id": "s09-agregacao",
+              "start": 125.51,
+              "at": "\"uma agregação\""
+            },
+            {
+              "id": "s09-m-agendamento",
+              "start": 126.31,
+              "at": "\"na entidade Agendamento\""
+            },
+            {
+              "id": "s09-reagendado",
+              "start": 128.39,
+              "at": "\"um autorrelacionamento\""
+            },
+            {
+              "id": "s09-m-reagendado",
+              "start": 129.59,
+              "at": "\"liga o reagendamento\""
+            },
+            {
+              "id": "s09-multivalorado",
+              "start": 131.33,
+              "at": "\"O contato do cidadão\""
+            },
+            {
+              "id": "s09-m-contato",
+              "start": 133.35,
+              "at": "\"é multivalorado\""
+            },
+            {
+              "id": "s09-composto",
+              "start": 136.35,
+              "at": "\"o endereço da unidade\""
+            },
+            {
+              "id": "s09-m-unidade",
+              "start": 137.31,
+              "at": "\"foi decomposto\""
+            },
+            {
+              "id": "s09-fora",
+              "start": 138.975,
+              "at": "\"CID, laudo e prontuário\""
+            }
+          ],
+          "camera": [
+            {
+              "focus": "pessoa",
+              "start": 121.02,
+              "at": "\"uma especialização\""
+            },
+            {
+              "focus": "agregacao",
+              "start": 125.66,
+              "at": "\"uma agregação\""
+            },
+            {
+              "focus": "reagendado",
+              "start": 128.54,
+              "at": "\"um autorrelacionamento\""
+            },
+            {
+              "focus": "contato",
+              "start": 131.48,
+              "at": "\"O contato do cidadão\""
+            },
+            {
+              "focus": "unidade",
+              "start": 136.5,
+              "at": "\"o endereço da unidade\""
+            },
+            {
+              "focus": "tudo",
+              "start": 139.125,
+              "at": "\"CID, laudo e prontuário\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f05",
+      "speaker": "vinicius",
+      "section": "4. Anomalias e formas normais",
+      "start": 144.362,
+      "end": 200.458,
+      "text": "Para entender por que normalizar, imaginamos tudo numa tabela só. Na inserção, não dá para cadastrar um cidadão sem encaminhamento nem publicar uma vaga que ninguém reservou. Na exclusão, apagar o único pedido de um cidadão leva junto o cadastro dele e o endereço da unidade. E na alteração, se alguém troca de celular, cada pedido precisa mudar, e esquecer um deixa duas versões da verdade. Aplicando as formas normais: na primeira, contatos e histórico viram tabelas e o endereço vira colunas. Na segunda, encaminhamento, horário e agendamento ficam separados. Na terceira, achamos uma dependência transitiva em Unidade de Saúde: logradouro, bairro, cidade e UF dependem do CEP, então criamos a tabela CEP. Com ela, o modelo chega à BCNF. Algumas redundâncias foram mantidas de propósito, como o status do encaminhamento, com a consistência garantida pela aplicação e pelo banco.",
+      "scenes": [
+        {
+          "scene": "10",
+          "label": "Tabela única",
+          "kind": "slide",
+          "start": 144.362,
+          "end": 167.48,
+          "anchor": null,
+          "spoken": "Para entender por que normalizar, imaginamos tudo numa tabela só. Na inserção, não dá para cadastrar um cidadão sem encaminhamento nem publicar uma vaga que ninguém reservou. Na exclusão, apagar o único pedido de um cidadão leva junto o cadastro dele e o endereço da unidade. E na alteração, se alguém troca de celular, cada pedido precisa mudar, e esquecer um deixa duas versões da verdade.",
+          "reveals": [
+            {
+              "id": "s10-ins",
+              "start": 148.03,
+              "at": "\"Na inserção\""
+            },
+            {
+              "id": "s10-o-ins",
+              "start": 149.41,
+              "at": "\"cadastrar um cidadão sem encaminhamento\""
+            },
+            {
+              "id": "s10-exc",
+              "start": 153.97,
+              "at": "\"Na exclusão\""
+            },
+            {
+              "id": "s10-o-exc",
+              "start": 155.19,
+              "at": "\"apagar o único pedido\""
+            },
+            {
+              "id": "s10-alt",
+              "start": 159.59,
+              "at": "\"E na alteração\""
+            },
+            {
+              "id": "s10-o-alt",
+              "start": 161.69,
+              "at": "\"troca de celular\""
+            },
+            {
+              "id": "s10-o-alt2",
+              "start": 164.67,
+              "at": "\"esquecer um\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "11",
+          "label": "Formas normais",
+          "kind": "slide",
+          "start": 167.48,
+          "end": 183.89,
+          "anchor": "Aplicando as formas normais",
+          "spoken": "Aplicando as formas normais: na primeira, contatos e histórico viram tabelas e o endereço vira colunas. Na segunda, encaminhamento, horário e agendamento ficam separados. Na terceira, achamos uma dependência transitiva em Unidade de Saúde:",
+          "reveals": [
+            {
+              "id": "s11-1fn",
+              "start": 169.35,
+              "at": "\"na primeira\""
+            },
+            {
+              "id": "s11-2fn",
+              "start": 174.43,
+              "at": "\"Na segunda\""
+            },
+            {
+              "id": "s11-3fn",
+              "start": 178.87,
+              "at": "\"Na terceira\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "12",
+          "label": "Tabela CEP",
+          "kind": "slide",
+          "start": 183.89,
+          "end": 200.458,
+          "anchor": "logradouro, bairro, cidade e UF",
+          "spoken": "logradouro, bairro, cidade e UF dependem do CEP, então criamos a tabela CEP. Com ela, o modelo chega à BCNF. Algumas redundâncias foram mantidas de propósito, como o status do encaminhamento, com a consistência garantida pela aplicação e pelo banco.",
+          "reveals": [
+            {
+              "id": "s12-cadeia",
+              "start": 183.89,
+              "at": "\"logradouro, bairro\""
+            },
+            {
+              "id": "s12-unidade",
+              "start": 187.71,
+              "at": "\"então criamos a tabela CEP\""
+            },
+            {
+              "id": "s12-cep",
+              "start": 188.06,
+              "at": "+0.35s"
+            },
+            {
+              "id": "s12-bcnf",
+              "start": 190.67,
+              "at": "\"chega à BCNF\""
+            },
+            {
+              "id": "s12-mantido",
+              "start": 192.81,
+              "at": "\"Algumas redundâncias\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f06",
+      "speaker": "vinicius",
+      "section": "5. Modelo físico",
+      "start": 200.458,
+      "end": 227.65,
+      "text": "No modelo físico, o mesmo banco ganha tipos e chaves: são 12 tabelas, com NUMBER, VARCHAR2, CHAR, DATE e TIMESTAMP. Cada relacionamento vira uma coluna de chave estrangeira, e a especialização de Pessoa vira três tabelas com o mesmo ID_PESSOA. A tabela nova é a CEP, vinda da normalização, o que levou o modelo de 11 para 12 tabelas e de 17 para 18 chaves estrangeiras.",
+      "scenes": [
+        {
+          "scene": "13",
+          "label": "Modelo físico",
+          "kind": "figure",
+          "start": 200.458,
+          "end": 227.65,
+          "anchor": null,
+          "spoken": "No modelo físico, o mesmo banco ganha tipos e chaves: são 12 tabelas, com NUMBER, VARCHAR2, CHAR, DATE e TIMESTAMP. Cada relacionamento vira uma coluna de chave estrangeira, e a especialização de Pessoa vira três tabelas com o mesmo ID_PESSOA. A tabela nova é a CEP, vinda da normalização, o que levou o modelo de 11 para 12 tabelas e de 17 para 18 chaves estrangeiras.",
+          "reveals": [
+            {
+              "id": "s13-tipos",
+              "start": 205.01,
+              "at": "\"com NUMBER\""
+            },
+            {
+              "id": "s13-fk",
+              "start": 208.99,
+              "at": "\"Cada relacionamento vira\""
+            },
+            {
+              "id": "s13-pessoa",
+              "start": 212.85,
+              "at": "\"a especialização de Pessoa\""
+            },
+            {
+              "id": "s13-m-usuario",
+              "start": 214.29,
+              "at": "\"vira três tabelas\""
+            },
+            {
+              "id": "s13-m-pessoa",
+              "start": 214.49,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s13-m-cidadao",
+              "start": 214.69,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s13-cep",
+              "start": 217.33,
+              "at": "\"A tabela nova é a CEP\""
+            },
+            {
+              "id": "s13-m-cep",
+              "start": 218.13,
+              "at": "\"é a CEP\""
+            },
+            {
+              "id": "s13-contagem",
+              "start": 220.81,
+              "at": "\"o que levou o modelo\""
+            }
+          ],
+          "camera": [
+            {
+              "focus": "tipos",
+              "start": 205.16,
+              "at": "\"com NUMBER\""
+            },
+            {
+              "focus": "fk",
+              "start": 209.14,
+              "at": "\"Cada relacionamento vira\""
+            },
+            {
+              "focus": "pessoa",
+              "start": 213,
+              "at": "\"a especialização de Pessoa\""
+            },
+            {
+              "focus": "cep",
+              "start": 217.48,
+              "at": "\"A tabela nova é a CEP\""
+            },
+            {
+              "focus": "tudo",
+              "start": 220.96,
+              "at": "\"o que levou o modelo\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f07",
+      "speaker": "john",
+      "section": "6. Scripts SQL e encerramento",
+      "start": 227.65,
+      "end": 256.441,
+      "text": "Por fim, o script SQL cria esse banco no Oracle, e o próprio banco garante as regras da US03: uma chave estrangeira composta só aceita o agendamento se o horário for da mesma especialidade e da mesma unidade do encaminhamento, e um índice único impede que a mesma vaga tenha dois agendamentos ativos. Foi assim que o Minha Vez saiu de um domínio em memória para um banco desenhado, normalizado e pronto para o Java gravar. Dito isso, muito obrigado por assistir!",
+      "scenes": [
+        {
+          "scene": "14",
+          "label": "Script SQL",
+          "kind": "slide",
+          "start": 227.65,
+          "end": 246.62,
+          "anchor": null,
+          "spoken": "Por fim, o script SQL cria esse banco no Oracle, e o próprio banco garante as regras da US03: uma chave estrangeira composta só aceita o agendamento se o horário for da mesma especialidade e da mesma unidade do encaminhamento, e um índice único impede que a mesma vaga tenha dois agendamentos ativos.",
+          "reveals": [
+            {
+              "id": "s14-stats",
+              "start": 228.19,
+              "at": "\"o script SQL cria\""
+            },
+            {
+              "id": "s14-hl-fk",
+              "start": 233.23,
+              "at": "\"uma chave estrangeira composta\""
+            },
+            {
+              "id": "s14-cm-fk",
+              "start": 236.07,
+              "at": "\"só aceita o agendamento\""
+            },
+            {
+              "id": "s14-hl-idx",
+              "start": 242.35,
+              "at": "\"um índice único\""
+            },
+            {
+              "id": "s14-cm-idx",
+              "start": 243.13,
+              "at": "\"impede que a mesma vaga\""
+            }
+          ],
+          "camera": []
+        },
+        {
+          "scene": "15",
+          "label": "Encerramento",
+          "kind": "slide",
+          "start": 246.62,
+          "end": 259.941,
+          "anchor": "Foi assim que",
+          "spoken": "Foi assim que o Minha Vez saiu de um domínio em memória para um banco desenhado, normalizado e pronto para o Java gravar. Dito isso, muito obrigado por assistir!",
+          "reveals": [
+            {
+              "id": "s15-de",
+              "start": 248.11,
+              "at": "\"um domínio em memória\""
+            },
+            {
+              "id": "s15-para",
+              "start": 249.11,
+              "at": "\"para um banco desenhado\""
+            },
+            {
+              "id": "s15-obrigado",
+              "start": 254.89,
+              "at": "\"muito obrigado\""
+            },
+            {
+              "id": "s15-repo",
+              "start": 255.49,
+              "at": "+0.6s"
+            },
+            {
+              "id": "s15-equipe",
+              "start": 255.89,
+              "at": "+0.4s"
+            }
+          ],
+          "camera": []
+        }
+      ]
+    }
+  ]
+}

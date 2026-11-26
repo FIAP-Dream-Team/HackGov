@@ -1,0 +1,68 @@
+{
+  "detector": "faster-whisper (palavras) + silencedetect -32dB 0.12s + F0",
+  "durationSec": 256.441,
+  "voices": {
+    "john": 148.1,
+    "joao": 156.9,
+    "larissa": 190.5,
+    "vinicius": 135.6
+  },
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "start": 0,
+      "end": 19.77,
+      "speechStart": 0,
+      "speechEnd": 18.98
+    },
+    {
+      "id": "f02",
+      "speaker": "joao",
+      "start": 19.77,
+      "end": 91.306,
+      "speechStart": 19.62,
+      "speechEnd": 90.58
+    },
+    {
+      "id": "f03",
+      "speaker": "john",
+      "start": 91.306,
+      "end": 111.423,
+      "speechStart": 91.26,
+      "speechEnd": 111.06
+    },
+    {
+      "id": "f04",
+      "speaker": "larissa",
+      "start": 111.423,
+      "end": 144.362,
+      "speechStart": 111.3,
+      "speechEnd": 144.18
+    },
+    {
+      "id": "f05",
+      "speaker": "vinicius",
+      "start": 144.362,
+      "end": 200.458,
+      "speechStart": 144.36,
+      "speechEnd": 199.46
+    },
+    {
+      "id": "f06",
+      "speaker": "vinicius",
+      "start": 200.458,
+      "end": 227.65,
+      "speechStart": 200.34,
+      "speechEnd": 226.46
+    },
+    {
+      "id": "f07",
+      "speaker": "john",
+      "start": 227.65,
+      "end": 256.441,
+      "speechStart": 227.5,
+      "speechEnd": 256.02
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "_comment": "Movimentos de câmera nas cenas de figura. Cada figura abre no enquadramento do atributo data-camera do deck; aqui ficam as mudanças. 'focus' é o nome de uma região data-focus da figura ('tudo' = a imagem inteira). 'anchor' é o trecho da fala onde a câmera começa a ir; 'moveSec' é quanto a ida leva (padrão 1.2). Rode npm run fase3:align depois de editar.",
+  "moves": [
+    { "scene": "06", "focus": "novas",      "anchor": "e três são novas" },
+
+    { "scene": "07", "focus": "diagrama",   "anchor": "com notação Barker" },
+
+    { "scene": "09", "focus": "pessoa",     "anchor": "uma especialização" },
+    { "scene": "09", "focus": "agregacao",  "anchor": "uma agregação" },
+    { "scene": "09", "focus": "reagendado", "anchor": "um autorrelacionamento" },
+    { "scene": "09", "focus": "contato",    "anchor": "O contato do cidadão" },
+    { "scene": "09", "focus": "unidade",    "anchor": "o endereço da unidade" },
+    { "scene": "09", "focus": "tudo",       "anchor": "CID, laudo e prontuário", "moveSec": 1.6 },
+
+    { "scene": "13", "focus": "tipos",      "anchor": "com NUMBER" },
+    { "scene": "13", "focus": "fk",         "anchor": "Cada relacionamento vira" },
+    { "scene": "13", "focus": "pessoa",     "anchor": "a especialização de Pessoa" },
+    { "scene": "13", "focus": "cep",        "anchor": "A tabela nova é a CEP" },
+    { "scene": "13", "focus": "tudo",       "anchor": "o que levou o modelo", "moveSec": 1.6 }
+  ]
+}

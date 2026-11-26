@@ -1,0 +1,15 @@
+{
+  "_comment": "Ordem do vídeo = ordem das <section> do deck (sources/video/ec-1/deck/minha-vez-ec1.html). 'fala' aponta para roteiro.json; uma fala por slide, então cada corte cai na pausa entre falas. 'anchor' (opcional) é o trecho literal da fala onde a cena entra. Os segundos saem do áudio: depois de editar, rode npm run ec1:align.",
+  "scenes": [
+    { "scene": "01", "label": "Grupo",                 "fala": "f01" },
+    { "scene": "02", "label": "O problema público",    "fala": "f02" },
+    { "scene": "03", "label": "Por que resolver",      "fala": "f03" },
+    { "scene": "04", "label": "O Minha Vez",           "fala": "f04" },
+    { "scene": "05", "label": "Onde a IA entra",       "fala": "f05" },
+    { "scene": "06", "label": "A ferramenta",          "fala": "f06" },
+    { "scene": "07", "label": "Tela do médico",        "fala": "f07" },
+    { "scene": "08", "label": "Ciência de dados",      "fala": "f08" },
+    { "scene": "09", "label": "Benefícios e desafios", "fala": "f09" },
+    { "scene": "10", "label": "A IA não decide",       "fala": "f10" }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+ "M00": {
+  "app": 2.47,
+  "motor": 5.92,
+  "dur": 9.33
+ },
+ "M02": {
+  "title": 0.0,
+  "entrada": 0.3,
+  "menu": 2.7,
+  "servico": 4.1,
+  "dao": 5.76,
+  "banco": 6.46,
+  "previsto": 6.76,
+  "dur": 5.88
+ },
+ "M03": {
+  "title": 0.0,
+  "tabelas": 0.3,
+  "ocorrencia": 2.34,
+  "alerta": 4.18,
+  "ligacao": 5.64,
+  "dur": 7.25
+ },
+ "M05": {
+  "mapa": 0.0,
+  "luz": 0.1,
+  "setas": 0.45,
+  "bairros": 0.82,
+  "dur": 2.78
+ },
+ "M07": {
+  "title": 0.0,
+  "nome": 2.02,
+  "bairros": 4.9,
+  "relato": 7.24,
+  "nunca": 10.8,
+  "lgpd": 11.700000000000001,
+  "dur": 12.55
+ },
+ "M08": {
+  "codigo": 0.0,
+  "marca": 0.44,
+  "legenda": 2.36,
+  "dur": 3.84
+ },
+ "M09": {
+  "title": 0.0,
+  "linha1": 1.88,
+  "linha2": 2.82,
+  "indice": 4.99,
+  "risco": 5.57,
+  "solucao": 8.55,
+  "dur": 7.93
+ },
+ "M10": {
+  "title": 0.0,
+  "aviso1": 1.76,
+  "aviso2": 2.5,
+  "aviso3": 3.36,
+  "checar": 5.11,
+  "risco": 6.99,
+  "outra": 7.49,
+  "trava": 8.34,
+  "dur": 8.1
+ },
+ "M11": {
+  "logo": 0.1,
+  "frase": 0.66,
+  "repo": 2.04,
+  "fecho": 2.74,
+  "dur": 4.54
+ }
+}

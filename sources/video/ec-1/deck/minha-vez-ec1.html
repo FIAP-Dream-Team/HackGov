@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Minha Vez · Enterprise Challenge · IA e ciência de dados</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Link do vídeo no YouTube (não listado). Preenchido aqui ou passado na exportação
+     (node scripts/ec-1/export-deck.mjs --video=URL). Só aparece no PDF, nunca no vídeo. -->
+<meta name="video-link" content="">
+<!-- IBM Plex hospedada junto do deck (fonts/), para abrir offline e exportar sem cair em fonte reserva. -->
+<link href="fonts/fonts.css" rel="stylesheet">
+
+<!--
+  Deck do Enterprise Challenge, Atividade 1: proposta de IA e ciência de dados no
+  Minha Vez. São os 10 slides do PDF de entrega e, na mesma ordem, as 10 cenas do
+  vídeo. Cada <section class="scene"> é um quadro 1920x1080. O Remotion lê este
+  arquivo (composição EC1):
+
+  - o <style id="deck-css"> vira o CSS global da composição;
+  - data-reveal="id" marca o que entra junto com a fala. O QUANDO fica em
+    src/data/ec-1/reveals.json (âncora = trecho literal da narração);
+  - data-anim diz COMO o elemento entra (padrão: fade, opacidade e 14 px de subida):
+      wipe       descobre da esquerda para a direita (data-dir="left|up|down" muda o lado)
+      draw       desenha os traços de um SVG (linhas sólidas)
+      count      conta o número até o valor de data-count
+      pop        cresce de leve, para nós e anéis
+      highlight  passa o marca-texto amarelo num <mark>, sem esconder o texto
+    data-dur="quadros" muda a duração da entrada;
+  - data-focus="nome" marca uma região de uma figura (.fig-canvas), em %. A câmera
+    vai até ela na âncora de camera.json; data-camera é o enquadramento inicial;
+  - .only-pdf só aparece no PDF (link do vídeo); o vídeo esconde.
+
+  Sistema visual (o mesmo da Fase 3, aprovado em 30/10/2026):
+  - Tipos: IBM Plex Sans (texto e títulos), Plex Sans Condensed (números e capa),
+    Plex Mono só para código e identificadores do domínio.
+  - Escala: 19 nota, 21 rótulo, 27 corpo, 38 destaque, 64 título, 180/240 números.
+  - Espaço: múltiplos de 8. Margem lateral 128. Título sempre no mesmo lugar;
+    conteúdo sempre começa em y = 272. Grade de 12 colunas, 32 de calha.
+  - Cor com função: verde = marca, válido, confirmado; amarelo tracejado = o que a
+    IA produz (rascunho), e amarelo cheio = o que a fala aponta agora; vermelho =
+    problema; azul = dados. Valores de docs/design/tokens.json.
+  - Superfícies: filete de 1 px e espaço em branco. Sem sombras, sem faixa colorida
+    na borda, sem pílulas. Raio único de 6 px onde há moldura.
+
+  Abrir no navegador mostra todas as cenas com tudo visível. ?scene=05 mostra uma
+  cena só, em 1920x1080, para exportar. ?guides desenha as regiões de câmera.
+-->
+<style id="deck-css">
+.scene {
+  --cream: #F5F2EA;
+  --cream-2: #EBE5D7;
+  --rule: #D5CEBE;
+  --ink: #12211A;
+  --ink-2: #33443B;
+  --muted: #5E6D65;
+  --faint: #A0A9A3;
+  --green: #1E8E63;
+  --green-600: #197854;
+  --green-700: #145F43;
+  --green-100: #EAF4F0;
+  --mint: #96CAB6;
+  --yellow: #F5B700;
+  --yellow-200: #FDEDC0;
+  --yellow-700: #A57B00;
+  --blue: #1D5FA8;
+  --blue-100: #EAF0F7;
+  --blue-200: #C7D7E9;
+  --blue-300: #96B4D6;
+  --blue-400: #5C8BC0;
+  --red: #D6453D;
+  --red-100: #FBEDED;
+  --red-900: #441613;
+  --night: #0F1A15;
+  --night-2: #14231C;
+  --night-rule: #2A3C33;
+  --night-text: #E4EEE8;
+  --night-muted: #8DA196;
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --cond: 'IBM Plex Sans Condensed', 'IBM Plex Sans', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 84px 128px 0;
+  background: var(--cream);
+  color: var(--ink);
+  font: 400 27px/1.42 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+.scene *, .scene *::before, .scene *::after { box-sizing: border-box; }
+.scene p, .scene h1, .scene h2, .scene h3, .scene h4, .scene ul, .scene ol, .scene figure, .scene dl, .scene dd, .scene pre { margin: 0; padding: 0; }
+.scene ul, .scene ol { list-style: none; }
+.scene b, .scene strong { font-weight: 600; }
+.scene code, .scene .mono { font-family: var(--mono); }
+.scene .num { font-variant-numeric: tabular-nums; }
+
+.scene.tone-dark { background: var(--night); color: var(--night-text); }
+.scene.tone-green { background: var(--green); color: #fff; }
+
+/* --- header: the five parts of the pitch, then the title ---------------- */
+/* The top right corner stays empty: the speaker tag lands there. */
+.scene .parts { display: flex; gap: 40px; font: 500 18px/1 var(--sans); color: var(--faint); }
+.scene .parts span { position: relative; padding-bottom: 12px; white-space: nowrap; }
+.scene .parts b { font-family: var(--cond); font-weight: 600; margin-right: 8px; }
+.scene .parts .on { color: var(--ink); }
+.scene .parts .on::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--green); }
+.scene.tone-dark .parts { color: #56695E; }
+.scene.tone-dark .parts .on { color: var(--night-text); }
+.scene.tone-dark .parts .on::after { background: var(--mint); }
+.scene .title { margin-top: 32px; max-width: 1180px; font: 600 64px/1.06 var(--sans); letter-spacing: -.012em; }
+
+/* Content area: same top on every scene. */
+.scene .body { position: absolute; left: 128px; right: 128px; top: 272px; bottom: 72px; }
+.scene .grid12 { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 32px; }
+.scene .label { font: 500 19px/1.2 var(--sans); color: var(--muted); }
+.scene.tone-dark .label { color: var(--night-muted); }
+.scene .note { position: absolute; left: 128px; right: 128px; bottom: 36px; font: 400 19px/1.3 var(--sans); color: var(--muted); }
+.scene.tone-dark .note { color: var(--night-muted); }
+/* Highlighter. The video sweeps it in (data-anim="highlight" drives --hl). */
+.scene mark {
+  color: inherit;
+  padding: 0 .06em;
+  background: linear-gradient(var(--yellow-200), var(--yellow-200)) no-repeat 0 100% / var(--hl, 100%) .38em;
+}
+.scene.tone-dark mark { background: none; color: color-mix(in srgb, var(--yellow) var(--hl, 100%), var(--night-text)); }
+.scene.tone-green mark { background: none; color: color-mix(in srgb, var(--yellow) var(--hl, 100%), #fff); }
+.scene .sq { display: inline-block; width: 14px; height: 14px; margin-right: 12px; vertical-align: 1px; }
+.scene .sq.ia { background: var(--yellow-200); box-shadow: inset 0 0 0 2px var(--yellow-700); }
+.scene .sq.ds { background: var(--blue); }
+.scene .sq.ok { background: var(--green); }
+.scene .sq.bad { background: var(--red); }
+
+/* --- figures (camera) ---------------------------------------------------- */
+.scene .fig-stage { position: absolute; left: 128px; right: 128px; top: 272px; bottom: 168px; border-radius: 6px; overflow: hidden; background: #fff; box-shadow: inset 0 0 0 1px var(--rule); }
+.scene .fig-canvas { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.scene .focus { position: absolute; display: block; pointer-events: none; }
+.scene .fig-caption { position: absolute; left: 128px; right: 128px; bottom: 48px; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 32px; font: 400 21px/1.35 var(--sans); }
+.scene .fig-caption > p { grid-column: span 4; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--ink-2); }
+.scene .fig-caption b { display: block; margin-bottom: 4px; font-weight: 600; color: var(--ink); }
+
+/* --- team ---------------------------------------------------------------- */
+.scene .member { display: flex; align-items: center; gap: 16px; }
+.scene .member img { width: 88px; height: 88px; border-radius: 50%; border: 3px solid var(--yellow); flex: none; }
+.scene .member figcaption { font: 600 21px/1.25 var(--sans); }
+.scene .member small { display: block; margin-top: 8px; font: 400 17px/1 var(--mono); color: #CFEBDD; }
+
+/* --- 01 grupo ------------------------------------------------------------ */
+.s-cover .brand, .s-fim .brand { display: flex; align-items: center; gap: 16px; font: 600 24px/1 var(--sans); }
+.s-cover .brand svg, .s-fim .brand svg { width: 46px; height: 32px; }
+.s-cover .display { margin-top: 104px; font: 600 220px/.86 var(--cond); letter-spacing: -.02em; }
+.s-cover .lead { margin-top: 40px; font: 500 48px/1.15 var(--sans); }
+.s-cover .sub { margin-top: 24px; font: 400 27px/1.42 var(--sans); color: #DDF0E7; }
+.s-cover .team { position: absolute; left: 128px; right: 128px; bottom: 64px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 32px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, .3); }
+
+/* --- 02 o problema ------------------------------------------------------- */
+.s-problema .journey { position: relative; height: 296px; margin-top: 16px; }
+.s-problema .layer { position: absolute; top: 0; height: 296px; }
+.s-problema .layer svg { display: block; overflow: visible; }
+.s-problema .ideal { fill: none; stroke: #B3AB98; stroke-width: 3; stroke-dasharray: 1 11; stroke-linecap: round; }
+.s-problema .solid { fill: none; stroke: var(--green); stroke-width: 5; stroke-linecap: round; }
+.s-problema .branch { fill: none; stroke: var(--red); stroke-width: 4; stroke-dasharray: 12 9; }
+.s-problema .dead { stroke: var(--red); stroke-width: 4; stroke-linecap: round; }
+.s-problema .bl { position: absolute; left: 380px; font: 600 28px/1 var(--sans); white-space: nowrap; transform: translateY(-50%); }
+.s-problema .node { position: absolute; top: 132px; width: 36px; height: 36px; border-radius: 50%; }
+.s-problema .node.ubs { left: 0; background: var(--green); }
+.s-problema .node.esp { right: 0; background: var(--cream); box-shadow: inset 0 0 0 4px var(--ink); }
+.s-problema .end { position: absolute; top: 196px; }
+.s-problema .end b { display: block; font: 600 30px/1.1 var(--sans); }
+.s-problema .end span { display: block; margin-top: 8px; font: 400 21px/1.3 var(--sans); color: var(--muted); }
+.s-problema .end.esp { right: 0; text-align: right; }
+.s-problema .lost { position: absolute; left: 1176px; width: 360px; top: 104px; text-align: center; font: 500 23px/1.2 var(--sans); color: var(--muted); }
+.s-problema .who { margin-top: 88px; }
+.s-problema .cell { padding-top: 24px; border-top: 2px solid var(--red); }
+.s-problema .cell h3 { font: 600 32px/1.15 var(--sans); }
+.s-problema .cell p { margin-top: 12px; font: 400 27px/1.4 var(--sans); color: var(--ink-2); }
+.s-problema .c-cid { grid-column: 1 / span 3; }
+.s-problema .c-ges { grid-column: 4 / span 3; }
+.s-problema .c-tcu { grid-column: 7 / span 6; border-top-color: var(--ink); border-top-width: 1px; padding-top: 25px; }
+
+/* --- 03 a espera custa saúde --------------------------------------------- */
+.s-espera .stat-a { grid-column: 1 / span 5; }
+.s-espera .stat-b { grid-column: 7 / span 6; }
+.s-espera .big { display: block; font: 600 240px/.86 var(--cond); letter-spacing: -.02em; color: #fff; white-space: nowrap; }
+.s-espera .big small { font-size: .5em; letter-spacing: 0; margin-left: 8px; }
+.s-espera .stat { padding-top: 16px; }
+.s-espera .stat p { margin-top: 32px; max-width: 680px; font: 400 32px/1.32 var(--sans); }
+.s-espera .stat p strong { color: #fff; }
+.s-espera .meter { position: relative; margin-top: 40px; height: 12px; border-radius: 6px; background: var(--red-900); }
+.s-espera .meter i { position: absolute; left: 0; top: 0; bottom: 0; width: 94%; border-radius: 6px; background: var(--red); }
+.s-espera .scale { display: flex; justify-content: space-between; margin-top: 12px; font: 400 19px/1 var(--sans); color: var(--night-muted); }
+.s-espera .people { margin-top: 40px; display: flex; gap: 32px; align-items: flex-start; }
+.s-espera .people figure { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.s-espera .people svg { width: 64px; height: 96px; display: block; }
+.s-espera .people .stay { fill: var(--night-muted); }
+.s-espera .people .gone { fill: none; stroke: var(--red); stroke-width: 3; stroke-dasharray: 7 6; }
+.s-espera .people figcaption { font: 500 19px/1 var(--sans); color: var(--night-muted); }
+.s-espera .loses { position: absolute; left: 0; right: 0; bottom: 0; padding-top: 28px; border-top: 1px solid var(--night-rule); font: 400 32px/1.3 var(--sans); }
+
+/* --- 04 o projeto -------------------------------------------------------- */
+.s-projeto .app { grid-column: 1 / span 4; }
+.s-projeto .screen { border-radius: 6px; overflow: hidden; border: 1px solid var(--rule); background: #F4F4F4; }
+.s-projeto .screen img { display: block; width: 100%; }
+.s-projeto .app figcaption { margin-top: 16px; }
+.s-projeto .right { grid-column: 5 / span 8; display: flex; flex-direction: column; }
+.s-projeto .what { max-width: 1040px; font: 500 36px/1.25 var(--sans); }
+.s-projeto .channels { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; }
+.s-projeto .ch { padding-top: 20px; border-top: 1px solid var(--ink); }
+.s-projeto .ch h3 { margin-top: 8px; font: 600 28px/1.15 var(--sans); }
+.s-projeto .ch ul { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; font: 400 21px/1.35 var(--sans); color: var(--ink-2); }
+.s-projeto .ch code { font: 500 18px/1 var(--mono); color: var(--green-700); margin-right: 8px; }
+.s-projeto .callboard { margin-top: 16px; display: flex; gap: 40px; padding: 16px 20px; border-radius: 6px; background: var(--night); color: var(--night-text); }
+.s-projeto .callboard span { display: block; font: 500 17px/1 var(--sans); color: var(--night-muted); }
+.s-projeto .callboard b { display: block; margin-top: 8px; font: 600 44px/1 var(--mono); color: var(--yellow); }
+.s-projeto .foot { margin-top: auto; }
+.s-projeto .fase3 { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 32px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.s-projeto .fase3 .label { grid-column: 1 / -1; margin-bottom: 12px; }
+.s-projeto .fase3 div { font: 400 21px/1.25 var(--sans); color: var(--ink-2); }
+.s-projeto .fase3 div b { display: block; font: 600 56px/1 var(--cond); color: var(--green-700); }
+.s-projeto .fase3 div.db b { color: var(--blue); }
+.s-projeto .rnf { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--ink); font: 400 25px/1.35 var(--sans); }
+.s-projeto .rnf code { font-weight: 600; font-size: 22px; margin-right: 16px; }
+
+/* --- 05 onde a IA e os dados entram -------------------------------------- */
+.s-onde .pipe { position: absolute; left: 0; right: 0; top: 88px; height: 600px; }
+.s-onde .zone { position: absolute; top: 48px; height: 18px; border-top: 3px solid; }
+.s-onde .zone::before, .s-onde .zone::after { content: ""; position: absolute; top: -3px; width: 3px; height: 18px; background: currentColor; }
+.s-onde .zone::before { left: 0; }
+.s-onde .zone::after { right: 0; }
+.s-onde .zone span { position: absolute; left: 0; top: -44px; font: 600 24px/1 var(--sans); color: var(--ink); white-space: nowrap; }
+.s-onde .z-ia { left: 0; width: 816px; color: var(--yellow-700); border-top-style: dashed; }
+.s-onde .z-ds { left: 1272px; right: 0; color: var(--blue); }
+.s-onde .loop { position: absolute; left: 0; top: 0; }
+.s-onde .loop svg { display: block; }
+.s-onde .loop path { fill: none; stroke: var(--red); stroke-width: 3; stroke-dasharray: 10 8; }
+.s-onde .loop path.head { stroke-dasharray: none; stroke-linecap: round; stroke-linejoin: round; }
+.s-onde .loop span { position: absolute; left: 186px; top: 142px; width: 80px; text-align: center; font: 600 22px/1 var(--sans); color: var(--red); }
+.s-onde .rail { position: absolute; left: 14px; right: 0; top: 199px; height: 3px; background: var(--ink); }
+.s-onde .stations { position: absolute; left: 0; right: 0; top: 186px; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 32px; }
+.s-onde .stations li { position: relative; padding-top: 56px; }
+.s-onde .stations .node { position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--cream); box-shadow: inset 0 0 0 3px var(--ink); }
+.s-onde .stations .ia .node { background: var(--yellow-200); box-shadow: none; border: 3px dashed var(--yellow-700); }
+.s-onde .stations .ds .node { background: var(--blue); box-shadow: none; }
+.s-onde .stations .n { font: 600 24px/1 var(--cond); color: var(--muted); }
+.s-onde .stations h3 { margin-top: 8px; font: 600 34px/1.1 var(--sans); }
+.s-onde .stations p { margin-top: 16px; font: 400 26px/1.38 var(--sans); color: var(--ink-2); }
+.s-onde .stations p strong { color: var(--red); font-weight: 600; }
+.s-onde .hyp { display: block; margin-top: 20px; padding-top: 12px; border-top: 1px dashed var(--faint); font: 400 20px/1.3 var(--sans); color: var(--muted); }
+
+/* --- 06 o fluxo ---------------------------------------------------------- */
+.s-fluxo .lede { font: 400 30px/1.3 var(--sans); color: var(--ink-2); }
+.s-fluxo .lede b { color: var(--ink); }
+.s-fluxo .flow { position: absolute; left: 0; right: 0; top: 96px; height: 480px; }
+.s-fluxo .zone { position: absolute; top: 44px; height: 16px; border-top: 3px solid; }
+.s-fluxo .zone::before, .s-fluxo .zone::after { content: ""; position: absolute; top: -3px; width: 3px; height: 16px; background: currentColor; }
+.s-fluxo .zone::before { left: 0; }
+.s-fluxo .zone::after { right: 0; }
+.s-fluxo .zone span { position: absolute; left: 0; top: -40px; font: 600 22px/1 var(--sans); color: var(--ink); white-space: nowrap; }
+.s-fluxo .z-ia { left: 281px; width: 820px; color: var(--yellow-700); border-top-style: dashed; }
+.s-fluxo .z-hum { left: 1125px; width: 257px; color: var(--ink); }
+.s-fluxo .z-mv { left: 1407px; width: 257px; color: var(--green); }
+.s-fluxo .seg { position: absolute; top: 125px; height: 3px; width: 241px; background: var(--ink); }
+.s-fluxo .seg.ok { background: var(--green); }
+.s-fluxo .steps { position: absolute; left: 0; right: 0; top: 106px; display: grid; grid-template-columns: repeat(6, 1fr); column-gap: 24px; }
+.s-fluxo .steps li { position: relative; padding-top: 64px; }
+.s-fluxo .steps .node { position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font: 600 22px/1 var(--cond); background: var(--cream); box-shadow: inset 0 0 0 3px var(--ink); }
+.s-fluxo .steps .ia .node { background: var(--yellow-200); box-shadow: none; border: 3px dashed var(--yellow-700); }
+.s-fluxo .steps .hum .node { border-radius: 4px; transform: rotate(45deg) scale(.86); background: var(--ink); box-shadow: none; color: #fff; }
+.s-fluxo .steps .hum .node span { transform: rotate(-45deg); }
+.s-fluxo .steps .mv .node { background: var(--green); box-shadow: none; color: #fff; }
+.s-fluxo .steps h3 { font: 600 30px/1.1 var(--sans); }
+.s-fluxo .steps p { margin-top: 12px; font: 400 22px/1.36 var(--sans); color: var(--ink-2); }
+.s-fluxo .steps code { display: block; margin-top: 16px; font: 500 17px/1.35 var(--mono); color: var(--muted); }
+.s-fluxo .steps .ia code { color: var(--yellow-700); }
+.s-fluxo .steps .mv code { color: var(--green-700); font-weight: 600; }
+.s-fluxo .ring { position: absolute; left: 1115px; top: 96px; width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 0 0 4px var(--yellow); }
+.s-fluxo .limit { position: absolute; left: 0; right: 0; bottom: 0; padding-top: 24px; border-top: 1px solid var(--ink); font: 400 32px/1.3 var(--sans); }
+
+/* --- 07 tela do médico (figura com câmera) ------------------------------- */
+.s-tela .mock { position: absolute; inset: 0; background: #fff; color: var(--ink); }
+.s-tela .bar { position: absolute; left: 0; right: 0; top: 0; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: var(--cream-2); border-bottom: 1px solid var(--rule); font: 600 21px/1 var(--sans); }
+.s-tela .bar span { font-weight: 400; color: var(--muted); }
+.s-tela .bar small { font: 400 18px/1 var(--sans); color: var(--muted); }
+.s-tela .frame { position: absolute; top: 72px; bottom: 16px; border-radius: 6px; }
+.s-tela .frame.draft { border: 2px dashed var(--yellow-700); }
+.s-tela .frame.ok { border: 2px solid var(--green); }
+.s-tela .f-rel { left: 576px; width: 504px; }
+.s-tela .f-ras { left: 1100px; right: 16px; }
+.s-tela h4 { position: absolute; top: 88px; font: 600 22px/1 var(--sans); }
+.s-tela h4 small { display: block; margin-top: 8px; font: 500 17px/1 var(--sans); color: var(--yellow-700); }
+.s-tela h4 small.plain { color: var(--muted); font-weight: 400; }
+.s-tela .h-tra { left: 24px; }
+.s-tela .h-rel { left: 600px; }
+.s-tela .h-ras { left: 1124px; }
+.s-tela .row { position: absolute; display: flex; align-items: center; height: 72px; }
+.s-tela .tra { left: 24px; width: 528px; gap: 16px; font: 400 20px/1.3 var(--sans); }
+.s-tela .tra .who { flex: none; width: 92px; font: 500 17px/1 var(--sans); color: var(--muted); }
+.s-tela .tra q { quotes: "“" "”"; }
+.s-tela .tra .ex { background: var(--yellow-200); padding: 1px 4px; border-radius: 3px; }
+.s-tela .tra .doc { color: var(--muted); }
+.s-tela .k { font: 600 20px/1 var(--cond); color: var(--yellow-700); }
+.s-tela .link { position: absolute; left: 536px; width: 80px; height: 0; border-top: 2px dashed var(--yellow-700); }
+.s-tela .rel { left: 600px; width: 464px; flex-direction: column; align-items: flex-start; justify-content: center; }
+.s-tela .rel span { font: 400 17px/1 var(--sans); color: var(--muted); }
+.s-tela .rel b { margin-top: 6px; font: 600 21px/1.2 var(--sans); }
+.s-tela .field { position: absolute; left: 1124px; right: 40px; }
+.s-tela .field span { display: block; font: 400 17px/1 var(--sans); color: var(--muted); }
+.s-tela .field b { display: block; margin-top: 6px; font: 600 22px/1.25 var(--sans); }
+.s-tela .field p { margin-top: 6px; font: 400 19px/1.35 var(--sans); }
+.s-tela .field code { display: block; margin-top: 6px; font: 500 15px/1.2 var(--mono); color: var(--green-700); }
+.s-tela .field code.new { color: var(--muted); }
+.s-tela .actions { position: absolute; left: 1124px; top: 468px; display: flex; gap: 12px; }
+.s-tela .btn { padding: 12px 18px; border-radius: 6px; font: 600 19px/1 var(--sans); box-shadow: inset 0 0 0 1px var(--rule); background: #fff; }
+.s-tela .btn.go { background: var(--green); color: #fff; box-shadow: none; }
+.s-tela .btn.no { color: var(--red); }
+.s-tela .hist { position: absolute; left: 1124px; right: 40px; top: 532px; padding-top: 14px; border-top: 1px solid var(--rule); font: 400 15px/1.55 var(--mono); color: var(--ink-2); }
+.s-tela .hist b { color: var(--green-700); }
+
+/* --- 08 painel do gestor ------------------------------------------------- */
+.s-painel .strip { display: flex; align-items: center; gap: 20px; font: 500 22px/1 var(--sans); color: var(--ink-2); }
+.s-painel .strip i { font-style: normal; color: var(--faint); }
+.s-painel .strip b { color: var(--blue); }
+.s-painel .panel { position: absolute; left: 0; right: 0; top: 64px; bottom: 48px; border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1px var(--rule); }
+.s-painel .phead { position: absolute; left: 32px; right: 32px; top: 28px; display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 20px; border-bottom: 1px solid var(--rule); font: 600 22px/1 var(--sans); }
+.s-painel .phead span { font: 400 19px/1 var(--sans); color: var(--muted); }
+.s-painel .chart-block { position: absolute; left: 32px; top: 100px; width: 1040px; }
+.s-painel .heat-block { position: absolute; right: 32px; top: 100px; width: 464px; }
+.s-painel h4 { font: 600 24px/1.2 var(--sans); }
+.s-painel h4 + .label { margin-top: 6px; }
+.s-painel .chart { display: block; margin-top: 8px; overflow: visible; }
+.s-painel .chart .grid { stroke: #ECE7DB; stroke-width: 1; }
+.s-painel .chart .grid.base { stroke: var(--rule); }
+.s-painel .chart .ytick { font: 400 18px var(--sans); fill: var(--muted); text-anchor: end; dominant-baseline: middle; }
+.s-painel .chart .xtick { font: 400 18px var(--sans); fill: var(--muted); text-anchor: middle; }
+.s-painel .chart .today { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 4 6; }
+.s-painel .chart .today-t { font: 500 18px var(--sans); fill: var(--ink); }
+.s-painel .chart .today-t.end { text-anchor: end; }
+.s-painel .chart .today-t.fc { fill: var(--muted); }
+.s-painel .chart .band { fill: var(--blue-100); }
+.s-painel .chart .ln { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.s-painel .chart .ln.ctx { stroke: #8A948E; }
+.s-painel .chart .ln.hot { stroke: var(--blue); stroke-width: 4; }
+.s-painel .chart .ln.fc { stroke-dasharray: 1 9; }
+.s-painel .chart .ln.fc.hot { stroke-dasharray: 2 9; }
+.s-painel .chart .dl { font: 500 19px var(--sans); fill: var(--ink-2); dominant-baseline: middle; }
+.s-painel .chart .dl.hot { font-weight: 600; fill: var(--ink); }
+.s-painel .chart .dl .v { fill: var(--muted); font-weight: 400; }
+.s-painel .chart .annot { font: 600 20px var(--sans); fill: var(--ink); text-anchor: end; }
+.s-painel .chart .dot { fill: var(--blue); stroke: #fff; stroke-width: 2; }
+.s-painel .hm { margin-top: 20px; display: grid; grid-template-columns: 72px 1fr 1fr; gap: 4px; }
+.s-painel .hm .h { font: 500 18px/1 var(--sans); color: var(--muted); padding-bottom: 6px; }
+.s-painel .hm .d { display: flex; align-items: center; font: 500 20px/1 var(--sans); color: var(--ink-2); }
+.s-painel .hm .c { height: 60px; display: flex; align-items: center; padding-left: 16px; border-radius: 4px; font: 600 22px/1 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); }
+.s-painel .hm .b1 { background: var(--blue-100); }
+.s-painel .hm .b2 { background: var(--blue-200); }
+.s-painel .hm .b3 { background: var(--blue-300); }
+.s-painel .hm .b4 { background: var(--blue-400); color: #fff; }
+.s-painel .hm .b5 { background: var(--blue); color: #fff; }
+.s-painel .h-annot { margin-top: 16px; font: 400 21px/1.35 var(--sans); color: var(--ink-2); }
+.s-painel .h-annot b { color: var(--ink); }
+
+/* --- 09 benefícios e desafios -------------------------------------------- */
+.s-balanco .col-b { grid-column: 1 / span 5; }
+.s-balanco .col-d { grid-column: 6 / span 7; }
+.s-balanco .head { padding-bottom: 16px; border-bottom: 2px solid var(--green); }
+.s-balanco .col-d .head { border-bottom-color: var(--red); }
+.s-balanco .head h3 { font: 600 30px/1.1 var(--sans); }
+.s-balanco .head p { margin-top: 8px; font: 400 23px/1.3 var(--sans); color: var(--ink-2); }
+.s-balanco .rows li { position: relative; display: grid; grid-template-columns: 168px 1fr; column-gap: 24px; padding: 13px 0; border-bottom: 1px solid var(--rule); font: 400 21px/1.35 var(--sans); color: var(--ink-2); }
+.s-balanco .col-d .rows li { grid-template-columns: 288px 1fr; }
+.s-balanco .rows b { position: relative; font: 600 22px/1.3 var(--sans); color: var(--ink); }
+.s-balanco .rows span { position: relative; }
+.s-balanco .rows .hl { position: absolute; top: 0; bottom: 0; left: -12px; right: -12px; border-radius: 4px; background: rgba(245, 183, 0, .2); }
+
+/* --- 10 a IA não decide (encerramento) ----------------------------------- */
+.s-fim .no { margin-top: 80px; max-width: 1560px; font: 600 96px/1 var(--cond); letter-spacing: -.01em; }
+.s-fim .rules { margin-top: 56px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 32px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, .3); }
+.s-fim .rules .n { font: 600 44px/1 var(--cond); color: var(--yellow); }
+.s-fim .rules p { margin-top: 12px; font: 400 24px/1.32 var(--sans); }
+.s-fim .rules code { font-size: 22px; }
+.s-fim .end { position: absolute; left: 128px; right: 128px; bottom: 64px; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 32px; align-items: end; }
+.s-fim .decide { grid-column: 1 / span 7; }
+.s-fim .decide p { font: 500 48px/1.2 var(--sans); }
+.s-fim .decide .links { margin-top: 32px; font: 500 22px/1.6 var(--mono); color: #DDF0E7; }
+.s-fim .decide .links .video-link { color: #fff; }
+.s-fim .thanks { grid-column: 8 / span 5; text-align: right; font: 600 140px/.86 var(--cond); letter-spacing: -.02em; }
+</style>
+
+<!-- Preview chrome. Not part of any scene, so the extractor never sees it. -->
+<style>
+html, body { margin: 0; background: #0B0F0D; }
+body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #DDE7E1; }
+.viewer { max-width: 1500px; margin: 0 auto; padding: 32px 24px 80px; }
+.viewer h1 { font: 600 28px/1.2 'IBM Plex Sans', sans-serif; margin: 0 0 6px; }
+.viewer p.hint { margin: 0 0 28px; color: #8FA69A; font-size: 15px; }
+.viewer p.hint a { color: #8FD3B4; }
+.frame { margin: 0 0 40px; }
+.frame-label { display: flex; gap: 14px; align-items: baseline; margin-bottom: 10px; font-size: 15px; color: #8FA69A; }
+.frame-label b { color: #F5B700; font-size: 17px; }
+.frame-label .when { color: #DDE7E1; font-variant-numeric: tabular-nums; }
+.frame-label .draft { color: #F0A39D; }
+.frame-notes { margin-top: 12px; display: grid; grid-template-columns: 1fr 340px; gap: 22px; font-size: 15px; }
+.frame-notes .spoken { line-height: 1.6; color: #C6D6CD; }
+.frame-notes .spoken::before { content: "Narração nesta cena  "; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8FD3B4; }
+.frame-notes ol { margin: 0; padding: 0; list-style: none; font: 12.5px/1.65 'IBM Plex Mono', ui-monospace, monospace; color: #8FA69A; }
+.frame-notes ol li b { color: #DDE7E1; font-weight: 500; }
+.frame-notes ol li.cam b { color: #F5B700; }
+.frame-box { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; box-shadow: 0 0 0 1px #26392F; }
+.frame-box > .scene { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.show-guides .scene .focus { outline: 8px dashed #F5B700; background: rgba(245, 183, 0, .08); }
+.show-guides .scene .focus::after { content: attr(data-focus); position: absolute; left: 0; top: 0; padding: 10px 16px; background: #F5B700; color: #12211A; font: 700 34px/1 'IBM Plex Sans', sans-serif; }
+.fig-stage { cursor: pointer; }
+.cam-label { position: absolute; right: 12px; top: 12px; z-index: 5; padding: 6px 10px; border-radius: 6px; background: rgba(0,0,0,.7); color: #F5B700; font: 600 22px/1 'IBM Plex Sans', sans-serif; pointer-events: none; }
+body.single { background: #000; }
+body.single .viewer { max-width: none; padding: 0; }
+body.single .viewer > h1, body.single .viewer > p.hint, body.single .frame-label, body.single .frame-notes { display: none; }
+body.single .frame { margin: 0; }
+body.single .cam-label { display: none; }
+body.single .frame-box { width: 1920px; height: 1080px; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+@page { size: 1920px 1080px; margin: 0; }
+@media print {
+  html, body { background: none; }
+  .viewer { max-width: none; padding: 0; }
+  .viewer > h1, .viewer > p.hint, .frame-label, .frame-notes, .cam-label { display: none; }
+  .frame { margin: 0; break-after: page; }
+  .frame-box { width: 1920px; height: 1080px; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+  .frame-box > .scene { transform: none !important; }
+}
+</style>
+</head>
+<body>
+<main class="viewer">
+<h1>Minha Vez · Enterprise Challenge · IA e ciência de dados</h1>
+<p class="hint">10 slides, que são o PDF da entrega e as 10 cenas do vídeo, com tudo visível. Clique na tela do médico (slide 07) para ver os enquadramentos da câmera.
+<a href="?guides">Mostrar regiões da câmera</a> · <a href="?">esconder</a></p>
+
+<div class="deck">
+
+<!-- ===================================================================== -->
+<section class="scene tone-green s-cover" data-scene="01" data-label="Grupo" data-kind="slide">
+  <div class="brand">
+    <svg viewBox="0 0 46 32" aria-hidden="true"><circle cx="15" cy="16" r="11" fill="none" stroke="#F5B700" stroke-width="5"/><circle cx="31" cy="16" r="11" fill="none" stroke="#fff" stroke-width="5"/></svg>
+    <span>HackGov</span>
+  </div>
+  <h1 class="display">Minha Vez</h1>
+  <p class="lead" data-reveal="s01-lead">IA e ciência de dados no encaminhamento da UBS</p>
+  <p class="sub">Enterprise Challenge · FAZESP</p>
+  <div class="team">
+    <figure class="member" data-reveal="s01-john"><img src="img/team/john.png" alt=""><figcaption>John Vitor<br>Silverio Pereira<small>RM 566968</small></figcaption></figure>
+    <figure class="member" data-reveal="s01-larissa"><img src="img/team/larissa.png" alt=""><figcaption>Ana Larissa<br>Cristo Mendes<small>RM 567403</small></figcaption></figure>
+    <figure class="member" data-reveal="s01-joao"><img src="img/team/joao.png" alt=""><figcaption>João Pedro<br>Thethê Andrade<small>RM 568305</small></figcaption></figure>
+    <figure class="member" data-reveal="s01-vinicius"><img src="img/team/vinicius.png" alt=""><figcaption>Vinícius Cardoso<br>Junqueira<small>RM 566906</small></figcaption></figure>
+    <figure class="member" data-reveal="s01-brenda"><img src="img/team/brenda.png" alt=""><figcaption>Brenda Cristina<br>Martins Araújo<small>RM 575032</small></figcaption></figure>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-problema" data-scene="02" data-label="O problema público" data-kind="slide">
+  <nav class="parts"><span class="on"><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">O encaminhamento some no caminho</h2>
+  <div class="body">
+    <div class="journey">
+      <!-- the referral path that should exist, end to end -->
+      <div class="layer" style="left: 0; width: 1664px" data-reveal="s02-ideal" data-anim="wipe" data-dur="30">
+        <svg width="1664" height="296" viewBox="0 0 1664 296" aria-hidden="true"><line class="ideal" x1="1196" y1="150" x2="1628" y2="150"/></svg>
+      </div>
+      <!-- what actually happens: the UBS sends it, then it splits and stops -->
+      <div class="layer" style="left: 0; width: 600px">
+        <svg width="600" height="296" viewBox="0 0 600 296" aria-hidden="true"><path class="solid" data-reveal="s02-sai" data-anim="draw" data-dur="22" d="M30 150 H560"/></svg>
+      </div>
+      <i class="node ubs" data-reveal="s02-ubs" data-anim="pop"></i>
+      <div class="end ubs" data-reveal="s02-ubs-t"><b>UBS</b><span>o médico encaminha</span></div>
+      <i class="node esp" data-reveal="s02-esp" data-anim="pop"></i>
+      <div class="end esp" data-reveal="s02-esp-t"><b>Especialista</b><span>atenção especializada</span></div>
+
+      <div class="layer" style="left: 560px; width: 400px" data-reveal="s02-papel" data-anim="wipe" data-dur="16">
+        <svg width="400" height="296" viewBox="560 0 400 296" aria-hidden="true"><path class="branch" d="M560 150 C640 150 650 62 750 62 H884"/><path class="dead" d="M896 52 L912 72 M912 52 L896 72"/></svg>
+        <span class="bl" style="top: 62px">papel</span>
+      </div>
+      <div class="layer" style="left: 560px; width: 400px" data-reveal="s02-ligacao" data-anim="wipe" data-dur="16">
+        <svg width="400" height="296" viewBox="560 0 400 296" aria-hidden="true"><path class="branch" d="M560 150 H884"/><path class="dead" d="M896 140 L912 160 M912 140 L896 160"/></svg>
+        <span class="bl" style="top: 150px; background: var(--cream); padding-right: 12px">ligação</span>
+      </div>
+      <div class="layer" style="left: 560px; width: 400px" data-reveal="s02-sistema" data-anim="wipe" data-dur="16">
+        <svg width="400" height="296" viewBox="560 0 400 296" aria-hidden="true"><path class="branch" d="M560 150 C640 150 650 238 750 238 H884"/><path class="dead" d="M896 228 L912 248 M912 228 L896 248"/></svg>
+        <span class="bl" style="top: 238px">sistema paralelo</span>
+      </div>
+      <p class="lost" data-reveal="s02-lost">daqui em diante, ninguém rastreia</p>
+    </div>
+
+    <div class="who grid12">
+      <div class="cell c-cid" data-reveal="s02-cidadao"><h3>Cidadão</h3><p>não sabe em que pé está o pedido</p></div>
+      <div class="cell c-ges" data-reveal="s02-gestor"><h3>Gestor</h3><p>não enxerga a fila</p></div>
+      <div class="cell c-tcu" data-reveal="s02-tcu"><h3>Falta um fluxo com dados padronizados</h3><p>Uma auditoria do TCU apontou a falta de alimentação <mark data-reveal="s02-mk-tcu" data-anim="highlight">padronizada de dados</mark> no sistema do Ministério da Saúde como gargalo de visibilidade.</p></div>
+    </div>
+  </div>
+  <p class="note">Fonte: auditoria do Tribunal de Contas da União (TCU).</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene tone-dark s-espera" data-scene="03" data-label="Por que resolver" data-kind="slide">
+  <nav class="parts"><span class="on"><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">A espera custa saúde</h2>
+  <div class="body grid12">
+    <div class="stat stat-a" data-reveal="s03-94">
+      <b class="big num"><span data-reveal="s03-94n" data-anim="count" data-count="94" data-dur="36">94</span>%</b>
+      <p>dos brasileiros da classe C acham que a espera no SUS <strong>coloca vidas em risco</strong></p>
+      <div class="meter"><i data-reveal="s03-meter" data-anim="wipe" data-dur="34"></i></div>
+      <div class="scale"><span>0</span><span>100%</span></div>
+    </div>
+    <div class="stat stat-b" data-reveal="s03-1em3">
+      <b class="big">1 <small>em</small> 3</b>
+      <p>cerca de 1 em cada 3 <strong>já desistiu</strong> de uma consulta demorada</p>
+      <div class="people">
+        <figure><svg viewBox="0 0 64 96" aria-hidden="true"><circle class="stay" cx="32" cy="20" r="17"/><path class="stay" d="M4 94 V70 A28 28 0 0 1 60 70 V94 Z"/></svg></figure>
+        <figure><svg viewBox="0 0 64 96" aria-hidden="true"><circle class="stay" cx="32" cy="20" r="17"/><path class="stay" d="M4 94 V70 A28 28 0 0 1 60 70 V94 Z"/></svg></figure>
+        <figure data-reveal="s03-desistiu" data-anim="pop"><svg viewBox="0 0 64 96" aria-hidden="true"><circle class="gone" cx="32" cy="20" r="16"/><path class="gone" d="M5 93 V70 A27 27 0 0 1 59 70 V93 Z"/></svg><figcaption>desistiu</figcaption></figure>
+      </div>
+    </div>
+    <p class="loses" data-reveal="s03-perde">Quem mais perde é quem tem menos tempo e mobilidade: <mark data-reveal="s03-mk-perde" data-anim="highlight">idosos e trabalhadores informais</mark>.</p>
+  </div>
+  <p class="note">Fonte: pesquisa do Instituto Locomotiva.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-projeto" data-scene="04" data-label="O Minha Vez" data-kind="slide">
+  <nav class="parts"><span><b>1</b>Problema público</span><span class="on"><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">O Minha Vez acompanha o pedido</h2>
+  <div class="body grid12">
+    <figure class="app" data-reveal="s04-app">
+      <div class="screen"><img src="img/app-acompanhamento.png" alt=""></div>
+      <figcaption class="label">US02 no protótipo: a etapa do pedido, com o selo Urgente</figcaption>
+    </figure>
+    <div class="right">
+      <p class="what" data-reveal="s04-what">Sistema de gestão pública que acompanha o encaminhamento <mark data-reveal="s04-mk-what" data-anim="highlight">da UBS até a consulta especializada</mark>.</p>
+      <div class="channels">
+        <div class="ch" data-reveal="s04-cidadao">
+          <span class="label">Cidadão</span><h3>App e totem</h3>
+          <ul><li><code>US01</code>Identificação por Cartão SUS, CPF ou Gov.br</li><li><code>US02</code>Acompanhamento da etapa</li><li><code>US03</code>Agendamento, reagendamento e cancelamento</li></ul>
+        </div>
+        <div class="ch" data-reveal="s04-sala">
+          <span class="label">Sala de espera</span><h3>Painel de chamada</h3>
+          <div class="callboard"><div><span>Senha</span><b>A-042</b></div><div><span>Sala</span><b>3</b></div></div>
+          <ul><li><code>US04</code>Chamada sem nome nem dado clínico</li></ul>
+        </div>
+        <div class="ch" data-reveal="s04-gestor">
+          <span class="label">Equipe e gestor</span><h3>Painel web</h3>
+          <ul><li><code>US05</code>Fila por especialidade, ações pendentes, espera média e faltas</li></ul>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="fase3" data-reveal="s04-fase3">
+          <span class="label">Pronto até a Fase 3</span>
+          <div><b class="num">9</b>classes Java</div>
+          <div><b class="num">4</b>enumerações</div>
+          <div><b class="num">5</b>testes passando</div>
+          <div class="db"><b class="num">12</b>tabelas, em BCNF</div>
+        </div>
+        <p class="rnf" data-reveal="s04-rnf"><code>RNF01</code>Dado clínico e nome completo só no canal institucional, <mark data-reveal="s04-mk-rnf" data-anim="highlight">nunca nas telas públicas</mark>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-onde" data-scene="05" data-label="Onde a IA entra" data-kind="slide">
+  <nav class="parts"><span><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span class="on"><b>3</b>O que a IA resolve</span><span><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">Onde a IA e os dados entram</h2>
+  <div class="body">
+    <div class="pipe">
+      <div class="zone z-ia" data-reveal="s05-zia" data-anim="wipe" data-dur="20"><span><i class="sq ia"></i>Inteligência artificial · a origem da fila</span></div>
+      <div class="zone z-ds" data-reveal="s05-zds" data-anim="wipe" data-dur="16"><span><i class="sq ds"></i>Ciência de dados · o fim da fila</span></div>
+      <div class="rail" data-reveal="s05-rail" data-anim="wipe" data-dur="40"></div>
+      <div class="loop" data-reveal="s05-volta" data-anim="wipe" data-dir="left" data-dur="20">
+        <svg width="460" height="200" viewBox="0 0 460 200" aria-hidden="true"><path d="M438 184 C438 104 14 104 14 172"/><path class="head" d="M5 162 L14 176 L23 162"/></svg>
+        <span>volta</span>
+      </div>
+      <ol class="stations">
+        <li class="ia" data-reveal="s05-consulta"><i class="node"></i><span class="n">1</span><h3>Consulta na UBS</h3><p>Dezenas de pacientes em poucas horas: detalhes importantes podem passar despercebidos.</p><small class="hyp" data-reveal="s05-hyp">Hipótese do grupo, a confirmar com profissionais da UBS.</small></li>
+        <li class="ia" data-reveal="s05-enc"><i class="node"></i><span class="n">2</span><h3>Encaminhamento</h3><p>Incompleto ou sem justificativa clara, ele <strong>volta, atrasa ou fica com a prioridade errada</strong>.</p></li>
+        <li data-reveal="s05-fila"><i class="node"></i><span class="n">3</span><h3>Fila do Minha Vez</h3><p>O paciente espera mais, e a fila fica mais longa.</p></li>
+        <li class="ds" data-reveal="s05-painel"><i class="node"></i><span class="n">4</span><h3>Painel do gestor</h3><p>Mostra a fila de hoje, mas <strong>não antecipa a de amanhã</strong>.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-fluxo" data-scene="06" data-label="A ferramenta" data-kind="slide">
+  <nav class="parts"><span><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span class="on"><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">6 etapas e 1 decisão humana</h2>
+  <div class="body">
+    <p class="lede" data-reveal="s06-lede">Assistente de documentação clínica. <b>Não é chatbot:</b> quem usa é o médico, no canal institucional.</p>
+    <div class="flow">
+      <div class="zone z-ia" data-reveal="s06-zia" data-anim="wipe" data-dur="20"><span><i class="sq ia"></i>A IA produz um rascunho</span></div>
+      <div class="zone z-hum" data-reveal="s06-zhum" data-anim="wipe" data-dur="12"><span>Decisão humana</span></div>
+      <div class="zone z-mv" data-reveal="s06-zmv" data-anim="wipe" data-dur="12"><span><i class="sq ok"></i>Minha Vez</span></div>
+      <i class="seg" style="left: 40px" data-reveal="s06-seg2" data-anim="wipe" data-dur="12"></i>
+      <i class="seg" style="left: 321px" data-reveal="s06-seg3" data-anim="wipe" data-dur="12"></i>
+      <i class="seg" style="left: 603px" data-reveal="s06-seg4" data-anim="wipe" data-dur="12"></i>
+      <i class="seg" style="left: 884px" data-reveal="s06-seg5" data-anim="wipe" data-dur="12"></i>
+      <i class="seg ok" style="left: 1166px" data-reveal="s06-seg6" data-anim="wipe" data-dur="12"></i>
+      <ol class="steps">
+        <li data-reveal="s06-e1"><i class="node">1</i><h3>Consentimento</h3><p>O paciente autoriza a gravação da consulta.</p></li>
+        <li class="ia" data-reveal="s06-e2"><i class="node">2</i><h3>Transcrição</h3><p>A conversa vira texto. O áudio é apagado.</p><code>reconhecimento de fala</code></li>
+        <li class="ia" data-reveal="s06-e3"><i class="node">3</i><h3>Relatório</h3><p>Sintomas, hábitos, medicamentos e pontos de atenção, cada um ligado à fala.</p><code>modelo de linguagem, extração estruturada</code></li>
+        <li class="ia" data-reveal="s06-e4"><i class="node">4</i><h3>Rascunho</h3><p>Especialidade sugerida, sinais de urgência e justificativa.</p><code>“gerado por IA, revisar”</code></li>
+        <li class="hum" data-reveal="s06-e5"><i class="node"><span>5</span></i><h3>Médico confirma</h3><p>Edita, apaga ou recusa. Se recusar, registra como sempre.</p></li>
+        <li class="mv" data-reveal="s06-e6"><i class="node">6</i><h3>Encaminhamento</h3><p>Nasce e segue a fila do Minha Vez.</p><code>RECEBIDO_TRIADO</code></li>
+      </ol>
+      <i class="ring" data-reveal="s06-ring" data-anim="pop"></i>
+    </div>
+    <p class="limit" data-reveal="s06-limite">A IA atua só até o rascunho. <mark data-reveal="s06-mk-limite" data-anim="highlight">O encaminhamento existe a partir da confirmação do médico.</mark></p>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene figure s-tela" data-scene="07" data-label="Tela do médico" data-kind="figure">
+  <nav class="parts"><span><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span class="on"><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">Como a IA entra no Minha Vez</h2>
+  <div class="fig-stage" data-camera="tudo">
+    <div class="fig-canvas" style="width: 1664px; height: 640px">
+      <div class="mock">
+        <div class="bar"><div>Minha Vez · canal institucional <span>· consulta na UBS</span></div><small>Exemplo ilustrativo, sem dado de paciente real</small></div>
+
+        <h4 class="h-tra">Transcrição<small class="plain">o áudio é apagado depois</small></h4>
+        <div class="row tra doc" style="top: 152px"><span class="who">Médico</span><q>O que o senhor tem sentido?</q></div>
+        <div class="row tra" style="top: 224px"><span class="who">Paciente</span><span><q class="ex">Quando subo escada, sinto um aperto no peito.</q> <span class="k">1</span></span></div>
+        <div class="row tra" style="top: 304px"><span class="who">Paciente</span><span><q class="ex">Fumo meio maço por dia.</q> <span class="k">2</span></span></div>
+        <div class="row tra" style="top: 384px"><span class="who">Paciente</span><span><q class="ex">Tomo losartana de manhã.</q> <span class="k">3</span></span></div>
+        <div class="row tra" style="top: 464px"><span class="who">Paciente</span><span><q class="ex">Meu pai teve infarto com 50 anos.</q> <span class="k">4</span></span></div>
+
+        <i class="frame draft f-rel"></i>
+        <h4 class="h-rel">Relatório<small>gerado por IA, revisar</small></h4>
+        <i class="link" style="top: 260px" data-reveal="s07-l1" data-anim="wipe" data-dur="8"></i>
+        <i class="link" style="top: 340px" data-reveal="s07-l2" data-anim="wipe" data-dur="8"></i>
+        <i class="link" style="top: 420px" data-reveal="s07-l3" data-anim="wipe" data-dur="8"></i>
+        <i class="link" style="top: 500px" data-reveal="s07-l4" data-anim="wipe" data-dur="8"></i>
+        <div class="row rel" style="top: 224px" data-reveal="s07-r1"><span><b class="k">1</b> Sintoma</span><b>Aperto no peito ao subir escada</b></div>
+        <div class="row rel" style="top: 304px" data-reveal="s07-r2"><span><b class="k">2</b> Hábito</span><b>Tabagismo, meio maço por dia</b></div>
+        <div class="row rel" style="top: 384px" data-reveal="s07-r3"><span><b class="k">3</b> Medicamento em uso</span><b>Losartana</b></div>
+        <div class="row rel" style="top: 464px" data-reveal="s07-r4"><span><b class="k">4</b> Ponto de atenção</span><b>Pai com infarto aos 50 anos</b></div>
+
+        <i class="frame draft f-ras"></i>
+        <i class="frame ok f-ras" data-reveal="s07-ok"></i>
+        <h4 class="h-ras">Rascunho do encaminhamento<small>gerado por IA, revisar</small></h4>
+        <div class="field" style="top: 160px" data-reveal="s07-esp"><span>Especialidade sugerida</span><b>Cardiologia</b><code>→ Encaminhamento.especialidade</code></div>
+        <div class="field" style="top: 252px" data-reveal="s07-urg"><span>Sinais de urgência</span><b>Nenhum citado na fala</b><code>→ Encaminhamento.urgente = false</code></div>
+        <div class="field" style="top: 344px" data-reveal="s07-just"><span>Justificativa</span><p>Aperto no peito aos esforços, tabagista, pai com infarto aos 50 anos. Solicito avaliação cardiológica.</p><code class="new">→ campo novo, só no canal institucional</code></div>
+        <div class="actions" data-reveal="s07-botoes"><span class="btn go">Confirmar encaminhamento</span><span class="btn">Editar</span><span class="btn no">Recusar</span></div>
+        <div class="hist" data-reveal="s07-hist"><b>HistoricoStatus</b> · criação → <b>RECEBIDO_TRIADO</b><br>responsável: médico da UBS · 06/11/2026 14:32</div>
+      </div>
+      <i class="focus" data-focus="fala" style="left: 0%; top: 10%; width: 65.4%; height: 72.5%"></i>
+      <i class="focus" data-focus="rascunho" style="left: 65.6%; top: 10%; width: 34.4%; height: 63.75%"></i>
+      <i class="focus" data-focus="confirmar" style="left: 65.6%; top: 50%; width: 34.4%; height: 50%"></i>
+    </div>
+  </div>
+  <div class="fig-caption">
+    <p data-reveal="s07-porque"><b>Por que aqui</b>É onde o erro custa mais caro: um encaminhamento mal feito gera semanas de espera inútil.</p>
+    <p data-reveal="s07-dominio"><b>Usa o domínio que já existe</b>Especialidade, selo de urgência e HistoricoStatus. Nenhum sistema paralelo.</p>
+    <p data-reveal="s07-rnf"><b>Só no canal institucional</b>Relatórios e histórico nunca chegam ao app, ao totem ou ao painel (RNF01).</p>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-painel" data-scene="08" data-label="Ciência de dados" data-kind="slide">
+  <nav class="parts"><span><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span class="on"><b>4</b>Ferramenta e integração</span><span><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">O painel que antecipa a fila</h2>
+  <div class="body">
+    <p class="strip" data-reveal="s08-strip"><span>Encaminhamentos estruturados</span><i>→</i><span>anonimizados</span><i>→</i><span>análise e previsão</span><i>→</i><b>painel do gestor (US05)</b></p>
+    <div class="panel">
+      <div class="phead">Painel do gestor<span>Dados sintéticos, só para mostrar o formato</span></div>
+      <div class="chart-block">
+        <h4>Encaminhamentos por semana, por especialidade</h4>
+        <p class="label">12 semanas observadas e 4 previstas</p>
+        <svg class="chart" viewBox="0 0 1040 430" width="1040" height="430" aria-hidden="true">
+        <line class="grid base" x1="64" x2="844" y1="386.0" y2="386.0"/>
+        <text class="ytick" x="50" y="386.0">0</text>
+        <line class="grid" x1="64" x2="844" y1="264.0" y2="264.0"/>
+        <text class="ytick" x="50" y="264.0">40</text>
+        <line class="grid" x1="64" x2="844" y1="142.0" y2="142.0"/>
+        <text class="ytick" x="50" y="142.0">80</text>
+        <line class="grid" x1="64" x2="844" y1="20.0" y2="20.0"/>
+        <text class="ytick" x="50" y="20.0">120</text>
+        <text class="xtick" x="64.0" y="420">sem 1</text>
+        <text class="xtick" x="220.0" y="420">sem 4</text>
+        <text class="xtick" x="428.0" y="420">sem 8</text>
+        <text class="xtick" x="636.0" y="420">sem 12</text>
+        <text class="xtick" x="844.0" y="420">sem 16</text>
+        <line class="today" x1="636.0" x2="636.0" y1="20" y2="386.0"/>
+        <text class="today-t end" x="624.0" y="38">hoje</text>
+        <text class="today-t fc" x="648.0" y="38">previsão</text>
+        <polygon class="band" data-reveal="s08-banda" data-anim="fade" data-dur="20" points="636.0,120.7 688.0,99.3 740.0,84.1 792.0,68.8 844.0,53.6 844.0,114.5 792.0,117.6 740.0,120.7 688.0,123.7 636.0,120.7"/>
+        <polyline class="ln ctx" data-reveal="s08-orto" data-anim="draw" data-dur="26" points="64.0,172.5 116.0,166.4 168.0,175.6 220.0,169.4 272.0,163.4 324.0,172.5 376.0,166.4 428.0,169.4 480.0,163.4 532.0,166.4 584.0,172.5 636.0,166.4"/>
+        <polyline class="ln fc ctx" data-reveal="s08-orto-fc" data-anim="fade" points="636.0,166.4 688.0,166.4 740.0,169.4 792.0,166.4 844.0,166.4"/>
+        <polyline class="ln ctx" data-reveal="s08-derm" data-anim="draw" data-dur="26" points="64.0,260.9 116.0,264.0 168.0,254.8 220.0,257.9 272.0,264.0 324.0,260.9 376.0,254.8 428.0,257.9 480.0,260.9 532.0,257.9 584.0,251.8 636.0,254.8"/>
+        <polyline class="ln fc ctx" data-reveal="s08-derm-fc" data-anim="fade" points="636.0,254.8 688.0,254.8 740.0,254.8 792.0,251.8 844.0,251.8"/>
+        <polyline class="ln ctx" data-reveal="s08-endo" data-anim="draw" data-dur="26" points="64.0,294.5 116.0,291.4 168.0,297.6 220.0,288.4 272.0,291.4 324.0,294.5 376.0,285.3 428.0,288.4 480.0,291.4 532.0,285.3 584.0,288.4 636.0,282.3"/>
+        <polyline class="ln fc ctx" data-reveal="s08-endo-fc" data-anim="fade" points="636.0,282.3 688.0,285.3 740.0,282.3 792.0,282.3 844.0,279.3"/>
+        <polyline class="ln hot" data-reveal="s08-cardio" data-anim="draw" data-dur="34" points="64.0,196.9 116.0,190.8 168.0,193.8 220.0,181.7 272.0,175.6 324.0,178.6 376.0,166.4 428.0,157.3 480.0,148.1 532.0,142.0 584.0,129.8 636.0,120.7"/>
+        <polyline class="ln fc hot" data-reveal="s08-cardio-fc" data-anim="fade" points="636.0,120.7 688.0,111.5 740.0,102.3 792.0,93.2 844.0,84.1"/>
+        <text class="dl hot" data-reveal="s08-cardio-dl" x="860.0" y="84.1">Cardiologia <tspan class="v">99</tspan></text>
+        <text class="dl " data-reveal="s08-orto-dl" x="860.0" y="166.4">Ortopedia <tspan class="v">72</tspan></text>
+        <text class="dl " data-reveal="s08-derm-dl" x="860.0" y="251.8">Dermatologia <tspan class="v">44</tspan></text>
+        <text class="dl " data-reveal="s08-endo-dl" x="860.0" y="279.3">Endocrinologia <tspan class="v">35</tspan></text>
+        <text class="annot" data-reveal="s08-annot" x="622.0" y="86.7">+30% em 8 semanas</text>
+        <circle class="dot" data-reveal="s08-cardio-fc" cx="844.0" cy="84.1" r="6"/>
+        </svg>
+      </div>
+      <div class="heat-block" data-reveal="s08-heat">
+        <h4>Faltas por dia e turno</h4>
+        <p class="label">% dos horários agendados</p>
+        <div class="hm" data-reveal="s08-hm" data-anim="wipe" data-dir="down" data-dur="24">
+          <span></span><span class="h">Manhã</span><span class="h">Tarde</span>
+          <span class="d">Seg</span><span class="c b4">18%</span><span class="c b2">12%</span>
+          <span class="d">Ter</span><span class="c b2">11%</span><span class="c b1">9%</span>
+          <span class="d">Qua</span><span class="c b2">10%</span><span class="c b1">8%</span>
+          <span class="d">Qui</span><span class="c b1">9%</span><span class="c b2">11%</span>
+          <span class="d">Sex</span><span class="c b3">14%</span><span class="c b5">24%</span>
+        </div>
+        <p class="h-annot" data-reveal="s08-heat-annot"><b>Sexta à tarde</b> e segunda de manhã concentram as faltas.</p>
+      </div>
+    </div>
+  </div>
+  <p class="note">Dados sintéticos, criados para ilustrar o painel. Premissa: 4 especialidades; Cardiologia cresce cerca de 3% por semana e as outras ficam estáveis; faltas maiores na sexta à tarde e na segunda de manhã.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-balanco" data-scene="09" data-label="Benefícios e desafios" data-kind="slide">
+  <nav class="parts"><span><b>1</b>Problema público</span><span><b>2</b>O projeto</span><span><b>3</b>O que a IA resolve</span><span><b>4</b>Ferramenta e integração</span><span class="on"><b>5</b>Benefícios e desafios</span></nav>
+  <h2 class="title">Ganhos reais, riscos tratados</h2>
+  <div class="body grid12">
+    <div class="col-b">
+      <div class="head" data-reveal="s09-hb"><h3>Benefícios</h3><p>Maior ganho: o encaminhamento certo já na primeira vez.</p></div>
+      <ul class="rows">
+        <li data-reveal="s09-b-medico"><b>Médico</b><span>Olha para o paciente em vez de digitar; recebe os detalhes organizados e o histórico em mãos.</span></li>
+        <li data-reveal="s09-b-cidadao"><b>Cidadão</b><span>Encaminhamento completo, prioridade justa e menos idas e voltas.</span></li>
+        <li data-reveal="s09-b-equipe"><b>Equipe da UBS</b><span>Menos encaminhamentos devolvidos e menos retrabalho na triagem.</span></li>
+        <li data-reveal="s09-b-gestor"><b>Gestor</b><span>Dados padronizados desde a origem; tendências de demanda e de faltas.</span></li>
+        <li data-reveal="s09-b-todos"><b>Todos</b><span>O primeiro e o último paciente do turno recebem o mesmo cuidado no registro.</span></li>
+      </ul>
+    </div>
+    <div class="col-d">
+      <div class="head" data-reveal="s09-hd"><h3>Desafios e como o projeto trata</h3><p>Maior risco: <mark data-reveal="s09-mk-risco" data-anim="highlight">o médico confiar na IA sem ler</mark>.</p></div>
+      <ul class="rows">
+        <li data-reveal="s09-d-priv"><b>Privacidade: dado de saúde é sensível na LGPD</b><span>Consentimento antes de gravar, áudio apagado após a transcrição e relatório só no canal institucional.</span></li>
+        <li data-reveal="s09-d-erro"><b>Erro de transcrição ou sintoma inventado</b><span>Cada item aponta para o trecho da fala que o gerou; o médico corrige antes de salvar.</span></li>
+        <li data-reveal="s09-d-ruido"><b>Ruído, sotaques e termos regionais</b><span>Piloto em uma UBS para medir a qualidade antes de ampliar.</span></li>
+        <li data-reveal="s09-d-infra"><b>Infraestrutura das UBS</b><span>Levantar internet, microfone e computador; se a IA falhar, a consulta segue normal.</span></li>
+        <li data-reveal="s09-d-integ"><b>Integração com o prontuário</b><span>Integrar com o que a UBS já usa em vez de duplicar.</span></li>
+        <li data-reveal="s09-d-adesao"><b>Adesão e custo de operação</b><span>Começar pela primeira consulta, onde o ganho é maior, e medir o tempo economizado.</span></li>
+        <li data-reveal="s09-d-conf"><i class="hl" data-reveal="s09-hl-conf"></i><b>Confiança excessiva</b><span>Relatório marcado como rascunho; nada vira encaminhamento sem confirmação explícita.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene tone-green s-fim" data-scene="10" data-label="A IA não decide" data-kind="slide">
+  <div class="brand">
+    <svg viewBox="0 0 46 32" aria-hidden="true"><circle cx="15" cy="16" r="11" fill="none" stroke="#F5B700" stroke-width="5"/><circle cx="31" cy="16" r="11" fill="none" stroke="#fff" stroke-width="5"/></svg>
+    <span>HackGov · Minha Vez</span>
+  </div>
+  <h2 class="no" data-reveal="s10-no">A IA não diagnostica, não receita e não encaminha.</h2>
+  <ol class="rules">
+    <li data-reveal="s10-r1"><span class="n">1</span><p>Tudo o que a IA produz entra como rascunho: “gerado por IA, revisar”.</p></li>
+    <li data-reveal="s10-r2"><span class="n">2</span><p>Nenhum encaminhamento é criado sem a confirmação do médico.</p></li>
+    <li data-reveal="s10-r3"><span class="n">3</span><p>O médico edita ou apaga qualquer item e pode recusar tudo.</p></li>
+    <li data-reveal="s10-r4"><span class="n">4</span><p>O <code>HistoricoStatus</code> registra quem confirmou e quando.</p></li>
+    <li data-reveal="s10-r5"><span class="n">5</span><p>Se a IA falhar, a consulta segue igual.</p></li>
+  </ol>
+  <div class="end">
+    <div class="decide">
+      <p data-reveal="s10-decide">A IA organiza a informação.<br><mark data-reveal="s10-mk-decide" data-anim="highlight">Quem decide é o médico.</mark></p>
+      <p class="links" data-reveal="s10-links">github.com/FIAP-Dream-Team/HackGov<span class="only-pdf"><br>Vídeo: <span class="video-link">[colar o link do YouTube]</span></span></p>
+    </div>
+    <div class="thanks" data-reveal="s10-obrigado">Obrigado!</div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- Times per scene, written by scripts/ec-1/align.mjs. The deck works without it. -->
+<script src="storyboard.js"></script>
+<script>
+// Preview only. The video applies the same camera math frame by frame in
+// Remotion; here it just places each figure at its opening shot.
+(function () {
+  var board = {};
+  if (window.STORYBOARD) window.STORYBOARD.scenes.forEach(function (s) { board[s.scene] = s; });
+  function clock(sec) {
+    var m = Math.floor(sec / 60), s = sec - m * 60;
+    return m + ':' + (s < 10 ? '0' : '') + s.toFixed(1);
+  }
+  var params = new URLSearchParams(location.search);
+  var only = params.get('scene');
+  if (params.has('guides')) document.documentElement.classList.add('show-guides');
+
+  // Video link: ?video=URL wins over the <meta>; empty leaves the placeholder.
+  var link = params.get('video') || document.querySelector('meta[name="video-link"]').content;
+  if (link) document.querySelectorAll('.video-link').forEach(function (el) { el.textContent = link; });
+
+  function shot(stageW, stageH, imgW, imgH, rect, pad) {
+    var s = Math.min(stageW / rect.w, stageH / rect.h) * (1 - pad);
+    var tx = stageW / 2 - (rect.x + rect.w / 2) * s;
+    var ty = stageH / 2 - (rect.y + rect.h / 2) * s;
+    var cw = imgW * s, ch = imgH * s;
+    tx = cw <= stageW ? (stageW - cw) / 2 : Math.min(0, Math.max(stageW - cw, tx));
+    ty = ch <= stageH ? (stageH - ch) / 2 : Math.min(0, Math.max(stageH - ch, ty));
+    return { s: s, tx: tx, ty: ty };
+  }
+  function regionOf(canvas, name) {
+    var w = parseFloat(canvas.style.width), h = parseFloat(canvas.style.height);
+    var el = name && canvas.querySelector('[data-focus="' + name + '"]');
+    if (!el) return { x: 0, y: 0, w: w, h: h, full: true };
+    return { x: parseFloat(el.style.left) / 100 * w, y: parseFloat(el.style.top) / 100 * h, w: parseFloat(el.style.width) / 100 * w, h: parseFloat(el.style.height) / 100 * h };
+  }
+  function aim(stage, name) {
+    var canvas = stage.querySelector('.fig-canvas');
+    var w = parseFloat(canvas.style.width), h = parseFloat(canvas.style.height);
+    var r = regionOf(canvas, name);
+    var t = shot(stage.clientWidth, stage.clientHeight, w, h, r, r.full ? 0 : 0.04);
+    canvas.style.transform = 'translate(' + t.tx + 'px,' + t.ty + 'px) scale(' + t.s + ')';
+    var label = stage.querySelector('.cam-label');
+    if (!label) { label = document.createElement('div'); label.className = 'cam-label'; stage.appendChild(label); }
+    label.textContent = 'câmera: ' + (name || 'tudo');
+  }
+
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.deck > section.scene'));
+  scenes.forEach(function (scene) {
+    var frame = document.createElement('div');
+    frame.className = 'frame';
+    var label = document.createElement('div');
+    label.className = 'frame-label';
+    label.innerHTML = '<b>' + scene.dataset.scene + '</b><span>' + scene.dataset.label + '</span>';
+    var box = document.createElement('div');
+    box.className = 'frame-box';
+    scene.parentNode.insertBefore(frame, scene);
+    frame.appendChild(label);
+    frame.appendChild(box);
+    box.appendChild(scene);
+
+    var cue = board[scene.dataset.scene];
+    if (cue) {
+      label.innerHTML += '<span class="when">' + clock(cue.start) + ' → ' + clock(cue.end) + ' (' + (cue.end - cue.start).toFixed(1) + 's)</span>' +
+        (window.STORYBOARD.draft ? '<span class="draft">tempo estimado, sem áudio</span>' : '');
+      var notes = document.createElement('div');
+      notes.className = 'frame-notes';
+      var spoken = document.createElement('div');
+      spoken.className = 'spoken';
+      spoken.textContent = cue.spoken;
+      var list = document.createElement('ol');
+      var events = cue.reveals.map(function (r) { return { t: r.start, html: '<b>' + r.id + '</b>' }; })
+        .concat(cue.camera.map(function (c) { return { t: c.start, html: '<b>câmera → ' + c.focus + '</b>', cam: true }; }))
+        .sort(function (a, b) { return a.t - b.t; });
+      events.forEach(function (e) {
+        var li = document.createElement('li');
+        if (e.cam) li.className = 'cam';
+        li.innerHTML = clock(e.t) + '  ' + e.html;
+        list.appendChild(li);
+      });
+      notes.appendChild(spoken);
+      notes.appendChild(list);
+      frame.appendChild(notes);
+    }
+    if (only && scene.dataset.scene !== only) frame.style.display = 'none';
+  });
+  if (only) document.body.classList.add('single');
+
+  function fit() {
+    document.querySelectorAll('.frame-box').forEach(function (box) {
+      var scene = box.firstElementChild;
+      scene.style.transform = only ? 'none' : 'scale(' + box.clientWidth / 1920 + ')';
+    });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+
+  document.querySelectorAll('.fig-stage').forEach(function (stage) {
+    var names = ['tudo'].concat(Array.prototype.map.call(stage.querySelectorAll('[data-focus]'), function (f) { return f.dataset.focus; }));
+    var current = stage.dataset.camera || 'tudo';
+    aim(stage, current);
+    stage.addEventListener('click', function () {
+      current = names[(names.indexOf(current) + 1) % names.length];
+      aim(stage, current);
+    });
+  });
+})();
+</script>
+</body>
+</html>

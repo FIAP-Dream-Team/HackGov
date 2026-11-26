@@ -1,0 +1,102 @@
+{
+  "detector": "faster-whisper (palavras) + silencedetect -32dB 0.12s",
+  "draft": false,
+  "durationSec": 160.104,
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "start": 0,
+      "end": 15.86,
+      "speechStart": 0,
+      "speechEnd": 14.68
+    },
+    {
+      "id": "f02",
+      "speaker": "joao",
+      "start": 15.86,
+      "end": 30.75,
+      "speechStart": 15.71,
+      "speechEnd": 29.67
+    },
+    {
+      "id": "f03",
+      "speaker": "joao",
+      "start": 30.75,
+      "end": 45.25,
+      "speechStart": 30.6,
+      "speechEnd": 44.07
+    },
+    {
+      "id": "f04",
+      "speaker": "brenda",
+      "start": 45.25,
+      "end": 59.771,
+      "speechStart": 45.1,
+      "speechEnd": 58.58
+    },
+    {
+      "id": "f05",
+      "speaker": "john",
+      "start": 59.771,
+      "end": 69.12,
+      "speechStart": 59.71,
+      "speechEnd": 67.84
+    },
+    {
+      "id": "f06",
+      "speaker": "vinicius",
+      "start": 69.12,
+      "end": 85.11,
+      "speechStart": 68.97,
+      "speechEnd": 84.03
+    },
+    {
+      "id": "f07",
+      "speaker": "vinicius",
+      "start": 85.11,
+      "end": 104.933,
+      "speechStart": 84.96,
+      "speechEnd": 103.76
+    },
+    {
+      "id": "f08",
+      "speaker": "larissa",
+      "start": 104.933,
+      "end": 121.903,
+      "speechStart": 104.89,
+      "speechEnd": 120.89
+    },
+    {
+      "id": "f09",
+      "speaker": "brenda",
+      "start": 121.903,
+      "end": 136.193,
+      "speechStart": 121.753,
+      "speechEnd": 135.013
+    },
+    {
+      "id": "f10",
+      "speaker": "larissa",
+      "start": 136.193,
+      "end": 156.517,
+      "speechStart": 136.043,
+      "speechEnd": 155.573
+    },
+    {
+      "id": "f11",
+      "speaker": "john",
+      "start": 156.517,
+      "end": 160.104,
+      "speechStart": 156.534,
+      "speechEnd": 159.924
+    }
+  ],
+  "voices": {
+    "john": 120,
+    "joao": 120,
+    "vinicius": 120,
+    "brenda": 210,
+    "larissa": 210
+  }
+}
