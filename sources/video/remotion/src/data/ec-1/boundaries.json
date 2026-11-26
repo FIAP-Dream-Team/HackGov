@@ -1,0 +1,87 @@
+{
+  "detector": "faster-whisper (palavras) + silencedetect -32dB 0.12s",
+  "draft": false,
+  "durationSec": 238.173,
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "start": 0,
+      "end": 11.714,
+      "speechStart": 0,
+      "speechEnd": 11.46
+    },
+    {
+      "id": "f02",
+      "speaker": "john",
+      "start": 11.714,
+      "end": 34.481,
+      "speechStart": 11.62,
+      "speechEnd": 34
+    },
+    {
+      "id": "f03",
+      "speaker": "john",
+      "start": 34.481,
+      "end": 53.863,
+      "speechStart": 34.54,
+      "speechEnd": 53.28
+    },
+    {
+      "id": "f04",
+      "speaker": "john",
+      "start": 53.863,
+      "end": 78.047,
+      "speechStart": 53.28,
+      "speechEnd": 76.88
+    },
+    {
+      "id": "f05",
+      "speaker": "john",
+      "start": 78.047,
+      "end": 108.455,
+      "speechStart": 78.24,
+      "speechEnd": 107.62
+    },
+    {
+      "id": "f06",
+      "speaker": "john",
+      "start": 108.455,
+      "end": 139.307,
+      "speechStart": 107.62,
+      "speechEnd": 138.97
+    },
+    {
+      "id": "f07",
+      "speaker": "john",
+      "start": 139.307,
+      "end": 164.088,
+      "speechStart": 139.26,
+      "speechEnd": 163.92
+    },
+    {
+      "id": "f08",
+      "speaker": "john",
+      "start": 164.088,
+      "end": 183.947,
+      "speechStart": 164.08,
+      "speechEnd": 183.4
+    },
+    {
+      "id": "f09",
+      "speaker": "john",
+      "start": 183.947,
+      "end": 219.278,
+      "speechStart": 183.88,
+      "speechEnd": 218.64
+    },
+    {
+      "id": "f10",
+      "speaker": "john",
+      "start": 219.278,
+      "end": 238.173,
+      "speechStart": 219.2,
+      "speechEnd": 238.14
+    }
+  ]
+}

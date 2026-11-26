@@ -1,0 +1,214 @@
+{
+ "sr": 48000,
+ "falas": [
+  {
+   "id": "f01",
+   "speaker": "john",
+   "source": "john.mp3",
+   "whisper": [
+    0.0,
+    14.6
+   ],
+   "voice": [
+    0.0,
+    14.68
+   ],
+   "cut": [
+    0.0,
+    14.86
+   ],
+   "at": 0.0,
+   "length": 14.86
+  },
+  {
+   "id": "f02",
+   "speaker": "joao",
+   "source": "joao.mp4",
+   "whisper": [
+    0.0,
+    13.7
+   ],
+   "voice": [
+    0.0,
+    13.96
+   ],
+   "cut": [
+    0.0,
+    14.14
+   ],
+   "at": 15.71,
+   "length": 14.14
+  },
+  {
+   "id": "f03",
+   "speaker": "joao",
+   "source": "joao2.mp4",
+   "whisper": [
+    1.36,
+    14.42
+   ],
+   "voice": [
+    1.36,
+    14.83
+   ],
+   "cut": [
+    1.26,
+    15.01
+   ],
+   "at": 30.5,
+   "length": 13.75
+  },
+  {
+   "id": "f04",
+   "speaker": "brenda",
+   "source": "brenda.ogg",
+   "whisper": [
+    0.0,
+    13.3
+   ],
+   "voice": [
+    0.0,
+    13.48
+   ],
+   "cut": [
+    0.0,
+    13.66
+   ],
+   "at": 45.1,
+   "length": 13.66
+  },
+  {
+   "id": "f05",
+   "speaker": "john",
+   "source": "john.mp3",
+   "whisper": [
+    15.1,
+    23.06
+   ],
+   "voice": [
+    15.1,
+    23.23
+   ],
+   "cut": [
+    15.0,
+    23.41
+   ],
+   "at": 59.61,
+   "length": 8.41
+  },
+  {
+   "id": "f06",
+   "speaker": "vinicius",
+   "source": "vinicius.mp4",
+   "whisper": [
+    1.58,
+    16.64
+   ],
+   "voice": [
+    1.58,
+    16.64
+   ],
+   "cut": [
+    1.48,
+    16.82
+   ],
+   "at": 68.87,
+   "length": 15.34
+  },
+  {
+   "id": "f07",
+   "speaker": "vinicius",
+   "source": "vinicius.mp4",
+   "whisper": [
+    17.14,
+    35.8
+   ],
+   "voice": [
+    17.14,
+    35.94
+   ],
+   "cut": [
+    17.04,
+    36.12
+   ],
+   "at": 84.86,
+   "length": 19.08
+  },
+  {
+   "id": "f08",
+   "speaker": "larissa",
+   "source": "lari.mp4",
+   "whisper": [
+    0.7,
+    16.4
+   ],
+   "voice": [
+    0.67,
+    16.67
+   ],
+   "cut": [
+    0.57,
+    16.683
+   ],
+   "at": 104.79,
+   "length": 16.113
+  },
+  {
+   "id": "f09",
+   "speaker": "brenda",
+   "source": "brenda2.ogg",
+   "whisper": [
+    0.0,
+    13.26
+   ],
+   "voice": [
+    0.0,
+    13.26
+   ],
+   "cut": [
+    0.0,
+    13.44
+   ],
+   "at": 121.753,
+   "length": 13.44
+  },
+  {
+   "id": "f10",
+   "speaker": "larissa",
+   "source": "lari2.mp4",
+   "whisper": [
+    0.0,
+    19.06
+   ],
+   "voice": [
+    0.0,
+    19.53
+   ],
+   "cut": [
+    0.0,
+    19.541
+   ],
+   "at": 136.043,
+   "length": 19.541
+  },
+  {
+   "id": "f11",
+   "speaker": "john",
+   "source": "john.mp3",
+   "whisper": [
+    23.62,
+    26.86
+   ],
+   "voice": [
+    23.62,
+    27.01
+   ],
+   "cut": [
+    23.52,
+    27.19
+   ],
+   "at": 156.434,
+   "length": 3.67
+  }
+ ]
+}

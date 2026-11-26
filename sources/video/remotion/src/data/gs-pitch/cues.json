@@ -1,0 +1,780 @@
+{
+  "_comment": "Mapa para conferir: fala a fala, o recorte e o que entra na tela. Gerado por scripts/gs-pitch/align.mjs; edite scene-map.json, reveals.json ou camera.json e rode de novo.",
+  "draft": false,
+  "narrationSec": 173.646,
+  "videoSec": 177.146,
+  "falas": [
+    {
+      "id": "f01",
+      "section": "1. A torneira seca",
+      "start": 0,
+      "end": 16.21,
+      "text": "Janeiro de 2024, Porto Alegre. Um temporal comum derruba a luz. Horas depois, sem nenhum aviso, a torneira seca. E fica seca: dois dias e meio depois, cento e cinquenta e sete mil pessoas seguem sem água.",
+      "scenes": [
+        {
+          "scene": "01",
+          "label": "A torneira seca",
+          "kind": "slide",
+          "start": 0,
+          "end": 16.21,
+          "anchor": null,
+          "spoken": "Janeiro de 2024, Porto Alegre. Um temporal comum derruba a luz. Horas depois, sem nenhum aviso, a torneira seca. E fica seca: dois dias e meio depois, cento e cinquenta e sete mil pessoas seguem sem água.",
+          "reveals": [
+            {
+              "id": "s01-quando",
+              "start": -0.11,
+              "at": "\"Janeiro de 2024\""
+            },
+            {
+              "id": "s01-trilho",
+              "start": 0.39,
+              "at": "+0.5s"
+            },
+            {
+              "id": "s01-v1",
+              "start": 0.54,
+              "at": "+0.15s"
+            },
+            {
+              "id": "s01-v2",
+              "start": 0.79,
+              "at": "+0.25s"
+            },
+            {
+              "id": "s01-v3",
+              "start": 1.04,
+              "at": "+0.25s"
+            },
+            {
+              "id": "s01-temporal",
+              "start": 2.8,
+              "at": "\"temporal comum\""
+            },
+            {
+              "id": "s01-temporal-t",
+              "start": 3,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s01-f1",
+              "start": 3.371,
+              "at": "\"derruba\""
+            },
+            {
+              "id": "s01-luz",
+              "start": 4.22,
+              "at": "\"a luz\""
+            },
+            {
+              "id": "s01-luz-t",
+              "start": 4.42,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s01-f2",
+              "start": 4.657,
+              "at": "\"Horas depois\""
+            },
+            {
+              "id": "s01-horas",
+              "start": 4.957,
+              "at": "+0.3s"
+            },
+            {
+              "id": "s01-agua",
+              "start": 7.32,
+              "at": "\"a torneira seca\""
+            },
+            {
+              "id": "s01-agua-t",
+              "start": 7.52,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s01-60",
+              "start": 9.12,
+              "at": "\"dois dias e meio\""
+            },
+            {
+              "id": "s01-157",
+              "start": 11.02,
+              "at": "\"cento e cinquenta e sete mil\""
+            },
+            {
+              "id": "s01-bombas",
+              "start": 13.44,
+              "at": "\"seguem sem água\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f02",
+      "section": "2. Por que acontece",
+      "start": 16.21,
+      "end": 30.77,
+      "text": "Isso acontece porque as estações que bombeiam água dependem de energia: sem luz, a água para. Parecem dois problemas, mas um puxa o outro. E um de nós, que é do Sul, já viveu algo assim.",
+      "scenes": [
+        {
+          "scene": "02",
+          "label": "Por que acontece",
+          "kind": "slide",
+          "start": 16.21,
+          "end": 30.77,
+          "anchor": null,
+          "spoken": "Isso acontece porque as estações que bombeiam água dependem de energia: sem luz, a água para. Parecem dois problemas, mas um puxa o outro. E um de nós, que é do Sul, já viveu algo assim.",
+          "reveals": [
+            {
+              "id": "s02-est",
+              "start": 18.09,
+              "at": "\"estações que bombeiam\""
+            },
+            {
+              "id": "s02-est-t",
+              "start": 18.34,
+              "at": "+0.25s"
+            },
+            {
+              "id": "s02-luz",
+              "start": 19.37,
+              "at": "\"dependem de energia\""
+            },
+            {
+              "id": "s02-luz-t",
+              "start": 19.62,
+              "at": "+0.25s"
+            },
+            {
+              "id": "s02-w1",
+              "start": 19.72,
+              "at": "+0.1s"
+            },
+            {
+              "id": "s02-w2",
+              "start": 20.851,
+              "at": "\"sem luz\""
+            },
+            {
+              "id": "s02-agua",
+              "start": 21.92,
+              "at": "\"a água para\""
+            },
+            {
+              "id": "s02-agua-t",
+              "start": 22.17,
+              "at": "+0.25s"
+            },
+            {
+              "id": "s02-frase",
+              "start": 23.3,
+              "at": "\"Parecem dois problemas\""
+            },
+            {
+              "id": "s02-mk",
+              "start": 24.688,
+              "at": "\"um puxa o outro\""
+            },
+            {
+              "id": "s02-viv",
+              "start": 26.57,
+              "at": "\"um de nós\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f03",
+      "section": "3. Quem sofre",
+      "start": 30.77,
+      "end": 45.12,
+      "text": "Quem mora no bairro não sabe se o problema é só na sua casa, nem se ainda dá tempo de guardar água. E para quem cuida de um acamado, de um idoso ou de quem usa aparelho de saúde, essas horas pesam mais.",
+      "scenes": [
+        {
+          "scene": "03",
+          "label": "Quem sofre",
+          "kind": "slide",
+          "start": 30.77,
+          "end": 45.12,
+          "anchor": null,
+          "spoken": "Quem mora no bairro não sabe se o problema é só na sua casa, nem se ainda dá tempo de guardar água. E para quem cuida de um acamado, de um idoso ou de quem usa aparelho de saúde, essas horas pesam mais.",
+          "reveals": [
+            {
+              "id": "s03-q1",
+              "start": 33.04,
+              "at": "\"só na sua casa\""
+            },
+            {
+              "id": "s03-q2",
+              "start": 35.04,
+              "at": "\"ainda dá tempo\""
+            },
+            {
+              "id": "s03-pesa",
+              "start": 37.86,
+              "at": "\"quem cuida\""
+            },
+            {
+              "id": "s03-acamado",
+              "start": 38.398,
+              "at": "\"acamado\""
+            },
+            {
+              "id": "s03-idoso",
+              "start": 39.458,
+              "at": "\"idoso\""
+            },
+            {
+              "id": "s03-aparelho",
+              "start": 40.798,
+              "at": "\"aparelho de saúde\""
+            },
+            {
+              "id": "s03-hoje",
+              "start": 43.62,
+              "at": "\"pesam mais\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f04",
+      "section": "4. A prova nos dados",
+      "start": 45.12,
+      "end": 58.45,
+      "text": "E isso não é um caso isolado. Na cheia histórica do Guaíba, em 2024, cento e sessenta mil moradores ficaram em área afetada. Dos quarenta e seis bairros atingidos, só cinco concentram mais da metade dessas pessoas. O risco tem endereço.",
+      "scenes": [
+        {
+          "scene": "04",
+          "label": "A prova nos dados",
+          "kind": "slide",
+          "start": 45.12,
+          "end": 58.45,
+          "anchor": null,
+          "spoken": "E isso não é um caso isolado. Na cheia histórica do Guaíba, em 2024, cento e sessenta mil moradores ficaram em área afetada. Dos quarenta e seis bairros atingidos, só cinco concentram mais da metade dessas pessoas. O risco tem endereço.",
+          "reveals": [
+            {
+              "id": "s04-total",
+              "start": 47.14,
+              "at": "\"Na cheia histórica\""
+            },
+            {
+              "id": "s04-totaln",
+              "start": 49.39,
+              "at": "\"cento e sessenta mil\""
+            },
+            {
+              "id": "s04-bars",
+              "start": 51.987,
+              "at": "\"quarenta e seis bairros\""
+            },
+            {
+              "id": "s04-top5",
+              "start": 53.64,
+              "at": "\"só cinco\""
+            },
+            {
+              "id": "s04-chave",
+              "start": 54.271,
+              "at": "\"mais da metade\""
+            },
+            {
+              "id": "s04-pct",
+              "start": 54.56,
+              "at": "\"mais da metade\""
+            },
+            {
+              "id": "s04-pctn",
+              "start": 54.56,
+              "at": "\"mais da metade\""
+            },
+            {
+              "id": "s04-chave-resto",
+              "start": 54.911,
+              "at": "\"dessas pessoas\""
+            },
+            {
+              "id": "s04-resto",
+              "start": 55.2,
+              "at": "\"dessas pessoas\""
+            },
+            {
+              "id": "s04-first",
+              "start": 56.14,
+              "at": "\"O risco tem endereço\""
+            },
+            {
+              "id": "s04-nomes",
+              "start": 56.14,
+              "at": "\"O risco tem endereço\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f05",
+      "section": "5. Alertaí",
+      "start": 58.45,
+      "end": 68.15,
+      "text": "Por isso criamos o Alertaí, um app de alertas por bairro que responde a uma pergunta: o que está acontecendo no meu bairro agora, e o que eu faço?",
+      "scenes": [
+        {
+          "scene": "05",
+          "label": "Alertaí",
+          "kind": "slide",
+          "start": 58.45,
+          "end": 68.15,
+          "anchor": null,
+          "spoken": "Por isso criamos o Alertaí, um app de alertas por bairro que responde a uma pergunta: o que está acontecendo no meu bairro agora, e o que eu faço?",
+          "reveals": [
+            {
+              "id": "s05-logo",
+              "start": 59.01,
+              "at": "\"criamos o Alertaí\""
+            },
+            {
+              "id": "s05-app",
+              "start": 60.51,
+              "at": "\"um app\""
+            },
+            {
+              "id": "s05-pergunta",
+              "start": 62.973,
+              "at": "\"uma pergunta\""
+            },
+            {
+              "id": "s05-sub",
+              "start": 60.906,
+              "at": "\"de alertas por bairro\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f05m",
+      "section": "5b. O mapa",
+      "start": 68.15,
+      "end": 85.63,
+      "text": "No mapa, cada bairro mostra seus riscos: chuva forte, alagamento, árvore caída, falta de luz e de água, com os avisos oficiais e o nível do Guaíba. E a previsão é de mais chuva forte até 2027.",
+      "scenes": [
+        {
+          "scene": "05m",
+          "label": "O mapa",
+          "kind": "slide",
+          "start": 68.15,
+          "end": 85.63,
+          "anchor": null,
+          "spoken": "No mapa, cada bairro mostra seus riscos: chuva forte, alagamento, árvore caída, falta de luz e de água, com os avisos oficiais e o nível do Guaíba. E a previsão é de mais chuva forte até 2027.",
+          "reveals": [
+            {
+              "id": "s05m-tipos",
+              "start": 70.146,
+              "at": "\"seus riscos\""
+            },
+            {
+              "id": "s05m-oficial",
+              "start": 78.326,
+              "at": "\"avisos oficiais\""
+            },
+            {
+              "id": "s05m-guaiba",
+              "start": 79.506,
+              "at": "\"nível do Guaíba\""
+            },
+            {
+              "id": "s05m-previsao",
+              "start": 81.14,
+              "at": "\"a previsão\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f06",
+      "section": "6. Como funciona",
+      "start": 85.63,
+      "end": 98.67,
+      "text": "Viu um problema? Relata em dois toques. Se o vizinho já relatou, o seu vira confirmação. Quando três pessoas avisam que voltou, o caso fecha. Junto com os avisos oficiais, a comunidade é a principal fonte, sem sensor caro.",
+      "scenes": [
+        {
+          "scene": "06",
+          "label": "Como funciona",
+          "kind": "slide",
+          "start": 85.63,
+          "end": 98.67,
+          "anchor": null,
+          "spoken": "Viu um problema? Relata em dois toques. Se o vizinho já relatou, o seu vira confirmação. Quando três pessoas avisam que voltou, o caso fecha. Junto com os avisos oficiais, a comunidade é a principal fonte, sem sensor caro.",
+          "reveals": [
+            {
+              "id": "s06-app",
+              "start": 85.71,
+              "at": "\"Viu um problema\""
+            },
+            {
+              "id": "s06-r1",
+              "start": 87.076,
+              "at": "\"dois toques\""
+            },
+            {
+              "id": "s06-r2",
+              "start": 89.256,
+              "at": "\"vira confirmação\""
+            },
+            {
+              "id": "s06-r3",
+              "start": 90.636,
+              "at": "\"três pessoas\""
+            },
+            {
+              "id": "s06-fonte",
+              "start": 93.27,
+              "at": "\"Junto com os avisos\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f07",
+      "section": "7. O efeito cascata",
+      "start": 98.67,
+      "end": 118.19,
+      "text": "Esse é o nosso diferencial: o efeito cascata. Quando a falta de luz é confirmada no bairro de uma estação de bombeamento, o Alertaí avisa quem acompanha os bairros que ela abastece: possível falta de água. Com o porquê, o que fazer e para quem ligar. Antes da torneira secar.",
+      "scenes": [
+        {
+          "scene": "07",
+          "label": "O efeito cascata",
+          "kind": "slide",
+          "start": 98.67,
+          "end": 118.19,
+          "anchor": null,
+          "spoken": "Esse é o nosso diferencial: o efeito cascata. Quando a falta de luz é confirmada no bairro de uma estação de bombeamento, o Alertaí avisa quem acompanha os bairros que ela abastece: possível falta de água. Com o porquê, o que fazer e para quem ligar. Antes da torneira secar.",
+          "reveals": [
+            {
+              "id": "s07-eixo",
+              "start": 101.741,
+              "at": "\"Quando a falta de luz\""
+            },
+            {
+              "id": "s07-luz",
+              "start": 102.402,
+              "at": "\"falta de luz\""
+            },
+            {
+              "id": "s07-luz-t",
+              "start": 102.602,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s07-conf",
+              "start": 102.942,
+              "at": "\"é confirmada\""
+            },
+            {
+              "id": "s07-conf-t",
+              "start": 103.142,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s07-est",
+              "start": 104.502,
+              "at": "\"estação de bombeamento\""
+            },
+            {
+              "id": "s07-est-t",
+              "start": 104.702,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s07-aviso",
+              "start": 106.03,
+              "at": "\"o Alertaí avisa\""
+            },
+            {
+              "id": "s07-aviso-t",
+              "start": 106.23,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s07-app",
+              "start": 109.6,
+              "at": "\"possível falta de água\""
+            },
+            {
+              "id": "s07-porque",
+              "start": 111.62,
+              "at": "\"o porquê\""
+            },
+            {
+              "id": "s07-fazer",
+              "start": 112.508,
+              "at": "\"o que fazer\""
+            },
+            {
+              "id": "s07-ligar",
+              "start": 113.86,
+              "at": "\"para quem ligar\""
+            },
+            {
+              "id": "s07-espera",
+              "start": 115.521,
+              "at": "\"Antes da torneira\""
+            },
+            {
+              "id": "s07-agua",
+              "start": 116.322,
+              "at": "\"torneira secar\""
+            },
+            {
+              "id": "s07-agua-t",
+              "start": 116.522,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s07-gap",
+              "start": 116.722,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s07-prep",
+              "start": 117.022,
+              "at": "+0.3s"
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f08",
+      "section": "8. O protótipo",
+      "start": 118.19,
+      "end": 135.54,
+      "text": "Desenhamos sete telas do rascunho à alta fidelidade, tanto no celular quanto no computador, seguindo as diretrizes internacionais de acessibilidade. A informação nunca depende só da cor: sempre vem com o ícone e o texto, o contraste adequado para a leitura, e a letra pode dobrar de tamanho sem perder o conteúdo.",
+      "scenes": [
+        {
+          "scene": "08",
+          "label": "O protótipo",
+          "kind": "slide",
+          "start": 118.19,
+          "end": 135.54,
+          "anchor": null,
+          "spoken": "Desenhamos sete telas do rascunho à alta fidelidade, tanto no celular quanto no computador, seguindo as diretrizes internacionais de acessibilidade. A informação nunca depende só da cor: sempre vem com o ícone e o texto, o contraste adequado para a leitura, e a letra pode dobrar de tamanho sem perder o conteúdo.",
+          "reveals": [
+            {
+              "id": "s08-wire",
+              "start": 118.539,
+              "at": "\"sete telas\""
+            },
+            {
+              "id": "s08-hifi-l",
+              "start": 120.612,
+              "at": "\"alta fidelidade\""
+            },
+            {
+              "id": "s08-hifi",
+              "start": 120.359,
+              "at": "\"alta fidelidade\""
+            },
+            {
+              "id": "s08-pc",
+              "start": 122.692,
+              "at": "\"no computador\""
+            },
+            {
+              "id": "s08-wcag",
+              "start": 124.132,
+              "at": "\"diretrizes internacionais\""
+            },
+            {
+              "id": "s08-cor",
+              "start": 127.592,
+              "at": "\"só da cor\""
+            },
+            {
+              "id": "s08-contraste",
+              "start": 130.41,
+              "at": "\"o contraste\""
+            },
+            {
+              "id": "s08-zoom",
+              "start": 132.732,
+              "at": "\"dobrar de tamanho\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f09",
+      "section": "9. Como medir",
+      "start": 135.54,
+      "end": 150.22,
+      "text": "Como saber se funciona? O indicador central é a antecedência: quantas horas o aviso chega antes da água faltar. A meta: pelo menos duas horas. Também medimos se o alerta acerta e se as pessoas agem.",
+      "scenes": [
+        {
+          "scene": "09",
+          "label": "Como medir",
+          "kind": "slide",
+          "start": 135.54,
+          "end": 150.22,
+          "anchor": null,
+          "spoken": "Como saber se funciona? O indicador central é a antecedência: quantas horas o aviso chega antes da água faltar. A meta: pelo menos duas horas. Também medimos se o alerta acerta e se as pessoas agem.",
+          "reveals": [
+            {
+              "id": "s09-antec",
+              "start": 139.11,
+              "at": "\"antecedência\""
+            },
+            {
+              "id": "s09-aviso",
+              "start": 140.715,
+              "at": "\"o aviso chega\""
+            },
+            {
+              "id": "s09-aviso-t",
+              "start": 140.915,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s09-espera",
+              "start": 141.306,
+              "at": "\"antes da água\""
+            },
+            {
+              "id": "s09-agua",
+              "start": 142.035,
+              "at": "\"água faltar\""
+            },
+            {
+              "id": "s09-agua-t",
+              "start": 142.235,
+              "at": "+0.2s"
+            },
+            {
+              "id": "s09-chave",
+              "start": 142.601,
+              "at": "\"A meta\""
+            },
+            {
+              "id": "s09-meta",
+              "start": 144.175,
+              "at": "\"duas horas\""
+            },
+            {
+              "id": "s09-metan",
+              "start": 144.175,
+              "at": "\"duas horas\""
+            },
+            {
+              "id": "s09-acerta",
+              "start": 146.155,
+              "at": "\"o alerta acerta\""
+            },
+            {
+              "id": "s09-age",
+              "start": 147.57,
+              "at": "\"as pessoas agem\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f10",
+      "section": "10. ODS e próximo passo",
+      "start": 150.22,
+      "end": 169.796,
+      "text": "Com isso, já atendemos quatro ODS. O treze e o onze pedem alerta precoce e cidades mais preparadas para desastres. O três protege a saúde de quem é mais vulnerável, e o seis, a comunidade participando da gestão da água. Começando por cinco bairros. O próximo é o Sarandi, o mais atingido em 2024.",
+      "scenes": [
+        {
+          "scene": "10",
+          "label": "ODS e próximo passo",
+          "kind": "slide",
+          "start": 150.22,
+          "end": 169.796,
+          "anchor": null,
+          "spoken": "Com isso, já atendemos quatro ODS. O treze e o onze pedem alerta precoce e cidades mais preparadas para desastres. O três protege a saúde de quem é mais vulnerável, e o seis, a comunidade participando da gestão da água. Começando por cinco bairros. O próximo é o Sarandi, o mais atingido em 2024.",
+          "reveals": [
+            {
+              "id": "s10-ods13",
+              "start": 152.7,
+              "at": "\"O treze\""
+            },
+            {
+              "id": "s10-ods11",
+              "start": 153.265,
+              "at": "\"o onze\""
+            },
+            {
+              "id": "s10-ods3",
+              "start": 157.58,
+              "at": "\"O três\""
+            },
+            {
+              "id": "s10-ods6",
+              "start": 160.905,
+              "at": "\"o seis\""
+            },
+            {
+              "id": "s10-mapa",
+              "start": 164.745,
+              "at": "\"cinco bairros\""
+            },
+            {
+              "id": "s10-sarandi",
+              "start": 166.485,
+              "at": "\"Sarandi\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    },
+    {
+      "id": "f11",
+      "section": "11. Assinatura",
+      "start": 169.796,
+      "end": 173.646,
+      "text": "Alertaí. Da próxima vez, o aviso chega antes.",
+      "scenes": [
+        {
+          "scene": "11",
+          "label": "Assinatura",
+          "kind": "slide",
+          "start": 169.796,
+          "end": 177.146,
+          "anchor": null,
+          "spoken": "Alertaí. Da próxima vez, o aviso chega antes.",
+          "reveals": [
+            {
+              "id": "s11-logo",
+              "start": 169.85,
+              "at": "\"Alertaí\""
+            },
+            {
+              "id": "s11-frase",
+              "start": 170.87,
+              "at": "\"Da próxima vez\""
+            }
+          ],
+          "camera": []
+        }
+      ]
+    }
+  ]
+}

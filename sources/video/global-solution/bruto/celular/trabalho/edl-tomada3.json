@@ -1,0 +1,11 @@
+{
+  "fonte_decupada": "originais/WhatsApp Video 2026-11-17 at 13.47.42.mp4",
+  "largura_decupada": 384,
+  "altura_decupada": 832,
+  "nota": "Tempos em segundos do arquivo de origem. Recorte (crop) em pixels da fonte decupada; null = sem recorte. Para o original do celular, troque a fonte com --fonte: o render reescala o recorte pela largura nova.",
+  "b24": "Antes e depois, sem o toque na chave: todo quadro com a chave à vista (13,7–15,2 s) e o texto já ampliado na seção (15,3–21,4 s) mostra Seus dados legível (nome, celular, aceite de SMS). A chave não foi desligada na tomada.",
+  "crop": null,
+  "clipes": [
+    {"saida": "B24-texto-maior.mp4", "segmentos": [[8.00, 9.70], [23.30, 24.85]], "segura": 0.8}
+  ]
+}

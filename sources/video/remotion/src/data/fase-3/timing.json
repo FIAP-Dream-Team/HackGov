@@ -1,0 +1,1155 @@
+{
+  "fps": 30,
+  "durationSec": 259.941,
+  "narrationSec": 256.441,
+  "durationInFrames": 7799,
+  "alignmentRate": 0.9239,
+  "source": "audio+roteiro",
+  "audio": "fase-3/mix.wav",
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "section": "1. Abertura",
+      "text": "E aí, pessoal! Somos a equipe do HackGov: meu nome é John, estou com Ana Larissa, João Pedro, Vinícius Cardoso e Brenda. Depois de modelar e prototipar o fluxo do Minha Vez, chegou a hora de armazenar os dados. Vamos mostrar como o projeto evoluiu, do código até o banco de dados.",
+      "speechStart": 0,
+      "speechEnd": 18.98,
+      "end": 19.77,
+      "start": 0,
+      "startFrame": 0,
+      "endFrame": 593
+    },
+    {
+      "id": "f02",
+      "speaker": "joao",
+      "section": "2. Versão atual do projeto",
+      "text": "Na fase anterior, o Minha Vez tinha o fluxo do cidadão modelado, prototipado e com um primeiro recorte do domínio em Java. Ao desenhar o banco, a modelagem dos dados expôs regras da US03 que o código ainda não aplicava. Por isso atualizamos o projeto inteiro: agora são 9 classes em Java, 5 testes automatizados, diagramas e telas revisados, e o banco, com 11 entidades e 12 tabelas. A principal regra: o encaminhamento define a unidade da consulta, e o cidadão só vê e só agenda vagas dessa unidade. Reagendar cancela o horário atual e cria um novo, ligado a ele. Cancelar ou reagendar só vale até 24 horas antes, com no máximo 2 reagendamentos; depois, só no balcão. Os 5 testes passam, e a saída do demo mostra o anterior cancelado, o novo apontando para ele e o erro quando a vaga é de outra unidade. O domínio ainda roda em memória: gravar no banco é a próxima etapa.",
+      "speechStart": 19.62,
+      "speechEnd": 90.58,
+      "start": 19.77,
+      "end": 91.306,
+      "startFrame": 593,
+      "endFrame": 2739
+    },
+    {
+      "id": "f03",
+      "speaker": "john",
+      "section": "2. Versão atual do projeto",
+      "text": "Os diagramas UML foram revisados contra o código: classes e sequência de agendar atualizados, mais dois diagramas novos, o de sequência do reagendamento e o de atividades de reagendar e cancelar. Nos wireframes, três telas foram atualizadas e três são novas, cobrindo reagendamento, limite e prazo.",
+      "speechStart": 91.26,
+      "speechEnd": 111.06,
+      "start": 91.306,
+      "end": 111.423,
+      "startFrame": 2739,
+      "endFrame": 3343
+    },
+    {
+      "id": "f04",
+      "speaker": "larissa",
+      "section": "3. Modelo lógico",
+      "text": "Para o modelo lógico, usamos o Oracle SQL Developer Data Modeler, com notação Barker. São 11 entidades, 15 relacionamentos e 2 heranças. O modelo traz uma especialização, com Pessoa dividida em Cidadão e Usuário Institucional; uma agregação, na entidade Agendamento; e um autorrelacionamento, que liga o reagendamento ao horário anterior. O contato do cidadão é multivalorado e virou entidade própria, e o endereço da unidade foi decomposto em atributos. CID, laudo e prontuário ficam fora do banco, para reduzir o dano em caso de vazamento.",
+      "speechStart": 111.3,
+      "speechEnd": 144.18,
+      "start": 111.423,
+      "end": 144.362,
+      "startFrame": 3343,
+      "endFrame": 4331
+    },
+    {
+      "id": "f05",
+      "speaker": "vinicius",
+      "section": "4. Anomalias e formas normais",
+      "text": "Para entender por que normalizar, imaginamos tudo numa tabela só. Na inserção, não dá para cadastrar um cidadão sem encaminhamento nem publicar uma vaga que ninguém reservou. Na exclusão, apagar o único pedido de um cidadão leva junto o cadastro dele e o endereço da unidade. E na alteração, se alguém troca de celular, cada pedido precisa mudar, e esquecer um deixa duas versões da verdade. Aplicando as formas normais: na primeira, contatos e histórico viram tabelas e o endereço vira colunas. Na segunda, encaminhamento, horário e agendamento ficam separados. Na terceira, achamos uma dependência transitiva em Unidade de Saúde: logradouro, bairro, cidade e UF dependem do CEP, então criamos a tabela CEP. Com ela, o modelo chega à BCNF. Algumas redundâncias foram mantidas de propósito, como o status do encaminhamento, com a consistência garantida pela aplicação e pelo banco.",
+      "speechStart": 144.36,
+      "speechEnd": 199.46,
+      "start": 144.362,
+      "end": 200.458,
+      "startFrame": 4331,
+      "endFrame": 6014
+    },
+    {
+      "id": "f06",
+      "speaker": "vinicius",
+      "section": "5. Modelo físico",
+      "text": "No modelo físico, o mesmo banco ganha tipos e chaves: são 12 tabelas, com NUMBER, VARCHAR2, CHAR, DATE e TIMESTAMP. Cada relacionamento vira uma coluna de chave estrangeira, e a especialização de Pessoa vira três tabelas com o mesmo ID_PESSOA. A tabela nova é a CEP, vinda da normalização, o que levou o modelo de 11 para 12 tabelas e de 17 para 18 chaves estrangeiras.",
+      "speechStart": 200.34,
+      "speechEnd": 226.46,
+      "start": 200.458,
+      "end": 227.65,
+      "startFrame": 6014,
+      "endFrame": 6830
+    },
+    {
+      "id": "f07",
+      "speaker": "john",
+      "section": "6. Scripts SQL e encerramento",
+      "text": "Por fim, o script SQL cria esse banco no Oracle, e o próprio banco garante as regras da US03: uma chave estrangeira composta só aceita o agendamento se o horário for da mesma especialidade e da mesma unidade do encaminhamento, e um índice único impede que a mesma vaga tenha dois agendamentos ativos. Foi assim que o Minha Vez saiu de um domínio em memória para um banco desenhado, normalizado e pronto para o Java gravar. Dito isso, muito obrigado por assistir!",
+      "speechStart": 227.5,
+      "speechEnd": 256.02,
+      "start": 227.65,
+      "end": 256.441,
+      "startFrame": 6830,
+      "endFrame": 7693
+    }
+  ],
+  "turns": [
+    {
+      "speaker": "john",
+      "start": 0,
+      "end": 19.77,
+      "startFrame": 0,
+      "endFrame": 593
+    },
+    {
+      "speaker": "joao",
+      "start": 19.77,
+      "end": 91.306,
+      "startFrame": 593,
+      "endFrame": 2739
+    },
+    {
+      "speaker": "john",
+      "start": 91.306,
+      "end": 111.423,
+      "startFrame": 2739,
+      "endFrame": 3343
+    },
+    {
+      "speaker": "larissa",
+      "start": 111.423,
+      "end": 144.362,
+      "startFrame": 3343,
+      "endFrame": 4331
+    },
+    {
+      "speaker": "vinicius",
+      "start": 144.362,
+      "end": 227.65,
+      "startFrame": 4331,
+      "endFrame": 6830
+    },
+    {
+      "speaker": "john",
+      "start": 227.65,
+      "end": 256.441,
+      "startFrame": 6830,
+      "endFrame": 7693
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "01",
+      "label": "Capa",
+      "falaId": "f01",
+      "speaker": "john",
+      "anchor": null,
+      "start": 0,
+      "end": 19.77,
+      "startFrame": 0,
+      "endFrame": 593,
+      "durationInFrames": 593,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "02",
+      "label": "O que mudou",
+      "falaId": "f02",
+      "speaker": "joao",
+      "anchor": null,
+      "start": 19.77,
+      "end": 49.72,
+      "startFrame": 593,
+      "endFrame": 1492,
+      "durationInFrames": 899,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "03",
+      "label": "Regras da US03",
+      "falaId": "f02",
+      "speaker": "joao",
+      "anchor": "A principal regra",
+      "start": 49.72,
+      "end": 73.8,
+      "startFrame": 1492,
+      "endFrame": 2214,
+      "durationInFrames": 722,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "04",
+      "label": "Testes e demo",
+      "falaId": "f02",
+      "speaker": "joao",
+      "anchor": "Os 5 testes passam",
+      "start": 73.8,
+      "end": 91.306,
+      "startFrame": 2214,
+      "endFrame": 2739,
+      "durationInFrames": 525,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "05",
+      "label": "UML revisado",
+      "falaId": "f03",
+      "speaker": "john",
+      "anchor": null,
+      "start": 91.306,
+      "end": 103.767,
+      "startFrame": 2739,
+      "endFrame": 3113,
+      "durationInFrames": 374,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "06",
+      "label": "Wireframes",
+      "falaId": "f03",
+      "speaker": "john",
+      "anchor": "Nos wireframes",
+      "start": 103.767,
+      "end": 111.423,
+      "startFrame": 3113,
+      "endFrame": 3343,
+      "durationInFrames": 230,
+      "kind": "figure",
+      "camera": "atualizadas"
+    },
+    {
+      "scene": "07",
+      "label": "Data Modeler",
+      "falaId": "f04",
+      "speaker": "larissa",
+      "anchor": null,
+      "start": 111.423,
+      "end": 116.36,
+      "startFrame": 3343,
+      "endFrame": 3491,
+      "durationInFrames": 148,
+      "kind": "figure",
+      "camera": "tela"
+    },
+    {
+      "scene": "08",
+      "label": "11 · 15 · 2",
+      "falaId": "f04",
+      "speaker": "larissa",
+      "anchor": "São 11 entidades",
+      "start": 116.36,
+      "end": 120.34,
+      "startFrame": 3491,
+      "endFrame": 3610,
+      "durationInFrames": 119,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "09",
+      "label": "Modelo lógico",
+      "falaId": "f04",
+      "speaker": "larissa",
+      "anchor": "O modelo traz uma especialização",
+      "start": 120.34,
+      "end": 144.362,
+      "startFrame": 3610,
+      "endFrame": 4331,
+      "durationInFrames": 721,
+      "kind": "figure",
+      "camera": "tudo"
+    },
+    {
+      "scene": "10",
+      "label": "Tabela única",
+      "falaId": "f05",
+      "speaker": "vinicius",
+      "anchor": null,
+      "start": 144.362,
+      "end": 167.48,
+      "startFrame": 4331,
+      "endFrame": 5024,
+      "durationInFrames": 693,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "11",
+      "label": "Formas normais",
+      "falaId": "f05",
+      "speaker": "vinicius",
+      "anchor": "Aplicando as formas normais",
+      "start": 167.48,
+      "end": 183.89,
+      "startFrame": 5024,
+      "endFrame": 5517,
+      "durationInFrames": 493,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "12",
+      "label": "Tabela CEP",
+      "falaId": "f05",
+      "speaker": "vinicius",
+      "anchor": "logradouro, bairro, cidade e UF",
+      "start": 183.89,
+      "end": 200.458,
+      "startFrame": 5517,
+      "endFrame": 6014,
+      "durationInFrames": 497,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "13",
+      "label": "Modelo físico",
+      "falaId": "f06",
+      "speaker": "vinicius",
+      "anchor": null,
+      "start": 200.458,
+      "end": 227.65,
+      "startFrame": 6014,
+      "endFrame": 6830,
+      "durationInFrames": 816,
+      "kind": "figure",
+      "camera": "tudo"
+    },
+    {
+      "scene": "14",
+      "label": "Script SQL",
+      "falaId": "f07",
+      "speaker": "john",
+      "anchor": null,
+      "start": 227.65,
+      "end": 246.62,
+      "startFrame": 6830,
+      "endFrame": 7399,
+      "durationInFrames": 569,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "15",
+      "label": "Encerramento",
+      "falaId": "f07",
+      "speaker": "john",
+      "anchor": "Foi assim que",
+      "start": 246.62,
+      "end": 259.941,
+      "startFrame": 7399,
+      "endFrame": 7798,
+      "durationInFrames": 399,
+      "kind": "slide",
+      "camera": null
+    }
+  ],
+  "reveals": [
+    {
+      "id": "s01-john",
+      "scene": "01",
+      "start": 3.09,
+      "startFrame": 93,
+      "source": "\"meu nome é John\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-larissa",
+      "scene": "01",
+      "start": 4.55,
+      "startFrame": 137,
+      "source": "\"Ana Larissa\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-joao",
+      "scene": "01",
+      "start": 5.79,
+      "startFrame": 174,
+      "source": "\"João Pedro\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-vinicius",
+      "scene": "01",
+      "start": 6.49,
+      "startFrame": 195,
+      "source": "\"Vinícius Cardoso\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-brenda",
+      "scene": "01",
+      "start": 7.41,
+      "startFrame": 222,
+      "source": "\"e Brenda\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-titulo",
+      "scene": "01",
+      "start": 12.37,
+      "startFrame": 371,
+      "source": "\"chegou a hora de armazenar\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-sub",
+      "scene": "01",
+      "start": 16.95,
+      "startFrame": 509,
+      "source": "\"do código até o banco\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-fase2",
+      "scene": "02",
+      "start": 21.63,
+      "startFrame": 649,
+      "source": "\"o fluxo do cidadão\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-insight",
+      "scene": "02",
+      "start": 27.63,
+      "startFrame": 829,
+      "source": "\"Ao desenhar o banco\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-java",
+      "scene": "02",
+      "start": 39.59,
+      "startFrame": 1188,
+      "source": "\"9 classes em Java\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-testes",
+      "scene": "02",
+      "start": 41.25,
+      "startFrame": 1238,
+      "source": "\"5 testes automatizados\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-uml",
+      "scene": "02",
+      "start": 43.77,
+      "startFrame": 1313,
+      "source": "\"diagramas e telas\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-telas",
+      "scene": "02",
+      "start": 44.27,
+      "startFrame": 1328,
+      "source": "+0.5s",
+      "clamped": false
+    },
+    {
+      "id": "s02-banco",
+      "scene": "02",
+      "start": 45.91,
+      "startFrame": 1377,
+      "source": "\"e o banco\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-enc",
+      "scene": "03",
+      "start": 51.33,
+      "startFrame": 1540,
+      "source": "\"o encaminhamento define\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-r1",
+      "scene": "03",
+      "start": 54.95,
+      "startFrame": 1649,
+      "source": "\"o cidadão só vê\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-vaga1",
+      "scene": "03",
+      "start": 56.57,
+      "startFrame": 1697,
+      "source": "\"só agenda vagas\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-vaga2",
+      "scene": "03",
+      "start": 56.87,
+      "startFrame": 1706,
+      "source": "+0.3s",
+      "clamped": false
+    },
+    {
+      "id": "s03-vaga3",
+      "scene": "03",
+      "start": 57.37,
+      "startFrame": 1721,
+      "source": "+0.5s",
+      "clamped": false
+    },
+    {
+      "id": "s03-r2",
+      "scene": "03",
+      "start": 58.83,
+      "startFrame": 1765,
+      "source": "\"Reagendar cancela\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-r3",
+      "scene": "03",
+      "start": 64,
+      "startFrame": 1920,
+      "source": "\"Cancelar ou reagendar\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-r4",
+      "scene": "03",
+      "start": 69.51,
+      "startFrame": 2085,
+      "source": "\"no máximo 2 reagendamentos\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-testes",
+      "scene": "04",
+      "start": 73.8,
+      "startFrame": 2214,
+      "source": "\"Os 5 testes passam\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-anterior",
+      "scene": "04",
+      "start": 78.53,
+      "startFrame": 2356,
+      "source": "\"o anterior cancelado\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-novo",
+      "scene": "04",
+      "start": 80.79,
+      "startFrame": 2424,
+      "source": "\"o novo apontando\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-erro",
+      "scene": "04",
+      "start": 82.47,
+      "startFrame": 2474,
+      "source": "\"e o erro\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-memoria",
+      "scene": "04",
+      "start": 86.05,
+      "startFrame": 2582,
+      "source": "\"O domínio ainda roda\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-classes",
+      "scene": "05",
+      "start": 94.25,
+      "startFrame": 2828,
+      "source": "\"classes e sequência\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-seq-agendar",
+      "scene": "05",
+      "start": 95.12,
+      "startFrame": 2854,
+      "source": "\"sequência de agendar\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-seq-reagendar",
+      "scene": "05",
+      "start": 99.05,
+      "startFrame": 2972,
+      "source": "\"o de sequência do reagendamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-atividades",
+      "scene": "05",
+      "start": 100.77,
+      "startFrame": 3023,
+      "source": "\"o de atividades\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-atualizadas",
+      "scene": "06",
+      "start": 104.83,
+      "startFrame": 3145,
+      "source": "\"três telas foram atualizadas\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-novas",
+      "scene": "06",
+      "start": 106.73,
+      "startFrame": 3202,
+      "source": "\"e três são novas\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-ferramenta",
+      "scene": "07",
+      "start": 113.154,
+      "startFrame": 3395,
+      "source": "\"Oracle SQL Developer\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-banco",
+      "scene": "07",
+      "start": 113.654,
+      "startFrame": 3410,
+      "source": "+0.5s",
+      "clamped": false
+    },
+    {
+      "id": "s07-barker",
+      "scene": "07",
+      "start": 114.87,
+      "startFrame": 3446,
+      "source": "\"com notação Barker\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-entidades",
+      "scene": "08",
+      "start": 116.53,
+      "startFrame": 3496,
+      "source": "\"11 entidades\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-m-entidades",
+      "scene": "08",
+      "start": 116.53,
+      "startFrame": 3496,
+      "source": "\"11 entidades\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-relacoes",
+      "scene": "08",
+      "start": 117.91,
+      "startFrame": 3537,
+      "source": "\"15 relacionamentos\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-m-relacoes",
+      "scene": "08",
+      "start": 117.91,
+      "startFrame": 3537,
+      "source": "\"15 relacionamentos\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-herancas",
+      "scene": "08",
+      "start": 118.99,
+      "startFrame": 3570,
+      "source": "\"2 heranças\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-m-herancas",
+      "scene": "08",
+      "start": 118.99,
+      "startFrame": 3570,
+      "source": "\"2 heranças\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-especializacao",
+      "scene": "09",
+      "start": 120.87,
+      "startFrame": 3626,
+      "source": "\"uma especialização\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-m-pessoa",
+      "scene": "09",
+      "start": 122.39,
+      "startFrame": 3672,
+      "source": "\"Pessoa dividida\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-agregacao",
+      "scene": "09",
+      "start": 125.51,
+      "startFrame": 3765,
+      "source": "\"uma agregação\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-m-agendamento",
+      "scene": "09",
+      "start": 126.31,
+      "startFrame": 3789,
+      "source": "\"na entidade Agendamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-reagendado",
+      "scene": "09",
+      "start": 128.39,
+      "startFrame": 3852,
+      "source": "\"um autorrelacionamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-m-reagendado",
+      "scene": "09",
+      "start": 129.59,
+      "startFrame": 3888,
+      "source": "\"liga o reagendamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-multivalorado",
+      "scene": "09",
+      "start": 131.33,
+      "startFrame": 3940,
+      "source": "\"O contato do cidadão\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-m-contato",
+      "scene": "09",
+      "start": 133.35,
+      "startFrame": 4001,
+      "source": "\"é multivalorado\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-composto",
+      "scene": "09",
+      "start": 136.35,
+      "startFrame": 4091,
+      "source": "\"o endereço da unidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-m-unidade",
+      "scene": "09",
+      "start": 137.31,
+      "startFrame": 4119,
+      "source": "\"foi decomposto\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-fora",
+      "scene": "09",
+      "start": 138.975,
+      "startFrame": 4169,
+      "source": "\"CID, laudo e prontuário\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-ins",
+      "scene": "10",
+      "start": 148.03,
+      "startFrame": 4441,
+      "source": "\"Na inserção\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-o-ins",
+      "scene": "10",
+      "start": 149.41,
+      "startFrame": 4482,
+      "source": "\"cadastrar um cidadão sem encaminhamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-exc",
+      "scene": "10",
+      "start": 153.97,
+      "startFrame": 4619,
+      "source": "\"Na exclusão\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-o-exc",
+      "scene": "10",
+      "start": 155.19,
+      "startFrame": 4656,
+      "source": "\"apagar o único pedido\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-alt",
+      "scene": "10",
+      "start": 159.59,
+      "startFrame": 4788,
+      "source": "\"E na alteração\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-o-alt",
+      "scene": "10",
+      "start": 161.69,
+      "startFrame": 4851,
+      "source": "\"troca de celular\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-o-alt2",
+      "scene": "10",
+      "start": 164.67,
+      "startFrame": 4940,
+      "source": "\"esquecer um\"",
+      "clamped": false
+    },
+    {
+      "id": "s11-1fn",
+      "scene": "11",
+      "start": 169.35,
+      "startFrame": 5081,
+      "source": "\"na primeira\"",
+      "clamped": false
+    },
+    {
+      "id": "s11-2fn",
+      "scene": "11",
+      "start": 174.43,
+      "startFrame": 5233,
+      "source": "\"Na segunda\"",
+      "clamped": false
+    },
+    {
+      "id": "s11-3fn",
+      "scene": "11",
+      "start": 178.87,
+      "startFrame": 5366,
+      "source": "\"Na terceira\"",
+      "clamped": false
+    },
+    {
+      "id": "s12-cadeia",
+      "scene": "12",
+      "start": 183.89,
+      "startFrame": 5517,
+      "source": "\"logradouro, bairro\"",
+      "clamped": false
+    },
+    {
+      "id": "s12-unidade",
+      "scene": "12",
+      "start": 187.71,
+      "startFrame": 5631,
+      "source": "\"então criamos a tabela CEP\"",
+      "clamped": false
+    },
+    {
+      "id": "s12-cep",
+      "scene": "12",
+      "start": 188.06,
+      "startFrame": 5642,
+      "source": "+0.35s",
+      "clamped": false
+    },
+    {
+      "id": "s12-bcnf",
+      "scene": "12",
+      "start": 190.67,
+      "startFrame": 5720,
+      "source": "\"chega à BCNF\"",
+      "clamped": false
+    },
+    {
+      "id": "s12-mantido",
+      "scene": "12",
+      "start": 192.81,
+      "startFrame": 5784,
+      "source": "\"Algumas redundâncias\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-tipos",
+      "scene": "13",
+      "start": 205.01,
+      "startFrame": 6150,
+      "source": "\"com NUMBER\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-fk",
+      "scene": "13",
+      "start": 208.99,
+      "startFrame": 6270,
+      "source": "\"Cada relacionamento vira\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-pessoa",
+      "scene": "13",
+      "start": 212.85,
+      "startFrame": 6386,
+      "source": "\"a especialização de Pessoa\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-m-usuario",
+      "scene": "13",
+      "start": 214.29,
+      "startFrame": 6429,
+      "source": "\"vira três tabelas\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-m-pessoa",
+      "scene": "13",
+      "start": 214.49,
+      "startFrame": 6435,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s13-m-cidadao",
+      "scene": "13",
+      "start": 214.69,
+      "startFrame": 6441,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s13-cep",
+      "scene": "13",
+      "start": 217.33,
+      "startFrame": 6520,
+      "source": "\"A tabela nova é a CEP\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-m-cep",
+      "scene": "13",
+      "start": 218.13,
+      "startFrame": 6544,
+      "source": "\"é a CEP\"",
+      "clamped": false
+    },
+    {
+      "id": "s13-contagem",
+      "scene": "13",
+      "start": 220.81,
+      "startFrame": 6624,
+      "source": "\"o que levou o modelo\"",
+      "clamped": false
+    },
+    {
+      "id": "s14-stats",
+      "scene": "14",
+      "start": 228.19,
+      "startFrame": 6846,
+      "source": "\"o script SQL cria\"",
+      "clamped": false
+    },
+    {
+      "id": "s14-hl-fk",
+      "scene": "14",
+      "start": 233.23,
+      "startFrame": 6997,
+      "source": "\"uma chave estrangeira composta\"",
+      "clamped": false
+    },
+    {
+      "id": "s14-cm-fk",
+      "scene": "14",
+      "start": 236.07,
+      "startFrame": 7082,
+      "source": "\"só aceita o agendamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s14-hl-idx",
+      "scene": "14",
+      "start": 242.35,
+      "startFrame": 7271,
+      "source": "\"um índice único\"",
+      "clamped": false
+    },
+    {
+      "id": "s14-cm-idx",
+      "scene": "14",
+      "start": 243.13,
+      "startFrame": 7294,
+      "source": "\"impede que a mesma vaga\"",
+      "clamped": false
+    },
+    {
+      "id": "s15-de",
+      "scene": "15",
+      "start": 248.11,
+      "startFrame": 7443,
+      "source": "\"um domínio em memória\"",
+      "clamped": false
+    },
+    {
+      "id": "s15-para",
+      "scene": "15",
+      "start": 249.11,
+      "startFrame": 7473,
+      "source": "\"para um banco desenhado\"",
+      "clamped": false
+    },
+    {
+      "id": "s15-obrigado",
+      "scene": "15",
+      "start": 254.89,
+      "startFrame": 7647,
+      "source": "\"muito obrigado\"",
+      "clamped": false
+    },
+    {
+      "id": "s15-repo",
+      "scene": "15",
+      "start": 255.49,
+      "startFrame": 7665,
+      "source": "+0.6s",
+      "clamped": false
+    },
+    {
+      "id": "s15-equipe",
+      "scene": "15",
+      "start": 255.89,
+      "startFrame": 7677,
+      "source": "+0.4s",
+      "clamped": false
+    }
+  ],
+  "camera": [
+    {
+      "scene": "06",
+      "focus": "novas",
+      "start": 106.88,
+      "startFrame": 3206,
+      "durationInFrames": 36,
+      "anchor": "e três são novas"
+    },
+    {
+      "scene": "07",
+      "focus": "diagrama",
+      "start": 115.02,
+      "startFrame": 3451,
+      "durationInFrames": 36,
+      "anchor": "com notação Barker"
+    },
+    {
+      "scene": "09",
+      "focus": "pessoa",
+      "start": 121.02,
+      "startFrame": 3631,
+      "durationInFrames": 36,
+      "anchor": "uma especialização"
+    },
+    {
+      "scene": "09",
+      "focus": "agregacao",
+      "start": 125.66,
+      "startFrame": 3770,
+      "durationInFrames": 36,
+      "anchor": "uma agregação"
+    },
+    {
+      "scene": "09",
+      "focus": "reagendado",
+      "start": 128.54,
+      "startFrame": 3856,
+      "durationInFrames": 36,
+      "anchor": "um autorrelacionamento"
+    },
+    {
+      "scene": "09",
+      "focus": "contato",
+      "start": 131.48,
+      "startFrame": 3944,
+      "durationInFrames": 36,
+      "anchor": "O contato do cidadão"
+    },
+    {
+      "scene": "09",
+      "focus": "unidade",
+      "start": 136.5,
+      "startFrame": 4095,
+      "durationInFrames": 36,
+      "anchor": "o endereço da unidade"
+    },
+    {
+      "scene": "09",
+      "focus": "tudo",
+      "start": 139.125,
+      "startFrame": 4174,
+      "durationInFrames": 48,
+      "anchor": "CID, laudo e prontuário"
+    },
+    {
+      "scene": "13",
+      "focus": "tipos",
+      "start": 205.16,
+      "startFrame": 6155,
+      "durationInFrames": 36,
+      "anchor": "com NUMBER"
+    },
+    {
+      "scene": "13",
+      "focus": "fk",
+      "start": 209.14,
+      "startFrame": 6274,
+      "durationInFrames": 36,
+      "anchor": "Cada relacionamento vira"
+    },
+    {
+      "scene": "13",
+      "focus": "pessoa",
+      "start": 213,
+      "startFrame": 6390,
+      "durationInFrames": 36,
+      "anchor": "a especialização de Pessoa"
+    },
+    {
+      "scene": "13",
+      "focus": "cep",
+      "start": 217.48,
+      "startFrame": 6524,
+      "durationInFrames": 36,
+      "anchor": "A tabela nova é a CEP"
+    },
+    {
+      "scene": "13",
+      "focus": "tudo",
+      "start": 220.96,
+      "startFrame": 6629,
+      "durationInFrames": 48,
+      "anchor": "o que levou o modelo"
+    }
+  ]
+}

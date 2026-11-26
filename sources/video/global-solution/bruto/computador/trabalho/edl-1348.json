@@ -1,0 +1,56 @@
+{
+ "B27-teclado-foco": {
+  "duracao": 8.33,
+  "edl": [
+   {
+    "no_clipe": 0.0,
+    "duracao": 8.33,
+    "original": [
+     14.5,
+     21.83
+    ],
+    "velocidade": 1,
+    "segura": 1.0,
+    "mostra": "Inicio (Texto maior ligado); Tab a Tab: Mapa, Painel, Meus bairros, Reportar, Menino Deus, Centro Historico, faixa do efeito cascata, Abrir mapa, bairros do mapa, alertas da lista, Avisos oficiais (com o contorno verde); segura"
+   }
+  ]
+ },
+ "B30-texto-maior-computador": {
+  "duracao": 5.73,
+  "edl": [
+   {
+    "no_clipe": 0.0,
+    "duracao": 1.53,
+    "original": [
+     8.5,
+     10.03
+    ],
+    "velocidade": 1,
+    "segura": 0,
+    "mostra": "cartao Acessibilidade, Texto maior desligado; o mouse vai ate a chave"
+   },
+   {
+    "no_clipe": 1.53,
+    "duracao": 1.87,
+    "original": [
+     11.27,
+     11.93
+    ],
+    "velocidade": 1,
+    "segura": 1.2,
+    "mostra": "clique: chave ligada, o proprio cartao com letra maior (a pagina reflui; 1,2 s cortados); segura"
+   },
+   {
+    "no_clipe": 3.4,
+    "duracao": 2.33,
+    "original": [
+     35.4,
+     36.93
+    ],
+    "velocidade": 1,
+    "segura": 0.8,
+    "mostra": "mais tarde, ainda ligado: o mouse volta a chave e desliga; o cartao volta ao tamanho normal; segura"
+   }
+  ]
+ }
+}

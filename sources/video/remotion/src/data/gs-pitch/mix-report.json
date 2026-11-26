@@ -1,0 +1,94 @@
+{
+ "targetLufs": -14.0,
+ "ceilingDb": -1.0,
+ "limiter": {
+  "maxReductionDb": -0.0,
+  "timeOver1dB": 0.0
+ },
+ "falas": [
+  {
+   "id": "f01",
+   "speaker": "john",
+   "voiceLufs": -13.935681462568587,
+   "musicLufs": -36.293805818356766,
+   "gapDb": 22.358124355788178
+  },
+  {
+   "id": "f02",
+   "speaker": "joao",
+   "voiceLufs": -14.31424985111473,
+   "musicLufs": -36.77990019046887,
+   "gapDb": 22.46565033935414
+  },
+  {
+   "id": "f03",
+   "speaker": "joao",
+   "voiceLufs": -14.1272893826028,
+   "musicLufs": -34.8580976122062,
+   "gapDb": 20.7308082296034
+  },
+  {
+   "id": "f04",
+   "speaker": "larissa",
+   "voiceLufs": -13.705912177527077,
+   "musicLufs": -33.89608738250908,
+   "gapDb": 20.190175204982005
+  },
+  {
+   "id": "f05",
+   "speaker": "joao",
+   "voiceLufs": -13.648623091438663,
+   "musicLufs": -33.34881848614881,
+   "gapDb": 19.700195394710143
+  },
+  {
+   "id": "f05m",
+   "speaker": "joao",
+   "voiceLufs": -13.859465514740752,
+   "musicLufs": -33.40638627424411,
+   "gapDb": 19.54692075950336
+  },
+  {
+   "id": "f06",
+   "speaker": "larissa",
+   "voiceLufs": -14.156533121129863,
+   "musicLufs": -33.47646720733787,
+   "gapDb": 19.319934086208008
+  },
+  {
+   "id": "f07",
+   "speaker": "vinicius",
+   "voiceLufs": -13.797089236876918,
+   "musicLufs": -31.926517517171416,
+   "gapDb": 18.129428280294498
+  },
+  {
+   "id": "f08",
+   "speaker": "larissa",
+   "voiceLufs": -13.971788652453432,
+   "musicLufs": -32.961703592123285,
+   "gapDb": 18.989914939669852
+  },
+  {
+   "id": "f09",
+   "speaker": "brenda",
+   "voiceLufs": -13.879515604210141,
+   "musicLufs": -32.43629555999062,
+   "gapDb": 18.556779955780478
+  },
+  {
+   "id": "f10",
+   "speaker": "larissa",
+   "voiceLufs": -14.283832259032634,
+   "musicLufs": -34.77709740160634,
+   "gapDb": 20.493265142573705
+  },
+  {
+   "id": "f11",
+   "speaker": "john",
+   "voiceLufs": -14.029418465558626,
+   "musicLufs": -33.07853871161145,
+   "gapDb": 19.049120246052823
+  }
+ ]
+}

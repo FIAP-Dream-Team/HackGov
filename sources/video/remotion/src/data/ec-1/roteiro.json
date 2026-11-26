@@ -1,0 +1,62 @@
+[
+  {
+    "id": "f01",
+    "speaker": "john",
+    "section": "1. Grupo",
+    "text": "Olá! Eu sou o John, e comigo estão a Ana Larissa, João Pedro, Vinícius Cardoso e Brenda. Hoje vamos mostrar como a inteligência artificial e a ciência de dados entram no Minha Vez."
+  },
+  {
+    "id": "f02",
+    "speaker": "john",
+    "section": "2. O problema público",
+    "text": "Primeiro, o problema. Quando a UBS encaminha um paciente para o especialista, o pedido vira papel, ligação ou sistema paralelo. Daí em diante, ninguém rastreia: o cidadão não sabe em que pé está, e o gestor não enxerga a fila. Falta um fluxo com dados padronizados, e uma auditoria do TCU já apontou isso como gargalo de visibilidade."
+  },
+  {
+    "id": "f03",
+    "speaker": "john",
+    "section": "3. Por que resolver",
+    "text": "E resolver isso importa, porque a espera custa saúde. Segundo o Instituto Locomotiva, 94% dos brasileiros da classe C acham que a espera no SUS coloca vidas em risco, e cerca de 1 em cada 3 já desistiu de uma consulta demorada. Quem mais perde são idosos e trabalhadores informais."
+  },
+  {
+    "id": "f04",
+    "speaker": "john",
+    "section": "4. O Minha Vez",
+    "text": "A nossa resposta é o Minha Vez, um sistema de gestão pública que acompanha o encaminhamento da UBS até a consulta especializada. Pelo app ou pelo totem, o cidadão vê a etapa do pedido e agenda o horário. O painel da sala de espera chama pela senha. E a equipe e o gestor veem a fila no painel web. Uma regra guia tudo: dado clínico nunca aparece nas telas públicas."
+  },
+  {
+    "id": "f05",
+    "speaker": "john",
+    "section": "5. O que a IA e os dados resolvem",
+    "text": "Então, onde entram a IA e os dados? A IA ataca a origem da fila: a consulta, onde o encaminhamento nasce. Com dezenas de pacientes em poucas horas, detalhes importantes podem passar despercebidos. Essa é uma hipótese nossa, que vamos confirmar na UBS. E o encaminhamento incompleto volta, atrasa ou fica com a prioridade errada. Já a ciência de dados ataca o fim: o painel do gestor, que mostra a fila de hoje, mas não antecipa a de amanhã."
+  },
+  {
+    "id": "f06",
+    "speaker": "john",
+    "section": "6. A ferramenta",
+    "text": "A ferramenta é um assistente de documentação clínica. Não é um chatbot: quem usa é o médico. São seis etapas. Com o consentimento do paciente, a consulta é gravada. O reconhecimento de fala transcreve a conversa, e o áudio é apagado. Um modelo de linguagem monta o relatório e, depois, o rascunho do encaminhamento. Aí vem a única decisão do fluxo, e ela é humana: o médico confirma. Só então o encaminhamento nasce, em Recebido e Triado, e segue o fluxo do Minha Vez."
+  },
+  {
+    "id": "f07",
+    "speaker": "john",
+    "section": "7. Como entra no Minha Vez",
+    "text": "Na tela do médico, cada item do relatório aponta para o trecho de fala que o gerou. O rascunho usa o domínio que já tem, a especialidade e o selo de urgência, e descreve a justificativa. Ao confirmar, o histórico de status registra quem confirmou e quando. Escolhemos esse ponto porque é onde o erro custa mais caro: um encaminhamento mal feito gera semanas de espera inútil. E sem criar um sistema paralelo."
+  },
+  {
+    "id": "f08",
+    "speaker": "john",
+    "section": "8. Ciência de dados",
+    "text": "A ciência de dados trabalha sobre esses encaminhamentos, já estruturados e anonimizados. O painel do gestor passa a mostrar a demanda por especialidade, a previsão da fila e onde as faltas se concentram. Os números aqui são ilustrativos; a ideia é ver a especialidade que cresce antes da espera explodir, e planejar vagas com dados."
+  },
+  {
+    "id": "f09",
+    "speaker": "john",
+    "section": "9. Benefícios e desafios",
+    "text": "Os benefícios disso é que o médico olha para o paciente ao invés de digitar; o cidadão recebe encaminhamento completo, com prioridade justa; e a equipe tem menos retrabalho. E o gestor ganha dados padronizados. Os grandes desafios disso é que os dados de saúde é sensível na LGPD, então há consentimento, áudio apagado e relatório só no canal institucional. A IA pode errar ou inventar algum sintoma; por isso, cada item aponta para a fala. E ruídos, sotaques ou estrutura das UBS pedem um piloto antes de ampliar. O maior risco é o médico assinar sem ler."
+  },
+  {
+    "id": "f10",
+    "speaker": "john",
+    "section": "10. A IA não decide",
+    "text": "Por isso, a IA não entra como diagnóstico, como receita e encaminhamento. Tudo entra como rascunho. Nada vira encaminhamento sem o médico confirmar. E ele pode editar ou recusar tudo. E, se a IA falhar, a consulta segue igual. A IA organiza as informações. E quem decide é o médico. Obrigado!"
+  }
+]

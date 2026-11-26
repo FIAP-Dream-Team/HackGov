@@ -1,0 +1,59 @@
+{
+ "targetLufs": -14.0,
+ "ceilingDb": -1.0,
+ "limiter": {
+  "maxReductionDb": -0.0,
+  "timeOver1dB": 0.0
+ },
+ "falas": [
+  {
+   "id": "f01",
+   "speaker": "john",
+   "voiceLufs": -14.125463779009293,
+   "musicLufs": -38.732749696059265,
+   "gapDb": 24.60728591704997
+  },
+  {
+   "id": "f02",
+   "speaker": "joao",
+   "voiceLufs": -13.94884126912952,
+   "musicLufs": -36.0148741328833,
+   "gapDb": 22.06603286375378
+  },
+  {
+   "id": "f03",
+   "speaker": "john",
+   "voiceLufs": -13.922299078718076,
+   "musicLufs": -34.99527699083773,
+   "gapDb": 21.072977912119654
+  },
+  {
+   "id": "f04",
+   "speaker": "larissa",
+   "voiceLufs": -14.658439279861916,
+   "musicLufs": -36.46740691976402,
+   "gapDb": 21.8089676399021
+  },
+  {
+   "id": "f05",
+   "speaker": "vinicius",
+   "voiceLufs": -13.72500361058715,
+   "musicLufs": -35.37166420704901,
+   "gapDb": 21.646660596461857
+  },
+  {
+   "id": "f06",
+   "speaker": "vinicius",
+   "voiceLufs": -13.760461007267457,
+   "musicLufs": -34.78676035477434,
+   "gapDb": 21.02629934750688
+  },
+  {
+   "id": "f07",
+   "speaker": "john",
+   "voiceLufs": -14.11046074183576,
+   "musicLufs": -36.03581401653765,
+   "gapDb": 21.92535327470189
+  }
+ ]
+}

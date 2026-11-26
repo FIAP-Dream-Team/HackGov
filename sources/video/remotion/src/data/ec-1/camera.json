@@ -1,0 +1,9 @@
+{
+  "_comment": "Movimentos de câmera na tela do médico (cena 07), que abre inteira (data-camera='tudo' no deck). 'focus' é uma região data-focus da figura ('tudo' = a tela inteira). 'anchor' é o trecho da fala onde a câmera começa a ir; 'moveSec' é quanto a ida leva (padrão 1.2). Rode npm run ec1:align depois de editar.",
+  "moves": [
+    { "scene": "07", "focus": "fala",      "anchor": "cada item do relatório" },
+    { "scene": "07", "focus": "rascunho",  "anchor": "O rascunho usa" },
+    { "scene": "07", "focus": "confirmar", "anchor": "Ao confirmar" },
+    { "scene": "07", "focus": "tudo",      "anchor": "Escolhemos esse ponto", "moveSec": 1.6 }
+  ]
+}

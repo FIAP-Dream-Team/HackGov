@@ -1,0 +1,1168 @@
+{
+  "fps": 30,
+  "draft": false,
+  "durationSec": 163.604,
+  "narrationSec": 160.104,
+  "durationInFrames": 4909,
+  "alignmentRate": 0.8856,
+  "source": "audio+roteiro",
+  "audio": "gs-pitch/mix.wav",
+  "falas": [
+    {
+      "id": "f01",
+      "speaker": "john",
+      "section": "1. A torneira seca",
+      "text": "Janeiro de 2024, Porto Alegre. Um temporal comum derruba a luz. Horas depois, sem nenhum aviso, a torneira seca. E fica seca: dois dias e meio depois, cento e cinquenta e sete mil pessoas seguem sem água.",
+      "speechStart": 0,
+      "speechEnd": 14.68,
+      "end": 15.86,
+      "start": 0,
+      "startFrame": 0,
+      "endFrame": 476
+    },
+    {
+      "id": "f02",
+      "speaker": "joao",
+      "section": "2. Por que acontece",
+      "text": "Isso acontece porque as estações que bombeiam água dependem de energia: sem luz, a água para. Parecem dois problemas, mas um puxa o outro. E um de nós, que é do Sul, já viveu algo assim.",
+      "speechStart": 15.71,
+      "speechEnd": 29.67,
+      "start": 15.86,
+      "end": 30.75,
+      "startFrame": 476,
+      "endFrame": 923
+    },
+    {
+      "id": "f03",
+      "speaker": "joao",
+      "section": "3. Quem sofre",
+      "text": "Quem mora no bairro não sabe se o problema é só na sua casa, nem se ainda dá tempo de guardar água. E para quem cuida de um acamado, de um idoso ou de quem usa aparelho de saúde, essas horas pesam mais.",
+      "speechStart": 30.6,
+      "speechEnd": 44.07,
+      "start": 30.75,
+      "end": 45.25,
+      "startFrame": 923,
+      "endFrame": 1358
+    },
+    {
+      "id": "f04",
+      "speaker": "brenda",
+      "section": "4. A prova nos dados",
+      "text": "E não é caso isolado. Na cheia de 2024, cento e sessenta mil moradores ficaram em área afetada. Dos quarenta e seis bairros atingidos, só cinco concentram mais da metade dessas pessoas. O risco tem endereço.",
+      "speechStart": 45.1,
+      "speechEnd": 58.58,
+      "start": 45.25,
+      "end": 59.771,
+      "startFrame": 1358,
+      "endFrame": 1793
+    },
+    {
+      "id": "f05",
+      "speaker": "john",
+      "section": "5. Alertaí",
+      "text": "Por isso criamos o Alertaí, um app que responde a uma pergunta: o que está acontecendo no meu bairro agora, e o que eu faço?",
+      "speechStart": 59.71,
+      "speechEnd": 67.84,
+      "start": 59.771,
+      "end": 69.12,
+      "startFrame": 1793,
+      "endFrame": 2074
+    },
+    {
+      "id": "f06",
+      "speaker": "vinicius",
+      "section": "6. Como funciona",
+      "text": "Viu um problema? Relata em dois toques. Se o vizinho já relatou, o seu vira confirmação. Quando três pessoas avisam que voltou, o caso fecha. A comunidade é a principal fonte, sem sensor caro.",
+      "speechStart": 68.97,
+      "speechEnd": 84.03,
+      "start": 69.12,
+      "end": 85.11,
+      "startFrame": 2074,
+      "endFrame": 2553
+    },
+    {
+      "id": "f07",
+      "speaker": "vinicius",
+      "section": "7. O efeito cascata",
+      "text": "Esse é o nosso diferencial: o efeito cascata. Quando a falta de luz é confirmada no bairro de uma estação de bombeamento, o Alertaí avisa quem acompanha os bairros que ela abastece: possível falta de água. Com o porquê, o que fazer e para quem ligar. Antes da torneira secar.",
+      "speechStart": 84.96,
+      "speechEnd": 103.76,
+      "start": 85.11,
+      "end": 104.933,
+      "startFrame": 2553,
+      "endFrame": 3148
+    },
+    {
+      "id": "f08",
+      "speaker": "larissa",
+      "section": "8. O protótipo",
+      "text": "Desenhamos sete telas do rascunho à alta fidelidade, tanto no celular quanto no computador, seguindo as diretrizes internacionais de acessibilidade. A informação nunca depende só da cor: sempre vem com o ícone e o texto, o contraste adequado para a leitura, e a letra pode dobrar de tamanho sem perder o conteúdo.",
+      "speechStart": 104.89,
+      "speechEnd": 120.89,
+      "start": 104.933,
+      "end": 121.903,
+      "startFrame": 3148,
+      "endFrame": 3657
+    },
+    {
+      "id": "f09",
+      "speaker": "brenda",
+      "section": "9. Como medir",
+      "text": "Como saber se funciona? O indicador central é a antecedência: quantas horas o aviso chega antes da água faltar. A meta: pelo menos duas horas. Também medimos se o alerta acerta e se as pessoas agem.",
+      "speechStart": 121.753,
+      "speechEnd": 135.013,
+      "start": 121.903,
+      "end": 136.193,
+      "startFrame": 3657,
+      "endFrame": 4086
+    },
+    {
+      "id": "f10",
+      "speaker": "larissa",
+      "section": "10. ODS e próximo passo",
+      "text": "Com isso, já atendemos quatro ODS. O treze e o onze pedem alerta precoce e cidades mais preparadas para desastres. O três protege a saúde de quem é mais vulnerável, e o seis, a comunidade participando da gestão da água. Começando por cinco bairros. O próximo é o Sarandi, o mais atingido em 2024.",
+      "speechStart": 136.043,
+      "speechEnd": 155.573,
+      "start": 136.193,
+      "end": 156.517,
+      "startFrame": 4086,
+      "endFrame": 4696
+    },
+    {
+      "id": "f11",
+      "speaker": "john",
+      "section": "11. Assinatura",
+      "text": "Alertaí. Da próxima vez, o aviso chega antes.",
+      "speechStart": 156.534,
+      "speechEnd": 159.924,
+      "start": 156.517,
+      "end": 160.104,
+      "startFrame": 4696,
+      "endFrame": 4803
+    }
+  ],
+  "turns": [
+    {
+      "speaker": "john",
+      "start": 0,
+      "end": 15.86,
+      "startFrame": 0,
+      "endFrame": 476
+    },
+    {
+      "speaker": "joao",
+      "start": 15.71,
+      "end": 45.25,
+      "startFrame": 471,
+      "endFrame": 1358
+    },
+    {
+      "speaker": "brenda",
+      "start": 45.1,
+      "end": 59.771,
+      "startFrame": 1353,
+      "endFrame": 1793
+    },
+    {
+      "speaker": "john",
+      "start": 59.71,
+      "end": 69.12,
+      "startFrame": 1791,
+      "endFrame": 2074
+    },
+    {
+      "speaker": "vinicius",
+      "start": 68.97,
+      "end": 104.933,
+      "startFrame": 2069,
+      "endFrame": 3148
+    },
+    {
+      "speaker": "larissa",
+      "start": 104.89,
+      "end": 121.903,
+      "startFrame": 3147,
+      "endFrame": 3657
+    },
+    {
+      "speaker": "brenda",
+      "start": 121.753,
+      "end": 136.193,
+      "startFrame": 3653,
+      "endFrame": 4086
+    },
+    {
+      "speaker": "larissa",
+      "start": 136.043,
+      "end": 156.517,
+      "startFrame": 4081,
+      "endFrame": 4696
+    },
+    {
+      "speaker": "john",
+      "start": 156.534,
+      "end": 160.104,
+      "startFrame": 4696,
+      "endFrame": 4803
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "01",
+      "label": "A torneira seca",
+      "falaId": "f01",
+      "speaker": "john",
+      "anchor": null,
+      "start": 0,
+      "end": 15.86,
+      "startFrame": 0,
+      "endFrame": 476,
+      "durationInFrames": 476,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "02",
+      "label": "Por que acontece",
+      "falaId": "f02",
+      "speaker": "joao",
+      "anchor": null,
+      "start": 15.86,
+      "end": 30.75,
+      "startFrame": 476,
+      "endFrame": 923,
+      "durationInFrames": 447,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "03",
+      "label": "Quem sofre",
+      "falaId": "f03",
+      "speaker": "joao",
+      "anchor": null,
+      "start": 30.75,
+      "end": 45.25,
+      "startFrame": 923,
+      "endFrame": 1358,
+      "durationInFrames": 435,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "04",
+      "label": "A prova nos dados",
+      "falaId": "f04",
+      "speaker": "brenda",
+      "anchor": null,
+      "start": 45.25,
+      "end": 59.771,
+      "startFrame": 1358,
+      "endFrame": 1793,
+      "durationInFrames": 435,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "05",
+      "label": "Alertaí",
+      "falaId": "f05",
+      "speaker": "john",
+      "anchor": null,
+      "start": 59.771,
+      "end": 69.12,
+      "startFrame": 1793,
+      "endFrame": 2074,
+      "durationInFrames": 281,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "06",
+      "label": "Como funciona",
+      "falaId": "f06",
+      "speaker": "vinicius",
+      "anchor": null,
+      "start": 69.12,
+      "end": 85.11,
+      "startFrame": 2074,
+      "endFrame": 2553,
+      "durationInFrames": 479,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "07",
+      "label": "O efeito cascata",
+      "falaId": "f07",
+      "speaker": "vinicius",
+      "anchor": null,
+      "start": 85.11,
+      "end": 104.933,
+      "startFrame": 2553,
+      "endFrame": 3148,
+      "durationInFrames": 595,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "08",
+      "label": "O protótipo",
+      "falaId": "f08",
+      "speaker": "larissa",
+      "anchor": null,
+      "start": 104.933,
+      "end": 121.903,
+      "startFrame": 3148,
+      "endFrame": 3657,
+      "durationInFrames": 509,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "09",
+      "label": "Como medir",
+      "falaId": "f09",
+      "speaker": "brenda",
+      "anchor": null,
+      "start": 121.903,
+      "end": 136.193,
+      "startFrame": 3657,
+      "endFrame": 4086,
+      "durationInFrames": 429,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "10",
+      "label": "ODS e próximo passo",
+      "falaId": "f10",
+      "speaker": "larissa",
+      "anchor": null,
+      "start": 136.193,
+      "end": 156.517,
+      "startFrame": 4086,
+      "endFrame": 4696,
+      "durationInFrames": 610,
+      "kind": "slide",
+      "camera": null
+    },
+    {
+      "scene": "11",
+      "label": "Assinatura",
+      "falaId": "f11",
+      "speaker": "john",
+      "anchor": null,
+      "start": 156.517,
+      "end": 163.604,
+      "startFrame": 4696,
+      "endFrame": 4908,
+      "durationInFrames": 212,
+      "kind": "slide",
+      "camera": null
+    }
+  ],
+  "reveals": [
+    {
+      "id": "s01-quando",
+      "scene": "01",
+      "start": 0,
+      "startFrame": 0,
+      "source": "\"Janeiro de 2024\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-trilho",
+      "scene": "01",
+      "start": 0.5,
+      "startFrame": 15,
+      "source": "+0.5s",
+      "clamped": false
+    },
+    {
+      "id": "s01-v1",
+      "scene": "01",
+      "start": 0.65,
+      "startFrame": 20,
+      "source": "+0.15s",
+      "clamped": false
+    },
+    {
+      "id": "s01-v2",
+      "scene": "01",
+      "start": 0.9,
+      "startFrame": 27,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s01-v3",
+      "scene": "01",
+      "start": 1.15,
+      "startFrame": 35,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s01-temporal",
+      "scene": "01",
+      "start": 2.67,
+      "startFrame": 80,
+      "source": "\"temporal comum\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-temporal-t",
+      "scene": "01",
+      "start": 2.87,
+      "startFrame": 86,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s01-f1",
+      "scene": "01",
+      "start": 3.47,
+      "startFrame": 104,
+      "source": "\"derruba\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-luz",
+      "scene": "01",
+      "start": 4.05,
+      "startFrame": 122,
+      "source": "\"a luz\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-luz-t",
+      "scene": "01",
+      "start": 4.25,
+      "startFrame": 128,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s01-f2",
+      "scene": "01",
+      "start": 4.81,
+      "startFrame": 144,
+      "source": "\"Horas depois\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-horas",
+      "scene": "01",
+      "start": 5.11,
+      "startFrame": 153,
+      "source": "+0.3s",
+      "clamped": false
+    },
+    {
+      "id": "s01-agua",
+      "scene": "01",
+      "start": 7.17,
+      "startFrame": 215,
+      "source": "\"a torneira seca\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-agua-t",
+      "scene": "01",
+      "start": 7.37,
+      "startFrame": 221,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s01-60",
+      "scene": "01",
+      "start": 8.91,
+      "startFrame": 267,
+      "source": "\"dois dias e meio\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-157",
+      "scene": "01",
+      "start": 10.553,
+      "startFrame": 317,
+      "source": "\"cento e cinquenta e sete mil\"",
+      "clamped": false
+    },
+    {
+      "id": "s01-bombas",
+      "scene": "01",
+      "start": 12.93,
+      "startFrame": 388,
+      "source": "\"seguem sem água\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-est",
+      "scene": "02",
+      "start": 18.07,
+      "startFrame": 542,
+      "source": "\"estações que bombeiam\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-est-t",
+      "scene": "02",
+      "start": 18.32,
+      "startFrame": 550,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s02-luz",
+      "scene": "02",
+      "start": 19.21,
+      "startFrame": 576,
+      "source": "\"dependem de energia\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-luz-t",
+      "scene": "02",
+      "start": 19.46,
+      "startFrame": 584,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s02-w1",
+      "scene": "02",
+      "start": 19.56,
+      "startFrame": 587,
+      "source": "+0.1s",
+      "clamped": false
+    },
+    {
+      "id": "s02-w2",
+      "scene": "02",
+      "start": 20.89,
+      "startFrame": 627,
+      "source": "\"sem luz\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-agua",
+      "scene": "02",
+      "start": 21.47,
+      "startFrame": 644,
+      "source": "\"a água para\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-agua-t",
+      "scene": "02",
+      "start": 21.72,
+      "startFrame": 652,
+      "source": "+0.25s",
+      "clamped": false
+    },
+    {
+      "id": "s02-frase",
+      "scene": "02",
+      "start": 23.05,
+      "startFrame": 692,
+      "source": "\"Parecem dois problemas\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-mk",
+      "scene": "02",
+      "start": 24.75,
+      "startFrame": 743,
+      "source": "\"um puxa o outro\"",
+      "clamped": false
+    },
+    {
+      "id": "s02-viv",
+      "scene": "02",
+      "start": 26.45,
+      "startFrame": 794,
+      "source": "\"um de nós\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-q1",
+      "scene": "03",
+      "start": 32.91,
+      "startFrame": 987,
+      "source": "\"só na sua casa\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-q2",
+      "scene": "03",
+      "start": 34.89,
+      "startFrame": 1047,
+      "source": "\"ainda dá tempo\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-pesa",
+      "scene": "03",
+      "start": 37.65,
+      "startFrame": 1130,
+      "source": "\"quem cuida\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-acamado",
+      "scene": "03",
+      "start": 38.41,
+      "startFrame": 1152,
+      "source": "\"acamado\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-idoso",
+      "scene": "03",
+      "start": 39.41,
+      "startFrame": 1182,
+      "source": "\"idoso\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-aparelho",
+      "scene": "03",
+      "start": 40.79,
+      "startFrame": 1224,
+      "source": "\"aparelho de saúde\"",
+      "clamped": false
+    },
+    {
+      "id": "s03-hoje",
+      "scene": "03",
+      "start": 43.42,
+      "startFrame": 1303,
+      "source": "\"pesam mais\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-total",
+      "scene": "04",
+      "start": 47.27,
+      "startFrame": 1418,
+      "source": "\"Na cheia de 2024\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-totaln",
+      "scene": "04",
+      "start": 48.565,
+      "startFrame": 1457,
+      "source": "\"cento e sessenta mil\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-bars",
+      "scene": "04",
+      "start": 52.13,
+      "startFrame": 1564,
+      "source": "\"quarenta e seis bairros\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-top5",
+      "scene": "04",
+      "start": 53.67,
+      "startFrame": 1610,
+      "source": "\"só cinco\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-chave",
+      "scene": "04",
+      "start": 54.79,
+      "startFrame": 1644,
+      "source": "\"mais da metade\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-pct",
+      "scene": "04",
+      "start": 54.79,
+      "startFrame": 1644,
+      "source": "\"mais da metade\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-pctn",
+      "scene": "04",
+      "start": 54.79,
+      "startFrame": 1644,
+      "source": "\"mais da metade\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-chave-resto",
+      "scene": "04",
+      "start": 55.75,
+      "startFrame": 1673,
+      "source": "\"dessas pessoas\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-resto",
+      "scene": "04",
+      "start": 55.75,
+      "startFrame": 1673,
+      "source": "\"dessas pessoas\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-first",
+      "scene": "04",
+      "start": 57.09,
+      "startFrame": 1713,
+      "source": "\"O risco tem endereço\"",
+      "clamped": false
+    },
+    {
+      "id": "s04-nomes",
+      "scene": "04",
+      "start": 57.09,
+      "startFrame": 1713,
+      "source": "\"O risco tem endereço\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-logo",
+      "scene": "05",
+      "start": 60.15,
+      "startFrame": 1805,
+      "source": "\"criamos o Alertaí\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-app",
+      "scene": "05",
+      "start": 61.73,
+      "startFrame": 1852,
+      "source": "\"um app\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-pergunta",
+      "scene": "05",
+      "start": 62.93,
+      "startFrame": 1888,
+      "source": "\"uma pergunta\"",
+      "clamped": false
+    },
+    {
+      "id": "s05-sub",
+      "scene": "05",
+      "start": 67.44,
+      "startFrame": 2023,
+      "source": "\"o que eu faço\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-app",
+      "scene": "06",
+      "start": 69.12,
+      "startFrame": 2074,
+      "source": "\"Viu um problema\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-r1",
+      "scene": "06",
+      "start": 71.13,
+      "startFrame": 2134,
+      "source": "\"dois toques\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-r2",
+      "scene": "06",
+      "start": 74.22,
+      "startFrame": 2227,
+      "source": "\"vira confirmação\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-r3",
+      "scene": "06",
+      "start": 76.01,
+      "startFrame": 2280,
+      "source": "\"três pessoas\"",
+      "clamped": false
+    },
+    {
+      "id": "s06-fonte",
+      "scene": "06",
+      "start": 79.59,
+      "startFrame": 2388,
+      "source": "\"A comunidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-eixo",
+      "scene": "07",
+      "start": 88.41,
+      "startFrame": 2652,
+      "source": "\"Quando a falta de luz\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-luz",
+      "scene": "07",
+      "start": 88.69,
+      "startFrame": 2661,
+      "source": "\"falta de luz\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-luz-t",
+      "scene": "07",
+      "start": 88.89,
+      "startFrame": 2667,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s07-conf",
+      "scene": "07",
+      "start": 89.29,
+      "startFrame": 2679,
+      "source": "\"é confirmada\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-conf-t",
+      "scene": "07",
+      "start": 89.49,
+      "startFrame": 2685,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s07-est",
+      "scene": "07",
+      "start": 90.79,
+      "startFrame": 2724,
+      "source": "\"estação de bombeamento\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-est-t",
+      "scene": "07",
+      "start": 90.99,
+      "startFrame": 2730,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s07-aviso",
+      "scene": "07",
+      "start": 92.45,
+      "startFrame": 2774,
+      "source": "\"o Alertaí avisa\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-aviso-t",
+      "scene": "07",
+      "start": 92.65,
+      "startFrame": 2780,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s07-app",
+      "scene": "07",
+      "start": 95.83,
+      "startFrame": 2875,
+      "source": "\"possível falta de água\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-porque",
+      "scene": "07",
+      "start": 98.13,
+      "startFrame": 2944,
+      "source": "\"o porquê\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-fazer",
+      "scene": "07",
+      "start": 99.13,
+      "startFrame": 2974,
+      "source": "\"o que fazer\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-ligar",
+      "scene": "07",
+      "start": 100.35,
+      "startFrame": 3011,
+      "source": "\"para quem ligar\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-espera",
+      "scene": "07",
+      "start": 101.89,
+      "startFrame": 3057,
+      "source": "\"Antes da torneira\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-agua",
+      "scene": "07",
+      "start": 102.63,
+      "startFrame": 3079,
+      "source": "\"torneira secar\"",
+      "clamped": false
+    },
+    {
+      "id": "s07-agua-t",
+      "scene": "07",
+      "start": 102.83,
+      "startFrame": 3085,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s07-gap",
+      "scene": "07",
+      "start": 103.03,
+      "startFrame": 3091,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s07-prep",
+      "scene": "07",
+      "start": 103.33,
+      "startFrame": 3100,
+      "source": "+0.3s",
+      "clamped": false
+    },
+    {
+      "id": "s08-wire",
+      "scene": "08",
+      "start": 104.933,
+      "startFrame": 3148,
+      "source": "\"sete telas\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-hifi-l",
+      "scene": "08",
+      "start": 107.25,
+      "startFrame": 3218,
+      "source": "\"alta fidelidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-hifi",
+      "scene": "08",
+      "start": 107.25,
+      "startFrame": 3218,
+      "source": "\"alta fidelidade\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-pc",
+      "scene": "08",
+      "start": 108.97,
+      "startFrame": 3269,
+      "source": "\"no computador\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-wcag",
+      "scene": "08",
+      "start": 110.6,
+      "startFrame": 3318,
+      "source": "\"diretrizes internacionais\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-cor",
+      "scene": "08",
+      "start": 113.87,
+      "startFrame": 3416,
+      "source": "\"só da cor\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-contraste",
+      "scene": "08",
+      "start": 116.73,
+      "startFrame": 3502,
+      "source": "\"o contraste\"",
+      "clamped": false
+    },
+    {
+      "id": "s08-zoom",
+      "scene": "08",
+      "start": 119.05,
+      "startFrame": 3572,
+      "source": "\"dobrar de tamanho\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-antec",
+      "scene": "09",
+      "start": 125.29,
+      "startFrame": 3759,
+      "source": "\"antecedência\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-aviso",
+      "scene": "09",
+      "start": 127.03,
+      "startFrame": 3811,
+      "source": "\"o aviso chega\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-aviso-t",
+      "scene": "09",
+      "start": 127.23,
+      "startFrame": 3817,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s09-espera",
+      "scene": "09",
+      "start": 127.85,
+      "startFrame": 3836,
+      "source": "\"antes da água\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-agua",
+      "scene": "09",
+      "start": 128.37,
+      "startFrame": 3851,
+      "source": "\"água faltar\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-agua-t",
+      "scene": "09",
+      "start": 128.57,
+      "startFrame": 3857,
+      "source": "+0.2s",
+      "clamped": false
+    },
+    {
+      "id": "s09-chave",
+      "scene": "09",
+      "start": 129.29,
+      "startFrame": 3879,
+      "source": "\"A meta\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-meta",
+      "scene": "09",
+      "start": 130.45,
+      "startFrame": 3913,
+      "source": "\"duas horas\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-metan",
+      "scene": "09",
+      "start": 130.45,
+      "startFrame": 3913,
+      "source": "\"duas horas\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-acerta",
+      "scene": "09",
+      "start": 132.49,
+      "startFrame": 3975,
+      "source": "\"o alerta acerta\"",
+      "clamped": false
+    },
+    {
+      "id": "s09-age",
+      "scene": "09",
+      "start": 133.79,
+      "startFrame": 4014,
+      "source": "\"as pessoas agem\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-ods13",
+      "scene": "10",
+      "start": 138.59,
+      "startFrame": 4158,
+      "source": "\"O treze\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-ods11",
+      "scene": "10",
+      "start": 139.61,
+      "startFrame": 4188,
+      "source": "\"o onze\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-ods3",
+      "scene": "10",
+      "start": 144.01,
+      "startFrame": 4320,
+      "source": "\"O três\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-ods6",
+      "scene": "10",
+      "start": 147.21,
+      "startFrame": 4416,
+      "source": "\"o seis\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-mapa",
+      "scene": "10",
+      "start": 151.17,
+      "startFrame": 4535,
+      "source": "\"cinco bairros\"",
+      "clamped": false
+    },
+    {
+      "id": "s10-sarandi",
+      "scene": "10",
+      "start": 152.73,
+      "startFrame": 4582,
+      "source": "\"Sarandi\"",
+      "clamped": false
+    },
+    {
+      "id": "s11-logo",
+      "scene": "11",
+      "start": 156.517,
+      "startFrame": 4696,
+      "source": "\"Alertaí\"",
+      "clamped": true
+    },
+    {
+      "id": "s11-frase",
+      "scene": "11",
+      "start": 157.25,
+      "startFrame": 4718,
+      "source": "\"Da próxima vez\"",
+      "clamped": false
+    }
+  ],
+  "camera": []
+}

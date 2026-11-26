@@ -1,0 +1,6 @@
+file 'B13-registrar-agrupa-00.mp4'
+file 'B13-registrar-agrupa-01.mp4'
+file 'B13-registrar-agrupa-02.mp4'
+file 'B13-registrar-agrupa-03.mp4'
+file 'B13-registrar-agrupa-04.mp4'
+file 'B13-registrar-agrupa-05.mp4'

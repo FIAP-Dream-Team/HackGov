@@ -1,0 +1,3913 @@
+{
+  "model": "faster-whisper small int8",
+  "durationSec": 238.173,
+  "text": "Olá, eu sou o John e comigo estão a Ana Larissa, João Pedro, Vinícius Cardoso e Brenda. Hoje vamos mostrar como a inteligência artificial e a ciência de dados entram no Minha Vez. Primeiro, o problema. Quando a UBS encaminha um paciente para o especialista, o pedido vira papel, ligação ou sistema paralelo. Da em diante, ninguém rastreia. O cidadão não sabe em que pé está e o gestor não enxerga a fila. Falta um fluxo com dados padronizados e uma auditoria do TCU já apontou isso como gargalo de visibilidade. E resolver isso importa, porque a espera custa saúde. Segundo o Instituto Locomotiva, 94% dos brasileiros da classe C acham que a espera no SUS coloca vidas em risco e cerca de 1 em cada 3 já desistiu de uma consulta demorada. Quem mais perde são idosos e trabalhadores informais. A nossa resposta é o Minha Vez, um sistema de gestão pública que acompanha o encaminhamento da UBS até a consulta especializada. Pelo app ou pelo totem, o cidadão vê a etapa do pedido e agendo o horário. O painel da sala de espera chama pela senha. E a equipe e o gestor vêm a fila no painel web, uma regra guia tudo. Dado o clínico, nunca aparece nas telas públicas. Então, onde entram a IA e os dados? A IA ataca a origem da fila, a consulta onde o encaminhamento nasce. Com dezenas de pacientes em poucas horas, detalhes importantes podem passar despercebidos. Essa é uma hipótese nossa que vamos confirmar na UBS. E o encaminhamento em completo volta, atrasa ou fica com a prioridade errada. Já a ciência de dados ataca o fim, o painel do gestor, que mostra a fila de hoje, mas não antecipa a de amanhã. A ferramenta é um assistente de documentação clínica. Não é um chatbot, quem useu o médico. São seis etapas. Com o consentimento do paciente, a consulta é gravada. O reconhecimento de fala transcreve a conversa e o áudio é apagado. Um modelo de linguagem muito relatório e, depois, o rascunho do encaminhamento. Aí vem a única decisão do fluxo. E ela é humana, o médico confirma. Então, o encaminhamento nasce em recebido e triado e segue o fluxo do Minha Vesa. Na tela do médico, cada item do relatório aponta para o trecho de fala que o gerou. O rascunho usa o domínio que já tem, a especialidade e o selo de urgência e descreve a justificativa. Ao confirmar, o histórico de status registra quem confirmou e quando. Escolhemos esse ponto porque é onde o erro custa mais caro. Um encaminhamento mal feito gera semanas de espera inútil e sem criar um sistema paralelo. A ciência de dados trabalha sobre esses encaminhamentos, já estruturados e anonimizados. O painel do gestor passa a mostrar a demanda por especialidade, a previsão da fila e onde as faltas se concentram. Os números aqui são ilustrativos. A ideia é ver a especialidade que cresce antes da espera explodir e planejar vagas com dados. Os benefícios disso é que o médico olha para o paciente ao invés de digitar. O cidadão recebe encaminhamento completo com prioridade justa e a equipe tem menos retrabalho. E o gestor ganha dados padronizados. Os grandes desafios disso é que os dados de saúde é sensível na LGPD, então há consentimento, áudio apagado e relatório só no canal institucional. Aí a pode errar ou inventar algum sintoma, por isso cada item aponta para a fala. E ruídos, sotaques ou estrutura das OBS pedem um piloto antes de ampliar. O maior risco é o médico assinar sem ler. Por isso, a IA não entra como diagnóstico, como receita e encaminhamento. Tudo entra como rascunho. Nada vira encaminhamento sem o médico confirmar. E ele pode editar ou recusar tudo. E se a IA falhar, a consulta segue igual. A IA organiza as informações. E quem decide é o médico. Obrigado.",
+  "words": [
+    {
+      "text": "Olá,",
+      "start": 0.0,
+      "end": 0.56,
+      "p": 0.52
+    },
+    {
+      "text": "eu",
+      "start": 1.12,
+      "end": 1.24,
+      "p": 0.957
+    },
+    {
+      "text": "sou",
+      "start": 1.24,
+      "end": 1.46,
+      "p": 0.998
+    },
+    {
+      "text": "o",
+      "start": 1.46,
+      "end": 1.56,
+      "p": 0.963
+    },
+    {
+      "text": "John",
+      "start": 1.56,
+      "end": 1.66,
+      "p": 0.769
+    },
+    {
+      "text": "e",
+      "start": 1.66,
+      "end": 2.0,
+      "p": 0.735
+    },
+    {
+      "text": "comigo",
+      "start": 2.0,
+      "end": 2.24,
+      "p": 0.985
+    },
+    {
+      "text": "estão",
+      "start": 2.24,
+      "end": 2.58,
+      "p": 0.989
+    },
+    {
+      "text": "a",
+      "start": 2.58,
+      "end": 3.0,
+      "p": 0.487
+    },
+    {
+      "text": "Ana",
+      "start": 3.0,
+      "end": 3.06,
+      "p": 0.039
+    },
+    {
+      "text": "Larissa,",
+      "start": 3.06,
+      "end": 3.44,
+      "p": 0.952
+    },
+    {
+      "text": "João",
+      "start": 3.78,
+      "end": 3.98,
+      "p": 0.875
+    },
+    {
+      "text": "Pedro,",
+      "start": 3.98,
+      "end": 4.26,
+      "p": 0.997
+    },
+    {
+      "text": "Vinícius",
+      "start": 4.64,
+      "end": 4.88,
+      "p": 0.893
+    },
+    {
+      "text": "Cardoso",
+      "start": 4.88,
+      "end": 5.3,
+      "p": 0.983
+    },
+    {
+      "text": "e",
+      "start": 5.3,
+      "end": 5.7,
+      "p": 0.973
+    },
+    {
+      "text": "Brenda.",
+      "start": 5.7,
+      "end": 5.98,
+      "p": 0.91
+    },
+    {
+      "text": "Hoje",
+      "start": 6.54,
+      "end": 6.78,
+      "p": 0.985
+    },
+    {
+      "text": "vamos",
+      "start": 6.78,
+      "end": 7.18,
+      "p": 0.711
+    },
+    {
+      "text": "mostrar",
+      "start": 7.18,
+      "end": 7.64,
+      "p": 0.986
+    },
+    {
+      "text": "como",
+      "start": 7.64,
+      "end": 7.88,
+      "p": 0.975
+    },
+    {
+      "text": "a",
+      "start": 7.88,
+      "end": 7.96,
+      "p": 0.903
+    },
+    {
+      "text": "inteligência",
+      "start": 7.96,
+      "end": 8.4,
+      "p": 0.958
+    },
+    {
+      "text": "artificial",
+      "start": 8.4,
+      "end": 9.1,
+      "p": 0.993
+    },
+    {
+      "text": "e",
+      "start": 9.1,
+      "end": 9.4,
+      "p": 0.994
+    },
+    {
+      "text": "a",
+      "start": 9.4,
+      "end": 9.5,
+      "p": 0.962
+    },
+    {
+      "text": "ciência",
+      "start": 9.5,
+      "end": 9.7,
+      "p": 0.828
+    },
+    {
+      "text": "de",
+      "start": 9.7,
+      "end": 9.88,
+      "p": 0.998
+    },
+    {
+      "text": "dados",
+      "start": 9.88,
+      "end": 10.2,
+      "p": 0.997
+    },
+    {
+      "text": "entram",
+      "start": 10.2,
+      "end": 10.74,
+      "p": 0.908
+    },
+    {
+      "text": "no",
+      "start": 10.74,
+      "end": 10.88,
+      "p": 0.338
+    },
+    {
+      "text": "Minha",
+      "start": 10.88,
+      "end": 11.06,
+      "p": 0.569
+    },
+    {
+      "text": "Vez.",
+      "start": 11.06,
+      "end": 11.46,
+      "p": 0.624
+    },
+    {
+      "text": "Primeiro,",
+      "start": 11.62,
+      "end": 12.22,
+      "p": 0.913
+    },
+    {
+      "text": "o",
+      "start": 12.54,
+      "end": 12.6,
+      "p": 0.99
+    },
+    {
+      "text": "problema.",
+      "start": 12.6,
+      "end": 12.9,
+      "p": 0.992
+    },
+    {
+      "text": "Quando",
+      "start": 13.66,
+      "end": 13.86,
+      "p": 0.993
+    },
+    {
+      "text": "a",
+      "start": 13.86,
+      "end": 13.98,
+      "p": 0.964
+    },
+    {
+      "text": "UBS",
+      "start": 13.98,
+      "end": 14.26,
+      "p": 0.966
+    },
+    {
+      "text": "encaminha",
+      "start": 14.26,
+      "end": 14.72,
+      "p": 0.534
+    },
+    {
+      "text": "um",
+      "start": 14.72,
+      "end": 14.84,
+      "p": 0.913
+    },
+    {
+      "text": "paciente",
+      "start": 14.84,
+      "end": 15.2,
+      "p": 0.994
+    },
+    {
+      "text": "para",
+      "start": 15.2,
+      "end": 15.44,
+      "p": 0.985
+    },
+    {
+      "text": "o",
+      "start": 15.44,
+      "end": 15.5,
+      "p": 0.93
+    },
+    {
+      "text": "especialista,",
+      "start": 15.5,
+      "end": 16.2,
+      "p": 0.98
+    },
+    {
+      "text": "o",
+      "start": 16.6,
+      "end": 16.64,
+      "p": 0.982
+    },
+    {
+      "text": "pedido",
+      "start": 16.64,
+      "end": 16.96,
+      "p": 0.996
+    },
+    {
+      "text": "vira",
+      "start": 16.96,
+      "end": 17.22,
+      "p": 0.98
+    },
+    {
+      "text": "papel,",
+      "start": 17.22,
+      "end": 17.58,
+      "p": 0.969
+    },
+    {
+      "text": "ligação",
+      "start": 18.06,
+      "end": 18.48,
+      "p": 0.989
+    },
+    {
+      "text": "ou",
+      "start": 18.48,
+      "end": 18.94,
+      "p": 0.938
+    },
+    {
+      "text": "sistema",
+      "start": 18.94,
+      "end": 19.28,
+      "p": 0.993
+    },
+    {
+      "text": "paralelo.",
+      "start": 19.28,
+      "end": 19.86,
+      "p": 0.991
+    },
+    {
+      "text": "Da",
+      "start": 20.42,
+      "end": 20.64,
+      "p": 0.835
+    },
+    {
+      "text": "em",
+      "start": 20.64,
+      "end": 20.76,
+      "p": 0.468
+    },
+    {
+      "text": "diante,",
+      "start": 20.76,
+      "end": 21.2,
+      "p": 0.993
+    },
+    {
+      "text": "ninguém",
+      "start": 21.5,
+      "end": 21.66,
+      "p": 0.992
+    },
+    {
+      "text": "rastreia.",
+      "start": 21.66,
+      "end": 22.28,
+      "p": 0.866
+    },
+    {
+      "text": "O",
+      "start": 22.86,
+      "end": 23.02,
+      "p": 0.987
+    },
+    {
+      "text": "cidadão",
+      "start": 23.02,
+      "end": 23.4,
+      "p": 0.994
+    },
+    {
+      "text": "não",
+      "start": 23.4,
+      "end": 23.56,
+      "p": 0.997
+    },
+    {
+      "text": "sabe",
+      "start": 23.56,
+      "end": 23.94,
+      "p": 0.997
+    },
+    {
+      "text": "em",
+      "start": 23.94,
+      "end": 24.3,
+      "p": 0.991
+    },
+    {
+      "text": "que",
+      "start": 24.3,
+      "end": 24.4,
+      "p": 0.994
+    },
+    {
+      "text": "pé",
+      "start": 24.4,
+      "end": 24.64,
+      "p": 0.845
+    },
+    {
+      "text": "está",
+      "start": 24.64,
+      "end": 24.98,
+      "p": 0.947
+    },
+    {
+      "text": "e",
+      "start": 24.98,
+      "end": 25.6,
+      "p": 0.8
+    },
+    {
+      "text": "o",
+      "start": 25.6,
+      "end": 25.68,
+      "p": 0.905
+    },
+    {
+      "text": "gestor",
+      "start": 25.68,
+      "end": 26.06,
+      "p": 0.991
+    },
+    {
+      "text": "não",
+      "start": 26.06,
+      "end": 26.24,
+      "p": 0.995
+    },
+    {
+      "text": "enxerga",
+      "start": 26.24,
+      "end": 26.62,
+      "p": 0.98
+    },
+    {
+      "text": "a",
+      "start": 26.62,
+      "end": 26.74,
+      "p": 0.957
+    },
+    {
+      "text": "fila.",
+      "start": 26.74,
+      "end": 27.02,
+      "p": 0.987
+    },
+    {
+      "text": "Falta",
+      "start": 27.02,
+      "end": 27.78,
+      "p": 0.53
+    },
+    {
+      "text": "um",
+      "start": 27.78,
+      "end": 27.86,
+      "p": 0.855
+    },
+    {
+      "text": "fluxo",
+      "start": 27.86,
+      "end": 28.28,
+      "p": 0.994
+    },
+    {
+      "text": "com",
+      "start": 28.28,
+      "end": 28.46,
+      "p": 0.968
+    },
+    {
+      "text": "dados",
+      "start": 28.46,
+      "end": 28.62,
+      "p": 0.993
+    },
+    {
+      "text": "padronizados",
+      "start": 28.62,
+      "end": 29.38,
+      "p": 0.977
+    },
+    {
+      "text": "e",
+      "start": 29.38,
+      "end": 29.8,
+      "p": 0.429
+    },
+    {
+      "text": "uma",
+      "start": 29.8,
+      "end": 29.92,
+      "p": 0.972
+    },
+    {
+      "text": "auditoria",
+      "start": 29.92,
+      "end": 30.44,
+      "p": 0.985
+    },
+    {
+      "text": "do",
+      "start": 30.44,
+      "end": 30.64,
+      "p": 0.981
+    },
+    {
+      "text": "TCU",
+      "start": 30.64,
+      "end": 31.12,
+      "p": 0.914
+    },
+    {
+      "text": "já",
+      "start": 31.12,
+      "end": 31.8,
+      "p": 0.982
+    },
+    {
+      "text": "apontou",
+      "start": 31.8,
+      "end": 32.2,
+      "p": 0.985
+    },
+    {
+      "text": "isso",
+      "start": 32.2,
+      "end": 32.42,
+      "p": 0.969
+    },
+    {
+      "text": "como",
+      "start": 32.42,
+      "end": 32.64,
+      "p": 0.981
+    },
+    {
+      "text": "gargalo",
+      "start": 32.64,
+      "end": 33.2,
+      "p": 0.887
+    },
+    {
+      "text": "de",
+      "start": 33.2,
+      "end": 33.26,
+      "p": 0.996
+    },
+    {
+      "text": "visibilidade.",
+      "start": 33.26,
+      "end": 34.0,
+      "p": 0.996
+    },
+    {
+      "text": "E",
+      "start": 34.54,
+      "end": 34.96,
+      "p": 0.776
+    },
+    {
+      "text": "resolver",
+      "start": 34.96,
+      "end": 35.3,
+      "p": 0.522
+    },
+    {
+      "text": "isso",
+      "start": 35.3,
+      "end": 35.6,
+      "p": 0.957
+    },
+    {
+      "text": "importa,",
+      "start": 35.6,
+      "end": 35.92,
+      "p": 0.911
+    },
+    {
+      "text": "porque",
+      "start": 36.28,
+      "end": 36.72,
+      "p": 0.986
+    },
+    {
+      "text": "a",
+      "start": 36.72,
+      "end": 36.82,
+      "p": 0.992
+    },
+    {
+      "text": "espera",
+      "start": 36.82,
+      "end": 37.12,
+      "p": 0.953
+    },
+    {
+      "text": "custa",
+      "start": 37.12,
+      "end": 37.62,
+      "p": 0.978
+    },
+    {
+      "text": "saúde.",
+      "start": 37.62,
+      "end": 38.06,
+      "p": 0.943
+    },
+    {
+      "text": "Segundo",
+      "start": 38.64,
+      "end": 39.08,
+      "p": 0.992
+    },
+    {
+      "text": "o",
+      "start": 39.08,
+      "end": 39.22,
+      "p": 0.696
+    },
+    {
+      "text": "Instituto",
+      "start": 39.22,
+      "end": 39.62,
+      "p": 0.965
+    },
+    {
+      "text": "Locomotiva,",
+      "start": 39.62,
+      "end": 40.5,
+      "p": 0.911
+    },
+    {
+      "text": "94",
+      "start": 40.86,
+      "end": 41.16,
+      "p": 0.979
+    },
+    {
+      "text": "%",
+      "start": 41.16,
+      "end": 41.8,
+      "p": 0.964
+    },
+    {
+      "text": "dos",
+      "start": 41.8,
+      "end": 42.04,
+      "p": 0.993
+    },
+    {
+      "text": "brasileiros",
+      "start": 42.04,
+      "end": 42.48,
+      "p": 0.997
+    },
+    {
+      "text": "da",
+      "start": 42.48,
+      "end": 42.64,
+      "p": 0.993
+    },
+    {
+      "text": "classe",
+      "start": 42.64,
+      "end": 42.9,
+      "p": 0.914
+    },
+    {
+      "text": "C",
+      "start": 42.9,
+      "end": 43.28,
+      "p": 0.946
+    },
+    {
+      "text": "acham",
+      "start": 43.28,
+      "end": 43.92,
+      "p": 0.987
+    },
+    {
+      "text": "que",
+      "start": 43.92,
+      "end": 44.02,
+      "p": 0.999
+    },
+    {
+      "text": "a",
+      "start": 44.02,
+      "end": 44.08,
+      "p": 0.983
+    },
+    {
+      "text": "espera",
+      "start": 44.08,
+      "end": 44.3,
+      "p": 0.974
+    },
+    {
+      "text": "no",
+      "start": 44.3,
+      "end": 44.54,
+      "p": 0.388
+    },
+    {
+      "text": "SUS",
+      "start": 44.54,
+      "end": 44.72,
+      "p": 0.199
+    },
+    {
+      "text": "coloca",
+      "start": 44.72,
+      "end": 45.08,
+      "p": 0.993
+    },
+    {
+      "text": "vidas",
+      "start": 45.08,
+      "end": 45.46,
+      "p": 0.985
+    },
+    {
+      "text": "em",
+      "start": 45.46,
+      "end": 45.6,
+      "p": 0.987
+    },
+    {
+      "text": "risco",
+      "start": 45.6,
+      "end": 46.02,
+      "p": 0.998
+    },
+    {
+      "text": "e",
+      "start": 46.02,
+      "end": 46.62,
+      "p": 0.777
+    },
+    {
+      "text": "cerca",
+      "start": 46.62,
+      "end": 46.84,
+      "p": 0.995
+    },
+    {
+      "text": "de",
+      "start": 46.84,
+      "end": 47.04,
+      "p": 0.998
+    },
+    {
+      "text": "1",
+      "start": 47.04,
+      "end": 47.32,
+      "p": 0.396
+    },
+    {
+      "text": "em",
+      "start": 47.32,
+      "end": 47.5,
+      "p": 0.951
+    },
+    {
+      "text": "cada",
+      "start": 47.5,
+      "end": 47.7,
+      "p": 0.998
+    },
+    {
+      "text": "3",
+      "start": 47.7,
+      "end": 48.14,
+      "p": 0.886
+    },
+    {
+      "text": "já",
+      "start": 48.14,
+      "end": 48.52,
+      "p": 0.975
+    },
+    {
+      "text": "desistiu",
+      "start": 48.52,
+      "end": 48.94,
+      "p": 0.886
+    },
+    {
+      "text": "de",
+      "start": 48.94,
+      "end": 49.0,
+      "p": 0.995
+    },
+    {
+      "text": "uma",
+      "start": 49.0,
+      "end": 49.14,
+      "p": 0.983
+    },
+    {
+      "text": "consulta",
+      "start": 49.14,
+      "end": 49.6,
+      "p": 0.997
+    },
+    {
+      "text": "demorada.",
+      "start": 49.6,
+      "end": 50.1,
+      "p": 0.995
+    },
+    {
+      "text": "Quem",
+      "start": 50.4,
+      "end": 50.64,
+      "p": 0.977
+    },
+    {
+      "text": "mais",
+      "start": 50.64,
+      "end": 50.84,
+      "p": 0.998
+    },
+    {
+      "text": "perde",
+      "start": 50.84,
+      "end": 51.06,
+      "p": 0.791
+    },
+    {
+      "text": "são",
+      "start": 51.06,
+      "end": 51.36,
+      "p": 0.982
+    },
+    {
+      "text": "idosos",
+      "start": 51.36,
+      "end": 51.84,
+      "p": 0.774
+    },
+    {
+      "text": "e",
+      "start": 51.84,
+      "end": 52.12,
+      "p": 0.984
+    },
+    {
+      "text": "trabalhadores",
+      "start": 52.12,
+      "end": 52.64,
+      "p": 0.941
+    },
+    {
+      "text": "informais.",
+      "start": 52.64,
+      "end": 53.28,
+      "p": 0.97
+    },
+    {
+      "text": "A",
+      "start": 53.28,
+      "end": 53.92,
+      "p": 0.191
+    },
+    {
+      "text": "nossa",
+      "start": 53.92,
+      "end": 54.44,
+      "p": 0.989
+    },
+    {
+      "text": "resposta",
+      "start": 54.44,
+      "end": 54.92,
+      "p": 0.997
+    },
+    {
+      "text": "é",
+      "start": 54.92,
+      "end": 55.16,
+      "p": 0.992
+    },
+    {
+      "text": "o",
+      "start": 55.16,
+      "end": 55.2,
+      "p": 0.471
+    },
+    {
+      "text": "Minha",
+      "start": 55.2,
+      "end": 55.44,
+      "p": 0.647
+    },
+    {
+      "text": "Vez,",
+      "start": 55.44,
+      "end": 55.76,
+      "p": 0.383
+    },
+    {
+      "text": "um",
+      "start": 55.98,
+      "end": 56.12,
+      "p": 0.972
+    },
+    {
+      "text": "sistema",
+      "start": 56.12,
+      "end": 56.4,
+      "p": 0.99
+    },
+    {
+      "text": "de",
+      "start": 56.4,
+      "end": 56.66,
+      "p": 0.998
+    },
+    {
+      "text": "gestão",
+      "start": 56.66,
+      "end": 56.94,
+      "p": 0.992
+    },
+    {
+      "text": "pública",
+      "start": 56.94,
+      "end": 57.36,
+      "p": 0.956
+    },
+    {
+      "text": "que",
+      "start": 57.36,
+      "end": 57.88,
+      "p": 0.953
+    },
+    {
+      "text": "acompanha",
+      "start": 57.88,
+      "end": 58.34,
+      "p": 0.987
+    },
+    {
+      "text": "o",
+      "start": 58.34,
+      "end": 58.42,
+      "p": 0.973
+    },
+    {
+      "text": "encaminhamento",
+      "start": 58.42,
+      "end": 58.94,
+      "p": 0.99
+    },
+    {
+      "text": "da",
+      "start": 58.94,
+      "end": 59.14,
+      "p": 0.985
+    },
+    {
+      "text": "UBS",
+      "start": 59.14,
+      "end": 59.48,
+      "p": 0.853
+    },
+    {
+      "text": "até",
+      "start": 59.48,
+      "end": 60.0,
+      "p": 0.94
+    },
+    {
+      "text": "a",
+      "start": 60.0,
+      "end": 60.12,
+      "p": 0.955
+    },
+    {
+      "text": "consulta",
+      "start": 60.12,
+      "end": 60.48,
+      "p": 0.548
+    },
+    {
+      "text": "especializada.",
+      "start": 60.48,
+      "end": 61.18,
+      "p": 0.96
+    },
+    {
+      "text": "Pelo",
+      "start": 61.72,
+      "end": 62.0,
+      "p": 0.941
+    },
+    {
+      "text": "app",
+      "start": 62.0,
+      "end": 62.28,
+      "p": 0.448
+    },
+    {
+      "text": "ou",
+      "start": 62.28,
+      "end": 62.46,
+      "p": 0.852
+    },
+    {
+      "text": "pelo",
+      "start": 62.46,
+      "end": 62.64,
+      "p": 0.981
+    },
+    {
+      "text": "totem,",
+      "start": 62.64,
+      "end": 63.14,
+      "p": 0.662
+    },
+    {
+      "text": "o",
+      "start": 63.52,
+      "end": 63.58,
+      "p": 0.984
+    },
+    {
+      "text": "cidadão",
+      "start": 63.58,
+      "end": 63.98,
+      "p": 0.996
+    },
+    {
+      "text": "vê",
+      "start": 63.98,
+      "end": 64.18,
+      "p": 0.988
+    },
+    {
+      "text": "a",
+      "start": 64.18,
+      "end": 64.3,
+      "p": 0.993
+    },
+    {
+      "text": "etapa",
+      "start": 64.3,
+      "end": 64.58,
+      "p": 0.988
+    },
+    {
+      "text": "do",
+      "start": 64.58,
+      "end": 64.74,
+      "p": 0.994
+    },
+    {
+      "text": "pedido",
+      "start": 64.74,
+      "end": 65.2,
+      "p": 0.997
+    },
+    {
+      "text": "e",
+      "start": 65.2,
+      "end": 65.52,
+      "p": 0.982
+    },
+    {
+      "text": "agendo",
+      "start": 65.52,
+      "end": 65.8,
+      "p": 0.556
+    },
+    {
+      "text": "o",
+      "start": 65.8,
+      "end": 65.96,
+      "p": 0.857
+    },
+    {
+      "text": "horário.",
+      "start": 65.96,
+      "end": 66.22,
+      "p": 0.987
+    },
+    {
+      "text": "O",
+      "start": 66.88,
+      "end": 66.96,
+      "p": 0.979
+    },
+    {
+      "text": "painel",
+      "start": 66.96,
+      "end": 67.3,
+      "p": 0.985
+    },
+    {
+      "text": "da",
+      "start": 67.3,
+      "end": 67.44,
+      "p": 0.989
+    },
+    {
+      "text": "sala",
+      "start": 67.44,
+      "end": 67.66,
+      "p": 0.979
+    },
+    {
+      "text": "de",
+      "start": 67.66,
+      "end": 67.84,
+      "p": 0.997
+    },
+    {
+      "text": "espera",
+      "start": 67.84,
+      "end": 68.16,
+      "p": 0.986
+    },
+    {
+      "text": "chama",
+      "start": 68.16,
+      "end": 68.44,
+      "p": 0.952
+    },
+    {
+      "text": "pela",
+      "start": 68.44,
+      "end": 68.68,
+      "p": 0.514
+    },
+    {
+      "text": "senha.",
+      "start": 68.68,
+      "end": 69.14,
+      "p": 0.96
+    },
+    {
+      "text": "E",
+      "start": 69.62,
+      "end": 69.68,
+      "p": 0.853
+    },
+    {
+      "text": "a",
+      "start": 69.68,
+      "end": 69.78,
+      "p": 0.994
+    },
+    {
+      "text": "equipe",
+      "start": 69.78,
+      "end": 70.2,
+      "p": 0.983
+    },
+    {
+      "text": "e",
+      "start": 70.2,
+      "end": 70.34,
+      "p": 0.936
+    },
+    {
+      "text": "o",
+      "start": 70.34,
+      "end": 70.4,
+      "p": 0.953
+    },
+    {
+      "text": "gestor",
+      "start": 70.4,
+      "end": 70.8,
+      "p": 0.99
+    },
+    {
+      "text": "vêm",
+      "start": 70.8,
+      "end": 71.46,
+      "p": 0.692
+    },
+    {
+      "text": "a",
+      "start": 71.46,
+      "end": 71.6,
+      "p": 0.875
+    },
+    {
+      "text": "fila",
+      "start": 71.6,
+      "end": 71.88,
+      "p": 0.991
+    },
+    {
+      "text": "no",
+      "start": 71.88,
+      "end": 72.02,
+      "p": 0.973
+    },
+    {
+      "text": "painel",
+      "start": 72.02,
+      "end": 72.4,
+      "p": 0.984
+    },
+    {
+      "text": "web,",
+      "start": 72.4,
+      "end": 72.7,
+      "p": 0.917
+    },
+    {
+      "text": "uma",
+      "start": 73.1,
+      "end": 73.28,
+      "p": 0.879
+    },
+    {
+      "text": "regra",
+      "start": 73.28,
+      "end": 73.58,
+      "p": 0.943
+    },
+    {
+      "text": "guia",
+      "start": 73.58,
+      "end": 73.78,
+      "p": 0.709
+    },
+    {
+      "text": "tudo.",
+      "start": 73.78,
+      "end": 74.04,
+      "p": 0.938
+    },
+    {
+      "text": "Dado",
+      "start": 74.46,
+      "end": 74.56,
+      "p": 0.715
+    },
+    {
+      "text": "o",
+      "start": 74.56,
+      "end": 74.72,
+      "p": 0.769
+    },
+    {
+      "text": "clínico,",
+      "start": 74.72,
+      "end": 75.06,
+      "p": 0.83
+    },
+    {
+      "text": "nunca",
+      "start": 75.2,
+      "end": 75.42,
+      "p": 0.986
+    },
+    {
+      "text": "aparece",
+      "start": 75.42,
+      "end": 75.88,
+      "p": 0.945
+    },
+    {
+      "text": "nas",
+      "start": 75.88,
+      "end": 76.08,
+      "p": 0.979
+    },
+    {
+      "text": "telas",
+      "start": 76.08,
+      "end": 76.34,
+      "p": 0.984
+    },
+    {
+      "text": "públicas.",
+      "start": 76.34,
+      "end": 76.88,
+      "p": 0.997
+    },
+    {
+      "text": "Então,",
+      "start": 78.24,
+      "end": 78.8,
+      "p": 0.98
+    },
+    {
+      "text": "onde",
+      "start": 79.08,
+      "end": 79.38,
+      "p": 0.986
+    },
+    {
+      "text": "entram",
+      "start": 79.38,
+      "end": 79.72,
+      "p": 0.977
+    },
+    {
+      "text": "a",
+      "start": 79.72,
+      "end": 79.92,
+      "p": 0.945
+    },
+    {
+      "text": "IA",
+      "start": 79.92,
+      "end": 80.2,
+      "p": 0.873
+    },
+    {
+      "text": "e",
+      "start": 80.2,
+      "end": 80.52,
+      "p": 0.972
+    },
+    {
+      "text": "os",
+      "start": 80.52,
+      "end": 80.64,
+      "p": 0.983
+    },
+    {
+      "text": "dados?",
+      "start": 80.64,
+      "end": 80.88,
+      "p": 0.996
+    },
+    {
+      "text": "A",
+      "start": 80.88,
+      "end": 81.5,
+      "p": 0.303
+    },
+    {
+      "text": "IA",
+      "start": 81.5,
+      "end": 81.68,
+      "p": 0.539
+    },
+    {
+      "text": "ataca",
+      "start": 81.68,
+      "end": 82.16,
+      "p": 0.662
+    },
+    {
+      "text": "a",
+      "start": 82.16,
+      "end": 82.32,
+      "p": 0.893
+    },
+    {
+      "text": "origem",
+      "start": 82.32,
+      "end": 82.64,
+      "p": 0.997
+    },
+    {
+      "text": "da",
+      "start": 82.64,
+      "end": 82.76,
+      "p": 0.991
+    },
+    {
+      "text": "fila,",
+      "start": 82.76,
+      "end": 83.14,
+      "p": 0.983
+    },
+    {
+      "text": "a",
+      "start": 83.46,
+      "end": 83.62,
+      "p": 0.946
+    },
+    {
+      "text": "consulta",
+      "start": 83.62,
+      "end": 84.3,
+      "p": 0.997
+    },
+    {
+      "text": "onde",
+      "start": 84.3,
+      "end": 84.66,
+      "p": 0.801
+    },
+    {
+      "text": "o",
+      "start": 84.66,
+      "end": 84.74,
+      "p": 0.965
+    },
+    {
+      "text": "encaminhamento",
+      "start": 84.74,
+      "end": 85.36,
+      "p": 0.996
+    },
+    {
+      "text": "nasce.",
+      "start": 85.36,
+      "end": 86.0,
+      "p": 0.991
+    },
+    {
+      "text": "Com",
+      "start": 86.56,
+      "end": 86.72,
+      "p": 0.978
+    },
+    {
+      "text": "dezenas",
+      "start": 86.72,
+      "end": 87.08,
+      "p": 0.95
+    },
+    {
+      "text": "de",
+      "start": 87.08,
+      "end": 87.16,
+      "p": 0.993
+    },
+    {
+      "text": "pacientes",
+      "start": 87.16,
+      "end": 87.54,
+      "p": 0.994
+    },
+    {
+      "text": "em",
+      "start": 87.54,
+      "end": 87.76,
+      "p": 0.982
+    },
+    {
+      "text": "poucas",
+      "start": 87.76,
+      "end": 87.96,
+      "p": 0.988
+    },
+    {
+      "text": "horas,",
+      "start": 87.96,
+      "end": 88.3,
+      "p": 0.997
+    },
+    {
+      "text": "detalhes",
+      "start": 88.78,
+      "end": 89.1,
+      "p": 0.983
+    },
+    {
+      "text": "importantes",
+      "start": 89.1,
+      "end": 89.62,
+      "p": 0.993
+    },
+    {
+      "text": "podem",
+      "start": 89.62,
+      "end": 90.04,
+      "p": 0.992
+    },
+    {
+      "text": "passar",
+      "start": 90.04,
+      "end": 90.32,
+      "p": 0.988
+    },
+    {
+      "text": "despercebidos.",
+      "start": 90.32,
+      "end": 91.18,
+      "p": 0.957
+    },
+    {
+      "text": "Essa",
+      "start": 91.86,
+      "end": 92.18,
+      "p": 0.891
+    },
+    {
+      "text": "é",
+      "start": 92.18,
+      "end": 92.28,
+      "p": 0.994
+    },
+    {
+      "text": "uma",
+      "start": 92.28,
+      "end": 92.34,
+      "p": 0.992
+    },
+    {
+      "text": "hipótese",
+      "start": 92.34,
+      "end": 92.78,
+      "p": 0.985
+    },
+    {
+      "text": "nossa",
+      "start": 92.78,
+      "end": 93.16,
+      "p": 0.965
+    },
+    {
+      "text": "que",
+      "start": 93.16,
+      "end": 93.56,
+      "p": 0.647
+    },
+    {
+      "text": "vamos",
+      "start": 93.56,
+      "end": 93.74,
+      "p": 0.991
+    },
+    {
+      "text": "confirmar",
+      "start": 93.74,
+      "end": 94.36,
+      "p": 0.977
+    },
+    {
+      "text": "na",
+      "start": 94.36,
+      "end": 94.5,
+      "p": 0.978
+    },
+    {
+      "text": "UBS.",
+      "start": 94.5,
+      "end": 94.82,
+      "p": 0.944
+    },
+    {
+      "text": "E",
+      "start": 95.56,
+      "end": 95.82,
+      "p": 0.667
+    },
+    {
+      "text": "o",
+      "start": 95.82,
+      "end": 95.88,
+      "p": 0.84
+    },
+    {
+      "text": "encaminhamento",
+      "start": 95.88,
+      "end": 96.46,
+      "p": 0.999
+    },
+    {
+      "text": "em",
+      "start": 96.46,
+      "end": 96.6,
+      "p": 0.765
+    },
+    {
+      "text": "completo",
+      "start": 96.6,
+      "end": 96.86,
+      "p": 0.989
+    },
+    {
+      "text": "volta,",
+      "start": 96.86,
+      "end": 97.48,
+      "p": 0.987
+    },
+    {
+      "text": "atrasa",
+      "start": 97.94,
+      "end": 98.48,
+      "p": 0.976
+    },
+    {
+      "text": "ou",
+      "start": 98.48,
+      "end": 98.88,
+      "p": 0.827
+    },
+    {
+      "text": "fica",
+      "start": 98.88,
+      "end": 99.0,
+      "p": 0.987
+    },
+    {
+      "text": "com",
+      "start": 99.0,
+      "end": 99.16,
+      "p": 0.999
+    },
+    {
+      "text": "a",
+      "start": 99.16,
+      "end": 99.24,
+      "p": 0.946
+    },
+    {
+      "text": "prioridade",
+      "start": 99.24,
+      "end": 99.68,
+      "p": 0.999
+    },
+    {
+      "text": "errada.",
+      "start": 99.68,
+      "end": 100.1,
+      "p": 0.992
+    },
+    {
+      "text": "Já",
+      "start": 100.7,
+      "end": 100.92,
+      "p": 0.992
+    },
+    {
+      "text": "a",
+      "start": 100.92,
+      "end": 101.04,
+      "p": 0.955
+    },
+    {
+      "text": "ciência",
+      "start": 101.04,
+      "end": 101.28,
+      "p": 0.885
+    },
+    {
+      "text": "de",
+      "start": 101.28,
+      "end": 101.46,
+      "p": 0.986
+    },
+    {
+      "text": "dados",
+      "start": 101.46,
+      "end": 101.7,
+      "p": 0.992
+    },
+    {
+      "text": "ataca",
+      "start": 101.7,
+      "end": 102.18,
+      "p": 0.963
+    },
+    {
+      "text": "o",
+      "start": 102.18,
+      "end": 102.36,
+      "p": 0.974
+    },
+    {
+      "text": "fim,",
+      "start": 102.36,
+      "end": 102.54,
+      "p": 0.418
+    },
+    {
+      "text": "o",
+      "start": 102.96,
+      "end": 102.98,
+      "p": 0.972
+    },
+    {
+      "text": "painel",
+      "start": 102.98,
+      "end": 103.3,
+      "p": 0.982
+    },
+    {
+      "text": "do",
+      "start": 103.3,
+      "end": 103.44,
+      "p": 0.879
+    },
+    {
+      "text": "gestor,",
+      "start": 103.44,
+      "end": 103.88,
+      "p": 0.925
+    },
+    {
+      "text": "que",
+      "start": 104.16,
+      "end": 104.38,
+      "p": 0.998
+    },
+    {
+      "text": "mostra",
+      "start": 104.38,
+      "end": 104.56,
+      "p": 0.995
+    },
+    {
+      "text": "a",
+      "start": 104.56,
+      "end": 104.84,
+      "p": 0.99
+    },
+    {
+      "text": "fila",
+      "start": 104.84,
+      "end": 105.16,
+      "p": 0.996
+    },
+    {
+      "text": "de",
+      "start": 105.16,
+      "end": 105.32,
+      "p": 0.996
+    },
+    {
+      "text": "hoje,",
+      "start": 105.32,
+      "end": 105.58,
+      "p": 0.999
+    },
+    {
+      "text": "mas",
+      "start": 105.9,
+      "end": 106.14,
+      "p": 0.995
+    },
+    {
+      "text": "não",
+      "start": 106.14,
+      "end": 106.3,
+      "p": 0.995
+    },
+    {
+      "text": "antecipa",
+      "start": 106.3,
+      "end": 107.0,
+      "p": 0.983
+    },
+    {
+      "text": "a",
+      "start": 107.0,
+      "end": 107.24,
+      "p": 0.627
+    },
+    {
+      "text": "de",
+      "start": 107.24,
+      "end": 107.34,
+      "p": 0.713
+    },
+    {
+      "text": "amanhã.",
+      "start": 107.34,
+      "end": 107.62,
+      "p": 0.988
+    },
+    {
+      "text": "A",
+      "start": 107.62,
+      "end": 108.64,
+      "p": 0.175
+    },
+    {
+      "text": "ferramenta",
+      "start": 108.64,
+      "end": 109.2,
+      "p": 0.904
+    },
+    {
+      "text": "é",
+      "start": 109.2,
+      "end": 109.32,
+      "p": 0.962
+    },
+    {
+      "text": "um",
+      "start": 109.32,
+      "end": 109.38,
+      "p": 0.859
+    },
+    {
+      "text": "assistente",
+      "start": 109.38,
+      "end": 109.82,
+      "p": 0.994
+    },
+    {
+      "text": "de",
+      "start": 109.82,
+      "end": 110.06,
+      "p": 0.994
+    },
+    {
+      "text": "documentação",
+      "start": 110.06,
+      "end": 110.62,
+      "p": 0.991
+    },
+    {
+      "text": "clínica.",
+      "start": 110.62,
+      "end": 111.14,
+      "p": 0.987
+    },
+    {
+      "text": "Não",
+      "start": 111.4,
+      "end": 111.66,
+      "p": 0.977
+    },
+    {
+      "text": "é",
+      "start": 111.66,
+      "end": 111.78,
+      "p": 0.971
+    },
+    {
+      "text": "um",
+      "start": 111.78,
+      "end": 111.86,
+      "p": 0.964
+    },
+    {
+      "text": "chatbot,",
+      "start": 111.86,
+      "end": 112.3,
+      "p": 0.725
+    },
+    {
+      "text": "quem",
+      "start": 112.64,
+      "end": 112.9,
+      "p": 0.974
+    },
+    {
+      "text": "useu",
+      "start": 112.9,
+      "end": 113.18,
+      "p": 0.722
+    },
+    {
+      "text": "o",
+      "start": 113.18,
+      "end": 113.26,
+      "p": 0.853
+    },
+    {
+      "text": "médico.",
+      "start": 113.26,
+      "end": 113.52,
+      "p": 0.989
+    },
+    {
+      "text": "São",
+      "start": 114.0,
+      "end": 114.22,
+      "p": 0.99
+    },
+    {
+      "text": "seis",
+      "start": 114.22,
+      "end": 114.46,
+      "p": 0.619
+    },
+    {
+      "text": "etapas.",
+      "start": 114.46,
+      "end": 115.0,
+      "p": 0.997
+    },
+    {
+      "text": "Com",
+      "start": 115.52,
+      "end": 115.6,
+      "p": 0.889
+    },
+    {
+      "text": "o",
+      "start": 115.6,
+      "end": 115.72,
+      "p": 0.82
+    },
+    {
+      "text": "consentimento",
+      "start": 115.72,
+      "end": 116.22,
+      "p": 0.981
+    },
+    {
+      "text": "do",
+      "start": 116.22,
+      "end": 116.36,
+      "p": 0.984
+    },
+    {
+      "text": "paciente,",
+      "start": 116.36,
+      "end": 116.78,
+      "p": 0.997
+    },
+    {
+      "text": "a",
+      "start": 117.06,
+      "end": 117.12,
+      "p": 0.964
+    },
+    {
+      "text": "consulta",
+      "start": 117.12,
+      "end": 117.48,
+      "p": 0.988
+    },
+    {
+      "text": "é",
+      "start": 117.48,
+      "end": 117.56,
+      "p": 0.986
+    },
+    {
+      "text": "gravada.",
+      "start": 117.56,
+      "end": 117.98,
+      "p": 0.992
+    },
+    {
+      "text": "O",
+      "start": 118.48,
+      "end": 118.5,
+      "p": 0.928
+    },
+    {
+      "text": "reconhecimento",
+      "start": 118.5,
+      "end": 119.06,
+      "p": 0.998
+    },
+    {
+      "text": "de",
+      "start": 119.06,
+      "end": 119.26,
+      "p": 0.988
+    },
+    {
+      "text": "fala",
+      "start": 119.26,
+      "end": 119.52,
+      "p": 0.926
+    },
+    {
+      "text": "transcreve",
+      "start": 119.52,
+      "end": 120.14,
+      "p": 0.866
+    },
+    {
+      "text": "a",
+      "start": 120.14,
+      "end": 120.22,
+      "p": 0.992
+    },
+    {
+      "text": "conversa",
+      "start": 120.22,
+      "end": 120.84,
+      "p": 0.999
+    },
+    {
+      "text": "e",
+      "start": 120.84,
+      "end": 121.24,
+      "p": 0.726
+    },
+    {
+      "text": "o",
+      "start": 121.24,
+      "end": 121.34,
+      "p": 0.995
+    },
+    {
+      "text": "áudio",
+      "start": 121.34,
+      "end": 121.54,
+      "p": 0.987
+    },
+    {
+      "text": "é",
+      "start": 121.54,
+      "end": 121.66,
+      "p": 0.943
+    },
+    {
+      "text": "apagado.",
+      "start": 121.66,
+      "end": 122.12,
+      "p": 0.998
+    },
+    {
+      "text": "Um",
+      "start": 122.62,
+      "end": 122.78,
+      "p": 0.914
+    },
+    {
+      "text": "modelo",
+      "start": 122.78,
+      "end": 123.02,
+      "p": 0.995
+    },
+    {
+      "text": "de",
+      "start": 123.02,
+      "end": 123.2,
+      "p": 0.998
+    },
+    {
+      "text": "linguagem",
+      "start": 123.2,
+      "end": 123.6,
+      "p": 0.996
+    },
+    {
+      "text": "muito",
+      "start": 123.6,
+      "end": 123.86,
+      "p": 0.921
+    },
+    {
+      "text": "relatório",
+      "start": 123.86,
+      "end": 124.44,
+      "p": 0.907
+    },
+    {
+      "text": "e,",
+      "start": 124.44,
+      "end": 124.66,
+      "p": 0.764
+    },
+    {
+      "text": "depois,",
+      "start": 124.8,
+      "end": 125.24,
+      "p": 0.998
+    },
+    {
+      "text": "o",
+      "start": 125.92,
+      "end": 125.96,
+      "p": 0.98
+    },
+    {
+      "text": "rascunho",
+      "start": 125.96,
+      "end": 126.42,
+      "p": 0.935
+    },
+    {
+      "text": "do",
+      "start": 126.42,
+      "end": 126.52,
+      "p": 0.983
+    },
+    {
+      "text": "encaminhamento.",
+      "start": 126.52,
+      "end": 127.16,
+      "p": 0.995
+    },
+    {
+      "text": "Aí",
+      "start": 127.86,
+      "end": 128.18,
+      "p": 0.916
+    },
+    {
+      "text": "vem",
+      "start": 128.18,
+      "end": 128.34,
+      "p": 0.972
+    },
+    {
+      "text": "a",
+      "start": 128.34,
+      "end": 128.46,
+      "p": 0.997
+    },
+    {
+      "text": "única",
+      "start": 128.46,
+      "end": 128.66,
+      "p": 0.996
+    },
+    {
+      "text": "decisão",
+      "start": 128.66,
+      "end": 129.14,
+      "p": 0.999
+    },
+    {
+      "text": "do",
+      "start": 129.14,
+      "end": 129.26,
+      "p": 0.991
+    },
+    {
+      "text": "fluxo.",
+      "start": 129.26,
+      "end": 129.8,
+      "p": 0.976
+    },
+    {
+      "text": "E",
+      "start": 130.1,
+      "end": 130.34,
+      "p": 0.7
+    },
+    {
+      "text": "ela",
+      "start": 130.34,
+      "end": 130.54,
+      "p": 0.988
+    },
+    {
+      "text": "é",
+      "start": 130.54,
+      "end": 130.68,
+      "p": 0.998
+    },
+    {
+      "text": "humana,",
+      "start": 130.68,
+      "end": 131.16,
+      "p": 0.977
+    },
+    {
+      "text": "o",
+      "start": 131.42,
+      "end": 131.5,
+      "p": 0.991
+    },
+    {
+      "text": "médico",
+      "start": 131.5,
+      "end": 131.72,
+      "p": 0.998
+    },
+    {
+      "text": "confirma.",
+      "start": 131.72,
+      "end": 132.4,
+      "p": 0.99
+    },
+    {
+      "text": "Então,",
+      "start": 132.4,
+      "end": 133.34,
+      "p": 0.669
+    },
+    {
+      "text": "o",
+      "start": 133.52,
+      "end": 133.52,
+      "p": 0.854
+    },
+    {
+      "text": "encaminhamento",
+      "start": 133.52,
+      "end": 134.0,
+      "p": 0.942
+    },
+    {
+      "text": "nasce",
+      "start": 134.0,
+      "end": 134.54,
+      "p": 0.985
+    },
+    {
+      "text": "em",
+      "start": 134.54,
+      "end": 135.2,
+      "p": 0.895
+    },
+    {
+      "text": "recebido",
+      "start": 135.2,
+      "end": 135.84,
+      "p": 0.847
+    },
+    {
+      "text": "e",
+      "start": 135.84,
+      "end": 135.96,
+      "p": 0.991
+    },
+    {
+      "text": "triado",
+      "start": 135.96,
+      "end": 136.38,
+      "p": 0.928
+    },
+    {
+      "text": "e",
+      "start": 136.38,
+      "end": 137.12,
+      "p": 0.842
+    },
+    {
+      "text": "segue",
+      "start": 137.12,
+      "end": 137.44,
+      "p": 0.99
+    },
+    {
+      "text": "o",
+      "start": 137.44,
+      "end": 137.88,
+      "p": 0.988
+    },
+    {
+      "text": "fluxo",
+      "start": 137.88,
+      "end": 138.3,
+      "p": 0.987
+    },
+    {
+      "text": "do",
+      "start": 138.3,
+      "end": 138.44,
+      "p": 0.961
+    },
+    {
+      "text": "Minha",
+      "start": 138.44,
+      "end": 138.68,
+      "p": 0.71
+    },
+    {
+      "text": "Vesa.",
+      "start": 138.68,
+      "end": 139.06,
+      "p": 0.404
+    },
+    {
+      "text": "Na",
+      "start": 139.26,
+      "end": 139.48,
+      "p": 0.866
+    },
+    {
+      "text": "tela",
+      "start": 139.48,
+      "end": 139.68,
+      "p": 0.917
+    },
+    {
+      "text": "do",
+      "start": 139.68,
+      "end": 139.88,
+      "p": 0.995
+    },
+    {
+      "text": "médico,",
+      "start": 139.88,
+      "end": 140.2,
+      "p": 0.986
+    },
+    {
+      "text": "cada",
+      "start": 140.6,
+      "end": 140.76,
+      "p": 0.998
+    },
+    {
+      "text": "item",
+      "start": 140.76,
+      "end": 141.12,
+      "p": 0.962
+    },
+    {
+      "text": "do",
+      "start": 141.12,
+      "end": 141.32,
+      "p": 0.983
+    },
+    {
+      "text": "relatório",
+      "start": 141.32,
+      "end": 141.9,
+      "p": 0.994
+    },
+    {
+      "text": "aponta",
+      "start": 141.9,
+      "end": 142.28,
+      "p": 0.992
+    },
+    {
+      "text": "para",
+      "start": 142.28,
+      "end": 142.48,
+      "p": 0.713
+    },
+    {
+      "text": "o",
+      "start": 142.48,
+      "end": 142.54,
+      "p": 0.984
+    },
+    {
+      "text": "trecho",
+      "start": 142.54,
+      "end": 142.88,
+      "p": 0.996
+    },
+    {
+      "text": "de",
+      "start": 142.88,
+      "end": 143.02,
+      "p": 0.996
+    },
+    {
+      "text": "fala",
+      "start": 143.02,
+      "end": 143.3,
+      "p": 0.959
+    },
+    {
+      "text": "que",
+      "start": 143.3,
+      "end": 143.48,
+      "p": 0.994
+    },
+    {
+      "text": "o",
+      "start": 143.48,
+      "end": 143.56,
+      "p": 0.915
+    },
+    {
+      "text": "gerou.",
+      "start": 143.56,
+      "end": 143.86,
+      "p": 0.994
+    },
+    {
+      "text": "O",
+      "start": 144.42,
+      "end": 144.52,
+      "p": 0.967
+    },
+    {
+      "text": "rascunho",
+      "start": 144.52,
+      "end": 145.0,
+      "p": 0.719
+    },
+    {
+      "text": "usa",
+      "start": 145.0,
+      "end": 145.22,
+      "p": 0.984
+    },
+    {
+      "text": "o",
+      "start": 145.22,
+      "end": 145.3,
+      "p": 0.993
+    },
+    {
+      "text": "domínio",
+      "start": 145.3,
+      "end": 145.72,
+      "p": 0.996
+    },
+    {
+      "text": "que",
+      "start": 145.72,
+      "end": 145.88,
+      "p": 0.806
+    },
+    {
+      "text": "já",
+      "start": 145.88,
+      "end": 146.08,
+      "p": 0.995
+    },
+    {
+      "text": "tem,",
+      "start": 146.08,
+      "end": 146.26,
+      "p": 0.995
+    },
+    {
+      "text": "a",
+      "start": 146.56,
+      "end": 146.64,
+      "p": 0.993
+    },
+    {
+      "text": "especialidade",
+      "start": 146.64,
+      "end": 147.5,
+      "p": 0.981
+    },
+    {
+      "text": "e",
+      "start": 147.5,
+      "end": 147.68,
+      "p": 0.874
+    },
+    {
+      "text": "o",
+      "start": 147.68,
+      "end": 147.74,
+      "p": 0.992
+    },
+    {
+      "text": "selo",
+      "start": 147.74,
+      "end": 148.08,
+      "p": 0.873
+    },
+    {
+      "text": "de",
+      "start": 148.08,
+      "end": 148.18,
+      "p": 0.997
+    },
+    {
+      "text": "urgência",
+      "start": 148.18,
+      "end": 148.62,
+      "p": 0.935
+    },
+    {
+      "text": "e",
+      "start": 148.62,
+      "end": 149.1,
+      "p": 0.833
+    },
+    {
+      "text": "descreve",
+      "start": 149.1,
+      "end": 149.56,
+      "p": 0.961
+    },
+    {
+      "text": "a",
+      "start": 149.56,
+      "end": 149.64,
+      "p": 0.993
+    },
+    {
+      "text": "justificativa.",
+      "start": 149.64,
+      "end": 150.48,
+      "p": 0.982
+    },
+    {
+      "text": "Ao",
+      "start": 151.04,
+      "end": 151.2,
+      "p": 0.998
+    },
+    {
+      "text": "confirmar,",
+      "start": 151.2,
+      "end": 151.76,
+      "p": 0.995
+    },
+    {
+      "text": "o",
+      "start": 152.08,
+      "end": 152.14,
+      "p": 0.99
+    },
+    {
+      "text": "histórico",
+      "start": 152.14,
+      "end": 152.48,
+      "p": 0.981
+    },
+    {
+      "text": "de",
+      "start": 152.48,
+      "end": 152.68,
+      "p": 0.978
+    },
+    {
+      "text": "status",
+      "start": 152.68,
+      "end": 153.06,
+      "p": 0.876
+    },
+    {
+      "text": "registra",
+      "start": 153.06,
+      "end": 153.7,
+      "p": 0.986
+    },
+    {
+      "text": "quem",
+      "start": 153.7,
+      "end": 153.88,
+      "p": 0.998
+    },
+    {
+      "text": "confirmou",
+      "start": 153.88,
+      "end": 154.5,
+      "p": 0.989
+    },
+    {
+      "text": "e",
+      "start": 154.5,
+      "end": 154.72,
+      "p": 0.991
+    },
+    {
+      "text": "quando.",
+      "start": 154.72,
+      "end": 154.98,
+      "p": 0.995
+    },
+    {
+      "text": "Escolhemos",
+      "start": 155.52,
+      "end": 155.96,
+      "p": 0.982
+    },
+    {
+      "text": "esse",
+      "start": 155.96,
+      "end": 156.18,
+      "p": 0.921
+    },
+    {
+      "text": "ponto",
+      "start": 156.18,
+      "end": 156.52,
+      "p": 0.999
+    },
+    {
+      "text": "porque",
+      "start": 156.52,
+      "end": 156.88,
+      "p": 0.835
+    },
+    {
+      "text": "é",
+      "start": 156.88,
+      "end": 157.0,
+      "p": 0.99
+    },
+    {
+      "text": "onde",
+      "start": 157.0,
+      "end": 157.18,
+      "p": 0.973
+    },
+    {
+      "text": "o",
+      "start": 157.18,
+      "end": 157.38,
+      "p": 0.995
+    },
+    {
+      "text": "erro",
+      "start": 157.38,
+      "end": 157.54,
+      "p": 0.998
+    },
+    {
+      "text": "custa",
+      "start": 157.54,
+      "end": 157.92,
+      "p": 0.974
+    },
+    {
+      "text": "mais",
+      "start": 157.92,
+      "end": 158.1,
+      "p": 0.999
+    },
+    {
+      "text": "caro.",
+      "start": 158.1,
+      "end": 158.52,
+      "p": 0.992
+    },
+    {
+      "text": "Um",
+      "start": 158.52,
+      "end": 158.92,
+      "p": 0.196
+    },
+    {
+      "text": "encaminhamento",
+      "start": 158.92,
+      "end": 159.58,
+      "p": 0.936
+    },
+    {
+      "text": "mal",
+      "start": 159.58,
+      "end": 159.84,
+      "p": 0.774
+    },
+    {
+      "text": "feito",
+      "start": 159.84,
+      "end": 160.14,
+      "p": 0.96
+    },
+    {
+      "text": "gera",
+      "start": 160.14,
+      "end": 160.46,
+      "p": 0.919
+    },
+    {
+      "text": "semanas",
+      "start": 160.46,
+      "end": 161.0,
+      "p": 0.954
+    },
+    {
+      "text": "de",
+      "start": 161.0,
+      "end": 161.18,
+      "p": 0.999
+    },
+    {
+      "text": "espera",
+      "start": 161.18,
+      "end": 161.44,
+      "p": 0.99
+    },
+    {
+      "text": "inútil",
+      "start": 161.44,
+      "end": 161.94,
+      "p": 0.973
+    },
+    {
+      "text": "e",
+      "start": 161.94,
+      "end": 162.58,
+      "p": 0.674
+    },
+    {
+      "text": "sem",
+      "start": 162.58,
+      "end": 162.68,
+      "p": 0.987
+    },
+    {
+      "text": "criar",
+      "start": 162.68,
+      "end": 162.92,
+      "p": 0.992
+    },
+    {
+      "text": "um",
+      "start": 162.92,
+      "end": 163.04,
+      "p": 0.993
+    },
+    {
+      "text": "sistema",
+      "start": 163.04,
+      "end": 163.34,
+      "p": 0.998
+    },
+    {
+      "text": "paralelo.",
+      "start": 163.34,
+      "end": 163.92,
+      "p": 0.994
+    },
+    {
+      "text": "A",
+      "start": 164.08,
+      "end": 164.18,
+      "p": 0.921
+    },
+    {
+      "text": "ciência",
+      "start": 164.18,
+      "end": 164.42,
+      "p": 0.746
+    },
+    {
+      "text": "de",
+      "start": 164.42,
+      "end": 164.62,
+      "p": 0.995
+    },
+    {
+      "text": "dados",
+      "start": 164.62,
+      "end": 164.92,
+      "p": 0.995
+    },
+    {
+      "text": "trabalha",
+      "start": 164.92,
+      "end": 165.42,
+      "p": 0.992
+    },
+    {
+      "text": "sobre",
+      "start": 165.42,
+      "end": 165.62,
+      "p": 0.971
+    },
+    {
+      "text": "esses",
+      "start": 165.62,
+      "end": 165.8,
+      "p": 0.981
+    },
+    {
+      "text": "encaminhamentos,",
+      "start": 165.8,
+      "end": 166.54,
+      "p": 0.994
+    },
+    {
+      "text": "já",
+      "start": 166.86,
+      "end": 167.34,
+      "p": 0.997
+    },
+    {
+      "text": "estruturados",
+      "start": 167.34,
+      "end": 167.92,
+      "p": 0.994
+    },
+    {
+      "text": "e",
+      "start": 167.92,
+      "end": 168.18,
+      "p": 0.985
+    },
+    {
+      "text": "anonimizados.",
+      "start": 168.18,
+      "end": 168.86,
+      "p": 0.961
+    },
+    {
+      "text": "O",
+      "start": 169.48,
+      "end": 169.58,
+      "p": 0.924
+    },
+    {
+      "text": "painel",
+      "start": 169.58,
+      "end": 169.76,
+      "p": 0.701
+    },
+    {
+      "text": "do",
+      "start": 169.76,
+      "end": 169.86,
+      "p": 0.594
+    },
+    {
+      "text": "gestor",
+      "start": 169.86,
+      "end": 170.22,
+      "p": 0.994
+    },
+    {
+      "text": "passa",
+      "start": 170.22,
+      "end": 170.48,
+      "p": 0.982
+    },
+    {
+      "text": "a",
+      "start": 170.48,
+      "end": 170.68,
+      "p": 0.981
+    },
+    {
+      "text": "mostrar",
+      "start": 170.68,
+      "end": 171.0,
+      "p": 0.988
+    },
+    {
+      "text": "a",
+      "start": 171.0,
+      "end": 171.26,
+      "p": 0.987
+    },
+    {
+      "text": "demanda",
+      "start": 171.26,
+      "end": 171.72,
+      "p": 0.998
+    },
+    {
+      "text": "por",
+      "start": 171.72,
+      "end": 171.86,
+      "p": 0.983
+    },
+    {
+      "text": "especialidade,",
+      "start": 171.86,
+      "end": 172.66,
+      "p": 0.942
+    },
+    {
+      "text": "a",
+      "start": 173.14,
+      "end": 173.22,
+      "p": 0.977
+    },
+    {
+      "text": "previsão",
+      "start": 173.22,
+      "end": 173.6,
+      "p": 0.996
+    },
+    {
+      "text": "da",
+      "start": 173.6,
+      "end": 173.7,
+      "p": 0.997
+    },
+    {
+      "text": "fila",
+      "start": 173.7,
+      "end": 174.12,
+      "p": 0.981
+    },
+    {
+      "text": "e",
+      "start": 174.12,
+      "end": 174.42,
+      "p": 0.896
+    },
+    {
+      "text": "onde",
+      "start": 174.42,
+      "end": 174.58,
+      "p": 0.907
+    },
+    {
+      "text": "as",
+      "start": 174.58,
+      "end": 174.74,
+      "p": 0.996
+    },
+    {
+      "text": "faltas",
+      "start": 174.74,
+      "end": 175.04,
+      "p": 0.836
+    },
+    {
+      "text": "se",
+      "start": 175.04,
+      "end": 175.16,
+      "p": 0.988
+    },
+    {
+      "text": "concentram.",
+      "start": 175.16,
+      "end": 175.7,
+      "p": 0.984
+    },
+    {
+      "text": "Os",
+      "start": 176.1,
+      "end": 176.3,
+      "p": 0.995
+    },
+    {
+      "text": "números",
+      "start": 176.3,
+      "end": 176.46,
+      "p": 0.995
+    },
+    {
+      "text": "aqui",
+      "start": 176.46,
+      "end": 176.72,
+      "p": 0.99
+    },
+    {
+      "text": "são",
+      "start": 176.72,
+      "end": 176.92,
+      "p": 0.995
+    },
+    {
+      "text": "ilustrativos.",
+      "start": 176.92,
+      "end": 177.58,
+      "p": 0.961
+    },
+    {
+      "text": "A",
+      "start": 177.84,
+      "end": 177.9,
+      "p": 0.977
+    },
+    {
+      "text": "ideia",
+      "start": 177.9,
+      "end": 178.04,
+      "p": 0.985
+    },
+    {
+      "text": "é",
+      "start": 178.04,
+      "end": 178.28,
+      "p": 0.991
+    },
+    {
+      "text": "ver",
+      "start": 178.28,
+      "end": 178.36,
+      "p": 0.983
+    },
+    {
+      "text": "a",
+      "start": 178.36,
+      "end": 178.46,
+      "p": 0.994
+    },
+    {
+      "text": "especialidade",
+      "start": 178.46,
+      "end": 179.2,
+      "p": 0.989
+    },
+    {
+      "text": "que",
+      "start": 179.2,
+      "end": 179.42,
+      "p": 0.962
+    },
+    {
+      "text": "cresce",
+      "start": 179.42,
+      "end": 179.88,
+      "p": 0.983
+    },
+    {
+      "text": "antes",
+      "start": 179.88,
+      "end": 180.18,
+      "p": 0.996
+    },
+    {
+      "text": "da",
+      "start": 180.18,
+      "end": 180.4,
+      "p": 0.976
+    },
+    {
+      "text": "espera",
+      "start": 180.4,
+      "end": 180.68,
+      "p": 0.687
+    },
+    {
+      "text": "explodir",
+      "start": 180.68,
+      "end": 181.18,
+      "p": 0.988
+    },
+    {
+      "text": "e",
+      "start": 181.18,
+      "end": 181.92,
+      "p": 0.757
+    },
+    {
+      "text": "planejar",
+      "start": 181.92,
+      "end": 182.36,
+      "p": 0.993
+    },
+    {
+      "text": "vagas",
+      "start": 182.36,
+      "end": 182.94,
+      "p": 0.962
+    },
+    {
+      "text": "com",
+      "start": 182.94,
+      "end": 183.12,
+      "p": 0.745
+    },
+    {
+      "text": "dados.",
+      "start": 183.12,
+      "end": 183.4,
+      "p": 0.997
+    },
+    {
+      "text": "Os",
+      "start": 183.88,
+      "end": 184.04,
+      "p": 0.989
+    },
+    {
+      "text": "benefícios",
+      "start": 184.04,
+      "end": 184.54,
+      "p": 0.996
+    },
+    {
+      "text": "disso",
+      "start": 184.54,
+      "end": 184.9,
+      "p": 0.996
+    },
+    {
+      "text": "é",
+      "start": 184.9,
+      "end": 185.14,
+      "p": 0.936
+    },
+    {
+      "text": "que",
+      "start": 185.14,
+      "end": 185.24,
+      "p": 0.991
+    },
+    {
+      "text": "o",
+      "start": 185.24,
+      "end": 185.32,
+      "p": 0.989
+    },
+    {
+      "text": "médico",
+      "start": 185.32,
+      "end": 185.52,
+      "p": 0.993
+    },
+    {
+      "text": "olha",
+      "start": 185.52,
+      "end": 185.84,
+      "p": 0.882
+    },
+    {
+      "text": "para",
+      "start": 185.84,
+      "end": 185.98,
+      "p": 0.406
+    },
+    {
+      "text": "o",
+      "start": 185.98,
+      "end": 186.04,
+      "p": 0.98
+    },
+    {
+      "text": "paciente",
+      "start": 186.04,
+      "end": 186.6,
+      "p": 0.989
+    },
+    {
+      "text": "ao",
+      "start": 186.6,
+      "end": 186.8,
+      "p": 0.921
+    },
+    {
+      "text": "invés",
+      "start": 186.8,
+      "end": 187.04,
+      "p": 0.982
+    },
+    {
+      "text": "de",
+      "start": 187.04,
+      "end": 187.16,
+      "p": 0.997
+    },
+    {
+      "text": "digitar.",
+      "start": 187.16,
+      "end": 187.64,
+      "p": 0.839
+    },
+    {
+      "text": "O",
+      "start": 187.64,
+      "end": 188.46,
+      "p": 0.125
+    },
+    {
+      "text": "cidadão",
+      "start": 188.46,
+      "end": 188.88,
+      "p": 0.911
+    },
+    {
+      "text": "recebe",
+      "start": 188.88,
+      "end": 189.3,
+      "p": 0.985
+    },
+    {
+      "text": "encaminhamento",
+      "start": 189.3,
+      "end": 189.84,
+      "p": 0.756
+    },
+    {
+      "text": "completo",
+      "start": 189.84,
+      "end": 190.36,
+      "p": 0.981
+    },
+    {
+      "text": "com",
+      "start": 190.36,
+      "end": 190.62,
+      "p": 0.851
+    },
+    {
+      "text": "prioridade",
+      "start": 190.62,
+      "end": 191.2,
+      "p": 0.997
+    },
+    {
+      "text": "justa",
+      "start": 191.2,
+      "end": 191.72,
+      "p": 0.985
+    },
+    {
+      "text": "e",
+      "start": 191.72,
+      "end": 192.2,
+      "p": 0.275
+    },
+    {
+      "text": "a",
+      "start": 192.2,
+      "end": 192.24,
+      "p": 0.991
+    },
+    {
+      "text": "equipe",
+      "start": 192.24,
+      "end": 192.58,
+      "p": 0.992
+    },
+    {
+      "text": "tem",
+      "start": 192.58,
+      "end": 192.76,
+      "p": 0.977
+    },
+    {
+      "text": "menos",
+      "start": 192.76,
+      "end": 193.12,
+      "p": 0.99
+    },
+    {
+      "text": "retrabalho.",
+      "start": 193.12,
+      "end": 193.78,
+      "p": 0.83
+    },
+    {
+      "text": "E",
+      "start": 194.22,
+      "end": 194.48,
+      "p": 0.678
+    },
+    {
+      "text": "o",
+      "start": 194.48,
+      "end": 194.54,
+      "p": 0.989
+    },
+    {
+      "text": "gestor",
+      "start": 194.54,
+      "end": 194.94,
+      "p": 0.997
+    },
+    {
+      "text": "ganha",
+      "start": 194.94,
+      "end": 195.52,
+      "p": 0.959
+    },
+    {
+      "text": "dados",
+      "start": 195.52,
+      "end": 195.8,
+      "p": 0.992
+    },
+    {
+      "text": "padronizados.",
+      "start": 195.8,
+      "end": 196.62,
+      "p": 0.96
+    },
+    {
+      "text": "Os",
+      "start": 197.24,
+      "end": 197.36,
+      "p": 0.977
+    },
+    {
+      "text": "grandes",
+      "start": 197.36,
+      "end": 197.56,
+      "p": 0.989
+    },
+    {
+      "text": "desafios",
+      "start": 197.56,
+      "end": 197.96,
+      "p": 0.997
+    },
+    {
+      "text": "disso",
+      "start": 197.96,
+      "end": 198.28,
+      "p": 0.966
+    },
+    {
+      "text": "é",
+      "start": 198.28,
+      "end": 198.42,
+      "p": 0.945
+    },
+    {
+      "text": "que",
+      "start": 198.42,
+      "end": 198.54,
+      "p": 0.998
+    },
+    {
+      "text": "os",
+      "start": 198.54,
+      "end": 198.66,
+      "p": 0.971
+    },
+    {
+      "text": "dados",
+      "start": 198.66,
+      "end": 198.9,
+      "p": 0.997
+    },
+    {
+      "text": "de",
+      "start": 198.9,
+      "end": 199.08,
+      "p": 0.987
+    },
+    {
+      "text": "saúde",
+      "start": 199.08,
+      "end": 199.5,
+      "p": 0.998
+    },
+    {
+      "text": "é",
+      "start": 199.5,
+      "end": 199.82,
+      "p": 0.571
+    },
+    {
+      "text": "sensível",
+      "start": 199.82,
+      "end": 200.36,
+      "p": 0.982
+    },
+    {
+      "text": "na",
+      "start": 200.36,
+      "end": 200.5,
+      "p": 0.787
+    },
+    {
+      "text": "LGPD,",
+      "start": 200.5,
+      "end": 200.94,
+      "p": 0.528
+    },
+    {
+      "text": "então",
+      "start": 201.22,
+      "end": 201.5,
+      "p": 0.957
+    },
+    {
+      "text": "há",
+      "start": 201.5,
+      "end": 202.0,
+      "p": 0.953
+    },
+    {
+      "text": "consentimento,",
+      "start": 202.0,
+      "end": 202.76,
+      "p": 0.9
+    },
+    {
+      "text": "áudio",
+      "start": 202.98,
+      "end": 203.12,
+      "p": 0.763
+    },
+    {
+      "text": "apagado",
+      "start": 203.12,
+      "end": 203.68,
+      "p": 0.998
+    },
+    {
+      "text": "e",
+      "start": 203.68,
+      "end": 204.02,
+      "p": 0.865
+    },
+    {
+      "text": "relatório",
+      "start": 204.02,
+      "end": 204.5,
+      "p": 0.549
+    },
+    {
+      "text": "só",
+      "start": 204.5,
+      "end": 204.72,
+      "p": 0.962
+    },
+    {
+      "text": "no",
+      "start": 204.72,
+      "end": 204.86,
+      "p": 0.973
+    },
+    {
+      "text": "canal",
+      "start": 204.86,
+      "end": 205.12,
+      "p": 0.988
+    },
+    {
+      "text": "institucional.",
+      "start": 205.12,
+      "end": 205.66,
+      "p": 0.996
+    },
+    {
+      "text": "Aí",
+      "start": 206.14,
+      "end": 206.26,
+      "p": 0.44
+    },
+    {
+      "text": "a",
+      "start": 206.26,
+      "end": 206.36,
+      "p": 0.479
+    },
+    {
+      "text": "pode",
+      "start": 206.36,
+      "end": 206.52,
+      "p": 0.823
+    },
+    {
+      "text": "errar",
+      "start": 206.52,
+      "end": 206.94,
+      "p": 0.978
+    },
+    {
+      "text": "ou",
+      "start": 206.94,
+      "end": 207.1,
+      "p": 0.719
+    },
+    {
+      "text": "inventar",
+      "start": 207.1,
+      "end": 207.64,
+      "p": 0.973
+    },
+    {
+      "text": "algum",
+      "start": 207.64,
+      "end": 207.8,
+      "p": 0.958
+    },
+    {
+      "text": "sintoma,",
+      "start": 207.8,
+      "end": 208.32,
+      "p": 0.969
+    },
+    {
+      "text": "por",
+      "start": 208.46,
+      "end": 208.6,
+      "p": 0.988
+    },
+    {
+      "text": "isso",
+      "start": 208.6,
+      "end": 208.86,
+      "p": 0.996
+    },
+    {
+      "text": "cada",
+      "start": 208.86,
+      "end": 209.56,
+      "p": 0.677
+    },
+    {
+      "text": "item",
+      "start": 209.56,
+      "end": 209.8,
+      "p": 0.966
+    },
+    {
+      "text": "aponta",
+      "start": 209.8,
+      "end": 210.28,
+      "p": 0.728
+    },
+    {
+      "text": "para",
+      "start": 210.28,
+      "end": 210.56,
+      "p": 0.979
+    },
+    {
+      "text": "a",
+      "start": 210.56,
+      "end": 210.7,
+      "p": 0.493
+    },
+    {
+      "text": "fala.",
+      "start": 210.7,
+      "end": 211.0,
+      "p": 0.97
+    },
+    {
+      "text": "E",
+      "start": 211.34,
+      "end": 211.52,
+      "p": 0.738
+    },
+    {
+      "text": "ruídos,",
+      "start": 211.52,
+      "end": 211.98,
+      "p": 0.984
+    },
+    {
+      "text": "sotaques",
+      "start": 212.14,
+      "end": 212.64,
+      "p": 0.958
+    },
+    {
+      "text": "ou",
+      "start": 212.64,
+      "end": 212.82,
+      "p": 0.868
+    },
+    {
+      "text": "estrutura",
+      "start": 212.82,
+      "end": 213.28,
+      "p": 0.8
+    },
+    {
+      "text": "das",
+      "start": 213.28,
+      "end": 213.48,
+      "p": 0.942
+    },
+    {
+      "text": "OBS",
+      "start": 213.48,
+      "end": 213.8,
+      "p": 0.75
+    },
+    {
+      "text": "pedem",
+      "start": 213.8,
+      "end": 214.4,
+      "p": 0.832
+    },
+    {
+      "text": "um",
+      "start": 214.4,
+      "end": 214.56,
+      "p": 0.851
+    },
+    {
+      "text": "piloto",
+      "start": 214.56,
+      "end": 215.0,
+      "p": 0.991
+    },
+    {
+      "text": "antes",
+      "start": 215.0,
+      "end": 215.24,
+      "p": 0.969
+    },
+    {
+      "text": "de",
+      "start": 215.24,
+      "end": 215.4,
+      "p": 0.996
+    },
+    {
+      "text": "ampliar.",
+      "start": 215.4,
+      "end": 215.74,
+      "p": 0.991
+    },
+    {
+      "text": "O",
+      "start": 215.74,
+      "end": 216.34,
+      "p": 0.107
+    },
+    {
+      "text": "maior",
+      "start": 216.34,
+      "end": 216.48,
+      "p": 0.984
+    },
+    {
+      "text": "risco",
+      "start": 216.48,
+      "end": 217.04,
+      "p": 0.995
+    },
+    {
+      "text": "é",
+      "start": 217.04,
+      "end": 217.3,
+      "p": 0.967
+    },
+    {
+      "text": "o",
+      "start": 217.3,
+      "end": 217.38,
+      "p": 0.98
+    },
+    {
+      "text": "médico",
+      "start": 217.38,
+      "end": 217.6,
+      "p": 0.993
+    },
+    {
+      "text": "assinar",
+      "start": 217.6,
+      "end": 218.04,
+      "p": 0.993
+    },
+    {
+      "text": "sem",
+      "start": 218.04,
+      "end": 218.42,
+      "p": 0.971
+    },
+    {
+      "text": "ler.",
+      "start": 218.42,
+      "end": 218.64,
+      "p": 0.985
+    },
+    {
+      "text": "Por",
+      "start": 219.2,
+      "end": 219.36,
+      "p": 0.969
+    },
+    {
+      "text": "isso,",
+      "start": 219.36,
+      "end": 219.62,
+      "p": 0.996
+    },
+    {
+      "text": "a",
+      "start": 219.84,
+      "end": 220.0,
+      "p": 0.899
+    },
+    {
+      "text": "IA",
+      "start": 220.0,
+      "end": 220.08,
+      "p": 0.664
+    },
+    {
+      "text": "não",
+      "start": 220.08,
+      "end": 220.28,
+      "p": 0.981
+    },
+    {
+      "text": "entra",
+      "start": 220.28,
+      "end": 220.6,
+      "p": 0.992
+    },
+    {
+      "text": "como",
+      "start": 220.6,
+      "end": 220.82,
+      "p": 0.99
+    },
+    {
+      "text": "diagnóstico,",
+      "start": 220.82,
+      "end": 221.6,
+      "p": 0.94
+    },
+    {
+      "text": "como",
+      "start": 221.78,
+      "end": 221.78,
+      "p": 0.988
+    },
+    {
+      "text": "receita",
+      "start": 221.78,
+      "end": 222.44,
+      "p": 0.996
+    },
+    {
+      "text": "e",
+      "start": 222.44,
+      "end": 222.54,
+      "p": 0.215
+    },
+    {
+      "text": "encaminhamento.",
+      "start": 222.54,
+      "end": 223.24,
+      "p": 0.935
+    },
+    {
+      "text": "Tudo",
+      "start": 223.64,
+      "end": 223.76,
+      "p": 0.981
+    },
+    {
+      "text": "entra",
+      "start": 223.76,
+      "end": 224.0,
+      "p": 0.997
+    },
+    {
+      "text": "como",
+      "start": 224.0,
+      "end": 224.24,
+      "p": 0.993
+    },
+    {
+      "text": "rascunho.",
+      "start": 224.24,
+      "end": 225.04,
+      "p": 0.852
+    },
+    {
+      "text": "Nada",
+      "start": 225.44,
+      "end": 225.62,
+      "p": 0.995
+    },
+    {
+      "text": "vira",
+      "start": 225.62,
+      "end": 225.88,
+      "p": 0.959
+    },
+    {
+      "text": "encaminhamento",
+      "start": 225.88,
+      "end": 226.42,
+      "p": 0.941
+    },
+    {
+      "text": "sem",
+      "start": 226.42,
+      "end": 226.58,
+      "p": 0.96
+    },
+    {
+      "text": "o",
+      "start": 226.58,
+      "end": 226.66,
+      "p": 0.617
+    },
+    {
+      "text": "médico",
+      "start": 226.66,
+      "end": 226.86,
+      "p": 0.996
+    },
+    {
+      "text": "confirmar.",
+      "start": 226.86,
+      "end": 227.44,
+      "p": 0.97
+    },
+    {
+      "text": "E",
+      "start": 227.84,
+      "end": 227.92,
+      "p": 0.568
+    },
+    {
+      "text": "ele",
+      "start": 227.92,
+      "end": 228.02,
+      "p": 0.959
+    },
+    {
+      "text": "pode",
+      "start": 228.02,
+      "end": 228.2,
+      "p": 0.999
+    },
+    {
+      "text": "editar",
+      "start": 228.2,
+      "end": 228.72,
+      "p": 0.832
+    },
+    {
+      "text": "ou",
+      "start": 228.72,
+      "end": 229.08,
+      "p": 0.963
+    },
+    {
+      "text": "recusar",
+      "start": 229.08,
+      "end": 229.5,
+      "p": 0.988
+    },
+    {
+      "text": "tudo.",
+      "start": 229.5,
+      "end": 229.72,
+      "p": 0.999
+    },
+    {
+      "text": "E",
+      "start": 230.14,
+      "end": 230.24,
+      "p": 0.862
+    },
+    {
+      "text": "se",
+      "start": 230.24,
+      "end": 230.56,
+      "p": 0.594
+    },
+    {
+      "text": "a",
+      "start": 230.56,
+      "end": 230.66,
+      "p": 0.988
+    },
+    {
+      "text": "IA",
+      "start": 230.66,
+      "end": 230.76,
+      "p": 0.985
+    },
+    {
+      "text": "falhar,",
+      "start": 230.76,
+      "end": 231.16,
+      "p": 0.972
+    },
+    {
+      "text": "a",
+      "start": 231.44,
+      "end": 231.48,
+      "p": 0.996
+    },
+    {
+      "text": "consulta",
+      "start": 231.48,
+      "end": 231.86,
+      "p": 0.996
+    },
+    {
+      "text": "segue",
+      "start": 231.86,
+      "end": 232.12,
+      "p": 0.991
+    },
+    {
+      "text": "igual.",
+      "start": 232.12,
+      "end": 232.42,
+      "p": 0.997
+    },
+    {
+      "text": "A",
+      "start": 232.72,
+      "end": 232.78,
+      "p": 0.983
+    },
+    {
+      "text": "IA",
+      "start": 232.78,
+      "end": 232.92,
+      "p": 0.993
+    },
+    {
+      "text": "organiza",
+      "start": 232.92,
+      "end": 233.84,
+      "p": 0.988
+    },
+    {
+      "text": "as",
+      "start": 233.84,
+      "end": 234.04,
+      "p": 0.995
+    },
+    {
+      "text": "informações.",
+      "start": 234.04,
+      "end": 234.54,
+      "p": 0.995
+    },
+    {
+      "text": "E",
+      "start": 235.28,
+      "end": 235.32,
+      "p": 0.899
+    },
+    {
+      "text": "quem",
+      "start": 235.32,
+      "end": 235.44,
+      "p": 0.994
+    },
+    {
+      "text": "decide",
+      "start": 235.44,
+      "end": 235.84,
+      "p": 0.98
+    },
+    {
+      "text": "é",
+      "start": 235.84,
+      "end": 236.28,
+      "p": 0.849
+    },
+    {
+      "text": "o",
+      "start": 236.28,
+      "end": 236.36,
+      "p": 0.944
+    },
+    {
+      "text": "médico.",
+      "start": 236.36,
+      "end": 236.68,
+      "p": 0.996
+    },
+    {
+      "text": "Obrigado.",
+      "start": 237.62,
+      "end": 238.14,
+      "p": 0.986
+    }
+  ]
+}

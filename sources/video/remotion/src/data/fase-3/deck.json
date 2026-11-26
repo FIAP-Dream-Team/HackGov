@@ -1,0 +1,407 @@
+{
+ "source": "sources/video/fase-3/deck/minha-vez-fase3.html",
+ "globalCss": ".scene {\n  --cream: #F5F2EA;\n  --cream-2: #EBE5D7;\n  --rule: #D5CEBE;\n  --ink: #12211A;\n  --ink-2: #33443B;\n  --muted: #5E6D65;\n  --faint: #A0A9A3;\n  --green: #1E8E63;\n  --green-600: #197854;\n  --green-700: #145F43;\n  --green-100: #EAF4F0;\n  --mint: #96CAB6;\n  --yellow: #F5B700;\n  --yellow-200: #FDEDC0;\n  --yellow-700: #A57B00;\n  --blue: #1D5FA8;\n  --blue-100: #EAF0F7;\n  --blue-300: #96B4D6;\n  --red: #D6453D;\n  --red-100: #FBEDED;\n  --night: #0F1A15;\n  --night-2: #14231C;\n  --night-rule: #2A3C33;\n  --night-text: #E4EEE8;\n  --night-muted: #8DA196;\n  --sans: 'IBM Plex Sans', system-ui, sans-serif;\n  --cond: 'IBM Plex Sans Condensed', 'IBM Plex Sans', sans-serif;\n  --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;\n\n  position: relative;\n  width: 1920px;\n  height: 1080px;\n  overflow: hidden;\n  box-sizing: border-box;\n  padding: 84px 128px 0;\n  background: var(--cream);\n  color: var(--ink);\n  font: 400 27px/1.42 var(--sans);\n  -webkit-font-smoothing: antialiased;\n}\n.scene *, .scene *::before, .scene *::after { box-sizing: border-box; }\n.scene p, .scene h1, .scene h2, .scene h3, .scene ul, .scene ol, .scene figure, .scene dl, .scene dd, .scene pre { margin: 0; padding: 0; }\n.scene ul, .scene ol { list-style: none; }\n.scene b, .scene strong { font-weight: 600; }\n.scene .mono { font-family: var(--mono); }\n.scene .num { font-variant-numeric: tabular-nums; }\n\n.scene.tone-dark { background: var(--night); color: var(--night-text); }\n.scene.tone-green { background: var(--green); color: #fff; }\n\n/* --- header: the five parts of the assignment, then the title ----------- */\n/* The top right corner stays empty: the speaker card lands there. */\n.scene .parts { display: flex; gap: 40px; font: 500 18px/1 var(--sans); color: var(--faint); }\n.scene .parts span { position: relative; padding-bottom: 12px; white-space: nowrap; }\n.scene .parts b { font-family: var(--cond); font-weight: 600; margin-right: 8px; }\n.scene .parts .on { color: var(--ink); }\n.scene .parts .on::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--green); }\n.scene.tone-dark .parts { color: #56695E; }\n.scene.tone-dark .parts .on { color: var(--night-text); }\n.scene.tone-dark .parts .on::after { background: var(--mint); }\n.scene .title { margin-top: 32px; max-width: 1180px; font: 600 64px/1.06 var(--sans); letter-spacing: -.012em; }\n\n/* Content area: same top on every scene. */\n.scene .body { position: absolute; left: 128px; right: 128px; top: 272px; bottom: 72px; }\n.scene .grid12 { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 32px; }\n.scene .label { font: 500 19px/1.2 var(--sans); color: var(--muted); }\n.scene.tone-dark .label { color: var(--night-muted); }\n.scene .note { position: absolute; left: 128px; bottom: 40px; font: 400 19px/1.3 var(--sans); color: var(--muted); }\n.scene.tone-dark .note { color: var(--night-muted); }\n.scene mark { background: none; color: inherit; box-shadow: inset 0 -.38em 0 var(--yellow-200); padding: 0 .06em; }\n.scene.tone-dark mark, .scene.tone-green mark { box-shadow: none; color: var(--yellow); }\n.scene .sq { display: inline-block; width: 14px; height: 14px; margin-right: 12px; vertical-align: 1px; }\n.scene .sq.upd { background: var(--yellow); }\n.scene .sq.new { background: var(--green); }\n.scene .tick { display: inline-block; width: .9em; height: .9em; vertical-align: -.1em; }\n\n/* --- figures ------------------------------------------------------------- */\n.scene .fig-stage {\n  position: absolute;\n  left: 128px;\n  right: 128px;\n  top: 272px;\n  bottom: 168px;\n  border-radius: 6px;\n  overflow: hidden;\n  background: #fff;\n  box-shadow: inset 0 0 0 1px var(--rule);\n}\n.scene .fig-stage.on-dark { background: #1E1E1E; box-shadow: inset 0 0 0 1px var(--night-rule); }\n.scene .fig-stage.on-cream { background: var(--cream-2); }\n/* With a legend: legend takes four columns, the figure the other eight. */\n.scene .fig-stage.with-legend { left: 693px; bottom: 72px; }\n.scene .fig-canvas { position: absolute; left: 0; top: 0; transform-origin: 0 0; }\n.scene .fig-canvas > img { display: block; width: 100%; height: 100%; }\n.scene .focus { position: absolute; display: block; pointer-events: none; }\n.scene .mark { position: absolute; display: block; border-radius: .4%; box-shadow: 0 0 0 var(--ring, 8px) var(--yellow); }\n.scene .fig-caption {\n  position: absolute;\n  left: 128px;\n  right: 128px;\n  bottom: 56px;\n  display: grid;\n  grid-template-columns: repeat(12, 1fr);\n  column-gap: 32px;\n  font: 400 21px/1.35 var(--sans);\n}\n.scene .fig-caption > p { grid-column: span 4; padding-top: 16px; border-top: 1px solid var(--rule); }\n.scene.tone-dark .fig-caption > p { border-top-color: var(--night-rule); }\n.scene .fig-caption b { display: block; margin-bottom: 4px; font-weight: 600; }\n.scene .fig-caption .muted { color: var(--muted); }\n.scene.tone-dark .fig-caption .muted { color: var(--night-muted); }\n.scene .legend {\n  position: absolute;\n  left: 128px;\n  top: 272px;\n  bottom: 72px;\n  width: 533px;\n  display: flex;\n  flex-direction: column;\n  border-top: 1px solid var(--ink);\n}\n.scene .legend li { flex: 1; display: grid; grid-template-columns: 48px 1fr; align-items: center; column-gap: 8px; border-bottom: 1px solid var(--rule); }\n.scene .legend .n { font: 600 30px/1 var(--cond); color: var(--green); }\n.scene .legend b { display: block; font: 600 24px/1.2 var(--sans); }\n.scene .legend span.t { display: block; margin-top: 4px; font: 400 20px/1.32 var(--sans); color: var(--muted); }\n.scene .legend .risk .n { color: var(--red); }\n.scene .legend .total { background: var(--blue); color: #fff; border-bottom: 0; padding: 0 24px; margin-top: 16px; flex: 1.15; grid-template-columns: 1fr; }\n.scene .legend .total b { font: 600 52px/1 var(--cond); }\n.scene .legend .total span.t { color: #DCE6F2; font-size: 21px; }\n\n/* --- 01 capa ------------------------------------------------------------ */\n.s-cover .brand { display: flex; align-items: center; gap: 16px; font: 600 24px/1 var(--sans); }\n.s-cover .brand svg { width: 46px; height: 32px; }\n.s-cover .display { margin-top: 112px; font: 600 240px/.86 var(--cond); letter-spacing: -.02em; }\n.s-cover .lead { margin-top: 40px; font: 500 48px/1.15 var(--sans); }\n.s-cover .sub { margin-top: 24px; max-width: 1040px; font: 400 27px/1.42 var(--sans); color: #DDF0E7; }\n.s-cover .team { position: absolute; left: 128px; right: 128px; bottom: 64px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 32px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, .3); }\n.scene .member { display: flex; align-items: center; gap: 16px; }\n.scene .member img { width: 88px; height: 88px; border-radius: 50%; border: 3px solid var(--yellow); flex: none; }\n.scene .member figcaption { font: 600 21px/1.25 var(--sans); }\n.scene .member small { display: block; margin-top: 8px; font: 400 17px/1 var(--mono); color: #CFEBDD; }\n\n/* --- 02 o que mudou ----------------------------------------------------- */\n.s-evolucao .left { grid-column: 1 / span 5; display: flex; flex-direction: column; }\n.s-evolucao .recap { color: var(--ink-2); max-width: 560px; }\n.s-evolucao .recap .label { display: block; margin-bottom: 8px; }\n.s-evolucao .statement { margin-top: 96px; font: 500 40px/1.26 var(--sans); }\n.s-evolucao .ledger { grid-column: 7 / span 6; font-size: 25px; line-height: 1.35; }\n.s-evolucao .row { display: grid; grid-template-columns: 184px 216px 1fr; column-gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--rule); }\n.s-evolucao .row.th { padding: 0 0 16px; border-bottom: 1px solid var(--ink); font: 500 19px/1.2 var(--sans); color: var(--muted); }\n.s-evolucao .row .what { font-weight: 600; }\n.s-evolucao .row .before { color: var(--muted); }\n.s-evolucao .row .after b { color: var(--green-700); }\n.s-evolucao .row.db .after b { color: var(--blue); }\n\n/* --- 03 regras ---------------------------------------------------------- */\n.s-regras .scenario { grid-column: 1 / span 6; }\n.s-regras .panel { margin-top: 16px; border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1px var(--rule); }\n.s-regras .panel-head { display: flex; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid var(--rule); font: 600 22px/1 var(--sans); }\n.s-regras .panel-head .mono { font-weight: 500; }\n.s-regras dl { display: grid; grid-template-columns: 200px 1fr; row-gap: 16px; padding: 32px 24px; font-size: 26px; }\n.s-regras dt { color: var(--muted); }\n.s-regras dd { font-weight: 600; }\n.s-regras dd.dest { color: var(--green-700); }\n.s-regras .slots { margin-top: 32px; border-top: 1px solid var(--ink); }\n.s-regras .slots li { display: grid; grid-template-columns: 200px 1fr auto; align-items: center; column-gap: 16px; height: 80px; border-bottom: 1px solid var(--rule); font-size: 24px; }\n.s-regras .slots .mono { font-size: 22px; }\n.s-regras .slots .st { font-size: 20px; color: var(--green-700); font-weight: 500; }\n.s-regras .slots li.out { color: var(--faint); }\n.s-regras .slots li.out .unit { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--red); }\n.s-regras .slots li.out .st { color: var(--red); }\n.s-regras .rules { grid-column: 8 / span 5; border-top: 1px solid var(--ink); }\n.s-regras .rules li { display: grid; grid-template-columns: 64px 1fr; padding: 32px 0; border-bottom: 1px solid var(--rule); }\n.s-regras .rules .n { font: 600 44px/1 var(--cond); color: var(--green); }\n.s-regras .rules p { font: 600 30px/1.22 var(--sans); }\n.s-regras .rules small { display: block; margin-top: 8px; font: 400 21px/1.3 var(--sans); color: var(--muted); }\n\n/* --- 04 testes e demo --------------------------------------------------- */\n.s-demo .col-a { grid-column: 1 / span 6; }\n.s-demo .col-b { grid-column: 7 / span 6; }\n.s-demo .term {\n  margin-top: 16px;\n  padding: 24px 28px;\n  border-radius: 6px;\n  background: #0A1410;\n  box-shadow: inset 0 0 0 1px var(--night-rule);\n  font: 400 19px/1.7 var(--mono);\n  color: #C9DBD1;\n  white-space: pre-wrap;\n}\n.s-demo .ln { position: relative; display: block; padding: 0 8px; margin: 0 -8px; }\n.s-demo .ln .hl { position: absolute; inset: 0; border-radius: 3px; background: rgba(245, 183, 0, .17); }\n.s-demo .ln .t { position: relative; }\n.s-demo .ok { color: #7FD1A9; }\n.s-demo .err { color: #F0A39D; }\n.s-demo .dim { color: #6E8478; }\n.s-demo .sum { color: #7FD1A9; font-weight: 500; }\n.s-demo .tick { color: #7FD1A9; }\n.s-demo .closing { position: absolute; left: 0; right: 0; bottom: 0; padding-top: 24px; border-top: 1px solid var(--night-rule); font: 400 30px/1.3 var(--sans); }\n.s-demo .closing strong { color: var(--yellow); font-weight: 600; }\n\n/* --- 05 UML ------------------------------------------------------------- */\n.s-uml .col { grid-column: span 6; display: flex; flex-direction: column; gap: 32px; }\n.s-uml .group { font: 600 22px/1 var(--sans); padding-bottom: 16px; border-bottom: 1px solid var(--ink); }\n.s-uml .shot { height: 248px; border-radius: 6px; overflow: hidden; background: #121212; }\n.s-uml .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }\n.s-uml figcaption { margin-top: 16px; font-size: 22px; line-height: 1.3; color: var(--muted); }\n.s-uml figcaption b { color: var(--ink); margin-right: 8px; }\n\n/* --- 08 números do modelo lógico ---------------------------------------- */\n.s-numeros .counts { grid-column: 1 / span 7; display: grid; grid-template-columns: repeat(3, 1fr); align-self: center; border-top: 1px solid var(--ink); }\n.s-numeros .count { padding: 32px 32px 0 0; }\n.s-numeros .count + .count { padding-left: 32px; border-left: 1px solid var(--rule); }\n.s-numeros .count b { display: block; font: 600 180px/.9 var(--cond); letter-spacing: -.02em; color: var(--blue); }\n.s-numeros .count span { display: block; margin-top: 24px; font: 600 30px/1.1 var(--sans); }\n.s-numeros .count small { display: block; margin-top: 8px; font: 400 20px/1.35 var(--sans); color: var(--muted); }\n.s-numeros .grid12 { height: 100%; }\n.s-numeros .nav { grid-column: 9 / span 4; display: flex; flex-direction: column; }\n.s-numeros .nav-frame { position: relative; height: 640px; aspect-ratio: 1069 / 1501; border-radius: 6px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--rule); }\n.s-numeros .nav-frame img { width: 100%; height: 100%; display: block; }\n.s-numeros .nav-frame .mark { --ring: 3px; border-radius: 2px; }\n.s-numeros .nav .label { margin-top: 16px; }\n\n/* --- 10 tabela única ---------------------------------------------------- */\n.s-tabela .tbl { border-top: 1px solid var(--ink); }\n.s-tabela .row {\n  position: relative;\n  display: grid;\n  grid-template-columns: 148px 120px 196px 316px 200px 320px 1fr;\n  height: 76px;\n  border-bottom: 1px solid var(--rule);\n  font: 400 21px/1 var(--mono);\n}\n.s-tabela .row > span { position: relative; display: flex; align-items: center; gap: 8px; padding-right: 16px; white-space: nowrap; }\n.s-tabela .row.th { height: 48px; font: 500 16px/1 var(--mono); color: var(--muted); border-bottom-color: var(--ink); }\n.s-tabela .row.ghost { color: var(--faint); border-bottom: 0; }\n.s-tabela .row.ghost .q { color: var(--red); font-weight: 600; }\n.s-tabela .ov { position: absolute; display: flex; align-items: center; pointer-events: none; }\n.s-tabela .ov-ghost { inset: 6px -12px; border: 2px dashed var(--red); border-radius: 6px; justify-content: flex-end; padding-right: 16px; font: 500 18px/1 var(--sans); color: var(--red); }\n.s-tabela .ov-del { inset: 0 -12px; background: rgba(214, 69, 61, .09); }\n.s-tabela .ov-del::after { content: \"\"; position: absolute; left: 12px; right: 12px; top: 50%; height: 2px; background: var(--red); }\n.s-tabela .ov-new { inset: 12px 8px 12px -6px; border-radius: 3px; background: var(--yellow-200); padding-left: 6px; gap: 12px; font: 500 21px/1 var(--mono); color: var(--ink); }\n.s-tabela .ov-new em, .s-tabela .old { font: 500 17px/1 var(--sans); font-style: normal; }\n.s-tabela .ov-new em { color: var(--yellow-700); }\n.s-tabela .old { color: var(--red); }\n.s-tabela .anoms { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px; }\n.s-tabela .anom { padding-top: 16px; border-top: 2px solid var(--red); }\n.s-tabela .anom h3 { font: 600 30px/1.1 var(--sans); }\n.s-tabela .anom h3 span { font-family: var(--cond); color: var(--red); margin-right: 12px; }\n.s-tabela .anom p { margin-top: 16px; font: 400 25px/1.4 var(--sans); color: var(--ink-2); }\n\n/* --- 11 formas normais -------------------------------------------------- */\n.s-fn .stairs { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 32px; align-items: end; }\n.s-fn .step { display: flex; flex-direction: column; padding: 32px; border-radius: 6px; background: var(--cream-2); }\n.s-fn .step:nth-child(1) { height: 60%; }\n.s-fn .step:nth-child(2) { height: 73%; }\n.s-fn .step:nth-child(3) { height: 86%; }\n.s-fn .step:nth-child(4) { height: 100%; }\n.s-fn .nf { font: 600 96px/1 var(--cond); letter-spacing: -.01em; color: var(--green-700); }\n.s-fn .rule-name { margin-top: 16px; font: 600 26px/1.2 var(--sans); }\n.s-fn .did { margin-top: auto; padding-top: 24px; border-top: 1px solid var(--rule); font: 400 22px/1.38 var(--sans); color: var(--ink-2); }\n.s-fn .step.hot { background: var(--blue); color: #fff; }\n.s-fn .step.hot .nf { color: #fff; }\n.s-fn .step.hot .did { color: #E1EAF5; border-top-color: rgba(255, 255, 255, .3); }\n.s-fn .step.goal { background: transparent; box-shadow: inset 0 0 0 2px var(--rule); color: var(--muted); }\n.s-fn .step.goal .nf { color: var(--faint); }\n.s-fn .step.goal .did { color: var(--muted); }\n\n/* --- 12 CEP ------------------------------------------------------------- */\n.s-cep .dep { display: flex; align-items: baseline; gap: 16px; font: 500 30px/1.2 var(--mono); }\n.s-cep .dep i { font-style: normal; color: var(--muted); }\n.s-cep .dep .cep { color: var(--blue); font-weight: 600; }\n.s-cep .dep .why { margin-left: 16px; font: 400 22px/1.2 var(--sans); color: var(--muted); }\n.s-cep .schemas { margin-top: 40px; display: grid; grid-template-columns: 420px 96px 420px 420px; column-gap: 32px; align-items: start; }\n.s-cep .schema { border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1px var(--rule); overflow: hidden; }\n.s-cep .schema h4 { margin: 0; display: flex; justify-content: space-between; align-items: baseline; padding: 16px 24px; background: var(--cream-2); font: 600 21px/1.2 var(--mono); }\n.s-cep .schema h4 span { font: 500 17px/1 var(--sans); color: var(--muted); }\n.s-cep .schema.new h4 { background: var(--blue); color: #fff; }\n.s-cep .schema.new h4 span { color: #DCE6F2; }\n.s-cep .schema ul { padding: 8px 0; }\n.s-cep .schema li { display: flex; justify-content: space-between; padding: 6px 24px; font: 400 19px/1.3 var(--mono); }\n.s-cep .schema li em { font: 500 15px/1.3 var(--mono); font-style: normal; color: var(--muted); }\n.s-cep .schema li.moved { color: var(--red); text-decoration: line-through; text-decoration-thickness: 2px; }\n.s-cep .schema li.fk { color: var(--blue); font-weight: 600; }\n.s-cep .between { align-self: center; text-align: center; font: 500 48px/1 var(--sans); color: var(--muted); }\n.s-cep .between small { display: block; margin-top: 8px; font: 600 18px/1 var(--cond); letter-spacing: .04em; }\n.s-cep .outcome { position: absolute; left: 0; right: 0; bottom: 0; padding-top: 24px; border-top: 1px solid var(--ink); }\n.s-cep .outcome .bcnf { grid-column: 1 / span 4; display: flex; align-items: center; gap: 24px; }\n.s-cep .outcome .bcnf b { font: 600 64px/1 var(--cond); color: var(--green-700); }\n.s-cep .outcome .bcnf span { font: 400 22px/1.3 var(--sans); color: var(--ink-2); }\n.s-cep .outcome .kept { grid-column: 6 / span 7; font: 400 22px/1.4 var(--sans); color: var(--ink-2); }\n.s-cep .outcome .kept b { display: block; margin-bottom: 4px; color: var(--ink); font-size: 22px; }\n\n/* --- 14 SQL ------------------------------------------------------------- */\n.s-sql .code-col { grid-column: 1 / span 8; }\n.s-sql pre {\n  margin-top: 16px;\n  padding: 24px 20px;\n  border-radius: 6px;\n  background: #0A1410;\n  box-shadow: inset 0 0 0 1px var(--night-rule);\n  font: 400 20px/1.62 var(--mono);\n  color: #C9DBD1;\n}\n.s-sql .ln { position: relative; display: block; padding: 0 8px; white-space: pre; }\n.s-sql .blk { position: relative; display: block; }\n.s-sql .blk .hl { position: absolute; inset: 0; border-radius: 3px; background: rgba(245, 183, 0, .13); }\n.s-sql .kw { color: #9CC0EA; }\n.s-sql .ty { color: #96CAB6; }\n.s-sql .st { color: #F2C77A; }\n.s-sql .ln.cm { color: var(--yellow); }\n.s-sql .counts { grid-column: 10 / span 3; align-self: start; margin-top: 39px; border-top: 1px solid var(--night-text); }\n.s-sql .counts div { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 12px; border-bottom: 1px solid var(--night-rule); }\n.s-sql .counts dt { font: 500 19px/1 var(--mono); color: var(--night-muted); }\n.s-sql .counts dd { font: 600 64px/1 var(--cond); color: #fff; }\n.s-sql .counts div.idx dd { color: var(--yellow); }\n\n/* --- 15 encerramento ---------------------------------------------------- */\n.s-fim .brand { display: flex; align-items: center; gap: 16px; font: 600 24px/1 var(--sans); }\n.s-fim .brand svg { width: 46px; height: 32px; }\n.s-fim .from { margin-top: 88px; font: 400 32px/1.2 var(--sans); color: #C6E6D7; }\n.s-fim .from s { text-decoration-thickness: 2px; }\n.s-fim .to { margin-top: 12px; max-width: 1240px; font: 500 44px/1.2 var(--sans); }\n.s-fim .thanks { margin-top: 56px; font: 600 220px/.86 var(--cond); letter-spacing: -.02em; }\n.s-fim .repo { margin-top: 72px; font: 500 24px/1.2 var(--mono); color: #DDF0E7; }\n.s-fim .team { position: absolute; left: 128px; right: 128px; bottom: 64px; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 32px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, .3); }\n.s-fim .member img { width: 72px; height: 72px; }",
+ "fonts": [
+  {
+   "family": "IBM Plex Mono",
+   "weight": "400",
+   "style": "normal",
+   "file": "ibm-plex-mono-400-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "weight": "400",
+   "style": "normal",
+   "file": "ibm-plex-mono-400-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "weight": "500",
+   "style": "normal",
+   "file": "ibm-plex-mono-500-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "weight": "500",
+   "style": "normal",
+   "file": "ibm-plex-mono-500-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "weight": "600",
+   "style": "normal",
+   "file": "ibm-plex-mono-600-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Mono",
+   "weight": "600",
+   "style": "normal",
+   "file": "ibm-plex-mono-600-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "400",
+   "style": "normal",
+   "file": "ibm-plex-sans-400-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "400",
+   "style": "normal",
+   "file": "ibm-plex-sans-400-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "500",
+   "style": "normal",
+   "file": "ibm-plex-sans-500-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "500",
+   "style": "normal",
+   "file": "ibm-plex-sans-500-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "600",
+   "style": "normal",
+   "file": "ibm-plex-sans-600-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "600",
+   "style": "normal",
+   "file": "ibm-plex-sans-600-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "700",
+   "style": "normal",
+   "file": "ibm-plex-sans-700-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans",
+   "weight": "700",
+   "style": "normal",
+   "file": "ibm-plex-sans-700-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans Condensed",
+   "weight": "500",
+   "style": "normal",
+   "file": "ibm-plex-sans-condensed-500-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans Condensed",
+   "weight": "500",
+   "style": "normal",
+   "file": "ibm-plex-sans-condensed-500-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans Condensed",
+   "weight": "600",
+   "style": "normal",
+   "file": "ibm-plex-sans-condensed-600-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans Condensed",
+   "weight": "600",
+   "style": "normal",
+   "file": "ibm-plex-sans-condensed-600-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "family": "IBM Plex Sans Condensed",
+   "weight": "700",
+   "style": "normal",
+   "file": "ibm-plex-sans-condensed-700-latin-ext.woff2",
+   "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "family": "IBM Plex Sans Condensed",
+   "weight": "700",
+   "style": "normal",
+   "file": "ibm-plex-sans-condensed-700-latin.woff2",
+   "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "scenes": [
+  {
+   "index": 0,
+   "scene": "01",
+   "label": "Capa",
+   "kind": "slide",
+   "tone": "green",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene tone-green s-cover\" data-scene=\"01\" data-label=\"Capa\" data-kind=\"slide\">\n  <div class=\"brand\">\n    <svg viewBox=\"0 0 46 32\" aria-hidden=\"true\"><circle cx=\"15\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#F5B700\" stroke-width=\"5\"></circle><circle cx=\"31\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#fff\" stroke-width=\"5\"></circle></svg>\n    <span>HackGov · Minha Vez</span>\n  </div>\n  <h1 class=\"display\">Fase 3</h1>\n  <p class=\"lead\" data-reveal=\"s01-titulo\">É hora de armazenar os dados.</p>\n  <p class=\"sub\" data-reveal=\"s01-sub\">Modelo lógico, formas normais, modelo físico e script SQL do agendamento de encaminhamentos da UBS para a atenção especializada.</p>\n  <div class=\"team\">\n    <figure class=\"member\" data-reveal=\"s01-john\"><img src=\"img/team/john.png\" alt=\"\"><figcaption>John Vitor<br>Silverio Pereira<small>RM 566968</small></figcaption></figure>\n    <figure class=\"member\" data-reveal=\"s01-larissa\"><img src=\"img/team/larissa.png\" alt=\"\"><figcaption>Ana Larissa<br>Cristo Mendes<small>RM 567403</small></figcaption></figure>\n    <figure class=\"member\" data-reveal=\"s01-joao\"><img src=\"img/team/joao.png\" alt=\"\"><figcaption>João Pedro<br>Thethê Andrade<small>RM 568305</small></figcaption></figure>\n    <figure class=\"member\" data-reveal=\"s01-vinicius\"><img src=\"img/team/vinicius.png\" alt=\"\"><figcaption>Vinícius Cardoso<br>Junqueira<small>RM 566906</small></figcaption></figure>\n    <figure class=\"member\" data-reveal=\"s01-brenda\"><img src=\"img/team/brenda.png\" alt=\"\"><figcaption>Brenda Cristina<br>Martins Araújo<small>RM 575032</small></figcaption></figure>\n  </div>\n</section>"
+  },
+  {
+   "index": 1,
+   "scene": "02",
+   "label": "O que mudou",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-evolucao\" data-scene=\"02\" data-label=\"O que mudou\" data-kind=\"slide\">\n  <nav class=\"parts\"><span class=\"on\"><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">O que mudou desde a Fase 2</h2>\n  <div class=\"body grid12\">\n    <div class=\"left\">\n      <p class=\"recap\" data-reveal=\"s02-fase2\"><span class=\"label\">Onde a Fase 2 parou</span>Fluxo do cidadão modelado em UML, prototipado no Figma e com o primeiro recorte do domínio em Java.</p>\n      <p class=\"statement\" data-reveal=\"s02-insight\">Ao desenhar o banco, a modelagem dos dados <mark>expôs regras da US03</mark> que o código ainda não aplicava.</p>\n    </div>\n    <div class=\"ledger\">\n      <div class=\"row th\"><span>Artefato</span><span>Fase 2</span><span>Fase 3</span></div>\n      <div class=\"row\" data-reveal=\"s02-java\"><span class=\"what\">Código Java</span><span class=\"before\">8 classes</span><span class=\"after\"><b>9 classes</b>, com unidade, protocolo, prazo de 24 h e limite de 2</span></div>\n      <div class=\"row\" data-reveal=\"s02-testes\"><span class=\"what\">Testes</span><span class=\"before\">nenhum</span><span class=\"after\"><b>5 testes</b> automatizados, todos passando</span></div>\n      <div class=\"row\" data-reveal=\"s02-uml\"><span class=\"what\">Diagramas UML</span><span class=\"before\">4 diagramas</span><span class=\"after\"><b>2 atualizados</b> e 2 novos</span></div>\n      <div class=\"row\" data-reveal=\"s02-telas\"><span class=\"what\">Wireframes</span><span class=\"before\">telas da US01 a US03</span><span class=\"after\"><b>3 atualizadas</b> e 3 novas</span></div>\n      <div class=\"row db\" data-reveal=\"s02-banco\"><span class=\"what\">Banco de dados</span><span class=\"before\">não existia</span><span class=\"after\"><b>12 tabelas</b>, 11 entidades e 18 chaves estrangeiras</span></div>\n    </div>\n  </div>\n</section>"
+  },
+  {
+   "index": 2,
+   "scene": "03",
+   "label": "Regras da US03",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-regras\" data-scene=\"03\" data-label=\"Regras da US03\" data-kind=\"slide\">\n  <nav class=\"parts\"><span class=\"on\"><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">As regras da US03 agora no código</h2>\n  <div class=\"body grid12\">\n    <div class=\"scenario\">\n      <div class=\"label\">Cenário do DemoModelagem</div>\n      <div class=\"panel\" data-reveal=\"s03-enc\">\n        <div class=\"panel-head\"><span>Encaminhamento</span><span class=\"mono\">MV-2026-0001</span></div>\n        <dl>\n          <dt>Especialidade</dt><dd>Cardiologia</dd>\n          <dt>Origem</dt><dd>UBS Centro</dd>\n          <dt>Destino</dt><dd class=\"dest\">Ambulatório de Especialidades</dd>\n        </dl>\n      </div>\n      <ul class=\"slots\">\n        <li data-reveal=\"s03-vaga1\"><span class=\"mono\">30/10 14:00</span><span class=\"unit\">Ambulatório de Especialidades</span><span class=\"st\">aparece</span></li>\n        <li data-reveal=\"s03-vaga2\"><span class=\"mono\">31/10 09:00</span><span class=\"unit\">Ambulatório de Especialidades</span><span class=\"st\">aparece</span></li>\n        <li class=\"out\" data-reveal=\"s03-vaga3\"><span class=\"mono\">30/10 14:00</span><span class=\"unit\">Ambulatório Leste</span><span class=\"st\">outra unidade</span></li>\n      </ul>\n    </div>\n    <ol class=\"rules\">\n      <li data-reveal=\"s03-r1\"><span class=\"n\">1</span><p>Só vê e só agenda vagas da unidade de destino<small>A unidade é definida no encaminhamento.</small></p></li>\n      <li data-reveal=\"s03-r2\"><span class=\"n\">2</span><p>Reagendar cancela o atual e cria um novo<small>O novo agendamento aponta para o cancelado.</small></p></li>\n      <li data-reveal=\"s03-r3\"><span class=\"n\">3</span><p>Cancelar ou reagendar só até 24 h antes<small>Depois disso, o horário fica mantido.</small></p></li>\n      <li data-reveal=\"s03-r4\"><span class=\"n\">4</span><p>No máximo 2 reagendamentos<small>O terceiro, só no balcão da UBS.</small></p></li>\n    </ol>\n  </div>\n</section>"
+  },
+  {
+   "index": 3,
+   "scene": "04",
+   "label": "Testes e demo",
+   "kind": "slide",
+   "tone": "dark",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene tone-dark s-demo\" data-scene=\"04\" data-label=\"Testes e demo\" data-kind=\"slide\">\n  <nav class=\"parts\"><span class=\"on\"><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">Testes passando, demo rodando</h2>\n  <div class=\"body grid12\">\n    <div class=\"col-a\" data-reveal=\"s04-testes\">\n      <div class=\"label\">JUnit 5 · RegrasDoEncaminhamentoTest</div>\n      <pre class=\"term\"><span class=\"ln\">RegrasDoEncaminhamentoTest <svg class=\"tick\" viewBox=\"0 0 16 16\"><path d=\"M2.5 8.5l3.5 3.5 7.5-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></path></svg></span><span class=\"ln\"><span class=\"dim\">├─</span> terceiroReagendamentoFicaNoBalcao() <svg class=\"tick\" viewBox=\"0 0 16 16\"><path d=\"M2.5 8.5l3.5 3.5 7.5-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></path></svg></span><span class=\"ln\"><span class=\"dim\">├─</span> nascimentoNuloOuFuturoEhRecusado() <svg class=\"tick\" viewBox=\"0 0 16 16\"><path d=\"M2.5 8.5l3.5 3.5 7.5-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></path></svg></span><span class=\"ln\"><span class=\"dim\">├─</span> reagendarCriaOutroAgendamentoEMantemOHorarioCancelado() <svg class=\"tick\" viewBox=\"0 0 16 16\"><path d=\"M2.5 8.5l3.5 3.5 7.5-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></path></svg></span><span class=\"ln\"><span class=\"dim\">├─</span> criacaoDoEncaminhamentoEntraNoHistorico() <svg class=\"tick\" viewBox=\"0 0 16 16\"><path d=\"M2.5 8.5l3.5 3.5 7.5-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></path></svg></span><span class=\"ln\"><span class=\"dim\">└─</span> cancelarComMenosDe24HorasEhRecusado() <svg class=\"tick\" viewBox=\"0 0 16 16\"><path d=\"M2.5 8.5l3.5 3.5 7.5-8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"></path></svg></span><span class=\"ln\"> </span><span class=\"ln sum\">5 tests successful</span><span class=\"ln dim\">0 tests failed</span></pre>\n    </div>\n    <div class=\"col-b\">\n      <div class=\"label\">java DemoModelagem · trecho da saída</div>\n      <pre class=\"term\"><span class=\"ln\">Protocolo: MV-2026-0001</span><span class=\"ln\">Horários livres na unidade de destino: 2</span><span class=\"ln\">Vaga de outra unidade visível: <span class=\"ok\">false</span></span><span class=\"ln\">Reagendado para: 31/10/2026 às 09:00</span><span class=\"ln\">Agendamentos no encaminhamento: 2</span><span class=\"ln\"><span class=\"hl\" data-reveal=\"s04-anterior\"></span><span class=\"t\">Anterior ficou: <span class=\"ok\">CANCELADO</span></span></span><span class=\"ln\"><span class=\"hl\" data-reveal=\"s04-novo\"></span><span class=\"t\">Novo aponta para o cancelado: <span class=\"ok\">true</span></span></span><span class=\"ln dim\">Horário cancelado ainda registrado: true</span><span class=\"ln\"><span class=\"hl\" data-reveal=\"s04-erro\"></span><span class=\"t\"><span class=\"err\">Erro esperado:</span> O horário não pertence à unidade de destino do encaminhamento.</span></span></pre>\n    </div>\n    <p class=\"closing\" data-reveal=\"s04-memoria\">O domínio ainda roda em memória. <strong>Gravar no banco é a próxima etapa.</strong></p>\n  </div>\n</section>"
+  },
+  {
+   "index": 4,
+   "scene": "05",
+   "label": "UML revisado",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-uml\" data-scene=\"05\" data-label=\"UML revisado\" data-kind=\"slide\">\n  <nav class=\"parts\"><span class=\"on\"><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">UML revisado contra o código</h2>\n  <div class=\"body grid12\">\n    <div class=\"col\">\n      <div class=\"group\"><i class=\"sq upd\"></i>Atualizados</div>\n      <figure data-reveal=\"s05-classes\">\n        <div class=\"shot\"><img src=\"img/uml-classes.png\" alt=\"\" style=\"object-position: 46% 56%\"></div>\n        <figcaption><b>Classes</b>UnidadeSaude, TipoUnidade e o “reagendado de”</figcaption>\n      </figure>\n      <figure data-reveal=\"s05-seq-agendar\">\n        <div class=\"shot\"><img src=\"img/uml-sequencia-agendar.png\" alt=\"\" style=\"object-position: 50% 36%\"></div>\n        <figcaption><b>Sequência de agendar</b>filtra e valida pela unidade de destino</figcaption>\n      </figure>\n    </div>\n    <div class=\"col\">\n      <div class=\"group\"><i class=\"sq new\"></i>Novos</div>\n      <figure data-reveal=\"s05-seq-reagendar\">\n        <div class=\"shot\"><img src=\"img/uml-sequencia-reagendar.png\" alt=\"\" style=\"object-position: 40% 30%\"></div>\n        <figcaption><b>Sequência de reagendar</b>prazo, limite e novo agendamento</figcaption>\n      </figure>\n      <figure data-reveal=\"s05-atividades\">\n        <div class=\"shot\"><img src=\"img/uml-atividades-reagendar-cancelar.png\" alt=\"\" style=\"object-position: 64% 42%\"></div>\n        <figcaption><b>Atividades de reagendar e cancelar</b>decisões do prazo de 24 h e do limite</figcaption>\n      </figure>\n    </div>\n  </div>\n  <p class=\"note\">Mantidos sem mudança: casos de uso e atividades de agendar. As funcionalidades são as mesmas.</p>\n</section>"
+  },
+  {
+   "index": 5,
+   "scene": "06",
+   "label": "Wireframes",
+   "kind": "figure",
+   "tone": "dark",
+   "camera": "atualizadas",
+   "canvas": {
+    "width": 2552,
+    "height": 3040
+   },
+   "focus": {
+    "atualizadas": {
+     "x": 0,
+     "y": 0,
+     "w": 0.93,
+     "h": 0.31
+    },
+    "novas": {
+     "x": 0,
+     "y": 0.503,
+     "w": 0.93,
+     "h": 0.28
+    }
+   },
+   "html": "<section class=\"scene tone-dark figure s-wire\" data-scene=\"06\" data-label=\"Wireframes\" data-kind=\"figure\">\n  <nav class=\"parts\"><span class=\"on\"><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">3 telas atualizadas, 3 telas novas</h2>\n  <div class=\"fig-stage on-dark\" data-camera=\"atualizadas\">\n    <div class=\"fig-canvas\" style=\"width: 2552px; height: 3040px\">\n      <img src=\"img/wireframes.png\" alt=\"\">\n      <i class=\"focus\" data-focus=\"atualizadas\" style=\"left: 0%; top: 0%; width: 93%; height: 31%\"></i>\n      <i class=\"focus\" data-focus=\"novas\" style=\"left: 0%; top: 50.3%; width: 93%; height: 28%\"></i>\n    </div>\n  </div>\n  <div class=\"fig-caption\">\n    <p data-reveal=\"s06-atualizadas\"><b><i class=\"sq upd\"></i>3 atualizadas</b>selo Urgente, só vagas da unidade de destino e aviso de 24 h</p>\n    <p data-reveal=\"s06-novas\"><b><i class=\"sq new\"></i>3 novas</b>horário reagendado, limite de 2 reagendamentos e fora do prazo</p>\n    <p class=\"muted\">Nomes, datas, protocolo e endereço nas telas são cenário ilustrativo.</p>\n  </div>\n</section>"
+  },
+  {
+   "index": 6,
+   "scene": "07",
+   "label": "Data Modeler",
+   "kind": "figure",
+   "tone": "cream",
+   "camera": "tela",
+   "canvas": {
+    "width": 1745,
+    "height": 940
+   },
+   "focus": {
+    "tela": {
+     "x": 0,
+     "y": 0,
+     "w": 1,
+     "h": 1
+    },
+    "diagrama": {
+     "x": 0.326,
+     "y": 0.126,
+     "w": 0.594,
+     "h": 0.72
+    }
+   },
+   "html": "<section class=\"scene figure s-dm\" data-scene=\"07\" data-label=\"Data Modeler\" data-kind=\"figure\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span class=\"on\"><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">O modelo lógico no Data Modeler</h2>\n  <div class=\"fig-stage on-cream\" data-camera=\"tela\">\n    <div class=\"fig-canvas\" style=\"width: 1745px; height: 940px\">\n      <img src=\"img/dm-modelo-logico-tela.jpg\" alt=\"\">\n      <i class=\"focus\" data-focus=\"tela\" style=\"left: 0%; top: 0%; width: 100%; height: 100%\"></i>\n      <i class=\"focus\" data-focus=\"diagrama\" style=\"left: 32.6%; top: 12.6%; width: 59.4%; height: 72%\"></i>\n    </div>\n  </div>\n  <div class=\"fig-caption\">\n    <p data-reveal=\"s07-ferramenta\"><b>Ferramenta</b>Oracle SQL Developer Data Modeler</p>\n    <p data-reveal=\"s07-banco\"><b>Banco de destino</b>Oracle Database 21c</p>\n    <p data-reveal=\"s07-barker\"><b>Notação Barker</b><span class=\"mono\">#</span> identificador, <span class=\"mono\">*</span> obrigatório, <span class=\"mono\">o</span> opcional, <span class=\"mono\">U</span> único</p>\n  </div>\n</section>"
+  },
+  {
+   "index": 7,
+   "scene": "08",
+   "label": "11 · 15 · 2",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-numeros\" data-scene=\"08\" data-label=\"11 · 15 · 2\" data-kind=\"slide\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span class=\"on\"><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">O modelo, contado pela ferramenta</h2>\n  <div class=\"body\">\n    <div class=\"grid12\">\n      <div class=\"counts\">\n        <div class=\"count\" data-reveal=\"s08-entidades\"><b class=\"num\">11</b><span>entidades</span><small>de PESSOA a CHAMADA</small></div>\n        <div class=\"count\" data-reveal=\"s08-relacoes\"><b class=\"num\">15</b><span>relacionamentos</span><small>cardinalidade nas duas pontas</small></div>\n        <div class=\"count\" data-reveal=\"s08-herancas\"><b class=\"num\">2</b><span>heranças</span><small>CIDADAO e USUARIO_INSTITUCIONAL herdam de PESSOA</small></div>\n      </div>\n      <figure class=\"nav\">\n        <div class=\"nav-frame\">\n          <img src=\"img/dm-navegador.jpg\" alt=\"\">\n          <i class=\"mark\" data-reveal=\"s08-m-entidades\" style=\"left: 10.5%; top: 9.4%; width: 19%; height: 2.4%\"></i>\n          <i class=\"mark\" data-reveal=\"s08-m-relacoes\" style=\"left: 10.5%; top: 35.8%; width: 17.4%; height: 2.4%\"></i>\n          <i class=\"mark\" data-reveal=\"s08-m-herancas\" style=\"left: 10.5%; top: 71.2%; width: 16.4%; height: 2.4%\"></i>\n        </div>\n        <figcaption class=\"label\">Navegador do projeto no Data Modeler</figcaption>\n      </figure>\n    </div>\n  </div>\n</section>"
+  },
+  {
+   "index": 8,
+   "scene": "09",
+   "label": "Modelo lógico",
+   "kind": "figure",
+   "tone": "cream",
+   "camera": "tudo",
+   "canvas": {
+    "width": 2654,
+    "height": 1091
+   },
+   "focus": {
+    "pessoa": {
+     "x": 0.43,
+     "y": 0,
+     "w": 0.46,
+     "h": 0.53
+    },
+    "agregacao": {
+     "x": 0,
+     "y": 0.27,
+     "w": 0.4,
+     "h": 0.47
+    },
+    "reagendado": {
+     "x": 0,
+     "y": 0.27,
+     "w": 0.24,
+     "h": 0.31
+    },
+    "contato": {
+     "x": 0.63,
+     "y": 0.2,
+     "w": 0.37,
+     "h": 0.56
+    },
+    "unidade": {
+     "x": 0.52,
+     "y": 0.6,
+     "w": 0.32,
+     "h": 0.4
+    }
+   },
+   "html": "<section class=\"scene figure s-logico\" data-scene=\"09\" data-label=\"Modelo lógico\" data-kind=\"figure\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span class=\"on\"><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">As decisões do modelo lógico</h2>\n  <ol class=\"legend\">\n    <li data-reveal=\"s09-especializacao\" data-legend-for=\"pessoa\"><span class=\"n\">1</span><div><b>Especialização</b><span class=\"t\">PESSOA dividida em CIDADAO e USUARIO_INSTITUCIONAL</span></div></li>\n    <li data-reveal=\"s09-agregacao\" data-legend-for=\"agregacao\"><span class=\"n\">2</span><div><b>Agregação</b><span class=\"t\">AGENDAMENTO liga o encaminhamento ao horário</span></div></li>\n    <li data-reveal=\"s09-reagendado\" data-legend-for=\"reagendado\"><span class=\"n\">3</span><div><b>Autorrelacionamento</b><span class=\"t\">o reagendamento aponta para o horário anterior</span></div></li>\n    <li data-reveal=\"s09-multivalorado\" data-legend-for=\"contato\"><span class=\"n\">4</span><div><b>Atributo multivalorado</b><span class=\"t\">o contato do cidadão virou CONTATO_CIDADAO</span></div></li>\n    <li data-reveal=\"s09-composto\" data-legend-for=\"unidade\"><span class=\"n\">5</span><div><b>Atributo composto</b><span class=\"t\">o endereço da unidade, em atributos atômicos</span></div></li>\n    <li class=\"risk\" data-reveal=\"s09-fora\" data-legend-for=\"tudo\"><span class=\"n\">6</span><div><b>Fora do banco</b><span class=\"t\">CID, laudo e prontuário: menos dano num vazamento</span></div></li>\n  </ol>\n  <div class=\"fig-stage with-legend\" data-camera=\"tudo\">\n    <div class=\"fig-canvas\" style=\"width: 2654px; height: 1091px; --ring: 7px\">\n      <img src=\"img/modelo-logico.jpg\" alt=\"\">\n      <i class=\"focus\" data-focus=\"pessoa\" style=\"left: 43%; top: 0%; width: 46%; height: 53%\"></i>\n      <i class=\"focus\" data-focus=\"agregacao\" style=\"left: 0%; top: 27%; width: 40%; height: 47%\"></i>\n      <i class=\"focus\" data-focus=\"reagendado\" style=\"left: 0%; top: 27%; width: 24%; height: 31%\"></i>\n      <i class=\"focus\" data-focus=\"contato\" style=\"left: 63%; top: 20%; width: 37%; height: 56%\"></i>\n      <i class=\"focus\" data-focus=\"unidade\" style=\"left: 52%; top: 60%; width: 32%; height: 40%\"></i>\n      <i class=\"mark\" data-reveal=\"s09-m-pessoa\" style=\"left: 44.75%; top: 0.6%; width: 42.75%; height: 49.5%\"></i>\n      <i class=\"mark\" data-reveal=\"s09-m-agendamento\" style=\"left: 0.4%; top: 30.7%; width: 16.7%; height: 15.8%\"></i>\n      <i class=\"mark\" data-reveal=\"s09-m-reagendado\" style=\"left: 13.2%; top: 45%; width: 6.3%; height: 11.5%\"></i>\n      <i class=\"mark\" data-reveal=\"s09-m-contato\" style=\"left: 85.8%; top: 54.4%; width: 13.85%; height: 18.2%\"></i>\n      <i class=\"mark\" data-reveal=\"s09-m-unidade\" style=\"left: 60%; top: 66.3%; width: 15.1%; height: 32.8%\"></i>\n    </div>\n  </div>\n</section>"
+  },
+  {
+   "index": 9,
+   "scene": "10",
+   "label": "Tabela única",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-tabela\" data-scene=\"10\" data-label=\"Tabela única\" data-kind=\"slide\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span class=\"on\"><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">Se tudo ficasse numa tabela só</h2>\n  <div class=\"body\">\n    <div class=\"tbl\">\n      <div class=\"row th\"><span>PROTOCOLO</span><span>CPF</span><span>NOME</span><span>CONTATO</span><span>ESPECIALIDADE</span><span>UNIDADE_DESTINO</span><span>ENDERECO</span></div>\n      <div class=\"row\"><span>P-001</span><span>CPF-A</span><span>Maria Silva</span><span>(11) 90000-0001<i class=\"ov ov-new\" data-reveal=\"s10-o-alt\">(11) 98888-0001<em>novo</em></i></span><span>Cardiologia</span><span>Amb. Esp. Centro</span><span>Rua A, 100</span></div>\n      <div class=\"row\"><span>P-002</span><span>CPF-A</span><span>Maria Silva</span><span>(11) 90000-0001 <em class=\"old\" data-reveal=\"s10-o-alt2\">antigo</em></span><span>Ortopedia</span><span>Amb. Esp. Centro</span><span>Rua A, 100</span></div>\n      <div class=\"row\"><i class=\"ov ov-del\" data-reveal=\"s10-o-exc\"></i><span>P-003</span><span>CPF-B</span><span>José Souza</span><span>(11) 90000-0002</span><span>Cardiologia</span><span>Amb. Leste</span><span>Av. B, 50</span></div>\n      <div class=\"row ghost\" data-reveal=\"s10-o-ins\"><i class=\"ov ov-ghost\">sem encaminhamento, não cabe</i><span class=\"q\">???</span><span>CPF-C</span><span>Ana Lima</span><span>(11) 90000-0003</span><span class=\"q\">???</span><span class=\"q\">???</span><span></span></div>\n    </div>\n    <div class=\"anoms\">\n      <div class=\"anom\" data-reveal=\"s10-ins\"><h3><span>01</span>Inserção</h3><p>Não dá para cadastrar um cidadão sem encaminhamento nem publicar uma vaga que ninguém reservou.</p></div>\n      <div class=\"anom\" data-reveal=\"s10-exc\"><h3><span>02</span>Exclusão</h3><p>Apagar o único pedido de José (P-003) leva junto o cadastro dele e o endereço do Amb. Leste.</p></div>\n      <div class=\"anom\" data-reveal=\"s10-alt\"><h3><span>03</span>Alteração</h3><p>Maria troca de celular e cada pedido dela precisa mudar. Esquecer um deixa duas versões.</p></div>\n    </div>\n  </div>\n  <p class=\"note\">Dados fictícios, só para ilustrar a tabela única.</p>\n</section>"
+  },
+  {
+   "index": 10,
+   "scene": "11",
+   "label": "Formas normais",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-fn\" data-scene=\"11\" data-label=\"Formas normais\" data-kind=\"slide\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span class=\"on\"><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">Da tabela única até a BCNF</h2>\n  <div class=\"body\">\n    <div class=\"stairs\">\n      <div class=\"step\" data-reveal=\"s11-1fn\"><div class=\"nf\">1FN</div><div class=\"rule-name\">Valores atômicos e chave</div><div class=\"did\">Contatos e histórico viram tabelas; o endereço vira colunas.</div></div>\n      <div class=\"step\" data-reveal=\"s11-2fn\"><div class=\"nf\">2FN</div><div class=\"rule-name\">Nada depende de parte da chave</div><div class=\"did\">Encaminhamento, horário e agendamento ficam separados.</div></div>\n      <div class=\"step hot\" data-reveal=\"s11-3fn\"><div class=\"nf\">3FN</div><div class=\"rule-name\">Sem dependência transitiva</div><div class=\"did\">Logradouro, bairro, cidade e UF dependem do CEP: nasce a tabela CEP.</div></div>\n      <div class=\"step goal\"><div class=\"nf\">BCNF</div><div class=\"rule-name\">Todo determinante é chave</div><div class=\"did\">PKs, CPF, Cartão SUS, protocolo, login, CNES e CEP.</div></div>\n    </div>\n  </div>\n</section>"
+  },
+  {
+   "index": 11,
+   "scene": "12",
+   "label": "Tabela CEP",
+   "kind": "slide",
+   "tone": "cream",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene s-cep\" data-scene=\"12\" data-label=\"Tabela CEP\" data-kind=\"slide\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span class=\"on\"><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">A dependência transitiva pelo CEP</h2>\n  <div class=\"body\">\n    <p class=\"dep\" data-reveal=\"s12-cadeia\"><span>ID_UNIDADE</span><i>→</i><span class=\"cep\">CEP</span><i>→</i><mark>LOGRADOURO, BAIRRO, CIDADE, UF</mark><span class=\"why\">dependem do CEP, não da unidade</span></p>\n    <div class=\"schemas\">\n      <div class=\"schema\">\n        <h4>UNIDADE_SAUDE <span>Parte 2</span></h4>\n        <ul>\n          <li>ID_UNIDADE <em>PK</em></li><li>NOME</li><li>TIPO_UNIDADE</li><li>CNES</li>\n          <li class=\"moved\">LOGRADOURO</li><li>NUMERO</li><li>COMPLEMENTO</li>\n          <li class=\"moved\">BAIRRO</li><li class=\"moved\">CIDADE</li><li class=\"moved\">UF</li><li>CEP</li>\n        </ul>\n      </div>\n      <div class=\"between\">→<small>3FN</small></div>\n      <div class=\"schema\" data-reveal=\"s12-unidade\">\n        <h4>UNIDADE_SAUDE <span>ajustada</span></h4>\n        <ul>\n          <li>ID_UNIDADE <em>PK</em></li><li>NOME</li><li>TIPO_UNIDADE</li><li>CNES</li>\n          <li>NUMERO</li><li>COMPLEMENTO</li><li class=\"fk\">CEP <em>FK</em></li>\n        </ul>\n      </div>\n      <div class=\"schema new\" data-reveal=\"s12-cep\">\n        <h4>CEP <span>nova</span></h4>\n        <ul>\n          <li>CEP <em>PK</em></li><li>LOGRADOURO</li><li>BAIRRO</li><li>CIDADE</li><li>UF</li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"outcome grid12\">\n      <div class=\"bcnf\" data-reveal=\"s12-bcnf\"><b>BCNF</b><span>Com a tabela CEP, todo determinante é chave candidata.</span></div>\n      <p class=\"kept\" data-reveal=\"s12-mantido\"><b>Mantido de propósito</b>STATUS do encaminhamento, STATUS_ANTERIOR do histórico, especialidade e unidade no agendamento. A consistência é garantida pela aplicação e pelo banco.</p>\n    </div>\n  </div>\n</section>"
+  },
+  {
+   "index": 12,
+   "scene": "13",
+   "label": "Modelo físico",
+   "kind": "figure",
+   "tone": "cream",
+   "camera": "tudo",
+   "canvas": {
+    "width": 7258,
+    "height": 4316
+   },
+   "focus": {
+    "tipos": {
+     "x": 0,
+     "y": 0.21,
+     "w": 0.3,
+     "h": 0.29
+    },
+    "fk": {
+     "x": 0,
+     "y": 0.52,
+     "w": 0.31,
+     "h": 0.28
+    },
+    "pessoa": {
+     "x": 0.47,
+     "y": 0,
+     "w": 0.53,
+     "h": 0.74
+    },
+    "cep": {
+     "x": 0.27,
+     "y": 0.51,
+     "w": 0.24,
+     "h": 0.37
+    }
+   },
+   "html": "<section class=\"scene figure s-fisico\" data-scene=\"13\" data-label=\"Modelo físico\" data-kind=\"figure\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span class=\"on\"><b>4</b>Modelo físico</span><span><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">12 tabelas, com tipos e chaves</h2>\n  <ol class=\"legend\">\n    <li data-reveal=\"s13-tipos\" data-legend-for=\"tipos\"><span class=\"n\">1</span><div><b>Tipos em cada coluna</b><span class=\"t mono\">NUMBER, VARCHAR2, CHAR, DATE, TIMESTAMP</span></div></li>\n    <li data-reveal=\"s13-fk\" data-legend-for=\"fk\"><span class=\"n\">2</span><div><b>Relacionamento vira coluna</b><span class=\"t\">cada linha do lógico é uma chave estrangeira</span></div></li>\n    <li data-reveal=\"s13-pessoa\" data-legend-for=\"pessoa\"><span class=\"n\">3</span><div><b>Especialização em 3 tabelas</b><span class=\"t\">as três com o mesmo ID_PESSOA</span></div></li>\n    <li data-reveal=\"s13-cep\" data-legend-for=\"cep\"><span class=\"n\">4</span><div><b>Tabela nova: CEP</b><span class=\"t\">vinda da normalização da Parte 3</span></div></li>\n    <li class=\"total\" data-reveal=\"s13-contagem\" data-legend-for=\"tudo\"><div><b class=\"num\">11 → 12 tabelas</b><span class=\"t\">e de 17 para 18 chaves estrangeiras</span></div></li>\n  </ol>\n  <div class=\"fig-stage with-legend\" data-camera=\"tudo\">\n    <div class=\"fig-canvas\" style=\"width: 7258px; height: 4316px; --ring: 20px\">\n      <img src=\"img/modelo-fisico.png\" alt=\"\">\n      <i class=\"focus\" data-focus=\"tipos\" style=\"left: 0%; top: 21%; width: 30%; height: 29%\"></i>\n      <i class=\"focus\" data-focus=\"fk\" style=\"left: 0%; top: 52%; width: 31%; height: 28%\"></i>\n      <i class=\"focus\" data-focus=\"pessoa\" style=\"left: 47%; top: 0%; width: 53%; height: 74%\"></i>\n      <i class=\"focus\" data-focus=\"cep\" style=\"left: 27%; top: 51%; width: 24%; height: 37%\"></i>\n      <i class=\"mark\" data-reveal=\"s13-m-usuario\" style=\"left: 70.9%; top: 1.7%; width: 12.9%; height: 14%\"></i>\n      <i class=\"mark\" data-reveal=\"s13-m-pessoa\" style=\"left: 88%; top: 1.7%; width: 11.25%; height: 8.9%\"></i>\n      <i class=\"mark\" data-reveal=\"s13-m-cidadao\" style=\"left: 49%; top: 53.3%; width: 13.1%; height: 19%\"></i>\n      <i class=\"mark\" data-reveal=\"s13-m-cep\" style=\"left: 33.85%; top: 73.8%; width: 10.9%; height: 10.1%\"></i>\n    </div>\n  </div>\n</section>"
+  },
+  {
+   "index": 13,
+   "scene": "14",
+   "label": "Script SQL",
+   "kind": "slide",
+   "tone": "dark",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene tone-dark s-sql\" data-scene=\"14\" data-label=\"Script SQL\" data-kind=\"slide\">\n  <nav class=\"parts\"><span><b>1</b>Versão atual</span><span><b>2</b>Modelo lógico</span><span><b>3</b>Formas normais</span><span><b>4</b>Modelo físico</span><span class=\"on\"><b>5</b>Scripts SQL</span></nav>\n  <h2 class=\"title\">O banco garante as regras da US03</h2>\n  <div class=\"body grid12\">\n    <div class=\"code-col\">\n      <div class=\"label\">minha_vez_fisico.sql · tabela AGENDAMENTO</div>\n      <pre><span class=\"ln\"><span class=\"kw\">CREATE TABLE</span> AGENDAMENTO (</span><span class=\"ln\">  ID_ENCAMINHAMENTO  <span class=\"ty\">NUMBER(10)</span>    <span class=\"kw\">NOT NULL</span>,</span><span class=\"ln\">  ID_HORARIO         <span class=\"ty\">NUMBER(10)</span>    <span class=\"kw\">NOT NULL</span>,</span><span class=\"ln\">  ID_ESPECIALIDADE   <span class=\"ty\">NUMBER(10)</span>    <span class=\"kw\">NOT NULL</span>,</span><span class=\"ln\">  ID_UNIDADE         <span class=\"ty\">NUMBER(10)</span>    <span class=\"kw\">NOT NULL</span>,</span><span class=\"ln\">  STATUS             <span class=\"ty\">VARCHAR2(10)</span>  <span class=\"kw\">NOT NULL</span>,</span><span class=\"ln\">  ...</span><span class=\"blk\"><span class=\"hl\" data-reveal=\"s14-hl-fk\"></span><span class=\"ln cm\" data-reveal=\"s14-cm-fk\">  -- só aceita horário da mesma especialidade e unidade</span><span class=\"ln\">  <span class=\"kw\">CONSTRAINT</span> FK_AGEND_ENCAMINHAMENTO <span class=\"kw\">FOREIGN KEY</span></span><span class=\"ln\">    (ID_ENCAMINHAMENTO, ID_ESPECIALIDADE, ID_UNIDADE)</span><span class=\"ln\">    <span class=\"kw\">REFERENCES</span> ENCAMINHAMENTO (..., ID_UNIDADE_DESTINO),</span><span class=\"ln\">  <span class=\"kw\">CONSTRAINT</span> FK_AGEND_HORARIO <span class=\"kw\">FOREIGN KEY</span></span><span class=\"ln\">    (ID_HORARIO, ID_ESPECIALIDADE, ID_UNIDADE)</span><span class=\"ln\">    <span class=\"kw\">REFERENCES</span> HORARIO_DISPONIVEL (...)</span></span><span class=\"ln\">);</span><span class=\"ln\"> </span><span class=\"blk\"><span class=\"hl\" data-reveal=\"s14-hl-idx\"></span><span class=\"ln cm\" data-reveal=\"s14-cm-idx\">-- a mesma vaga não tem dois agendamentos ativos</span><span class=\"ln\"><span class=\"kw\">CREATE UNIQUE INDEX</span> UX_AGEND_ATIVO_POR_HORARIO <span class=\"kw\">ON</span> AGENDAMENTO</span><span class=\"ln\">  (<span class=\"kw\">CASE WHEN</span> STATUS = <span class=\"st\">'AGENDADO'</span> <span class=\"kw\">THEN</span> ID_HORARIO <span class=\"kw\">END</span>);</span></span></pre>\n    </div>\n    <dl class=\"counts\" data-reveal=\"s14-stats\">\n      <div><dt>PRIMARY KEY</dt><dd class=\"num\">12</dd></div>\n      <div><dt>FOREIGN KEY</dt><dd class=\"num\">18</dd></div>\n      <div><dt>UNIQUE</dt><dd class=\"num\">13</dd></div>\n      <div><dt>CHECK</dt><dd class=\"num\">14</dd></div>\n      <div class=\"idx\"><dt>INDEX</dt><dd class=\"num\">7</dd></div>\n    </dl>\n  </div>\n</section>"
+  },
+  {
+   "index": 14,
+   "scene": "15",
+   "label": "Encerramento",
+   "kind": "slide",
+   "tone": "green",
+   "camera": null,
+   "canvas": null,
+   "focus": {},
+   "html": "<section class=\"scene tone-green s-fim\" data-scene=\"15\" data-label=\"Encerramento\" data-kind=\"slide\">\n  <div class=\"brand\">\n    <svg viewBox=\"0 0 46 32\" aria-hidden=\"true\"><circle cx=\"15\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#F5B700\" stroke-width=\"5\"></circle><circle cx=\"31\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#fff\" stroke-width=\"5\"></circle></svg>\n    <span>Minha Vez · fim da Fase 3</span>\n  </div>\n  <p class=\"from\" data-reveal=\"s15-de\">De um <s>domínio em memória</s></p>\n  <p class=\"to\" data-reveal=\"s15-para\">para um banco desenhado, normalizado<br>e <mark>pronto para o Java gravar</mark>.</p>\n  <div class=\"thanks\" data-reveal=\"s15-obrigado\">Obrigado!</div>\n  <p class=\"repo\" data-reveal=\"s15-repo\">github.com/FIAP-Dream-Team/HackGov</p>\n  <div class=\"team\" data-reveal=\"s15-equipe\">\n    <figure class=\"member\"><img src=\"img/team/john.png\" alt=\"\"><figcaption>John Vitor<small>RM 566968</small></figcaption></figure>\n    <figure class=\"member\"><img src=\"img/team/larissa.png\" alt=\"\"><figcaption>Ana Larissa<small>RM 567403</small></figcaption></figure>\n    <figure class=\"member\"><img src=\"img/team/joao.png\" alt=\"\"><figcaption>João Pedro<small>RM 568305</small></figcaption></figure>\n    <figure class=\"member\"><img src=\"img/team/vinicius.png\" alt=\"\"><figcaption>Vinícius Cardoso<small>RM 566906</small></figcaption></figure>\n    <figure class=\"member\"><img src=\"img/team/brenda.png\" alt=\"\"><figcaption>Brenda Araújo<small>RM 575032</small></figcaption></figure>\n  </div>\n</section>"
+  }
+ ]
+}

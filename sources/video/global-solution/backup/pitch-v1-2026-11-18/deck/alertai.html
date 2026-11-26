@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Alertaí · Pitch e vídeo técnico · Global Solution 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Sora e Figtree hospedadas junto do deck (fonts/), para abrir offline e exportar sem fonte reserva. -->
+<link href="fonts/fonts.css" rel="stylesheet">
+
+<!--
+  Deck do Alertaí: as cenas do pitch (s01 a s11) e a base dos motions do vídeo técnico.
+  Cada <section class="scene"> é um quadro 1920x1080. Mesmas convenções dos decks do HackGov
+  (Fase 3 e EC-1), para o Remotion ler este arquivo:
+
+  - o <style id="deck-css"> vira o CSS global da composição;
+  - data-reveal="id" marca o que entra junto com a fala; o QUANDO fica no reveals.json
+    (âncora = trecho literal da narração; a lista está em ../edicao-pitch.md);
+  - data-anim diz COMO entra: fade (padrão), wipe, draw, count (até data-count), pop, highlight.
+
+  Sistema visual, da identidade do Alertaí (arquivo do Figma "Alertaí · Protótipo" e docs/marca):
+  - Tipos: Sora nos títulos e números; Figtree no texto.
+  - Escala: 20 nota, 24 rótulo, 30 corpo, 44 destaque, 72 título, 200 número.
+  - Espaço em múltiplos de 8. Margem lateral 128. Título sempre no mesmo lugar; conteúdo
+    começa em y = 288. O canto superior direito fica livre para o selo de quem fala.
+  - Cor com função: Jacarandá é a marca e o que a fala aponta; Folha é o efeito cascata e o
+    aviso que chega a tempo; vermelho, laranja e amarelo só para gravidade, sempre com a
+    palavra escrita (como no app e nos avisos do INMET). Lilás do logo nunca em texto.
+  - Superfícies: filete de 1 px e espaço vazio. Sem sombra, sem faixa na borda, sem pílula
+    decorativa. Raio único de 16 px onde há moldura; o celular tem o raio do aparelho.
+  - Ícones: os do próprio app (frontend/src/components/Icone.tsx), grade de 24 px.
+  - Sem cara de template (revisão de 16/11, aprovada pelo John): sem rótulo pequeno acima de todo
+    título (só a abertura tem a linha de lugar e data, que é conteúdo); número grande dentro de uma
+    frase, não em blocos iguais lado a lado; nada de fileira de ícones em círculo com espaçamento
+    igual; quando o espaço puder dizer algo (tempo, proporção), ele diz; ícone só quando o app usa
+    o mesmo ícone para a mesma coisa.
+
+  Abrir no navegador mostra todas as cenas. ?scene=04 mostra uma só, em 1920x1080.
+  Exportar só com `node scripts/deck.mjs`: ele roda antes o verificador (check-layout.js, ou ?check)
+  e não exporta se houver texto sobre texto, texto a menos de 16 px de outro, caixas de texto
+  sobrepostas, texto sobre o celular ou os ícones, algo a menos de 24 px da borda ou fonte não carregada.
+-->
+<style id="deck-css">
+.scene {
+  --petala: #F6F3FB;
+  --lilas: #ECE6F8;
+  --agua-mapa: #E0D9F1;
+  --rule: #DCD3EE;
+  --tinta: #221B33;
+  --tinta-2: #5D5470;
+  --jaca: #5B3FA8;
+  --jaca-claro: #B9A4EE;
+  --folha: #27704C;
+  --atencao: #F2C230;
+  --perigo: #E8731C;
+  --grande: #C62828;
+  --contexto: #8E80B8;
+  --noite-texto: #F6F3FB;
+  --noite-2: #B8AECF;
+  --noite-rule: #3A3150;
+  --titulo: 'Sora', system-ui, sans-serif;
+  --texto: 'Figtree', system-ui, sans-serif;
+
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 88px 128px 0;
+  background: var(--petala);
+  color: var(--tinta);
+  font: 400 30px/1.4 var(--texto);
+  -webkit-font-smoothing: antialiased;
+}
+.scene *, .scene *::before, .scene *::after { box-sizing: border-box; }
+.scene p, .scene h1, .scene h2, .scene h3, .scene ul, .scene ol, .scene figure { margin: 0; padding: 0; }
+.scene ul, .scene ol { list-style: none; }
+.scene .num { font-variant-numeric: tabular-nums; }
+.scene.tone-tinta { background: var(--tinta); color: var(--noite-texto); }
+
+/* header: pin + section name, then the title. Top right stays empty (speaker tag). */
+.scene .sec { display: flex; align-items: center; gap: 16px; font: 500 24px/1 var(--texto); color: var(--tinta-2); }
+.scene .sec svg { width: 22px; height: 28px; }
+.scene.tone-tinta .sec { color: var(--noite-2); --pin-dot: #5B3FA8; }
+.scene .title { text-wrap: balance; margin-top: 24px; max-width: 1200px; font: 700 72px/1.05 var(--titulo); letter-spacing: -.02em; }
+.scene .body { position: absolute; left: 128px; right: 128px; top: 288px; bottom: 96px; }
+.scene .note { position: absolute; left: 128px; right: 128px; bottom: 40px; font: 400 20px/1.3 var(--texto); color: var(--tinta-2); }
+.scene.tone-tinta .note { color: var(--noite-2); }
+.scene .label { font: 500 24px/1.3 var(--texto); color: var(--tinta-2); }
+.scene .big { font: 800 200px/.9 var(--titulo); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.scene mark { color: inherit; padding: 0 .06em; white-space: nowrap; background: linear-gradient(var(--lilas), var(--lilas)) no-repeat 0 100% / var(--hl, 100%) .42em; }
+.scene.tone-tinta mark { background: none; color: color-mix(in srgb, var(--jaca-claro) var(--hl, 100%), var(--noite-texto)); }
+
+/* app icon on a colored disc, like the app's occurrence badges */
+.scene .ic { display: grid; place-items: center; border-radius: 50%; }
+.scene .ic svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* phone frame for app takes: bezel in Tinta, screen radius of the device */
+.scene .phone { position: absolute; padding: 14px; border-radius: 64px; background: var(--tinta); }
+.scene .phone img, .scene .phone video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 50px; }
+
+/* --- s01 A torneira seca ------------------------------------------------- */
+/* The chain the whole pitch follows, drawn with the app's own icons. Spacing is time: the light goes
+   right after the storm; the water runs out hours later (long dashed wait). */
+.s-torneira .cadeia { position: absolute; left: 0; top: 24px; width: 1664px; height: 240px; }
+.s-torneira .cadeia > svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.s-torneira .fio { stroke: var(--noite-2); stroke-width: 3; fill: none; }
+.s-torneira .cadeia > svg.espera { position: absolute; left: 640px; top: 46px; width: 904px; height: 4px; }
+.s-torneira .espera path { stroke: var(--noite-2); stroke-width: 3; stroke-dasharray: 12 12; fill: none; }
+.s-torneira .disc.d-chuva { background: var(--contexto); color: #fff; }
+.scene.s-torneira .tag { top: 128px; width: 400px; color: var(--noite-2); }
+.scene.s-torneira .tag h3 { color: var(--noite-texto); }
+.s-torneira .tag.right { text-align: right; }
+.s-torneira .horas { position: absolute; left: 640px; top: 72px; width: 904px; text-align: center; font: 500 26px/1.2 var(--texto); color: var(--noite-2); }
+.s-torneira .depois { text-wrap: balance; position: absolute; left: 0; top: 336px; max-width: 1560px; font: 600 64px/1.18 var(--titulo); letter-spacing: -.02em; color: var(--noite-2); }
+.s-torneira .depois b { color: var(--noite-texto); font-weight: 800; }
+.s-torneira .depois .ag { color: var(--jaca-claro); font-weight: 700; }
+/* Opening: the path and the three stops show first as outlines (in on "Porto Alegre"), and each stop lights up on its word. */
+.s-torneira .cadeia > svg.trilho { position: absolute; left: 48px; top: 46px; width: 1568px; height: 4px; }
+.s-torneira .trilho path { stroke: var(--noite-rule); stroke-width: 3; fill: none; }
+.s-torneira .vazio { position: absolute; top: 0; width: 96px; height: 96px; border-radius: 50%; border: 2px solid var(--noite-rule); background: var(--tinta); display: grid; place-items: center; color: var(--noite-rule); }
+.s-torneira .vazio svg { width: 48px; height: 48px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.s-torneira .bombas { position: absolute; left: 0; top: 560px; font: 400 30px/1.35 var(--texto); color: var(--noite-2); }
+
+/* --- s04 A prova nos dados ------------------------------------------------ */
+.s-dados .total { position: absolute; left: 0; top: 0; width: 456px; }
+.s-dados .total b { display: block; font: 800 96px/1 var(--titulo); letter-spacing: -.03em; color: var(--jaca); font-variant-numeric: tabular-nums; }
+.s-dados .total p { margin-top: 32px; font: 400 30px/1.35 var(--texto); }
+.s-dados .total p span { display: block; margin-top: 8px; font-size: 24px; color: var(--tinta-2); }
+.s-dados .chart { position: absolute; left: 600px; top: -24px; width: 1064px; height: 640px; }
+.s-dados .chart svg { overflow: visible; }
+.s-dados .bars-ctx { fill: var(--contexto); }
+.s-dados .bars-hot { fill: var(--jaca); }
+.s-dados .base { stroke: var(--tinta-2); stroke-width: 1; }
+.s-dados .bracket { fill: none; stroke: var(--tinta); stroke-width: 2; }
+.s-dados .bracket.rest { stroke: var(--tinta-2); }
+.s-dados .pct { position: absolute; font: 700 44px/1 var(--titulo); letter-spacing: -.01em; white-space: nowrap; }
+.s-dados .pct small { font: 500 24px/1 var(--texto); color: var(--tinta-2); margin-left: 12px; letter-spacing: 0; }
+.s-dados .pct.rest { color: var(--tinta-2); }
+.s-dados .first { position: absolute; left: 32px; top: 76px; font: 500 20px/1.25 var(--texto); color: var(--tinta-2); white-space: nowrap; }
+.s-dados .first b { color: var(--tinta); font-weight: 600; }
+.s-dados .names { position: absolute; left: 0; top: 544px; font: 500 24px/1.3 var(--texto); }
+.s-dados .axis { position: absolute; left: 0; top: 600px; font: 400 20px/1.3 var(--texto); color: var(--tinta-2); }
+
+/* --- s07 O efeito cascata --------------------------------------------------- */
+/* Spacing encodes time: the first four events happen within minutes, the water runs out hours later. */
+.s-cascata .line { position: absolute; left: 0; top: 64px; width: 1120px; height: 560px; }
+.s-cascata .line > svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.s-cascata .axis { stroke: var(--tinta-2); stroke-width: 2; fill: none; }
+.s-cascata .axis.wait { stroke-dasharray: 10 10; }
+.s-cascata .gap { stroke: var(--folha); stroke-width: 3; fill: none; }
+.s-cascata .ev { position: absolute; width: 64px; height: 64px; margin: -32px 0 0 -32px; top: 216px; color: #fff; }
+.s-cascata .ev svg { width: 32px; height: 32px; }
+.s-cascata .lb { position: absolute; width: 240px; font: 400 24px/1.3 var(--texto); color: var(--tinta-2); }
+.s-cascata .lb h3 { font: 700 30px/1.15 var(--titulo); letter-spacing: -.01em; color: var(--tinta); margin-bottom: 4px; }
+.s-cascata .lb.up { bottom: 400px; }
+.s-cascata .lb.down { top: 272px; }
+.s-cascata .lb.right { text-align: right; }
+.s-cascata .e-luz { background: var(--grande); }
+.s-cascata .e-conf { background: var(--jaca); }
+.s-cascata .e-est, .s-cascata .e-aviso { background: var(--folha); }
+.s-cascata .e-agua { background: var(--perigo); color: var(--tinta); }
+.s-cascata .prep { position: absolute; left: 440px; top: 476px; width: 600px; text-align: center; font: 600 30px/1.2 var(--texto); color: var(--folha); }
+.s-cascata .phone { right: 128px; top: 232px; width: 372px; height: 792px; }
+
+/* --- shared: event discs and wires (s02, s07, s09 use the same marks) ----------- */
+.scene .disc { position: absolute; width: 96px; height: 96px; color: #fff; }
+.scene .disc svg { width: 48px; height: 48px; }
+.scene .disc.sm { width: 64px; height: 64px; }
+.scene .disc.sm svg { width: 32px; height: 32px; }
+.scene .d-luz { background: var(--grande); }
+.scene .d-conf { background: var(--jaca); }
+.scene .d-est, .scene .d-aviso { background: var(--folha); }
+.scene .d-agua { background: var(--perigo); color: var(--tinta); }
+.scene .wire { stroke: var(--tinta-2); stroke-width: 2; fill: none; }
+.scene .wire.wait { stroke-dasharray: 10 10; }
+.scene .gapline { stroke: var(--folha); stroke-width: 3; fill: none; }
+.scene .tag { position: absolute; font: 400 24px/1.3 var(--texto); color: var(--tinta-2); }
+.scene .tag h3 { font: 700 30px/1.15 var(--titulo); letter-spacing: -.01em; color: var(--tinta); margin-bottom: 4px; }
+.scene .rule { border-top: 1px solid var(--rule); }
+
+/* app severity badges, exactly as the app draws them: color plus the written word */
+.scene .selo { display: inline-block; padding: 8px 20px; border-radius: 999px; font: 700 24px/1 var(--titulo); }
+.scene .selo.at { background: var(--atencao); color: #3A2C00; }
+.scene .selo.pe { background: var(--perigo); color: #2B1200; }
+.scene .selo.gp { background: var(--grande); color: #fff; }
+
+/* browser frame for the desktop screens: same bezel language as the phone */
+.scene .browser { position: absolute; padding: 12px; border-radius: 24px; background: var(--tinta); }
+.scene .browser img { display: block; width: 100%; height: auto; border-radius: 12px; }
+
+/* --- s02 Por que acontece -------------------------------------------------- */
+.s-porque .diagram { position: absolute; left: 0; top: 0; width: 1664px; height: 320px; }
+.s-porque .diagram > svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.s-porque .tag { top: 128px; width: 400px; }
+.s-porque .frase { position: absolute; left: 0; top: 344px; font: 600 56px/1.2 var(--titulo); letter-spacing: -.02em; }
+.s-porque .viv { position: absolute; left: 0; top: 512px; max-width: 1200px; font: 400 30px/1.4 var(--texto); color: var(--tinta-2); }
+.s-porque .viv b { color: var(--tinta); font-weight: 600; }
+
+/* --- s03 Quem sofre -------------------------------------------------------- */
+.s-quem .q { position: absolute; left: 0; font: 600 56px/1.2 var(--titulo); letter-spacing: -.02em; }
+.s-quem .q span { color: var(--jaca); }
+.s-quem .rule { position: absolute; left: 0; right: 0; top: 248px; }
+.s-quem .pesa { text-wrap: balance; position: absolute; left: 0; top: 296px; max-width: 1480px; font: 400 40px/1.35 var(--texto); }
+.s-quem .hoje { position: absolute; left: 0; top: 520px; max-width: 1200px; font: 400 30px/1.4 var(--texto); color: var(--tinta-2); }
+
+/* --- s05 Alertaí (brand moment, Jacarandá) -------------------------------- */
+.scene.tone-jaca { background: var(--jaca); color: #fff; }
+.s-alertai .logo { position: absolute; left: 128px; top: 120px; width: 476px; height: 120px; }
+.s-alertai .pergunta { text-wrap: balance; position: absolute; left: 128px; top: 368px; width: 1180px; font: 700 72px/1.1 var(--titulo); letter-spacing: -.02em; }
+.s-alertai .sub { text-wrap: balance; position: absolute; left: 128px; top: 720px; width: 1080px; font: 400 30px/1.4 var(--texto); color: var(--lilas); }
+.s-alertai .phone { right: 128px; top: 144px; width: 372px; height: 792px; }
+
+/* --- s06 Como funciona ------------------------------------------------------- */
+.s-funciona .passos { position: absolute; left: 0; top: 0; width: 1120px; }
+.s-funciona .passos li { display: grid; grid-template-columns: 72px 1fr; padding: 32px 0; border-top: 1px solid var(--rule); }
+.s-funciona .passos li:first-child { border-top: 0; padding-top: 0; }
+.s-funciona .passos b { font: 800 44px/1 var(--titulo); color: var(--jaca); }
+.s-funciona .passos h3 { font: 700 40px/1.15 var(--titulo); letter-spacing: -.01em; }
+.s-funciona .passos p { margin-top: 8px; font: 400 28px/1.35 var(--texto); color: var(--tinta-2); }
+.s-funciona .fonte { position: absolute; left: 72px; top: 600px; width: 1048px; font: 600 30px/1.3 var(--texto); color: var(--folha); }
+.s-funciona .phone { right: 128px; top: 232px; width: 372px; height: 792px; }
+
+/* --- s08 O protótipo -------------------------------------------------------- */
+.s-proto .strip { position: absolute; left: 0; display: flex; gap: 16px; }
+.s-proto .strip img { width: 120px; height: 260px; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--rule); }
+.s-proto .lbl { position: absolute; left: 0; font: 500 24px/1.2 var(--texto); color: var(--tinta-2); }
+.s-proto .browser { left: 1040px; top: 40px; width: 504px; }
+.s-proto .acess { position: absolute; left: 1040px; top: 392px; width: 624px; }
+.s-proto .acess li { padding: 12px 0; border-top: 1px solid var(--rule); font: 400 24px/1.35 var(--texto); color: var(--tinta-2); }
+.s-proto .acess li:first-child { border-top: 0; padding-top: 0; }
+.s-proto .acess li.selos .row { display: flex; gap: 16px; margin-bottom: 8px; }
+.s-proto .acess b { color: var(--tinta); font-weight: 600; }
+
+/* --- s09 Como medir ---------------------------------------------------------- */
+.s-medir .central { position: absolute; left: 0; top: 0; width: 840px; }
+.s-medir .central h3 { font: 700 56px/1.1 var(--titulo); letter-spacing: -.02em; }
+.s-medir .central p { margin-top: 16px; font: 400 30px/1.35 var(--texto); color: var(--tinta-2); }
+.s-medir .mini { position: absolute; left: 0; top: 248px; width: 840px; height: 300px; }
+.s-medir .mini > svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.s-medir .meta { position: absolute; left: 32px; top: 168px; width: 744px; text-align: center; font: 700 44px/1 var(--titulo); color: var(--folha); }
+.s-medir .meta small { font: 500 26px/1 var(--texto); margin-right: 12px; }
+.s-medir .outros { position: absolute; left: 1000px; top: 0; width: 664px; }
+.s-medir .outros li { padding: 32px 0; border-top: 1px solid var(--rule); }
+.s-medir .outros li:first-child { border-top: 0; padding-top: 0; }
+.s-medir .outros h3 { font: 700 40px/1.15 var(--titulo); letter-spacing: -.01em; }
+.s-medir .outros p { margin-top: 8px; font: 400 26px/1.35 var(--texto); color: var(--tinta-2); }
+.s-medir .outros p b { color: var(--tinta); font-weight: 600; }
+
+/* --- s10 ODS e próximo passo ------------------------------------------------ */
+.s-ods .lista { position: absolute; left: 0; top: 0; width: 880px; }
+.s-ods .lista li { display: grid; grid-template-columns: 88px 1fr; column-gap: 24px; align-items: center; padding: 24px 0; border-top: 1px solid var(--rule); }
+.s-ods .lista li:first-child { border-top: 0; padding-top: 0; }
+.s-ods .n { display: grid; place-items: center; width: 88px; height: 88px; border-radius: 16px; font: 800 44px/1 var(--titulo); }
+.s-ods .lista h3 { font: 700 28px/1.2 var(--titulo); }
+.s-ods .lista p { margin-top: 4px; font: 400 24px/1.35 var(--texto); color: var(--tinta-2); }
+.s-ods .mapa { position: absolute; left: 980px; top: 0; width: 684px; }
+.s-ods .mapa svg { display: block; overflow: visible; }
+/* white halo behind map labels, like the label boxes in the app map */
+.s-ods .maplbl, .s-ods .maplbl text { paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; }
+.s-ods .mapa .cap { margin-top: 16px; font: 400 20px/1.3 var(--texto); color: var(--tinta-2); }
+
+/* --- s11 Assinatura ----------------------------------------------------------- */
+.s-fim .logo { position: absolute; left: 128px; top: 200px; width: 476px; height: 120px; }
+.s-fim .frase { position: absolute; left: 128px; top: 424px; width: 1500px; font: 700 96px/1.05 var(--titulo); letter-spacing: -.03em; }
+.s-fim .frase span { color: var(--jaca-claro); }
+.s-fim .equipe { text-wrap: balance; position: absolute; left: 128px; top: 768px; width: 1664px; font: 400 26px/1.5 var(--texto); color: var(--noite-2); }
+.s-fim .equipe b { color: var(--noite-texto); font-weight: 600; }
+.s-fim .equipe .nm { white-space: nowrap; }  /* a line may break between two people, never inside a name */
+</style>
+
+<!-- Preview chrome. Not part of any scene, so the extractor never sees it. -->
+<style>
+html, body { margin: 0; background: #16121F; }
+body { font-family: 'Figtree', system-ui, sans-serif; color: #E7E1F3; }
+.viewer { max-width: 1500px; margin: 0 auto; padding: 32px 24px 80px; }
+.viewer h1 { font: 700 28px/1.2 'Sora', sans-serif; margin: 0 0 6px; }
+.viewer p.hint { margin: 0 0 28px; color: #A79DBF; font-size: 15px; }
+.frame { margin: 0 0 40px; }
+.frame-label { display: flex; gap: 14px; align-items: baseline; margin-bottom: 10px; font-size: 15px; color: #A79DBF; }
+.frame-label b { color: #B9A4EE; font-size: 17px; }
+.frame-box { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; box-shadow: 0 0 0 1px #3A3150; }
+.frame-box > .scene { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+body.single { background: #000; }
+body.single .viewer { max-width: none; padding: 0; }
+body.single .viewer > h1, body.single .viewer > p.hint, body.single .frame-label { display: none; }
+body.single .frame { margin: 0; }
+body.single .frame-box { width: 1920px; height: 1080px; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+</style>
+</head>
+<body>
+<main class="viewer">
+<h1>Alertaí · deck do pitch</h1>
+<p class="hint">As 11 cenas do pitch. Tudo visível; no vídeo cada elemento entra na palavra da narração.</p>
+
+<!-- pin from the Alertaí symbol, reused in every section header -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pin" viewBox="8 2 48 60"><path fill="currentColor" fill-rule="evenodd" d="M32 4C19.3 4 10 13.6 10 26c0 16.4 22 34 22 34s22-17.6 22-34C54 13.6 44.7 4 32 4zM28.6 14.4a3.4 3.4 0 0 1 6.8 0v12.2a3.4 3.4 0 0 1-6.8 0zM27.8 37.5a4.2 4.2 0 1 0 8.4 0 4.2 4.2 0 1 0-8.4 0z"/><path fill="var(--pin-dot, #9B7FE0)" d="M27.8 37.5a4.2 4.2 0 1 0 8.4 0 4.2 4.2 0 1 0-8.4 0z"/></symbol>
+</svg>
+
+<div class="deck">
+
+<!-- ===================================================================== -->
+<section class="scene tone-tinta s-torneira" data-scene="01" data-label="A torneira seca" data-kind="slide">
+  <p class="sec" data-reveal="s01-quando"><svg><use href="#pin"/></svg>Porto Alegre · janeiro de 2024</p>
+  <div class="body">
+    <div class="cadeia">
+      <svg width="1664" height="96" viewBox="0 0 1664 96">
+        <path class="fio" data-reveal="s01-f1" data-anim="draw" d="M104 48H512"/>
+      </svg>
+      <svg class="trilho" viewBox="0 0 1568 4" data-reveal="s01-trilho" data-anim="wipe"><path d="M0 2H1568"/></svg>
+      <i class="vazio" style="left: 0" data-reveal="s01-v1" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M7 14a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 17 5.5a4.2 4.2 0 0 1 .5 8.5z"/><path d="M8 17.5l-1 3M12 17.5l-1 3M16 17.5l-1 3"/></svg></i>
+      <i class="vazio" style="left: 528px" data-reveal="s01-v2" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i>
+      <i class="vazio" style="left: 1568px" data-reveal="s01-v3" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.5-6.5 6-11z"/></svg></i>
+      <svg class="espera" viewBox="0 0 904 4" data-reveal="s01-f2" data-anim="wipe"><path d="M0 2H904"/></svg>
+      <i class="ic disc d-chuva" style="left: 0; top: 0" data-reveal="s01-temporal" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M7 14a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 17 5.5a4.2 4.2 0 0 1 .5 8.5z"/><path d="M8 17.5l-1 3M12 17.5l-1 3M16 17.5l-1 3"/></svg></i>
+      <div class="tag" style="left: 0" data-reveal="s01-temporal-t"><h3>Um temporal comum</h3>sem cheia</div>
+      <i class="ic disc d-luz" style="left: 528px; top: 0" data-reveal="s01-luz" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i>
+      <div class="tag" style="left: 528px" data-reveal="s01-luz-t"><h3>A luz cai</h3>a rede elétrica para</div>
+      <p class="horas" data-reveal="s01-horas">horas depois, sem nenhum aviso</p>
+      <i class="ic disc d-agua" style="left: 1568px; top: 0" data-reveal="s01-agua" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.5-6.5 6-11z"/></svg></i>
+      <div class="tag right" style="left: 1264px" data-reveal="s01-agua-t"><h3>A torneira seca</h3>nos bairros abastecidos</div>
+    </div>
+    <p class="depois"><span data-reveal="s01-60">Mais de <b>60 horas</b> depois,</span> <span data-reveal="s01-157"><b>157,3 mil pessoas</b> em 31 bairros ainda estavam <span class="ag">sem água</span>.</span></p>
+    <p class="bombas" data-reveal="s01-bombas">22 estações de bombeamento pararam por falta de energia.</p>
+  </div>
+  <p class="note">Fonte: TATSCH, Juliano. Com 22 Estações do Dmae paradas, 157,3 mil porto-alegrenses seguem sem água. Jornal do Comércio, 19 jan. 2024.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-porque" data-scene="02" data-label="Por que acontece" data-kind="slide">
+  <h2 class="title">Uma falta puxa a outra</h2>
+  <div class="body">
+    <div class="diagram">
+      <svg width="1664" height="320" viewBox="0 0 1664 320">
+        <path class="wire" data-reveal="s02-w1" data-anim="draw" d="M96 48H600"/>
+        <path class="wire" data-reveal="s02-w2" data-anim="draw" d="M696 48H1200"/>
+      </svg>
+      <i class="ic disc d-luz" style="left: 0; top: 0" data-reveal="s02-luz" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i>
+      <div class="tag" style="left: 0" data-reveal="s02-luz-t"><h3>Falta de luz</h3>o temporal derruba a rede elétrica</div>
+      <i class="ic disc d-est" style="left: 600px; top: 0" data-reveal="s02-est" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M3 21V11l5 3v-3l5 3V6h7v15z"/><path d="M7 17.5h2M11.5 17.5h2M16 10h2"/></svg></i>
+      <div class="tag" style="left: 600px" data-reveal="s02-est-t"><h3>Estação de bombeamento</h3>sem energia, para de bombear</div>
+      <i class="ic disc d-agua" style="left: 1200px; top: 0" data-reveal="s02-agua" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.5-6.5 6-11z"/></svg></i>
+      <div class="tag" style="left: 1200px" data-reveal="s02-agua-t"><h3>Falta de água</h3>horas depois, nos bairros que ela abastece</div>
+    </div>
+    <p class="frase" data-reveal="s02-frase">Parecem dois problemas, mas <mark data-reveal="s02-mk" data-anim="highlight">um puxa o outro</mark>.</p>
+    <p class="viv" data-reveal="s02-viv"><b>Vivência de um integrante do grupo, que é do Sul:</b> a chuva forte chega, a luz cai e, horas depois, a água para de sair da torneira.</p>
+  </div>
+  <p class="note">Fonte: DMAE, 2022 (falta de energia em duas estações pode afetar 51 bairros); TATSCH, Jornal do Comércio, 2024.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-quem" data-scene="03" data-label="Quem sofre" data-kind="slide">
+  <h2 class="title">O morador fica sem resposta</h2>
+  <div class="body">
+    <p class="q" style="top: 0" data-reveal="s03-q1">É só na minha casa <span>ou na rua toda?</span></p>
+    <p class="q" style="top: 104px" data-reveal="s03-q2">Ainda dá tempo <span>de guardar água?</span></p>
+    <div class="rule"></div>
+    <p class="pesa" data-reveal="s03-pesa">Para quem cuida de <mark data-reveal="s03-acamado" data-anim="highlight">uma pessoa acamada</mark>, de <mark data-reveal="s03-idoso" data-anim="highlight">um idoso que mora sozinho</mark> ou de <mark data-reveal="s03-aparelho" data-anim="highlight">quem depende de aparelho elétrico de saúde</mark>, essas horas pesam mais.</p>
+    <p class="hoje" data-reveal="s03-hoje">Hoje a informação chega separada e tarde: por grupos de mensagens, vizinhos e notas gerais da cidade, sem aviso por bairro.</p>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-dados" data-scene="04" data-label="A prova nos dados" data-kind="slide">
+  <h2 class="title">O risco tem endereço</h2>
+  <div class="body">
+    <div class="total" data-reveal="s04-total">
+      <b><span data-anim="pop" data-reveal="s04-totaln" style="display:inline-block">160.210</span></b>
+      <p>moradores em área afetada na cheia de 2024<span>12,0% da população de Porto Alegre</span></p>
+    </div>
+    <div class="chart">
+      <svg width="1064" height="640" viewBox="0 0 1064 640" role="img" aria-label="Moradores em área afetada nos 46 bairros atingidos, do maior para o menor; os 5 primeiros somam 52,3% e os outros 41, 47,7%">
+        <g data-reveal="s04-bars" data-anim="wipe">
+<!-- Gerado da aba Dados_Bairros: 46 bairros, total 160.210, 5 maiores = 52.3%. -->
+<path class="bars-ctx" d="M0 520V84.0Q0 80.0 4 80.0H17Q21 80.0 21 84.0V520Z M23 520V216.0Q23 212.0 27 212.0H40Q44 212.0 44 216.0V520Z M46 520V228.0Q46 224.0 50 224.0H63Q67 224.0 67 228.0V520Z M69 520V310.8Q69 306.8 73 306.8H86Q90 306.8 90 310.8V520Z M92 520V366.2Q92 362.2 96 362.2H109Q113 362.2 113 366.2V520Z M115 520V396.9Q115 392.9 119 392.9H132Q136 392.9 136 396.9V520Z M138 520V412.0Q138 408.0 142 408.0H155Q159 408.0 159 412.0V520Z M161 520V413.2Q161 409.2 165 409.2H178Q182 409.2 182 413.2V520Z M184 520V413.4Q184 409.4 188 409.4H201Q205 409.4 205 413.4V520Z M207 520V415.7Q207 411.7 211 411.7H224Q228 411.7 228 415.7V520Z M230 520V449.7Q230 445.7 234 445.7H247Q251 445.7 251 449.7V520Z M253 520V461.2Q253 457.2 257 457.2H270Q274 457.2 274 461.2V520Z M276 520V468.3Q276 464.3 280 464.3H293Q297 464.3 297 468.3V520Z M299 520V470.2Q299 466.2 303 466.2H316Q320 466.2 320 470.2V520Z M322 520V476.6Q322 472.6 326 472.6H339Q343 472.6 343 476.6V520Z M345 520V476.9Q345 472.9 349 472.9H362Q366 472.9 366 476.9V520Z M368 520V480.5Q368 476.5 372 476.5H385Q389 476.5 389 480.5V520Z M391 520V481.8Q391 477.8 395 477.8H408Q412 477.8 412 481.8V520Z M414 520V483.1Q414 479.1 418 479.1H431Q435 479.1 435 483.1V520Z M437 520V484.2Q437 480.2 441 480.2H454Q458 480.2 458 484.2V520Z M460 520V484.7Q460 480.7 464 480.7H477Q481 480.7 481 484.7V520Z M483 520V495.8Q483 491.8 487 491.8H500Q504 491.8 504 495.8V520Z M506 520V498.4Q506 494.4 510 494.4H523Q527 494.4 527 498.4V520Z M529 520V503.3Q529 499.3 533 499.3H546Q550 499.3 550 503.3V520Z M552 520V505.4Q552 501.4 556 501.4H569Q573 501.4 573 505.4V520Z M575 520V506.9Q575 502.9 579 502.9H592Q596 502.9 596 506.9V520Z M598 520V510.9Q598 506.9 602 506.9H615Q619 506.9 619 510.9V520Z M621 520V511.1Q621 507.1 625 507.1H638Q642 507.1 642 511.1V520Z M644 520V511.4Q644 507.4 648 507.4H661Q665 507.4 665 511.4V520Z M667 520V516.5Q667 513.0 670.5 513.0H684.5Q688 513.0 688 516.5V520Z M690 520V517.9499999999999Q690 515.9 692.05 515.9H708.95Q711 515.9 711 517.9499999999999V520Z M713 520V518.5500000000001Q713 517.1 714.45 517.1H732.55Q734 517.1 734 518.5500000000001V520Z M736 520V519.0Q736 518 737.0 518H756.0Q757 518 757 519.0V520Z M759 520V519.0Q759 518 760.0 518H779.0Q780 518 780 519.0V520Z M782 520V519.0Q782 518 783.0 518H802.0Q803 518 803 519.0V520Z M805 520V519.0Q805 518 806.0 518H825.0Q826 518 826 519.0V520Z M828 520V519.0Q828 518 829.0 518H848.0Q849 518 849 519.0V520Z M851 520V519.0Q851 518 852.0 518H871.0Q872 518 872 519.0V520Z M874 520V519.0Q874 518 875.0 518H894.0Q895 518 895 519.0V520Z M897 520V519.0Q897 518 898.0 518H917.0Q918 518 918 519.0V520Z M920 520V519.0Q920 518 921.0 518H940.0Q941 518 941 519.0V520Z M943 520V519.0Q943 518 944.0 518H963.0Q964 518 964 519.0V520Z M966 520V519.0Q966 518 967.0 518H986.0Q987 518 987 519.0V520Z M989 520V519.0Q989 518 990.0 518H1009.0Q1010 518 1010 519.0V520Z M1012 520V519.0Q1012 518 1013.0 518H1032.0Q1033 518 1033 519.0V520Z M1035 520V519.0Q1035 518 1036.0 518H1055.0Q1056 518 1056 519.0V520Z"/>
+<path class="bars-hot" data-reveal="s04-top5" data-anim="fade" d="M0 520V84.0Q0 80.0 4 80.0H17Q21 80.0 21 84.0V520Z M23 520V216.0Q23 212.0 27 212.0H40Q44 212.0 44 216.0V520Z M46 520V228.0Q46 224.0 50 224.0H63Q67 224.0 67 228.0V520Z M69 520V310.8Q69 306.8 73 306.8H86Q90 306.8 90 310.8V520Z M92 520V366.2Q92 362.2 96 362.2H109Q113 362.2 113 366.2V520Z"/>
+<!-- Sarandi 26042; Menino Deus 18231; Farrapos 17522; Humaitá 12617; Cidade Baixa 9338 -->
+        </g>
+        <line class="base" x1="0" y1="520.5" x2="1056" y2="520.5"/>
+        <path class="bracket" data-reveal="s04-chave" data-anim="draw" d="M0 64V52H113V64"/>
+        <path class="bracket rest" data-reveal="s04-chave-resto" data-anim="draw" d="M115 364V352H1056V364"/>
+      </svg>
+      <p class="pct" style="left: 0; top: -8px" data-reveal="s04-pct"><span data-anim="pop" data-reveal="s04-pctn" style="display:inline-block">52,3%</span><small>em 5 bairros</small></p>
+      <p class="pct rest" style="left: 115px; top: 288px" data-reveal="s04-resto">47,7%<small>nos outros 41</small></p>
+      <p class="first" data-reveal="s04-first"><b>Sarandi</b>, 26.042</p>
+      <p class="names" data-reveal="s04-nomes">Sarandi, Menino Deus, Farrapos, Humaitá e Cidade Baixa</p>
+      <p class="axis">Moradores em área afetada nos 46 bairros atingidos, do maior para o menor</p>
+    </div>
+  </div>
+  <p class="note">Fonte: Prefeitura de Porto Alegre, painel Áreas Afetadas (cota 5,35 m), 2024; IBGE, Censo 2022. Análise da equipe.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene tone-jaca s-alertai" data-scene="05" data-label="Alertaí" data-kind="slide">
+  <img class="logo" src="img/alertai-logo-horizontal-branco.svg" alt="Alertaí" data-reveal="s05-logo" data-anim="pop">
+  <p class="pergunta" data-reveal="s05-pergunta" data-anim="wipe">O que está acontecendo no meu bairro agora, e o que eu faço?</p>
+  <p class="sub" data-reveal="s05-sub">Um app de alertas por bairro: avisos oficiais e relatos dos vizinhos, no mesmo lugar.</p>
+  <div class="phone" data-reveal="s05-app" data-take="B20"><img src="img/app/01-inicio.png" alt="Tela Início do Alertaí"></div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-funciona" data-scene="06" data-label="Como funciona" data-kind="slide">
+  <h2 class="title">Quem está no bairro vê primeiro</h2>
+  <div class="body">
+    <ol class="passos">
+      <li data-reveal="s06-r1"><b>1</b><div><h3>Relato em dois toques</h3><p>escolhe o tipo e envia; o nome de quem relata não aparece</p></div></li>
+      <li data-reveal="s06-r2"><b>2</b><div><h3>Relato repetido vira confirmação</h3><p>dez vizinhos sem luz são uma ocorrência só, confirmada por dez</p></div></li>
+      <li data-reveal="s06-r3"><b>3</b><div><h3>Três “já voltou” encerram</h3><p>a ocorrência fecha como resolvida</p></div></li>
+    </ol>
+    <p class="fonte" data-reveal="s06-fonte">A comunidade é a principal fonte, sem depender de sensor caro.</p>
+  </div>
+  <div class="phone" data-reveal="s06-app" data-take="B21"><img src="img/app/03-reportar.png" alt="Tela Reportar do Alertaí"></div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-cascata" data-scene="07" data-label="O efeito cascata" data-kind="slide">
+  <h2 class="title">O efeito cascata</h2>
+  <div class="body">
+    <div class="line">
+      <svg width="1120" height="560" viewBox="0 0 1120 560">
+        <path class="axis" data-reveal="s07-eixo" data-anim="draw" d="M0 216H440"/>
+        <path class="axis wait" data-reveal="s07-espera" data-anim="draw" d="M440 216H1040"/>
+        <path class="gap" data-reveal="s07-gap" data-anim="draw" d="M440 444V456H1040V444"/>
+      </svg>
+      <i class="ic ev e-luz" style="left: 32px" data-reveal="s07-luz" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i>
+      <div class="lb up" style="left: 0" data-reveal="s07-luz-t"><h3>A luz cai</h3>no bairro da estação</div>
+      <i class="ic ev e-conf" style="left: 168px" data-reveal="s07-conf" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M2.5 20c.6-3.4 3.2-5.5 6.5-5.5s5.9 2.1 6.5 5.5M16 4.3a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.8 3.2 2.6 3.5 5.2"/></svg></i>
+      <div class="lb down" style="left: 136px" data-reveal="s07-conf-t"><h3>Um vizinho confirma</h3>não é só uma casa</div>
+      <i class="ic ev e-est" style="left: 304px" data-reveal="s07-est" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M3 21V11l5 3v-3l5 3V6h7v15z"/><path d="M7 17.5h2M11.5 17.5h2M16 10h2"/></svg></i>
+      <div class="lb up" style="left: 272px" data-reveal="s07-est-t"><h3>A estação para</h3>sem energia para bombear</div>
+      <i class="ic ev e-aviso" style="left: 440px" data-reveal="s07-aviso" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></i>
+      <div class="lb down" style="left: 408px; width: 500px" data-reveal="s07-aviso-t"><h3>O aviso sai</h3>possível falta de água, com <mark data-reveal="s07-porque" data-anim="highlight">o porquê</mark>, <mark data-reveal="s07-fazer" data-anim="highlight">o que fazer</mark> e <mark data-reveal="s07-ligar" data-anim="highlight">para quem ligar</mark></div>
+      <i class="ic ev e-agua" style="left: 1040px" data-reveal="s07-agua" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.5-6.5 6-11z"/></svg></i>
+      <div class="lb up right" style="left: 832px" data-reveal="s07-agua-t"><h3>A água falta</h3>horas depois</div>
+      <p class="prep" data-reveal="s07-prep">tempo para se preparar</p>
+    </div>
+  </div>
+  <div class="phone" data-reveal="s07-app" data-take="B23"><img src="img/app/02-alerta-em-cascata.png" alt="Tela Alerta em cascata do Alertaí"></div>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-proto" data-scene="08" data-label="O protótipo" data-kind="slide">
+  <h2 class="title">Do rascunho à tela final</h2>
+  <div class="body">
+    <p class="lbl" style="top: 0">Wireframes · 7 telas</p>
+    <div class="strip" style="top: 40px" data-reveal="s08-wire" data-anim="wipe">
+      <img src="img/wire/01-inicio.png" alt=""><img src="img/wire/02-alerta-em-cascata.png" alt=""><img src="img/wire/03-reportar.png" alt=""><img src="img/wire/04-ocorrencia.png" alt=""><img src="img/wire/05-meus-bairros.png" alt=""><img src="img/wire/06-painel-do-bairro.png" alt=""><img src="img/wire/07-mapa-interativo.png" alt="">
+    </div>
+    <p class="lbl" style="top: 336px" data-reveal="s08-hifi-l">Alta fidelidade · celular</p>
+    <div class="strip" style="top: 376px" data-reveal="s08-hifi" data-anim="wipe">
+      <img src="img/app/01-inicio.png" alt=""><img src="img/app/02-alerta-em-cascata.png" alt=""><img src="img/app/03-reportar.png" alt=""><img src="img/app/04-ocorrencia.png" alt=""><img src="img/app/05-meus-bairros.png" alt=""><img src="img/app/06-painel-do-bairro.png" alt=""><img src="img/app/07-mapa-interativo.png" alt="">
+    </div>
+    <div class="browser" data-reveal="s08-pc" data-take="B25"><img src="img/pc/01-inicio.png" alt="Tela Início do Alertaí no computador"></div>
+    <ul class="acess">
+      <li data-reveal="s08-wcag"><b>WCAG 2.1, nível AA</b>: as diretrizes internacionais</li>
+      <li class="selos" data-reveal="s08-cor"><span class="row" data-anim="pop"><span class="selo at">Atenção</span><span class="selo pe">Perigo</span><span class="selo gp">Grande perigo</span></span>a cor nunca vem sozinha: sempre com ícone e texto</li>
+      <li data-reveal="s08-contraste"><b>Contraste</b> de 4,5:1 ou mais; o menor do app é 5,0:1</li>
+      <li data-reveal="s08-zoom"><b>Zoom de 200%</b> sem perder conteúdo</li>
+    </ul>
+  </div>
+  <p class="note">Protótipo no Figma (“Alertaí · Protótipo”) e em React, com dados simulados: 7 telas no celular e 7 no computador, com 110 links.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-medir" data-scene="09" data-label="Como medir" data-kind="slide">
+  <h2 class="title">Como saber se funciona</h2>
+  <div class="body">
+    <div class="central" data-reveal="s09-antec">
+      <h3>Antecedência do aviso</h3>
+      <p>quantas horas o aviso chega antes de a água faltar, bairro por bairro</p>
+    </div>
+    <div class="mini">
+      <svg width="840" height="300" viewBox="0 0 840 300">
+        <path class="wire wait" data-reveal="s09-espera" data-anim="draw" d="M64 32H776"/>
+        <path class="gapline" data-reveal="s09-chave" data-anim="draw" d="M32 132V144H808V132"/>
+      </svg>
+      <i class="ic disc sm d-aviso" style="left: 0; top: 0" data-reveal="s09-aviso" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></i>
+      <div class="tag" style="left: 0; top: 80px; width: 260px" data-reveal="s09-aviso-t">o aviso sai</div>
+      <i class="ic disc sm d-agua" style="left: 776px; top: 0" data-reveal="s09-agua" data-anim="pop"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.5-6.5 6-11z"/></svg></i>
+      <div class="tag" style="left: 580px; top: 80px; width: 260px; text-align: right" data-reveal="s09-agua-t">a água falta</div>
+      <p class="meta" data-reveal="s09-meta"><small>meta no piloto</small>pelo menos <span data-anim="pop" data-reveal="s09-metan" style="display:inline-block">2</span> horas</p>
+    </div>
+    <ol class="outros">
+      <li data-reveal="s09-acerta"><h3>O alerta acertou?</h3><p>alertas seguidos de falta de água · meta <b>70% ou mais</b></p></li>
+      <li data-reveal="s09-age"><h3>A pessoa agiu?</h3><p>quem diz ter agido depois do alerta · meta <b>40% ou mais</b></p></li>
+    </ol>
+  </div>
+  <p class="note">Indicadores I5, I6 e I8 da documentação, medidos com o app em uso no piloto. O teste com moradores está planejado.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene s-ods" data-scene="10" data-label="ODS e próximo passo" data-kind="slide">
+  <h2 class="title">Onde o Alertaí contribui</h2>
+  <div class="body">
+    <ol class="lista">
+      <li data-reveal="s10-ods13"><span class="n" style="background: #3F7E44; color: #fff">13</span><div><h3>Ação contra a mudança do clima</h3><p>metas 13.1 e 13.3: alerta precoce e resiliência</p></div></li>
+      <li data-reveal="s10-ods11"><span class="n" style="background: #FD9D24; color: var(--tinta)">11</span><div><h3>Cidades e comunidades sustentáveis</h3><p>meta 11.5: cidades mais preparadas para desastres</p></div></li>
+      <li data-reveal="s10-ods3"><span class="n" style="background: #4C9F38; color: #fff">3</span><div><h3>Saúde e bem-estar</h3><p>meta 3.d: proteger a saúde de quem é mais vulnerável</p></div></li>
+      <li data-reveal="s10-ods6"><span class="n" style="background: #26BDE2; color: var(--tinta)">6</span><div><h3>Água potável e saneamento</h3><p>meta 6.b: a comunidade participa da gestão da água</p></div></li>
+    </ol>
+    <div class="mapa">
+      <!-- Same stylized map as the app (frontend/src/components/MapaBairros.tsx), out of scale. -->
+      <svg width="684" height="456" viewBox="0 0 600 400" role="img" aria-label="Mapa estilizado dos cinco bairros do piloto, com o Sarandi como próximo bairro">
+        <rect width="600" height="400" fill="#E0D9F1"/>
+        <path d="M250 0H600V400H318C298 370 276 330 264 296C250 256 240 218 236 180C233 148 230 118 236 92C241 58 246 28 250 0Z" fill="#fff" stroke="#D3C9E8" stroke-width="1.2"/>
+        <path d="M360 0V400M440 0V400M520 0V400M250 60H600M262 280H600M300 340H600" stroke="#D3C9E8" stroke-width="1" opacity=".5"/>
+        <text x="24" y="384" font-size="17" font-style="italic" fill="#5D5470" font-family="Figtree">Lago Guaíba</text>
+        <g data-reveal="s10-mapa" fill="#ECE6F8" stroke="#5B3FA8" stroke-width="1.6">
+          <ellipse cx="118" cy="118" rx="48" ry="26"/><ellipse cx="164" cy="194" rx="40" ry="26"/><ellipse cx="100" cy="252" rx="38" ry="20"/><ellipse cx="190" cy="86" rx="22" ry="13"/>
+          <path d="M238 100 300 88 346 112 342 162 284 174 240 160Z"/>
+          <path d="M244 170 284 176 332 170 336 252 298 288 266 288C254 260 246 220 244 170Z"/>
+          <path d="M342 166 418 158 426 256 340 256Z"/>
+          <path d="M462 90 560 74 578 166 494 190 452 138Z"/>
+          <g class="maplbl" fill="#221B33" font-family="Figtree" font-size="17" font-weight="600" text-anchor="middle">
+            <text x="118" y="306">Arquipélago</text>
+            <text x="292" y="126">Centro<tspan x="292" dy="19">Histórico</tspan></text>
+            <text x="290" y="224">Praia de<tspan x="290" dy="19">Belas</tspan></text>
+            <text x="383" y="200">Menino<tspan x="383" dy="19">Deus</tspan></text>
+            <text x="514" y="138">Bom Jesus</text>
+          </g>
+        </g>
+        <g data-reveal="s10-sarandi">
+          <path d="M372 10 500 2 530 62 394 76Z" fill="none" stroke="#5B3FA8" stroke-width="1.6" stroke-dasharray="6 5"/>
+          <text class="maplbl" x="452" y="34" fill="#5B3FA8" font-family="Figtree" font-size="17" font-weight="700" text-anchor="middle">Sarandi<tspan x="452" dy="19" font-weight="500">próximo</tspan></text>
+        </g>
+      </svg>
+      <p class="cap">Piloto: cinco bairros. Próximo: Sarandi, o bairro com mais moradores afetados em 2024 (26.042). Mapa estilizado, fora de escala.</p>
+    </div>
+  </div>
+  <p class="note">Fonte das metas: Nações Unidas no Brasil, Objetivos de Desenvolvimento Sustentável.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="scene tone-tinta s-fim" data-scene="11" data-label="Assinatura" data-kind="slide">
+  <img class="logo" src="img/alertai-logo-horizontal-negativo.svg" alt="Alertaí" data-reveal="s11-logo" data-anim="pop">
+  <p class="frase" data-reveal="s11-frase">Da próxima vez, o aviso chega <span>antes</span>.</p>
+  <p class="equipe"><b><span class="nm">Ana Larissa Cristo Mendes</span> · <span class="nm">Brenda Cristina Martins Araújo</span> · <span class="nm">João Pedro Thethê Andrade</span><br><span class="nm">John Vitor Silverio Pereira</span> · <span class="nm">Vinícius Cardoso Junqueira</span></b><br>Global Solution 2026 · CitizenTech · FIAP · Turma 2SIOR · github.com/FIAP-Dream-Team/global-solution-1-2026</p>
+</section>
+
+</div>
+</main>
+
+<!-- ?check: verificador de sobreposição (scripts/deck.mjs). -->
+<script src="check-layout.js"></script>
+<script>
+// Preview only: scale every scene to the page; ?scene=NN shows one at 1920x1080.
+(function () {
+  var only = new URLSearchParams(location.search).get('scene');
+  document.querySelectorAll('.deck > section.scene').forEach(function (scene) {
+    var frame = document.createElement('div'); frame.className = 'frame';
+    var label = document.createElement('div'); label.className = 'frame-label';
+    label.innerHTML = '<b>' + scene.dataset.scene + '</b><span>' + scene.dataset.label + '</span>';
+    var box = document.createElement('div'); box.className = 'frame-box';
+    scene.parentNode.insertBefore(frame, scene);
+    frame.appendChild(label); frame.appendChild(box); box.appendChild(scene);
+    if (only && scene.dataset.scene !== only) frame.style.display = 'none';
+  });
+  if (only) document.body.classList.add('single');
+  function fit() {
+    document.querySelectorAll('.frame-box').forEach(function (box) {
+      box.firstElementChild.style.transform = only ? 'none' : 'scale(' + box.clientWidth / 1920 + ')';
+    });
+  }
+  fit(); window.addEventListener('resize', fit);
+})();
+</script>
+</body>
+</html>

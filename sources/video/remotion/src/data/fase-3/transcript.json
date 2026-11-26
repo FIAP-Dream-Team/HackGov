@@ -1,0 +1,3793 @@
+{
+  "model": "faster-whisper small int8",
+  "durationSec": 256.441,
+  "text": "E aí pessoal, somos a equipe do HackGov, meu nome é John, estou com Ana Larissa, João Pedro, Vinícius Cardoso e Prenda. Depois de modelar e prototipar o fluxo do Minha Vez, chegou a hora de armazenar os dados. Vamos mostrar como o projeto evoluiu, do código até o banco de dados. Na fase anterior, o Minha Vez tinha o fluxo de Cidadão Modelado, prototipado, e com o primeiro recorte do domínio em Java. Ao desenhar o banco, a modelagem dos dados expôs regras da US03, que o código ainda não aplicava. Por isso, atualizamos o projeto inteiro. Agora são 9 classes em Java, 5 testes automatizados, diagramas e telas revisados, e o banco com 11 entidades e 12 tabelas. A principal regra, o encaminhamento define a unidade da consulta, e o cidadão só vê e só agenda vagas testa unidade. Reagendar cancela o horário atual e cria um novo, ligado a ele. Cancela ou reagendar, só vale até 24 horas antes, com no máximo 2 reagendamentos, depois só no balcão. Os 5 testes passam e a saída do demo mostra o anterior cancelado, o novo apontando para ele e o erro quando a vaga é de outra unidade. O domínio ainda roda em memória, gravar no banco é a próxima etapa. Os diagramas OML foram revisados contra o código. Classes e sequências de agendador atualizados, mais 2 diagramas novos, o de sequência do reagendamento e o de atividades de reagendar e cancelar. Usuar e Frames, 3 telas foram atualizadas e 3 são novas, cobrendo o reagendamento, limite e prazo. Para o modelo lógico, usamos logo a SKELE Developed Data Modular, com natação Baker. São 11 entidades, 15 relacionamentos e 2 heranças. O modelo traz uma especialização com pessoa dividida em cidadão e usuário institucional, uma agregação na entidade de agendamento e um alto relacionamento que liga o reagendamento ao horário anterior. O contato cidadão é multivalorado e virou equidade própria. O endereço da unidade foi decompostado em atributos. Cheia de laude prontuário ficaram fora do banco para reduzir o domínio em caso de vazamento. Para entender por que normalizar, imaginamos tudo numa tabela só. Na inserção, não dá para cadastrar um cidadão sem encaminhamento, nem publicar uma vaga que ninguém reservou. Na exclusão, apagar o único pedido de um cidadão leva junto o cadastro dele e o endereço da unidade. E na alteração, se alguém troca de celular, cada pedido precisa mudar e esquecer um deixa duas versões da verdade. Aplicando as formas normais, na primeira, contatos históricos viram tabelas e o endereço viram colunas. Na segunda, encaminhamento, horário e agendamento ficam separados. Na terceira, achamos uma dependência transitiva e uma unidade de saúde, logradoro, bairro, cidade e UF dependendo de SEP. Então criamos a tabela SEP. Com ela, o modelo chega a BCNF. Algumas redundâncias foram mantidas de propósito, como status de encaminhamento, com consistência garantida pela aplicação e pelo banco. No modelo físico, o mesmo banco ganha tipos e chaves. São 12 tabelas com number, varchar2, char, date e timestamp. Cada relacionamento vira uma coluna de chave estrangeira e a especialização de pessoa vira três tabelas com mesma de pessoa. A tabela nova é a SEP, vinda da normalização, o que levou o modelo de 11 para 12 tabelas e de 17 para 18 chaves estrangeiras. Por fim, o script SQL cria esse banco no Oracle e o próprio banco garante as regras da US-03. Uma chave estrangeira, composta, só aceita o agendamento se o Oracle for da mesma especialidade e da mesma unidade do encaminhamento. E um índice único impede que a mesma vaga tenha dois agendamentos ativos. Foi assim que minha vez saiu de um domínio de memória para um banco desenhado, normalizado e pronto para o Java gravar. Dito isso, muito obrigado por assistir.",
+  "words": [
+    {
+      "text": "E",
+      "start": 0.0,
+      "end": 0.52,
+      "p": 0.494
+    },
+    {
+      "text": "aí",
+      "start": 0.52,
+      "end": 0.66,
+      "p": 0.857
+    },
+    {
+      "text": "pessoal,",
+      "start": 0.66,
+      "end": 1.02,
+      "p": 0.91
+    },
+    {
+      "text": "somos",
+      "start": 1.42,
+      "end": 1.68,
+      "p": 0.887
+    },
+    {
+      "text": "a",
+      "start": 1.68,
+      "end": 1.9,
+      "p": 0.992
+    },
+    {
+      "text": "equipe",
+      "start": 1.9,
+      "end": 2.22,
+      "p": 0.998
+    },
+    {
+      "text": "do",
+      "start": 2.22,
+      "end": 2.38,
+      "p": 0.953
+    },
+    {
+      "text": "HackGov,",
+      "start": 2.38,
+      "end": 2.94,
+      "p": 0.707
+    },
+    {
+      "text": "meu",
+      "start": 3.34,
+      "end": 3.5,
+      "p": 0.793
+    },
+    {
+      "text": "nome",
+      "start": 3.5,
+      "end": 3.64,
+      "p": 0.998
+    },
+    {
+      "text": "é",
+      "start": 3.64,
+      "end": 3.76,
+      "p": 0.994
+    },
+    {
+      "text": "John,",
+      "start": 3.76,
+      "end": 3.92,
+      "p": 0.852
+    },
+    {
+      "text": "estou",
+      "start": 4.26,
+      "end": 4.56,
+      "p": 0.964
+    },
+    {
+      "text": "com",
+      "start": 4.56,
+      "end": 4.8,
+      "p": 0.995
+    },
+    {
+      "text": "Ana",
+      "start": 4.8,
+      "end": 5.1,
+      "p": 0.571
+    },
+    {
+      "text": "Larissa,",
+      "start": 5.1,
+      "end": 5.54,
+      "p": 0.932
+    },
+    {
+      "text": "João",
+      "start": 6.04,
+      "end": 6.04,
+      "p": 0.905
+    },
+    {
+      "text": "Pedro,",
+      "start": 6.04,
+      "end": 6.32,
+      "p": 0.996
+    },
+    {
+      "text": "Vinícius",
+      "start": 6.74,
+      "end": 7.16,
+      "p": 0.971
+    },
+    {
+      "text": "Cardoso",
+      "start": 7.16,
+      "end": 7.66,
+      "p": 0.957
+    },
+    {
+      "text": "e",
+      "start": 7.66,
+      "end": 8.4,
+      "p": 0.885
+    },
+    {
+      "text": "Prenda.",
+      "start": 8.4,
+      "end": 8.92,
+      "p": 0.8
+    },
+    {
+      "text": "Depois",
+      "start": 9.48,
+      "end": 9.68,
+      "p": 0.98
+    },
+    {
+      "text": "de",
+      "start": 9.68,
+      "end": 9.88,
+      "p": 0.995
+    },
+    {
+      "text": "modelar",
+      "start": 9.88,
+      "end": 10.36,
+      "p": 0.964
+    },
+    {
+      "text": "e",
+      "start": 10.36,
+      "end": 10.46,
+      "p": 0.988
+    },
+    {
+      "text": "prototipar",
+      "start": 10.46,
+      "end": 11.08,
+      "p": 0.97
+    },
+    {
+      "text": "o",
+      "start": 11.08,
+      "end": 11.2,
+      "p": 0.952
+    },
+    {
+      "text": "fluxo",
+      "start": 11.2,
+      "end": 11.58,
+      "p": 0.952
+    },
+    {
+      "text": "do",
+      "start": 11.58,
+      "end": 11.72,
+      "p": 0.884
+    },
+    {
+      "text": "Minha",
+      "start": 11.72,
+      "end": 11.98,
+      "p": 0.745
+    },
+    {
+      "text": "Vez,",
+      "start": 11.98,
+      "end": 12.3,
+      "p": 0.618
+    },
+    {
+      "text": "chegou",
+      "start": 12.62,
+      "end": 12.88,
+      "p": 0.989
+    },
+    {
+      "text": "a",
+      "start": 12.88,
+      "end": 13.06,
+      "p": 0.978
+    },
+    {
+      "text": "hora",
+      "start": 13.06,
+      "end": 13.24,
+      "p": 0.996
+    },
+    {
+      "text": "de",
+      "start": 13.24,
+      "end": 13.4,
+      "p": 0.99
+    },
+    {
+      "text": "armazenar",
+      "start": 13.4,
+      "end": 13.98,
+      "p": 0.997
+    },
+    {
+      "text": "os",
+      "start": 13.98,
+      "end": 14.12,
+      "p": 0.991
+    },
+    {
+      "text": "dados.",
+      "start": 14.12,
+      "end": 14.44,
+      "p": 0.993
+    },
+    {
+      "text": "Vamos",
+      "start": 15.06,
+      "end": 15.22,
+      "p": 0.989
+    },
+    {
+      "text": "mostrar",
+      "start": 15.22,
+      "end": 15.72,
+      "p": 0.994
+    },
+    {
+      "text": "como",
+      "start": 15.72,
+      "end": 16.04,
+      "p": 0.994
+    },
+    {
+      "text": "o",
+      "start": 16.04,
+      "end": 16.2,
+      "p": 0.971
+    },
+    {
+      "text": "projeto",
+      "start": 16.2,
+      "end": 16.4,
+      "p": 0.991
+    },
+    {
+      "text": "evoluiu,",
+      "start": 16.4,
+      "end": 17.04,
+      "p": 0.99
+    },
+    {
+      "text": "do",
+      "start": 17.2,
+      "end": 17.32,
+      "p": 0.976
+    },
+    {
+      "text": "código",
+      "start": 17.32,
+      "end": 17.62,
+      "p": 0.912
+    },
+    {
+      "text": "até",
+      "start": 17.62,
+      "end": 18.16,
+      "p": 0.942
+    },
+    {
+      "text": "o",
+      "start": 18.16,
+      "end": 18.28,
+      "p": 0.977
+    },
+    {
+      "text": "banco",
+      "start": 18.28,
+      "end": 18.54,
+      "p": 0.994
+    },
+    {
+      "text": "de",
+      "start": 18.54,
+      "end": 18.72,
+      "p": 0.993
+    },
+    {
+      "text": "dados.",
+      "start": 18.72,
+      "end": 18.98,
+      "p": 0.99
+    },
+    {
+      "text": "Na",
+      "start": 19.62,
+      "end": 19.92,
+      "p": 0.965
+    },
+    {
+      "text": "fase",
+      "start": 19.92,
+      "end": 20.18,
+      "p": 0.984
+    },
+    {
+      "text": "anterior,",
+      "start": 20.18,
+      "end": 20.48,
+      "p": 0.801
+    },
+    {
+      "text": "o",
+      "start": 21.0,
+      "end": 21.16,
+      "p": 0.989
+    },
+    {
+      "text": "Minha",
+      "start": 21.16,
+      "end": 21.38,
+      "p": 0.985
+    },
+    {
+      "text": "Vez",
+      "start": 21.38,
+      "end": 21.62,
+      "p": 0.975
+    },
+    {
+      "text": "tinha",
+      "start": 21.62,
+      "end": 21.88,
+      "p": 0.987
+    },
+    {
+      "text": "o",
+      "start": 21.88,
+      "end": 22.14,
+      "p": 0.969
+    },
+    {
+      "text": "fluxo",
+      "start": 22.14,
+      "end": 22.6,
+      "p": 0.922
+    },
+    {
+      "text": "de",
+      "start": 22.6,
+      "end": 22.76,
+      "p": 0.961
+    },
+    {
+      "text": "Cidadão",
+      "start": 22.76,
+      "end": 23.2,
+      "p": 0.696
+    },
+    {
+      "text": "Modelado,",
+      "start": 23.2,
+      "end": 23.86,
+      "p": 0.787
+    },
+    {
+      "text": "prototipado,",
+      "start": 24.1,
+      "end": 25.06,
+      "p": 0.942
+    },
+    {
+      "text": "e",
+      "start": 25.58,
+      "end": 25.66,
+      "p": 0.964
+    },
+    {
+      "text": "com",
+      "start": 25.66,
+      "end": 25.8,
+      "p": 0.995
+    },
+    {
+      "text": "o",
+      "start": 25.8,
+      "end": 25.94,
+      "p": 0.826
+    },
+    {
+      "text": "primeiro",
+      "start": 25.94,
+      "end": 26.22,
+      "p": 0.996
+    },
+    {
+      "text": "recorte",
+      "start": 26.22,
+      "end": 26.72,
+      "p": 0.974
+    },
+    {
+      "text": "do",
+      "start": 26.72,
+      "end": 26.94,
+      "p": 0.986
+    },
+    {
+      "text": "domínio",
+      "start": 26.94,
+      "end": 27.42,
+      "p": 0.899
+    },
+    {
+      "text": "em",
+      "start": 27.42,
+      "end": 27.58,
+      "p": 0.988
+    },
+    {
+      "text": "Java.",
+      "start": 27.58,
+      "end": 27.88,
+      "p": 0.988
+    },
+    {
+      "text": "Ao",
+      "start": 27.88,
+      "end": 28.84,
+      "p": 0.072
+    },
+    {
+      "text": "desenhar",
+      "start": 28.84,
+      "end": 29.22,
+      "p": 0.991
+    },
+    {
+      "text": "o",
+      "start": 29.22,
+      "end": 29.34,
+      "p": 0.978
+    },
+    {
+      "text": "banco,",
+      "start": 29.34,
+      "end": 29.66,
+      "p": 0.987
+    },
+    {
+      "text": "a",
+      "start": 30.1,
+      "end": 30.22,
+      "p": 0.668
+    },
+    {
+      "text": "modelagem",
+      "start": 30.22,
+      "end": 30.74,
+      "p": 0.942
+    },
+    {
+      "text": "dos",
+      "start": 30.74,
+      "end": 30.96,
+      "p": 0.971
+    },
+    {
+      "text": "dados",
+      "start": 30.96,
+      "end": 31.22,
+      "p": 0.949
+    },
+    {
+      "text": "expôs",
+      "start": 31.22,
+      "end": 31.86,
+      "p": 0.813
+    },
+    {
+      "text": "regras",
+      "start": 31.86,
+      "end": 32.26,
+      "p": 0.949
+    },
+    {
+      "text": "da",
+      "start": 32.26,
+      "end": 32.42,
+      "p": 0.976
+    },
+    {
+      "text": "US03,",
+      "start": 32.42,
+      "end": 33.18,
+      "p": 0.079
+    },
+    {
+      "text": "que",
+      "start": 33.84,
+      "end": 34.1,
+      "p": 0.968
+    },
+    {
+      "text": "o",
+      "start": 34.1,
+      "end": 34.22,
+      "p": 0.995
+    },
+    {
+      "text": "código",
+      "start": 34.22,
+      "end": 34.52,
+      "p": 0.992
+    },
+    {
+      "text": "ainda",
+      "start": 34.52,
+      "end": 34.82,
+      "p": 0.987
+    },
+    {
+      "text": "não",
+      "start": 34.82,
+      "end": 35.04,
+      "p": 0.974
+    },
+    {
+      "text": "aplicava.",
+      "start": 35.04,
+      "end": 35.68,
+      "p": 0.991
+    },
+    {
+      "text": "Por",
+      "start": 36.18,
+      "end": 36.48,
+      "p": 0.977
+    },
+    {
+      "text": "isso,",
+      "start": 36.48,
+      "end": 36.8,
+      "p": 0.996
+    },
+    {
+      "text": "atualizamos",
+      "start": 37.16,
+      "end": 37.78,
+      "p": 0.983
+    },
+    {
+      "text": "o",
+      "start": 37.78,
+      "end": 37.94,
+      "p": 0.993
+    },
+    {
+      "text": "projeto",
+      "start": 37.94,
+      "end": 38.24,
+      "p": 0.994
+    },
+    {
+      "text": "inteiro.",
+      "start": 38.24,
+      "end": 38.62,
+      "p": 0.967
+    },
+    {
+      "text": "Agora",
+      "start": 39.24,
+      "end": 39.52,
+      "p": 0.938
+    },
+    {
+      "text": "são",
+      "start": 39.52,
+      "end": 39.84,
+      "p": 0.916
+    },
+    {
+      "text": "9",
+      "start": 39.84,
+      "end": 40.14,
+      "p": 0.595
+    },
+    {
+      "text": "classes",
+      "start": 40.14,
+      "end": 40.58,
+      "p": 0.974
+    },
+    {
+      "text": "em",
+      "start": 40.58,
+      "end": 40.8,
+      "p": 0.984
+    },
+    {
+      "text": "Java,",
+      "start": 40.8,
+      "end": 41.14,
+      "p": 0.984
+    },
+    {
+      "text": "5",
+      "start": 41.5,
+      "end": 41.96,
+      "p": 0.95
+    },
+    {
+      "text": "testes",
+      "start": 41.96,
+      "end": 42.4,
+      "p": 0.976
+    },
+    {
+      "text": "automatizados,",
+      "start": 42.4,
+      "end": 43.3,
+      "p": 0.989
+    },
+    {
+      "text": "diagramas",
+      "start": 44.02,
+      "end": 44.6,
+      "p": 0.88
+    },
+    {
+      "text": "e",
+      "start": 44.6,
+      "end": 44.7,
+      "p": 0.97
+    },
+    {
+      "text": "telas",
+      "start": 44.7,
+      "end": 45.0,
+      "p": 0.992
+    },
+    {
+      "text": "revisados,",
+      "start": 45.0,
+      "end": 45.62,
+      "p": 0.745
+    },
+    {
+      "text": "e",
+      "start": 46.16,
+      "end": 46.36,
+      "p": 0.95
+    },
+    {
+      "text": "o",
+      "start": 46.36,
+      "end": 46.46,
+      "p": 0.978
+    },
+    {
+      "text": "banco",
+      "start": 46.46,
+      "end": 46.8,
+      "p": 0.993
+    },
+    {
+      "text": "com",
+      "start": 46.8,
+      "end": 47.48,
+      "p": 0.727
+    },
+    {
+      "text": "11",
+      "start": 47.48,
+      "end": 47.76,
+      "p": 0.424
+    },
+    {
+      "text": "entidades",
+      "start": 47.76,
+      "end": 48.3,
+      "p": 0.988
+    },
+    {
+      "text": "e",
+      "start": 48.3,
+      "end": 48.9,
+      "p": 0.972
+    },
+    {
+      "text": "12",
+      "start": 48.9,
+      "end": 49.16,
+      "p": 0.996
+    },
+    {
+      "text": "tabelas.",
+      "start": 49.16,
+      "end": 49.72,
+      "p": 0.943
+    },
+    {
+      "text": "A",
+      "start": 49.72,
+      "end": 50.24,
+      "p": 0.084
+    },
+    {
+      "text": "principal",
+      "start": 50.24,
+      "end": 50.58,
+      "p": 0.841
+    },
+    {
+      "text": "regra,",
+      "start": 50.58,
+      "end": 51.22,
+      "p": 0.976
+    },
+    {
+      "text": "o",
+      "start": 51.58,
+      "end": 51.68,
+      "p": 0.789
+    },
+    {
+      "text": "encaminhamento",
+      "start": 51.68,
+      "end": 52.32,
+      "p": 0.964
+    },
+    {
+      "text": "define",
+      "start": 52.32,
+      "end": 52.86,
+      "p": 0.863
+    },
+    {
+      "text": "a",
+      "start": 52.86,
+      "end": 53.3,
+      "p": 0.963
+    },
+    {
+      "text": "unidade",
+      "start": 53.3,
+      "end": 53.68,
+      "p": 0.983
+    },
+    {
+      "text": "da",
+      "start": 53.68,
+      "end": 53.86,
+      "p": 0.988
+    },
+    {
+      "text": "consulta,",
+      "start": 53.86,
+      "end": 54.5,
+      "p": 0.985
+    },
+    {
+      "text": "e",
+      "start": 54.72,
+      "end": 55.2,
+      "p": 0.943
+    },
+    {
+      "text": "o",
+      "start": 55.2,
+      "end": 55.34,
+      "p": 0.975
+    },
+    {
+      "text": "cidadão",
+      "start": 55.34,
+      "end": 55.82,
+      "p": 0.991
+    },
+    {
+      "text": "só",
+      "start": 55.82,
+      "end": 56.18,
+      "p": 0.976
+    },
+    {
+      "text": "vê",
+      "start": 56.18,
+      "end": 56.48,
+      "p": 0.961
+    },
+    {
+      "text": "e",
+      "start": 56.48,
+      "end": 56.82,
+      "p": 0.962
+    },
+    {
+      "text": "só",
+      "start": 56.82,
+      "end": 56.96,
+      "p": 0.949
+    },
+    {
+      "text": "agenda",
+      "start": 56.96,
+      "end": 57.26,
+      "p": 0.885
+    },
+    {
+      "text": "vagas",
+      "start": 57.26,
+      "end": 57.78,
+      "p": 0.864
+    },
+    {
+      "text": "testa",
+      "start": 57.78,
+      "end": 58.06,
+      "p": 0.334
+    },
+    {
+      "text": "unidade.",
+      "start": 58.06,
+      "end": 58.48,
+      "p": 0.897
+    },
+    {
+      "text": "Reagendar",
+      "start": 59.08,
+      "end": 59.6,
+      "p": 0.707
+    },
+    {
+      "text": "cancela",
+      "start": 59.6,
+      "end": 60.38,
+      "p": 0.954
+    },
+    {
+      "text": "o",
+      "start": 60.38,
+      "end": 60.54,
+      "p": 0.977
+    },
+    {
+      "text": "horário",
+      "start": 60.54,
+      "end": 60.82,
+      "p": 0.972
+    },
+    {
+      "text": "atual",
+      "start": 60.82,
+      "end": 61.14,
+      "p": 0.987
+    },
+    {
+      "text": "e",
+      "start": 61.14,
+      "end": 61.6,
+      "p": 0.942
+    },
+    {
+      "text": "cria",
+      "start": 61.6,
+      "end": 61.92,
+      "p": 0.986
+    },
+    {
+      "text": "um",
+      "start": 61.92,
+      "end": 62.2,
+      "p": 0.906
+    },
+    {
+      "text": "novo,",
+      "start": 62.2,
+      "end": 62.54,
+      "p": 0.934
+    },
+    {
+      "text": "ligado",
+      "start": 62.8,
+      "end": 63.14,
+      "p": 0.995
+    },
+    {
+      "text": "a",
+      "start": 63.14,
+      "end": 63.28,
+      "p": 0.977
+    },
+    {
+      "text": "ele.",
+      "start": 63.28,
+      "end": 63.5,
+      "p": 0.994
+    },
+    {
+      "text": "Cancela",
+      "start": 64.26,
+      "end": 65.0,
+      "p": 0.846
+    },
+    {
+      "text": "ou",
+      "start": 65.0,
+      "end": 65.4,
+      "p": 0.661
+    },
+    {
+      "text": "reagendar,",
+      "start": 65.4,
+      "end": 66.06,
+      "p": 0.788
+    },
+    {
+      "text": "só",
+      "start": 66.42,
+      "end": 66.7,
+      "p": 0.991
+    },
+    {
+      "text": "vale",
+      "start": 66.7,
+      "end": 67.16,
+      "p": 0.984
+    },
+    {
+      "text": "até",
+      "start": 67.16,
+      "end": 67.78,
+      "p": 0.943
+    },
+    {
+      "text": "24",
+      "start": 67.78,
+      "end": 68.26,
+      "p": 0.98
+    },
+    {
+      "text": "horas",
+      "start": 68.26,
+      "end": 68.6,
+      "p": 0.876
+    },
+    {
+      "text": "antes,",
+      "start": 68.6,
+      "end": 69.08,
+      "p": 0.958
+    },
+    {
+      "text": "com",
+      "start": 69.56,
+      "end": 69.76,
+      "p": 0.629
+    },
+    {
+      "text": "no",
+      "start": 69.76,
+      "end": 69.88,
+      "p": 0.915
+    },
+    {
+      "text": "máximo",
+      "start": 69.88,
+      "end": 70.4,
+      "p": 0.995
+    },
+    {
+      "text": "2",
+      "start": 70.4,
+      "end": 70.84,
+      "p": 0.498
+    },
+    {
+      "text": "reagendamentos,",
+      "start": 70.84,
+      "end": 71.66,
+      "p": 0.794
+    },
+    {
+      "text": "depois",
+      "start": 72.18,
+      "end": 72.7,
+      "p": 0.99
+    },
+    {
+      "text": "só",
+      "start": 72.7,
+      "end": 73.24,
+      "p": 0.861
+    },
+    {
+      "text": "no",
+      "start": 73.24,
+      "end": 73.38,
+      "p": 0.982
+    },
+    {
+      "text": "balcão.",
+      "start": 73.38,
+      "end": 73.8,
+      "p": 0.948
+    },
+    {
+      "text": "Os",
+      "start": 73.8,
+      "end": 74.86,
+      "p": 0.858
+    },
+    {
+      "text": "5",
+      "start": 74.86,
+      "end": 75.04,
+      "p": 0.0
+    },
+    {
+      "text": "testes",
+      "start": 75.04,
+      "end": 75.58,
+      "p": 0.953
+    },
+    {
+      "text": "passam",
+      "start": 75.58,
+      "end": 76.22,
+      "p": 0.995
+    },
+    {
+      "text": "e",
+      "start": 76.22,
+      "end": 76.68,
+      "p": 0.727
+    },
+    {
+      "text": "a",
+      "start": 76.68,
+      "end": 76.78,
+      "p": 0.991
+    },
+    {
+      "text": "saída",
+      "start": 76.78,
+      "end": 77.3,
+      "p": 0.993
+    },
+    {
+      "text": "do",
+      "start": 77.3,
+      "end": 77.6,
+      "p": 0.99
+    },
+    {
+      "text": "demo",
+      "start": 77.6,
+      "end": 77.98,
+      "p": 0.948
+    },
+    {
+      "text": "mostra",
+      "start": 77.98,
+      "end": 78.78,
+      "p": 0.946
+    },
+    {
+      "text": "o",
+      "start": 78.78,
+      "end": 79.1,
+      "p": 0.972
+    },
+    {
+      "text": "anterior",
+      "start": 79.1,
+      "end": 79.48,
+      "p": 0.986
+    },
+    {
+      "text": "cancelado,",
+      "start": 79.48,
+      "end": 80.36,
+      "p": 0.996
+    },
+    {
+      "text": "o",
+      "start": 81.04,
+      "end": 81.14,
+      "p": 0.974
+    },
+    {
+      "text": "novo",
+      "start": 81.14,
+      "end": 81.4,
+      "p": 0.946
+    },
+    {
+      "text": "apontando",
+      "start": 81.4,
+      "end": 82.04,
+      "p": 0.947
+    },
+    {
+      "text": "para",
+      "start": 82.04,
+      "end": 82.32,
+      "p": 0.972
+    },
+    {
+      "text": "ele",
+      "start": 82.32,
+      "end": 82.72,
+      "p": 0.987
+    },
+    {
+      "text": "e",
+      "start": 82.72,
+      "end": 83.4,
+      "p": 0.95
+    },
+    {
+      "text": "o",
+      "start": 83.4,
+      "end": 83.56,
+      "p": 0.989
+    },
+    {
+      "text": "erro",
+      "start": 83.56,
+      "end": 83.78,
+      "p": 0.998
+    },
+    {
+      "text": "quando",
+      "start": 83.78,
+      "end": 84.02,
+      "p": 0.957
+    },
+    {
+      "text": "a",
+      "start": 84.02,
+      "end": 84.18,
+      "p": 0.902
+    },
+    {
+      "text": "vaga",
+      "start": 84.18,
+      "end": 84.46,
+      "p": 0.947
+    },
+    {
+      "text": "é",
+      "start": 84.46,
+      "end": 84.62,
+      "p": 0.935
+    },
+    {
+      "text": "de",
+      "start": 84.62,
+      "end": 84.7,
+      "p": 0.994
+    },
+    {
+      "text": "outra",
+      "start": 84.7,
+      "end": 84.86,
+      "p": 0.981
+    },
+    {
+      "text": "unidade.",
+      "start": 84.86,
+      "end": 85.34,
+      "p": 0.998
+    },
+    {
+      "text": "O",
+      "start": 86.3,
+      "end": 86.46,
+      "p": 0.975
+    },
+    {
+      "text": "domínio",
+      "start": 86.46,
+      "end": 86.9,
+      "p": 0.988
+    },
+    {
+      "text": "ainda",
+      "start": 86.9,
+      "end": 87.12,
+      "p": 0.997
+    },
+    {
+      "text": "roda",
+      "start": 87.12,
+      "end": 87.54,
+      "p": 0.975
+    },
+    {
+      "text": "em",
+      "start": 87.54,
+      "end": 87.66,
+      "p": 0.996
+    },
+    {
+      "text": "memória,",
+      "start": 87.66,
+      "end": 88.1,
+      "p": 0.995
+    },
+    {
+      "text": "gravar",
+      "start": 88.54,
+      "end": 88.92,
+      "p": 0.983
+    },
+    {
+      "text": "no",
+      "start": 88.92,
+      "end": 89.06,
+      "p": 0.99
+    },
+    {
+      "text": "banco",
+      "start": 89.06,
+      "end": 89.46,
+      "p": 0.998
+    },
+    {
+      "text": "é",
+      "start": 89.46,
+      "end": 89.72,
+      "p": 0.972
+    },
+    {
+      "text": "a",
+      "start": 89.72,
+      "end": 89.84,
+      "p": 0.985
+    },
+    {
+      "text": "próxima",
+      "start": 89.84,
+      "end": 90.08,
+      "p": 0.996
+    },
+    {
+      "text": "etapa.",
+      "start": 90.08,
+      "end": 90.58,
+      "p": 0.996
+    },
+    {
+      "text": "Os",
+      "start": 91.26,
+      "end": 91.46,
+      "p": 0.981
+    },
+    {
+      "text": "diagramas",
+      "start": 91.46,
+      "end": 91.98,
+      "p": 0.974
+    },
+    {
+      "text": "OML",
+      "start": 91.98,
+      "end": 92.26,
+      "p": 0.452
+    },
+    {
+      "text": "foram",
+      "start": 92.26,
+      "end": 92.64,
+      "p": 0.874
+    },
+    {
+      "text": "revisados",
+      "start": 92.64,
+      "end": 93.26,
+      "p": 0.986
+    },
+    {
+      "text": "contra",
+      "start": 93.26,
+      "end": 93.56,
+      "p": 0.71
+    },
+    {
+      "text": "o",
+      "start": 93.56,
+      "end": 93.74,
+      "p": 0.974
+    },
+    {
+      "text": "código.",
+      "start": 93.74,
+      "end": 93.98,
+      "p": 0.666
+    },
+    {
+      "text": "Classes",
+      "start": 94.5,
+      "end": 95.0,
+      "p": 0.697
+    },
+    {
+      "text": "e",
+      "start": 95.0,
+      "end": 95.14,
+      "p": 0.924
+    },
+    {
+      "text": "sequências",
+      "start": 95.14,
+      "end": 95.6,
+      "p": 0.881
+    },
+    {
+      "text": "de",
+      "start": 95.6,
+      "end": 95.74,
+      "p": 0.997
+    },
+    {
+      "text": "agendador",
+      "start": 95.74,
+      "end": 96.18,
+      "p": 0.927
+    },
+    {
+      "text": "atualizados,",
+      "start": 96.18,
+      "end": 97.08,
+      "p": 0.971
+    },
+    {
+      "text": "mais",
+      "start": 97.58,
+      "end": 97.8,
+      "p": 0.826
+    },
+    {
+      "text": "2",
+      "start": 97.8,
+      "end": 98.06,
+      "p": 0.541
+    },
+    {
+      "text": "diagramas",
+      "start": 98.06,
+      "end": 98.6,
+      "p": 0.978
+    },
+    {
+      "text": "novos,",
+      "start": 98.6,
+      "end": 98.94,
+      "p": 0.976
+    },
+    {
+      "text": "o",
+      "start": 99.3,
+      "end": 99.38,
+      "p": 0.845
+    },
+    {
+      "text": "de",
+      "start": 99.38,
+      "end": 99.48,
+      "p": 0.974
+    },
+    {
+      "text": "sequência",
+      "start": 99.48,
+      "end": 99.92,
+      "p": 0.977
+    },
+    {
+      "text": "do",
+      "start": 99.92,
+      "end": 100.08,
+      "p": 0.987
+    },
+    {
+      "text": "reagendamento",
+      "start": 100.08,
+      "end": 100.84,
+      "p": 0.749
+    },
+    {
+      "text": "e",
+      "start": 100.84,
+      "end": 101.02,
+      "p": 0.941
+    },
+    {
+      "text": "o",
+      "start": 101.02,
+      "end": 101.06,
+      "p": 0.909
+    },
+    {
+      "text": "de",
+      "start": 101.06,
+      "end": 101.16,
+      "p": 0.998
+    },
+    {
+      "text": "atividades",
+      "start": 101.16,
+      "end": 101.76,
+      "p": 0.878
+    },
+    {
+      "text": "de",
+      "start": 101.76,
+      "end": 102.08,
+      "p": 0.991
+    },
+    {
+      "text": "reagendar",
+      "start": 102.08,
+      "end": 102.58,
+      "p": 0.937
+    },
+    {
+      "text": "e",
+      "start": 102.58,
+      "end": 102.96,
+      "p": 0.99
+    },
+    {
+      "text": "cancelar.",
+      "start": 102.96,
+      "end": 103.38,
+      "p": 0.996
+    },
+    {
+      "text": "Usuar",
+      "start": 103.38,
+      "end": 104.28,
+      "p": 0.106
+    },
+    {
+      "text": "e",
+      "start": 104.28,
+      "end": 104.42,
+      "p": 0.375
+    },
+    {
+      "text": "Frames,",
+      "start": 104.42,
+      "end": 104.72,
+      "p": 0.848
+    },
+    {
+      "text": "3",
+      "start": 105.08,
+      "end": 105.62,
+      "p": 0.1
+    },
+    {
+      "text": "telas",
+      "start": 105.62,
+      "end": 106.06,
+      "p": 0.991
+    },
+    {
+      "text": "foram",
+      "start": 106.06,
+      "end": 106.24,
+      "p": 0.96
+    },
+    {
+      "text": "atualizadas",
+      "start": 106.24,
+      "end": 106.98,
+      "p": 0.984
+    },
+    {
+      "text": "e",
+      "start": 106.98,
+      "end": 107.5,
+      "p": 0.733
+    },
+    {
+      "text": "3",
+      "start": 107.5,
+      "end": 107.82,
+      "p": 0.886
+    },
+    {
+      "text": "são",
+      "start": 107.82,
+      "end": 108.0,
+      "p": 0.985
+    },
+    {
+      "text": "novas,",
+      "start": 108.0,
+      "end": 108.42,
+      "p": 0.992
+    },
+    {
+      "text": "cobrendo",
+      "start": 108.42,
+      "end": 108.88,
+      "p": 0.615
+    },
+    {
+      "text": "o",
+      "start": 108.88,
+      "end": 109.06,
+      "p": 0.566
+    },
+    {
+      "text": "reagendamento,",
+      "start": 109.06,
+      "end": 109.7,
+      "p": 0.797
+    },
+    {
+      "text": "limite",
+      "start": 109.94,
+      "end": 110.2,
+      "p": 0.98
+    },
+    {
+      "text": "e",
+      "start": 110.2,
+      "end": 110.62,
+      "p": 0.98
+    },
+    {
+      "text": "prazo.",
+      "start": 110.62,
+      "end": 111.06,
+      "p": 0.986
+    },
+    {
+      "text": "Para",
+      "start": 111.3,
+      "end": 111.56,
+      "p": 0.832
+    },
+    {
+      "text": "o",
+      "start": 111.56,
+      "end": 111.68,
+      "p": 0.94
+    },
+    {
+      "text": "modelo",
+      "start": 111.68,
+      "end": 111.86,
+      "p": 0.978
+    },
+    {
+      "text": "lógico,",
+      "start": 111.86,
+      "end": 112.48,
+      "p": 0.981
+    },
+    {
+      "text": "usamos",
+      "start": 112.7,
+      "end": 112.86,
+      "p": 0.979
+    },
+    {
+      "text": "logo",
+      "start": 112.86,
+      "end": 113.14,
+      "p": 0.212
+    },
+    {
+      "text": "a",
+      "start": 113.14,
+      "end": 113.36,
+      "p": 0.715
+    },
+    {
+      "text": "SKELE",
+      "start": 113.36,
+      "end": 113.72,
+      "p": 0.433
+    },
+    {
+      "text": "Developed",
+      "start": 113.72,
+      "end": 114.22,
+      "p": 0.358
+    },
+    {
+      "text": "Data",
+      "start": 114.22,
+      "end": 114.38,
+      "p": 0.559
+    },
+    {
+      "text": "Modular,",
+      "start": 114.38,
+      "end": 114.9,
+      "p": 0.652
+    },
+    {
+      "text": "com",
+      "start": 115.12,
+      "end": 115.34,
+      "p": 0.985
+    },
+    {
+      "text": "natação",
+      "start": 115.34,
+      "end": 115.66,
+      "p": 0.58
+    },
+    {
+      "text": "Baker.",
+      "start": 115.66,
+      "end": 116.1,
+      "p": 0.558
+    },
+    {
+      "text": "São",
+      "start": 116.54,
+      "end": 116.78,
+      "p": 0.996
+    },
+    {
+      "text": "11",
+      "start": 116.78,
+      "end": 117.14,
+      "p": 0.887
+    },
+    {
+      "text": "entidades,",
+      "start": 117.14,
+      "end": 117.76,
+      "p": 0.987
+    },
+    {
+      "text": "15",
+      "start": 118.16,
+      "end": 118.28,
+      "p": 0.121
+    },
+    {
+      "text": "relacionamentos",
+      "start": 118.28,
+      "end": 118.98,
+      "p": 0.99
+    },
+    {
+      "text": "e",
+      "start": 118.98,
+      "end": 119.24,
+      "p": 0.971
+    },
+    {
+      "text": "2",
+      "start": 119.24,
+      "end": 119.42,
+      "p": 0.553
+    },
+    {
+      "text": "heranças.",
+      "start": 119.42,
+      "end": 119.94,
+      "p": 0.967
+    },
+    {
+      "text": "O",
+      "start": 120.52,
+      "end": 120.68,
+      "p": 0.977
+    },
+    {
+      "text": "modelo",
+      "start": 120.68,
+      "end": 120.86,
+      "p": 0.996
+    },
+    {
+      "text": "traz",
+      "start": 120.86,
+      "end": 121.12,
+      "p": 0.986
+    },
+    {
+      "text": "uma",
+      "start": 121.12,
+      "end": 121.26,
+      "p": 0.994
+    },
+    {
+      "text": "especialização",
+      "start": 121.26,
+      "end": 121.94,
+      "p": 0.759
+    },
+    {
+      "text": "com",
+      "start": 121.94,
+      "end": 122.64,
+      "p": 0.801
+    },
+    {
+      "text": "pessoa",
+      "start": 122.64,
+      "end": 122.98,
+      "p": 0.555
+    },
+    {
+      "text": "dividida",
+      "start": 122.98,
+      "end": 123.48,
+      "p": 0.995
+    },
+    {
+      "text": "em",
+      "start": 123.48,
+      "end": 123.58,
+      "p": 0.987
+    },
+    {
+      "text": "cidadão",
+      "start": 123.58,
+      "end": 124.12,
+      "p": 0.986
+    },
+    {
+      "text": "e",
+      "start": 124.12,
+      "end": 124.34,
+      "p": 0.982
+    },
+    {
+      "text": "usuário",
+      "start": 124.34,
+      "end": 124.62,
+      "p": 0.912
+    },
+    {
+      "text": "institucional,",
+      "start": 124.62,
+      "end": 125.22,
+      "p": 0.978
+    },
+    {
+      "text": "uma",
+      "start": 125.76,
+      "end": 126.0,
+      "p": 0.625
+    },
+    {
+      "text": "agregação",
+      "start": 126.0,
+      "end": 126.56,
+      "p": 0.917
+    },
+    {
+      "text": "na",
+      "start": 126.56,
+      "end": 127.22,
+      "p": 0.589
+    },
+    {
+      "text": "entidade",
+      "start": 127.22,
+      "end": 127.5,
+      "p": 0.987
+    },
+    {
+      "text": "de",
+      "start": 127.5,
+      "end": 127.66,
+      "p": 0.706
+    },
+    {
+      "text": "agendamento",
+      "start": 127.66,
+      "end": 128.08,
+      "p": 0.983
+    },
+    {
+      "text": "e",
+      "start": 128.08,
+      "end": 128.64,
+      "p": 0.827
+    },
+    {
+      "text": "um",
+      "start": 128.64,
+      "end": 128.7,
+      "p": 0.801
+    },
+    {
+      "text": "alto",
+      "start": 128.7,
+      "end": 128.84,
+      "p": 0.333
+    },
+    {
+      "text": "relacionamento",
+      "start": 128.84,
+      "end": 129.48,
+      "p": 0.969
+    },
+    {
+      "text": "que",
+      "start": 129.48,
+      "end": 129.84,
+      "p": 0.932
+    },
+    {
+      "text": "liga",
+      "start": 129.84,
+      "end": 129.98,
+      "p": 0.995
+    },
+    {
+      "text": "o",
+      "start": 129.98,
+      "end": 130.08,
+      "p": 0.918
+    },
+    {
+      "text": "reagendamento",
+      "start": 130.08,
+      "end": 130.68,
+      "p": 0.973
+    },
+    {
+      "text": "ao",
+      "start": 130.68,
+      "end": 131.0,
+      "p": 0.937
+    },
+    {
+      "text": "horário",
+      "start": 131.0,
+      "end": 131.24,
+      "p": 0.767
+    },
+    {
+      "text": "anterior.",
+      "start": 131.24,
+      "end": 131.58,
+      "p": 0.997
+    },
+    {
+      "text": "O",
+      "start": 131.58,
+      "end": 132.66,
+      "p": 0.053
+    },
+    {
+      "text": "contato",
+      "start": 132.66,
+      "end": 133.02,
+      "p": 0.524
+    },
+    {
+      "text": "cidadão",
+      "start": 133.02,
+      "end": 133.6,
+      "p": 0.781
+    },
+    {
+      "text": "é",
+      "start": 133.6,
+      "end": 133.9,
+      "p": 0.963
+    },
+    {
+      "text": "multivalorado",
+      "start": 133.9,
+      "end": 134.7,
+      "p": 0.931
+    },
+    {
+      "text": "e",
+      "start": 134.7,
+      "end": 135.2,
+      "p": 0.925
+    },
+    {
+      "text": "virou",
+      "start": 135.2,
+      "end": 135.46,
+      "p": 0.993
+    },
+    {
+      "text": "equidade",
+      "start": 135.46,
+      "end": 135.76,
+      "p": 0.574
+    },
+    {
+      "text": "própria.",
+      "start": 135.76,
+      "end": 136.24,
+      "p": 0.976
+    },
+    {
+      "text": "O",
+      "start": 136.6,
+      "end": 136.66,
+      "p": 0.977
+    },
+    {
+      "text": "endereço",
+      "start": 136.66,
+      "end": 137.08,
+      "p": 0.99
+    },
+    {
+      "text": "da",
+      "start": 137.08,
+      "end": 137.24,
+      "p": 0.976
+    },
+    {
+      "text": "unidade",
+      "start": 137.24,
+      "end": 137.56,
+      "p": 0.96
+    },
+    {
+      "text": "foi",
+      "start": 137.56,
+      "end": 137.82,
+      "p": 0.985
+    },
+    {
+      "text": "decompostado",
+      "start": 137.82,
+      "end": 138.26,
+      "p": 0.649
+    },
+    {
+      "text": "em",
+      "start": 138.26,
+      "end": 138.52,
+      "p": 0.728
+    },
+    {
+      "text": "atributos.",
+      "start": 138.52,
+      "end": 138.82,
+      "p": 0.84
+    },
+    {
+      "text": "Cheia",
+      "start": 139.64,
+      "end": 140.04,
+      "p": 0.638
+    },
+    {
+      "text": "de",
+      "start": 140.04,
+      "end": 140.14,
+      "p": 0.987
+    },
+    {
+      "text": "laude",
+      "start": 140.14,
+      "end": 140.44,
+      "p": 0.653
+    },
+    {
+      "text": "prontuário",
+      "start": 140.44,
+      "end": 141.0,
+      "p": 0.802
+    },
+    {
+      "text": "ficaram",
+      "start": 141.0,
+      "end": 141.38,
+      "p": 0.746
+    },
+    {
+      "text": "fora",
+      "start": 141.38,
+      "end": 141.58,
+      "p": 0.996
+    },
+    {
+      "text": "do",
+      "start": 141.58,
+      "end": 141.76,
+      "p": 0.99
+    },
+    {
+      "text": "banco",
+      "start": 141.76,
+      "end": 142.1,
+      "p": 0.974
+    },
+    {
+      "text": "para",
+      "start": 142.1,
+      "end": 142.64,
+      "p": 0.803
+    },
+    {
+      "text": "reduzir",
+      "start": 142.64,
+      "end": 143.02,
+      "p": 0.974
+    },
+    {
+      "text": "o",
+      "start": 143.02,
+      "end": 143.14,
+      "p": 0.99
+    },
+    {
+      "text": "domínio",
+      "start": 143.14,
+      "end": 143.34,
+      "p": 0.362
+    },
+    {
+      "text": "em",
+      "start": 143.34,
+      "end": 143.46,
+      "p": 0.978
+    },
+    {
+      "text": "caso",
+      "start": 143.46,
+      "end": 143.62,
+      "p": 0.522
+    },
+    {
+      "text": "de",
+      "start": 143.62,
+      "end": 143.78,
+      "p": 0.993
+    },
+    {
+      "text": "vazamento.",
+      "start": 143.78,
+      "end": 144.18,
+      "p": 0.992
+    },
+    {
+      "text": "Para",
+      "start": 144.36,
+      "end": 144.44,
+      "p": 0.706
+    },
+    {
+      "text": "entender",
+      "start": 144.44,
+      "end": 144.66,
+      "p": 0.998
+    },
+    {
+      "text": "por",
+      "start": 144.66,
+      "end": 144.96,
+      "p": 0.675
+    },
+    {
+      "text": "que",
+      "start": 144.96,
+      "end": 145.06,
+      "p": 0.9
+    },
+    {
+      "text": "normalizar,",
+      "start": 145.06,
+      "end": 145.68,
+      "p": 0.969
+    },
+    {
+      "text": "imaginamos",
+      "start": 146.12,
+      "end": 146.56,
+      "p": 0.984
+    },
+    {
+      "text": "tudo",
+      "start": 146.56,
+      "end": 146.8,
+      "p": 0.995
+    },
+    {
+      "text": "numa",
+      "start": 146.8,
+      "end": 147.02,
+      "p": 0.813
+    },
+    {
+      "text": "tabela",
+      "start": 147.02,
+      "end": 147.36,
+      "p": 0.996
+    },
+    {
+      "text": "só.",
+      "start": 147.36,
+      "end": 147.68,
+      "p": 0.979
+    },
+    {
+      "text": "Na",
+      "start": 148.28,
+      "end": 148.46,
+      "p": 0.987
+    },
+    {
+      "text": "inserção,",
+      "start": 148.46,
+      "end": 149.0,
+      "p": 0.989
+    },
+    {
+      "text": "não",
+      "start": 149.24,
+      "end": 149.34,
+      "p": 0.993
+    },
+    {
+      "text": "dá",
+      "start": 149.34,
+      "end": 149.5,
+      "p": 0.984
+    },
+    {
+      "text": "para",
+      "start": 149.5,
+      "end": 149.66,
+      "p": 0.678
+    },
+    {
+      "text": "cadastrar",
+      "start": 149.66,
+      "end": 150.16,
+      "p": 0.99
+    },
+    {
+      "text": "um",
+      "start": 150.16,
+      "end": 150.24,
+      "p": 0.961
+    },
+    {
+      "text": "cidadão",
+      "start": 150.24,
+      "end": 150.7,
+      "p": 0.999
+    },
+    {
+      "text": "sem",
+      "start": 150.7,
+      "end": 150.92,
+      "p": 0.988
+    },
+    {
+      "text": "encaminhamento,",
+      "start": 150.92,
+      "end": 151.6,
+      "p": 0.938
+    },
+    {
+      "text": "nem",
+      "start": 151.8,
+      "end": 151.98,
+      "p": 0.99
+    },
+    {
+      "text": "publicar",
+      "start": 151.98,
+      "end": 152.4,
+      "p": 0.994
+    },
+    {
+      "text": "uma",
+      "start": 152.4,
+      "end": 152.52,
+      "p": 0.99
+    },
+    {
+      "text": "vaga",
+      "start": 152.52,
+      "end": 152.78,
+      "p": 0.989
+    },
+    {
+      "text": "que",
+      "start": 152.78,
+      "end": 152.94,
+      "p": 0.989
+    },
+    {
+      "text": "ninguém",
+      "start": 152.94,
+      "end": 153.16,
+      "p": 0.994
+    },
+    {
+      "text": "reservou.",
+      "start": 153.16,
+      "end": 153.68,
+      "p": 0.995
+    },
+    {
+      "text": "Na",
+      "start": 154.22,
+      "end": 154.46,
+      "p": 0.993
+    },
+    {
+      "text": "exclusão,",
+      "start": 154.46,
+      "end": 155.1,
+      "p": 0.94
+    },
+    {
+      "text": "apagar",
+      "start": 155.44,
+      "end": 155.7,
+      "p": 0.951
+    },
+    {
+      "text": "o",
+      "start": 155.7,
+      "end": 155.92,
+      "p": 0.975
+    },
+    {
+      "text": "único",
+      "start": 155.92,
+      "end": 156.1,
+      "p": 0.975
+    },
+    {
+      "text": "pedido",
+      "start": 156.1,
+      "end": 156.5,
+      "p": 0.987
+    },
+    {
+      "text": "de",
+      "start": 156.5,
+      "end": 156.66,
+      "p": 0.995
+    },
+    {
+      "text": "um",
+      "start": 156.66,
+      "end": 156.74,
+      "p": 0.995
+    },
+    {
+      "text": "cidadão",
+      "start": 156.74,
+      "end": 157.22,
+      "p": 0.999
+    },
+    {
+      "text": "leva",
+      "start": 157.22,
+      "end": 157.52,
+      "p": 0.917
+    },
+    {
+      "text": "junto",
+      "start": 157.52,
+      "end": 157.78,
+      "p": 0.993
+    },
+    {
+      "text": "o",
+      "start": 157.78,
+      "end": 157.96,
+      "p": 0.906
+    },
+    {
+      "text": "cadastro",
+      "start": 157.96,
+      "end": 158.32,
+      "p": 0.963
+    },
+    {
+      "text": "dele",
+      "start": 158.32,
+      "end": 158.64,
+      "p": 0.964
+    },
+    {
+      "text": "e",
+      "start": 158.64,
+      "end": 158.86,
+      "p": 0.989
+    },
+    {
+      "text": "o",
+      "start": 158.86,
+      "end": 158.92,
+      "p": 0.995
+    },
+    {
+      "text": "endereço",
+      "start": 158.92,
+      "end": 159.28,
+      "p": 0.997
+    },
+    {
+      "text": "da",
+      "start": 159.28,
+      "end": 159.42,
+      "p": 0.986
+    },
+    {
+      "text": "unidade.",
+      "start": 159.42,
+      "end": 159.84,
+      "p": 0.994
+    },
+    {
+      "text": "E",
+      "start": 159.84,
+      "end": 160.46,
+      "p": 0.077
+    },
+    {
+      "text": "na",
+      "start": 160.46,
+      "end": 160.58,
+      "p": 0.759
+    },
+    {
+      "text": "alteração,",
+      "start": 160.58,
+      "end": 161.1,
+      "p": 0.989
+    },
+    {
+      "text": "se",
+      "start": 161.68,
+      "end": 161.74,
+      "p": 0.985
+    },
+    {
+      "text": "alguém",
+      "start": 161.74,
+      "end": 161.94,
+      "p": 0.996
+    },
+    {
+      "text": "troca",
+      "start": 161.94,
+      "end": 162.26,
+      "p": 0.99
+    },
+    {
+      "text": "de",
+      "start": 162.26,
+      "end": 162.42,
+      "p": 0.988
+    },
+    {
+      "text": "celular,",
+      "start": 162.42,
+      "end": 162.78,
+      "p": 0.998
+    },
+    {
+      "text": "cada",
+      "start": 163.06,
+      "end": 163.18,
+      "p": 0.996
+    },
+    {
+      "text": "pedido",
+      "start": 163.18,
+      "end": 163.54,
+      "p": 0.992
+    },
+    {
+      "text": "precisa",
+      "start": 163.54,
+      "end": 163.84,
+      "p": 0.996
+    },
+    {
+      "text": "mudar",
+      "start": 163.84,
+      "end": 164.24,
+      "p": 0.973
+    },
+    {
+      "text": "e",
+      "start": 164.24,
+      "end": 164.92,
+      "p": 0.142
+    },
+    {
+      "text": "esquecer",
+      "start": 164.92,
+      "end": 165.36,
+      "p": 0.991
+    },
+    {
+      "text": "um",
+      "start": 165.36,
+      "end": 165.58,
+      "p": 0.597
+    },
+    {
+      "text": "deixa",
+      "start": 165.58,
+      "end": 165.92,
+      "p": 0.823
+    },
+    {
+      "text": "duas",
+      "start": 165.92,
+      "end": 166.2,
+      "p": 0.948
+    },
+    {
+      "text": "versões",
+      "start": 166.2,
+      "end": 166.58,
+      "p": 0.975
+    },
+    {
+      "text": "da",
+      "start": 166.58,
+      "end": 166.74,
+      "p": 0.982
+    },
+    {
+      "text": "verdade.",
+      "start": 166.74,
+      "end": 167.08,
+      "p": 0.996
+    },
+    {
+      "text": "Aplicando",
+      "start": 167.66,
+      "end": 168.24,
+      "p": 0.975
+    },
+    {
+      "text": "as",
+      "start": 168.24,
+      "end": 168.38,
+      "p": 0.998
+    },
+    {
+      "text": "formas",
+      "start": 168.38,
+      "end": 168.62,
+      "p": 0.996
+    },
+    {
+      "text": "normais,",
+      "start": 168.62,
+      "end": 169.16,
+      "p": 0.987
+    },
+    {
+      "text": "na",
+      "start": 169.6,
+      "end": 169.64,
+      "p": 0.978
+    },
+    {
+      "text": "primeira,",
+      "start": 169.64,
+      "end": 169.98,
+      "p": 0.987
+    },
+    {
+      "text": "contatos",
+      "start": 170.42,
+      "end": 170.9,
+      "p": 0.928
+    },
+    {
+      "text": "históricos",
+      "start": 170.9,
+      "end": 171.74,
+      "p": 0.972
+    },
+    {
+      "text": "viram",
+      "start": 171.74,
+      "end": 172.08,
+      "p": 0.78
+    },
+    {
+      "text": "tabelas",
+      "start": 172.08,
+      "end": 172.6,
+      "p": 0.981
+    },
+    {
+      "text": "e",
+      "start": 172.6,
+      "end": 172.88,
+      "p": 0.958
+    },
+    {
+      "text": "o",
+      "start": 172.88,
+      "end": 172.94,
+      "p": 0.94
+    },
+    {
+      "text": "endereço",
+      "start": 172.94,
+      "end": 173.34,
+      "p": 0.997
+    },
+    {
+      "text": "viram",
+      "start": 173.34,
+      "end": 173.6,
+      "p": 0.876
+    },
+    {
+      "text": "colunas.",
+      "start": 173.6,
+      "end": 174.1,
+      "p": 0.973
+    },
+    {
+      "text": "Na",
+      "start": 174.68,
+      "end": 174.86,
+      "p": 0.991
+    },
+    {
+      "text": "segunda,",
+      "start": 174.86,
+      "end": 175.28,
+      "p": 0.997
+    },
+    {
+      "text": "encaminhamento,",
+      "start": 175.58,
+      "end": 176.24,
+      "p": 0.964
+    },
+    {
+      "text": "horário",
+      "start": 176.56,
+      "end": 176.98,
+      "p": 0.983
+    },
+    {
+      "text": "e",
+      "start": 176.98,
+      "end": 177.28,
+      "p": 0.985
+    },
+    {
+      "text": "agendamento",
+      "start": 177.28,
+      "end": 177.78,
+      "p": 0.964
+    },
+    {
+      "text": "ficam",
+      "start": 177.78,
+      "end": 178.08,
+      "p": 0.978
+    },
+    {
+      "text": "separados.",
+      "start": 178.08,
+      "end": 178.62,
+      "p": 0.996
+    },
+    {
+      "text": "Na",
+      "start": 179.12,
+      "end": 179.22,
+      "p": 0.989
+    },
+    {
+      "text": "terceira,",
+      "start": 179.22,
+      "end": 179.76,
+      "p": 0.999
+    },
+    {
+      "text": "achamos",
+      "start": 180.2,
+      "end": 180.58,
+      "p": 0.989
+    },
+    {
+      "text": "uma",
+      "start": 180.58,
+      "end": 180.8,
+      "p": 0.993
+    },
+    {
+      "text": "dependência",
+      "start": 180.8,
+      "end": 181.36,
+      "p": 0.989
+    },
+    {
+      "text": "transitiva",
+      "start": 181.36,
+      "end": 182.08,
+      "p": 0.939
+    },
+    {
+      "text": "e",
+      "start": 182.08,
+      "end": 182.32,
+      "p": 0.588
+    },
+    {
+      "text": "uma",
+      "start": 182.32,
+      "end": 182.44,
+      "p": 0.674
+    },
+    {
+      "text": "unidade",
+      "start": 182.44,
+      "end": 182.8,
+      "p": 0.998
+    },
+    {
+      "text": "de",
+      "start": 182.8,
+      "end": 183.0,
+      "p": 0.996
+    },
+    {
+      "text": "saúde,",
+      "start": 183.0,
+      "end": 183.36,
+      "p": 0.998
+    },
+    {
+      "text": "logradoro,",
+      "start": 183.36,
+      "end": 184.5,
+      "p": 0.327
+    },
+    {
+      "text": "bairro,",
+      "start": 184.78,
+      "end": 185.3,
+      "p": 0.914
+    },
+    {
+      "text": "cidade",
+      "start": 185.54,
+      "end": 185.76,
+      "p": 0.961
+    },
+    {
+      "text": "e",
+      "start": 185.76,
+      "end": 186.32,
+      "p": 0.366
+    },
+    {
+      "text": "UF",
+      "start": 186.32,
+      "end": 186.62,
+      "p": 0.59
+    },
+    {
+      "text": "dependendo",
+      "start": 186.62,
+      "end": 187.1,
+      "p": 0.788
+    },
+    {
+      "text": "de",
+      "start": 187.1,
+      "end": 187.26,
+      "p": 0.352
+    },
+    {
+      "text": "SEP.",
+      "start": 187.26,
+      "end": 187.48,
+      "p": 0.593
+    },
+    {
+      "text": "Então",
+      "start": 187.96,
+      "end": 188.24,
+      "p": 0.771
+    },
+    {
+      "text": "criamos",
+      "start": 188.24,
+      "end": 188.62,
+      "p": 0.897
+    },
+    {
+      "text": "a",
+      "start": 188.62,
+      "end": 188.78,
+      "p": 0.93
+    },
+    {
+      "text": "tabela",
+      "start": 188.78,
+      "end": 189.0,
+      "p": 0.974
+    },
+    {
+      "text": "SEP.",
+      "start": 189.0,
+      "end": 189.34,
+      "p": 0.975
+    },
+    {
+      "text": "Com",
+      "start": 189.9,
+      "end": 190.14,
+      "p": 0.965
+    },
+    {
+      "text": "ela,",
+      "start": 190.14,
+      "end": 190.4,
+      "p": 0.989
+    },
+    {
+      "text": "o",
+      "start": 190.68,
+      "end": 190.68,
+      "p": 0.971
+    },
+    {
+      "text": "modelo",
+      "start": 190.68,
+      "end": 190.92,
+      "p": 0.998
+    },
+    {
+      "text": "chega",
+      "start": 190.92,
+      "end": 191.22,
+      "p": 0.972
+    },
+    {
+      "text": "a",
+      "start": 191.22,
+      "end": 191.44,
+      "p": 0.616
+    },
+    {
+      "text": "BCNF.",
+      "start": 191.44,
+      "end": 192.48,
+      "p": 0.939
+    },
+    {
+      "text": "Algumas",
+      "start": 193.06,
+      "end": 193.46,
+      "p": 0.989
+    },
+    {
+      "text": "redundâncias",
+      "start": 193.46,
+      "end": 194.02,
+      "p": 0.97
+    },
+    {
+      "text": "foram",
+      "start": 194.02,
+      "end": 194.24,
+      "p": 0.996
+    },
+    {
+      "text": "mantidas",
+      "start": 194.24,
+      "end": 194.68,
+      "p": 0.994
+    },
+    {
+      "text": "de",
+      "start": 194.68,
+      "end": 194.82,
+      "p": 0.961
+    },
+    {
+      "text": "propósito,",
+      "start": 194.82,
+      "end": 195.42,
+      "p": 0.992
+    },
+    {
+      "text": "como",
+      "start": 195.5,
+      "end": 195.66,
+      "p": 0.993
+    },
+    {
+      "text": "status",
+      "start": 195.66,
+      "end": 195.94,
+      "p": 0.672
+    },
+    {
+      "text": "de",
+      "start": 195.94,
+      "end": 196.14,
+      "p": 0.507
+    },
+    {
+      "text": "encaminhamento,",
+      "start": 196.14,
+      "end": 196.82,
+      "p": 0.979
+    },
+    {
+      "text": "com",
+      "start": 197.0,
+      "end": 197.02,
+      "p": 0.887
+    },
+    {
+      "text": "consistência",
+      "start": 197.02,
+      "end": 197.56,
+      "p": 0.906
+    },
+    {
+      "text": "garantida",
+      "start": 197.56,
+      "end": 198.18,
+      "p": 0.994
+    },
+    {
+      "text": "pela",
+      "start": 198.18,
+      "end": 198.42,
+      "p": 0.986
+    },
+    {
+      "text": "aplicação",
+      "start": 198.42,
+      "end": 198.9,
+      "p": 0.996
+    },
+    {
+      "text": "e",
+      "start": 198.9,
+      "end": 199.06,
+      "p": 0.943
+    },
+    {
+      "text": "pelo",
+      "start": 199.06,
+      "end": 199.24,
+      "p": 0.992
+    },
+    {
+      "text": "banco.",
+      "start": 199.24,
+      "end": 199.46,
+      "p": 0.993
+    },
+    {
+      "text": "No",
+      "start": 200.34,
+      "end": 200.52,
+      "p": 0.944
+    },
+    {
+      "text": "modelo",
+      "start": 200.52,
+      "end": 200.78,
+      "p": 0.997
+    },
+    {
+      "text": "físico,",
+      "start": 200.78,
+      "end": 201.36,
+      "p": 0.991
+    },
+    {
+      "text": "o",
+      "start": 201.52,
+      "end": 201.64,
+      "p": 0.996
+    },
+    {
+      "text": "mesmo",
+      "start": 201.64,
+      "end": 201.82,
+      "p": 0.998
+    },
+    {
+      "text": "banco",
+      "start": 201.82,
+      "end": 202.36,
+      "p": 0.996
+    },
+    {
+      "text": "ganha",
+      "start": 202.36,
+      "end": 202.72,
+      "p": 0.941
+    },
+    {
+      "text": "tipos",
+      "start": 202.72,
+      "end": 203.12,
+      "p": 0.976
+    },
+    {
+      "text": "e",
+      "start": 203.12,
+      "end": 203.28,
+      "p": 0.933
+    },
+    {
+      "text": "chaves.",
+      "start": 203.28,
+      "end": 203.68,
+      "p": 0.946
+    },
+    {
+      "text": "São",
+      "start": 204.1,
+      "end": 204.34,
+      "p": 0.985
+    },
+    {
+      "text": "12",
+      "start": 204.34,
+      "end": 204.68,
+      "p": 0.884
+    },
+    {
+      "text": "tabelas",
+      "start": 204.68,
+      "end": 205.26,
+      "p": 0.97
+    },
+    {
+      "text": "com",
+      "start": 205.26,
+      "end": 205.6,
+      "p": 0.702
+    },
+    {
+      "text": "number,",
+      "start": 205.6,
+      "end": 206.0,
+      "p": 0.415
+    },
+    {
+      "text": "varchar2,",
+      "start": 206.26,
+      "end": 206.94,
+      "p": 0.757
+    },
+    {
+      "text": "char,",
+      "start": 207.38,
+      "end": 207.64,
+      "p": 0.956
+    },
+    {
+      "text": "date",
+      "start": 208.06,
+      "end": 208.24,
+      "p": 0.962
+    },
+    {
+      "text": "e",
+      "start": 208.24,
+      "end": 208.62,
+      "p": 0.95
+    },
+    {
+      "text": "timestamp.",
+      "start": 208.62,
+      "end": 209.24,
+      "p": 0.759
+    },
+    {
+      "text": "Cada",
+      "start": 209.24,
+      "end": 209.96,
+      "p": 0.002
+    },
+    {
+      "text": "relacionamento",
+      "start": 209.96,
+      "end": 210.76,
+      "p": 0.992
+    },
+    {
+      "text": "vira",
+      "start": 210.76,
+      "end": 211.08,
+      "p": 0.979
+    },
+    {
+      "text": "uma",
+      "start": 211.08,
+      "end": 211.22,
+      "p": 0.99
+    },
+    {
+      "text": "coluna",
+      "start": 211.22,
+      "end": 211.58,
+      "p": 0.996
+    },
+    {
+      "text": "de",
+      "start": 211.58,
+      "end": 211.74,
+      "p": 0.996
+    },
+    {
+      "text": "chave",
+      "start": 211.74,
+      "end": 212.0,
+      "p": 0.972
+    },
+    {
+      "text": "estrangeira",
+      "start": 212.0,
+      "end": 212.54,
+      "p": 0.981
+    },
+    {
+      "text": "e",
+      "start": 212.54,
+      "end": 213.1,
+      "p": 0.485
+    },
+    {
+      "text": "a",
+      "start": 213.1,
+      "end": 213.18,
+      "p": 0.987
+    },
+    {
+      "text": "especialização",
+      "start": 213.18,
+      "end": 213.84,
+      "p": 0.984
+    },
+    {
+      "text": "de",
+      "start": 213.84,
+      "end": 214.08,
+      "p": 0.987
+    },
+    {
+      "text": "pessoa",
+      "start": 214.08,
+      "end": 214.54,
+      "p": 0.955
+    },
+    {
+      "text": "vira",
+      "start": 214.54,
+      "end": 215.24,
+      "p": 0.977
+    },
+    {
+      "text": "três",
+      "start": 215.24,
+      "end": 215.52,
+      "p": 0.657
+    },
+    {
+      "text": "tabelas",
+      "start": 215.52,
+      "end": 215.92,
+      "p": 0.985
+    },
+    {
+      "text": "com",
+      "start": 215.92,
+      "end": 216.22,
+      "p": 0.954
+    },
+    {
+      "text": "mesma",
+      "start": 216.22,
+      "end": 216.42,
+      "p": 0.569
+    },
+    {
+      "text": "de",
+      "start": 216.42,
+      "end": 216.6,
+      "p": 0.899
+    },
+    {
+      "text": "pessoa.",
+      "start": 216.6,
+      "end": 217.0,
+      "p": 0.989
+    },
+    {
+      "text": "A",
+      "start": 217.58,
+      "end": 217.82,
+      "p": 0.975
+    },
+    {
+      "text": "tabela",
+      "start": 217.82,
+      "end": 218.1,
+      "p": 0.989
+    },
+    {
+      "text": "nova",
+      "start": 218.1,
+      "end": 218.38,
+      "p": 0.997
+    },
+    {
+      "text": "é",
+      "start": 218.38,
+      "end": 218.58,
+      "p": 0.95
+    },
+    {
+      "text": "a",
+      "start": 218.58,
+      "end": 218.72,
+      "p": 0.746
+    },
+    {
+      "text": "SEP,",
+      "start": 218.72,
+      "end": 218.86,
+      "p": 0.567
+    },
+    {
+      "text": "vinda",
+      "start": 219.32,
+      "end": 219.74,
+      "p": 0.623
+    },
+    {
+      "text": "da",
+      "start": 219.74,
+      "end": 219.92,
+      "p": 0.989
+    },
+    {
+      "text": "normalização,",
+      "start": 219.92,
+      "end": 220.56,
+      "p": 0.961
+    },
+    {
+      "text": "o",
+      "start": 221.06,
+      "end": 221.12,
+      "p": 0.983
+    },
+    {
+      "text": "que",
+      "start": 221.12,
+      "end": 221.22,
+      "p": 0.999
+    },
+    {
+      "text": "levou",
+      "start": 221.22,
+      "end": 221.5,
+      "p": 0.989
+    },
+    {
+      "text": "o",
+      "start": 221.5,
+      "end": 221.6,
+      "p": 0.492
+    },
+    {
+      "text": "modelo",
+      "start": 221.6,
+      "end": 221.86,
+      "p": 0.996
+    },
+    {
+      "text": "de",
+      "start": 221.86,
+      "end": 222.06,
+      "p": 0.977
+    },
+    {
+      "text": "11",
+      "start": 222.06,
+      "end": 222.32,
+      "p": 0.793
+    },
+    {
+      "text": "para",
+      "start": 222.32,
+      "end": 222.7,
+      "p": 0.686
+    },
+    {
+      "text": "12",
+      "start": 222.7,
+      "end": 222.96,
+      "p": 0.99
+    },
+    {
+      "text": "tabelas",
+      "start": 222.96,
+      "end": 223.52,
+      "p": 0.973
+    },
+    {
+      "text": "e",
+      "start": 223.52,
+      "end": 223.76,
+      "p": 0.873
+    },
+    {
+      "text": "de",
+      "start": 223.76,
+      "end": 223.86,
+      "p": 0.984
+    },
+    {
+      "text": "17",
+      "start": 223.86,
+      "end": 224.42,
+      "p": 0.99
+    },
+    {
+      "text": "para",
+      "start": 224.42,
+      "end": 225.04,
+      "p": 0.979
+    },
+    {
+      "text": "18",
+      "start": 225.04,
+      "end": 225.42,
+      "p": 0.991
+    },
+    {
+      "text": "chaves",
+      "start": 225.42,
+      "end": 225.84,
+      "p": 0.95
+    },
+    {
+      "text": "estrangeiras.",
+      "start": 225.84,
+      "end": 226.46,
+      "p": 0.949
+    },
+    {
+      "text": "Por",
+      "start": 227.5,
+      "end": 227.8,
+      "p": 0.979
+    },
+    {
+      "text": "fim,",
+      "start": 227.8,
+      "end": 228.06,
+      "p": 0.995
+    },
+    {
+      "text": "o",
+      "start": 228.44,
+      "end": 228.48,
+      "p": 0.971
+    },
+    {
+      "text": "script",
+      "start": 228.48,
+      "end": 228.74,
+      "p": 0.625
+    },
+    {
+      "text": "SQL",
+      "start": 228.74,
+      "end": 229.24,
+      "p": 0.682
+    },
+    {
+      "text": "cria",
+      "start": 229.24,
+      "end": 229.62,
+      "p": 0.917
+    },
+    {
+      "text": "esse",
+      "start": 229.62,
+      "end": 229.82,
+      "p": 0.904
+    },
+    {
+      "text": "banco",
+      "start": 229.82,
+      "end": 230.12,
+      "p": 0.996
+    },
+    {
+      "text": "no",
+      "start": 230.12,
+      "end": 230.32,
+      "p": 0.978
+    },
+    {
+      "text": "Oracle",
+      "start": 230.32,
+      "end": 230.62,
+      "p": 0.712
+    },
+    {
+      "text": "e",
+      "start": 230.62,
+      "end": 231.14,
+      "p": 0.604
+    },
+    {
+      "text": "o",
+      "start": 231.14,
+      "end": 231.22,
+      "p": 0.998
+    },
+    {
+      "text": "próprio",
+      "start": 231.22,
+      "end": 231.38,
+      "p": 0.991
+    },
+    {
+      "text": "banco",
+      "start": 231.38,
+      "end": 231.78,
+      "p": 0.997
+    },
+    {
+      "text": "garante",
+      "start": 231.78,
+      "end": 232.24,
+      "p": 0.991
+    },
+    {
+      "text": "as",
+      "start": 232.24,
+      "end": 232.44,
+      "p": 0.992
+    },
+    {
+      "text": "regras",
+      "start": 232.44,
+      "end": 232.72,
+      "p": 0.974
+    },
+    {
+      "text": "da",
+      "start": 232.72,
+      "end": 232.86,
+      "p": 0.978
+    },
+    {
+      "text": "US",
+      "start": 232.86,
+      "end": 233.08,
+      "p": 0.548
+    },
+    {
+      "text": "-03.",
+      "start": 233.08,
+      "end": 233.48,
+      "p": 0.666
+    },
+    {
+      "text": "Uma",
+      "start": 233.48,
+      "end": 234.46,
+      "p": 0.051
+    },
+    {
+      "text": "chave",
+      "start": 234.46,
+      "end": 234.7,
+      "p": 0.967
+    },
+    {
+      "text": "estrangeira,",
+      "start": 234.7,
+      "end": 235.34,
+      "p": 0.98
+    },
+    {
+      "text": "composta,",
+      "start": 235.4,
+      "end": 235.88,
+      "p": 0.948
+    },
+    {
+      "text": "só",
+      "start": 236.32,
+      "end": 236.46,
+      "p": 0.969
+    },
+    {
+      "text": "aceita",
+      "start": 236.46,
+      "end": 236.86,
+      "p": 0.917
+    },
+    {
+      "text": "o",
+      "start": 236.86,
+      "end": 236.94,
+      "p": 0.991
+    },
+    {
+      "text": "agendamento",
+      "start": 236.94,
+      "end": 237.46,
+      "p": 0.986
+    },
+    {
+      "text": "se",
+      "start": 237.46,
+      "end": 237.72,
+      "p": 0.945
+    },
+    {
+      "text": "o",
+      "start": 237.72,
+      "end": 237.8,
+      "p": 0.981
+    },
+    {
+      "text": "Oracle",
+      "start": 237.8,
+      "end": 237.98,
+      "p": 0.0
+    },
+    {
+      "text": "for",
+      "start": 237.98,
+      "end": 238.2,
+      "p": 0.994
+    },
+    {
+      "text": "da",
+      "start": 238.2,
+      "end": 238.34,
+      "p": 0.986
+    },
+    {
+      "text": "mesma",
+      "start": 238.34,
+      "end": 238.62,
+      "p": 0.995
+    },
+    {
+      "text": "especialidade",
+      "start": 238.62,
+      "end": 239.66,
+      "p": 0.977
+    },
+    {
+      "text": "e",
+      "start": 239.66,
+      "end": 240.08,
+      "p": 0.965
+    },
+    {
+      "text": "da",
+      "start": 240.08,
+      "end": 240.18,
+      "p": 0.996
+    },
+    {
+      "text": "mesma",
+      "start": 240.18,
+      "end": 240.48,
+      "p": 0.971
+    },
+    {
+      "text": "unidade",
+      "start": 240.48,
+      "end": 240.94,
+      "p": 0.993
+    },
+    {
+      "text": "do",
+      "start": 240.94,
+      "end": 241.1,
+      "p": 0.921
+    },
+    {
+      "text": "encaminhamento.",
+      "start": 241.1,
+      "end": 241.78,
+      "p": 0.94
+    },
+    {
+      "text": "E",
+      "start": 242.34,
+      "end": 242.6,
+      "p": 0.784
+    },
+    {
+      "text": "um",
+      "start": 242.6,
+      "end": 242.7,
+      "p": 0.978
+    },
+    {
+      "text": "índice",
+      "start": 242.7,
+      "end": 243.04,
+      "p": 0.994
+    },
+    {
+      "text": "único",
+      "start": 243.04,
+      "end": 243.38,
+      "p": 0.957
+    },
+    {
+      "text": "impede",
+      "start": 243.38,
+      "end": 243.9,
+      "p": 0.692
+    },
+    {
+      "text": "que",
+      "start": 243.9,
+      "end": 244.1,
+      "p": 0.994
+    },
+    {
+      "text": "a",
+      "start": 244.1,
+      "end": 244.2,
+      "p": 0.995
+    },
+    {
+      "text": "mesma",
+      "start": 244.2,
+      "end": 244.4,
+      "p": 0.995
+    },
+    {
+      "text": "vaga",
+      "start": 244.4,
+      "end": 244.82,
+      "p": 0.961
+    },
+    {
+      "text": "tenha",
+      "start": 244.82,
+      "end": 245.06,
+      "p": 0.99
+    },
+    {
+      "text": "dois",
+      "start": 245.06,
+      "end": 245.34,
+      "p": 0.936
+    },
+    {
+      "text": "agendamentos",
+      "start": 245.34,
+      "end": 245.86,
+      "p": 0.993
+    },
+    {
+      "text": "ativos.",
+      "start": 245.86,
+      "end": 246.32,
+      "p": 0.991
+    },
+    {
+      "text": "Foi",
+      "start": 246.8,
+      "end": 246.92,
+      "p": 0.945
+    },
+    {
+      "text": "assim",
+      "start": 246.92,
+      "end": 247.18,
+      "p": 0.996
+    },
+    {
+      "text": "que",
+      "start": 247.18,
+      "end": 247.32,
+      "p": 0.995
+    },
+    {
+      "text": "minha",
+      "start": 247.32,
+      "end": 247.46,
+      "p": 0.63
+    },
+    {
+      "text": "vez",
+      "start": 247.46,
+      "end": 247.82,
+      "p": 0.999
+    },
+    {
+      "text": "saiu",
+      "start": 247.82,
+      "end": 248.26,
+      "p": 0.939
+    },
+    {
+      "text": "de",
+      "start": 248.26,
+      "end": 248.36,
+      "p": 0.989
+    },
+    {
+      "text": "um",
+      "start": 248.36,
+      "end": 248.46,
+      "p": 0.992
+    },
+    {
+      "text": "domínio",
+      "start": 248.46,
+      "end": 248.82,
+      "p": 0.951
+    },
+    {
+      "text": "de",
+      "start": 248.82,
+      "end": 248.96,
+      "p": 0.88
+    },
+    {
+      "text": "memória",
+      "start": 248.96,
+      "end": 249.36,
+      "p": 0.977
+    },
+    {
+      "text": "para",
+      "start": 249.36,
+      "end": 249.8,
+      "p": 0.975
+    },
+    {
+      "text": "um",
+      "start": 249.8,
+      "end": 249.9,
+      "p": 0.986
+    },
+    {
+      "text": "banco",
+      "start": 249.9,
+      "end": 250.2,
+      "p": 0.998
+    },
+    {
+      "text": "desenhado,",
+      "start": 250.2,
+      "end": 250.96,
+      "p": 0.997
+    },
+    {
+      "text": "normalizado",
+      "start": 251.3,
+      "end": 251.92,
+      "p": 0.995
+    },
+    {
+      "text": "e",
+      "start": 251.92,
+      "end": 252.34,
+      "p": 0.95
+    },
+    {
+      "text": "pronto",
+      "start": 252.34,
+      "end": 252.66,
+      "p": 0.99
+    },
+    {
+      "text": "para",
+      "start": 252.66,
+      "end": 252.98,
+      "p": 0.99
+    },
+    {
+      "text": "o",
+      "start": 252.98,
+      "end": 253.08,
+      "p": 0.986
+    },
+    {
+      "text": "Java",
+      "start": 253.08,
+      "end": 253.28,
+      "p": 0.959
+    },
+    {
+      "text": "gravar.",
+      "start": 253.28,
+      "end": 253.74,
+      "p": 0.922
+    },
+    {
+      "text": "Dito",
+      "start": 254.18,
+      "end": 254.42,
+      "p": 0.973
+    },
+    {
+      "text": "isso,",
+      "start": 254.42,
+      "end": 254.7,
+      "p": 0.989
+    },
+    {
+      "text": "muito",
+      "start": 255.14,
+      "end": 255.26,
+      "p": 0.955
+    },
+    {
+      "text": "obrigado",
+      "start": 255.26,
+      "end": 255.6,
+      "p": 0.998
+    },
+    {
+      "text": "por",
+      "start": 255.6,
+      "end": 255.8,
+      "p": 0.993
+    },
+    {
+      "text": "assistir.",
+      "start": 255.8,
+      "end": 256.02,
+      "p": 0.995
+    }
+  ]
+}

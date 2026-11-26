@@ -1,0 +1,87 @@
+{
+ "targetLufs": -14.0,
+ "ceilingDb": -1.0,
+ "limiter": {
+  "maxReductionDb": -0.0,
+  "timeOver1dB": 0.0
+ },
+ "falas": [
+  {
+   "id": "f01",
+   "speaker": "john",
+   "voiceLufs": -13.929054241259436,
+   "musicLufs": -36.26837353604902,
+   "gapDb": 22.339319294789583
+  },
+  {
+   "id": "f02",
+   "speaker": "joao",
+   "voiceLufs": -14.248806761401712,
+   "musicLufs": -35.94667082410249,
+   "gapDb": 21.69786406270078
+  },
+  {
+   "id": "f03",
+   "speaker": "joao",
+   "voiceLufs": -13.935182917577404,
+   "musicLufs": -34.264114943658676,
+   "gapDb": 20.328932026081272
+  },
+  {
+   "id": "f04",
+   "speaker": "brenda",
+   "voiceLufs": -13.97350106619973,
+   "musicLufs": -34.26612008713307,
+   "gapDb": 20.292619020933337
+  },
+  {
+   "id": "f05",
+   "speaker": "john",
+   "voiceLufs": -13.858606516240645,
+   "musicLufs": -34.46364385948217,
+   "gapDb": 20.605037343241523
+  },
+  {
+   "id": "f06",
+   "speaker": "vinicius",
+   "voiceLufs": -13.880937329224238,
+   "musicLufs": -33.190116760890284,
+   "gapDb": 19.309179431666045
+  },
+  {
+   "id": "f07",
+   "speaker": "vinicius",
+   "voiceLufs": -13.810403887292997,
+   "musicLufs": -32.363893753530355,
+   "gapDb": 18.553489866237356
+  },
+  {
+   "id": "f08",
+   "speaker": "larissa",
+   "voiceLufs": -13.969725870937674,
+   "musicLufs": -32.09549094236525,
+   "gapDb": 18.12576507142758
+  },
+  {
+   "id": "f09",
+   "speaker": "brenda",
+   "voiceLufs": -13.916369047623272,
+   "musicLufs": -32.25245130218728,
+   "gapDb": 18.336082254564012
+  },
+  {
+   "id": "f10",
+   "speaker": "larissa",
+   "voiceLufs": -14.267500123244762,
+   "musicLufs": -34.57127294672221,
+   "gapDb": 20.30377282347745
+  },
+  {
+   "id": "f11",
+   "speaker": "john",
+   "voiceLufs": -13.96900319841688,
+   "musicLufs": -33.146081712701594,
+   "gapDb": 19.177078514284716
+  }
+ ]
+}
