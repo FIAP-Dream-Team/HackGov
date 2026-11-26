@@ -1,4 +1,4 @@
 /**
- * Domain entities: patients, health units, referrals, specialties, and tickets.
+ * Entidades de domínio: cidadãos, unidades, encaminhamentos, especialidades e senhas.
  */
 package com.hackgov.backend.domain;

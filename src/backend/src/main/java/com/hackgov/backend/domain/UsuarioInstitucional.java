@@ -86,6 +86,22 @@ public class UsuarioInstitucional extends Pessoa {
         );
     }
 
+    public Chamada chamar(Long id, Agendamento agendamento, String senha, String sala) {
+
+        return new Chamada(id, agendamento, senha, sala, this);
+    }
+
+    public void registrarFalta(Encaminhamento encaminhamento) {
+
+        if (encaminhamento == null) {
+            throw new IllegalArgumentException(
+                    "O encaminhamento é obrigatório."
+            );
+        }
+
+        encaminhamento.agendamentoAtivo().registrarFalta();
+    }
+
     public void consultarFila() {
         System.out.println(
                 "Consultando fila de encaminhamentos..."

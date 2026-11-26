@@ -1,9 +1,11 @@
 package com.hackgov.backend.domain;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Encaminhamento {
 
@@ -119,6 +121,93 @@ public class Encaminhamento {
                     "Este encaminhamento não está disponível para agendamento."
             );
         }
+
+        return horariosLivres();
+    }
+
+    public List<HorarioDisponivel> reabrirLista() {
+
+        if (status != StatusEncaminhamento.AGENDADO) {
+            throw new IllegalStateException(
+                    "Não há horário marcado para reagendar."
+            );
+        }
+
+        return horariosLivres();
+    }
+
+    public Agendamento agendamentoAtivo() {
+
+        for (Agendamento agendamento : agendamentos) {
+
+            if (agendamento.getStatus() == StatusAgendamento.AGENDADO) {
+                return agendamento;
+            }
+        }
+
+        throw new IllegalStateException(
+                "Este encaminhamento não possui agendamento ativo."
+        );
+    }
+
+    public AcaoPendente acaoPendente() {
+
+        if (!agendamentos.isEmpty()) {
+
+            Agendamento ultimo = agendamentos.get(
+                    agendamentos.size() - 1
+            );
+
+            if (ultimo.getStatus() == StatusAgendamento.FALTA) {
+                return AcaoPendente.REAGENDAR;
+            }
+        }
+
+        if (status != StatusEncaminhamento.AGUARDANDO_AGENDAMENTO) {
+            return null;
+        }
+
+        for (Agendamento agendamento : agendamentos) {
+
+            if (agendamento.getStatus() == StatusAgendamento.AGENDADO) {
+                return null;
+            }
+        }
+
+        return AcaoPendente.COBRAR_MARCACAO;
+    }
+
+    public Optional<Duration> esperaParaAgendar() {
+
+        LocalDateTime entrada = null;
+        LocalDateTime saida = null;
+
+        for (HistoricoStatus registro : historico) {
+
+            if (registro.getStatusNovo()
+                    == StatusEncaminhamento.AGUARDANDO_AGENDAMENTO) {
+                entrada = registro.getDataHora();
+                saida = null;
+            } else if (entrada != null
+                    && saida == null
+                    && registro.getStatusAnterior()
+                    == StatusEncaminhamento.AGUARDANDO_AGENDAMENTO) {
+                saida = registro.getDataHora();
+            }
+        }
+
+        if (entrada == null) {
+            return Optional.empty();
+        }
+
+        LocalDateTime fim = saida == null
+                ? LocalDateTime.now()
+                : saida;
+
+        return Optional.of(Duration.between(entrada, fim));
+    }
+
+    private List<HorarioDisponivel> horariosLivres() {
 
         List<HorarioDisponivel> livres = new ArrayList<>();
 

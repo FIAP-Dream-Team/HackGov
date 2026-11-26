@@ -1,4 +1,4 @@
 /**
- * REST endpoints for the Minha Vez API: referrals, queues, tickets, and indicators.
+ * Endpoints REST da API Minha Vez: encaminhamentos, filas, senhas e indicadores.
  */
 package com.hackgov.backend.controller;

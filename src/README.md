@@ -1,6 +1,7 @@
 # Protótipo — Minha Vez
 
-Esqueleto de estrutura, sem lógica de negócio ainda.
+Backend em Spring com as US01 a US05 e front em React consumindo a API real. O contrato está em
+`docs/fase-4/contrato-da-api.md`.
 
 ## Backend (`backend/`)
 
@@ -53,3 +54,55 @@ vocabulário do produto):
 | `/acompanhar` | `routes/tracking` | Acompanhamento remoto — o eixo do produto |
 | `/painel` | `routes/panel` | Painel público da sala de espera |
 | `/equipe` | `routes/staff` | Canal web da equipe e do gestor |
+
+### Organização do front
+
+| Pasta | O que tem |
+| --- | --- |
+| `src/api/` | Cliente HTTP (`client.ts`) e um módulo por canal: `citizen.ts`, `staff.ts`, `panel.ts`. Tipos em `types.ts`, espelhando o contrato. Todo erro vira `ApiError` com o `codigo` e a `mensagem` do servidor. |
+| `src/hooks/` | `useQuery` (leitura ao abrir a tela), `useAction` (envio de formulário) e `useForm` (validação por campo). Os estados são sempre `idle`, `loading`, `success` e `error`. |
+| `src/session/` | Token do aplicativo e da equipe em `sessionStorage`. O totem guarda a sessão só em memória. |
+| `src/lib/` | Validação de CPF, Cartão SUS, nascimento e senha com as mesmas regras do backend; formatação de data. |
+| `src/components/ui/` | `Button`, `TextField`, `Alert`, `ErrorAlert`, `Toast`, `Card`, `Badge`, `EmptyState`, `Skeleton`, `StatusTrail` (trilha em etapas), `AppointmentTicket` (horário marcado), `NumericKeypad` (teclado do totem), `AppShell`. Ícones: `lucide-react`. |
+| `src/lib/errors.ts` | Traduz cada `codigo` do contrato em título, explicação e dica. Ação concluída e sessão vencida avisam por toast; erro de formulário e de carregamento fica no lugar, com `ErrorAlert`. |
+| `src/routes/` | Uma pasta por canal. |
+
+### Roteiro de demonstração
+
+Com o backend recém-subido, o encaminhamento sintético está em `RECEBIDO_TRIADO`. A ordem que mostra tudo:
+
+1. `/painel` numa aba à parte. Fica esperando.
+2. `/equipe`, login `atendente.centro`, senha `minhavez`. **Liberar agendamento**.
+3. `/acompanhar`, CPF `529.982.247-25`, senha `minhavez`. **Escolher horário**, confirmar. Reagendar ou cancelar, se quiser mostrar.
+4. `/equipe`, **Atualizar**, **Chamar senha** (ex.: `A12`, sala `2`). O painel muda na hora.
+5. `/totem`, Cartão SUS `100 0000 0006 0018` ou CPF com nascimento `12/04/1988`. **Encerrar e limpar a tela**.
+
+### Dados sintéticos de demonstração
+
+Criados por `DadosSinteticos.java` a cada subida, cerca de 1 s depois de `Started BackendApplication` (o hash das senhas
+leva esse tempo). Nomes inventados; CPFs gerados só para passar no dígito verificador. Senha de todos: `minhavez`.
+Tudo fica em memória: reiniciar volta a este estado.
+
+| Quem | Login | Encaminhamento |
+| --- | --- | --- |
+| Maria Andrade | CPF `529.982.247-25` ou Cartão SUS `100 0000 0006 0018` (nasc. 12/04/1988) | `MV-2026-0001` Cardiologia, recebido e triado |
+| João Pedro Ribeiro | CPF `123.456.781-43` | `MV-2026-0002` Dermatologia, aguardando agendamento |
+| Antônia Lima Dias | CPF `987.654.320-29` | `MV-2026-0003` Ortopedia, recebido e triado, urgente |
+| Carlos Eduardo Souza | CPF `111.444.777-35` | `MV-2026-0004` Ortopedia, já agendado (dá para chamar no painel) |
+| Lúcia Ferreira | CPF `246.813.579-28` | `MV-2026-0005` Dermatologia aguardando e `MV-2026-0006` Ortopedia em triagem |
+| Pedro Henrique Lima | CPF `135.792.468-28` | nenhum (estado vazio) |
+| Equipe, atendente | `atendente.centro` | UBS Centro. Libera agendamentos, chama senhas e registra faltas |
+| Equipe, gestor | `gestor.centro` | UBS Centro. Acompanha a fila e os indicadores e conclui encaminhamentos; liberar, chamar e registrar falta ficam com o atendente |
+
+Não há falta nem encaminhamento concluído semeados: o domínio recusa agendamento no passado.
+
+### Segurança (Parte 4 da Fase 4)
+
+Senha com hash PBKDF2 e sal, login que não revela quem tem cadastro, acesso por canal e por unidade, limite de 5
+tentativas (bloqueio de 5 minutos), sessão que vence sem uso (30 min no app e na equipe, 3 min no totem), logout da
+equipe no servidor e segregação de funções entre atendente e gestor. No front, o totem avisa e limpa a tela depois de
+1 minuto parado. Proteção contra iframe (clickjacking): backend (`ProtecaoContraIframe.java`) e Vite (`vite.config.ts`,
+no `dev` e no `preview`) mandam `X-Frame-Options: DENY` e `frame-ancestors 'none'`; o `index.html` tem um script de
+reserva para servidores que não mandam esses cabeçalhos. Os testes ficam em `backend/src/test/java/com/hackgov/backend/seguranca/SegurancaHttpTest.java`.
+Atenção ao testar: 5 senhas erradas bloqueiam aquela conta por 5 minutos; reiniciar o backend também desbloqueia.
+
