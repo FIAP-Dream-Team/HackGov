@@ -169,12 +169,13 @@ uma página em outra origem tentou abrir o front e a API em iframes, e o navegad
 
 ## Riscos conhecidos e próximos passos
 
-| Risco | Situação | Próximo passo |
+| Risco | Situação | Possível solução |
 | --- | --- | --- |
 | Tráfego sem HTTPS | Aceitável no protótipo local | Publicar só com HTTPS, para que senha e token não trafeguem abertos |
 | Console do banco H2 ativo | Aberto em `/h2-console` no ambiente de desenvolvimento | Desligar antes de publicar |
 | Bloqueio usado para atrapalhar alguém | Quem souber o CPF de outra pessoa pode bloquear a conta dela por 5 minutos | Bloqueio por endereço de origem, além da conta |
 | Mensagem "Esta conta entra pelo Gov.br" | Revela que aquele CPF tem cadastro | Unificar com a resposta de senha errada |
+| Acesso pelo Gov.br simulado | A rota `/api/app/oauth` aceita qualquer CPF já cadastrado sem senha; aceitável só no protótipo local, com dados sintéticos | Integrar o login real do Gov.br, em que o próprio Gov.br confirma a identidade antes de o sistema abrir a sessão |
 | Token acessível a script no navegador | Mitigado pelo escape do React e pela validade curta | Política de conteúdo (CSP) completa no servidor de produção |
 | Registro de auditoria incompleto | Mudança de etapa e chamada de senha guardam quem fez; o registro de falta ainda não | Registro de auditoria de todas as ações da equipe, base para a Parte 5 |
 

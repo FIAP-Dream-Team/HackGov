@@ -82,7 +82,7 @@ Os campos usam máscara (CPF `000.000.000-00`, Cartão SUS `000 0000 0000 0000`)
 
 ### Consumo de APIs
 
-O front consome a API real: 18 operações do backend, entre identificação, acompanhamento, agendamento, fila da
+O front consome a API real: 19 operações do backend, entre identificação, acompanhamento, agendamento, fila da
 equipe e painel. O painel da sala de espera recebe as chamadas em tempo real por **Server-Sent Events**
 (`/api/painel/eventos`) e, como segurança, confere o estado a cada 15 segundos.
 
@@ -201,6 +201,9 @@ vencida e servidor fora do ar. A largura das telas foi conferida em 375 px e em 
 - **Dados em memória.** O backend guarda tudo em memória; reiniciar volta aos dados sintéticos iniciais.
 - **Remarcação depois de falta.** Depois que a equipe registra a falta, nem o cidadão nem a equipe conseguem marcar
   outro horário: o backend recusa. O front não oferece essa ação para não prometer o que o servidor nega.
+- **Conclusão do encaminhamento.** O gestor conclui o encaminhamento sem o sistema conferir se a consulta já
+  aconteceu nem se a pessoa faltou. Depois de concluído, o horário continua marcado, então o cidadão ainda vê o
+  bilhete e a senha chamada pode continuar no painel.
 - **Urgência.** O backend guarda se o encaminhamento é urgente, mas a API da fila não envia esse dado, então a tela
   não o mostra.
 - **Gov.br ilustrativo**, como descrito em 3.3.
